@@ -1,0 +1,24 @@
+dev:
+  label: Development
+  permalink: /development
+  description: Software development related posts.
+
+docs:
+  label: Documentation
+  permalink: /documentation
+  description: Documentation related posts.
+
+back:
+  label: Back-end
+  permalink: /back-end
+  description: Back-end development related posts.
+
+front:
+  label: Front-end
+  permalink: /front-end
+  description: Front-end development related posts.
+
+infra:
+  label: Infrastructure
+  permalink: /infrastructure
+  description: Infrastructure related posts.

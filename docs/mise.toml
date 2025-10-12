@@ -1,0 +1,35 @@
+# Documentation tasks (docusaurus)
+
+## Lifecycle
+[tasks."docs:lifecycle:build"]
+description = "Build the Docusaurus documentation"
+run = "pnpm build"
+
+[tasks."docs:lifecycle:install"]
+description = "Install Docusaurus dependencies"
+run = "pnpm install"
+
+[tasks."docs:lifecycle:serve"]
+description = "Serve the built Docusaurus documentation"
+run = "pnpm serve"
+
+[tasks."docs:lifecycle:start"]
+description = "Start the Docusaurus development server"
+run = "pnpm start"
+
+## Dependencies
+[tasks."docs:deps:add"]
+description = "Add a dependency to the Docusaurus project"
+run = "pnpm add $@"
+
+[tasks."docs:deps:add-dev"]
+description = "Add a dev dependency to the Docusaurus project"
+run = "pnpm add -D $@"
+
+[tasks."docs:deps:remove"]
+description = "Remove a dependency from the Docusaurus project"
+run = "pnpm remove $@"
+
+[tasks."docs:deps:update"]
+description = "Update dependencies in the Docusaurus project"
+run = "pnpm update $@"

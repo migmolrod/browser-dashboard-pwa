@@ -1,0 +1,213 @@
+/* Nord Color Palette Reference:
+ * Polar Night (dark): #2e3440, #3b4252, #434c5e, #4c566a
+ * Snow Storm (light): #d8dee9, #e5e9f0, #eceff4
+ * Frost (blue/cyan): #8fbcbb, #88c0d0, #81a1c1, #5e81ac
+ * Aurora (accent): #bf616a (red), #d08770 (orange), #ebcb8b (yellow), #a3be8c (green), #b48ead (purple)
+ */
+
+/* Light Mode - Nord Theme */
+:root {
+    /* Primary color - Nord Frost Blue */
+    --ifm-color-primary: #5e81ac;
+    --ifm-color-primary-dark: #4c6d96;
+    --ifm-color-primary-darker: #46658c;
+    --ifm-color-primary-darkest: #3a5373;
+    --ifm-color-primary-light: #7595c2;
+    --ifm-color-primary-lighter: #809dcc;
+    --ifm-color-primary-lightest: #9fb8d9;
+
+    /* Secondary color - Nord Snow Storm */
+    --ifm-color-secondary: #e5e9f0;
+    --ifm-color-secondary-dark: #cdd3de;
+    --ifm-color-secondary-darker: #c1c8d5;
+    --ifm-color-secondary-darkest: #9ea8b8;
+    --ifm-color-secondary-light: #eef1f5;
+    --ifm-color-secondary-lighter: #f3f5f8;
+    --ifm-color-secondary-lightest: #f9fafb;
+
+    /* Success color - Nord Aurora Green */
+    --ifm-color-success: #a3be8c;
+    --ifm-color-success-dark: #8faa75;
+    --ifm-color-success-darker: #86a16d;
+    --ifm-color-success-darkest: #6d8557;
+    --ifm-color-success-light: #b7cba3;
+    --ifm-color-success-lighter: #c1d4ab;
+    --ifm-color-success-lightest: #d5e3c6;
+
+    /* Info color - Nord Frost Cyan */
+    --ifm-color-info: #88c0d0;
+    --ifm-color-info-dark: #6faebe;
+    --ifm-color-info-darker: #65a4b3;
+    --ifm-color-info-darkest: #538793;
+    --ifm-color-info-light: #a1d2dd;
+    --ifm-color-info-lighter: #abdae3;
+    --ifm-color-info-lightest: #c4e7ed;
+
+    /* Warning color - Nord Aurora Yellow */
+    --ifm-color-warning: #ebcb8b;
+    --ifm-color-warning-dark: #e5be6d;
+    --ifm-color-warning-darker: #e2b75f;
+    --ifm-color-warning-darkest: #d8a43e;
+    --ifm-color-warning-light: #f1d8a9;
+    --ifm-color-warning-lighter: #f4deb7;
+    --ifm-color-warning-lightest: #f9ebd3;
+
+    /* Danger color - Nord Aurora Red */
+    --ifm-color-danger: #bf616a;
+    --ifm-color-danger-dark: #b14950;
+    --ifm-color-danger-darker: #a84249;
+    --ifm-color-danger-darkest: #89353c;
+    --ifm-color-danger-light: #cd7984;
+    --ifm-color-danger-lighter: #d4888f;
+    --ifm-color-danger-lightest: #e3abb0;
+
+    /* Background colors - Light Nord */
+    --ifm-background-color: #eceff4;
+    --ifm-background-surface-color: #e5e9f0;
+    --ifm-hover-overlay: rgba(67, 76, 94, 0.05);
+
+    /* Content colors */
+    --ifm-color-content: #2e3440;
+    --ifm-color-content-secondary: #3b4252;
+
+    /* Code and other elements */
+    --ifm-code-background: rgba(46, 52, 64, 0.06);
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(129, 161, 193, 0.15);
+
+    /* Scrollbar */
+    --ifm-scrollbar-track-background-color: #e5e9f0;
+    --ifm-scrollbar-thumb-background-color: #d8dee9;
+    --ifm-scrollbar-thumb-hover-background-color: #c1c8d5;
+
+    /* Table */
+    --ifm-table-stripe-background: rgba(46, 52, 64, 0.03);
+
+    /* TOC border */
+    --ifm-toc-border-color: #d8dee9;
+
+    /* Contrast backgrounds for alerts/admonitions */
+    --ifm-color-primary-contrast-background: #eef2f7;
+    --ifm-color-primary-contrast-foreground: #2e4156;
+    --ifm-color-secondary-contrast-background: #f5f6f8;
+    --ifm-color-secondary-contrast-foreground: #3b4252;
+    --ifm-color-success-contrast-background: #f1f5ed;
+    --ifm-color-success-contrast-foreground: #3d4a30;
+    --ifm-color-info-contrast-background: #eff7f9;
+    --ifm-color-info-contrast-foreground: #2d4750;
+    --ifm-color-warning-contrast-background: #faf6ed;
+    --ifm-color-warning-contrast-foreground: #5a4e2a;
+    --ifm-color-danger-contrast-background: #f7ecee;
+    --ifm-color-danger-contrast-foreground: #4a2729;
+}
+
+/* Dark Mode - Nord Theme */
+[data-theme='dark'] {
+    /* Primary color - Nord Frost Cyan (brighter for dark mode) */
+    --ifm-color-primary: #88c0d0;
+    --ifm-color-primary-dark: #6fb3c5;
+    --ifm-color-primary-darker: #65adc0;
+    --ifm-color-primary-darkest: #4a95a8;
+    --ifm-color-primary-light: #a1cddb;
+    --ifm-color-primary-lighter: #abd3e0;
+    --ifm-color-primary-lightest: #c9e4ec;
+
+    /* Secondary color - Nord Polar Night */
+    --ifm-color-secondary: #4c566a;
+    --ifm-color-secondary-dark: #434c5e;
+    --ifm-color-secondary-darker: #3e4757;
+    --ifm-color-secondary-darkest: #333a47;
+    --ifm-color-secondary-light: #556076;
+    --ifm-color-secondary-lighter: #5d6882;
+    --ifm-color-secondary-lightest: #6e7a94;
+
+    /* Success color - Nord Aurora Green (adjusted for dark) */
+    --ifm-color-success: #a3be8c;
+    --ifm-color-success-dark: #8faa75;
+    --ifm-color-success-darker: #86a16d;
+    --ifm-color-success-darkest: #6d8557;
+    --ifm-color-success-light: #b7cba3;
+    --ifm-color-success-lighter: #c1d4ab;
+    --ifm-color-success-lightest: #d5e3c6;
+
+    /* Info color - Nord Frost Teal */
+    --ifm-color-info: #8fbcbb;
+    --ifm-color-info-dark: #78aaa9;
+    --ifm-color-info-darker: #6fa2a1;
+    --ifm-color-info-darkest: #5a8685;
+    --ifm-color-info-light: #a6cecd;
+    --ifm-color-info-lighter: #b0d6d5;
+    --ifm-color-info-lightest: #c8e5e4;
+
+    /* Gray scale - Nord Polar Night */
+    --ifm-color-gray-0: #eceff4;
+    --ifm-color-gray-100: #e5e9f0;
+    --ifm-color-gray-200: #d8dee9;
+    --ifm-color-gray-300: #c1c8d5;
+    --ifm-color-gray-400: #a8b2c1;
+    --ifm-color-gray-500: #8f9aaa;
+    --ifm-color-gray-600: #6e7a94;
+    --ifm-color-gray-700: #5d6882;
+    --ifm-color-gray-800: #4c566a;
+    --ifm-color-gray-900: #434c5e;
+    --ifm-color-gray-1000: #3b4252;
+
+    /* Emphasis colors (for borders, subtle backgrounds) */
+    --ifm-color-emphasis-0: var(--ifm-color-gray-1000);
+    --ifm-color-emphasis-100: var(--ifm-color-gray-900);
+    --ifm-color-emphasis-200: var(--ifm-color-gray-800);
+    --ifm-color-emphasis-300: var(--ifm-color-gray-700);
+    --ifm-color-emphasis-400: var(--ifm-color-gray-600);
+    --ifm-color-emphasis-500: var(--ifm-color-gray-500);
+    --ifm-color-emphasis-600: var(--ifm-color-gray-400);
+    --ifm-color-emphasis-700: var(--ifm-color-gray-300);
+    --ifm-color-emphasis-800: var(--ifm-color-gray-200);
+    --ifm-color-emphasis-900: var(--ifm-color-gray-100);
+    --ifm-color-emphasis-1000: var(--ifm-color-gray-0);
+
+    /* Background colors - Nord Polar Night */
+    --ifm-background-color: #2e3440;
+    --ifm-background-surface-color: #3b4252;
+    --ifm-hover-overlay: rgba(216, 222, 233, 0.05);
+
+    /* Content colors - Snow Storm */
+    --ifm-color-content: #eceff4;
+    --ifm-color-content-secondary: #d8dee9;
+
+    /* Code and other elements */
+    --ifm-code-background: rgba(216, 222, 233, 0.1);
+    --docusaurus-highlighted-code-line-bg: rgba(67, 76, 94, 0.5);
+
+    /* Scrollbar */
+    --ifm-scrollbar-track-background-color: #3b4252;
+    --ifm-scrollbar-thumb-background-color: #4c566a;
+    --ifm-scrollbar-thumb-hover-background-color: #5d6882;
+
+    /* Table */
+    --ifm-table-stripe-background: rgba(216, 222, 233, 0.05);
+
+    /* TOC border */
+    --ifm-toc-border-color: var(--ifm-color-emphasis-200);
+
+    /* Contrast backgrounds for alerts/admonitions in dark mode */
+    --ifm-color-primary-contrast-background: #2d4050;
+    --ifm-color-primary-contrast-foreground: #d4e4f0;
+    --ifm-color-secondary-contrast-background: #3f4654;
+    --ifm-color-secondary-contrast-foreground: #e5e9f0;
+    --ifm-color-success-contrast-background: #344232;
+    --ifm-color-success-contrast-foreground: #dbe8cf;
+    --ifm-color-info-contrast-background: #2f4648;
+    --ifm-color-info-contrast-foreground: #d8eeef;
+    --ifm-color-warning-contrast-background: #4a4330;
+    --ifm-color-warning-contrast-foreground: #f7ecd3;
+    --ifm-color-danger-contrast-background: #3e2f31;
+    --ifm-color-danger-contrast-foreground: #f0dade;
+
+    /* Breadcrumb separator filter for dark mode */
+    --ifm-breadcrumb-separator-filter: invert(64%) sepia(11%) saturate(15%) hue-rotate(149deg) brightness(95%) contrast(92%);
+}
+
+/* Custom CSS */
+nav {
+    position: sticky;
+}
