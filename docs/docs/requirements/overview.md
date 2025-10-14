@@ -10,8 +10,8 @@ This section contains the complete requirements documentation for the Browser Da
 
 ## Purpose
 
-This documentation defines the functional and non-functional requirements for a modular browser dashboard Progressive
-Web Application (PWA) designed to provide users with quick access to essential productivity tools and information.
+This documentation defines all kinds of requirements for a modular browser dashboard Progressive Web Application (PWA)
+designed to provide users with quick access to essential productivity tools and information.
 
 ## Document Structure
 

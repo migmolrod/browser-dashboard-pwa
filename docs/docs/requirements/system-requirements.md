@@ -530,9 +530,9 @@ The following environment variables must be configured:
 
 :::info Testing Tools
 
-- **Unit Tests:** Jest (JavaScript), JUnit (Java)
+- **Unit Tests:** Jest (JavaScript), JUnit and Mockito (Java)
 - **Integration Tests:** Supertest (API), Testcontainers (Database)
-- **E2E Tests:** Playwright or Cypress
+- **E2E Tests:** Playwright
 - **Coverage:** Minimum 80%
   :::
 

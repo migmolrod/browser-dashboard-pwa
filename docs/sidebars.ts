@@ -16,6 +16,7 @@ const sidebars: SidebarsConfig = {
 	// By default, Docusaurus generates a sidebar from the docs folder structure
 	requirements: [
 		"requirements/overview",
+		"requirements/introduction",
 		"requirements/business-requirements",
 		"requirements/functional-requirements",
 		"requirements/non-functional-requirements",

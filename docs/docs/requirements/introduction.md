@@ -10,28 +10,29 @@ The **Browser Dashboard PWA** is a modern, modular Progressive Web Application d
 browser start page. It provides users with quick access to frequently visited websites, task management, weather
 information, and calendar events in a unified, visually appealing interface.
 
+## Before We Get Started
+
+Just a quick note before we get started; as it has been mentioned before, the solutions that will be proposed in this
+project can be (rightfully) considered overkill and overengineered. A system this small doesn't need the complexity of a
+full-fledged, enterprise application ecosystem. But I selected these overengineered solutions for the sake of showcasing
+those patterns, architectures, technologies, etc.
+
 ## Project Goals
 
-### Primary Goals
+### Showcase Full-Stack Development Skills
 
-1. **Showcase Full-Stack Development Skills**
-    - Demonstrate proficiency in modern frontend technologies
-    - Exhibit backend API design and implementation
-    - Show understanding of DevOps and infrastructure
-    - Document software engineering best practices
+- Frontend: Advanced UI/UX with animations and responsive design
+- Backend: RESTful API design, data persistence, authentication
+- Integration: Third-party API consumption
+- Infrastructure: Containerization, CI/CD, deployment
+- Documentation: Comprehensive technical documentation
 
-2. **Create a Functional Product**
-    - Build a useful tool that addresses real user needs
-    - Implement a scalable, maintainable architecture
-    - Provide an excellent user experience
-    - Deploy a production-ready application
+### Create a Functional Product
 
-3. **Demonstrate Technical Breadth**
-    - Frontend: Advanced UI/UX with animations and responsive design
-    - Backend: RESTful API design, data persistence, authentication
-    - Integration: Third-party API consumption
-    - Infrastructure: Containerization, CI/CD, deployment
-    - Documentation: Comprehensive technical documentation
+- Build a useful tool that addresses real user needs
+- Implement a scalable, maintainable architecture
+- Provide an excellent user experience
+- Deploy a production-ready application
 
 ## Target Audience
 
@@ -58,7 +59,7 @@ The following modules and features are included in the project:
 
 - User authentication and authorization
 - Responsive, mobile-first design
-- Progressive Web App capabilities (offline support, installable)
+- Progressive Web App capabilities (offline support, installable) where applicable
 - Dark/light theme support
 - Settings and preferences management
 

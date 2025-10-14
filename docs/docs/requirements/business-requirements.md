@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Business Requirements
 
-Business requirements define the high-level objectives and benefits that the Browser Dashboard PWA aims to achieve.
+Business requirements define the high-level goals and benefits that the Browser Dashboard PWA aims to achieve.
 
 ## Strategic Objectives
 
@@ -14,7 +14,7 @@ Business requirements define the high-level objectives and benefits that the Bro
 
 Develop a comprehensive full-stack project that demonstrates:
 
-- Modern frontend development skills (React, TypeScript, CSS animations)
+- Modern frontend development skills
 - Backend API development and architecture
 - Integration capabilities with third-party services
 - Infrastructure and deployment knowledge
@@ -76,7 +76,7 @@ Implement industry best practices including:
 
 Build a system that can:
 
-- Easily accommodate new modules
+- Accommodate new modules
 - Handle growing user data
 - Scale infrastructure as needed
 - Be maintained and extended over time
@@ -84,7 +84,6 @@ Build a system that can:
 **Success Criteria:**
 
 - Modular architecture with clear boundaries
-- Plugin/module system for extensions
 - Documented extension points
 - Horizontal scaling capability
 
@@ -137,15 +136,10 @@ Build a system that can:
 
 ### Secondary Stakeholders
 
-4. **Open Source Community**
+1. **Open Source Community**
     - Interest: Code contributions, learning
     - Influence: Low
     - Engagement: Occasional
-
-5. **Technical Mentors/Advisors**
-    - Interest: Best practices, architecture review
-    - Influence: Medium (recommendations)
-    - Engagement: Periodic reviews
 
 ---
 
@@ -193,10 +187,16 @@ Build a system that can:
 
 **Impact:**
 
-- React for frontend
-- RESTful API backend
-- Containerized deployment
-- Cloud-native architecture
+- Responsive frontend with Angular
+- RESTful API backend with Spring Boot
+- PostgreSQL for database
+- Containerized deployment with Docker
+- Cloud-native architecture with IaC approach
+- Automated testing with modern testing frameworks like JUnit, Mockito, Jest and Playwright
+- Continuous integration with GitHub Actions
+- Security best practices (OWASP)
+- Documentation with docusaurus
+- Performance optimization with Lighthouse
 
 ---
 
@@ -214,21 +214,15 @@ Build a system that can:
 
 ### User Experience Metrics
 
+(These metrics are merely examples and may not be applicable to this project, since it's a personal project for my
+portfolio and not an actual product).
+
 | Metric                   | Target           | Measurement    |
 |--------------------------|------------------|----------------|
 | **User Satisfaction**    | > 4.0/5.0        | User Surveys   |
 | **Task Completion Rate** | > 95%            | Analytics      |
 | **Error Rate**           | < 1%             | Error Tracking |
 | **Mobile Usability**     | Fully Responsive | Device Testing |
-
-### Portfolio Metrics
-
-| Metric                         | Target           | Measurement      |
-|--------------------------------|------------------|------------------|
-| **Documentation Completeness** | 100% of sections | Review Checklist |
-| **Code Quality Score**         | > 8.0/10         | SonarQube/ESLint |
-| **GitHub Stars**               | > 10             | GitHub           |
-| **Demo Accessibility**         | 100% uptime      | Monitoring       |
 
 ---
 
@@ -248,5 +242,4 @@ Build a system that can:
 1. **Weather API Provider** - External service dependency
 2. **Cloud Infrastructure** - Hosting and deployment platform
 3. **Browser APIs** - Service Workers, IndexedDB, Local Storage
-4. **Development Tools** - Node.js ecosystem, build tools
-5. **Third-Party Libraries** - React, UI component libraries
+4. **Third-Party Libraries** - Frameworks, UI component libraries
