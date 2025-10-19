@@ -14,9 +14,9 @@ And today I started to document the requirements. How? With the help of generati
 
 ### Generative AI as a helper
 
-I started by creating an initial version of the whole SRD (Software Requirements Document) with the help of generative
-AI. With that I got a very basic structure of the document very quickly, that I then needed to review and refine —
-adding, removing or editing some details — both manually and also with the help of generative AI.
+I started by creating an initial version of the whole SRS (Software Requirements Specification) with the help of
+generative AI. With that I got a very basic structure of the document very quickly, that I then needed to review and
+refine — adding, removing or editing some details — both manually and also with the help of generative AI.
 
 The initial prompt was this:
 
@@ -57,8 +57,8 @@ light and dark mode.
 
 ### Next steps
 
-In the next days, I will keep using the generative AI for the next document (ADD, Architecture Design Document) pretty
-much as I did for the SRD. First generate, then review, finally refine (manually and with AI).
+In the next days, I will keep using the generative AI for the next document (SAD, Software Architecture Document) pretty
+much as I did for the SRS. First generate, then review, finally refine (manually and with AI).
 
 When the architecture is ready and the system is divided into modules, I will continue with the documentation of each
 one of them.
