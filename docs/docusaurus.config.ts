@@ -66,17 +66,29 @@ const config: Config = {
 			respectPrefersColorScheme: true,
 		},
 		navbar: {
-			title: "My Site",
+			title: "Browser Dashboard PWA",
 			logo: {
-				alt: "My Site Logo",
+				alt: "Browser Dashboard PWA Logo",
 				src: "img/logo.svg",
 			},
 			items: [
 				{
 					type: "docSidebar",
+					sidebarId: "domain",
+					position: "left",
+					label: "BDL",
+				},
+				{
+					type: "docSidebar",
 					sidebarId: "requirements",
 					position: "left",
-					label: "SRD",
+					label: "SRS",
+				},
+				{
+					type: "docSidebar",
+					sidebarId: "architecture",
+					position: "left",
+					label: "SAD",
 				},
 				{to: "/blog", label: "Blog", position: "right"},
 				{
@@ -93,8 +105,20 @@ const config: Config = {
 					title: "Docs",
 					items: [
 						{
-							label: "SRD",
+							label: "Introduction",
+							to: "/docs/intro",
+						},
+						{
+							label: "BDL",
+							to: "/docs/domain/overview",
+						},
+						{
+							label: "SRS",
 							to: "/docs/requirements/overview",
+						},
+						{
+							label: "SAD",
+							to: "/docs/architecture/overview",
 						},
 					],
 				},
@@ -135,7 +159,14 @@ const config: Config = {
 			theme: prismThemes.github,
 			darkTheme: prismThemes.dracula,
 		},
+		mermaid: {
+			theme: {light: "neutral", dark: "forest"},
+		},
 	} satisfies Preset.ThemeConfig,
+	themes: ["@docusaurus/theme-mermaid"],
+	markdown: {
+		mermaid: true,
+	},
 };
 
 export default config;
