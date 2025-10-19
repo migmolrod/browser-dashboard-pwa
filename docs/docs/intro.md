@@ -14,15 +14,20 @@ product), and it primarily serves as a way to improve my portfolio with a real-w
 
 Since the main goal of this whole project is to learn, practice and serve as an example in my portfolio, I have made
 some decisions in different areas that I think are important to keep in mind. They result in a **completely
-overengineered** solution and I'm fully aware of it. But the intention here is to show skills and proficiency in those
-overengineered solutions that could be a better fit for a more complex, enterprise-grade system.
+overengineered** solution, and I'm fully aware of it.
 
-My idea was not to _vibe-code_ a quick MVP, but to create a complete solution that I could even use as a reference for
-my future projects.
+In any other scenario, one should probably aim at the most cost-effective solution, considering the client
+constraints (budget, available infrastructure either on-demand or cloud-based, previous iterations of the software to be
+developed if applicable, etc.). But the intention here was to show skills and proficiency in those overengineered
+solutions that could be a better fit for a more complex, enterprise-grade system.
+
+In conclusion, my idea was not to _vibe-code_ a quick MVP, but to create a complete solution that recruiters could find
+interesting. And a solution that I could even use as a reference for future projects.
 
 The main decisions I made are:
 
-- I want to use **Domain-Driven Design** (DDD) as a way to translate a business problem into a software design.
+- I want to use **Domain-Driven Design** (DDD) as a way to translate a business problem into a software design, bridging
+  the gap between those two worlds.
 - I want to use **Ports and Adapters** pattern as a way to separate the domain from the infrastructure.
 - I want to use **CQRS** as a way to separate the read and write models of the domain.
 - I want to use **TDD** (test-driven development) as a way to develop the software.
