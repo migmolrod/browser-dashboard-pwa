@@ -31,3 +31,7 @@ time (or even be ignored altogether, at least for now).
 
 This repository is a 'monorepo' and it will contain the documentation, the source code (separated into backend and
 frontend) and the infrastructure code (IaC, DevOps).
+
+## Credits
+
+Icons SEO-7 [SVGRepo](https://www.svgrepo.com/collection/seo-7/2). Used in the documentation. CC0.
