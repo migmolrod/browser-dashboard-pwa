@@ -48,12 +48,11 @@ This domain exploration and modeling are organized into the following sections:
 
 - **[Vision & Business Goals](business-vision)**: Short narrative of what problem we are trying to solve.
 - **[Core Domain Concepts](core-domain-concepts)**: Overview of the core, supporting and generic subdomains.
-- **[Domain Glossary](glossary)**: Shared vocabulary, acts as the "Rosetta Stone" for developers, PMs, documentations,
-  QA, etc. so they all understand the same terms for a given context.
+- **[Domain Glossary](ubiquitous-language)**: Shared vocabulary, acts as the "Rosetta Stone" for developers, PMs,
+  documentations, QA, etc. so they all understand the same terms for a given context.
 - **[Bounded Contexts](bounded-contexts)**: Definitions of each bounded context, their purpose, and the *context map* (
   how they interact with each other)
-- **[Business Processes](business-processes)**: Definitions of domain processes and users' journeys through the
-  system.
+- **[Business Processes and Workflows](process-workflows.md)**: Definitions of domain processes and workflows.
 
 ## Document standards
 
