@@ -10,8 +10,8 @@ This section contains the complete requirements documentation for the Browser Da
 
 ## Purpose
 
-This documentation defines all kinds of requirements for a modular browser dashboard Progressive Web Application (PWA)
-designed to provide users with quick access to essential productivity tools and information.
+This documentation establishes the ubiquitous language, bounded contexts, and business understanding — the conceptual
+foundation of the system.
 
 ## Document Structure
 
@@ -28,16 +28,11 @@ The requirements are organized into the following sections:
 
 The Browser Dashboard consists of four primary modules:
 
-1. **Bookmarks** - Visual bookmark management with links and folders
-2. **Task List** - Simple task management with CRUD operations
-3. **Weather** - Real-time weather information from external APIs
-4. **Calendar** - Event management with task list integration
+1. **Bookmarks**: Visual bookmark management with links and folders
+2. **Task List**: Simple task management with CRUD operations
+3. **Weather**: Real-time weather information from external APIs
+4. **Calendar**: Event management with task list integration
 
 ## Documentation Standards
 
-This documentation follows IEEE 830-1998 standards for Software Requirements Specifications (SRS) and uses:
-
-- Clear, concise language
-- Numbered requirements for traceability
-- Priority levels (Must Have, Should Have, Could Have, Won't Have - MoSCoW method)
-- Testable and verifiable statements
+<!-- TODO change IEEE 830-1998, which is very old, to a newer standard -->
