@@ -9,6 +9,8 @@ const sidebars: SidebarsConfig = {
 	],
 	domain: [
 		"domain/overview",
+		"domain/business-vision",
+		"domain/core-domain-concepts",
 	],
 	requirements: [
 		"requirements/overview",

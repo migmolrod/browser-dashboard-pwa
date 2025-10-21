@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 title: Business & Domain Overview
-slug: /domain
 ---
 
 # Business & Domain Overview
@@ -50,13 +49,13 @@ This domain exploration and modeling are organized into the following sections:
 - **[Core Domain Concepts](core-domain-concepts)**: Overview of the core, supporting and generic subdomains.
 - **[Domain Glossary](ubiquitous-language)**: Shared vocabulary, acts as the "Rosetta Stone" for developers, PMs,
   documentations, QA, etc. so they all understand the same terms for a given context.
-- **[Bounded Contexts](bounded-contexts)**: Definitions of each bounded context, their purpose, and the *context map* (
-  how they interact with each other)
+- **[Bounded Contexts](bounded-contexts)**: Definitions of each bounded context, their purpose, and the *context map*
+  (how they interact with each other).
 - **[Business Processes and Workflows](process-workflows.md)**: Definitions of domain processes and workflows.
 
 ## Document standards
 
-This piece of documentation will be inspired by _Domain-Driven Design_ (Evans 2003).
+This piece of documentation will be inspired by _Domain-Driven Design_ (Evans, 2003).
 
 It will be written in a clear and concise manner, with a focus on bridging the gap between the technical and business
 world, creating a coherent domain model common to all stakeholders.

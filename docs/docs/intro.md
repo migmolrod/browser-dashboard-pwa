@@ -43,6 +43,9 @@ The main decisions I made are:
 - I want to learn and use **C4 models** and **4+1 architectural view model** to document the project.
 - I want to learn and use **Localstack** and **Terraform** as a way to create, provision and manage a local environment
   that emulates a real cloud environment (AWS).
+- As a starting point, I will only include the following widgets: **bookmarks** (like the Speed Dial extension in
+  Chrome), **tasks** (a simple To-Do list manager), **weather** (from an external, third-party API), and **calendar**
+  (simplified approach, no integrations for now with Google Calendar, Outlook or other services).
 
 ## Standard reference and best practices
 
