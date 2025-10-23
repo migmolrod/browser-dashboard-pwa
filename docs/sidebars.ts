@@ -11,6 +11,8 @@ const sidebars: SidebarsConfig = {
 		"domain/overview",
 		"domain/business-vision",
 		"domain/core-domain-concepts",
+		"domain/ubiquitous-language",
+		"domain/bounded-contexts",
 	],
 	requirements: [
 		"requirements/overview",
