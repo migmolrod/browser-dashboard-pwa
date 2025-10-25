@@ -13,6 +13,7 @@ const sidebars: SidebarsConfig = {
 		"domain/core-domain-concepts",
 		"domain/ubiquitous-language",
 		"domain/bounded-contexts",
+		"domain/process-workflows",
 	],
 	requirements: [
 		"requirements/overview",
