@@ -9,13 +9,24 @@ slug: domain-events
 This catalog lists the domain events used across bounded contexts. It aligns with the Bounded Contexts and Processes &
 Workflows documents to ensure consistency.
 
-Conventions:
+:::info
+**Conventions**:
 
 - Name in past tense (what happened).
 - Each event has a single owning (publishing) context.
 - Other contexts may consume it to update read models or trigger follow-up actions.
+- Cross-context intents use “Requested” (e.g., EventCreationRequestedFromTask) to avoid tight coupling.
 
-## Dashboard Management (publishes)
+**Other notes**:
+
+- Event payloads are indicative and may be refined during implementation; event names and ownership are stable.
+- Dashboard Management consumes supplier events strictly to refresh read models for widgets; it does not own supplier
+  data.
+  :::
+
+## Dashboard Management
+
+### Publishes
 
 - DashboardCreated
     - When a new dashboard is created for a user.
@@ -39,7 +50,7 @@ Conventions:
     - Active profile for the dashboard changed.
     - Payload: \{ userId, profileId, switchedAt \}
 
-Consumes:
+### Consumes
 
 - UserRegistered
 - PreferencesUpdated
@@ -48,7 +59,9 @@ Consumes:
 - BookmarkPinned
 - WeatherDataRefreshed
 
-## Bookmarks (publishes)
+## Bookmarks
+
+### Publishes
 
 - FolderCreated
     - Payload: \{ folderId, userId, parentFolderId?, name, createdAt \}
@@ -67,12 +80,14 @@ Consumes:
 - BookmarkUnpinned
     - Payload: \{ bookmarkId, userId, unpinnedAt \}
 
-Consumes:
+### Consumes
 
 - UserRegistered
 - ProfileSwitched (optional)
 
-## Tasks (publishes)
+## Tasks
+
+### Publishes
 
 - TaskCreated
     - Payload: \{ taskId, userId, title, priority, dueDate?, createdAt \}
@@ -90,11 +105,13 @@ Consumes:
     - Intent to create a calendar event from a task.
     - Payload: \{ taskId, userId, title, dueDate?, notes? \}
 
-Consumes:
+### Consumes
 
 - UserRegistered
 
-## Calendar (publishes)
+## Calendar
+
+### Publishes
 
 - EventCreated
     - Payload: \{ eventId, userId, title, startTime, endTime, createdAt \}
@@ -107,25 +124,29 @@ Consumes:
 - ReminderSet
     - Payload: \{ eventId, userId, reminderTime, setAt \}
 
-Consumes:
+### Consumes
 
 - UserRegistered
 - EventCreationRequestedFromTask
 
-## Weather (publishes)
+## Weather
+
+### Publishes
 
 - WeatherDataRefreshed
     - Payload: \{ userId, location, snapshot: \{ temperature, conditions, units, providerTimestamp \}, refreshedAt \}
 - WeatherFetchFailed
     - Payload: \{ userId, location, errorCode, occurredAt \}
 
-Consumes:
+### Consumes
 
 - WidgetConfigurationChanged
 - ProfileSwitched
 - PreferencesUpdated
 
-## Preferences (publishes)
+## Preferences
+
+### Publishes
 
 - PreferencesUpdated
     - Payload: \{ userId, changes: \{ theme?, locale?, timezone?, units? \}, updatedAt \}
@@ -136,11 +157,13 @@ Consumes:
 - TimezoneChanged
     - Payload: \{ userId, fromTz, toTz, changedAt \}
 
-Consumes:
+### Consumes
 
 - UserRegistered
 
-## User Identity (publishes)
+## User Identity
+
+### Publishes
 
 - UserRegistered
     - Payload: \{ userId, username, registeredAt \}
@@ -151,19 +174,16 @@ Consumes:
 - UserDeleted
     - Payload: \{ userId, deletedAt \}
 
-Consumes:
+### Consumes
 
 - —
 
 ## Synchronization
 
-Consumes:
+### Publishes
+
+- —
+
+### Consumes
 
 - All domain events above (used for local-first sync, conflict detection, and propagation)
-
-## Notes
-
-- Event payloads are indicative and may be refined during implementation; event names and ownership are stable.
-- Dashboard Management consumes supplier events strictly to refresh read models for widgets; it does not own supplier
-  data.
-- Cross-context intents use “Requested” (e.g., EventCreationRequestedFromTask) to avoid tight coupling.
