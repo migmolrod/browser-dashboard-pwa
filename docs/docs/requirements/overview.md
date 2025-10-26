@@ -10,8 +10,9 @@ This section contains the complete requirements documentation for the Browser Da
 
 ## Purpose
 
-This documentation establishes the ubiquitous language, bounded contexts, and business understanding — the conceptual
-foundation of the system.
+This documentation establishes the project requirements and provides a detailed description of the project's features
+and functionality. This isn't limited to the functional requirements but also includes non-functional requirements,
+system requirements, business requirements, and user stories.
 
 ## Document Structure
 
@@ -35,4 +36,7 @@ The Browser Dashboard consists of four primary modules:
 
 ## Documentation Standards
 
-<!-- TODO change IEEE 830-1998, which is very old, to a newer standard -->
+The documentation will try to follow
+the [ISO/IEC/IEEE 29148:2011 standard](https://raw.githubusercontent.com/Orthant/IEEE/master/29148-2011.pdf) as much
+as possible. Even though this standard has been withdrawn in favor of the 2018 standard, it is still a good reference
+and offers relevant guidelines.

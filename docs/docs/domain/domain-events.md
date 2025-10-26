@@ -47,7 +47,7 @@ Workflows documents to ensure consistency.
     - One or more widget positions changed.
     - Payload: \{ dashboardId, changes: LayoutChange[], changedAt \}
 - ProfileSwitched
-    - Active profile for the dashboard changed.
+    - The active profile for the dashboard changed.
     - Payload: \{ userId, profileId, switchedAt \}
 
 ### Consumes
