@@ -12,18 +12,10 @@ This section contains our domain exploration and modeling.
 This documentation contextualizes the domain and the business needs so that the different stakeholders have a solid
 grounding to understand the next parts of the documentation (requirements, architecture, etc.).
 
-## Scope
-
-This documentation aims to cover the domain modeling of a personal project to enhance my portfolio. The result is a
-fictional product called "Browser Dashboard PWA" that will probably never be deployed in a real production environment.
-
-The idea in this part of the documentation is to provide a solid foundation for the next parts of the documentation,
-some common language for the different stakeholders, etc.
-
 ## Audience
 
 This documentation is intended in the first place for the architect, developer and designer of the project. That is me,
-[Miguel Molinero](https://github.com/migmolrod). By documenting the whole process, I hope to provide a solid foundation
+[Miguel Molinero](https://github.com/migmolrod). By documenting the domain, I hope to provide a solid foundation
 for the next parts of the documentation that will help not only me but also potential contributors.
 
 It will also be useful for recruiters and talent acquisition teams. The idea is they can get a grasp of my skills and
@@ -40,6 +32,13 @@ With 'contributors' I'm not just referring to developers, but also other roles l
 cyber-security experts, etc. that could potentially want to mentor me in the project, finding areas of improvement
 within their expertise, mistakes or bugs I've made, etc.
 :::
+
+## Scope
+
+This document focuses on the domain modeling of a personal, portfolio-oriented project — a fictional product called
+"**Browser Dashboard PWA**." It is not intended for real-world deployment but rather to illustrate the analysis and
+design process. The content is limited to the domain and business perspective; implementation and technical details are
+addressed in later sections.
 
 ## Document Structure
 

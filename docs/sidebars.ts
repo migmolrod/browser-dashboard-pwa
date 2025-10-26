@@ -18,7 +18,6 @@ const sidebars: SidebarsConfig = {
 	],
 	requirements: [
 		"requirements/overview",
-		"requirements/introduction",
 		"requirements/business-requirements",
 		"requirements/functional-requirements",
 		"requirements/non-functional-requirements",
