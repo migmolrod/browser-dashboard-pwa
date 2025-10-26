@@ -68,9 +68,9 @@ the [ISO/IEC/IEEE 29148:2011 standard](https://raw.githubusercontent.com/Orthant
 as possible. Even though this standard has been withdrawn in favor of the 2018 standard, it is still a good reference
 and offers relevant guidelines.
 
-- [Progressive Web Apps (MDN)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-- [IEEE 830-1998 - Software Requirements Specification](https://standards.ieee.org/standard/830-1998.html)
-- [MoSCoW Prioritization Method](https://en.wikipedia.org/wiki/MoSCoW_method)
+The specification will also use the [MoSCoW Prioritization Method](https://en.wikipedia.org/wiki/MoSCoW_method).
+
+## Documentation conventions
 
 ### Requirement Numbering
 
@@ -79,11 +79,10 @@ Requirements are numbered using the following format:
 - **BR-XXX**: Business Requirements
 - **FR-XXX**: Functional Requirements
 - **NFR-XXX**: Non-Functional Requirements
-- **SR-XXX**: System Requirements
 
 ### Priority Levels
 
-- **Must Have**: Critical for MVP, project fails without it
+- **Must Have**: Critical for MVP, the project fails without it
 - **Should Have**: Important but not critical, can be workarounds
 - **Could Have**: Desirable but not necessary, nice to have
 - **Won't Have**: Explicitly out of scope for this release
