@@ -9,20 +9,22 @@ slug: domain-events
 This catalog lists the domain events used across bounded contexts. It aligns with the Bounded Contexts and Processes &
 Workflows documents to ensure consistency.
 
-:::info
-**Conventions**:
+:::note Conventions
 
 - Name in past tense (what happened).
 - Each event has a single owning (publishing) context.
 - Other contexts may consume it to update read models or trigger follow-up actions.
 - Cross-context intents use “Requested” (e.g., EventCreationRequestedFromTask) to avoid tight coupling.
 
-**Other notes**:
+:::
+
+:::note Other notes
 
 - Event payloads are indicative and may be refined during implementation; event names and ownership are stable.
 - Dashboard Management consumes supplier events strictly to refresh read models for widgets; it does not own supplier
   data.
-  :::
+
+:::
 
 ## Dashboard Management
 

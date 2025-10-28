@@ -8,7 +8,7 @@ title: Processes and workflows
 This section describes key end-to-end workflows across bounded contexts. Diagrams are expressed in BPMN‑like notation
 using Mermaid for readability. Each workflow includes a brief narrative.
 
-## Legend
+:::note Legend
 
 - Pools represent bounded contexts
 - Events: (o) Start, (x) End
@@ -16,9 +16,11 @@ using Mermaid for readability. Each workflow includes a brief narrative.
 - Messages: Dashed arrows across pools
 - Data stores: Implicit per context; no cross‑DB calls
 
+:::
+
 ---
 
-## 1) User Onboarding
+## User Onboarding
 
 Narrative: When a user registers, foundational contexts initialize defaults so the system is immediately usable.
 
@@ -54,7 +56,7 @@ Key outputs:
 
 ---
 
-## 2) Compose a Dashboard (Add/Configure/Reorder Widgets)
+## Compose a Dashboard (Add/Configure/Reorder Widgets)
 
 Narrative: A user personalizes their dashboard by adding a widget instance, configuring it, and reordering layout
 positions.
@@ -89,7 +91,7 @@ Policy guards:
 
 ---
 
-## 3) Manage Tasks and Create Calendar Event from Task
+## Manage Tasks and Create Calendar Event from Task
 
 Narrative: A user updates task state and optionally creates a related calendar event.
 
@@ -120,7 +122,7 @@ Invariants:
 
 ---
 
-## 4) Bookmarks Management and Pin to Speed Dial
+## Bookmarks Management and Pin to Speed Dial
 
 Narrative: A user organizes bookmarks and pins favorites for quick access on the dashboard.
 
@@ -148,7 +150,7 @@ Constraints:
 
 ---
 
-## 5) Weather Data Refresh with ACL
+## Weather Data Refresh with ACL
 
 Narrative: Weather context refreshes data from an external provider using an anti‑corruption layer and notifies widgets.
 
@@ -176,7 +178,7 @@ Policies:
 
 ---
 
-## 6) Switch Profile
+## Switch Profile
 
 Narrative: User switches between personalization profiles; dashboard restores saved layout and widget configurations.
 
@@ -207,7 +209,7 @@ Rules:
 
 ---
 
-## 7) Offline First and Synchronization
+## Offline First and Synchronization
 
 Narrative: User operates offline; when connectivity is restored, changes synchronize to the cloud and conflicts are
 resolved.
@@ -246,7 +248,7 @@ MVP strategy:
 
 ---
 
-## 8) Delete Dashboard and Cleanup
+## Delete Dashboard and Cleanup
 
 Narrative: User deletes a dashboard; widget instances are removed while data in supporting contexts remains intact.
 

@@ -27,7 +27,7 @@ the technical details of the project. In all likelihood, they would just want to
 works (i.e., user guides or manuals). End users could be considered as stakeholders up to some point, but I don't think
 they should be the main focus of this documentation.
 
-:::info
+:::note
 With 'contributors' I'm not just referring to developers, but also other roles like product managers, QA engineers,
 cyber-security experts, etc. that could potentially want to mentor me in the project, finding areas of improvement
 within their expertise, mistakes or bugs I've made, etc.
