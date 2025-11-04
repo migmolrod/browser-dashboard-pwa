@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 8
 ---
 
 # Functional Requirements
@@ -17,7 +17,7 @@ Functional requirements define the specific features and capabilities the system
 The system shall allow new users to create an account with:
 
 - Email address
-- Password (minimum 8 characters)
+- Password (minimum eight characters)
 - Display name
 
 **Acceptance Criteria:**

@@ -1,6 +1,5 @@
 ---
 sidebar_position: 2
-title: Business Vision
 ---
 
 # Business Vision

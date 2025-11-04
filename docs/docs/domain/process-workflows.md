@@ -1,6 +1,5 @@
 ---
 sidebar_position: 6
-title: Processes and workflows
 ---
 
 # Processes and workflows

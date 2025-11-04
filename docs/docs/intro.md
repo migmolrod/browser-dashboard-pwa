@@ -12,6 +12,7 @@ product), and it primarily serves as a way to improve my portfolio with a real-w
 
 ## Prior decisions
 
+:::note Important note
 Since the main goal of this whole project is to learn, practice and serve as an example in my portfolio, I have made
 some decisions in different areas that I think are important to keep in mind. They result in a **completely
 overengineered** solution, and I'm fully aware of it.
@@ -23,6 +24,7 @@ solutions that could be a better fit for a more complex, enterprise-grade system
 
 In conclusion, my idea was not to _vibe-code_ a quick MVP, but to create a complete solution that recruiters could find
 interesting. And a solution that I could even use as a reference for future projects.
+:::
 
 The main decisions I made are:
 

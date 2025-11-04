@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-title: Business & Domain Overview
 ---
 
 # Business & Domain Overview
@@ -15,12 +14,11 @@ grounding to understand the next parts of the documentation (requirements, archi
 ## Audience
 
 This documentation is intended in the first place for the architect, developer and designer of the project. That is me,
-[Miguel Molinero](https://github.com/migmolrod). By documenting the domain, I hope to provide a solid foundation
-for the next parts of the documentation that will help not only me but also potential contributors.
+[Miguel Molinero](https://github.com/migmolrod). Potential future contributors could also benefit from this
+documentation.
 
 It will also be useful for recruiters and talent acquisition teams. The idea is they can get a grasp of my skills and
-experience in several areas of software engineering, like domain modeling, requirement gathering and analysis, software
-architecture, software design and development, amongst others.
+experience in several areas of software engineering. In this case, the domain modeling part.
 
 I don't think any part of the documentation will be useful for anyone else. For example, end users wouldn't care about
 the technical details of the project. In all likelihood, they would just want to know what the product does and how it

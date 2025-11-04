@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-title: Requirements overview
 slug: overview
 ---
 
@@ -26,7 +25,7 @@ ability to transform requirements into a testable specification that can be read
 Finally, I doubt that other stakeholders (such as end users) will find this documentation useful. End users would only
 actually care about the features and functionality of the project, not the technical details behind it.
 
-:::info
+:::note
 With 'contributors' I'm not just referring to developers, but also other roles like product managers, QA engineers,
 cyber-security experts, etc. that could potentially want to mentor me in the project, finding areas of improvement
 within their expertise, mistakes or bugs I've made, etc.
@@ -35,9 +34,13 @@ within their expertise, mistakes or bugs I've made, etc.
 ## Scope
 
 This document covers the requirements for the Browser Dashboard PWA project. This isn't limited to the functional
-requirements but also includes non-functional requirements, and business requirements, as well as mapping the
-functional requirements into user stories. For these, the language of choice is **Gherkin** with **English** as the
-natural language.
+requirements but also includes business requirements, non-functional requirements, and system requirements.
+
+It will also map the functional requirements into user stories. For these, the language of choice is **Gherkin** with
+**English** as the natural language.
+
+The requirements will be divided into categories that match the [bounded contexts](../domain/bounded-contexts) defined
+in the DMD. Or in a general category when they are transversal and not bind to a specific context.
 
 The content is limited to these requirements and their mapping into a complete specification; implementation and
 technical details are addressed in later sections.
@@ -47,7 +50,7 @@ technical details are addressed in later sections.
 The requirements are organized into the following sections:
 
 - **[Business Requirements](business-requirements)**: High-level business objectives
-- **[Functional Requirements](functional-requirements)**: Detailed feature specifications
+- **[Functional Requirements](functional/overview)**: Detailed feature specifications
 - **[Non-Functional Requirements](non-functional-requirements)**: Quality attributes and constraints
 - **[User Stories](user-stories)**: User-centric requirement descriptions
 - **[System Requirements](system-requirements)**: Technical prerequisites and dependencies
@@ -79,6 +82,9 @@ Requirements are numbered using the following format:
 - **BR-XXX**: Business Requirements
 - **FR-XXX**: Functional Requirements
 - **NFR-XXX**: Non-Functional Requirements
+
+In further documents (SAD, CDDs) we should reference these codes whenever we are addressing a requirement (be it
+business, functional, or non-functional).
 
 ### Priority Levels
 

@@ -1,7 +1,5 @@
 ---
 sidebar_position: 7
-title: Domain events
-slug: domain-events
 ---
 
 # Domain events

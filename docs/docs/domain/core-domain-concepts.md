@@ -1,6 +1,5 @@
 ---
 sidebar_position: 3
-title: Core Domain Concepts
 ---
 
 # Core Domain Concepts
@@ -12,7 +11,7 @@ Dashboard PWA. The scope is intentionally constrained to four widgets: bookmarks
 
 ### Core subdomain
 
-Personal Dashboard Orchestration: Composition, layout, and personalization of the user’s homepage. It governs how
+**Personal Dashboard Orchestration**: Composition, layout, and personalization of the user’s homepage. It governs how
 widgets are configured, arranged, and persisted per user and device profile. This is the differentiator: a cohesive,
 streamlined experience rather than the individual widgets themselves.
 
