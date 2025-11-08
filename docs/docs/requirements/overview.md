@@ -55,15 +55,6 @@ The requirements are organized into the following sections:
 - **[User Stories](user-stories)**: User-centric requirement descriptions
 - **[System Requirements](system-requirements)**: Technical prerequisites and dependencies
 
-## Project Modules
-
-The Browser Dashboard consists of four primary modules:
-
-1. **Bookmarks**: Visual bookmark management with links and folders
-2. **Task List**: Simple task management with CRUD operations
-3. **Weather**: Real-time weather information from external APIs
-4. **Calendar**: Event management with task list integration
-
 ## Documentation standards
 
 The documentation will try to follow
@@ -77,11 +68,11 @@ The specification will also use the [MoSCoW Prioritization Method](https://en.wi
 
 ### Requirement Numbering
 
-Requirements are numbered using the following format:
+Requirements are numbered using the following prefixes:
 
-- **BR-XXX**: Business Requirements
-- **FR-XXX**: Functional Requirements
-- **NFR-XXX**: Non-Functional Requirements
+- **BR-**: Business Requirements
+- **FR-**: Functional Requirements
+- **NFR-**: Non-Functional Requirements
 
 In further documents (SAD, CDDs) we should reference these codes whenever we are addressing a requirement (be it
 business, functional, or non-functional).
