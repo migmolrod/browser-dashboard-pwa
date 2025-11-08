@@ -6,6 +6,7 @@ sidebar_position: 2
 
 ## Context Summary
 
+- Code: `DAS`
 - Mission: Orchestrate dashboard composition, layout, and personalization—the system’s core differentiator.
 - Scope: Dashboard lifecycle; widget instance placement/configuration; layout rules; personalization profiles;
   coordination with widget contexts for data.

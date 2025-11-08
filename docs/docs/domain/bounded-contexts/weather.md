@@ -6,6 +6,7 @@ sidebar_position: 6
 
 ## Context Summary
 
+- Code: `WEA`
 - Mission: Fetch and present current weather for configured locations.
 - Scope: Retrieve from third‑party provider; cache snapshots; handle per‑widget location/config; supply data to
   dashboard widget(s).

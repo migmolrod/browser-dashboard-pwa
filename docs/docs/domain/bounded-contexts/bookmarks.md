@@ -6,6 +6,7 @@ sidebar_position: 3
 
 ## Context Summary
 
+- Code: `BKM`
 - Mission: Manage hierarchical bookmarks (folders and links) and quick‑access features like speed dial.
 - Scope: CRUD for folders/bookmarks; nested hierarchy; reordering; pin/favorite management; data supply for dashboard
   widget(s).

@@ -6,6 +6,7 @@ sidebar_position: 8
 
 ## Context Summary
 
+- Code: `PRE`
 - Mission: Manage cross‑cutting user preferences such as theme, locale, timezone, and defaults.
 - Scope: Store/retrieve preferences; provide sensible defaults; notify other contexts on changes.
 - Out of Scope: Widget-specific business settings (owned by respective contexts), advanced policy/entitlement

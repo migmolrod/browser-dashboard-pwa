@@ -6,6 +6,7 @@ sidebar_position: 7
 
 ## Context Summary
 
+- Code: `UID`
 - Mission: Provide foundational user identification, authentication, and session management.
 - Scope: Register/login/logout; user lookup; session lifecycle; minimal authorization hooks for downstream scoping.
 - Out of Scope: OAuth/Social login, MFA, advanced authorization (RBAC/ABAC), account recovery flows.

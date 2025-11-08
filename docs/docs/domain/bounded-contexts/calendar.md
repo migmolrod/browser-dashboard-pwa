@@ -6,6 +6,7 @@ sidebar_position: 5
 
 ## Context Summary
 
+- Code: `CAL`
 - Mission: Manage personal calendar events with basic views and reminders.
 - Scope: CRUD for events; enforce timing rules; reminders; Day/Week/Month query views; accept event creation requests
   from Tasks; supply calendar data to dashboard widget(s).

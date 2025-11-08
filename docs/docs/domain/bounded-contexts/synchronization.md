@@ -6,6 +6,7 @@ sidebar_position: 9
 
 ## Context Summary
 
+- Code: `SYN`
 - Mission: Provide local‑first persistence with reliable background synchronization to optional cloud storage.
 - Scope: Persist data locally; detect and queue changes; sync to/from cloud when available; basic conflict
   detection/resolution; offline readiness.

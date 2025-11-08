@@ -6,6 +6,7 @@ sidebar_position: 4
 
 ## Context Summary
 
+- Code: `TSK`
 - Mission: Provide lightweight personal task management with statuses, priorities, and due dates.
 - Scope: CRUD for tasks; status lifecycle; priorities and due dates; optional lists/sections; supply task data to
   dashboard widget(s); request event creation in Calendar.
