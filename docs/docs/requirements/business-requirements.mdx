@@ -1,0 +1,675 @@
+---
+sidebar_position: 3
+title: Business Requirements
+status: Draft
+lastUpdated: 2025-11-11
+---
+
+
+
+import RequirementMetadata from "../../src/components/RequirementMetadata";
+
+<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+
+# Business Requirements
+
+Business requirements define the high-level goals and benefits that the Browser Dashboard PWA aims to achieve.
+
+## Requirements Summary
+
+| Code   | Title                           | Priority    | Related Context |
+|--------|---------------------------------|-------------|-----------------|
+| BR-001 | Portfolio Enhancement           | Must Have   | All             |
+| BR-002 | User Productivity Enhancement   | Must Have   | All             |
+| BR-003 | Technical Excellence            | Must Have   | All             |
+| BR-004 | Scalability and Maintainability | Should Have | All             |
+| BR-005 | User Value Delivery             | Must Have   | All             |
+| BR-006 | Developer Experience            | Should Have | All             |
+| BR-007 | Cost Efficiency                 | Must Have   | All             |
+| BR-008 | Time to Market                  | Should Have | All             |
+
+---
+
+## Strategic Objectives
+
+### BR-001: Portfolio Enhancement
+
+**Priority:** Must Have
+
+**Description:**
+
+Develop a comprehensive full-stack project that demonstrates modern software engineering capabilities across the entire
+development lifecycle, from requirements to deployment.
+
+**Rationale:**
+
+This project serves as the primary portfolio piece to showcase technical proficiency to potential employers and
+demonstrate the ability to deliver complete, production-ready solutions.
+
+**Success Criteria:**
+
+- Complete monorepo with all four modules (documentation, frontend, backend, infrastructure)
+- Deployed and accessible live demo with public URL
+- Comprehensive documentation following industry standards (ISO/IEC/IEEE)
+- Clean, maintainable, well-tested codebase with >80% coverage
+- Professional presentation suitable for portfolio review
+
+**Related to:**
+
+- Strategic Goal: [Learning & Portfolio Enhancement](../domain/business-vision#domain-and-business-goals)
+- Bounded Context: All (system-wide)
+
+**Dependencies:**
+
+- None (foundational requirement)
+
+**Acceptance Criteria:**
+
+- All modules (documentation, frontend, backend, infrastructure) are complete and integrated
+- Live demo is accessible via public URL with >99% uptime
+- Documentation covers DMD, SRS, SAD, and CDDs
+- Code quality metrics meet industry standards (Lighthouse >90, test coverage >80%)
+- GitHub repository is public and well-organized with clear README
+
+---
+
+### BR-002: User Productivity Enhancement
+
+**Priority:** Must Have
+
+**Description:**
+
+Create a functional browser dashboard that consolidates essential productivity tools (bookmarks, tasks, weather,
+calendar) into a single, accessible interface that genuinely improves user workflow efficiency.
+
+**Rationale:**
+
+The system must solve a real problem to demonstrate understanding of user needs and ability to translate business
+requirements into valuable features. A non-functional portfolio piece has limited demonstration value.
+
+**Success Criteria:**
+
+- Users can access their most-used websites faster than with native browser bookmarks
+- Task management is intuitive and requires minimal learning curve
+- Weather information is current and accurate (via third-party API)
+- Calendar provides clear visibility into upcoming events and deadlines
+- Positive user feedback on usability (>4.0/5.0 if metrics collected)
+
+**Related to:**
+
+- Strategic Goal: [Consolidation & Accessibility](../domain/business-vision#domain-and-business-goals)
+- Bounded Context: BMK (Bookmarks), TSK (Tasks), WTH (Weather), CAL (Calendar)
+
+**Dependencies:**
+
+- BR-001 (requires functional system for portfolio value)
+
+**Acceptance Criteria:**
+
+- All four core widgets (bookmarks, tasks, weather, calendar) are fully functional
+- Average task completion time is measurably faster than using separate tools
+- Weather data updates in real-time from third-party API
+- User interface is intuitive (new users can complete basic tasks without tutorial)
+- Mobile and desktop experiences are equally functional (responsive design)
+
+---
+
+### BR-003: Technical Excellence
+
+**Priority:** Must Have
+
+**Description:**
+
+Implement industry best practices and modern development methodologies including Domain-Driven Design, Ports and
+Adapters architecture, CQRS, TDD/BDD, automated testing, CI/CD, security standards, and performance optimization.
+
+**Rationale:**
+
+Technical excellence demonstrates professional-level engineering capabilities and distinguishes this project from basic
+portfolio pieces. It shows understanding of enterprise-grade software development.
+
+**Success Criteria:**
+
+- Test coverage exceeds 80% (unit, integration, E2E)
+- Lighthouse performance score >90
+- Zero critical security vulnerabilities (verified by automated scanning)
+- All architectural decisions documented (ADRs)
+- Code follows established patterns (DDD, Ports & Adapters, CQRS)
+
+**Related to:**
+
+- Strategic Goal: [Technical Excellence](../domain/business-vision#domain-and-business-goals)
+- Bounded Context: All (system-wide architectural concern)
+
+**Dependencies:**
+
+- BR-001 (part of portfolio demonstration)
+
+**Acceptance Criteria:**
+
+- Domain-Driven Design principles applied (ubiquitous language, bounded contexts, aggregates)
+- Ports and Adapters pattern implemented in all bounded contexts
+- CQRS separation of read/write models where applicable
+- Automated testing suite with >80% coverage (unit + integration + E2E)
+- CI/CD pipeline configured (GitHub Actions or equivalent)
+- Security best practices followed (OWASP Top 10 addressed)
+- Performance targets met (page load \<2s, API response \<200ms p95)
+- Architecture Decision Records (ADRs) document key design choices
+
+---
+
+### BR-004: Scalability and Maintainability
+
+**Priority:** Should Have
+
+**Description:**
+
+Build a system architecture that can accommodate future growth in features, users, and data volume while remaining
+maintainable by future contributors or employers reviewing the codebase.
+
+**Rationale:**
+
+Scalability and maintainability demonstrate forward-thinking design and professional software engineering practices.
+These qualities make the project suitable for real-world scenarios beyond a simple demo.
+
+**Success Criteria:**
+
+- Modular architecture with clear bounded context separation
+- Documented extension points for adding new widgets/features
+- Horizontal scaling capability (stateless services, containerization)
+- Code is readable, well-documented, and follows consistent conventions
+- New developers can understand and contribute within reasonable time
+
+**Related to:**
+
+- Strategic Goal: [Scalability & Maintainability](../domain/business-vision#domain-and-business-goals)
+- Bounded Context: All (architectural concern)
+
+**Dependencies:**
+
+- BR-003 (requires technical excellence foundation)
+
+**Acceptance Criteria:**
+
+- Microservices architecture with clear module boundaries
+- Each bounded context can be deployed independently (if needed)
+- Documentation exists for adding new widgets/features
+- Code follows consistent naming conventions and structure
+- Horizontal scaling tested with Docker Compose (multiple instances)
+- No tight coupling between bounded contexts (communication via events/APIs)
+
+---
+
+### BR-005: User Value Delivery
+
+**Priority:** Must Have
+
+**Description:**
+
+Deliver tangible value to end users through the core features of the dashboard, ensuring the application is not just
+technically impressive but genuinely useful.
+
+**Rationale:**
+
+A project that solves real problems demonstrates product thinking and user-centric design, not just technical ability.
+This is important for demonstrating well-rounded software engineering skills.
+
+**Success Criteria:**
+
+- Users report time savings compared to existing workflows
+- Core features work reliably without frequent errors
+- User interface is intuitive and requires minimal onboarding
+- Offline capabilities work as expected (PWA features)
+- Cross-platform experience is consistent
+
+**Related to:**
+
+- Strategic Goal: [Personalization & Consolidation](../domain/business-vision#domain-and-business-goals)
+- Bounded Context: All user-facing contexts
+
+**Dependencies:**
+
+- BR-002 (productivity enhancement)
+
+**Acceptance Criteria:**
+
+- All value propositions for end users are delivered (see table below)
+- PWA features work correctly (offline mode, installability)
+- User interface is accessible (WCAG 2.1 Level AA)
+- Mobile-first responsive design implemented
+- No critical bugs in core workflows
+
+#### Value Propositions for End Users
+
+| Benefit                   | Description                                                 | Success Measure                             |
+|---------------------------|-------------------------------------------------------------|---------------------------------------------|
+| **Centralized Dashboard** | Single location for bookmarks, tasks, weather, and calendar | All widgets accessible from one page        |
+| **Fast and Lightweight**  | Quick loading times, minimal resource usage                 | Page load \<2s, Lighthouse score >90        |
+| **Customizable**          | Personalize appearance and module configuration             | User preferences persist across sessions    |
+| **Cross-Platform**        | Works on any device with a modern browser                   | Tested on mobile, tablet, desktop           |
+| **Offline Capable**       | PWA features enable offline functionality                   | Service worker caches essential content     |
+| **No Installation**       | Browser-based, no downloads required                        | Accessible via URL, optionally installable  |
+
+---
+
+### BR-006: Developer Experience
+
+**Priority:** Should Have
+
+**Description:**
+
+Provide clear documentation, setup instructions, and development environment configuration that enables other
+developers (or employers) to run, understand, and extend the project easily.
+
+**Rationale:**
+
+Good developer experience demonstrates professional collaboration skills and increases the likelihood of contributions,
+mentorship, or positive portfolio evaluation.
+
+**Success Criteria:**
+
+- New developers can set up local environment in \<15 minutes
+- Documentation clearly explains architecture and design decisions
+- Code is self-documenting with meaningful names and comments where needed
+- Development workflow is documented (branching, testing, deployment)
+
+**Related to:**
+
+- Strategic Goal: [Open Learning Resource](../domain/business-vision#proposition-of-value)
+- Bounded Context: All (documentation concern)
+
+**Dependencies:**
+
+- BR-003 (technical excellence provides foundation)
+- BR-004 (maintainability supports developer experience)
+
+**Acceptance Criteria:**
+
+- Docker-based development environment with one-command setup
+- README includes clear setup instructions and prerequisites
+- Architecture documentation (SAD) clearly explains design decisions
+- Code follows consistent style guide (enforced by linters)
+- Development environment includes hot-reload and debugging tools
+- Contribution guidelines documented (if accepting contributions)
+
+#### Value Propositions for Portfolio Viewers
+
+| Benefit                    | Description                                     | Success Measure                                     |
+|----------------------------|-------------------------------------------------|-----------------------------------------------------|
+| **Full-Stack Proficiency** | Complete system from frontend to infrastructure | All layers implemented and integrated               |
+| **Modern Tech Stack**      | Current industry-standard technologies          | Angular, Spring Boot, Docker, Terraform, PostgreSQL |
+| **Real-World Application** | Practical, usable product (not just a demo)     | Live deployment with actual users (self + testers)  |
+| **Best Practices**         | Professional development methodologies          | DDD, TDD/BDD, CI/CD, documentation standards        |
+| **Documentation**          | Clear, thorough technical documentation         | DMD, SRS, SAD, CDDs all complete                    |
+| **Live Demo**              | Deployed, accessible application                | Public URL with >99% uptime                         |
+
+---
+
+### BR-007: Cost Efficiency
+
+**Priority:** Must Have
+
+**Description:**
+
+Maintain zero to minimal infrastructure and operational costs while delivering a production-quality system,
+demonstrating cost-conscious engineering and resourcefulness.
+
+**Rationale:**
+
+As a personal portfolio project with no revenue, cost efficiency is critical for sustainability. This also demonstrates
+ability to work within budget constraints.
+
+**Success Criteria:**
+
+- Total monthly infrastructure costs \<$10 USD (ideally $0)
+- All services use free tiers or open-source alternatives
+- No vendor lock-in to expensive platforms
+- Architecture remains cost-effective if scaled moderately
+
+**Related to:**
+
+- Business Constraint: [BC-001: Budget](business-requirements.mdx#bc-001-budget)
+- Bounded Context: All (operational concern)
+
+**Dependencies:**
+
+- None (foundational constraint)
+
+**Acceptance Criteria:**
+
+- Infrastructure deployed on free-tier services (or self-hosted)
+- No paid APIs or services required for core functionality
+- Weather API uses free tier with sufficient quota
+- Database uses free tier (e.g., Railway, Supabase, or local PostgreSQL)
+- Cloud deployment uses free tier (e.g., Railway, Render, or AWS free tier)
+- Monitoring and logging use free-tier tools
+
+---
+
+### BR-008: Time to Market
+
+**Priority:** Should Have
+
+**Description:**
+
+Deliver a functional MVP within a reasonable timeframe while maintaining quality standards, demonstrating ability to
+prioritize and execute efficiently.
+
+**Rationale:**
+
+While this is a portfolio project without strict deadlines, timely delivery demonstrates project management skills and
+ability to ship. Prolonged development reduces motivation and portfolio relevance.
+
+**Success Criteria:**
+
+- MVP with core features delivered within 3-6 months
+- Iterative development approach with regular milestones
+- Focus on completeness over perfection for initial release
+- Clear prioritization of Must Have vs. Should/Could Have features
+
+**Related to:**
+
+- Business Constraint: [BC-002: Timeline](business-requirements.mdx#bc-002-timeline)
+- Bounded Context: All (project management concern)
+
+**Dependencies:**
+
+- BR-007 (cost efficiency ensures sustainability)
+
+**Acceptance Criteria:**
+
+- MVP scope clearly defined (Must Have features only)
+- Development follows iterative approach (weekly/bi-weekly progress)
+- Each bounded context delivered incrementally
+- MVP deployed and accessible within target timeframe
+- Should Have and Could Have features deferred to post-MVP
+
+---
+
+## Stakeholders
+
+### Primary Stakeholders
+
+#### 1. Project Owner/Developer (Miguel Molinero Rodríguez)
+
+- **Interest:** Portfolio quality, skill demonstration, career advancement
+- **Influence:** High (sole decision maker)
+- **Engagement:** Daily (active development)
+- **Needs:** Technical growth, portfolio enhancement, job opportunities
+
+#### 2. Portfolio Reviewers (Recruiters, Hiring Managers, Technical Interviewers)
+
+- **Interest:** Code quality, architecture, documentation, technical proficiency
+- **Influence:** High (hiring decisions)
+- **Engagement:** One-time review (30-60 minutes typically)
+- **Needs:** Evidence of skills, clear documentation, live demo, understandable codebase
+
+#### 3. End Users (Self + Potential Test Users)
+
+- **Interest:** Product functionality, user experience, usefulness
+- **Influence:** Medium (through feedback and usage patterns)
+- **Engagement:** Regular (daily usage if adopted)
+- **Needs:** Functional dashboard, ease of use, reliability, value delivery
+
+### Secondary Stakeholders
+
+#### 4. Open Source Community (Potential Contributors)
+
+- **Interest:** Code contributions, learning, collaboration
+- **Influence:** Low (currently not prioritized)
+- **Engagement:** Occasional (if repository gains visibility)
+- **Needs:** Clear contribution guidelines, good documentation, welcoming environment
+
+#### 5. Mentors (Potential Advisors from Community)
+
+- **Interest:** Providing guidance, teaching, code review
+- **Influence:** Medium (valuable feedback)
+- **Engagement:** Occasional (if connections are made)
+- **Needs:** Access to documentation, clear questions, receptiveness to feedback
+
+---
+
+## Business Constraints
+
+### BC-001: Budget
+
+**Constraint:** Zero to minimal budget for infrastructure and services
+
+**Impact:**
+
+- Use free-tier cloud services where possible (Railway, Render, Vercel, etc.)
+- Optimize for cost-effective deployment architecture
+- Consider open-source solutions as first choice
+- Avoid paid APIs or services; use free tiers with sufficient quotas
+- Self-hosting may be necessary for some components
+
+**Mitigation:**
+
+- Research free-tier offerings thoroughly before selecting services
+- Design architecture to be cloud-agnostic (avoid vendor lock-in)
+- Use Docker for local development to minimize cloud costs during development
+- Monitor usage to stay within free-tier limits
+
+---
+
+### BC-002: Timeline
+
+**Constraint:** Portfolio project with flexible but reasonable timeline (target: 3-6 months for MVP)
+
+**Impact:**
+
+- Prioritize MVP features rigorously (Must Have only initially)
+- Iterative development approach with regular milestones
+- Focus on completeness and quality over extensive feature set
+- Risk of scope creep must be managed actively
+- Balance perfectionism with pragmatic delivery
+
+**Mitigation:**
+
+- Use MoSCoW prioritization consistently
+- Set clear milestone dates and track progress
+- Defer Should Have and Could Have features to post-MVP
+- Maintain development momentum through regular commits
+- Accept "good enough" for non-critical features initially
+
+---
+
+### BC-003: Resources
+
+**Constraint:** Single developer (solo project)
+
+**Impact:**
+
+- Scope management is critical (cannot parallelize work)
+- Clear prioritization needed to avoid burnout
+- Automation essential for repetitive tasks (CI/CD, testing, deployment)
+- Limited time for extensive research; rely on known technologies
+- Work-life balance considerations (this is a side project)
+
+**Mitigation:**
+
+- Leverage automation heavily (CI/CD, testing, linting)
+- Use generative AI for documentation assistance and boilerplate code
+- Focus on technologies already known well (Angular, Spring Boot)
+- Set realistic weekly goals (not daily) to accommodate work schedule
+- Build in buffer time for unexpected challenges
+
+---
+
+### BC-004: Technology Stack
+
+**Constraint:** Use modern, portfolio-relevant technologies that demonstrate current industry demand
+
+**Impact:**
+
+Technologies selected must align with:
+
+- **Frontend:** Angular (TypeScript, reactive patterns, component architecture)
+- **Backend:** Spring Boot (Java, REST APIs, microservices)
+- **Database:** PostgreSQL (relational data, ACID compliance)
+- **Containerization:** Docker and Docker Compose
+- **Infrastructure:** Terraform (Infrastructure as Code, cloud-agnostic)
+- **Testing:** JUnit, Mockito, Jest, Playwright (comprehensive test strategy)
+- **CI/CD:** GitHub Actions (automated pipelines)
+- **Security:** OWASP best practices
+- **Documentation:** Docusaurus (professional documentation site)
+- **Performance:** Lighthouse optimization
+
+**Mitigation:**
+
+- Stick to stable, well-documented versions of each technology
+- Avoid bleeding-edge versions that may have stability issues
+- Ensure all technologies have strong community support
+- Verify free-tier availability for all required services
+
+---
+
+## Success Metrics
+
+### Technical Metrics
+
+| Metric                       | Target        | Measurement Method                   | Priority    |
+|------------------------------|---------------|--------------------------------------|-------------|
+| **Page Load Time**           | < 2 seconds   | Lighthouse, Web Vitals               | Must Have   |
+| **Lighthouse Score**         | > 90          | Chrome DevTools                      | Must Have   |
+| **Test Coverage**            | > 80%         | Jest, JaCoCo, Coverage Reports       | Must Have   |
+| **API Response Time**        | < 200ms (p95) | APM Tools, logging                   | Must Have   |
+| **Uptime**                   | > 99%         | Monitoring Tools (UptimeRobot, etc.) | Should Have |
+| **Security Vulnerabilities** | Zero Critical | Dependabot, Snyk, OWASP ZAP          | Must Have   |
+| **Build Time**               | < 5 minutes   | CI/CD pipeline metrics               | Should Have |
+| **Docker Image Size**        | < 500MB       | Docker image inspection              | Should Have |
+
+### Portfolio Quality Metrics
+
+| Metric                         | Target                     | Measurement Method      | Priority   |
+|--------------------------------|----------------------------|-------------------------|------------|
+| **Documentation Completeness** | 100% of planned docs       | Checklist verification  | Must Have  |
+| **Code Quality Score**         | No critical issues         | SonarQube/SonarCloud    | Must Have  |
+| **Architecture Documentation** | All views documented       | SAD completeness review | Must Have  |
+| **Live Demo Accessibility**    | 100% uptime during reviews | Monitoring              | Must Have  |
+| **GitHub Stars/Forks**         | > 10 (optional)            | GitHub metrics          | Could Have |
+
+### User Experience Metrics
+
+:::note
+These metrics are aspirational for a portfolio project. Actual measurement may not be feasible without real user base,
+but the design should target these values.
+:::
+
+| Metric                   | Target            | Measurement Method            | Priority    |
+|--------------------------|-------------------|-------------------------------|-------------|
+| **User Satisfaction**    | > 4.0/5.0         | User Surveys (if collected)   | Could Have  |
+| **Task Completion Rate** | > 95%             | Analytics (if implemented)    | Should Have |
+| **Error Rate**           | < 1%              | Error Tracking (Sentry, etc.) | Should Have |
+| **Mobile Usability**     | Fully Responsive  | Device Testing                | Must Have   |
+| **Accessibility Score**  | WCAG 2.1 Level AA | Axe, Lighthouse               | Must Have   |
+
+---
+
+## Assumptions
+
+### Technical Assumptions
+
+1. **Browser Compatibility:** Users have modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+2. **Internet Connectivity:** Users have stable internet for initial load and API features; offline mode is
+supplementary
+3. **Weather API Availability:** Third-party weather API will remain available and free-tier sufficient (or affordable)
+4. **Cloud Free Tiers:** Free-tier cloud services will provide adequate resources for demo purposes
+5. **Browser APIs:** Service Workers, IndexedDB, Local Storage APIs will remain stable and supported
+
+### User Assumptions
+
+6. **Technical Comfort:** Users are comfortable with browser-based applications and PWAs
+7. **Device Capabilities:** Users have devices capable of running modern web applications (not legacy hardware)
+8. **Language:** English is acceptable as the primary (and only) language for MVP
+9. **Data Privacy:** Users trust that their data is stored securely and not shared with third parties
+
+### Project Assumptions
+
+10. **Development Environment:** Docker and development tools can run on developer's machine
+11. **Open Source Libraries:** Required open-source libraries will remain available and maintained
+12. **Documentation Tools:** Docusaurus will remain suitable and free for documentation hosting
+13. **Contributor Interest:** Basic technical documentation will be sufficient for potential contributors/mentors
+14. **Time Availability:** Developer can dedicate 10-15 hours per week to the project
+
+---
+
+## Dependencies
+
+### External Dependencies
+
+1. **Weather API Provider**
+  - Type: External service dependency
+  - Impact: High (critical for weather widget)
+  - Mitigation: Use free-tier API with generous limits; have backup API provider identified
+  - Examples: OpenWeatherMap, WeatherAPI.com, Tomorrow.io
+
+2. **Cloud Infrastructure Provider**
+  - Type: Hosting and deployment platform
+  - Impact: High (required for live demo)
+  - Mitigation: Use cloud-agnostic architecture; Terraform for portability
+  - Examples: Railway, Render, Vercel, AWS Free Tier
+
+3. **Third-Party Libraries**
+  - Type: Frameworks, UI component libraries, utilities
+  - Impact: Medium (affects development speed and capabilities)
+  - Mitigation: Choose stable, well-maintained libraries; avoid deprecated packages
+  - Examples: Angular, Spring Boot, Angular Material, etc.
+
+### Browser API Dependencies
+
+4. **Service Workers**
+  - Type: Browser API for PWA features
+  - Impact: High (required for offline capability)
+  - Mitigation: Graceful degradation if not supported; polyfills where possible
+
+5. **IndexedDB / Local Storage**
+  - Type: Browser storage APIs
+  - Impact: Medium (required for offline data)
+  - Mitigation: Fall back to session-only if not available
+
+### Internal Dependencies
+
+6. **Documentation must be complete before code implementation**
+ - Ensures requirements and architecture are clear before development
+ - Supports TDD/BDD approach
+
+7. **Infrastructure setup required before deployment**
+ - Terraform configurations must be ready
+ - CI/CD pipelines must be configured
+
+---
+
+## Traceability to Domain Model
+
+| Business Requirement | Related Strategic Goal           | Related Bounded Contexts |
+|----------------------|----------------------------------|--------------------------|
+| BR-001               | Learning & Portfolio Enhancement | All                      |
+| BR-002               | Consolidation, Personalization   | BMK, TSK, WTH, CAL       |
+| BR-003               | Technical Excellence             | All                      |
+| BR-004               | Scalability & Maintainability    | All                      |
+| BR-005               | Personalization, Consolidation   | BMK, TSK, WTH, CAL       |
+| BR-006               | Open Learning Resource           | All                      |
+| BR-007               | Cost Efficiency (implicit)       | All                      |
+| BR-008               | Pragmatic Development            | All                      |
+
+---
+
+## Future Considerations
+
+### Post-MVP Enhancements (Won't Have for MVP)
+
+The following are explicitly **out of scope** for the initial release but may be considered for future iterations:
+
+- **Multi-user support:** MVP targets single-user personal dashboard
+- **Real-time collaboration:** No shared dashboards or collaborative features
+- **Mobile native apps:** PWA only; no iOS/Android native apps
+- **Advanced analytics:** Basic metrics only; no comprehensive analytics dashboard
+- **Internationalization (i18n):** English only for MVP; infrastructure ready for future i18n
+- **Integration with third-party services:** No Google Calendar, Outlook, Todoist integrations initially
+- **Themes beyond light/dark:** Basic theming only; no extensive customization
+- **Widget marketplace:** No extensibility for third-party widgets
+- **Social features:** No sharing, following, or social networking capabilities
+- **Monetization:** No paid features, subscriptions, or advertisements
+
+These features may be added in future releases based on user feedback and portfolio goals.
