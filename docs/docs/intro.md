@@ -86,26 +86,26 @@ This documentation will comprise the following documents:
 
 ### Domain Model Document (DMD)
 
-**Purpose**: Establish the **ubiquitous language**, **bounded contexts**, and **business understanding** — the
+**Purpose:** Establish the **ubiquitous language**, **bounded contexts**, and **business understanding** — the
 conceptual foundation of the system.
 
-**Contents**:
+**Contents:**
 
-- **Vision & Goals**: Why the system exists, key outcomes
-- **Ubiquitous Language**: Shared vocabulary of domain terms
-- **Bounded Contexts & Context Map**: Each context, their interfaces, integrations
-- **Core Domains & Subdomains**: What parts are strategic vs. supporting
-- **Business Processes**: BPMN or activity diagrams describing high-level workflows
+- **Vision & Goals:** Why the system exists, key outcomes
+- **Ubiquitous Language:** Shared vocabulary of domain terms
+- **Bounded Contexts & Context Map:** Each context, their interfaces, integrations
+- **Core Domains & Subdomains:** What parts are strategic vs. supporting
+- **Business Processes:** BPMN or activity diagrams describing high-level workflows
 
-**Corresponds to**: DDD Strategic Design phase\
-**Feeds into**: SRS (requirements), SAD (architecture) and CDD (detailed component/module designs)\
-**Standard**: _Domain-Driven Design_ (Evans, 2013)
+**Corresponds to:** DDD Strategic Design phase\
+**Feeds into:** SRS (requirements), SAD (architecture) and CDD (detailed component/module designs)\
+**Standard:** _Domain-Driven Design_ (Evans, 2013)
 
 ### Software Requirements Specification (SRS)
 
-**Purpose**: Define **what the system should do** — not how.
+**Purpose:** Define **what the system should do** — not how.
 
-**Contents**:
+**Contents:**
 
 - Scope & Overview
 - Functional Requirements
@@ -116,53 +116,53 @@ conceptual foundation of the system.
 - Acceptance Criteria
 - System Constraints & Assumptions
 
-**Corresponds to**: Requirements Engineering phase\
-**Feeds into**: SAD for architectural decisions\
-**Standard**: ISO/IEC/IEEE 29148:2011
+**Corresponds to:** Requirements Engineering phase\
+**Feeds into:** SAD for architectural decisions\
+**Standard:** ISO/IEC/IEEE 29148:2011
 
 ### Software Architecture Document (SAD)
 
-**Purpose**: Describe the **high-level system structure** and how the system meets requirements.
+**Purpose:** Describe the **high-level system structure** and how the system meets requirements.
 
-**Contents**: (mapped to C4 + 4+1)
+**Contents:** (mapped to C4 + 4+1)
 
 - **Introduction & Design Goals**
-    - **Guiding principles**: DDD, Ports & Adapters, CQRS, TDD, etc.
+    - **Guiding principles:** DDD, Ports & Adapters, CQRS, TDD, etc.
 - **Architectural Views**
-    - **Logical View**: C4 Level 1 (Context).
-    - **Development View**: repo layout, tech stack, CI/CD overview.
-    - **Process View**: runtime behavior, message flows, CQRS, async handling.
-    - **Physical View**: deployment topology, infrastructure.
-    - **Scenarios (+1)**: trace key user flows through architecture.
-- **C4 Level 2**: Container Diagram
-    - **Components**: Services, databases, APIs, frontends
+    - **Logical View:** C4 Level 1 (Context).
+    - **Development View:** repo layout, tech stack, CI/CD overview.
+    - **Process View:** runtime behavior, message flows, CQRS, async handling.
+    - **Physical View:** deployment topology, infrastructure.
+    - **Scenarios (+1):** trace key user flows through architecture.
+- **C4 Level 2:** Container Diagram
+    - **Components:** Services, databases, APIs, frontends
 - **Cross-cutting Concerns**
     - Security, observability, error handling, configuration
 - **Architecture Decision Records** (ADRs)
     - Key trade-offs and justifications
 
-**Corresponds to**: architecture design phase (C4 L1/L2)\
-**Feeds into**: CDD (detailed component/module designs)\
-**Standard**: ISO/IEC/IEEE 42010:2011
+**Corresponds to:** architecture design phase (C4 L1/L2)\
+**Feeds into:** CDD (detailed component/module designs)\
+**Standard:** ISO/IEC/IEEE 42010:2011
 
 ### Component Design Documents (CDD)
 
-**Purpose**: Describe **module- or bounded-context-level design** — the “inside” of each architectural building block.
+**Purpose:** Describe **module- or bounded-context-level design** — the “inside” of each architectural building block.
 
 Each CDD corresponds to one **bounded context** or **major subsystem**.
 
-**Contents**: (C4 Level 3 + 4):
+**Contents:** (C4 Level 3 + 4):
 
-- **Overview**: Purpose of the component / bounded context
-- **Responsibilities & Interfaces**: Inputs, outputs, and adapters
-- **Internal Architecture**: Ports & Adapters diagram, layers (domain, application, infrastructure)
-- **Domain Model**: Entities, Value Objects, Aggregates, Repositories
-- **Behavioral Design**: Sequence diagrams, workflows, event flows
+- **Overview:** Purpose of the component / bounded context
+- **Responsibilities & Interfaces:** Inputs, outputs, and adapters
+- **Internal Architecture:** Ports & Adapters diagram, layers (domain, application, infrastructure)
+- **Domain Model:** Entities, Value Objects, Aggregates, Repositories
+- **Behavioral Design:** Sequence diagrams, workflows, event flows
 - **Data Models/Schemas**
 - **Error Handling, Transactions, and Invariants**
-- **Testing Strategy**: TDD/BDD approach, coverage, mocks, integration testing
-- **Code Mapping**: Source structure, naming conventions, key files
+- **Testing Strategy:** TDD/BDD approach, coverage, mocks, integration testing
+- **Code Mapping:** Source structure, naming conventions, key files
 
-**Corresponds to**: Detailed design level (C4 L3/L4)\
-**Feeds into**: Implementation and test specs
-**Standard**: ISO/IEC/IEEE 42010:2011
+**Corresponds to:** Detailed design level (C4 L3/L4)\
+**Feeds into:** Implementation and test specs
+**Standard:** ISO/IEC/IEEE 42010:2011

@@ -49,11 +49,12 @@ technical details are addressed in later sections.
 
 The requirements are organized into the following sections:
 
-- **[Business Requirements](business-requirements)**: High-level business objectives
-- **[Functional Requirements](functional/overview)**: Detailed feature specifications
-- **[Non-Functional Requirements](non-functional-requirements)**: Quality attributes and constraints
-- **[User Stories](user-stories)**: User-centric requirement descriptions
-- **[System Requirements](system-requirements)**: Technical prerequisites and dependencies
+- **[Templates](templates):** Templates to be used for requirements, to ensure consistency
+- **[Business Requirements](business-requirements.mdx):** High-level business objectives
+- **[Functional Requirements](functional/overview):** Detailed feature specifications
+- **[Non-Functional Requirements](non-functional-requirements):** Quality attributes and constraints
+- **[User Stories](user-stories):** User-centric requirement descriptions
+- **[System Requirements](system-requirements):** Technical prerequisites and dependencies
 
 ## Documentation standards
 
@@ -62,7 +63,8 @@ the [ISO/IEC/IEEE 29148:2011 standard](https://raw.githubusercontent.com/Orthant
 as possible. Even though this standard has been withdrawn in favor of the 2018 standard, it is still a good reference
 and offers relevant guidelines.
 
-The specification will also use the [MoSCoW Prioritization Method](https://en.wikipedia.org/wiki/MoSCoW_method).
+The specification will also use the [MoSCoW Prioritization Method](https://en.wikipedia.org/wiki/MoSCoW_method) as a
+method to prioritize features.
 
 ## Documentation conventions
 
@@ -70,16 +72,16 @@ The specification will also use the [MoSCoW Prioritization Method](https://en.wi
 
 Requirements are numbered using the following prefixes:
 
-- **BR-**: Business Requirements
-- **FR-**: Functional Requirements
-- **NFR-**: Non-Functional Requirements
+- **BR-:** Business Requirements
+- **FR-:** Functional Requirements
+- **NFR-:** Non-Functional Requirements
 
 In further documents (SAD, CDDs) we should reference these codes whenever we are addressing a requirement (be it
 business, functional, or non-functional).
 
 ### Priority Levels
 
-- **Must Have**: Critical for MVP, the project fails without it
-- **Should Have**: Important but not critical, can be workarounds
-- **Could Have**: Desirable but not necessary, nice to have
-- **Won't Have**: Explicitly out of scope for this release
+- **Must Have:** Critical for MVP, the project fails without it
+- **Should Have:** Important but not critical, can be workarounds
+- **Could Have:** Desirable but not necessary, nice to have
+- **Won't Have:** Explicitly out of scope for this release
