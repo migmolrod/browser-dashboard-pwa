@@ -31,36 +31,36 @@ sidebar_position: 9
 - Policies/Rules: background/interval sync; retry with exponential backoff; last‑write‑wins (MVP) with pluggable
   strategies later
 
-**Key Aggregates**:
+**Key Aggregates:**
 
 - `SyncState` (root): Tracks synchronization status per entity
 
-**Published Events**:
+**Published Events:**
 
 - `DataSynchronized`
 - `SyncConflictDetected`
 - `SyncFailed`
 
-**Consumed Events**:
+**Consumed Events:**
 
 - All domain events from other contexts (to trigger sync)
 
-**Exposed APIs**:
+**Exposed APIs:**
 
 - Commands: `TriggerSync`, `ResolveConflict`
 - Queries: `GetSyncStatus`
 
-**Dependencies**:
+**Dependencies:**
 
 - All contexts (to sync their data)
 - External cloud storage (if configured)
 
-**Boundaries**:
+**Boundaries:**
 
-- **In scope**: Local persistence, sync orchestration, conflict detection
-- **Out of scope**: Complex CRDT-based resolution (simple last-write-wins in MVP)
+- **In scope:** Local persistence, sync orchestration, conflict detection
+- **Out of scope:** Complex CRDT-based resolution (simple last-write-wins in MVP)
 
-**Invariants**:
+**Invariants:**
 
 - Sync state must reference a valid entity
 - Consistency: eventual across local/cloud; strong consistency is not guaranteed

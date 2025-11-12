@@ -120,10 +120,10 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 :::tip
 This ubiquitous language should be reflected in:
 
-- **Code**: Class names, method names, variable names
-- **Documentation**: All requirements, architecture, and design documents
-- **Conversations**: Discussions between developers, stakeholders, and domain experts
-- **Tests**: BDD scenario descriptions and test names
+- **Code:** Class names, method names, variable names
+- **Documentation:** All requirements, architecture, and design documents
+- **Conversations:** Discussions between developers, stakeholders, and domain experts
+- **Tests:** BDD scenario descriptions and test names
   :::
 
 :::warning

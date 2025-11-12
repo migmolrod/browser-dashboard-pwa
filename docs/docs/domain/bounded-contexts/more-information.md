@@ -88,18 +88,18 @@ require coordination between both contexts.
 
 ### Potential Context Splits
 
-- **Dashboard Management**: May split into "Dashboard Composition" and "Layout Engine" if complexity grows
-- **Tasks**: Could evolve into a more comprehensive "Project Management" context
+- **Dashboard Management:** May split into "Dashboard Composition" and "Layout Engine" if complexity grows
+- **Tasks:** Could evolve into a more comprehensive "Project Management" context
 
 ### Potential Context Merges
 
-- **User Identity + Preferences**: Could merge if preferences remain simple
+- **User Identity + Preferences:** Could merge if preferences remain simple
 
 ### Future External Integrations
 
-- **Calendar**: Third-party calendars (Google Calendar, Outlook)
-- **Tasks**: Third-party task management tools (Notion, Todoist, Evernote)
-- **Identity**: OAuth providers (Google, Meta, Apple, Microsoft)
+- **Calendar:** Third-party calendars (Google Calendar, Outlook)
+- **Tasks:** Third-party task management tools (Notion, Todoist, Evernote)
+- **Identity:** OAuth providers (Google, Meta, Apple, Microsoft)
 
 ## Summary
 
