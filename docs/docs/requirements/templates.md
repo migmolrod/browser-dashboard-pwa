@@ -4,9 +4,11 @@ sidebar_position: 2
 
 # Templates
 
-This is a set of templates for each requirement type. There is 
+This is a set of templates for each requirement type.
 
 ## For Business Requirements
+
+### Requirement template
 
 ```markdown
 ### BR-XXX: [Requirement Title]
@@ -40,6 +42,71 @@ This is a set of templates for each requirement type. There is
 ```
 
 ## For Functional Requirements (FR-XXX-000)
+
+### Document Organization Structure
+
+Functional requirements documents (like `dashboard-management.mdx`) should follow this structure:
+
+```markdown
+# [Bounded Context Name] - Functional Requirements
+
+## Overview
+
+[Brief introduction to this bounded context and its purpose]
+
+**Bounded Context Code:** XXX
+**Related DMD Section:** [link to DMD bounded context]
+
+---
+
+## Features Summary
+
+| Feature Code | Feature Name | Priority    | Status |
+|--------------|--------------|-------------|--------|
+| FR-XXX-001   | [Name]       | Must Have   | Draft  |
+| FR-XXX-002   | [Name]       | Should Have | Draft  |
+| ...          | ...          | ...         | ...    |
+
+---
+
+## FR-XXX-001: [Feature Name]
+
+[Full feature template as shown above]
+
+---
+
+## FR-XXX-002: [Feature Name]
+
+[Full feature template as shown above]
+
+---
+
+## Cross-Feature Considerations
+
+### Interactions Between Features
+
+[How features in this context interact]
+
+### Shared Business Rules
+
+[Business rules that apply across multiple features]
+
+### Data Consistency Requirements
+
+[Any specific consistency needs]
+
+---
+
+## Traceability Matrix
+
+| Feature    | Business Req | Domain Events   | User Stories   |
+|------------|--------------|-----------------|----------------|
+| FR-XXX-001 | BR-005       | BookmarkCreated | US-XXX-001-001 |
+| ...        | ...          | ...             | ...            |
+
+```
+
+### Requirement template
 
 ```markdown
 ## [Feature Name]
@@ -178,69 +245,6 @@ This is a set of templates for each requirement type. There is
 
 ---
 
-## Document Organization Structure
-
-For your functional requirements documents (like `dashboard-management.md`), I recommend this structure:
-
-```markdown
-# [Bounded Context Name] - Functional Requirements
-
-## Overview
-
-[Brief introduction to this bounded context and its purpose]
-
-**Bounded Context Code:** XXX
-**Related DMD Section:** [link to DMD bounded context]
-
----
-
-## Features Summary
-
-| Feature Code | Feature Name | Priority    | Status |
-|--------------|--------------|-------------|--------|
-| FR-XXX-001   | [Name]       | Must Have   | Draft  |
-| FR-XXX-002   | [Name]       | Should Have | Draft  |
-| ...          | ...          | ...         | ...    |
-
----
-
-## FR-XXX-001: [Feature Name]
-
-[Full feature template as shown above]
-
----
-
-## FR-XXX-002: [Feature Name]
-
-[Full feature template as shown above]
-
----
-
-## Cross-Feature Considerations
-
-### Interactions Between Features
-
-[How features in this context interact]
-
-### Shared Business Rules
-
-[Business rules that apply across multiple features]
-
-### Data Consistency Requirements
-
-[Any specific consistency needs]
-
----
-
-## Traceability Matrix
-
-| Feature    | Business Req | Domain Events   | User Stories   |
-|------------|--------------|-----------------|----------------|
-| FR-XXX-001 | BR-005       | BookmarkCreated | US-XXX-001-001 |
-| ...        | ...          | ...             | ...            |
-
-```
-
 ---
 
 ## Additional Recommendations
@@ -268,7 +272,7 @@ Consider adding a status field to track requirement maturity:
 
 For your BDD scenarios:
 
-- Use **Given-When-Then** format consistently
+- Use **Given-When-Then** consistently
 - Each scenario should be independent
 - Use **And** for multiple conditions of the same type
 - Use **But** for negative conditions
