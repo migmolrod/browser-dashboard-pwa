@@ -42,4 +42,5 @@ const sidebars: SidebarsConfig = {
 	],
 };
 
+// noinspection JSUnusedGlobalSymbols
 export default sidebars;
