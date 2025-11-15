@@ -7,9 +7,12 @@ function getBadgeClassFromStatus(status: string): string {
 export default function RequirementMetadata({status, lastUpdated}) {
 	return (
 		<div className={styles.reqMetadata}>
-			<span className={getBadgeClassFromStatus(status)}>
-				{status || "-"}
-			</span>
+			<div>
+				<strong>Status: </strong>
+				<span className={getBadgeClassFromStatus(status)}>
+					{status || "-"}
+				</span>
+			</div>
 			{lastUpdated && <span><strong>Last updated</strong>: {lastUpdated.toLocaleDateString()}</span>}
 			{/*{reviewers?.length > 0 && <span>Reviewers: {reviewers.join(", ")}</span>}*/}
 		</div>
