@@ -79,6 +79,17 @@ Requirements are numbered using the following prefixes:
 In further documents (SAD, CDDs) we should reference these codes whenever we are addressing a requirement (be it
 business, functional, or non-functional).
 
+Additionally, we may expand the naming for certain types of requirements.
+
+### Document status
+
+Each piece of the functional requirements documentation will be in one of these statuses:
+
+- **Draft:** Initial, provisional version of the document, to be reviewed by stakeholders.
+- **Ready:** Reviewed and approved by stakeholders, ready to be implemented.
+- **Done:** Implemented and verified (tests pass).
+- **Released:** In production.
+
 ### Priority Levels
 
 - **Must Have:** Critical for MVP, the project fails without it
