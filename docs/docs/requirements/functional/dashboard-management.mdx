@@ -1164,7 +1164,7 @@ And the dashboard loads successfully
 
 ---
 
-## Business Constraints Impact
+## Business constraints impact
 
 ### BC-001: Budget
 
@@ -1193,9 +1193,9 @@ Single-developer constraints affect Dashboard Management:
 - **Automate testing:** Heavy investment in automated tests for core features
 - **Documentation-first:** Complete functional requirements before implementation (TDD/BDD)
 
-### BC-004: Technology Stack
+### BC-004: Technology stack
 
-Dashboard Management aligns with chosen stack:
+Dashboard Management aligns with the chosen stack:
 
 - **Frontend:** Angular components for widget rendering, drag-and-drop (Angular CDK)
 - **Backend:** Spring Boot REST APIs for dashboard CRUD operations
@@ -1205,7 +1205,36 @@ Dashboard Management aligns with chosen stack:
 
 ---
 
-## Traceability Matrix
+## Success metrics alignment
+
+Dashboard Management contributes to the following success metrics from BR-001 through BR-008:
+
+### Technical metrics (BR-003)
+
+| Metric                | Target        | Dashboard Management Contribution                            |
+|-----------------------|---------------|--------------------------------------------------------------|
+| **Page Load Time**    | < 2 seconds   | Efficient dashboard rendering, lazy loading of widget data   |
+| **API Response Time** | < 200ms (p95) | Optimized dashboard/widget CRUD operations                   |
+| **Test Coverage**     | > 80%         | Comprehensive unit/integration tests for all FR-DAS features |
+
+### Portfolio quality metrics (BR-001)
+
+| Metric                         | Target             | Dashboard Management Contribution                    |
+|--------------------------------|--------------------|------------------------------------------------------|
+| **Architecture Documentation** | All views complete | Dashboard aggregate design, context map, event flows |
+| **Code Quality Score**         | No critical issues | DDD patterns, clean code, proper validation          |
+
+### User Experience metrics (BR-002, BR-005)
+
+| Metric                   | Target            | Dashboard Management Contribution              |
+|--------------------------|-------------------|------------------------------------------------|
+| **Task Completion Rate** | > 95%             | Intuitive widget add/remove/reorder operations |
+| **Mobile Usability**     | Fully Responsive  | Responsive layout adapts to all screen sizes   |
+| **Accessibility Score**  | WCAG 2.1 Level AA | Keyboard navigation, screen reader support     |
+
+---
+
+## Traceability matrix
 
 | Feature    | Business Req                   | Domain Events                                      | User Stories               |
 |------------|--------------------------------|----------------------------------------------------|----------------------------|
