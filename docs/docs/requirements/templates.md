@@ -69,15 +69,15 @@ Functional requirements documents should follow this structure:
 
 ---
 
-## FR-XXX-001: [feature Name]
+## FR-XXX-001: [feature name]
 
-[Full feature template as shown above]
+[Full requirement template as shown below]
 
 ---
 
-## FR-XXX-002: [feature Name]
+## FR-XXX-002: [feature name]
 
-[Full feature template as shown above]
+[Full requirement template as shown below]
 
 ---
 
@@ -94,6 +94,22 @@ Functional requirements documents should follow this structure:
 ### Data consistency requirements
 
 [Any specific consistency needs]
+
+---
+
+## Business constraints impact
+
+### BC-XXX [constraint name]
+
+[Any specific explanation on how the constraint affects this bounded context]
+
+---
+
+## Success metrics alignment
+
+### BR-XXX: [requirement name(s)] _this can be more than one BR at a time if BRs are related_
+
+[Metrics from business requirements that affect this bounded context]
 
 ---
 
