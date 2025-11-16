@@ -24,7 +24,7 @@ Workflows documents to ensure consistency.
 
 :::
 
-## Dashboard Management
+## Dashboard management
 
 ### Publishes
 
@@ -161,7 +161,7 @@ Workflows documents to ensure consistency.
 
 - UserRegistered
 
-## User Identity
+## User identity
 
 ### Publishes
 

@@ -2,12 +2,12 @@
 sidebar_position: 3
 ---
 
-# Core Domain Concepts
+# Core domain concepts
 
 This section identifies the strategic subdomains (core, supporting, generic) and the key concepts driving the Browser
 Dashboard PWA. The scope is intentionally constrained to four widgets: bookmarks, tasks, weather, and calendar.
 
-## Strategic Subdomains
+## Strategic subdomains
 
 ### Core subdomain
 
@@ -32,7 +32,7 @@ streamlined experience rather than the individual widgets themselves.
 **Strategic priority:** invest most design rigor in the Core Dashboard Orchestration; keep supporting subdomains simple
 and cohesive; rely on generic commodity approaches for cross-cutting needs.
 
-## Core Dashboard Orchestration (Core)
+## Core dashboard orchestration (Core)
 
 - **Concepts**
     - **Dashboard:** A personalized canvas composed of widget instances.
@@ -49,7 +49,7 @@ and cohesive; rely on generic commodity approaches for cross-cutting needs.
     - A widget instance must reference a valid widget type and configuration schema.
     - Layout positions cannot overlap; ordering is total within a region.
 
-## Supporting Subdomains
+## Supporting subdomains
 
 ### Bookmarks
 
@@ -105,13 +105,13 @@ and cohesive; rely on generic commodity approaches for cross-cutting needs.
 - Invariants
     - A snapshot must include the provider timestamp and units.
 
-## Cross‑Widget Relationships
+## Cross‑widget relationships
 
 - **Tasks ↔ Calendar:** “Create Event from Task” (non-blocking, one‑way copy).
 - **Bookmarks ↔ Dashboard:** “Pin to Speed Dial” and “Place on Dashboard” shortcuts.
 - **Weather ↔ Dashboard:** Read-only card shows a configured location; multiple instances allowed.
 
-## Value Objects and Common Types
+## Value objects and common types
 
 - **Identifier:** Strongly typed IDs for aggregates (UserId, DashboardId, WidgetInstanceId, TaskId, EventId, FolderId,
   BookmarkId).
@@ -121,7 +121,7 @@ and cohesive; rely on generic commodity approaches for cross-cutting needs.
 - **Status/Priority:** Enumerations with explicit lifecycle/ordering.
 - **Location:** City, country code, coordinates.
 
-## Aggregate Candidates
+## Aggregate candidates
 
 - **Dashboard** (aggregate root): owns WidgetInstances and Layout.
 - **Folder** (aggregate root): owns Bookmarks (tree via parentId).
@@ -129,7 +129,7 @@ and cohesive; rely on generic commodity approaches for cross-cutting needs.
 - **Calendar** (aggregate root): owns Events.
 - **Weather** is likely read model only (no aggregate); configuration lives in WidgetInstance.
 
-## Domain Policies (Selected)
+## Domain policies (selected)
 
 - **Layout policy:** prevent overlapping placements; maintain stable ordering.
 - **Task lifecycle:** Todo → In‑Progress → Done (allow revert by policy).

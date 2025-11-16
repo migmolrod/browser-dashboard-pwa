@@ -19,7 +19,7 @@ using Mermaid for readability. Each workflow includes a brief narrative.
 
 ---
 
-## User Onboarding
+## User onboarding
 
 Narrative: When a user registers, foundational contexts initialize defaults so the system is immediately usable.
 
@@ -55,7 +55,7 @@ Key outputs:
 
 ---
 
-## Compose a Dashboard (Add/Configure/Reorder Widgets)
+## Compose a dashboard (Add/Configure/Reorder widgets)
 
 Narrative: A user personalizes their dashboard by adding a widget instance, configuring it, and reordering layout
 positions.
@@ -90,9 +90,9 @@ Policy guards:
 
 ---
 
-## Manage Tasks and Create Calendar Event from Task
+## Manage tasks and create calendar event from a task
 
-Narrative: A user updates task state and optionally creates a related calendar event.
+Narrative: A user updates the task state and optionally creates a related calendar event.
 
 ```mermaid
 sequenceDiagram
@@ -121,7 +121,7 @@ Invariants:
 
 ---
 
-## Bookmarks Management and Pin to Speed Dial
+## Bookmarks management and pin to speed dial
 
 Narrative: A user organizes bookmarks and pins favorites for quick access on the dashboard.
 
@@ -149,7 +149,7 @@ Constraints:
 
 ---
 
-## Weather Data Refresh with ACL
+## Weather data refresh with ACL
 
 Narrative: Weather context refreshes data from an external provider using an anti‑corruption layer and notifies widgets.
 
@@ -177,7 +177,7 @@ Policies:
 
 ---
 
-## Switch Profile
+## Switch profile
 
 Narrative: User switches between personalization profiles; dashboard restores saved layout and widget configurations.
 
@@ -208,7 +208,7 @@ Rules:
 
 ---
 
-## Offline First and Synchronization
+## Offline first and synchronization
 
 Narrative: User operates offline; when connectivity is restored, changes synchronize to the cloud and conflicts are
 resolved.
@@ -247,7 +247,7 @@ MVP strategy:
 
 ---
 
-## Delete Dashboard and Cleanup
+## Delete dashboard and cleanup
 
 Narrative: User deletes a dashboard; widget instances are removed while data in supporting contexts remains intact.
 

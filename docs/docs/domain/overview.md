@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Business & Domain Overview
+# Business & domain overview
 
 This section contains our domain exploration and modeling.
 
@@ -38,7 +38,7 @@ This document focuses on the domain modeling of a personal, portfolio-oriented p
 design process. The content is limited to the domain and business perspective; implementation and technical details are
 addressed in later sections.
 
-## Document Structure
+## Document structure
 
 This domain exploration and modeling are organized into the following sections:
 

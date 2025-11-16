@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Business Vision
+# Business vision
 
 ## Domain and business goals
 

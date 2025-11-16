@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Ubiquitous Language
+# Ubiquitous language
 
 This glossary defines the shared vocabulary used across all stakeholders involved in the Browser Dashboard PWA project.
 These terms should be used consistently in requirements, code (class names, method names, variables), documentation, and
@@ -10,7 +10,7 @@ conversations.
 
 The vocabulary is organized into subdomains and cross-cutting concepts.
 
-## Core Dashboard Orchestration
+## Core dashboard orchestration
 
 | Term                        | Definition                                                                                                           | Example/context                                                                     |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Region**                  | A designated area within a layout where widgets can be placed                                                        | The header region, main content region, sidebar region                              |
 | **Canvas**                  | See Dashboard                                                                                                        | The user customizes their canvas by adding widgets                                  |
 
-## Bookmarks Subdomain
+## Bookmarks subdomain
 
 | Term                | Definition                                                               | Example/context                                                       |
 |---------------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -33,7 +33,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Root Folder**     | The top-level folder that contains all other folders and bookmarks       | All bookmarks ultimately belong to the root folder or its descendants |
 | **Pinned Bookmark** | A bookmark marked for special visibility or quick access                 | User pins "Daily Standup Doc" for easy access from dashboard          |
 
-## Tasks Subdomain
+## Tasks subdomain
 
 | Term               | Definition                                                                   | Example/context                                                        |
 |--------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------|
@@ -45,7 +45,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Reminder**       | An optional notification tied to a task's due date/time                      | User sets reminder 1 hour before task deadline                         |
 | **Task Lifecycle** | The progression of states a task goes through: Todo → In-Progress → Done     | System enforces the task lifecycle and allows policy-based reverts     |
 
-## Calendar Subdomain
+## Calendar subdomain
 
 | Term                         | Definition                                                                     | Example/context                                                 |
 |------------------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------|
@@ -57,7 +57,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Conflict**                 | Overlapping events in time (soft awareness in MVP, not enforced)               | System warns when scheduling two events at the same time        |
 | **Event Creation from Task** | A one-way operation that creates a calendar event based on task details        | User converts "Prepare presentation" task into a calendar event |
 
-## Weather Subdomain
+## Weather subdomain
 
 | Term                 | Definition                                                                     | Example/context                                            |
 |----------------------|--------------------------------------------------------------------------------|------------------------------------------------------------|
@@ -67,7 +67,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Weather Provider** | External third-party API service that supplies weather data                    | OpenWeatherMap, WeatherAPI                                 |
 | **Units**            | Temperature and measurement system (Celsius, Fahrenheit, metric, imperial)     | User preference set to Celsius and metric units            |
 
-## Cross-Cutting Concepts
+## Cross-cutting concepts
 
 | Term                          | Definition                                                                     | Example/context                                                                    |
 |-------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
@@ -88,7 +88,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Offline Capability**        | Ability to use the PWA without internet connection                             | User can manage tasks offline; changes sync when online                            |
 | **PWA (Progressive Web App)** | A web application using modern APIs to provide app-like experience             | Browser Dashboard works like a native app but runs in browser                      |
 
-## Lifecycle States
+## Lifecycle states
 
 | Term            | Definition                                       | Example/context                                        |
 |-----------------|--------------------------------------------------|--------------------------------------------------------|
@@ -118,15 +118,19 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 - New terms should be added to this glossary as the domain model evolves
 
 :::tip
+
 This ubiquitous language should be reflected in:
 
 - **Code:** Class names, method names, variable names
 - **Documentation:** All requirements, architecture, and design documents
 - **Conversations:** Discussions between developers, stakeholders, and domain experts
 - **Tests:** BDD scenario descriptions and test names
-  :::
+
+:::
 
 :::warning
-Avoid using ambiguous terms like "item", "thing", "data", or "entity" without qualification. Always use the specific
+
+Avoid using ambiguous terms like "item," "thing," "data," or "entity" without qualification. Always use the specific
 domain term (Task, Bookmark, Event, etc.)
+
 :::
