@@ -156,8 +156,8 @@ const config: Config = {
 			copyright: `Copyright © ${new Date().getFullYear()} Miguel Molinero Rodríguez. Built with Docusaurus.`,
 		},
 		prism: {
-			theme: prismThemes.github,
-			darkTheme: prismThemes.dracula,
+			theme: prismThemes.vsLight,
+			darkTheme: prismThemes.vsDark,
 		},
 		mermaid: {
 			theme: {light: "neutral", dark: "forest"},
