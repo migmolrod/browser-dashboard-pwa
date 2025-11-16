@@ -2,13 +2,13 @@
 sidebar_position: 6
 ---
 
-# Non-Functional Requirements
+# Non-Functional requirements
 
 Non-functional requirements define the quality attributes, constraints, and overall properties of the system.
 
-## Performance Requirements
+## Performance requirements
 
-### NFR-001: Page Load Time
+### NFR-001: Page load lime
 
 **Priority:** Must Have
 
@@ -29,7 +29,7 @@ The initial page load shall complete in under 2 seconds on a standard broadband 
 
 ---
 
-### NFR-002: API Response Time
+### NFR-002: API response time
 
 **Priority:** Must Have
 
@@ -49,7 +49,7 @@ API endpoints shall respond in under 200ms at the 95th percentile under normal l
 
 ---
 
-### NFR-003: Database Query Performance
+### NFR-003: Database query performance
 
 **Priority:** Must Have
 
@@ -64,7 +64,7 @@ Database queries shall execute in under 50ms at the 95th percentile.
 
 ---
 
-### NFR-004: Animation Frame Rate
+### NFR-004: Animation frame rate
 
 **Priority:** Should Have
 
@@ -79,7 +79,7 @@ All UI animations shall maintain at least 60 frames per second.
 
 ---
 
-### NFR-005: Bundle Size
+### NFR-005: Bundle size
 
 **Priority:** Should Have
 
@@ -94,9 +94,9 @@ The initial JavaScript bundle shall not exceed 300KB (gzipped).
 
 ---
 
-## Scalability Requirements
+## Scalability requirements
 
-### NFR-101: Concurrent Users
+### NFR-101: Concurrent users
 
 **Priority:** Should Have
 
@@ -111,7 +111,7 @@ The system shall support at least 100 concurrent users without performance degra
 
 ---
 
-### NFR-102: Data Volume
+### NFR-102: Data volume
 
 **Priority:** Should Have
 
@@ -130,7 +130,7 @@ The system shall handle user accounts with:
 
 ---
 
-### NFR-103: Horizontal Scaling
+### NFR-103: Horizontal scaling
 
 **Priority:** Could Have
 
@@ -145,7 +145,7 @@ The backend shall support horizontal scaling by adding more instances.
 
 ---
 
-## Reliability Requirements
+## Reliability requirements
 
 ### NFR-201: Availability
 
@@ -162,7 +162,7 @@ The system shall maintain 99% uptime (excluding planned maintenance).
 
 ---
 
-### NFR-202: Error Rate
+### NFR-202: Error rate
 
 **Priority:** Must Have
 
@@ -177,7 +177,7 @@ The system shall maintain an error rate below 1% of all requests.
 
 ---
 
-### NFR-203: Data Integrity
+### NFR-203: Data integrity
 
 **Priority:** Must Have
 
@@ -193,7 +193,7 @@ The system shall prevent data loss and corruption.
 
 ---
 
-### NFR-204: Fault Tolerance
+### NFR-204: Fault tolerance
 
 **Priority:** Should Have
 
@@ -209,9 +209,9 @@ The system shall gracefully handle third-party service failures.
 
 ---
 
-## Security Requirements
+## Security requirements
 
-### NFR-301: Authentication Security
+### NFR-301: Authentication security
 
 **Priority:** Must Have
 
@@ -242,7 +242,7 @@ Users shall only access their own data.
 
 ---
 
-### NFR-303: Data Encryption
+### NFR-303: Data encryption
 
 **Priority:** Must Have
 
@@ -257,7 +257,7 @@ Sensitive data shall be encrypted.
 
 ---
 
-### NFR-304: Input Validation
+### NFR-304: Input validation
 
 **Priority:** Must Have
 
@@ -273,7 +273,7 @@ All user input shall be validated and sanitized.
 
 ---
 
-### NFR-305: Security Headers
+### NFR-305: Security headers
 
 **Priority:** Must Have
 
@@ -289,7 +289,7 @@ The application shall implement security headers.
 
 ---
 
-### NFR-306: Dependency Security
+### NFR-306: Dependency security
 
 **Priority:** Must Have
 
@@ -304,9 +304,9 @@ Third-party dependencies shall be kept secure and up-to-date.
 
 ---
 
-## Usability Requirements
+## Usability requirements
 
-### NFR-401: User Interface Intuitiveness
+### NFR-401: User interface intuitiveness
 
 **Priority:** Must Have
 
@@ -322,7 +322,7 @@ New users shall be able to perform core tasks without a tutorial.
 
 ---
 
-### NFR-402: Responsive Design
+### NFR-402: Responsive design
 
 **Priority:** Must Have
 
@@ -355,7 +355,7 @@ The application shall meet WCAG 2.1 Level AA standards.
 
 ---
 
-### NFR-404: Browser Compatibility
+### NFR-404: Browser compatibility
 
 **Priority:** Must Have
 
@@ -375,7 +375,7 @@ The application shall support modern browsers:
 
 ---
 
-### NFR-405: Internationalization Ready
+### NFR-405: Internationalization ready
 
 **Priority:** Could Have
 
@@ -391,9 +391,9 @@ The application shall be designed for future internationalization.
 
 ---
 
-## Maintainability Requirements
+## Maintainability requirements
 
-### NFR-501: Code Quality
+### NFR-501: Code quality
 
 **Priority:** Must Have
 
@@ -409,7 +409,7 @@ The codebase shall maintain high quality standards.
 
 ---
 
-### NFR-502: Test Coverage
+### NFR-502: Test coverage
 
 **Priority:** Must Have
 
@@ -457,7 +457,7 @@ The codebase shall be modular and loosely coupled.
 
 ---
 
-### NFR-505: Version Control
+### NFR-505: Version control
 
 **Priority:** Must Have
 
@@ -491,7 +491,7 @@ The application shall be fully containerized.
 
 ---
 
-### NFR-602: Cloud Platform Agnostic
+### NFR-602: Cloud platform agnostic
 
 **Priority:** Should Have
 
@@ -506,7 +506,7 @@ The application shall not be tightly coupled to a specific cloud provider.
 
 ---
 
-### NFR-603: Environment Configuration
+### NFR-603: Environment configuration
 
 **Priority:** Must Have
 
@@ -521,9 +521,9 @@ The application shall support multiple deployment environments.
 
 ---
 
-## Performance Monitoring Requirements
+## Performance monitoring requirements
 
-### NFR-701: Application Monitoring
+### NFR-701: Application monitoring
 
 **Priority:** Should Have
 
@@ -539,7 +539,7 @@ The system shall provide visibility into application health and performance.
 
 ---
 
-### NFR-702: User Analytics
+### NFR-702: User analytics
 
 **Priority:** Could Have
 
@@ -555,7 +555,7 @@ The system shall track user behavior and feature usage.
 
 ---
 
-## Compliance Requirements
+## Compliance requirements
 
 ### NFR-801: Privacy
 
@@ -573,11 +573,11 @@ The system shall respect user privacy.
 
 ---
 
-### NFR-802: Cookie Consent
+### NFR-802: Cookie consent
 
 **Priority:** Should Have
 
-The system shall obtain consent for non-essential cookies.
+The system shall get consent for non-essential cookies.
 
 **Acceptance Criteria:**
 
@@ -588,7 +588,7 @@ The system shall obtain consent for non-essential cookies.
 
 ---
 
-### NFR-803: Terms of Service
+### NFR-803: Terms of service
 
 **Priority:** Should Have
 
@@ -603,9 +603,9 @@ The system shall have clear terms of service.
 
 ---
 
-## Deployment Requirements
+## Deployment requirements
 
-### NFR-901: Continuous Integration
+### NFR-901: Continuous integration
 
 **Priority:** Must Have
 
@@ -621,7 +621,7 @@ The project shall have automated CI pipelines.
 
 ---
 
-### NFR-902: Continuous Deployment
+### NFR-902: Continuous deployment
 
 **Priority:** Should Have
 
@@ -637,7 +637,7 @@ The project shall support automated deployments.
 
 ---
 
-### NFR-903: Infrastructure as Code
+### NFR-903: Infrastructure as code
 
 **Priority:** Should Have
 
@@ -652,9 +652,9 @@ Infrastructure shall be defined as code.
 
 ---
 
-## Backup and Recovery Requirements
+## Backup and recovery requirements
 
-### NFR-1001: Database Backups
+### NFR-1001: Database backups
 
 **Priority:** Must Have
 
@@ -664,13 +664,13 @@ User data shall be backed up daily.
 
 - Automated daily backups
 - Retention policy (30 days minimum)
-- Stored in separate location
+- Stored in a separate location
 - Encrypted backups
 - Backup monitoring
 
 ---
 
-### NFR-1002: Disaster Recovery
+### NFR-1002: Disaster recovery
 
 **Priority:** Should Have
 
@@ -686,9 +686,9 @@ The system shall be recoverable within 4 hours in case of failure.
 
 ---
 
-## Development Requirements
+## Development requirements
 
-### NFR-1101: Development Environment
+### NFR-1101: Development environment
 
 **Priority:** Must Have
 
@@ -704,7 +704,7 @@ Developers shall be able to set up the project locally with minimal effort.
 
 ---
 
-### NFR-1102: Build Time
+### NFR-1102: Build time
 
 **Priority:** Should Have
 
@@ -713,13 +713,13 @@ Full project build shall complete in under 5 minutes.
 **Acceptance Criteria:**
 
 - Optimized build process
-- Caching utilized
+- Caching used
 - Parallel builds where possible
 - Incremental builds supported
 
 ---
 
-## Support and Maintenance Requirements
+## Support and maintenance requirements
 
 ### NFR-1201: Logging
 
@@ -737,7 +737,7 @@ The system shall maintain comprehensive logs.
 
 ---
 
-### NFR-1202: Error Reporting
+### NFR-1202: Error reporting
 
 **Priority:** Must Have
 
@@ -753,7 +753,7 @@ Errors shall be automatically reported and tracked.
 
 ---
 
-### NFR-1203: Health Checks
+### NFR-1203: Health checks
 
 **Priority:** Must Have
 

@@ -6,12 +6,12 @@ sidebar_position: 2
 
 This is a set of templates for each requirement type.
 
-## For Business Requirements
+## For business requirements
 
 ### Requirement template
 
 ```markdown
-### BR-XXX: [Requirement Title]
+### BR-XXX: [requirement title]
 
 **Priority:** [Must Have | Should Have | Could Have | Won't Have]
 
@@ -41,25 +41,25 @@ This is a set of templates for each requirement type.
 - [...]
 ```
 
-## For Functional Requirements (FR-XXX-000)
+## For functional requirements (FR-XXX-000)
 
-### Document Organization Structure
+### Document organization structure
 
-Functional requirements documents (like `dashboard-management.mdx`) should follow this structure:
+Functional requirements documents should follow this structure:
 
 ```markdown
-# [Bounded Context Name] - Functional Requirements
+# [Bounded Context Name] - Functional requirements
 
 ## Overview
 
 [Brief introduction to this bounded context and its purpose]
 
-**Bounded Context Code:** XXX
-**Related DMD Section:** [link to DMD bounded context]
+**Bounded context code:** XXX
+**Related DMD section:** [link to DMD bounded context]
 
 ---
 
-## Features Summary
+## Features summary
 
 | Feature Code | Feature Name | Priority    | Status |
 |--------------|--------------|-------------|--------|
@@ -69,35 +69,35 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 
 ---
 
-## FR-XXX-001: [Feature Name]
+## FR-XXX-001: [feature Name]
 
 [Full feature template as shown above]
 
 ---
 
-## FR-XXX-002: [Feature Name]
+## FR-XXX-002: [feature Name]
 
 [Full feature template as shown above]
 
 ---
 
-## Cross-Feature Considerations
+## Cross-feature considerations
 
-### Interactions Between Features
+### Interactions between features
 
 [How features in this context interact]
 
-### Shared Business Rules
+### Shared business rules
 
 [Business rules that apply across multiple features]
 
-### Data Consistency Requirements
+### Data consistency requirements
 
 [Any specific consistency needs]
 
 ---
 
-## Traceability Matrix
+## Traceability matrix
 
 | Feature    | Business Req | Domain Events   | User Stories   |
 |------------|--------------|-----------------|----------------|
@@ -111,11 +111,9 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 ```markdown
 ## [Feature Name]
 
-### FR-XXX-000: [Feature Title]
+### FR-XXX-000: [feature title]
 
 **Priority:** [Must Have | Should Have | Could Have | Won't Have]
-
-**Bounded Context:** [XXX - Context Name]
 
 **Description:**
 [Detailed description of what the system should do]
@@ -130,12 +128,12 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 - [Expected system state after successful execution]
 - [...]
 
-**Business Rules:**
+**Business rules:**
 
 - [Domain rules that govern this feature]
 - [...]
 
-**User Roles:**
+**User roles:**
 
 - [Which user roles can use this feature]
 
@@ -149,12 +147,12 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 
 - [Other FR codes this depends on]
 
-**Acceptance Criteria:**
+**Acceptance criteria:**
 
 - [Specific, testable criteria]
 - [...]
 
-**User Stories:**
+**User stories:**
 
 - [US-XXX-000-001]: [link to user story]
 - [...]
@@ -163,39 +161,41 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 
 #### Scenarios
 
-##### Scenario 1: [Scenario Name] (Happy Path)
+##### Scenario 1: [scenario name] (happy path)
 
 **Given** [initial context and preconditions]\
 **When** [action taken by user or system]\
 **Then** [expected outcome]\
 **And** [additional expected outcomes]
 
-##### Scenario 2: [Alternative Scenario Name]
+##### Scenario 2: [Alternative scenario name]
 
 [Similar structure to Scenario 1]
 
-##### Scenario 3: [Error/Edge Case Scenario Name]
+##### Scenario 3: [error/edge case scenario name]
 
 [Similar structure to Scenario 1]
 
 ---
 
-**Technical Notes:**
+**Technical notes:**
 
 - [Any technical considerations, constraints, or implementation hints]
 - [...]
 
-**Open Questions:**
+**Open questions:**
 
 - [Any unresolved questions or areas needing clarification]
 - [...]
 
 ```
 
-## For Non-Functional Requirements (NFR-XXX)
+## For non-functional requirements (NFR-XXX)
+
+### Requirement template
 
 ```markdown
-### NFR-XXX: [Requirement Title]
+### NFR-XXX: [requirement title]
 
 **Priority:** [Must Have | Should Have | Could Have | Won't Have]
 
@@ -213,13 +213,13 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 - [Specific metrics and their target values]
 - [How compliance will be measured]
 
-**Acceptance Criteria:**
+**Acceptance criteria:**
 
 - [Specific, testable, measurable criteria]
 - [Include tools, methods, or conditions for verification]
 - [...]
 
-**Affected Components:**
+**Affected components:**
 
 - [Which parts of the system this applies to]
 - [Bounded contexts, services, or modules]
@@ -229,7 +229,7 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 - Business Requirements: [BR-XXX, ...]
 - Functional Requirements: [FR-XXX-000, ...]
 
-**Testing Approach:**
+**Testing approach:**
 
 - [How this will be tested/verified]
 - [Tools or frameworks to be used]
@@ -238,18 +238,16 @@ Functional requirements documents (like `dashboard-management.mdx`) should follo
 
 - [Any trade-offs or conflicts with other requirements]
 
-**Open Questions:**
+**Open questions:**
 
 - [Any unresolved questions]
 ```
 
 ---
 
----
+## Additional recommendations
 
-## Additional Recommendations
-
-### 1. Scenario Naming Convention
+### Scenario naming convention
 
 For user stories/scenarios, consider: `US-XXX-000-001` where:
 
@@ -258,7 +256,7 @@ For user stories/scenarios, consider: `US-XXX-000-001` where:
 - `000` = feature number (matching FR)
 - `001` = scenario number within that feature
 
-### 2. Status Field
+### Status field
 
 Consider adding a status field to track requirement maturity:
 
@@ -268,7 +266,7 @@ Consider adding a status field to track requirement maturity:
 - **Implemented:** Code complete
 - **Verified:** Testing complete
 
-### 3. Gherkin Guidelines
+### Gherkin guidelines
 
 For your BDD scenarios:
 

@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: overview
 ---
 
-# Requirements Overview
+# Requirements overview
 
 This section contains the complete requirements documentation for the Browser Dashboard PWA project.
 
@@ -45,7 +45,7 @@ in the DMD. Or in a general category when they are transversal and not bind to a
 The content is limited to these requirements and their mapping into a complete specification; implementation and
 technical details are addressed in later sections.
 
-## Document Structure
+## Document structure
 
 The requirements are organized into the following sections:
 
@@ -68,7 +68,7 @@ method to prioritize features.
 
 ## Documentation conventions
 
-### Requirement Numbering
+### Requirement numbering
 
 Requirements are numbered using the following prefixes:
 
@@ -90,7 +90,7 @@ Each piece of the functional requirements documentation will be in one of these 
 - **Done:** Implemented and verified (tests pass).
 - **Released:** In production.
 
-### Priority Levels
+### Priority levels
 
 - **Must Have:** Critical for MVP, the project fails without it
 - **Should Have:** Important but not critical, can be workarounds

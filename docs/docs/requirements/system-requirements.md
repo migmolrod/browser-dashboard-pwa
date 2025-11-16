@@ -2,14 +2,14 @@
 sidebar_position: 8
 ---
 
-# System Requirements
+# System requirements
 
 System requirements define the technical prerequisites, dependencies, and constraints for the Browser Dashboard PWA
 project.
 
-## Development Environment
+## Development environment
 
-### Hardware Requirements
+### Hardware requirements
 
 :::info Minimum Development Machine Specifications
 
@@ -17,7 +17,8 @@ project.
 - **RAM:** 8 GB
 - **Storage:** 20 GB available space (for development tools, dependencies, and containers)
 - **Network:** Broadband internet connection for dependency downloads
-  :::
+
+:::
 
 :::tip Recommended Development Machine Specifications
 
@@ -25,13 +26,14 @@ project.
 - **RAM:** 16 GB or more
 - **Storage:** SSD with 50 GB available space
 - **Network:** High-speed internet connection
-  :::
+
+:::
 
 ---
 
-### Software Requirements
+### Software requirements
 
-#### Required Development Tools
+#### Required development tools
 
 | Tool               | Version | Purpose                                         |
 |--------------------|---------|-------------------------------------------------|
@@ -43,7 +45,7 @@ project.
 | **Git**            | 2.30+   | Version control                                 |
 | **mise**           | Latest  | Development environment management              |
 
-#### Recommended Development Tools
+#### Recommended development tools
 
 | Tool                             | Purpose                            |
 |----------------------------------|------------------------------------|
@@ -55,11 +57,11 @@ project.
 
 ---
 
-## Runtime Environment
+## Runtime environment
 
-### Frontend Requirements
+### Frontend requirements
 
-#### Browser Support
+#### Browser support
 
 | Browser             | Minimum Version | Target Version |
 |---------------------|-----------------|----------------|
@@ -68,7 +70,7 @@ project.
 | **Safari**          | 14              | Latest         |
 | **Microsoft Edge**  | 90              | Latest         |
 
-#### Required Browser Features
+#### Required browser features
 
 :::note Required Browser APIs
 The following browser features are required for the application to function:
@@ -83,43 +85,22 @@ The following browser features are required for the application to function:
 - Notification API (for reminders)
 - CSS Grid and Flexbox
 - CSS Custom Properties (variables)
-  :::
+
+:::
 
 ---
 
-### Backend Requirements
+### Backend requirements
 
-#### Server Specifications (Production)
+#### Server specifications (production)
 
-<table>
-  <thead>
-    <tr>
-      <th>Tier</th>
-      <th>CPU</th>
-      <th>RAM</th>
-      <th>Storage</th>
-      <th>Network</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Minimum</strong></td>
-      <td>1 vCPU</td>
-      <td>512 MB</td>
-      <td>10 GB</td>
-      <td>1 Gbps</td>
-    </tr>
-    <tr>
-      <td><strong>Recommended</strong></td>
-      <td>2+ vCPUs</td>
-      <td>2 GB</td>
-      <td>20 GB SSD</td>
-      <td>10 Gbps</td>
-    </tr>
-  </tbody>
-</table>
+| Tier        | CPU      | RAM    | Storage   | Network |
+|-------------|----------|--------|-----------|---------|
+| Minimum     | 1 vCPU   | 512 MB | 10 GB     | 1 Gbps  |
+| Recommended | 2+ vCPUs | 2 GB   | 20 GB SSD | 10 Gbps |
 
-#### Runtime Environment
+
+#### Runtime environment
 
 | Component             | Version      | Notes                                   |
 |-----------------------|--------------|-----------------------------------------|
@@ -129,9 +110,9 @@ The following browser features are required for the application to function:
 
 ---
 
-### Database Requirements
+### Database requirements
 
-#### Supported Databases
+#### Supported databases
 
 :::tip Primary Database Options
 
@@ -150,49 +131,31 @@ The following browser features are required for the application to function:
 
 - Document database option
 - Flexible schema for rapid iteration
-  :::
 
-#### Database Specifications
+:::
 
-<table>
-  <thead>
-    <tr>
-      <th>Environment</th>
-      <th>Storage</th>
-      <th>Connections</th>
-      <th>Additional</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Development</strong></td>
-      <td>1 GB</td>
-      <td>10 concurrent</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td><strong>Production</strong></td>
-      <td>10 GB (expandable)</td>
-      <td>100 concurrent</td>
-      <td>Automated backups, Optional replication</td>
-    </tr>
-  </tbody>
-</table>
+#### Database specifications
+
+| Enviroment  | Storage            | Connections    | Additional                              |
+|-------------|--------------------|----------------|-----------------------------------------|
+| Development | 1 GB               | 10 concurrent  | -                                       |
+| Production  | 10 GB (expandable) | 100 concurrent | Automated backups, optional replication |
 
 ---
 
-## Third-Party Service Dependencies
+## Third-Party service dependencies
 
-### Required Services
+### Required services
 
-#### SR-301: Weather API Service
+#### SR-301: Weather API service
 
 :::info Weather API Provider Options
 
 - **OpenWeatherMap** (Free tier available)
 - **WeatherAPI.com** (Free tier available)
 - **Tomorrow.io** (Free tier available)
-  :::
+
+:::
 
 **Requirements:**
 
@@ -211,16 +174,17 @@ The following browser features are required for the application to function:
 
 ---
 
-### Optional Services
+### Optional services
 
-#### SR-302: Email Service (for password reset, notifications)
+#### SR-302: Email service (for password reset, notifications)
 
 :::note Email Service Provider Options
 
 - **SendGrid** (Free tier: 100 emails/day)
 - **Mailgun** (Free tier: 5,000 emails/month)
 - **AWS SES** (Very low cost)
-  :::
+
+:::
 
 **Requirements:**
 
@@ -231,14 +195,15 @@ The following browser features are required for the application to function:
 
 ---
 
-#### SR-303: Error Tracking Service
+#### SR-303: Error tracking service
 
 :::note Error Tracking Provider Options
 
 - **Sentry** (Free tier available)
 - **Rollbar** (Free tier available)
 - **Bugsnag**
-  :::
+  
+:::
 
 **Requirements:**
 
@@ -249,14 +214,15 @@ The following browser features are required for the application to function:
 
 ---
 
-#### SR-304: Analytics Service (optional)
+#### SR-304: Analytics service (optional)
 
 :::note Analytics Provider Options
 
 - **Plausible Analytics** (Privacy-focused)
 - **Umami** (Self-hosted option)
 - **Google Analytics** (if acceptable)
-  :::
+  
+:::
 
 **Requirements:**
 
@@ -266,18 +232,19 @@ The following browser features are required for the application to function:
 
 ---
 
-## Deployment Environment
+## Deployment environment
 
-### Container Requirements
+### Container requirements
 
-#### Docker Images
+#### Docker images
 
 :::info Frontend Container
 
-- **Base Image:** `node:24-alpine`
-- **Exposed Port:** 3000
+- **Base Image:** `nginx:1.28-alpine`
+- **Exposed Port:** 80 and 443
 - **Volume:** None (static build)
-  :::
+  
+:::
 
 :::info Backend Container
 
@@ -285,22 +252,24 @@ The following browser features are required for the application to function:
 - **Exposed Port:** 8080
 - **Volume:** `/app/uploads` (if file uploads needed)
 - **Environment Variables:** Database connection, API keys
-  :::
+  
+:::
 
 :::info Database Container
 
 - **Base Image:** `postgres:14-alpine` or `mysql:8`
 - **Exposed Port:** 5432 (PostgreSQL) or 3306 (MySQL)
 - **Volume:** `/var/lib/postgresql/data`
-  :::
+  
+:::
 
 ---
 
-### Cloud Platform Requirements
+### Cloud platform requirements
 
-#### Supported Platforms
+#### Supported platforms
 
-> The following cloud platforms are supported for deployment:
+The following cloud platforms are supported for deployment:
 
 - **AWS** (EC2, ECS, RDS)
 - **Google Cloud Platform** (Compute Engine, Cloud Run, Cloud SQL)
@@ -312,27 +281,32 @@ The following browser features are required for the application to function:
 - **Railway** (Full-stack deployment)
 - **Render** (Full-stack deployment)
 
-#### Minimum Cloud Resources
+#### Minimum cloud resources
 
 :::tip Free Tier Options
 
 - **Vercel/Netlify:** Frontend hosting (free)
 - **Railway/Render:** Backend + Database (free tier available)
 - **Supabase:** PostgreSQL database (free tier)
-  :::
+  
+:::
 
 :::success Recommended Setup
 
 - **Frontend:** Vercel or Netlify (CDN-backed)
 - **Backend:** Railway, Render, or containerized on DigitalOcean
 - **Database:** Managed PostgreSQL (Railway, Render, or Supabase)
-  :::
+
+:::
 
 ---
 
-### CI/CD Requirements
+### CI/CD requirements
 
-#### GitHub Actions (Recommended)
+We need a CI/CD platform that is suitable for monorepos, where different sections of the repository trigger different
+pipelines (if there are only changes in frontend, only frontend tasks are run, and so on).
+
+#### GitHub actions (recommended)
 
 Workflows for:
 
@@ -348,59 +322,67 @@ Workflows for:
 - Deployment tokens
 - Container registry credentials
 
+#### Other options
+
+- Gitlab pipelines
+- CircleCI
+
 ---
 
-## Network Requirements
+## Network requirements
 
-### Bandwidth Requirements
+### Bandwidth requirements
 
 <table>
   <thead>
     <tr>
+      <th>Environment</th>
       <th>Context</th>
       <th>Requirement</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Development - Initial setup</strong></td>
+      <td rowspan="2">Development</td>
+      <td><strong>Initial setup</strong></td>
       <td>~2 GB download (dependencies, images)</td>
     </tr>
     <tr>
-      <td><strong>Development - Ongoing</strong></td>
+      <td><strong>Ongoing</strong></td>
       <td>~100 MB/day (package updates, git operations)</td>
     </tr>
     <tr>
-      <td><strong>Production - Initial load</strong></td>
+      <td rowspan="4">Production</td>
+      <td><strong>Initial load</strong></td>
       <td>~500 KB (gzipped)</td>
     </tr>
     <tr>
-      <td><strong>Production - Subsequent loads</strong></td>
+      <td><strong>Subsequent loads</strong></td>
       <td>~50 KB (cached)</td>
     </tr>
     <tr>
-      <td><strong>Production - API calls</strong></td>
+      <td><strong>API calls</strong></td>
       <td>~10 KB average</td>
     </tr>
     <tr>
-      <td><strong>Production - Weather API</strong></td>
+      <td><strong>Weather API</strong></td>
       <td>~20 KB per update</td>
     </tr>
   </tbody>
 </table>
 
-### Port Requirements
+### Port requirements
 
 | Service        | Port      | Protocol | Purpose               |
 |----------------|-----------|----------|-----------------------|
-| Frontend (dev) | 3000      | HTTP     | Development server    |
-| Backend        | 8080      | HTTP     | API server            |
+| Frontend (dev) | 4200      | HTTPS    | Development server    |
+| Backend        | 8080      | HTTPS    | API server (gateway)  |
 | Database       | 5432/3306 | TCP      | PostgreSQL/MySQL      |
-| Documentation  | 3001      | HTTP     | Docusaurus dev server |
+| Documentation  | 3001      | HTTPS    | Docusaurus dev server |
 
 ---
 
-## Security Requirements
+## Security requirements
 
 ### SSL/TLS
 
@@ -410,15 +392,16 @@ Workflows for:
 - **Minimum TLS Version:** 1.2
 - **Recommended:** TLS 1.3
 - **Certificate:** Let's Encrypt (free) or cloud provider managed
-  :::
+  
+:::
 
-### Firewall Rules
+### Firewall rules
 
 - **Frontend:** Public access to ports 80, 443
 - **Backend:** Restricted to frontend and admin IPs
 - **Database:** Private network only, no public access
 
-### Environment Variables
+### Environment variables
 
 :::caution Required Environment Variables
 The following environment variables must be configured:
@@ -439,13 +422,14 @@ The following environment variables must be configured:
 **Environment:**
 
 - `NODE_ENV` - Set to `production` in production
-  :::
+  
+:::
 
 ---
 
-## Backup and Recovery
+## Backup and recovery
 
-### Backup Requirements
+### Backup requirements
 
 :::info Backup Policy
 
@@ -454,9 +438,10 @@ The following environment variables must be configured:
 - **Storage:** Offsite/different region
 - **Encryption:** AES-256
 - **Testing:** Monthly restore tests
-  :::
 
-### Recovery Time Objectives
+:::
+
+### Recovery time objectives
 
 | Metric                             | Target   | Description                     |
 |------------------------------------|----------|---------------------------------|
@@ -466,9 +451,9 @@ The following environment variables must be configured:
 
 ---
 
-## Monitoring Requirements
+## Monitoring requirements
 
-### Required Monitoring
+### Required monitoring
 
 | Metric               | Tool                 | Alert Threshold |
 |----------------------|----------------------|-----------------|
@@ -480,7 +465,7 @@ The following environment variables must be configured:
 | Disk Usage           | Cloud Provider       | > 90%           |
 | Database Connections | DB Monitoring        | > 80% of max    |
 
-### Logging Requirements
+### Logging requirements
 
 :::note Logging Standards
 
@@ -489,19 +474,20 @@ The following environment variables must be configured:
 - **Storage:** Centralized logging (optional)
 - **Levels:** DEBUG, INFO, WARN, ERROR
 - **PII:** No sensitive data in logs
-  :::
+
+:::
 
 ---
 
-## Scalability Considerations
+## Scalability considerations
 
-### Horizontal Scaling Support
+### Horizontal scaling support
 
 - **Frontend:** Stateless, scales infinitely via CDN
 - **Backend:** Stateless design, can add instances
 - **Database:** Connection pooling, read replicas (optional)
 
-### Load Balancing
+### Load balancing
 
 - **Frontend:** CDN-based distribution
 - **Backend:** Application load balancer (when scaling)
@@ -509,9 +495,9 @@ The following environment variables must be configured:
 
 ---
 
-## Compatibility Matrix
+## Compatibility matrix
 
-### Development Environment Compatibility
+### Development environment compatibility
 
 | OS                | Node.js 24 | Java 25 | Docker | pnpm 10 | mise |
 |-------------------|------------|---------|--------|---------|------|
@@ -524,9 +510,9 @@ The following environment variables must be configured:
 
 ---
 
-## Testing Environment Requirements
+## Testing environment requirements
 
-### Automated Testing
+### Automated testing
 
 :::info Testing Tools
 
@@ -534,28 +520,30 @@ The following environment variables must be configured:
 - **Integration Tests:** Supertest (API), Testcontainers (Database)
 - **E2E Tests:** Playwright
 - **Coverage:** Minimum 80%
-  :::
 
-### Test Data
+:::
+
+### Test data
 
 - **Seed Data:** Included in repository
 - **Test Database:** Separate from development
 - **Reset Mechanism:** Automated between test runs
 
-### Performance Testing
+### Performance testing
 
 :::tip Performance Testing Requirements
 
 - **Load Testing:** k6, JMeter, or Artillery
 - **Target:** 100 concurrent users
 - **Duration:** 15-minute sustained load
-  :::
+
+:::
 
 ---
 
-## Documentation Requirements
+## Documentation requirements
 
-### Technical Documentation
+### Technical documentation
 
 - README with setup instructions
 - API documentation (OpenAPI/Swagger)
@@ -563,7 +551,7 @@ The following environment variables must be configured:
 - Database schema
 - Deployment guide
 
-### User Documentation
+### User documentation
 
 - User guide (this Docusaurus site)
 - Feature documentation
@@ -572,25 +560,26 @@ The following environment variables must be configured:
 
 ---
 
-## Compliance and Standards
+## Compliance and standards
 
-### Code Standards
+### Code standards
 
 :::note Code Style Guidelines
 
 - **JavaScript/TypeScript:** ESLint with Airbnb or Standard config
 - **Java:** Google Java Style Guide or Spring conventions
 - **Formatting:** Prettier (JS/TS), Spotless (Java)
-  :::
 
-### API Standards
+:::
+
+### API standards
 
 - REST architecture
 - JSON request/response
 - OpenAPI 3.0 specification
 - Semantic versioning (v1, v2, etc.)
 
-### Accessibility Standards
+### Accessibility standards
 
 :::warning Accessibility Requirements
 
@@ -599,13 +588,14 @@ The following environment variables must be configured:
 - ARIA labels
 - Keyboard navigation
 - Screen reader testing
-  :::
+
+:::
 
 ---
 
-## Support and Maintenance
+## Support and maintenance
 
-### Update Schedule
+### Update schedule
 
 | Update Type               | Frequency         |
 |---------------------------|-------------------|
@@ -614,7 +604,7 @@ The following environment variables must be configured:
 | **Feature Releases**      | As needed         |
 | **Documentation Updates** | With each feature |
 
-### Support Channels
+### Support channels
 
 - **Issues:** GitHub Issues
 - **Documentation:** Docusaurus site
@@ -622,9 +612,9 @@ The following environment variables must be configured:
 
 ---
 
-## Constraints and Limitations
+## Constraints and limitations
 
-### Technical Constraints
+### Technical constraints
 
 :::caution Project Constraints
 
@@ -632,9 +622,10 @@ The following environment variables must be configured:
 - Free/low-cost infrastructure (affects scalability limits)
 - Browser-based only (no native mobile apps initially)
 - English language only (initially)
-  :::
+  
+:::
 
-### Known Limitations
+### Known limitations
 
 - Weather data limited by third-party API quotas
 - No real-time collaboration features
@@ -643,9 +634,9 @@ The following environment variables must be configured:
 
 ---
 
-## Future Considerations
+## Future considerations
 
-### Potential Enhancements
+### Potential enhancements
 
 :::info Future Roadmap
 **Potential Features:**
@@ -655,14 +646,16 @@ The following environment variables must be configured:
 - Calendar synchronization (Google Calendar, Outlook)
 - Social features and sharing
 - Advanced analytics and insights
-- Machine learning-powered suggestions
-  :::
+- Machine-learning-powered suggestions
 
-### Scalability Path
+:::
 
-> Future scalability improvements may include:
-> - Microservices architecture
-> - Separate read/write databases
-> - Redis caching layer
-> - Message queue for background jobs
-> - Multi-region deployment
+### Scalability path
+
+Future scalability improvements may include:
+
+- Microservices architecture
+- Separate read/write databases
+- Redis caching layer
+- Message queue for background jobs
+- Multi-region deployment

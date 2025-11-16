@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# FR overview
 
 This section covers the functional requirements of the system following the Behavior-Driven Development (BDD)
 methodology. We organize requirements and BDD artifacts by Domain-Driven Design (DDD) bounded contexts defined in the
@@ -16,7 +16,9 @@ domain documentation (DMD).
 - Scenario: Concrete examples specifying behavior for a feature. E.g., "Successful registration with correct
   credentials."
 
-## Conventions
+## Documentation conventions
+
+### Requirement numbering
 
 Each feature will have this pattern FR-XXX-000. These are the rules for each segment of the code:
 
