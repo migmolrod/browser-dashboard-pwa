@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Tasks (Supporting)
 
-## Context Summary
+## Context summary
 
 - Code: `TSK`
 - Mission: Provide lightweight personal task management with statuses, priorities, and due dates.
@@ -16,7 +16,7 @@ sidebar_position: 4
 
 - Tasks team (primary developer)
 
-## Domain Model
+## Domain model
 
 - Aggregates
     - TaskList (root, optional): owns Tasks; or flat model with Task as root
@@ -41,19 +41,19 @@ sidebar_position: 4
   EventCreationRequestedFromTask
 - Consumed: UserRegistered (initialize a default list), DashboardCreated (optional widget init)
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Upstream (Conformist): User Identity (user model)
 - Downstream (Customer–Supplier): Dashboard Management (provides task data for widgets)
 - Lateral (Partnership): Calendar (accepts EventCreationRequestedFromTask to create events)
 - Notes: Tasks remain the source of truth for task data; Calendar owns created events
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: strong within task updates; eventual for dashboard widgets via events
 - Versioning: additive fields in queries; versioned event contracts for lifecycle changes
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: scope creep toward project management—mitigate by keeping lists lightweight and avoiding dependencies graph
 - Possible evolution: reminders/notifications policy; templates or recurring tasks if needed later

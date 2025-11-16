@@ -48,7 +48,7 @@ Each bounded context will follow this structure:
     - Policies/Rules: cross-cutting business policies not captured as invariants (e.g., layout rules).
 - **Events**
     - Published
-    - Consumed (Optional): Note purpose/reaction in brief parentheses only where non-obvious.
+    - Consumed (optional): Note purpose/reaction in brief parentheses only where non-obvious.
 - **Integration & Dependencies**
     - Upstream/Downstream contexts with a relationship type (Customer-Supplier, Conformist, etc.).
     - External systems and ACLs, if any. Keep this as the single place to talk about dependencies (removes duplication

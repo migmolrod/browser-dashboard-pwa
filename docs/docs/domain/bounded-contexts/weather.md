@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Weather (Supporting)
 
-## Context Summary
+## Context summary
 
 - Code: `WEA`
 - Mission: Fetch and present current weather for configured locations.
@@ -16,7 +16,7 @@ sidebar_position: 6
 
 - Weather team (primary developer)
 
-## Domain Model
+## Domain model
 
 - Aggregates
     - (Read‑model oriented) No true aggregate; configuration typically lives in Dashboard’s WidgetInstance
@@ -37,19 +37,19 @@ sidebar_position: 6
 - Consumed: WidgetConfigurationChanged (update location), DashboardCreated (optional widget init), PreferencesUpdated (
   units)
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Upstream (Conformist): Preferences (units, locale)
 - Downstream (Customer–Supplier): Dashboard Management (provides data for widgets)
 - External (ACL): Weather Provider API (e.g., OpenWeatherMap) behind an anti‑corruption layer
 - Notes: Translates provider payloads into WeatherSnapshot to isolate external model
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: eventual; consumers tolerate slightly stale cached data
 - Versioning: internal adapter shields provider API changes; events/queries evolve additively
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: provider limits/outages—mitigate with caching, backoff, and degraded UI
 - Possible evolution: multi‑day forecasts and alerts as separate read models if needed later

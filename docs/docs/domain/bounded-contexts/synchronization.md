@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Synchronization (Generic)
 
-## Context Summary
+## Context summary
 
 - Code: `SYN`
 - Mission: Provide local‑first persistence with reliable background synchronization to optional cloud storage.
@@ -16,7 +16,7 @@ sidebar_position: 9
 
 - Platform/Infrastructure team
 
-## Domain Model
+## Domain model
 
 - Aggregates
     - SyncState (root): per-entity sync metadata (version/etag, lastSyncedAt, pending ops)
@@ -66,7 +66,7 @@ sidebar_position: 9
 - Consistency: eventual across local/cloud; strong consistency is not guaranteed
 - Versioning: event schemas evolve additively; remote adapter versioned separately
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: data divergence during extended offline periods—mitigate with clear conflict policy and user feedback
 - Possible evolution: per‑field merges/CRDTs; selective sync scopes; bandwidth‑aware scheduling

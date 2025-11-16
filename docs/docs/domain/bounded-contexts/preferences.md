@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Preferences (Generic)
 
-## Context Summary
+## Context summary
 
 - Code: `PRE`
 - Mission: Manage cross‑cutting user preferences such as theme, locale, timezone, and defaults.
@@ -16,7 +16,7 @@ sidebar_position: 8
 
 - Platform/Infrastructure team
 
-## Domain Model
+## Domain model
 
 - Aggregates
     - UserPreferences (root): theme, locale, timezone, widget defaults
@@ -36,18 +36,18 @@ sidebar_position: 8
 - Published: PreferencesUpdated, ThemeChanged, LocaleChanged
 - Consumed: UserRegistered (create defaults)
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Upstream (Shared Kernel/Conformist): User Identity (UserId association)
 - Downstream (Customer–Supplier): Dashboard Management and widget contexts consume preference updates
 - Notes: Acts as single source of truth for cross‑cutting user settings
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: strong for preference mutations; eventual for consumers via events
 - Versioning: additive evolution of preference schema; event versioning guarantees backward compatibility
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: preference bloat (too many cross‑cutting fields)—mitigate by pushing widget‑specific settings to owning contexts
 - Possible evolution: per‑device overrides; preference profiles with opt-in switching

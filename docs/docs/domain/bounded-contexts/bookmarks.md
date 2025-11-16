@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Bookmarks (Supporting)
 
-## Context Summary
+## Context summary
 
 - Code: `BKM`
 - Mission: Manage hierarchical bookmarks (folders and links) and quick‑access features like speed dial.
@@ -16,7 +16,7 @@ sidebar_position: 3
 
 - Bookmarks team (primary developer).
 
-## Domain Model
+## Domain model
 
 - Aggregates:
     - Folder (root): owns child folders and bookmarks.
@@ -42,19 +42,19 @@ sidebar_position: 3
 - Consumed: UserRegistered (initialize root folder), DashboardCreated (optional widget init), ProfileSwitched (optional
   widget/profile reactions).
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Upstream (Conformist): User Identity (user model).
 - Downstream (Customer–Supplier): Dashboard Management (supplies bookmark data for widgets).
 - Upstream (Conformist): Preferences (read cross‑cutting settings if needed).
 - Notes: Exposes read models for dashboard widgets; no responsibility for dashboard composition.
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: strong for CRUD within the context; eventual for consumers via events.
 - Versioning: additive changes to query responses; versioned event schemas.
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: deep nesting and large trees impacting search/reorder—mitigate with pagination and index-friendly structures.
 - Possible evolution: introduce Collections or Tags parallel to Folders if the user needs to outgrow the strict

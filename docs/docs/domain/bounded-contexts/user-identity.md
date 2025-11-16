@@ -2,9 +2,9 @@
 sidebar_position: 7
 ---
 
-# User Identity (Generic)
+# User identity (Generic)
 
-## Context Summary
+## Context summary
 
 - Code: `UID`
 - Mission: Provide foundational user identification, authentication, and session management.
@@ -15,7 +15,7 @@ sidebar_position: 7
 
 - Platform/Infrastructure team
 
-## Domain Model
+## Domain model
 
 - Aggregates
     - User (root): username, credentials, basic profile identifiers
@@ -36,18 +36,18 @@ sidebar_position: 7
 - Published: UserRegistered, UserLoggedIn, UserLoggedOut, UserDeleted
 - Consumed: None (foundational)
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Downstream (Conformist): All contexts accept UserId as provided
 - Lateral (Shared Kernel): Preferences shares minimal identifiers (UserId)
 - Notes: Acts as a system-of-record for identity; downstream contexts must not store credentials
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: strong for identity and session mutations
 - Versioning: additive changes to user read models; event versioning for identity lifecycle
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: expanding into full IAM—constrain scope and defer to external IdP when needed
 - Possible evolution: OAuth/OIDC integration; MFA; password reset/recovery flows

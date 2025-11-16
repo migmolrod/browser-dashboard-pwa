@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# Dashboard Management (Core)
+# Dashboard management (Core)
 
-## Context Summary
+## Context summary
 
 - Code: `DAS`
 - Mission: Orchestrate dashboard composition, layout, and personalization—the system’s core differentiator.
@@ -16,7 +16,7 @@ sidebar_position: 2
 
 - Dashboard team (primary developer).
 
-## Domain Model
+## Domain model
 
 ### Aggregates
 
@@ -43,19 +43,19 @@ sidebar_position: 2
   WidgetConfigurationChanged, WidgetReordered, ProfileSwitched.
 - Consumed: UserRegistered, PreferencesUpdated, TaskUpdated, EventCreated, BookmarkPinned, WeatherDataRefreshed.
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Upstream (Conformist): User Identity (user model).
 - Upstream (Customer–Supplier): Preferences (themes, defaults).
 - Downstream (Customer–Supplier): Bookmarks, Tasks, Calendar, Weather (supply data for widgets).
 - Notes: Widget contexts provide data; Dashboard composes and personalizes views.
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: strong for layout updates; eventual for widget data refreshes.
 - Versioning: additive event versioning; backward-compatible query responses.
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Potential split: “Dashboard Composition” vs “Layout Engine” if complexity grows.
 - Risk: tight coupling to widget schemas—mitigate via schema validation and versioned contracts.

@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Calendar (Supporting)
 
-## Context Summary
+## Context summary
 
 - Code: `CAL`
 - Mission: Manage personal calendar events with basic views and reminders.
@@ -16,7 +16,7 @@ sidebar_position: 5
 
 - Calendar team (primary developer)
 
-## Domain Model
+## Domain model
 
 - Aggregates
     - Calendar (root): owns Events (single calendar in MVP)
@@ -39,19 +39,19 @@ sidebar_position: 5
 - Consumed: UserRegistered (initialize default calendar), EventCreationRequestedFromTask (create event from task),
   DashboardCreated (optional widget init)
 
-## Integration & Dependencies
+## Integration and dependencies
 
 - Upstream (Conformist): User Identity (user model)
 - Downstream (Customer–Supplier): Dashboard Management (provides calendar data for widgets)
 - Lateral (Partnership): Tasks (consumes EventCreationRequestedFromTask to create events)
 - Notes: Calendar owns event lifecycle; does not manage task state
 
-## Contract & SLA (optional)
+## Contract and SLA
 
 - Consistency: strong within event updates; eventual for dashboard consumers via events
 - Versioning: additive changes to query shapes; versioned event schemas for temporal fields
 
-## Risks & Evolution (optional)
+## Risks and evolution
 
 - Risk: recurrence and shared calendars expanding scope—defer to a future “Recurrence/Sharing” module if needed
 - Possible evolution: snooze/dismiss reminder actions; ICS import/export behind an ACL later
