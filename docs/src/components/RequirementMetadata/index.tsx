@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "../StatusLabel/styles.module.css";
 import StatusLabel from "@site/src/components/StatusLabel";
 
 export default function RequirementMetadata({status, lastUpdated}) {

@@ -6,35 +6,3 @@
     width: 100%;
     margin-bottom: 1rem;
 }
-
-.reqStatus {
-    border-radius: .4rem;
-    padding: .2rem .4rem;
-    font-size: small;
-    font-weight: bold;
-}
-
-.reqStatusDraft {
-    background-color: var(--ifm-color-danger-darkest);
-    color: white;
-}
-
-.reqStatusReview {
-    background-color: var(--ifm-color-warning-darkest);
-    color: white;
-}
-
-.reqStatusApproved {
-    background-color: var(--ifm-color-info-darkest);
-    color: white;
-}
-
-.reqStatusImplemented {
-    background-color: var(--ifm-color-primary-darkest);
-    color: white;
-}
-
-.reqStatusVerified {
-    background-color: var(--ifm-color-success-darkest);
-    color: white;
-}

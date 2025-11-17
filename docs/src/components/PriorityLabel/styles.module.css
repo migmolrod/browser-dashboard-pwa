@@ -1,0 +1,33 @@
+.priorityLabel {
+    border-radius: .2rem;
+    padding: .2rem .4rem;
+    font-size: small;
+    font-weight: bold;
+    background-color: var(--ifm-color-emphasis-200);
+    border-left: 3px solid var(--ifm-color-emphasis-1000);
+    color: var(--ifm-color-emphasis-1000);
+}
+
+.priorityLabelMustHave {
+    background-color: var(--ifm-color-info-lightest);
+    border-left: 3px solid var(--ifm-color-info-darkest);
+    color: var(--ifm-color-info-contrast-background);
+}
+
+.priorityLabelShouldHave {
+    background-color: var(--ifm-color-success-lightest);
+    border-left: 3px solid var(--ifm-color-success-darkest);
+    color: var(--ifm-color-success-contrast-background);
+}
+
+.priorityLabelCouldHave {
+    background-color: var(--ifm-color-warning-lightest);
+    border-left: 3px solid var(--ifm-color-warning-darkest);
+    color: var(--ifm-color-warning-contrast-background);
+}
+
+.priorityLabelWontHave {
+    background-color: var(--ifm-color-danger-lightest);
+    border-left: 3px solid var(--ifm-color-danger-darkest);
+    color: var(--ifm-color-danger-contrast-background);
+}
