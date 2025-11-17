@@ -6,6 +6,8 @@ lastUpdated: 2025-11-17
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
@@ -24,17 +26,17 @@ widgets and accepting event creation requests from the Tasks context.
 
 ## Features summary
 
-| Feature Code | Feature Name                  | Priority    | Status |
-|--------------|-------------------------------|-------------|--------|
-| FR-CAL-001   | Event management              | Must Have   | Draft  |
-| FR-CAL-002   | Calendar views                | Must Have   | Draft  |
-| FR-CAL-003   | Recurring events              | Should Have | Draft  |
-| FR-CAL-004   | Event reminders               | Should Have | Draft  |
-| FR-CAL-005   | Event categories              | Should Have | Draft  |
-| FR-CAL-006   | Event time conflict detection | Should Have | Draft  |
-| FR-CAL-007   | Task integration              | Should Have | Draft  |
-| FR-CAL-008   | Event import/export           | Could Have  | Draft  |
-| FR-CAL-009   | All-day events                | Must Have   | Draft  |
+| Feature Code | Feature Name                  | Priority                                | Status                        |
+|--------------|-------------------------------|-----------------------------------------|-------------------------------|
+| FR-CAL-001   | Event management              | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-CAL-002   | Calendar views                | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-CAL-003   | Recurring events              | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-CAL-004   | Event reminders               | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-CAL-005   | Event categories              | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-CAL-006   | Event time conflict detection | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-CAL-007   | Task integration              | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-CAL-008   | Event import/export           | <PriorityLabel priority="Could Have"/>  | <StatusLabel status="Draft"/> |
+| FR-CAL-009   | All-day events                | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 
 ---
 

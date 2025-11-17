@@ -6,6 +6,8 @@ lastUpdated: 2025-11-16
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
@@ -24,17 +26,17 @@ folder tree integrity and supplying bookmark data to dashboard widgets.
 
 ## Features summary
 
-| Feature Code | Feature Name            | Priority    | Status |
-|--------------|-------------------------|-------------|--------|
-| FR-BKM-001   | Folder Management       | Must Have   | Draft  |
-| FR-BKM-002   | Bookmark Management     | Must Have   | Draft  |
-| FR-BKM-003   | Bookmark Organization   | Must Have   | Draft  |
-| FR-BKM-004   | Bookmark Reordering     | Should Have | Draft  |
-| FR-BKM-005   | Pin/Favorite Management | Must Have   | Draft  |
-| FR-BKM-006   | Bookmark Search         | Should Have | Draft  |
-| FR-BKM-007   | Icon/Favicon Management | Should Have | Draft  |
-| FR-BKM-008   | Speed Dial              | Must Have   | Draft  |
-| FR-BKM-009   | Bookmark Import/Export  | Could Have  | Draft  |
+| Feature Code | Feature Name            | Priority                                | Status                        |
+|--------------|-------------------------|-----------------------------------------|-------------------------------|
+| FR-BKM-001   | Folder Management       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-BKM-002   | Bookmark Management     | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-BKM-003   | Bookmark Organization   | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-BKM-004   | Bookmark Reordering     | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-BKM-005   | Pin/Favorite Management | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-BKM-006   | Bookmark Search         | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-BKM-007   | Icon/Favicon Management | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-BKM-008   | Speed Dial              | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-BKM-009   | Bookmark Import/Export  | <PriorityLabel priority="Could Have"/>  | <StatusLabel status="Draft"/> |
 
 ---
 

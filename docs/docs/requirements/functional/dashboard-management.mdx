@@ -5,7 +5,10 @@ status: Draft
 lastUpdated: 2025-11-15
 ---
 
+
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
@@ -24,16 +27,16 @@ dashboard experience.
 
 ## Features summary
 
-| Feature Code | Feature Name               | Priority    | Status |
-|--------------|----------------------------|-------------|--------|
-| FR-DAS-001   | Dashboard creation         | Must Have   | Draft  |
-| FR-DAS-002   | Widget instance management | Must Have   | Draft  |
-| FR-DAS-003   | Widget configuration       | Must Have   | Draft  |
-| FR-DAS-004   | Layout management          | Must Have   | Draft  |
-| FR-DAS-005   | Widget reordering          | Must Have   | Draft  |
-| FR-DAS-006   | Personalization profiles   | Should Have | Draft  |
-| FR-DAS-007   | Dashboard deletion         | Must Have   | Draft  |
-| FR-DAS-008   | Dashboard persistence      | Must Have   | Draft  |
+| Feature Code | Feature Name               | Priority                                | Status                        |
+|--------------|----------------------------|-----------------------------------------|-------------------------------|
+| FR-DAS-001   | Dashboard creation         | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-DAS-002   | Widget instance management | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-DAS-003   | Widget configuration       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-DAS-004   | Layout management          | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-DAS-005   | Widget reordering          | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-DAS-006   | Personalization profiles   | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-DAS-007   | Dashboard deletion         | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-DAS-008   | Dashboard persistence      | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 
 ---
 
@@ -73,7 +76,7 @@ MVP limits users to a single dashboard).
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
-  Delivery)
+Delivery)
 - Domain Aggregates: Dashboard (root)
 - Domain Events: DashboardCreated, UserRegistered (consumed)
 
@@ -181,7 +184,7 @@ placements of widget types (e.g., "Weather widget for Madrid", "Bookmarks widget
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
-  Delivery)
+Delivery)
 - Domain Aggregates: Dashboard (root), WidgetInstance
 - Domain Events: WidgetAddedToDashboard, WidgetRemovedFromDashboard
 
@@ -320,7 +323,7 @@ persisting these configurations.
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement),  BR-003 (Technical
-  Excellence), BR-005 (User Value Delivery)
+Excellence), BR-005 (User Value Delivery)
 - Domain Aggregates: WidgetInstance
 - Domain Events: WidgetConfigurationChanged
 
@@ -461,7 +464,7 @@ responsive behavior. Layout defines the grid/region structure, ordering rules, a
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
-  Delivery)
+Delivery)
 - Domain Aggregates: Layout, Dashboard
 - Domain Events: LayoutChanged (future)
 
@@ -597,7 +600,7 @@ prioritize and organize their dashboard according to their preferences.
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
-  Delivery)
+Delivery)
 - Domain Aggregates: Dashboard, WidgetInstance, Layout
 - Domain Events: WidgetReordered
 
@@ -736,7 +739,7 @@ Each profile contains a different dashboard configuration including widgets, lay
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-004 (Scalability and
-  Maintainability), BR-005 (User Value Delivery)
+Maintainability), BR-005 (User Value Delivery)
 - Domain Aggregates: Dashboard (each profile has its own dashboard)
 - Domain Events: ProfileCreated, ProfileSwitched, ProfileDeleted
 
@@ -892,7 +895,7 @@ primary dashboard in the MVP, the capability is needed for cleanup operations an
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
-  Delivery)
+Delivery)
 - Domain Aggregates: Dashboard (root)
 - Domain Events: DashboardDeleted
 
@@ -1015,7 +1018,7 @@ configurations, and layout. This ensures users can resume their personalized exp
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
-  Excellence), BR-005 (User Value Delivery)
+Excellence), BR-005 (User Value Delivery)
 - Domain Aggregates: Dashboard (root), WidgetInstance, Layout
 - Domain Events: All dashboard events
 
@@ -1130,11 +1133,11 @@ And the dashboard loads successfully
 ### Interactions between features
 
 - **Dashboard Creation ↔ Widget Management:** New dashboards start empty; widgets can only be added to existing
-  dashboards
+dashboards
 - **Widget Management ↔ Layout Management:** Adding/removing widgets triggers layout recalculation
 - **Widget Reordering ↔ Layout Management:** Reordering updates layout positions; layout constraints govern valid drops
 - **Personalization Profiles ↔ All Features:** Each profile has its own dashboard instance, isolating all widget and
-  layout configurations
+layout configurations
 - **Dashboard Persistence ↔ All Features:** All features depend on persistence; persistence is the cross-cutting concern
 
 ### Shared business rules

@@ -6,6 +6,8 @@ lastUpdated: 2025-11-17
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
@@ -24,17 +26,17 @@ enabling integration with the Calendar context for event creation.
 
 ## Features summary
 
-| Feature Code | Feature Name              | Priority    | Status |
-|--------------|---------------------------|-------------|--------|
-| FR-TSK-001   | Task management           | Must Have   | Draft  |
-| FR-TSK-002   | Task status lifecycle     | Must Have   | Draft  |
-| FR-TSK-003   | Task priority management  | Must Have   | Draft  |
-| FR-TSK-004   | Due date management       | Must Have   | Draft  |
-| FR-TSK-005   | Task lists/sections       | Should Have | Draft  |
-| FR-TSK-006   | Task reordering           | Should Have | Draft  |
-| FR-TSK-007   | Task search and filtering | Should Have | Draft  |
-| FR-TSK-008   | Calendar integration      | Should Have | Draft  |
-| FR-TSK-009   | Task completion tracking  | Must Have   | Draft  |
+| Feature Code | Feature Name              | Priority                                | Status                        |
+|--------------|---------------------------|-----------------------------------------|-------------------------------|
+| FR-TSK-001   | Task management           | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-TSK-002   | Task status lifecycle     | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-TSK-003   | Task priority management  | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-TSK-004   | Due date management       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-TSK-005   | Task lists/sections       | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-TSK-006   | Task reordering           | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-TSK-007   | Task search and filtering | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-TSK-008   | Calendar integration      | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-TSK-009   | Task completion tracking  | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 
 ---
 

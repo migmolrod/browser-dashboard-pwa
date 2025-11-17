@@ -6,10 +6,12 @@ lastUpdated: 2025-11-17
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
-# Weather - Functional requirements
+# Weather
 
 ## Overview
 
@@ -24,15 +26,15 @@ widgets. The context is read-model oriented with minimal write operations.
 
 ## Features summary
 
-| Feature Code | Feature Name              | Priority    | Status |
-|--------------|---------------------------|-------------|--------|
-| FR-WEA-001   | Location configuration    | Must Have   | Draft  |
-| FR-WEA-002   | Current weather retrieval | Must Have   | Draft  |
-| FR-WEA-003   | Weather data caching      | Must Have   | Draft  |
-| FR-WEA-004   | Multiple locations        | Should Have | Draft  |
-| FR-WEA-005   | Unit preferences          | Should Have | Draft  |
-| FR-WEA-006   | Weather data refresh      | Must Have   | Draft  |
-| FR-WEA-007   | Error handling            | Must Have   | Draft  |
+| Feature Code | Feature Name              | Priority                                | Status                        |
+|--------------|---------------------------|-----------------------------------------|-------------------------------|
+| FR-WEA-001   | Location configuration    | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-WEA-002   | Current weather retrieval | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-WEA-003   | Weather data caching      | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-WEA-004   | Multiple locations        | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-WEA-005   | Unit preferences          | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-WEA-006   | Weather data refresh      | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-WEA-007   | Error handling            | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 
 ---
 
