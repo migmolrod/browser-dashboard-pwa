@@ -1,0 +1,1297 @@
+---
+sidebar_position: 6
+title: Weather
+status: Draft
+lastUpdated: 2025-11-15
+---
+
+import RequirementMetadata from "../../../src/components/RequirementMetadata";
+
+<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+
+# Weather - Functional requirements
+
+## Overview
+
+The Weather bounded context fetches and presents current weather data for configured locations. It retrieves data from
+third-party weather providers, caches responses to optimize API usage, and supplies weather information to dashboard
+widgets. The context is read-model oriented with minimal write operations.
+
+**Bounded context code:** WEA  
+**Related DMD section:** [Weather (Supporting)](../../domain/bounded-contexts/weather)
+
+---
+
+## Features summary
+
+| Feature Code | Feature Name              | Priority    | Status |
+|--------------|---------------------------|-------------|--------|
+| FR-WEA-001   | Location configuration    | Must Have   | Draft  |
+| FR-WEA-002   | Current weather retrieval | Must Have   | Draft  |
+| FR-WEA-003   | Weather data caching      | Must Have   | Draft  |
+| FR-WEA-004   | Multiple locations        | Should Have | Draft  |
+| FR-WEA-005   | Unit preferences          | Should Have | Draft  |
+| FR-WEA-006   | Weather data refresh      | Must Have   | Draft  |
+| FR-WEA-007   | Error handling            | Must Have   | Draft  |
+
+---
+
+## FR-WEA-001: Location configuration
+
+**Priority:** Must Have
+
+**Description:**  
+Users must be able to configure locations for weather data retrieval. Locations can be specified by city name,
+postal/ZIP code, or geographic coordinates. This configuration is typically stored per widget instance by the Dashboard
+Management context but validated by the Weather context.
+
+**Preconditions:**
+
+- User must be authenticated
+- Weather widget instance must exist on dashboard
+- Location data must be provided (city name, postal code, or coordinates)
+
+**Postconditions:**
+
+- Location configuration is validated and stored
+- Weather data can be retrieved for the configured location
+- ConfigureWeatherLocation command succeeds
+
+**Business rules:**
+
+- Location must be valid and resolvable by the weather provider
+- Supported location formats: City name (e.g., "London"), City with country (e.g., "London, UK"), Postal/ZIP code,
+  Geographic coordinates (latitude, longitude)
+- Invalid locations are rejected with appropriate error messages
+- Location validation is performed against weather provider API
+- Default location can be set based on browser geolocation (if permitted)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: WeatherSnapshot (value object), WidgetInstance (from Dashboard Management)
+- Domain Events: WidgetConfigurationChanged (consumed)
+
+**Dependencies:**
+
+- Dashboard Management context (widget configuration)
+- Weather Provider API (location validation)
+
+**Acceptance criteria:**
+
+- User can configure location via city name
+- User can configure location via postal/ZIP code
+- User can configure location via coordinates
+- Location is validated before saving
+- Invalid locations show appropriate error messages
+- Valid location enables weather data retrieval
+- Location configuration persists across sessions
+- User can update location at any time
+
+**User stories:**
+
+- US-WEA-001-001: Configure location by city name
+- US-WEA-001-002: Configure location by postal code
+- US-WEA-001-003: Validate invalid location
+- US-WEA-001-004: Update existing location
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Configure location by city name (happy path)
+
+:::note gherkin
+Given a user has a weather widget on their dashboard  
+When the user opens widget settings  
+And enters location "Madrid"  
+And confirms the change  
+Then the location is validated against the weather provider  
+And the location is saved as "Madrid"  
+And weather data is fetched for Madrid  
+And the widget displays Madrid weather
+:::
+
+##### Scenario 2: Configure location with city and country
+
+:::note gherkin
+Given a user is configuring a weather widget  
+When the user enters location "London, UK"  
+And confirms the change  
+Then the location is validated as "London, UK"  
+And weather data is fetched for London, UK  
+And the widget displays weather for London, UK
+:::
+
+##### Scenario 3: Configure location by postal code
+
+:::note gherkin
+Given a user is configuring a weather widget  
+When the user enters location "28001" (Madrid postal code)  
+And confirms the change  
+Then the location is validated as postal code  
+And weather data is fetched for the corresponding location  
+And the widget displays weather with resolved city name
+:::
+
+##### Scenario 4: Configure location by coordinates
+
+:::note gherkin
+Given a user is configuring a weather widget  
+When the user enters coordinates "40.4168, -3.7038" (Madrid)  
+And confirms the change  
+Then the location is validated as coordinates  
+And weather data is fetched for those coordinates  
+And the widget displays weather with resolved city name
+:::
+
+##### Scenario 5: Invalid location validation
+
+:::note gherkin
+Given a user is configuring a weather widget  
+When the user enters location "InvalidCityXYZ123"  
+And attempts to save  
+Then location validation fails  
+And an error message indicates the location is not found  
+And the configuration is not saved  
+And the widget retains previous location (or shows no data)
+:::
+
+##### Scenario 6: Update existing location
+
+:::note gherkin
+Given a user has a weather widget configured for "London"  
+When the user changes the location to "Paris"  
+And confirms the change  
+Then the location is updated to "Paris"  
+And weather data is fetched for Paris  
+And the widget displays Paris weather  
+And previous London data is cleared
+:::
+
+##### Scenario 7: Use browser geolocation as default
+
+:::note gherkin
+Given a user adds a weather widget for the first time  
+And browser geolocation is permitted  
+When the widget initializes  
+Then the system requests user location  
+And if granted, detects coordinates  
+And resolves to city name  
+And sets as default location  
+And fetches weather data
+:::
+
+---
+
+**Technical notes:**
+
+- Use weather provider's geocoding API for location validation
+- Implement location caching to avoid repeated geocoding requests
+- Store normalized location data (coordinates + resolved city name)
+- Handle ambiguous city names (e.g., "Paris, TX" vs. "Paris, France")
+- Consider implementing autocomplete for city names (future)
+- Ensure location validation respects API rate limits
+
+**Open questions:**
+
+- Should there be location autocomplete/suggestions during input?
+- Should the system store location history for quick switching?
+
+---
+
+## FR-WEA-002: Current weather retrieval
+
+**Priority:** Must Have
+
+**Description:**  
+The system must retrieve current weather data from a third-party weather provider API for configured locations. Weather
+data includes temperature, conditions (sunny, cloudy, rainy, etc.), humidity, wind speed, and additional metrics. Data
+is retrieved on-demand and cached for efficiency.
+
+**Preconditions:**
+
+- Weather widget must be configured with valid location
+- Weather provider API must be accessible
+- API key/credentials must be valid
+
+**Postconditions:**
+
+- Current weather data is retrieved from provider
+- WeatherSnapshot is created with provider data
+- WeatherDataRefreshed event is published
+- Weather data is displayed in widget
+
+**Business rules:**
+
+- Weather data includes: temperature (current, feels-like), weather conditions (description + icon code), humidity
+  percentage, wind speed, atmospheric pressure, provider timestamp
+- Data is retrieved from third-party provider (e.g., OpenWeatherMap, WeatherAPI.com)
+- Provider responses are translated through anti-corruption layer to WeatherSnapshot
+- Weather snapshot must include units (metric/imperial) and timestamp
+- Failed retrievals are handled gracefully (cached data or error state)
+
+**User roles:**
+
+- Authenticated User (indirect; system-initiated)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: WeatherSnapshot (value object)
+- Domain Events: WeatherDataRefreshed, WeatherFetchFailed
+
+**Dependencies:**
+
+- FR-WEA-001 (Location must be configured)
+- Weather Provider API (external)
+
+**Acceptance criteria:**
+
+- System retrieves current weather from provider API
+- Response is parsed and validated
+- WeatherSnapshot is created with all required fields
+- Temperature is provided in configured units
+- Weather conditions are mapped to standard descriptions
+- Provider timestamp is preserved
+- WeatherDataRefreshed event is published
+- Widget displays weather data
+- Retrieval failures are logged and handled gracefully
+
+**User stories:**
+
+- US-WEA-002-001: Retrieve weather for configured location
+- US-WEA-002-002: Display current temperature
+- US-WEA-002-003: Display weather conditions with icon
+- US-WEA-002-004: Handle weather retrieval failure
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Retrieve weather for configured location (happy path)
+
+:::note gherkin
+Given a user has a weather widget configured for "Madrid"  
+When the system fetches weather data  
+Then a request is sent to the weather provider API  
+And the response includes current temperature (25°C)  
+And weather conditions ("Partly Cloudy")  
+And humidity (60%)  
+And wind speed (15 km/h)  
+And provider timestamp  
+Then a WeatherSnapshot is created  
+And a WeatherDataRefreshed event is published  
+And the widget displays all weather information
+:::
+
+##### Scenario 2: Display temperature in metric units
+
+:::note gherkin
+Given a user has configured units as "metric"  
+And a weather widget for "London"  
+When weather data is retrieved  
+Then temperature is displayed in Celsius (18°C)  
+And wind speed is displayed in km/h (20 km/h)
+:::
+
+##### Scenario 3: Display temperature in imperial units
+
+:::note gherkin
+Given a user has configured units as "imperial"  
+And a weather widget for "New York"  
+When weather data is retrieved  
+Then temperature is displayed in Fahrenheit (75°F)  
+And wind speed is displayed in mph (12 mph)
+:::
+
+##### Scenario 4: Display weather icon
+
+:::note gherkin
+Given weather data indicates "Partly Cloudy"  
+When the widget displays weather  
+Then an appropriate weather icon is shown  
+And matches the condition code from provider  
+And is visually clear and recognizable
+:::
+
+##### Scenario 5: Weather retrieval failure - API error
+
+:::note gherkin
+Given a user has a weather widget configured  
+When the weather provider API returns an error (500)  
+Then weather retrieval fails  
+And a WeatherFetchFailed event is published  
+And cached weather data is displayed (if available)  
+And a subtle error indicator is shown  
+And the system retries after backoff period
+:::
+
+##### Scenario 6: Weather retrieval failure - network timeout
+
+:::note gherkin
+Given a user has a weather widget configured  
+When the weather provider API request times out  
+Then weather retrieval fails gracefully  
+And a WeatherFetchFailed event is published  
+And the widget shows last known data (if available)  
+Or shows "Unable to fetch weather" message  
+And the system retries after backoff period
+:::
+
+##### Scenario 7: Parse provider response through ACL
+
+:::note gherkin
+Given the weather provider returns data in its specific format  
+When the system processes the response  
+Then the anti-corruption layer translates provider format  
+To WeatherSnapshot internal model  
+And provider-specific fields are mapped consistently  
+And the system is isolated from provider API changes
+:::
+
+---
+
+**Technical notes:**
+
+- Implement anti-corruption layer to isolate from provider-specific data structures
+- Use HTTP client with timeout configuration (e.g., 10 seconds)
+- Implement exponential backoff for retries (e.g., 1s, 2s, 4s)
+- Log all API errors with context for debugging
+- Store provider name and timestamp in WeatherSnapshot
+- Consider using multiple providers for redundancy (future)
+- Ensure API key is stored securely (environment variables, secrets management)
+
+**Open questions:**
+
+- Should there be a fallback provider if primary fails?
+- Should weather data include "feels like" temperature?
+
+---
+
+## FR-WEA-003: Weather data caching
+
+**Priority:** Must Have
+
+**Description:**  
+The system must cache weather data to minimize API calls, respect provider rate limits, and improve performance. Cached
+data is served to users when fresh data is not available or when cache is still valid. Cache duration balances freshness
+with efficiency.
+
+**Preconditions:**
+
+- Weather data has been retrieved at least once
+- Cache storage is available (in-memory or database)
+
+**Postconditions:**
+
+- Weather data is cached with timestamp
+- Cached data is served when valid
+- Expired cache triggers fresh retrieval
+
+**Business rules:**
+
+- Weather data is cached for 30 minutes (default, configurable)
+- Cached data includes timestamp of retrieval
+- Expired cache automatically triggers background refresh
+- Cache is per-location (different locations have independent caches)
+- Cache survives application restarts (persisted to database)
+- Manual refresh bypasses cache
+
+**User roles:**
+
+- Authenticated User (indirect; system behavior)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-007 (Cost Efficiency)
+- Domain Aggregates: WeatherSnapshot (value object)
+- Domain Events: WeatherDataRefreshed
+
+**Dependencies:**
+
+- FR-WEA-002 (Weather retrieval)
+- Cache storage (in-memory or database)
+
+**Acceptance criteria:**
+
+- Weather data is cached after successful retrieval
+- Cache includes location, timestamp, and weather data
+- Cached data is served if cache age < 30 minutes
+- Expired cache triggers automatic background refresh
+- User can manually refresh to bypass cache
+- Cache is persisted to survive application restarts
+- Cache hit rate is logged for monitoring
+- Cache prevents excessive API calls
+
+**User stories:**
+
+- US-WEA-003-001: Serve cached weather data
+- US-WEA-003-002: Refresh expired cache
+- US-WEA-003-003: Manual cache refresh
+- US-WEA-003-004: Cache persists across restarts
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Serve cached weather data (happy path)
+
+:::note gherkin
+Given weather data was fetched for "Madrid" 10 minutes ago  
+And cached with timestamp  
+When the widget requests weather data for "Madrid"  
+Then the system checks cache  
+And finds valid cached data (age < 30 minutes)  
+And serves cached data without API call  
+And no WeatherDataRefreshed event is published
+:::
+
+##### Scenario 2: Refresh expired cache
+
+:::note gherkin
+Given weather data was fetched for "London" 35 minutes ago  
+And cache has expired (age > 30 minutes)  
+When the widget requests weather data for "London"  
+Then the system detects expired cache  
+And triggers background refresh from provider API  
+And serves stale cached data immediately (optimistic)  
+And updates cache when fresh data arrives  
+And publishes WeatherDataRefreshed event
+:::
+
+##### Scenario 3: Manual refresh bypasses cache
+
+:::note gherkin
+Given weather data was fetched 5 minutes ago (cache valid)  
+When the user clicks "Refresh" on weather widget  
+Then the system bypasses cache  
+And fetches fresh data from provider API  
+And updates cache with new data  
+And publishes WeatherDataRefreshed event  
+And displays updated weather
+:::
+
+##### Scenario 4: Cache miss triggers retrieval
+
+:::note gherkin
+Given no weather data is cached for "Paris"  
+When the widget requests weather data for "Paris"  
+Then the system detects cache miss  
+And fetches data from provider API  
+And caches the response  
+And serves the data to widget  
+And publishes WeatherDataRefreshed event
+:::
+
+##### Scenario 5: Cache prevents API rate limit
+
+:::note gherkin
+Given weather data is requested frequently  
+And cache is valid for 30 minutes  
+When multiple widgets or users request same location  
+Then cached data is served to all  
+And only one API call is made per 30-minute window  
+And API rate limits are respected
+:::
+
+##### Scenario 6: Cache persists across application restarts
+
+:::note gherkin
+Given weather data is cached for "Madrid"  
+When the application is restarted  
+And the user views the weather widget  
+Then cached data is loaded from persistent storage  
+And displayed immediately  
+And if cache is expired, background refresh is triggered
+:::
+
+##### Scenario 7: Different locations have independent caches
+
+:::note gherkin
+Given weather data is cached for "London" and "Madrid"  
+When "London" cache expires  
+Then only "London" data is refreshed  
+And "Madrid" cache remains valid  
+And each location is tracked independently
+:::
+
+---
+
+**Technical notes:**
+
+- Use Redis or in-memory cache (e.g., Caffeine for Java) with TTL (30 minutes)
+- Implement cache key as location identifier (coordinates or normalized city name)
+- Persist cache to database for durability across restarts
+- Implement cache eviction policy (LRU if memory-constrained)
+- Log cache hit/miss rates for monitoring
+- Consider implementing adaptive TTL based on weather stability (future)
+- Ensure thread-safe cache access in multi-threaded environment
+
+**Open questions:**
+
+- Should cache TTL be configurable per location (e.g., shorter for volatile weather)?
+- Should there be a maximum cache size limit?
+
+---
+
+## FR-WEA-004: Multiple locations
+
+**Priority:** Should Have
+
+**Description:**  
+Users should be able to configure multiple weather widgets for different locations on their dashboard. Each widget
+instance maintains its own location configuration and displays weather for that specific location independently.
+
+**Preconditions:**
+
+- User must be authenticated
+- Dashboard must support multiple widget instances
+- Each widget instance must have unique configuration
+
+**Postconditions:**
+
+- Multiple weather widgets display different locations
+- Each widget has independent cache
+- Each widget updates independently
+
+**Business rules:**
+
+- Each weather widget instance has its own location configuration
+- Multiple widgets can display the same location (independent instances)
+- Each widget instance has its own cache entry
+- Updates to one widget do not affect others
+- Maximum number of weather widgets per dashboard may be limited (e.g., 5)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: WeatherSnapshot (value object), WidgetInstance (from Dashboard Management)
+- Domain Events: WeatherDataRefreshed (per widget)
+
+**Dependencies:**
+
+- FR-WEA-001 (Location configuration)
+- FR-WEA-002 (Weather retrieval)
+- FR-WEA-003 (Caching)
+- Dashboard Management context (widget instances)
+
+**Acceptance criteria:**
+
+- User can add multiple weather widgets to dashboard
+- Each widget can be configured with different location
+- Each widget displays its respective location's weather
+- Widgets update independently
+- Cache is per-location (shared across widgets for same location)
+- Removing a widget does not affect other widgets
+- Maximum widget limit is enforced (if applicable)
+
+**User stories:**
+
+- US-WEA-004-001: Add multiple weather widgets
+- US-WEA-004-002: Configure different locations for each widget
+- US-WEA-004-003: View multiple locations simultaneously
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Add multiple weather widgets (happy path)
+
+:::note gherkin
+Given a user has a dashboard  
+When the user adds a weather widget for "London"  
+And adds another weather widget for "Tokyo"  
+And adds a third weather widget for "New York"  
+Then all three widgets are displayed on the dashboard  
+And each shows weather for its respective location  
+And each has independent configuration
+:::
+
+##### Scenario 2: Different locations update independently
+
+:::note gherkin
+Given a user has weather widgets for "Madrid" and "Paris"  
+When "Madrid" weather data is refreshed  
+Then only the Madrid widget updates  
+And Paris widget retains its current data  
+And each widget has its own refresh cycle
+:::
+
+##### Scenario 3: Same location in multiple widgets
+
+:::note gherkin
+Given a user adds two weather widgets for "London"  
+When weather data for "London" is fetched  
+Then both widgets display the same data  
+And data is cached once for "London"  
+And both widgets serve from same cache  
+And only one API call is made
+:::
+
+##### Scenario 4: Remove one widget, others remain
+
+:::note gherkin
+Given a user has three weather widgets  
+When the user removes the "Tokyo" widget  
+Then only the Tokyo widget is removed  
+And "London" and "New York" widgets remain  
+And their data and configuration are unaffected
+:::
+
+##### Scenario 5: Enforce maximum widget limit
+
+:::note gherkin
+Given a user already has 5 weather widgets (maximum)  
+When the user attempts to add a 6th weather widget  
+Then an error message is displayed  
+And indicates the maximum limit is reached  
+And the widget is not added
+:::
+
+---
+
+**Technical notes:**
+
+- Widget instances are managed by Dashboard Management context
+- Weather context provides data based on widget configuration
+- Implement efficient cache sharing for same locations across widgets
+- Ensure widget removal cleans up location-specific state (if last widget for location)
+- Consider implementing widget templates for quick setup (future)
+
+**Open questions:**
+
+- Should there be a recommended/default set of locations?
+- Should removed locations' cache be immediately cleared or retained?
+
+---
+
+## FR-WEA-005: Unit preferences
+
+**Priority:** Should Have
+
+**Description:**  
+Users should be able to configure their preferred units for weather data (metric vs. imperial). Unit preferences
+determine how temperature, wind speed, and other measurements are displayed. Preferences are typically set globally via
+the Preferences context but applied by the Weather context.
+
+**Preconditions:**
+
+- User must be authenticated
+- Preferences context must be available
+
+**Postconditions:**
+
+- Weather data is displayed in preferred units
+- Unit conversion is applied correctly
+- Unit preference persists across sessions
+
+**Business rules:**
+
+- Supported units: Metric (Celsius, km/h, mm) and Imperial (Fahrenheit, mph, inches)
+- Default units are metric
+- Unit preference is global (applies to all weather widgets)
+- Unit conversion is applied during data retrieval or display
+- Provider API may support direct unit requests (preferred over conversion)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: WeatherSnapshot (value object)
+- Domain Events: PreferencesUpdated (consumed)
+
+**Dependencies:**
+
+- FR-WEA-002 (Weather retrieval)
+- Preferences context (unit settings)
+
+**Acceptance criteria:**
+
+- User can set unit preference to metric or imperial
+- Weather data is retrieved in preferred units (if provider supports)
+- If provider doesn't support units, conversion is applied
+- Temperature is displayed in Celsius (metric) or Fahrenheit (imperial)
+- Wind speed is displayed in km/h (metric) or mph (imperial)
+- Unit preference persists across sessions
+- Changing preference refreshes all weather widgets
+- Unit labels are displayed correctly (°C, °F, km/h, mph)
+
+**User stories:**
+
+- US-WEA-005-001: Set unit preference to metric
+- US-WEA-005-002: Set unit preference to imperial
+- US-WEA-005-003: Weather updates when preference changes
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Set unit preference to metric (happy path)
+
+:::note gherkin
+Given a user is in preferences settings  
+When the user selects "Metric" units  
+And saves preferences  
+Then unit preference is set to metric  
+And a PreferencesUpdated event is published  
+And all weather widgets refresh  
+And display temperature in Celsius  
+And wind speed in km/h
+:::
+
+##### Scenario 2: Set unit preference to imperial
+
+:::note gherkin
+Given a user is in preferences settings  
+When the user selects "Imperial" units  
+And saves preferences  
+Then unit preference is set to imperial  
+And a PreferencesUpdated event is published  
+And all weather widgets refresh  
+And display temperature in Fahrenheit  
+And wind speed in mph
+:::
+
+##### Scenario 3: Weather fetched with preferred units
+
+:::note gherkin
+Given a user has unit preference set to metric  
+When weather data is fetched from provider  
+Then the request specifies metric units  
+And provider returns data in Celsius and km/h  
+And no conversion is needed  
+And data is displayed directly
+:::
+
+##### Scenario 4: Unit conversion when provider doesn't support preference
+
+:::note gherkin
+Given a weather provider only returns data in metric  
+And user preference is imperial  
+When weather data is retrieved  
+Then the system receives metric data  
+And converts temperature to Fahrenheit  
+And converts wind speed to mph  
+And displays converted values to user
+:::
+
+##### Scenario 5: Unit preference persists across sessions
+
+:::note gherkin
+Given a user has set unit preference to imperial  
+When the user logs out and logs back in  
+Then unit preference is restored to imperial  
+And all weather data displays in imperial units
+:::
+
+##### Scenario 6: Change preference refreshes widgets
+
+:::note gherkin
+Given a user has weather widgets displaying in metric  
+When the user changes preference to imperial  
+Then all weather widgets immediately refresh  
+And display data in imperial units  
+And no page reload is required
+:::
+
+---
+
+**Technical notes:**
+
+- Request units from provider API if supported (e.g., OpenWeatherMap `units` parameter)
+- Implement unit conversion functions for fallback (Celsius ↔ Fahrenheit, km/h ↔ mph)
+- Store unit preference in user preferences (managed by Preferences context)
+- Weather context consumes PreferencesUpdated event to refresh widgets
+- Ensure unit labels are displayed correctly in UI
+- Consider implementing additional unit systems (e.g., scientific units) in future
+
+**Open questions:**
+
+- Should unit preference be per-widget or global?
+- Should there be quick-toggle for units in widget itself?
+
+---
+
+## FR-WEA-006: Weather data refresh
+
+**Priority:** Must Have
+
+**Description:**  
+The system must support both automatic and manual refresh of weather data. Automatic refresh occurs periodically based
+on cache expiration. Manual refresh allows users to get the latest data on-demand. Refresh operations respect API rate
+limits and handle failures gracefully.
+
+**Preconditions:**
+
+- Weather widget must be configured with location
+- Weather provider API must be accessible
+
+**Postconditions:**
+
+- Weather data is refreshed from provider
+- Cache is updated with new data
+- WeatherDataRefreshed event is published
+- Widget displays updated weather
+
+**Business rules:**
+
+- Automatic refresh occurs when cache expires (default 30 minutes)
+- Manual refresh can be triggered by user at any time
+- Refresh operations respect provider API rate limits
+- Failed refresh retains previous cached data
+- Refresh operations are logged for monitoring
+- Background refresh does not block UI
+
+**User roles:**
+
+- Authenticated User (for manual refresh)
+- System (for automatic refresh)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+  Excellence)
+- Domain Aggregates: WeatherSnapshot (value object)
+- Domain Events: WeatherDataRefreshed, WeatherFetchFailed
+
+**Dependencies:**
+
+- FR-WEA-002 (Weather retrieval)
+- FR-WEA-003 (Caching)
+
+**Acceptance criteria:**
+
+- Weather data automatically refreshes when cache expires
+- User can manually refresh via button/action in widget
+- Manual refresh bypasses cache and fetches fresh data
+- Refresh operations are rate-limited (minimum interval)
+- Failed refresh shows appropriate error indication
+- Background refresh does not impact UI responsiveness
+- WeatherDataRefreshed event is published on successful refresh
+- Refresh status is visible to user (loading indicator)
+
+**User stories:**
+
+- US-WEA-006-001: Automatic weather refresh
+- US-WEA-006-002: Manual weather refresh
+- US-WEA-006-003: Refresh with rate limiting
+- US-WEA-006-004: Handle refresh failure
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Automatic weather refresh (happy path)
+
+:::note gherkin
+Given weather data was fetched 30 minutes ago  
+And cache has expired  
+When the system checks for expired cache  
+Then automatic refresh is triggered  
+And fresh weather data is fetched from provider  
+And cache is updated with new data  
+And a WeatherDataRefreshed event is published  
+And all widgets for this location update automatically
+:::
+
+##### Scenario 2: Manual weather refresh
+
+:::note gherkin
+Given a user is viewing a weather widget  
+When the user clicks the "Refresh" button  
+Then a loading indicator is displayed  
+And fresh weather data is fetched from provider  
+And cache is updated (bypassing existing cache)  
+And a WeatherDataRefreshed event is published  
+And the widget displays updated weather  
+And loading indicator is hidden
+:::
+
+##### Scenario 3: Refresh with rate limiting
+
+:::note gherkin
+Given a user manually refreshed weather 10 seconds ago  
+When the user attempts to refresh again  
+Then the refresh is rate-limited  
+And a message indicates "Please wait before refreshing again"  
+And no API call is made  
+And cached data continues to display
+:::
+
+##### Scenario 4: Background refresh does not block UI
+
+:::note gherkin
+Given automatic refresh is triggered  
+When weather data is being fetched in background  
+Then the UI remains responsive  
+And the user can interact with other widgets  
+And a subtle loading indicator shows refresh in progress  
+And when refresh completes, the widget updates
+:::
+
+##### Scenario 5: Refresh failure retains previous data
+
+:::note gherkin
+Given a user has weather data from 1 hour ago  
+When automatic refresh is triggered  
+And the provider API returns an error  
+Then the refresh fails  
+And a WeatherFetchFailed event is published  
+And previous cached data (1 hour old) continues to display  
+And a subtle error indicator is shown  
+And the system schedules retry with backoff
+:::
+
+##### Scenario 6: Manual refresh during automatic refresh
+
+:::note gherkin
+Given automatic refresh is in progress  
+When the user clicks "Refresh" manually  
+Then the manual refresh waits for automatic to complete  
+Or cancels automatic and starts manual refresh  
+And the user is notified of the operation  
+And the widget updates when refresh completes
+:::
+
+---
+
+**Technical notes:**
+
+- Implement refresh scheduler (e.g., scheduled tasks, cron jobs)
+- Use background threads/workers for refresh operations
+- Implement rate limiting (e.g., max 1 refresh per minute per location)
+- Use exponential backoff for failed refreshes (1s, 2s, 4s, 8s, max 60s)
+- Display loading states (skeleton loaders, spinners)
+- Log refresh operations with timestamps and outcomes
+- Consider implementing refresh strategies (polling vs. push via websockets) in future
+
+**Open questions:**
+
+- Should refresh frequency be configurable per widget?
+- Should there be a "Refresh All" button for multiple widgets?
+
+---
+
+## FR-WEA-007: Error handling
+
+**Priority:** Must Have
+
+**Description:**  
+The system must handle errors gracefully when weather data retrieval fails. Errors can occur due to network issues, API
+failures, invalid configurations, or rate limit exceeded. Error handling ensures a degraded but functional experience
+for users.
+
+**Preconditions:**
+
+- Weather widget is configured
+- Error condition occurs (network, API, configuration)
+
+**Postconditions:**
+
+- Error is detected and classified
+- WeatherFetchFailed event is published
+- User-friendly error message is displayed
+- Cached data is retained (if available)
+- System schedules retry with backoff
+
+**Business rules:**
+
+- Errors are classified by type: Network, API, Configuration, Rate Limit
+- User-friendly error messages are shown (no technical jargon)
+- Cached data is displayed during error states (if available)
+- Errors are logged with context for debugging
+- Retry attempts use exponential backoff
+- Persistent errors (after multiple retries) show degraded state
+- User can manually retry after error
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: WeatherSnapshot (value object)
+- Domain Events: WeatherFetchFailed
+
+**Dependencies:**
+
+- FR-WEA-002 (Weather retrieval)
+- FR-WEA-003 (Caching)
+
+**Acceptance criteria:**
+
+- Network errors display "Unable to connect" message
+- API errors display "Weather service unavailable" message
+- Invalid configuration errors display "Invalid location" message
+- Rate limit errors display "Please try again in a few minutes" message
+- Cached data is displayed with "Last updated: [time]" note
+- Errors are logged with timestamp, type, and context
+- User can manually retry after error
+- WeatherFetchFailed event is published with error details
+- Persistent errors show contact support or degraded state
+
+**User stories:**
+
+- US-WEA-007-001: Handle network error
+- US-WEA-007-002: Handle API error
+- US-WEA-007-003: Handle invalid configuration
+- US-WEA-007-004: Display cached data during error
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Handle network error (happy path)
+
+:::note gherkin
+Given a user has a weather widget configured  
+When weather data fetch fails due to network timeout  
+Then the error is classified as "Network Error"  
+And a WeatherFetchFailed event is published  
+And an error message "Unable to connect to weather service" is displayed  
+And cached data is shown (if available) with "Last updated: 1 hour ago"  
+And the system schedules retry with exponential backoff
+:::
+
+##### Scenario 2: Handle API error (500)
+
+:::note gherkin
+Given a user has a weather widget configured  
+When the weather provider API returns 500 Internal Server Error  
+Then the error is classified as "API Error"  
+And a WeatherFetchFailed event is published  
+And an error message "Weather service temporarily unavailable" is displayed  
+And cached data is retained  
+And the system schedules retry after 5 minutes
+:::
+
+##### Scenario 3: Handle invalid location configuration
+
+:::note gherkin
+Given a user has configured an invalid location "XYZ12345"  
+When the system attempts to fetch weather data  
+Then the error is classified as "Configuration Error"  
+And a WeatherFetchFailed event is published  
+And an error message "Invalid location. Please update your settings" is displayed  
+And no retry is scheduled (configuration issue)  
+And user is prompted to reconfigure location
+:::
+
+##### Scenario 4: Handle rate limit exceeded
+
+:::note gherkin
+Given the weather provider API rate limit has been exceeded  
+When the system attempts to fetch weather data  
+Then the error is classified as "Rate Limit Error"  
+And a WeatherFetchFailed event is published  
+And an error message "Too many requests. Please try again in a few minutes" is displayed  
+And cached data is displayed  
+And retry is scheduled after rate limit reset time
+:::
+
+##### Scenario 5: Display cached data during error
+
+:::note gherkin
+Given weather data was fetched 2 hours ago  
+And is cached  
+When a fetch error occurs  
+Then the widget displays cached data  
+And shows "Last updated: 2 hours ago"  
+And shows a warning icon indicating data may be stale  
+And user can attempt manual refresh
+:::
+
+##### Scenario 6: Manual retry after error
+
+:::note gherkin
+Given a fetch error has occurred  
+And error message is displayed  
+When the user clicks "Retry" button  
+Then the system attempts to fetch weather data again  
+And if successful, updates widget and clears error  
+And if failed again, shows error message and schedules retry
+:::
+
+##### Scenario 7: Persistent error state
+
+:::note gherkin
+Given weather fetch has failed 5 times consecutively  
+And exponential backoff has reached maximum  
+When the next retry also fails  
+Then the widget displays a persistent error state  
+And message "Weather service unavailable. Please try again later"  
+And cached data is shown if available  
+And user can manually retry at any time
+:::
+
+##### Scenario 8: Error logging for debugging
+
+:::note gherkin
+Given a weather fetch error occurs  
+When the error is handled  
+Then the error is logged with:
+
+- Timestamp
+- Error type (Network, API, Configuration, Rate Limit)
+- Error details (status code, message)
+- Location being fetched
+- User context (userId, widgetId)  
+  And logs are available for debugging and monitoring
+  :::
+
+---
+
+**Technical notes:**
+
+- Implement error classification logic (map HTTP status codes, exceptions to error types)
+- Use structured logging (JSON) for easy parsing and monitoring
+- Implement exponential backoff: 1s, 2s, 4s, 8s, 16s, max 60s
+- Display user-friendly error messages (avoid technical jargon)
+- Retain cached data during errors for graceful degradation
+- Implement error tracking/monitoring (e.g., Sentry, application logs)
+- Consider implementing circuit breaker pattern for persistent failures (future)
+
+**Open questions:**
+
+- Should there be a global error notification system for service-wide issues?
+- Should errors be reported to a monitoring service automatically?
+
+---
+
+## Cross-feature considerations
+
+### Interactions between features
+
+- **Location Configuration ↔ Weather Retrieval:** Valid location enables weather fetching
+- **Weather Retrieval ↔ Caching:** Retrieved data is cached for efficiency
+- **Caching ↔ Refresh:** Expired cache triggers automatic refresh
+- **Multiple Locations ↔ Caching:** Cache is shared for same location across widgets
+- **Unit Preferences ↔ Weather Retrieval:** Units affect how data is requested and displayed
+- **Error Handling ↔ All Features:** Errors can occur in any operation and must be handled gracefully
+
+### Shared business rules
+
+1. **Location Validity:** All operations require valid, resolvable locations
+2. **API Rate Limiting:** All API operations must respect provider rate limits
+3. **Cache Consistency:** Cache must be consistent across multiple widget instances for same location
+4. **Unit Consistency:** Units must be applied consistently across all weather data
+5. **Error Resilience:** All operations must handle errors gracefully and provide degraded functionality
+6. **Event Publishing:** Weather events must be published after successful operations
+
+### Data consistency requirements
+
+- **Eventual Consistency:** Weather data can be eventually consistent (cached data tolerated)
+- **Cache Freshness:** Cache expiration ensures data is reasonably fresh (30-minute window)
+- **Location Isolation:** Different locations have independent cache and refresh cycles
+- **Unit Transformation:** Unit conversion is consistent and repeatable
+- **Error State:** Errors do not corrupt cached data; previous valid data is retained
+
+---
+
+## Business constraints impact
+
+### BC-001: Budget
+
+Weather management must operate within zero-cost infrastructure constraints:
+
+- **Weather Provider:** Use free-tier API (e.g., OpenWeatherMap free plan: 60 calls/minute, 1M calls/month)
+- **Caching:** Use free-tier Redis or in-memory cache (no paid caching service)
+- **Storage:** Use free-tier database for persistent cache (PostgreSQL)
+- **Monitoring:** Use free-tier logging and monitoring tools
+
+### BC-002: Timeline
+
+Weather management is on critical path for MVP (3-6 months):
+
+- **Must Have features** (FR-WEA-001, 002, 003, 006, 007) required for MVP
+- **Should Have features** (FR-WEA-004, 005) enhance UX but can be simplified
+- Prioritize single-location support initially; defer multiple locations to post-MVP if needed
+- Use simple in-memory cache initially; defer Redis to post-MVP if needed
+
+### BC-003: Resources
+
+Single-developer constraints affect Weather management:
+
+- **Leverage Libraries:** Use existing HTTP clients (Axios, Fetch API) and caching libraries
+- **Simplify Provider Integration:** Start with one weather provider (OpenWeatherMap); defer multi-provider support
+- **Automate Testing:** Mock provider API in tests to avoid consuming real API quota
+- **Incremental Development:** Build location config first, then retrieval, then caching, then advanced features
+
+### BC-004: Technology stack
+
+Weather management aligns with chosen stack:
+
+- **Frontend:** Angular components for weather widget display
+- **Backend:** Spring Boot REST APIs for weather data retrieval and caching
+- **HTTP Client:** Spring RestTemplate or WebClient for provider API calls
+- **Caching:** Spring Cache abstraction with Caffeine (in-memory) or Redis
+- **Database:** PostgreSQL for persistent cache storage
+- **Error Handling:** Spring exception handling with @ControllerAdvice
+
+---
+
+## Success metrics alignment
+
+Weather management contributes to the following success metrics from BR-001 through BR-008:
+
+### BR-003: Technical metrics
+
+| Metric                | Target        | Weather contribution                                         |
+|-----------------------|---------------|--------------------------------------------------------------|
+| **Page Load Time**    | < 2 seconds   | Efficient caching, lazy loading of weather data              |
+| **API Response Time** | < 200ms (p95) | Cached responses, optimized provider API calls               |
+| **Test Coverage**     | > 80%         | Comprehensive unit/integration tests for all FR-WEA features |
+
+### BR-001: Portfolio quality metrics
+
+| Metric                         | Target             | Weather contribution                                            |
+|--------------------------------|--------------------|-----------------------------------------------------------------|
+| **Architecture Documentation** | All views complete | Anti-corruption layer design, caching strategy, API integration |
+| **Code Quality Score**         | No critical issues | Clean API integration, proper error handling, testable code     |
+
+### BR-002, BR-005: User experience metrics
+
+| Metric                   | Target            | Weather contribution                                 |
+|--------------------------|-------------------|------------------------------------------------------|
+| **Task Completion Rate** | > 95%             | Simple location configuration, reliable data display |
+| **Mobile Usability**     | Fully Responsive  | Responsive weather widget, touch-friendly controls   |
+| **Accessibility Score**  | WCAG 2.1 Level AA | Clear weather information, accessible error messages |
+| **User Satisfaction**    | > 4.0/5.0         | Accurate weather data, fast loading, graceful errors |
+
+### BR-007: Cost efficiency metrics
+
+| Metric                   | Target   | Weather contribution                                   |
+|--------------------------|----------|--------------------------------------------------------|
+| **API Costs**            | $0/month | Free-tier provider, aggressive caching (60 calls/min)  |
+| **Infrastructure Costs** | $0/month | Free-tier database and cache, efficient resource usage |
+
+---
+
+## Traceability matrix
+
+| Feature    | Business Req           | Domain Events                            | User Stories               |
+|------------|------------------------|------------------------------------------|----------------------------|
+| FR-WEA-001 | BR-001, BR-002, BR-005 | WidgetConfigurationChanged (consumed)    | US-WEA-001-001/002/003/004 |
+| FR-WEA-002 | BR-001, BR-002, BR-005 | WeatherDataRefreshed, WeatherFetchFailed | US-WEA-002-001/002/003/004 |
+| FR-WEA-003 | BR-001, BR-003, BR-007 | WeatherDataRefreshed                     | US-WEA-003-001/002/003/004 |
+| FR-WEA-004 | BR-001, BR-002, BR-005 | WeatherDataRefreshed (per widget)        | US-WEA-004-001/002/003     |
+| FR-WEA-005 | BR-001, BR-002, BR-005 | PreferencesUpdated (consumed)            | US-WEA-005-001/002/003     |
+| FR-WEA-006 | BR-001, BR-002, BR-003 | WeatherDataRefreshed, WeatherFetchFailed | US-WEA-006-001/002/003/004 |
+| FR-WEA-007 | BR-001, BR-003, BR-005 | WeatherFetchFailed                       | US-WEA-007-001/002/003/004 |
