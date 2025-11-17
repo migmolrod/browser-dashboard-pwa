@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# FR overview
+# Overview
 
 This section covers the functional requirements of the system following the Behavior-Driven Development (BDD)
 methodology. We organize requirements and BDD artifacts by Domain-Driven Design (DDD) bounded contexts defined in the

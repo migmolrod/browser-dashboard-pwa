@@ -17,8 +17,8 @@ The Dashboard Management bounded context is the core differentiator of the Brows
 dashboard composition, layout, and personalization—enabling users to create, customize, and manage their personalized
 dashboard experience.
 
-**Bounded Context Code:** DAS  
-**Related DMD Section:** [Dashboard Management (Core)](../../domain/bounded-contexts/dashboard-management)
+**Bounded context code:** DAS\
+**Related DMD section:** [Dashboard Management (Core)](../../domain/bounded-contexts/dashboard-management)
 
 ---
 
@@ -40,8 +40,6 @@ dashboard experience.
 ## FR-DAS-001: Dashboard creation
 
 **Priority:** Must Have
-
-**Bounded context:** DAS - Dashboard Management
 
 **Description:**  
 Users must be able to create a new dashboard. Each user is initially provided with a default dashboard upon
@@ -290,8 +288,6 @@ And the dashboard remains unchanged
 
 **Priority:** Must Have
 
-**Bounded context:** DAS - Dashboard Management
-
 **Description:**  
 Users must be able to configure individual widget instances. Each widget type has its own configuration schema (e.g.,
 Weather widget needs a location, Bookmarks widget needs a folder selection). The Dashboard context is responsible for
@@ -433,8 +429,6 @@ And no WidgetConfigurationChanged event is published
 ## FR-DAS-004: Layout management
 
 **Priority:** Must Have
-
-**Bounded context:** DAS - Dashboard Management
 
 **Description:**  
 The system must manage the layout of widget instances on the dashboard, ensuring proper positioning, sizing, and
@@ -711,8 +705,6 @@ And the same reordering logic applies as desktop
 
 **Priority:** Should Have
 
-**Bounded context:** DAS - Dashboard Management
-
 **Description:**  
 Users should be able to create and switch between multiple personalization profiles (e.g., "Work", "Home", "Travel").
 Each profile contains a different dashboard configuration including widgets, layout, and settings.
@@ -867,8 +859,6 @@ And the dashboard associated with "Work" is displayed
 ## FR-DAS-007: Dashboard deletion
 
 **Priority:** Must Have
-
-**Bounded context:** DAS - Dashboard Management
 
 **Description:**  
 The system must support dashboard deletion as part of the dashboard lifecycle. While users may not directly delete their

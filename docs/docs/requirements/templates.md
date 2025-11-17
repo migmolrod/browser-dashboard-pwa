@@ -179,10 +179,12 @@ Functional requirements documents should follow this structure:
 
 ##### Scenario 1: [scenario name] (happy path)
 
-**Given** [initial context and preconditions]\
-**When** [action taken by user or system]\
-**Then** [expected outcome]\
-**And** [additional expected outcomes]
+:::note gherkin
+Given [initial context and preconditions]\
+When [action taken by user or system]\
+Then [expected outcome]\
+And [additional expected outcomes]
+:::
 
 ##### Scenario 2: [Alternative scenario name]
 
