@@ -51,7 +51,7 @@ The requirements are organized into the following sections:
 
 - **[Templates](templates):** Templates to be used for requirements, to ensure consistency
 - **[Business Requirements](business-requirements.mdx):** High-level business objectives
-- **[Functional Requirements](functional/overview):** Detailed feature specifications
+- **[Functional Requirements](functional/overview):** Detailed feature specifications categorized by bounded context
 - **[Non-Functional Requirements](non-functional-requirements):** Quality attributes and constraints
 - **[User Stories](user-stories):** User-centric requirement descriptions
 - **[System Requirements](system-requirements):** Technical prerequisites and dependencies
@@ -89,6 +89,12 @@ Each piece of the functional requirements documentation will be in one of these 
 - **Ready:** Reviewed and approved by stakeholders, ready to be implemented.
 - **Done:** Implemented and verified (tests pass).
 - **Released:** In production.
+
+Since, within the same bounded context requirements, different features could potentially be at different statuses, the
+status of the overall bounded context requirement document will be the lowest.
+
+For example, if the "Dashboard management" bounded context has one feature in "draft" and another feature in "released,"
+the status of the "Dashboard management" itself will be "draft."
 
 ### Priority levels
 
