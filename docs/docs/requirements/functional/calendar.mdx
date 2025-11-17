@@ -1,0 +1,1582 @@
+---
+sidebar_position: 5
+title: Calendar
+status: Draft
+lastUpdated: 2025-11-15
+---
+
+import RequirementMetadata from "../../../src/components/RequirementMetadata";
+
+<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+
+# Calendar
+
+## Overview
+
+The Calendar bounded context provides personal event management with basic scheduling, reminders, and multiple view
+modes. It handles the complete event lifecycle from creation to deletion, while supplying event data to dashboard
+widgets and accepting event creation requests from the Tasks context.
+
+**Bounded context code:** CAL  
+**Related DMD section:** [Calendar (Supporting)](../../domain/bounded-contexts/calendar)
+
+---
+
+## Features summary
+
+| Feature Code | Feature Name                  | Priority    | Status |
+|--------------|-------------------------------|-------------|--------|
+| FR-CAL-001   | Event management              | Must Have   | Draft  |
+| FR-CAL-002   | Calendar views                | Must Have   | Draft  |
+| FR-CAL-003   | Recurring events              | Should Have | Draft  |
+| FR-CAL-004   | Event reminders               | Should Have | Draft  |
+| FR-CAL-005   | Event categories              | Should Have | Draft  |
+| FR-CAL-006   | Event time conflict detection | Should Have | Draft  |
+| FR-CAL-007   | Task integration              | Should Have | Draft  |
+| FR-CAL-008   | Event import/export           | Could Have  | Draft  |
+| FR-CAL-009   | All-day events                | Must Have   | Draft  |
+
+---
+
+## FR-CAL-001: Event management
+
+**Priority:** Must Have
+
+**Description:**  
+Users must be able to create, edit, and delete calendar events. Each event consists of a title (required), start time,
+end time, optional description, location, and category. Events are scoped to individual users and form the foundation of
+personal calendar management.
+
+**Preconditions:**
+
+- User must be authenticated
+- User must have a default calendar (created on user registration)
+
+**Postconditions:**
+
+- Event is created/updated/deleted
+- Event is associated with the user's calendar
+- EventCreated/EventUpdated/EventDeleted event is published
+
+**Business rules:**
+
+- Each event must have a non-empty title (1-200 characters)
+- Start time is required
+- End time is required and must be after start time
+- Description is optional and length-bounded (max 2000 characters)
+- Location is optional and length-bounded (max 500 characters)
+- Each event has a unique EventId
+- Events belong to exactly one calendar (single calendar in MVP)
+- Events can be soft-deleted or permanently deleted
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Calendar (root), Event
+- Domain Events: EventCreated, EventUpdated, EventDeleted, UserRegistered (consumed)
+
+**Dependencies:**
+
+- User Identity context (Conformist relationship)
+
+**Acceptance criteria:**
+
+- User can create an event with title, start time, and end time
+- Event is assigned a unique EventId
+- Event is persisted with validated time range
+- EventCreated event is published
+- User can edit event title, times, description, and location
+- EventUpdated event is published
+- User can delete an event
+- Confirmation is required before deletion
+- EventDeleted event is published
+- Deleted event is removed from all views
+
+**User stories:**
+
+- US-CAL-001-001: Create a new event
+- US-CAL-001-002: Edit an event
+- US-CAL-001-003: Delete an event
+- US-CAL-001-004: Create event with location
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create a new event (happy path)
+
+```gherkin
+Given a user is viewing their calendar  
+When the user clicks "New Event"  
+And enters title "Team Meeting"  
+And sets start time to "2025-11-20 10:00"  
+And sets end time to "2025-11-20 11:00"  
+And confirms creation  
+Then a new event is created with title "Team Meeting"  
+And the event spans from 10:00 to 11:00  
+And an EventCreated event is published  
+And the event appears in the calendar view
+```
+
+##### Scenario 2: Create event with invalid time range
+
+```gherkin
+Given a user is creating an event  
+When the user sets start time to "2025-11-20 10:00"  
+And sets end time to "2025-11-20 09:00" (before start time)  
+And attempts to save  
+Then validation fails  
+And an error message indicates end time must be after start time  
+And the event is not created  
+And no EventCreated event is published
+```
+
+##### Scenario 3: Edit event
+
+```gherkin
+Given a user has an event titled "Meeting"  
+When the user selects "Edit" on the event  
+And changes the title to "Team Sync"  
+And changes end time from 11:00 to 11:30  
+And adds description "Discuss quarterly goals"  
+And confirms the changes  
+Then the event is updated with new values  
+And an EventUpdated event is published  
+And the event displays with updated information
+```
+
+##### Scenario 4: Delete event
+
+```gherkin
+Given a user has an event in their calendar  
+When the user selects "Delete" on the event  
+Then a confirmation dialog appears  
+And upon confirmation, the event is deleted  
+And an EventDeleted event is published  
+And the event is removed from all calendar views
+```
+
+##### Scenario 5: Cancel event deletion
+
+```gherkin
+Given a user initiates event deletion  
+When the confirmation dialog is displayed  
+And the user clicks "Cancel"  
+Then the event is not deleted  
+And no EventDeleted event is published  
+And the event remains in the calendar
+```
+
+##### Scenario 6: Create event without title
+
+```gherkin
+Given a user is creating an event  
+When the user leaves the title field empty  
+And attempts to save  
+Then validation fails  
+And an error message indicates the title is required  
+And the event is not created  
+And no EventCreated event is published
+```
+
+##### Scenario 7: Initialize default calendar on user registration
+
+```gherkin
+Given a new user has just registered  
+When the system processes the UserRegistered event  
+Then a default calendar is automatically created for the user  
+And the calendar is named "My Calendar" or similar  
+And the user's calendar management is initialized
+```
+
+---
+
+**Technical notes:**
+
+- Event title and description should be sanitized to prevent XSS
+- Time validation must handle timezone conversions
+- Use optimistic locking for concurrent event updates
+- Event IDs should be generated using strongly-typed identifier pattern
+- Implement validation for title length and time range
+
+**Open questions:**
+
+- Should deleted events be recoverable (soft delete with trash)?
+- Should there be a maximum event duration?
+
+---
+
+## FR-CAL-002: Calendar views
+
+**Priority:** Must Have
+
+**Description:**  
+Users must be able to view their calendar events in multiple formats: Month View, Week View, Day View, and Agenda/List
+View. Different views provide different levels of detail and help users navigate their schedule effectively.
+
+**Preconditions:**
+
+- User must be authenticated
+- User must have a calendar (may be empty)
+
+**Postconditions:**
+
+- Calendar is displayed in selected view
+- View preference is persisted
+- User can navigate between dates
+- Events are properly positioned/grouped
+
+**Business rules:**
+
+- Month View shows events as indicators on date cells
+- Week View shows events positioned by time slots
+- Day View shows hourly time slots with events
+- Agenda View shows events in chronological list
+- Current date is highlighted in all views
+- View preference persists across sessions
+- Navigation controls adapt to view type (month/week/day/custom range)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Calendar, Event
+- Domain Events: None (read-only views)
+
+**Dependencies:**
+
+- FR-CAL-001 (Events must exist)
+
+**Acceptance criteria:**
+
+- User can switch between Month, Week, Day, and Agenda views
+- View preference is saved and restored
+- Current date is highlighted
+- Navigation controls are appropriate for each view
+- Events are displayed with title and time
+- Clicking an event opens event details
+- Empty calendar shows helpful message
+- Views are responsive (adapt to screen size)
+
+**User stories:**
+
+- US-CAL-002-001: View calendar in month view
+- US-CAL-002-002: View calendar in week view
+- US-CAL-002-003: Navigate between dates
+- US-CAL-002-004: Switch calendar views
+
+---
+
+#### Scenarios
+
+##### Scenario 1: View calendar in month view (happy path)
+
+```gherkin
+Given a user is viewing their calendar  
+When the user selects "Month View"  
+Then the calendar displays a month grid  
+And the current date is highlighted  
+And events appear as indicators on their respective dates  
+And navigation controls show "Previous Month" and "Next Month"
+```
+
+##### Scenario 2: View calendar in week view
+
+```gherkin
+Given a user is viewing their calendar  
+When the user selects "Week View"  
+Then the calendar displays 7 days (Monday-Sunday or Sunday-Saturday)  
+And hourly time slots are shown for each day  
+And events are positioned at their corresponding times  
+And the current day is highlighted  
+And navigation controls show "Previous Week" and "Next Week"
+```
+
+##### Scenario 3: View calendar in day view
+
+```gherkin
+Given a user is viewing their calendar  
+When the user selects "Day View"  
+Then the calendar displays a single day  
+And hourly time slots (e.g., 00:00-23:59) are shown  
+And events are positioned at their exact times  
+And current time indicator is shown  
+And navigation controls show "Previous Day" and "Next Day"
+```
+
+##### Scenario 4: View calendar in agenda view
+
+```gherkin
+Given a user is viewing their calendar  
+When the user selects "Agenda View"  
+Then the calendar displays events in chronological list  
+And events are grouped by date  
+And each event shows title, time, and location  
+And the next 30 days of events are shown by default  
+And user can scroll to view more future events
+```
+
+##### Scenario 5: Navigate to next month
+
+```gherkin
+Given a user is viewing month view for November 2025  
+When the user clicks "Next Month"  
+Then the calendar displays December 2025  
+And events for December are shown  
+And the view remains in month mode
+```
+
+##### Scenario 6: Jump to today
+
+```gherkin
+Given a user is viewing a date in the past or future  
+When the user clicks "Today" button  
+Then the calendar navigates to the current date  
+And the current date is highlighted  
+And the view type remains unchanged
+```
+
+##### Scenario 7: Click event to view details
+
+```gherkin
+Given a user is viewing month view with events  
+When the user clicks on an event  
+Then a popup or side panel displays full event details  
+And shows title, time, description, location  
+And provides "Edit" and "Delete" options
+```
+
+##### Scenario 8: View preference persists
+
+```gherkin
+Given a user has selected "Week View"  
+When the user logs out and logs back in  
+Then the calendar opens in "Week View"  
+And the view preference is restored
+```
+
+---
+
+**Technical notes:**
+
+- Use efficient date calculation libraries (e.g., date-fns, Luxon)
+- Implement virtualization for large event lists in Agenda View
+- Consider lazy loading events for performance
+- Month View should handle overflow (many events per day)
+- Ensure timezone handling is correct across all views
+- Implement responsive breakpoints for mobile views
+
+**Open questions:**
+
+- Should there be a "Work Week" view (Monday-Friday only)?
+- Should Month View show mini event previews vs. just indicators?
+
+---
+
+## FR-CAL-003: Recurring events
+
+**Priority:** Should Have
+
+**Description:**  
+Users should be able to create recurring events with patterns (daily, weekly, monthly, yearly, custom). Recurring events
+simplify scheduling of repetitive meetings or activities without manually creating individual events.
+
+**Preconditions:**
+
+- User must be authenticated
+- Base event must be created
+
+**Postconditions:**
+
+- Recurrence pattern is defined and saved
+- Event instances are generated according to pattern
+- RecurrencePatternCreated event is published
+- Future instances appear in calendar views
+
+**Business rules:**
+
+- Recurrence patterns: Daily, Weekly, Monthly, Yearly, Custom
+- Recurrence must have end condition: End Date or Occurrence Count
+- User can edit single instance or entire series
+- User can delete single instance or entire series
+- Exceptions to recurrence can be created (skip specific dates)
+- Editing a single instance breaks it from the series (creates exception)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Event, RecurrencePattern
+- Domain Events: RecurrencePatternCreated, RecurrencePatternUpdated, EventInstanceDeleted
+
+**Dependencies:**
+
+- FR-CAL-001 (Base event must exist)
+
+**Acceptance criteria:**
+
+- User can set recurrence pattern when creating event
+- User can choose frequency: Daily, Weekly, Monthly, Yearly
+- User can set end condition: End Date or Occurrence Count (e.g., "After 10 occurrences")
+- Recurring event instances appear in calendar views
+- User can edit single instance (creates exception)
+- User can edit entire series (updates pattern)
+- User can delete single instance (creates exception)
+- User can delete entire series (removes all instances)
+- Recurrence pattern is displayed in event details
+
+**User stories:**
+
+- US-CAL-003-001: Create daily recurring event
+- US-CAL-003-002: Create weekly recurring event
+- US-CAL-003-003: Edit single instance of recurring event
+- US-CAL-003-004: Delete entire recurring series
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create weekly recurring event (happy path)
+
+```gherkin
+Given a user is creating an event  
+When the user enters title "Team Standup"  
+And sets start time to "2025-11-20 09:00"  
+And sets end time to "2025-11-20 09:30"  
+And selects "Repeat: Weekly"  
+And sets end condition to "After 12 occurrences"  
+And confirms creation  
+Then a recurring event is created  
+And 12 instances appear in the calendar  
+And a RecurrencePatternCreated event is published
+```
+
+##### Scenario 2: Create monthly recurring event
+
+```gherkin
+Given a user is creating an event  
+When the user sets recurrence to "Monthly"  
+And chooses "On day 15 of each month"  
+And sets end date to "2026-11-15"  
+Then the event recurs on the 15th of each month  
+And instances are generated until the end date
+```
+
+##### Scenario 3: Edit single instance of recurring event
+
+```gherkin
+Given a user has a weekly recurring event  
+When the user edits one specific instance  
+And changes the time from 09:00 to 10:00  
+And confirms "Edit this event only"  
+Then only that instance is updated  
+And an exception is created in the recurrence pattern  
+And other instances remain unchanged  
+And an EventInstanceUpdated event is published
+```
+
+##### Scenario 4: Edit entire recurring series
+
+```gherkin
+Given a user has a weekly recurring event  
+When the user edits an instance  
+And changes the title from "Meeting" to "Sync"  
+And confirms "Edit all events in series"  
+Then all instances are updated with new title  
+And the recurrence pattern is updated  
+And a RecurrencePatternUpdated event is published
+```
+
+##### Scenario 5: Delete single instance
+
+```gherkin
+Given a user has a daily recurring event  
+When the user deletes one specific instance  
+And confirms "Delete this event only"  
+Then only that instance is deleted  
+And an exception is added to the recurrence pattern  
+And other instances remain  
+And an EventInstanceDeleted event is published
+```
+
+##### Scenario 6: Delete entire recurring series
+
+```gherkin
+Given a user has a recurring event with 20 instances  
+When the user deletes one instance  
+And confirms "Delete all events in series"  
+Then all instances are deleted  
+And the recurrence pattern is removed  
+And a RecurrencePatternDeleted event is published
+```
+
+##### Scenario 7: Create recurring event with custom pattern
+
+```gherkin
+Given a user is creating an event  
+When the user selects "Custom" recurrence  
+And sets "Every 2 weeks on Monday and Wednesday"  
+And sets end condition to "Until 2025-12-31"  
+Then instances are generated following the custom pattern  
+And appear on Mondays and Wednesdays every 2 weeks until year end
+```
+
+---
+
+**Technical notes:**
+
+- Use a recurrence library (e.g., RRule for iCalendar standard)
+- Store recurrence pattern separately from event instances
+- Implement efficient instance generation (don't pre-create all instances)
+- Handle edge cases: leap years, month-end dates, DST transitions
+- Consider implementing RRULE standard for compatibility
+- Exceptions should be stored as a collection on the recurrence pattern
+
+**Open questions:**
+
+- Should there be a limit on recurrence end date (e.g., max 2 years)?
+- Should recurring events sync with external calendars (future)?
+
+---
+
+## FR-CAL-004: Event reminders
+
+**Priority:** Should Have
+
+**Description:**  
+Users should be able to set reminders for events to receive notifications before events start. Reminders help users stay
+on schedule and not miss important events.
+
+**Preconditions:**
+
+- User must be authenticated
+- Event must exist
+- Browser notifications must be permitted (or user prompted)
+
+**Postconditions:**
+
+- Reminder is set for event
+- Notification is triggered at reminder time
+- User is notified via browser notification
+
+**Business rules:**
+
+- Events can have multiple reminders (e.g., 1 day before, 1 hour before)
+- Reminder times: 5 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, 1 day, 1 week before
+- Reminders trigger browser notifications
+- Dismissed reminders are not shown again for that event
+- Reminders can be snoozed (shown again after a short delay)
+- All-day events have reminders at specific time of day (e.g., 9 AM on event day)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Event, Reminder
+- Domain Events: ReminderSet, ReminderTriggered, ReminderDismissed
+
+**Dependencies:**
+
+- FR-CAL-001 (Event must exist)
+- Browser Notifications API
+
+**Acceptance criteria:**
+
+- User can add multiple reminders to an event
+- User can choose reminder time from predefined options
+- User can remove reminders
+- Browser notification is triggered at reminder time
+- Notification shows event title and start time
+- Clicking notification opens event details
+- User can dismiss or snooze notification
+- Reminders work for recurring events (each instance)
+- Reminder preferences persist across sessions
+
+**User stories:**
+
+- US-CAL-004-001: Set reminder for event
+- US-CAL-004-002: Receive reminder notification
+- US-CAL-004-003: Snooze reminder
+- US-CAL-004-004: Remove reminder
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Set reminder for event (happy path)
+
+```gherkin
+Given a user has created an event for tomorrow at 14:00  
+When the user opens event settings  
+And selects "Add Reminder"  
+And chooses "1 hour before"  
+And saves  
+Then a reminder is set for tomorrow at 13:00  
+And a ReminderSet event is published  
+And the reminder is displayed in event details
+```
+
+##### Scenario 2: Receive reminder notification
+
+```gherkin
+Given a user has an event with a reminder set for 1 hour before  
+When the reminder time is reached  
+Then a browser notification appears  
+And displays event title "Team Meeting"  
+And displays start time "Starting in 1 hour at 14:00"  
+And a ReminderTriggered event is published
+```
+
+##### Scenario 3: Click notification to view event
+
+```gherkin
+Given a reminder notification has appeared  
+When the user clicks on the notification  
+Then the calendar application opens  
+And the event details are displayed  
+And the reminder is marked as acknowledged
+```
+
+##### Scenario 4: Snooze reminder
+
+```gherkin
+Given a reminder notification has appeared  
+When the user clicks "Snooze"  
+Then the notification is dismissed  
+And will reappear in 5 minutes  
+And a ReminderSnoozed event is published
+```
+
+##### Scenario 5: Dismiss reminder
+
+```gherkin
+Given a reminder notification has appeared  
+When the user clicks "Dismiss"  
+Then the notification is closed  
+And will not appear again for this event  
+And a ReminderDismissed event is published
+```
+
+##### Scenario 6: Add multiple reminders
+
+```gherkin
+Given a user has an event  
+When the user adds reminder "1 day before"  
+And adds reminder "1 hour before"  
+And adds reminder "15 minutes before"  
+Then all three reminders are set  
+And will trigger at their respective times  
+And all are displayed in event details
+```
+
+##### Scenario 7: Request notification permission
+
+```gherkin
+Given a user attempts to set a reminder  
+And browser notifications are not permitted  
+When the reminder is being saved  
+Then a permission request dialog appears  
+And if user grants permission, the reminder is set  
+And if user denies permission, an error message is shown
+```
+
+---
+
+**Technical notes:**
+
+- Use Browser Notifications API for reminders
+- Implement service worker for background notification delivery
+- Store reminder state to avoid duplicate notifications
+- Handle browser permission states (granted, denied, default)
+- Implement reminder queue for offline scenarios
+- Consider implementing push notifications for cross-device support (future)
+
+**Open questions:**
+
+- Should reminders support custom times (e.g., "2 hours 30 minutes before")?
+- Should there be a notification center for viewing past reminders?
+
+---
+
+## FR-CAL-005: Event categories
+
+**Priority:** Should Have
+
+**Description:**  
+Users should be able to create and assign categories to events for organization and color-coding. Categories help users
+visually distinguish between different types of events (e.g., Work, Personal, Family).
+
+**Preconditions:**
+
+- User must be authenticated
+- User must have a calendar
+
+**Postconditions:**
+
+- Category is created/updated/deleted
+- Event is assigned to category
+- Events display with category color
+
+**Business rules:**
+
+- Users can create custom categories
+- Category names must be unique per user
+- Category names must be non-empty and length-bounded (1-50 characters)
+- Each category has a color
+- Events can have zero or one category (optional)
+- Default categories: Work, Personal (created on user registration)
+- Categories can be filtered in calendar views
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Category, Event
+- Domain Events: CategoryCreated, CategoryUpdated, CategoryDeleted
+
+**Dependencies:**
+
+- FR-CAL-001 (Events must exist)
+
+**Acceptance criteria:**
+
+- User can create a new category with name and color
+- User can edit category name and color
+- User can delete unused categories
+- Deleting a category prompts for action on associated events
+- User can assign category to event
+- Events display with category color in calendar views
+- User can filter events by category
+- Category preferences persist across sessions
+
+**User stories:**
+
+- US-CAL-005-001: Create a new category
+- US-CAL-005-002: Assign category to event
+- US-CAL-005-003: Filter events by category
+- US-CAL-005-004: Delete category
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create a new category (happy path)
+
+```gherkin
+Given a user is viewing category settings  
+When the user clicks "New Category"  
+And enters name "Family"  
+And selects color "Green"  
+And confirms creation  
+Then a new category "Family" is created  
+And a CategoryCreated event is published  
+And the category appears in the category list
+```
+
+##### Scenario 2: Create category with duplicate name
+
+```gherkin
+Given a user already has a category named "Work"  
+When the user attempts to create another category named "Work"  
+Then validation fails  
+And an error message indicates the name already exists  
+And the category is not created  
+And no CategoryCreated event is published
+```
+
+##### Scenario 3: Assign category to event
+
+```gherkin
+Given a user has created an event  
+When the user opens event settings  
+And selects category "Work"  
+And saves  
+Then the event is assigned to "Work" category  
+And the event displays with "Work" color in calendar views  
+And an EventUpdated event is published
+```
+
+##### Scenario 4: Filter events by category
+
+```gherkin
+Given a user has events in multiple categories  
+When the user selects "Show only Work events"  
+Then only events in "Work" category are displayed  
+And other events are hidden  
+And the filter state is indicated in the UI
+```
+
+##### Scenario 5: Delete category with associated events
+
+```gherkin
+Given a user has category "Old" with 3 associated events  
+When the user attempts to delete the category  
+Then a dialog appears asking what to do with the events  
+And offers options: "Remove category from events" or "Cancel"  
+And upon selecting "Remove category" and confirming  
+Then category is removed from all events  
+And the category is deleted  
+And a CategoryDeleted event is published
+```
+
+##### Scenario 6: Edit category color
+
+```gherkin
+Given a user has category "Personal" with color "Blue"  
+When the user edits the category  
+And changes color to "Purple"  
+And saves  
+Then the category color is updated  
+And all events in this category now display with "Purple"  
+And a CategoryUpdated event is published
+```
+
+---
+
+**Technical notes:**
+
+- Store categories as separate entity with userId reference
+- Implement color picker component for category colors
+- Use color palette to ensure good contrast and visibility
+- Category filtering should be efficient (indexed queries)
+- Consider implementing default category (if event has no category)
+
+**Open questions:**
+
+- Should events support multiple categories (tags)?
+- Should there be predefined category templates?
+
+---
+
+## FR-CAL-006: Event time conflict detection
+
+**Priority:** Should Have
+
+**Description:**  
+The system should detect and warn users about time conflicts when creating or editing events. Conflict detection helps
+users avoid double-booking and scheduling overlaps.
+
+**Preconditions:**
+
+- User must be authenticated
+- User is creating or editing an event
+
+**Postconditions:**
+
+- Conflicts are detected and displayed
+- User is warned before saving conflicting event
+- User can choose to proceed or adjust times
+
+**Business rules:**
+
+- Conflict occurs when event time ranges overlap
+- All-day events conflict with all events on that day
+- Conflicts are detected within same calendar only
+- User can override conflict warning and save anyway (soft warning)
+- Conflict detection is real-time during event creation/editing
+- Recurring events check conflicts for each instance
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Event
+- Domain Events: None (validation only)
+
+**Dependencies:**
+
+- FR-CAL-001 (Events must exist)
+
+**Acceptance criteria:**
+
+- System checks for conflicts when saving event
+- Conflicts are detected by overlapping time ranges
+- Warning message displays conflicting events
+- User can view conflicting event details
+- User can choose to save anyway or adjust times
+- Conflict warning appears before event is saved
+- Visual indicator shows conflicts in calendar views
+
+**User stories:**
+
+- US-CAL-006-001: Detect conflict when creating event
+- US-CAL-006-002: View conflicting events
+- US-CAL-006-003: Override conflict warning
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Detect conflict when creating event (happy path)
+
+```gherkin
+Given a user has an event "Meeting A" from 10:00 to 11:00  
+When the user creates event "Meeting B" from 10:30 to 11:30  
+Then a conflict warning appears  
+And displays "Conflicts with: Meeting A (10:00-11:00)"  
+And offers options: "Adjust Time" or "Save Anyway"
+```
+
+##### Scenario 2: No conflict detected
+
+```gherkin
+Given a user has an event from 10:00 to 11:00  
+When the user creates event from 11:00 to 12:00  
+Then no conflict is detected  
+And the event is saved without warning
+```
+
+##### Scenario 3: Override conflict warning
+
+```gherkin
+Given a conflict warning is displayed  
+When the user clicks "Save Anyway"  
+Then the event is saved despite the conflict  
+And both events remain in the calendar  
+And a visual indicator shows the conflict in calendar views
+```
+
+##### Scenario 4: Adjust time to resolve conflict
+
+```gherkin
+Given a conflict warning is displayed  
+When the user clicks "Adjust Time"  
+Then the event editing dialog remains open  
+And the user can modify start/end times  
+And conflict detection re-runs on changes  
+And the event is saved when no conflicts remain
+```
+
+##### Scenario 5: Detect multiple conflicts
+
+```gherkin
+Given a user has events at 10:00-11:00 and 10:30-11:30  
+When the user creates event from 09:45 to 11:15  
+Then conflicts with both events are detected  
+And warning displays both conflicting events  
+And shows time ranges for each conflict
+```
+
+##### Scenario 6: Visual conflict indicator in calendar
+
+```gherkin
+Given a user has overlapping events  
+When the user views the calendar  
+Then conflicting events are highlighted with warning color  
+And a conflict icon is displayed  
+And tooltip shows "Time conflict with X events"
+```
+
+---
+
+**Technical notes:**
+
+- Implement efficient overlap detection algorithm
+- Use interval tree or similar data structure for performance
+- Conflict detection should be real-time (as user types times)
+- Consider implementing conflict severity levels (full overlap vs. partial)
+- Ensure timezone-aware conflict detection
+
+**Open questions:**
+
+- Should conflicts be hard-blocked (prevent saving) or soft-warned?
+- Should there be a "Find next available time" feature?
+
+---
+
+## FR-CAL-007: Task integration
+
+**Priority:** Should Have
+
+**Description:**  
+The system should accept event creation requests from the Tasks context, enabling users to schedule tasks as calendar
+events. This integration provides a seamless workflow between task planning and calendar scheduling.
+
+**Preconditions:**
+
+- User must be authenticated
+- EventCreationRequestedFromTask event is received from Tasks context
+- Task data includes title and optional due date
+
+**Postconditions:**
+
+- Calendar event is created from task data
+- EventCreated event is published
+- Task is notified of successful event creation (optional)
+
+**Business rules:**
+
+- Task title maps to event title
+- Task description maps to event description
+- Task due date maps to event date/time
+- If task has no due date, default to today + user-selected time
+- Created event is independent from source task
+- Event and task remain separate entities (no bidirectional sync in MVP)
+- Multiple events can be created from the same task
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Event
+- Domain Events: EventCreationRequestedFromTask (consumed), EventCreated (published)
+
+**Dependencies:**
+
+- FR-CAL-001 (Event creation)
+- Tasks context (lateral partnership)
+
+**Acceptance criteria:**
+
+- Calendar context consumes EventCreationRequestedFromTask event
+- Event is created with task title and due date
+- If task has no due date, user is prompted to select date/time
+- EventCreated event is published
+- Event appears in calendar views
+- Task remains in task list (not deleted)
+- User is notified of successful event creation
+- Event creation failure is handled gracefully
+
+**User stories:**
+
+- US-CAL-007-001: Create event from task with due date
+- US-CAL-007-002: Create event from task without due date
+- US-CAL-007-003: Handle event creation failure
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create event from task with due date (happy path)
+
+```gherkin
+Given the Tasks context publishes EventCreationRequestedFromTask event  
+And the event data includes title "Review Document"  
+And due date "2025-11-21 14:00"  
+When the Calendar context processes the event  
+Then a calendar event is created with title "Review Document"  
+And start time is set to "2025-11-21 14:00"  
+And end time is set to "2025-11-21 15:00" (default 1 hour duration)  
+And an EventCreated event is published  
+And the event appears in calendar views
+```
+
+##### Scenario 2: Create event from task without due date
+
+```gherkin
+Given the Tasks context publishes EventCreationRequestedFromTask event  
+And the event data includes title "Plan Vacation"  
+But no due date is specified  
+When the Calendar context processes the event  
+Then the user is prompted to select date and time  
+And after selection, the event is created  
+And an EventCreated event is published
+```
+
+##### Scenario 3: Event creation failure
+
+```gherkin
+Given the Tasks context publishes EventCreationRequestedFromTask event  
+When the Calendar context encounters an error (e.g., database failure)  
+Then the event creation fails  
+And an error is logged  
+And the user is notified of the failure  
+And no EventCreated event is published  
+And the task remains unaffected
+```
+
+##### Scenario 4: Create event with task description
+
+```gherkin
+Given a task includes title and description  
+When EventCreationRequestedFromTask event is processed  
+Then the calendar event is created with task title  
+And event description is populated with task description  
+And both title and description are displayed in event details
+```
+
+##### Scenario 5: Multiple events from same task
+
+```gherkin
+Given a user creates an event from task "Weekly Report"  
+When the user later creates another event from the same task  
+Then a second, independent event is created  
+And both events coexist in the calendar  
+And both reference the same task (conceptually)
+```
+
+---
+
+**Technical notes:**
+
+- Use asynchronous event processing for integration
+- Implement idempotency to prevent duplicate event creation
+- Default event duration should be configurable (e.g., 1 hour)
+- Consider storing task reference on event for future bidirectional sync
+- Implement retry logic for failed event creation
+
+**Open questions:**
+
+- Should completing the event also complete the task (future)?
+- Should deleting a task delete linked events (future)?
+- Should there be bidirectional sync (event changes update task)?
+
+---
+
+## FR-CAL-008: Event import/export
+
+**Priority:** Could Have
+
+**Description:**  
+Users could have the ability to import events from other calendars (iCal format) and export their events for backup or
+sharing. This feature enhances portability and integration with other calendar systems.
+
+**Preconditions:**
+
+- User must be authenticated
+- For import: valid iCal file must be provided
+- For export: at least one event must exist
+
+**Postconditions:**
+
+- Imported events are added to calendar
+- Exported file contains events in iCal format
+- Import/export operations are logged
+
+**Business rules:**
+
+- Supported import format: iCal (.ics)
+- Supported export format: iCal (.ics)
+- Import preserves event properties (title, times, description, location)
+- Recurring events are imported with recurrence pattern
+- Duplicate events (same time and title) can be skipped or imported based on user preference
+- Import is transactional (all or nothing)
+- Export includes all events (or filtered selection)
+- Exported files are named with timestamp
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-005 (User Value Delivery), BR-006 (Developer Experience)
+- Domain Aggregates: Event
+- Domain Events: EventCreated (for imports)
+
+**Dependencies:**
+
+- FR-CAL-001 (Event management)
+
+**Acceptance criteria:**
+
+- User can upload iCal file
+- File format is validated
+- Import preview shows number of events
+- User can choose to skip duplicates or import all
+- Import is transactional (fails entirely if errors occur)
+- EventCreated events are published for imports
+- User can export all events to iCal
+- Export file is downloadable
+- Export file is valid iCal format
+- Export file is named with timestamp
+
+**User stories:**
+
+- US-CAL-008-001: Import events from iCal file
+- US-CAL-008-002: Export events to iCal file
+- US-CAL-008-003: Handle duplicate events on import
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Import events from iCal file (happy path)
+
+```gherkin
+Given a user has an iCal file from another calendar application  
+When the user selects "Import Events"  
+And uploads the iCal file  
+Then the file is validated  
+And an import preview shows the number of events  
+And the user confirms the import  
+Then all events are created  
+And EventCreated events are published  
+And a success message is displayed
+```
+
+##### Scenario 2: Export events to iCal
+
+```gherkin
+Given a user has events in their calendar  
+When the user selects "Export Events"  
+And chooses date range "All Events"  
+Then an iCal file is generated containing all events  
+And the file is named "calendar_2025-11-15.ics"  
+And the file is downloaded to the user's device
+```
+
+##### Scenario 3: Import with duplicate handling
+
+```gherkin
+Given a user already has event "Team Meeting" on 2025-11-20 10:00  
+And the import file also contains this event  
+When the user imports the file  
+Then a dialog asks whether to skip duplicates or import all  
+And if "Skip Duplicates" is selected, only new events are imported  
+And if "Import All" is selected, the duplicate is imported (possibly with note)
+```
+
+##### Scenario 4: Import invalid file
+
+```gherkin
+Given a user attempts to import a file  
+When the file is not a valid iCal format  
+Then validation fails  
+And an error message indicates the file format is invalid  
+And no events are imported
+```
+
+##### Scenario 5: Import fails mid-operation
+
+```gherkin
+Given a user is importing a large iCal file  
+When an error occurs during import (e.g., database error)  
+Then the entire import is rolled back  
+And no partial events are created  
+And an error message is displayed with details
+```
+
+##### Scenario 6: Export filtered events
+
+```gherkin
+Given a user has events in multiple categories  
+When the user selects "Export Events"  
+And filters by category "Work"  
+And chooses date range "This Month"  
+Then only "Work" events from this month are exported  
+And the file is named "calendar_work_2025-11-15.ics"
+```
+
+---
+
+**Technical notes:**
+
+- Use iCal library for parsing and generating .ics files (e.g., ical.js)
+- Implement file size limits for uploads (e.g., max 10MB)
+- Use transactions to ensure atomic imports
+- Consider implementing progress indicators for large imports
+- Ensure timezone information is preserved in import/export
+
+**Open questions:**
+
+- Should there be an option to import into a specific category?
+- Should export include only visible events or all events?
+
+---
+
+## FR-CAL-009: All-day events
+
+**Priority:** Must Have
+
+**Description:**  
+Users must be able to create all-day events for occasions that span entire days without specific start/end times (e.g.,
+holidays, birthdays, vacations). All-day events are displayed differently in calendar views.
+
+**Preconditions:**
+
+- User must be authenticated
+- User is creating or editing an event
+
+**Postconditions:**
+
+- Event is marked as all-day
+- Event displays at top of day in calendar views
+- Event time validation is adjusted for all-day context
+
+**Business rules:**
+
+- All-day events do not have specific start/end times
+- All-day events can span multiple consecutive days
+- All-day events display at top of calendar day views
+- All-day events conflict with all events on that day (if conflict detection is enabled)
+- Reminders for all-day events trigger at specified time of day (e.g., 9 AM)
+- All-day events can be converted to timed events and vice versa
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: Event
+- Domain Events: EventCreated, EventUpdated
+
+**Dependencies:**
+
+- FR-CAL-001 (Event management)
+
+**Acceptance criteria:**
+
+- User can toggle "All-day" option when creating event
+- All-day events do not require start/end times
+- All-day events can span multiple days (start date and end date)
+- All-day events display in special section at top of day views
+- All-day events display spanning across dates in week/month views
+- User can convert timed event to all-day and vice versa
+- All-day event creation publishes EventCreated event
+
+**User stories:**
+
+- US-CAL-009-001: Create single-day all-day event
+- US-CAL-009-002: Create multi-day all-day event
+- US-CAL-009-003: Convert timed event to all-day
+- US-CAL-009-004: Convert all-day event to timed
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create single-day all-day event (happy path)
+
+```gherkin
+Given a user is creating an event  
+When the user enters title "Birthday"  
+And toggles "All-day" option  
+And selects date "2025-11-25"  
+And confirms creation  
+Then an all-day event is created  
+And the event spans the entire day (2025-11-25)  
+And an EventCreated event is published  
+And the event displays at top of day in calendar views
+```
+
+##### Scenario 2: Create multi-day all-day event
+
+```gherkin
+Given a user is creating an event  
+When the user enters title "Vacation"  
+And toggles "All-day" option  
+And selects start date "2025-12-20"  
+And selects end date "2025-12-27"  
+And confirms creation  
+Then an all-day event is created spanning 8 days  
+And the event displays across all dates in week/month views  
+And an EventCreated event is published
+```
+
+##### Scenario 3: All-day event displays at top of day view
+
+```gherkin
+Given a user has all-day event "Holiday" on 2025-11-25  
+And timed events throughout the day  
+When the user views Day View for 2025-11-25  
+Then "Holiday" displays in all-day section at top  
+And timed events display in hourly time slots below  
+And all-day section is visually distinct
+```
+
+##### Scenario 4: Convert timed event to all-day
+
+```gherkin
+Given a user has timed event from 10:00 to 11:00  
+When the user edits the event  
+And toggles "All-day" option  
+And saves  
+Then the event is converted to all-day  
+And time fields are removed  
+And the event displays in all-day section  
+And an EventUpdated event is published
+```
+
+##### Scenario 5: Convert all-day event to timed
+
+```gherkin
+Given a user has all-day event "Meeting"  
+When the user edits the event  
+And untoggles "All-day" option  
+And sets start time to "14:00"  
+And sets end time to "15:00"  
+And saves  
+Then the event is converted to timed event  
+And displays in hourly time slots  
+And an EventUpdated event is published
+```
+
+##### Scenario 6: All-day event in month view
+
+```gherkin
+Given a user has multi-day all-day event from 2025-11-20 to 2025-11-23  
+When the user views Month View  
+Then the event displays as a bar spanning across the 4 dates  
+And shows the event title  
+And is visually distinct from timed events
+```
+
+---
+
+**Technical notes:**
+
+- Store all-day events with date-only (no time component)
+- Use different rendering logic for all-day events in views
+- Ensure timezone handling for all-day events (use UTC midnight or local date)
+- All-day section should have limited height (scrollable if many all-day events)
+- Multi-day events should span visually across dates
+
+**Open questions:**
+
+- Should all-day events have a default duration (24 hours) for compatibility?
+- Should there be a limit on multi-day event duration (e.g., max 365 days)?
+
+---
+
+## Cross-feature considerations
+
+### Interactions between features
+
+- **Event Management ↔ Calendar Views:** Creating/editing events updates all relevant calendar views
+- **Event Management ↔ Recurring Events:** Base event serves as template for recurring instances
+- **Event Management ↔ Reminders:** Events can have multiple reminders set
+- **Event Management ↔ Categories:** Events can be assigned to categories
+- **Calendar Views ↔ Categories:** Views can be filtered by category
+- **Recurring Events ↔ Conflict Detection:** Each instance is checked for conflicts
+- **All-Day Events ↔ Calendar Views:** All-day events display in special sections
+- **Task Integration ↔ Event Management:** Tasks trigger event creation requests
+- **Import/Export ↔ All Features:** Import/export must handle all event types and properties
+
+### Shared business rules
+
+1. **User Scoping:** All events and calendars must be scoped to the authenticated user
+2. **Title Validation:** All event titles must be non-empty and length-bounded (1-200 characters)
+3. **Time Validation:** Start time must be before end time (except all-day events)
+4. **Unique Identifiers:** All events must have unique IDs system-wide
+5. **Atomicity:** All state changes must be atomic—either fully succeed or fully fail
+6. **Event Publishing:** Events must be published after successful persistence
+
+### Data consistency requirements
+
+- **Strong Consistency:** Event CRUD operations, recurrence patterns require strong consistency
+- **Eventual Consistency:** Task integration can be eventually consistent (asynchronous event creation)
+- **Transactional Boundaries:** Calendar aggregate is the transactional boundary
+- **Event Publishing:** Events must be published after successful persistence (transactional outbox pattern)
+- **Real-Time Updates:** Calendar widgets on dashboard should update in real-time via event subscriptions
+
+---
+
+## Business constraints impact
+
+### BC-001: Budget
+
+Calendar management must operate within zero-cost infrastructure constraints:
+
+- **Event Storage:** Use free-tier database (PostgreSQL via Railway, Supabase, or local)
+- **Reminders:** Use browser notifications (no paid push notification service)
+- **Task Integration:** Use event bus for integration (no paid message queue initially)
+- **Import/Export:** Server-side processing only (no external conversion services)
+
+### BC-002: Timeline
+
+Calendar management is on critical path for MVP (3-6 months):
+
+- **Must Have features** (FR-CAL-001, 002, 009) required for MVP
+- **Should Have features** (FR-CAL-003, 004, 005, 006, 007) enhance UX but can be simplified or deferred
+- **Could Have feature** (FR-CAL-008) explicitly post-MVP
+- Prioritize core event CRUD and basic views for initial release
+- Defer advanced features like recurring events and import/export to post-MVP
+
+### BC-003: Resources
+
+Single-developer constraints affect Calendar management:
+
+- **Leverage UI Libraries:** Use existing calendar components (FullCalendar, Angular Calendar) if feasible
+- **Simplify Recurrence:** Consider limiting recurrence patterns initially (daily, weekly, monthly only)
+- **Automate Testing:** Heavy investment in unit tests for time-related logic
+- **Incremental Development:** Build core CRUD first, then views, then advanced features
+
+### BC-004: Technology stack
+
+Calendar management aligns with chosen stack:
+
+- **Frontend:** Angular components for calendar views (consider FullCalendar library), date pickers (Angular Material)
+- **Backend:** Spring Boot REST APIs for event/calendar CRUD
+- **Database:** PostgreSQL with indexes for efficient date-range queries
+- **Events:** Spring Events initially; design for future Kafka/RabbitMQ migration
+- **Integration:** Event-driven integration with Tasks context
+- **Reminders:** Browser Notifications API, service workers for background delivery
+
+---
+
+## Success metrics alignment
+
+Calendar management contributes to the following success metrics from BR-001 through BR-008:
+
+### BR-003: Technical metrics
+
+| Metric                | Target        | Calendar contribution                                        |
+|-----------------------|---------------|--------------------------------------------------------------|
+| **Page Load Time**    | < 2 seconds   | Efficient calendar rendering, lazy loading of events         |
+| **API Response Time** | < 200ms (p95) | Optimized event queries, indexed date-range searches         |
+| **Test Coverage**     | > 80%         | Comprehensive unit/integration tests for all FR-CAL features |
+
+### BR-001: Portfolio quality metrics
+
+| Metric                         | Target             | Calendar contribution                                             |
+|--------------------------------|--------------------|-------------------------------------------------------------------|
+| **Architecture Documentation** | All views complete | Calendar aggregate design, event lifecycle, integration flows     |
+| **Code Quality Score**         | No critical issues | DDD patterns (aggregates, entities, value objects), time handling |
+
+### BR-002, BR-005: User experience metrics
+
+| Metric                   | Target            | Calendar contribution                                       |
+|--------------------------|-------------------|-------------------------------------------------------------|
+| **Task Completion Rate** | > 95%             | Intuitive event creation, multiple views, reminders         |
+| **Mobile Usability**     | Fully Responsive  | Responsive calendar views, touch-friendly controls          |
+| **Accessibility Score**  | WCAG 2.1 Level AA | Keyboard navigation, screen reader support for events       |
+| **User Satisfaction**    | > 4.0/5.0         | Visual calendar views, reliable reminders, task integration |
+
+---
+
+## Traceability matrix
+
+| Feature    | Business Req           | Domain Events                                           | User Stories               |
+|------------|------------------------|---------------------------------------------------------|----------------------------|
+| FR-CAL-001 | BR-001, BR-002, BR-005 | EventCreated, EventUpdated, EventDeleted                | US-CAL-001-001/002/003/004 |
+| FR-CAL-002 | BR-001, BR-002, BR-005 | None (read-only)                                        | US-CAL-002-001/002/003/004 |
+| FR-CAL-003 | BR-001, BR-002, BR-005 | RecurrencePatternCreated, RecurrencePatternUpdated      | US-CAL-003-001/002/003/004 |
+| FR-CAL-004 | BR-001, BR-002, BR-005 | ReminderSet, ReminderTriggered, ReminderDismissed       | US-CAL-004-001/002/003/004 |
+| FR-CAL-005 | BR-001, BR-002, BR-005 | CategoryCreated, CategoryUpdated, CategoryDeleted       | US-CAL-005-001/002/003/004 |
+| FR-CAL-006 | BR-001, BR-002, BR-005 | None (validation only)                                  | US-CAL-006-001/002/003     |
+| FR-CAL-007 | BR-001, BR-002, BR-005 | EventCreationRequestedFromTask (consumed), EventCreated | US-CAL-007-001/002/003     |
+| FR-CAL-008 | BR-001, BR-005, BR-006 | EventCreated (for imports)                              | US-CAL-008-001/002/003     |
+| FR-CAL-009 | BR-001, BR-002, BR-005 | EventCreated, EventUpdated                              | US-CAL-009-001/002/003/004 |
