@@ -5,4 +5,7 @@
     align-items: center;
     width: 100%;
     margin-bottom: 1rem;
+    border-radius: .4rem;
+    background-color: var(--ifm-color-primary-contrast-background);
+    padding: .4em .8em;
 }

@@ -211,3 +211,22 @@
 nav {
     position: sticky;
 }
+
+/* Titles */
+h1, h2, h3 {
+    border-bottom-style: solid;
+    color: var(--ifm-color-secondary-contrast-foreground);
+    background-color: var(--ifm-color-secondary-contrast-background);
+}
+
+h1 {
+    border-bottom-width: 3px;
+}
+
+h2 {
+    border-bottom-width: 2px;
+}
+
+h3 {
+    border-bottom-width: 1px;
+}

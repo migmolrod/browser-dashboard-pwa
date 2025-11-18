@@ -1,31 +1,28 @@
 .reqStatus {
-    border-radius: .4rem;
+    border-radius: .2rem;
     padding: .2rem .4rem;
     font-size: small;
     font-weight: bold;
+    background-color: var(--ifm-color-emphasis-400);
+    color: var(--ifm-color-emphasis-600);
 }
 
 .reqStatusDraft {
     background-color: var(--ifm-color-danger-darkest);
-    color: white;
+    color: var(--ifm-color-danger-lightest);
 }
 
-.reqStatusReview {
+.reqStatusReady {
     background-color: var(--ifm-color-warning-darkest);
-    color: white;
+    color: var(--ifm-color-warning-lightest);
 }
 
-.reqStatusApproved {
-    background-color: var(--ifm-color-info-darkest);
-    color: white;
-}
-
-.reqStatusImplemented {
-    background-color: var(--ifm-color-primary-darkest);
-    color: white;
-}
-
-.reqStatusVerified {
+.reqStatusDone {
     background-color: var(--ifm-color-success-darkest);
-    color: white;
+    color: var(--ifm-color-success-lightest);
+}
+
+.reqStatusReleased {
+    background-color: var(--ifm-color-info-darkest);
+    color: var(--ifm-color-info-lightest);
 }
