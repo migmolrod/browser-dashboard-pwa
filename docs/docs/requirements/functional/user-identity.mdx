@@ -1,0 +1,1370 @@
+---
+sidebar_position: 7
+title: User identity
+status: Draft
+lastUpdated: 2025-11-15
+---
+
+import RequirementMetadata from "../../../src/components/RequirementMetadata";
+
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
+
+<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+
+# User identity
+
+## Overview
+
+The User Identity bounded context provides foundational user identification, authentication, and session management for
+the Browser Dashboard PWA. It serves as the system-of-record for user identity and acts as the entry point for all user
+interactions. The context handles user registration, login/logout, and basic session lifecycle management.
+
+**Bounded context code:** UID  
+**Related DMD section:** [User Identity (Generic)](../../domain/bounded-contexts/user-identity)
+
+---
+
+## Features summary
+
+| Feature Code | Feature Name            | Priority                                | Status                        |
+|--------------|-------------------------|-----------------------------------------|-------------------------------|
+| FR-UID-001   | User registration       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-UID-002   | User authentication     | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-UID-003   | Session management      | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-UID-004   | User profile management | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-UID-005   | Password management     | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-UID-006   | Account deletion        | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-UID-007   | Security policies       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+
+---
+
+## FR-UID-001: User registration
+
+**Priority:** Must Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+Users must be able to create a new account by registering with a unique username, email address, and password.
+Registration creates a user identity that serves as the foundation for all personalized features across the system.
+
+**Preconditions:**
+
+- User must not yet be registered
+- Registration endpoint must be accessible
+
+**Postconditions:**
+
+- New User aggregate is created
+- User credentials are securely stored
+- UserRegistered event is published
+- User is authenticated (logged in) automatically
+- Default resources are initialized (dashboard, task list, calendar, etc.)
+
+**Business rules:**
+
+- Username must be unique across the system
+- Username must be 3-30 characters, alphanumeric plus underscore/hyphen
+- Email must be valid format and unique
+- Password must meet complexity requirements (min 8 characters, at least one uppercase, one lowercase, one digit)
+- Registration must be atomic (user creation and credential storage)
+- User account is active immediately upon registration (no email verification in MVP)
+
+**User roles:**
+
+- Anonymous User (pre-registration)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: User (root)
+- Domain Events: UserRegistered
+
+**Dependencies:**
+
+- None (foundational context)
+
+**Acceptance criteria:**
+
+- User can register with username, email, and password
+- Username is validated for uniqueness
+- Email is validated for format and uniqueness
+- Password is validated for complexity
+- User credentials are hashed before storage
+- UserRegistered event is published with userId
+- User is automatically logged in after registration
+- Registration failures show appropriate error messages
+- Duplicate username/email is rejected
+
+**User stories:**
+
+- US-UID-001-001: Register with valid credentials
+- US-UID-001-002: Reject duplicate username
+- US-UID-001-003: Reject invalid password
+- US-UID-001-004: Auto-login after registration
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Register with valid credentials (happy path)
+
+```gherkin
+Given a user is on the registration page
+When the user enters username "john_doe"
+And enters email "john@example.com"
+And enters password "SecurePass123"
+And confirms password "SecurePass123"
+And submits the registration form
+Then a new User aggregate is created
+And the password is hashed using bcrypt
+And credentials are stored securely
+And a UserRegistered event is published
+And the user is automatically logged in
+And redirected to the dashboard
+```
+
+##### Scenario 2: Reject duplicate username
+
+```gherkin
+Given a user "alice_smith" already exists
+When a new user attempts to register with username "alice_smith"
+And enters email "alice2@example.com"
+And enters password "SecurePass123"
+And submits the registration form
+Then validation fails
+And an error message indicates "Username already taken"
+And the user is not created
+And no UserRegistered event is published
+```
+
+##### Scenario 3: Reject duplicate email
+
+```gherkin
+Given a user with email "john@example.com" already exists
+When a new user attempts to register with different username
+But same email "john@example.com"
+And submits the registration form
+Then validation fails
+And an error message indicates "Email already registered"
+And the user is not created
+And no UserRegistered event is published
+```
+
+##### Scenario 4: Reject invalid password (too short)
+
+```gherkin
+Given a user is registering
+When the user enters password "Pass1" (only 5 characters)
+And submits the registration form
+Then validation fails
+And an error message indicates "Password must be at least 8 characters"
+And the user is not created
+```
+
+##### Scenario 5: Reject invalid password (missing complexity)
+
+```gherkin
+Given a user is registering
+When the user enters password "password123" (no uppercase)
+And submits the registration form
+Then validation fails
+And an error message indicates "Password must contain uppercase, lowercase, and digit"
+And the user is not created
+```
+
+##### Scenario 6: Password confirmation mismatch
+
+```gherkin
+Given a user is registering
+When the user enters password "SecurePass123"
+And confirms with "SecurePass456" (different)
+And submits the registration form
+Then validation fails
+And an error message indicates "Passwords do not match"
+And the user is not created
+```
+
+##### Scenario 7: Invalid email format
+
+```gherkin
+Given a user is registering
+When the user enters email "invalid-email" (no @ or domain)
+And submits the registration form
+Then validation fails
+And an error message indicates "Invalid email format"
+And the user is not created
+```
+
+##### Scenario 8: Username with invalid characters
+
+```gherkin
+Given a user is registering
+When the user enters username "john@doe!" (contains @ and !)
+And submits the registration form
+Then validation fails
+And an error message indicates "Username can only contain letters, numbers, underscore, and hyphen"
+And the user is not created
+```
+
+---
+
+**Technical notes:**
+
+- Use bcrypt (or Argon2) for password hashing with an appropriate cost factor
+- Implement rate limiting on registration endpoint to prevent abuse
+- Username and email uniqueness checks should use database constraints
+- Store userId as UUID or strongly typed identifier
+- Ensure HTTPS for registration endpoint
+- Consider implementing CAPTCHA for bot prevention (future)
+- Log registration attempts for security monitoring
+
+**Open questions:**
+
+- Should email verification be required before account activation?
+- Should there be a waiting period before the username can be reused if an account is deleted?
+
+---
+
+## FR-UID-002: User authentication
+
+**Priority:** Must Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+Users must be able to authenticate (log in) using their registered credentials (username or email and password).
+Successful authentication establishes a session that grants access to personalized features across the system.
+
+**Preconditions:**
+
+- User must be registered
+- User account must be active (not deleted or suspended)
+
+**Postconditions:**
+
+- User credentials are validated
+- Session is created with session token
+- UserLoggedIn event is published
+- User is granted access to protected resources
+- Session token is returned to the client
+
+**Business rules:**
+
+- Users can log in with username or email (both accepted)
+- Password must match stored hashed credential
+- Failed login attempts are logged for security monitoring
+- Account lockout after N failed attempts (e.g., 5) to prevent brute force
+- Successful login resets failed attempt counter
+- Session token is generated using secure random algorithm
+
+**User roles:**
+
+- Registered User (unauthenticated)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: User (root), Session
+- Domain Events: UserLoggedIn
+
+**Dependencies:**
+
+- FR-UID-001 (User must be registered)
+
+**Acceptance criteria:**
+
+- User can log in with username and password
+- User can log in with email and password
+- Password is verified against hashed credential
+- Successful login creates session and returns token
+- UserLoggedIn event is published with userId
+- Failed login shows generic error (security best practice)
+- Multiple failed attempts trigger account lockout
+- Locked account shows appropriate message
+- Session token is returned in secure HTTP-only cookie or response body
+
+**User stories:**
+
+- US-UID-002-001: Login with valid credentials
+- US-UID-002-002: Login with email instead of username
+- US-UID-002-003: Reject invalid password
+- US-UID-002-004: Account lockout after failed attempts
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Login with valid credentials (happy path)
+
+```gherkin
+Given a user "john_doe" is registered
+When the user navigates to the login page
+And enters username "john_doe"
+And enters password "SecurePass123"
+And submits the login form
+Then the password is verified against stored hash
+And authentication succeeds
+And a session is created with unique session token
+And a UserLoggedIn event is published
+And the user is redirected to the dashboard
+And session token is stored in HTTP-only cookie
+```
+
+##### Scenario 2: Login with email instead of username
+
+```gherkin
+Given a user is registered with email "john@example.com"
+When the user enters email "john@example.com"
+And enters correct password
+And submits the login form
+Then authentication succeeds
+And the user is logged in
+And a UserLoggedIn event is published
+```
+
+##### Scenario 3: Reject invalid password
+
+```gherkin
+Given a user "john_doe" is registered
+When the user enters username "john_doe"
+And enters incorrect password "WrongPass456"
+And submits the login form
+Then authentication fails
+And an error message "Invalid username or password" is displayed
+And failed attempt is logged
+And no session is created
+And no UserLoggedIn event is published
+```
+
+##### Scenario 4: Generic error for non-existent user
+
+```gherkin
+Given no user exists with username "unknown_user"
+When the user attempts to login with "unknown_user"
+And enters any password
+And submits the login form
+Then authentication fails
+And the same error message "Invalid username or password" is displayed
+And no distinction is made between invalid username vs. password
+And failed attempt is logged
+```
+
+##### Scenario 5: Account lockout after failed attempts
+
+```gherkin
+Given a user "john_doe" is registered
+And the user has made 4 failed login attempts
+When the user makes a 5th failed login attempt
+Then authentication fails
+And the account is locked for 15 minutes
+And an error message "Account temporarily locked. Please try again in 15 minutes" is displayed
+And the lockout is logged for security monitoring
+```
+
+##### Scenario 6: Successful login resets failed attempt counter
+
+```gherkin
+Given a user "john_doe" has made 3 failed login attempts
+When the user successfully logs in with correct password
+Then authentication succeeds
+And the failed attempt counter is reset to 0
+And the user can continue normally
+```
+
+##### Scenario 7: Login attempt during lockout period
+
+```gherkin
+Given a user "john_doe" is locked out due to failed attempts
+And the lockout period has not expired
+When the user attempts to login with correct password
+Then authentication is denied
+And an error message "Account temporarily locked" is displayed
+And no session is created
+```
+
+##### Scenario 8: Login after lockout period expires
+
+```gherkin
+Given a user "john_doe" was locked out
+And the 15-minute lockout period has expired
+When the user attempts to login with correct password
+Then authentication succeeds
+And the lockout is lifted
+And the user is logged in normally
+```
+
+---
+
+**Technical notes:**
+
+- Use constant-time comparison for password verification to prevent timing attacks
+- Implement rate limiting on login endpoint (e.g., max 10 attempts per minute per IP)
+- Store session tokens securely (HTTP-only, Secure, SameSite cookies)
+- Use JWT or opaque tokens for session management
+- Log all login attempts (success and failure) with IP address and timestamp
+- Implement account lockout with exponential backoff (future enhancement)
+- Consider implementing "Remember Me" functionality with long-lived refresh tokens (future)
+
+**Open questions:**
+
+- Should there be multi-factor authentication (MFA) support?
+- Should there be device tracking/recognition?
+
+---
+
+## FR-UID-003: Session management
+
+**Priority:** Must Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+The system must manage user sessions to maintain authenticated state across requests. Sessions have a lifecycle
+including creation, validation, refresh, and expiration. Users can have multiple concurrent sessions (e.g., different
+devices/browsers) and can log out to terminate sessions.
+
+**Preconditions:**
+
+- User must be authenticated
+- Session must be created after successful login
+
+**Postconditions:**
+
+- Session is created, validated, or terminated
+- Session expiration is enforced
+- UserLoggedOut event is published on logout
+
+**Business rules:**
+
+- Sessions expire after inactivity (e.g., 30 minutes idle)
+- Sessions have absolute expiration (e.g., 24 hours from creation)
+- Users can have multiple concurrent sessions
+- Logout terminates the current session only
+- Expired sessions are cleaned up automatically
+- Session tokens are invalidated on logout
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: Session, User
+- Domain Events: UserLoggedIn, UserLoggedOut
+
+**Dependencies:**
+
+- FR-UID-002 (User must be authenticated)
+
+**Acceptance criteria:**
+
+- Session is created on successful login
+- Session token is required for accessing protected resources
+- Session is validated on each request
+- Expired sessions are rejected with 401 Unauthorized
+- User can log out to terminate session
+- UserLoggedOut event is published on logout
+- Multiple concurrent sessions are supported
+- Session cleanup job removes expired sessions
+- Session inactivity timeout is enforced
+
+**User stories:**
+
+- US-UID-003-001: Create session on login
+- US-UID-003-002: Validate session on protected request
+- US-UID-003-003: Logout and terminate session
+- US-UID-003-004: Session expires after inactivity
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create session on login (happy path)
+
+```gherkin
+Given a user successfully logs in
+When authentication completes
+Then a new session is created
+And a unique session token is generated
+And session includes userId, createdAt, lastAccessedAt
+And session token is returned to client
+And session is stored in session store (database or Redis)
+```
+
+##### Scenario 2: Validate session on protected request
+
+```gherkin
+Given a user has an active session
+When the user makes a request to a protected resource
+And provides session token in Authorization header
+Then the session is validated
+And userId is extracted from session
+And lastAccessedAt is updated
+And the request is authorized
+And the protected resource is returned
+```
+
+##### Scenario 3: Reject expired session (inactivity timeout)
+
+```gherkin
+Given a user has a session
+And the session was last accessed 35 minutes ago
+And inactivity timeout is 30 minutes
+When the user makes a request with the session token
+Then session validation fails
+And 401 Unauthorized is returned
+And an error message "Session expired. Please log in again" is displayed
+And the session is marked as expired
+```
+
+##### Scenario 4: Reject expired session (absolute timeout)
+
+```gherkin
+Given a user has a session created 25 hours ago
+And absolute timeout is 24 hours
+When the user makes a request with the session token
+Then session validation fails
+And 401 Unauthorized is returned
+And the session is marked as expired
+```
+
+##### Scenario 5: Logout and terminate session
+
+```gherkin
+Given a user is logged in with active session
+When the user clicks "Logout"
+Then the current session is terminated
+And the session token is invalidated
+And a UserLoggedOut event is published
+And the user is redirected to login page
+And session is removed from session store
+```
+
+##### Scenario 6: Multiple concurrent sessions
+
+```gherkin
+Given a user logs in from desktop browser
+And a session "Session-A" is created
+When the same user logs in from mobile browser
+Then a second session "Session-B" is created
+And both sessions are active concurrently
+And logging out from one device does not affect the other
+And each session is independent
+```
+
+##### Scenario 7: Session cleanup job removes expired sessions
+
+```gherkin
+Given multiple expired sessions exist in session store
+When the session cleanup job runs (e.g., hourly)
+Then all sessions with lastAccessedAt > 30 minutes ago are deleted
+And all sessions with createdAt > 24 hours ago are deleted
+And active sessions remain unaffected
+```
+
+##### Scenario 8: Session refresh on activity
+
+```gherkin
+Given a user has a session last accessed 20 minutes ago
+When the user makes a request (e.g., views dashboard)
+Then the session is validated
+And lastAccessedAt is updated to current timestamp
+And inactivity timeout is reset
+And the session remains active
+```
+
+---
+
+**Technical notes:**
+
+- Use Redis or in-memory cache for session storage (performance)
+- Implement session token as JWT (stateless) or opaque token (stateful)
+- If using JWT, store refresh tokens separately for rotation
+- Implement session cleanup scheduled job (e.g., cron, Spring @Scheduled)
+- Use secure random for session token generation
+- Store session with TTL (time-to-live) in Redis for automatic expiration
+- Consider implementing session fingerprinting for security (future)
+
+**Open questions:**
+
+- Should there be a maximum number of concurrent sessions per user?
+- Should users be able to view and revoke active sessions?
+
+---
+
+## FR-UID-004: User profile management
+
+**Priority:** Should Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+Users should be able to view and update basic profile information including display name, email, and username. Profile
+management provides users control over their identity within the system.
+
+**Preconditions:**
+
+- User must be authenticated
+- User must have active session
+
+**Postconditions:**
+
+- User profile is updated
+- Changes are persisted
+- UserUpdated event is published (if needed)
+
+**Business rules:**
+
+- Display name is optional, length-bounded (1-100 characters)
+- Email must be unique and valid format
+- Username changes must maintain uniqueness
+- Password changes require current password verification
+- Profile changes are atomic (all or nothing)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: User (root)
+- Domain Events: UserUpdated
+
+**Dependencies:**
+
+- FR-UID-002 (User must be authenticated)
+
+**Acceptance criteria:**
+
+- User can view current profile information
+- User can update display name
+- User can update email (with uniqueness validation)
+- User can update username (with uniqueness validation)
+- Changes are validated before saving
+- Profile updates are persisted
+- UserUpdated event is published
+- Invalid updates show appropriate error messages
+
+**User stories:**
+
+- US-UID-004-001: View user profile
+- US-UID-004-002: Update display name
+- US-UID-004-003: Update email
+- US-UID-004-004: Update username
+
+---
+
+#### Scenarios
+
+##### Scenario 1: View user profile (happy path)
+
+```gherkin
+Given a user is authenticated
+When the user navigates to profile settings
+Then the profile page displays current username
+And displays current email
+And displays current display name (if set)
+And displays account creation date
+And displays last login date
+```
+
+##### Scenario 2: Update display name
+
+```gherkin
+Given a user is viewing their profile
+When the user changes display name from "John" to "John Doe"
+And saves changes
+Then the display name is updated to "John Doe"
+And a UserUpdated event is published
+And a success message "Profile updated successfully" is displayed
+And the new display name appears throughout the application
+```
+
+##### Scenario 3: Update email with validation
+
+```gherkin
+Given a user is viewing their profile
+When the user changes email from "john@example.com" to "john.doe@example.com"
+And the new email is unique
+And saves changes
+Then the email is validated for format
+And checked for uniqueness
+And updated to "john.doe@example.com"
+And a UserUpdated event is published
+```
+
+##### Scenario 4: Reject duplicate email
+
+```gherkin
+Given another user already has email "alice@example.com"
+When the current user attempts to change email to "alice@example.com"
+And saves changes
+Then validation fails
+And an error message "Email already in use" is displayed
+And the email is not updated
+```
+
+##### Scenario 5: Update username with validation
+
+```gherkin
+Given a user's current username is "john_doe"
+When the user changes username to "john_d"
+And the new username is unique
+And saves changes
+Then the username is validated for format and uniqueness
+And updated to "john_d"
+And a UserUpdated event is published
+And the user remains logged in
+```
+
+##### Scenario 6: Cancel profile changes
+
+```gherkin
+Given a user has made changes to profile
+When the user clicks "Cancel"
+Then changes are discarded
+And profile reverts to previous values
+And no UserUpdated event is published
+```
+
+---
+
+**Technical notes:**
+
+- Implement optimistic locking for concurrent profile updates
+- Email changes may require re-verification (future enhancement)
+- Username changes should be logged for security audit
+- Consider implementing username change cooldown (e.g., once per 30 days)
+- Profile updates should use PATCH semantics (partial updates)
+
+**Open questions:**
+
+- Should email changes require verification of new email?
+- Should username changes be restricted or have cooldown period?
+
+---
+
+## FR-UID-005: Password management
+
+**Priority:** Should Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+Users should be able to change their password by providing current password and new password. Password changes enhance
+security and allow users to update compromised credentials.
+
+**Preconditions:**
+
+- User must be authenticated
+- User must have active session
+
+**Postconditions:**
+
+- Password is changed
+- New password hash is stored
+- PasswordChanged event is published
+- All other sessions are optionally invalidated (security best practice)
+
+**Business rules:**
+
+- Current password must be verified before change
+- New password must meet complexity requirements
+- New password must be different from current password
+- Password change invalidates all other sessions (optional)
+- Password changes are logged for security audit
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: User (root)
+- Domain Events: PasswordChanged
+
+**Dependencies:**
+
+- FR-UID-002 (User must be authenticated)
+- FR-UID-007 (Security policies)
+
+**Acceptance criteria:**
+
+- User can access password change form
+- Current password is required and verified
+- New password must meet complexity requirements
+- New password cannot be same as current password
+- Password change succeeds with valid inputs
+- Password hash is updated in storage
+- PasswordChanged event is published
+- User is notified of successful password change
+- Other sessions are invalidated (optional)
+
+**User stories:**
+
+- US-UID-005-001: Change password successfully
+- US-UID-005-002: Reject incorrect current password
+- US-UID-005-003: Reject weak new password
+- US-UID-005-004: Other sessions invalidated after password change
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Change password successfully (happy path)
+
+```gherkin
+Given a user is authenticated
+When the user navigates to password change form
+And enters current password "OldPass123"
+And enters new password "NewSecurePass456"
+And confirms new password "NewSecurePass456"
+And submits the form
+Then current password is verified
+And new password is validated for complexity
+And new password hash is generated
+And password is updated in storage
+And a PasswordChanged event is published
+And a success message "Password changed successfully" is displayed
+```
+
+##### Scenario 2: Reject incorrect current password
+
+```gherkin
+Given a user is changing password
+When the user enters incorrect current password
+And enters valid new password
+And submits the form
+Then current password verification fails
+And an error message "Current password is incorrect" is displayed
+And the password is not changed
+```
+
+##### Scenario 3: Reject weak new password
+
+```gherkin
+Given a user is changing password
+When the user enters correct current password
+And enters weak new password "pass123" (no uppercase)
+And submits the form
+Then password complexity validation fails
+And an error message "Password must contain uppercase, lowercase, and digit" is displayed
+And the password is not changed
+```
+
+##### Scenario 4: Reject same password
+
+```gherkin
+Given a user is changing password
+When the user enters current password "SecurePass123"
+And enters new password "SecurePass123" (same)
+And submits the form
+Then validation fails
+And an error message "New password must be different from current password" is displayed
+And the password is not changed
+```
+
+##### Scenario 5: Password confirmation mismatch
+
+```gherkin
+Given a user is changing password
+When the user enters valid current password
+And enters new password "NewPass123"
+And confirms with "NewPass456" (different)
+And submits the form
+Then validation fails
+And an error message "Passwords do not match" is displayed
+And the password is not changed
+```
+
+##### Scenario 6: Invalidate other sessions after password change
+
+```gherkin
+Given a user has 3 active sessions (desktop, mobile, tablet)
+When the user changes password from desktop session
+Then the password is changed successfully
+And all sessions except current (desktop) are invalidated
+And mobile and tablet devices are logged out
+And must re-authenticate with new password
+```
+
+---
+
+**Technical notes:**
+
+- Use same password hashing algorithm as registration (bcrypt/Argon2)
+- Implement password history to prevent reuse of recent passwords (future)
+- Log password changes with timestamp and IP address
+- Consider sending email notification of password change
+- Implement rate limiting on password change endpoint
+- Current password verification should use constant-time comparison
+
+**Open questions:**
+
+- Should there be a password change cooldown period?
+- Should password history be enforced (e.g., cannot reuse last 5 passwords)?
+
+---
+
+## FR-UID-006: Account deletion
+
+**Priority:** Should Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+Users should be able to delete their account permanently. Account deletion removes all user data and is irreversible.
+This feature provides users control over their data and complies with privacy regulations.
+
+**Preconditions:**
+
+- User must be authenticated
+- User must confirm deletion intent (confirmation dialog)
+
+**Postconditions:**
+
+- User account is marked as deleted
+- UserDeleted event is published
+- All user data across contexts is deleted (cascade)
+- User is logged out
+- All sessions are invalidated
+
+**Business rules:**
+
+- Account deletion requires password confirmation
+- Deletion is permanent and irreversible (hard delete in MVP)
+- UserDeleted event triggers cleanup in all bounded contexts
+- All user-related data is deleted (cascade)
+- Deleted usernames can be registered again after grace period (optional)
+- Account deletion is logged for audit
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-005 (User Value Delivery)
+- Domain Aggregates: User (root)
+- Domain Events: UserDeleted
+
+**Dependencies:**
+
+- FR-UID-002 (User must be authenticated)
+- All other contexts (must handle UserDeleted event)
+
+**Acceptance criteria:**
+
+- User can access account deletion option
+- Deletion requires password confirmation
+- Confirmation dialog warns of permanent deletion
+- User account is deleted on confirmation
+- UserDeleted event is published with userId
+- User is logged out immediately
+- All sessions are invalidated
+- User cannot log in with deleted account
+- Deletion is logged for audit
+
+**User stories:**
+
+- US-UID-006-001: Delete account successfully
+- US-UID-006-002: Reject deletion with incorrect password
+- US-UID-006-003: Cancel account deletion
+- US-UID-006-004: Cannot log in after deletion
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Delete account successfully (happy path)
+
+```gherkin
+Given a user is authenticated
+When the user navigates to account settings
+And clicks "Delete Account"
+Then a confirmation dialog appears
+And warns "This action is permanent and cannot be undone"
+And the user enters password for confirmation
+And confirms deletion
+Then the password is verified
+And the user account is deleted
+And a UserDeleted event is published
+And the user is logged out
+And all sessions are invalidated
+And the user is redirected to goodbye page
+```
+
+##### Scenario 2: Reject deletion with incorrect password
+
+```gherkin
+Given a user is attempting to delete account
+When the user enters incorrect password in confirmation dialog
+And confirms deletion
+Then password verification fails
+And an error message "Incorrect password" is displayed
+And account deletion is aborted
+And the user remains logged in
+```
+
+##### Scenario 3: Cancel account deletion
+
+```gherkin
+Given a user has opened account deletion confirmation dialog
+When the user clicks "Cancel"
+Then the dialog is closed
+And no account deletion occurs
+And no UserDeleted event is published
+And the user remains logged in
+```
+
+##### Scenario 4: Cannot log in after deletion
+
+```gherkin
+Given a user has deleted their account
+When the user attempts to log in with previous credentials
+Then authentication fails
+And an error message "Invalid username or password" is displayed
+And no session is created
+```
+
+##### Scenario 5: Cascading deletion across contexts
+
+```gherkin
+Given a user has data in multiple contexts (dashboards, tasks, bookmarks, calendar)
+When the user deletes their account
+Then a UserDeleted event is published
+And Dashboard Management context deletes all dashboards
+And Tasks context deletes all tasks
+And Bookmarks context deletes all bookmarks
+And Calendar context deletes all events
+And all user-related data is removed from the system
+```
+
+##### Scenario 6: Account deletion is logged
+
+```gherkin
+Given a user deletes their account
+When deletion completes
+Then the deletion is logged with:
+- Timestamp
+- UserId
+- Username
+- Email
+- IP address
+And the log is retained for audit purposes
+```
+
+---
+
+**Technical notes:**
+
+- Implement soft delete with grace period before hard delete (future enhancement)
+- Use distributed transactions or saga pattern for cross-context cleanup
+- Ensure UserDeleted event is published reliably (transactional outbox pattern)
+- Log account deletions with sufficient detail for audit
+- Consider implementing account deactivation as alternative to deletion (future)
+- Ensure GDPR/data privacy compliance for deletion process
+
+**Open questions:**
+
+- Should there be a grace period (e.g., 30 days) before permanent deletion?
+- Should deleted usernames be reserved to prevent impersonation?
+
+---
+
+## FR-UID-007: Security policies
+
+**Priority:** Must Have
+
+**Bounded context:** UID—User Identity
+
+**Description:**
+The system must enforce security policies to protect user accounts and prevent unauthorized access. Policies include
+password complexity, account lockout, session security, and audit logging.
+
+**Preconditions:**
+
+- System is configured with security policies
+- Policies are enforced on all identity operations
+
+**Postconditions:**
+
+- Security policies are enforced consistently
+- Violations are logged and handled appropriately
+- Audit trail is maintained for security events
+
+**Business rules:**
+
+- Password complexity: min 8 characters, uppercase, lowercase, digit
+- Account lockout: 5 failed attempts, 15-minute lockout
+- Session timeout: 30 minutes inactivity, 24 hours absolute
+- All security events are logged (login, logout, password change, account deletion)
+- Passwords are hashed using bcrypt with cost factor 12
+- Session tokens are securely random (min 32 bytes entropy)
+
+**User roles:**
+
+- System (policy enforcement)
+- Authenticated User (subject to policies)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence)
+- Domain Aggregates: User (root), Session
+- Domain Events: All user events
+
+**Dependencies:**
+
+- All other FR-UID features (policies apply system-wide)
+
+**Acceptance criteria:**
+
+- Password complexity is enforced on registration and password change
+- Account lockout is triggered after failed login attempts
+- Sessions expire according to timeout policies
+- All passwords are hashed with bcrypt
+- Session tokens are cryptographically secure
+- All security events are logged with context
+- Audit logs are retained for compliance
+- Security policies are configurable (environment variables)
+
+**User stories:**
+
+- US-UID-007-001: Enforce password complexity
+- US-UID-007-002: Enforce account lockout
+- US-UID-007-003: Enforce session timeout
+- US-UID-007-004: Audit security events
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Enforce password complexity on registration
+
+```gherkin
+Given a user is registering
+When the user enters password "simple"
+And submits registration form
+Then password complexity validation fails
+And an error lists requirements: "min 8 chars, uppercase, lowercase, digit"
+And registration is rejected
+```
+
+##### Scenario 2: Enforce account lockout after failed logins
+
+```gherkin
+Given a user makes 5 consecutive failed login attempts
+When the 5th attempt fails
+Then the account is locked for 15 minutes
+And an error message "Account locked. Try again in 15 minutes" is displayed
+And the lockout is logged
+```
+
+##### Scenario 3: Enforce session inactivity timeout
+
+```gherkin
+Given a user has been inactive for 30 minutes
+When the user makes a request
+Then the session is expired
+And 401 Unauthorized is returned
+And the user must log in again
+```
+
+##### Scenario 4: Enforce session absolute timeout
+
+```gherkin
+Given a user's session was created 24 hours ago
+When the user makes a request
+Then the session is expired
+And 401 Unauthorized is returned
+And the user must log in again
+```
+
+##### Scenario 5: Password hashing with bcrypt
+
+```gherkin
+Given a user registers or changes password
+When the password is stored
+Then bcrypt is used with cost factor 12
+And the password hash is stored (not plaintext)
+And the hash is verifiable but not reversible
+```
+
+##### Scenario 6: Secure session token generation
+
+```gherkin
+Given a user logs in
+When a session token is generated
+Then a cryptographically secure random generator is used
+And the token has at least 32 bytes of entropy
+And the token is unpredictable
+```
+
+##### Scenario 7: Audit logging for security events
+
+```gherkin
+Given a security event occurs (login, logout, password change, deletion)
+When the event completes
+Then an audit log entry is created with:
+- Timestamp
+- Event type
+- UserId
+- IP address
+- User agent
+- Success/failure status
+And the log is persisted for compliance
+```
+
+##### Scenario 8: Configurable security policies
+
+```gherkin
+Given security policies are defined in configuration
+When the system starts
+Then policies are loaded from environment variables:
+- PASSWORD_MIN_LENGTH=8
+- LOCKOUT_ATTEMPTS=5
+- LOCKOUT_DURATION_MINUTES=15
+- SESSION_INACTIVITY_MINUTES=30
+- SESSION_ABSOLUTE_HOURS=24
+And policies are enforced according to configuration
+```
+
+---
+
+**Technical notes:**
+
+- Use Spring Security for policy enforcement
+- Implement custom password validator with configurable rules
+- Use bcrypt from Spring Security Crypto (BCryptPasswordEncoder)
+- Use SecureRandom for token generation
+- Store audit logs in dedicated table or logging system
+- Implement policy configuration via application.properties or environment variables
+- Consider implementing intrusion detection/prevention (future)
+
+**Open questions:**
+
+- Should security policies be user-configurable (e.g., longer session timeout)?
+- Should there be notification of suspicious activity (e.g., login from new location)?
+
+---
+
+## Cross-feature considerations
+
+### Interactions between features
+
+- **Registration ↔ Security Policies:** Registration enforces password complexity
+- **Authentication ↔ Security Policies:** Authentication enforces lockout and logging
+- **Session Management ↔ Security Policies:** Sessions enforce timeout policies
+- **Password Management ↔ Security Policies:** Password changes enforce complexity
+- **Account Deletion ↔ All Features:** Deletion publishes event consumed by all contexts
+- **All Features ↔ Audit Logging:** All operations are logged for security
+
+### Shared business rules
+
+1. **Password Security:** All passwords must meet complexity requirements and be hashed
+2. **Username Uniqueness:** Usernames must be unique system-wide
+3. **Email Uniqueness:** Emails must be unique system-wide
+4. **Session Security:** All sessions must have timeout policies enforced
+5. **Audit Trail:** All security events must be logged
+6. **Atomicity:** All user operations must be atomic (all or nothing)
+
+### Data consistency requirements
+
+- **Strong Consistency:** User registration, authentication, and deletion require strong consistency
+- **Session Consistency:** Session operations require strong consistency (token validity)
+- **Audit Consistency:** Audit logs must be reliably persisted (transactional)
+- **Cross-Context Consistency:** UserDeleted event must reliably trigger cleanup in all contexts
+- **Password Hashing:** Password hashing must be deterministic and consistent
+
+---
+
+## Business constraints impact
+
+### BC-001: Budget
+
+User Identity must operate within zero-cost infrastructure constraints:
+
+- **Authentication:** Use local authentication (no paid Auth0, Okta, etc.)
+- **Session Storage:** Use free-tier Redis or in-memory cache (Spring Session)
+- **Database:** Use free-tier PostgreSQL for user storage
+- **Audit Logging:** Use application logs (no paid logging service initially)
+
+### BC-002: Timeline
+
+User Identity is on critical path for MVP (3-6 months):
+
+- **Must Have features** (FR-UID-001, 002, 003, 007) required for MVP
+- **Should Have features** (FR-UID-004, 005, 006) can be deferred to post-MVP
+- Prioritize basic registration/login/session management
+- Defer advanced features like profile management and account deletion
+
+### BC-003: Resources
+
+Single-developer constraints affect User Identity:
+
+- **Leverage Frameworks:** Use Spring Security for authentication (avoid custom implementation)
+- **Simplify Policies:** Start with basic password complexity and lockout
+- **Automate Testing:** Heavy investment in security testing (password hashing, session management)
+- **Incremental Development:** Build registration first, then login, then session management
+
+### BC-004: Technology stack
+
+User Identity aligns with chosen stack:
+
+- **Backend:** Spring Boot with Spring Security for authentication/authorization
+- **Password Hashing:** BCryptPasswordEncoder from Spring Security
+- **Session Management:** Spring Session with Redis or in-memory
+- **Database:** PostgreSQL for user and audit storage
+- **Events:** Spring Events initially; design for future Kafka/RabbitMQ migration
+- **Testing:** JUnit, Mockito for unit tests; TestContainers for integration tests
+
+---
+
+## Success metrics alignment
+
+User Identity contributes to the following success metrics from BR-001 through BR-008:
+
+### BR-003: Technical metrics
+
+| Metric                       | Target        | User Identity contribution                             |
+|------------------------------|---------------|--------------------------------------------------------|
+| **API Response Time**        | < 200ms (p95) | Fast authentication, session validation                |
+| **Security Vulnerabilities** | Zero Critical | Proper password hashing, secure session management     |
+| **Test Coverage**            | > 80%         | Comprehensive security testing for all FR-UID features |
+
+### BR-001: Portfolio quality metrics
+
+| Metric                         | Target             | User Identity contribution                                    |
+|--------------------------------|--------------------|---------------------------------------------------------------|
+| **Architecture Documentation** | All views complete | User aggregate design, authentication flow, security policies |
+| **Code Quality Score**         | No critical issues | Clean authentication code, proper security practices          |
+
+### BR-002, BR-005: User experience metrics
+
+| Metric                   | Target            | User Identity contribution                        |
+|--------------------------|-------------------|---------------------------------------------------|
+| **Task Completion Rate** | > 95%             | Simple registration, reliable login, clear errors |
+| **Mobile Usability**     | Fully Responsive  | Responsive login/registration forms               |
+| **Accessibility Score**  | WCAG 2.1 Level AA | Accessible forms, clear error messages            |
+
+---
+
+## Traceability matrix
+
+| Feature    | Business Req           | Domain Events                        | User Stories               |
+|------------|------------------------|--------------------------------------|----------------------------|
+| FR-UID-001 | BR-001, BR-002, BR-005 | UserRegistered                       | US-UID-001-001/002/003/004 |
+| FR-UID-002 | BR-001, BR-002, BR-005 | UserLoggedIn                         | US-UID-002-001/002/003/004 |
+| FR-UID-003 | BR-001, BR-003, BR-005 | UserLoggedIn, UserLoggedOut          | US-UID-003-001/002/003/004 |
+| FR-UID-004 | BR-001, BR-002, BR-005 | UserUpdated                          | US-UID-004-001/002/003/004 |
+| FR-UID-005 | BR-001, BR-003, BR-005 | PasswordChanged                      | US-UID-005-001/002/003/004 |
+| FR-UID-006 | BR-001, BR-005         | UserDeleted                          | US-UID-006-001/002/003/004 |
+| FR-UID-007 | BR-001, BR-003         | All user events (policy enforcement) | US-UID-007-001/002/003/004 |
