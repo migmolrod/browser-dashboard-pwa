@@ -1,0 +1,1053 @@
+---
+sidebar_position: 8
+title: Preferences
+status: Draft
+lastUpdated: 2025-11-15
+---
+
+import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
+
+<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+
+# Preferences
+
+## Overview
+
+The Preferences bounded context manages cross-cutting user preferences such as theme, locale, timezone, and default
+settings. It serves as the single source of truth for user-specific configuration that affects the entire application.
+The context provides sensible defaults and notifies other contexts when preferences change.
+
+**Bounded context code:** PRE  
+**Related DMD section:** [Preferences (Generic)](../../domain/bounded-contexts/preferences)
+
+---
+
+## Features summary
+
+| Feature Code | Feature Name           | Priority                                | Status                          |
+|--------------|------------------------|-----------------------------------------|---------------------------------|
+| FR-PRE-001   | Theme management       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
+| FR-PRE-002   | Locale management      | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/>   |
+| FR-PRE-003   | Timezone management    | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/>   |
+| FR-PRE-004   | Default preferences    | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
+| FR-PRE-005   | Preference persistence | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
+| FR-PRE-006   | Preference validation  | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
+
+---
+
+## FR-PRE-001: Theme management
+
+**Priority:** Must Have
+
+**Bounded context:** PRE - Preferences
+
+**Description:**  
+Users must be able to select and switch between visual themes (light, dark, and system default). Theme preference
+affects the visual appearance of the entire application and persists across sessions. System default automatically
+adapts to the user's operating system theme preference.
+
+**Preconditions:**
+
+- User must be authenticated
+- UserPreferences aggregate must exist
+
+**Postconditions:**
+
+- Theme preference is updated
+- ThemeChanged event is published
+- Application appearance updates in real-time
+- Theme preference persists across sessions
+
+**Business rules:**
+
+- Supported themes: Light, Dark, System (follows OS preference)
+- Default theme is "System" for new users
+- Theme changes apply immediately without page reload
+- Theme preference is global (not per-device in MVP)
+- System theme dynamically updates when OS theme changes
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: UserPreferences (root)
+- Domain Events: ThemeChanged, UserRegistered (consumed)
+
+**Dependencies:**
+
+- User Identity context (UserId association)
+
+**Acceptance criteria:**
+
+- User can select theme from: Light, Dark, System
+- Theme changes apply immediately to entire application
+- ThemeChanged event is published with new theme value
+- Theme preference persists across sessions
+- System theme follows OS preference (detects changes)
+- Theme selection is accessible from settings menu
+- Visual feedback confirms theme change
+
+**User stories:**
+
+- US-PRE-001-001: Select light theme
+- US-PRE-001-002: Select dark theme
+- US-PRE-001-003: Select system theme
+- US-PRE-001-004: System theme adapts to OS changes
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Select light theme (happy path)
+
+:::note gherkin
+Given a user is authenticated  
+And viewing the preferences settings  
+When the user selects "Light" theme  
+And saves preferences  
+Then the theme preference is updated to "Light"  
+And a ThemeChanged event is published  
+And the application switches to light theme immediately  
+And all UI components update with light theme colors  
+And the preference is persisted
+:::
+
+##### Scenario 2: Select dark theme
+
+:::note gherkin
+Given a user has light theme active  
+When the user selects "Dark" theme  
+And saves preferences  
+Then the theme preference is updated to "Dark"  
+And a ThemeChanged event is published  
+And the application switches to dark theme immediately  
+And all UI components update with dark theme colors
+:::
+
+##### Scenario 3: Select system theme
+
+:::note gherkin
+Given a user has dark theme active  
+When the user selects "System" theme  
+And saves preferences  
+Then the theme preference is updated to "System"  
+And a ThemeChanged event is published  
+And the application detects OS theme preference  
+And applies matching theme (light or dark)  
+And updates dynamically if OS theme changes
+:::
+
+##### Scenario 4: System theme adapts to OS changes
+
+:::note gherkin
+Given a user has "System" theme selected  
+And OS is currently in light mode  
+When the OS switches to dark mode  
+Then the application detects the OS theme change  
+And automatically switches to dark theme  
+And no ThemeChanged event is published (no user action)  
+And the preference remains "System"
+:::
+
+##### Scenario 5: Theme persists across sessions
+
+:::note gherkin
+Given a user has selected "Dark" theme  
+When the user logs out and logs back in  
+Then the theme is restored to "Dark"  
+And the application loads with dark theme  
+And theme preference is retrieved from storage
+:::
+
+##### Scenario 6: Default theme for new users
+
+:::note gherkin
+Given a new user has just registered  
+When the UserRegistered event is processed  
+Then default preferences are created  
+And theme is set to "System"  
+And the application uses OS theme preference initially
+:::
+
+---
+
+**Technical notes:**
+
+- Use CSS custom properties (variables) for theme colors
+- Implement theme detection via `window.matchMedia('(prefers-color-scheme: dark)')`
+- Store theme preference as enumeration (LIGHT, DARK, SYSTEM)
+- Listen for OS theme changes with `matchMedia.addEventListener('change', ...)`
+- Apply theme immediately via CSS class on root element (e.g., `<html class="dark">`)
+- Consider implementing theme transition animations for smooth switching
+
+**Open questions:**
+
+- Should there be additional theme options (e.g., high contrast, custom colors)?
+- Should theme be device-specific in the future?
+
+---
+
+## FR-PRE-002: Locale management
+
+**Priority:** Should Have
+
+**Bounded context:** PRE - Preferences
+
+**Description:**  
+Users should be able to select their preferred locale (language and region) for the application interface. Locale
+affects language, date formats, number formats, and other region-specific settings. The system provides a catalog of
+supported locales.
+
+**Preconditions:**
+
+- User must be authenticated
+- UserPreferences aggregate must exist
+- Locale must be supported by the system
+
+**Postconditions:**
+
+- Locale preference is updated
+- LocaleChanged event is published
+- Application language updates in real-time
+- Date and number formats adjust to locale
+
+**Business rules:**
+
+- Default locale is "en-US" (English - United States)
+- Supported locales are defined in configuration (e.g., en-US, es-ES, fr-FR, de-DE)
+- Invalid locales are rejected with validation error
+- Locale changes apply immediately
+- Locale affects: UI language, date formats, number formats, currency symbols
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: UserPreferences (root)
+- Domain Events: LocaleChanged, UserRegistered (consumed)
+
+**Dependencies:**
+
+- User Identity context (UserId association)
+- Internationalization (i18n) infrastructure
+
+**Acceptance criteria:**
+
+- User can select locale from supported list
+- Locale changes apply immediately to entire application
+- LocaleChanged event is published with new locale
+- UI language switches to selected locale
+- Date formats adapt to locale (e.g., MM/DD/YYYY vs DD/MM/YYYY)
+- Number formats adapt to locale (e.g., 1,000.50 vs 1.000,50)
+- Locale preference persists across sessions
+- Invalid locale selection shows error message
+
+**User stories:**
+
+- US-PRE-002-001: Select locale
+- US-PRE-002-002: View date in locale format
+- US-PRE-002-003: View numbers in locale format
+- US-PRE-002-004: Reject invalid locale
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Select locale (happy path)
+
+:::note gherkin
+Given a user is viewing preferences settings  
+And current locale is "en-US"  
+When the user selects locale "es-ES" (Spanish - Spain)  
+And saves preferences  
+Then the locale preference is updated to "es-ES"  
+And a LocaleChanged event is published  
+And UI language switches to Spanish  
+And date formats change to DD/MM/YYYY  
+And number formats use European convention (1.000,50)  
+And the preference is persisted
+:::
+
+##### Scenario 2: View date in locale format
+
+:::note gherkin
+Given a user has locale set to "es-ES"  
+When the user views a date (e.g., event date)  
+Then dates are displayed as "15/11/2025" (DD/MM/YYYY)  
+And month names are in Spanish (e.g., "noviembre")
+:::
+
+##### Scenario 3: View numbers in locale format
+
+:::note gherkin
+Given a user has locale set to "de-DE" (German - Germany)  
+When the user views numeric data (e.g., weather temperature)  
+Then numbers use German formatting (1.234,56)  
+And decimal separator is comma  
+And thousands separator is period
+:::
+
+##### Scenario 4: Reject invalid locale
+
+:::note gherkin
+Given a user is selecting a locale  
+When the user attempts to set locale to "xx-XX" (unsupported)  
+And saves preferences  
+Then validation fails  
+And an error message "Locale not supported" is displayed  
+And locale is not changed  
+And no LocaleChanged event is published
+:::
+
+##### Scenario 5: Locale persists across sessions
+
+:::note gherkin
+Given a user has selected locale "fr-FR"  
+When the user logs out and logs back in  
+Then the locale is restored to "fr-FR"  
+And the application loads with French language  
+And French date/number formats
+:::
+
+##### Scenario 6: Default locale for new users
+
+:::note gherkin
+Given a new user has just registered  
+When default preferences are created  
+Then locale is set to "en-US"  
+And the application uses English language
+:::
+
+---
+
+**Technical notes:**
+
+- Use i18n library (e.g., Angular i18n, react-intl, Java ResourceBundle)
+- Store locale as BCP 47 language tag (e.g., "en-US", "es-ES")
+- Validate locale against supported locale catalog
+- Load language resource bundles dynamically
+- Use locale for date formatting (DateTimeFormatter, Intl.DateTimeFormat)
+- Use locale for number formatting (NumberFormat, Intl.NumberFormat)
+- Consider implementing locale autodetection from browser settings (future)
+
+**Open questions:**
+
+- Should the system support right-to-left (RTL) languages?
+- Should locale be autodetected from browser settings by default?
+
+---
+
+## FR-PRE-003: Timezone management
+
+**Priority:** Should Have
+
+**Bounded context:** PRE - Preferences
+
+**Description:**  
+Users should be able to select their preferred timezone for displaying dates and times. Timezone affects how timestamps
+are displayed throughout the application, ensuring times are shown in the user's local context.
+
+**Preconditions:**
+
+- User must be authenticated
+- UserPreferences aggregate must exist
+- Timezone must be valid IANA timezone identifier
+
+**Postconditions:**
+
+- Timezone preference is updated
+- TimezoneChanged event is published (optional)
+- Timestamps displayed in selected timezone
+- Timezone preference persists across sessions
+
+**Business rules:**
+
+- Default timezone is browser-detected or UTC
+- Supported timezones are IANA timezone database identifiers (e.g., "America/New_York", "Europe/Madrid")
+- Invalid timezones are rejected with validation error
+- Timezone changes apply immediately
+- All timestamps are stored in UTC and converted for display
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: UserPreferences (root)
+- Domain Events: PreferencesUpdated, UserRegistered (consumed)
+
+**Dependencies:**
+
+- User Identity context (UserId association)
+
+**Acceptance criteria:**
+
+- User can select timezone from searchable list
+- Timezone changes apply immediately
+- PreferencesUpdated event is published with new timezone
+- All timestamps display in selected timezone
+- Timezone preference persists across sessions
+- Invalid timezone selection shows error message
+- System displays timezone offset (e.g., UTC-5, UTC+1)
+
+**User stories:**
+
+- US-PRE-003-001: Select timezone
+- US-PRE-003-002: View timestamps in timezone
+- US-PRE-003-003: Autodetect timezone from browser
+- US-PRE-003-004: Reject invalid timezone
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Select timezone (happy path)
+
+:::note gherkin
+Given a user is viewing preferences settings  
+And current timezone is "UTC"  
+When the user selects timezone "America/New_York"  
+And saves preferences  
+Then the timezone preference is updated to "America/New_York"  
+And a PreferencesUpdated event is published  
+And all timestamps display in Eastern Time  
+And timezone offset is shown (e.g., UTC-5 or UTC-4 depending on DST)  
+And the preference is persisted
+:::
+
+##### Scenario 2: View timestamps in timezone
+
+:::note gherkin
+Given a user has timezone set to "Europe/Madrid" (UTC+1/UTC+2)  
+And an event is scheduled at "2025-11-20T10:00:00Z" (UTC)  
+When the user views the event  
+Then the time is displayed as "11:00" or "12:00" (depending on DST)  
+And timezone is indicated (CET or CEST)
+:::
+
+##### Scenario 3: Autodetect timezone from browser
+
+:::note gherkin
+Given a new user is registering  
+When default preferences are created  
+Then the system detects browser timezone using Intl.DateTimeFormat().resolvedOptions().timeZone  
+And sets timezone to detected value (e.g., "America/Los_Angeles")  
+And the user can change it later if needed
+:::
+
+##### Scenario 4: Reject invalid timezone
+
+:::note gherkin
+Given a user is selecting a timezone  
+When the user attempts to set timezone to "Invalid/Timezone"  
+And saves preferences  
+Then validation fails  
+And an error message "Invalid timezone" is displayed  
+And timezone is not changed  
+And no PreferencesUpdated event is published
+:::
+
+##### Scenario 5: Timezone persists across sessions
+
+:::note gherkin
+Given a user has selected timezone "Asia/Tokyo"  
+When the user logs out and logs back in  
+Then the timezone is restored to "Asia/Tokyo"  
+And all timestamps display in Japan Standard Time
+:::
+
+##### Scenario 6: Search timezone by city name
+
+:::note gherkin
+Given a user is selecting timezone  
+When the user types "Madrid" in the search box  
+Then matching timezones are filtered:
+
+- Europe/Madrid  
+  And the user can select from the filtered list
+  :::
+
+---
+
+**Technical notes:**
+
+- Use IANA timezone database (tzdata)
+- Store timezone as IANA identifier (e.g., "America/New_York")
+- Use timezone-aware date libraries (e.g., Luxon, date-fns-tz, ZonedDateTime in Java)
+- Store all timestamps in UTC in database
+- Convert to user's timezone for display only
+- Handle Daylight Saving Time (DST) transitions correctly
+- Provide timezone search/autocomplete for better UX
+
+**Open questions:**
+
+- Should timezone be autodetected and updated when user travels?
+- Should there be quick-select common timezones?
+
+---
+
+## FR-PRE-004: Default preferences
+
+**Priority:** Must Have
+
+**Bounded context:** PRE - Preferences
+
+**Description:**  
+The system must create default preferences for new users when they register. Default preferences provide sensible
+initial values that ensure the application works immediately without requiring user configuration.
+
+**Preconditions:**
+
+- UserRegistered event is received from User Identity context
+- UserId is provided in the event
+
+**Postconditions:**
+
+- UserPreferences aggregate is created with defaults
+- Preferences are persisted
+- PreferencesCreated event is published (optional)
+
+**Business rules:**
+
+- Default preferences are created automatically on user registration
+- Default theme: "System" (follows OS preference)
+- Default locale: "en-US" (English - United States)
+- Default timezone: Browser-detected or UTC
+- Default widget settings: Reasonable defaults per widget type
+- User can change defaults at any time after registration
+
+**User roles:**
+
+- System (automatic on user registration)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
+- Domain Aggregates: UserPreferences (root)
+- Domain Events: UserRegistered (consumed), PreferencesCreated (published)
+
+**Dependencies:**
+
+- User Identity context (UserRegistered event)
+
+**Acceptance criteria:**
+
+- UserPreferences aggregate is created on UserRegistered event
+- Default values are applied for all preference fields
+- Theme is set to "System"
+- Locale is set to "en-US"
+- Timezone is set to browser-detected or UTC
+- Preferences are persisted to database
+- PreferencesCreated event is published
+- Operation is idempotent (no duplicate preferences)
+
+**User stories:**
+
+- US-PRE-004-001: Create default preferences on registration
+- US-PRE-004-002: Verify default values
+- US-PRE-004-003: User can change defaults
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create default preferences on registration (happy path)
+
+:::note gherkin
+Given a new user "john_doe" has just registered  
+When the system processes UserRegistered event  
+Then a UserPreferences aggregate is created for "john_doe"  
+And theme is set to "System"  
+And locale is set to "en-US"  
+And timezone is set to browser-detected value (or UTC)  
+And widget defaults are set (empty or reasonable values)  
+And preferences are persisted to database  
+And a PreferencesCreated event is published
+:::
+
+##### Scenario 2: Verify default values
+
+:::note gherkin
+Given a new user has registered  
+When the user views preferences settings  
+Then theme shows "System" selected  
+And locale shows "en-US" selected  
+And timezone shows detected or UTC value  
+And all defaults are displayed correctly
+:::
+
+##### Scenario 3: User can change defaults
+
+:::note gherkin
+Given a new user has default preferences  
+When the user changes theme to "Dark"  
+And changes locale to "es-ES"  
+And saves preferences  
+Then the changes are persisted  
+And override the defaults  
+And the application uses new values
+:::
+
+##### Scenario 4: Idempotent preference creation
+
+:::note gherkin
+Given UserRegistered event is processed  
+And UserPreferences are created  
+When the event is processed again (e.g., retry)  
+Then no duplicate preferences are created  
+And existing preferences remain unchanged  
+And no error occurs
+:::
+
+##### Scenario 5: Browser timezone detection
+
+:::note gherkin
+Given a user registers from browser in "America/Los_Angeles" timezone  
+When default preferences are created  
+Then timezone is detected as "America/Los_Angeles"  
+And set as default timezone  
+And the user sees timestamps in Pacific Time
+:::
+
+---
+
+**Technical notes:**
+
+- Use event handler to consume UserRegistered event
+- Implement idempotency using userId as unique key
+- Browser timezone detection: `Intl.DateTimeFormat().resolvedOptions().timeZone`
+- Ensure default creation is transactional
+- Log preference creation for audit
+- Consider making default values configurable (environment variables)
+
+**Open questions:**
+
+- Should defaults vary by user region (e.g., locale detected from IP)?
+- Should there be organization-level default overrides (future)?
+
+---
+
+## FR-PRE-005: Preference persistence
+
+**Priority:** Must Have
+
+**Bounded context:** PRE - Preferences
+
+**Description:**  
+The system must persist user preferences to ensure they survive application restarts and are available across sessions
+and devices. Persistence guarantees that user customizations are not lost.
+
+**Preconditions:**
+
+- UserPreferences aggregate exists
+- Preferences have been modified
+
+**Postconditions:**
+
+- Preferences are persisted to database
+- Preferences can be retrieved on subsequent access
+- Consistency is maintained across concurrent updates
+
+**Business rules:**
+
+- All preference changes are persisted immediately
+- Preferences are retrieved when user logs in
+- Concurrent updates are handled safely (optimistic locking)
+- Failed persistence operations are logged and retried
+- Persistence must be transactional (ACID properties)
+
+**User roles:**
+
+- System (automatic persistence)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: UserPreferences (root)
+- Domain Events: All preference events
+
+**Dependencies:**
+
+- Database storage
+
+**Acceptance criteria:**
+
+- Preference changes are persisted immediately after update
+- Preferences can be retrieved by UserId
+- Preferences persist across sessions (logout/login)
+- Preferences persist across application restarts
+- Concurrent updates are handled safely (optimistic locking)
+- Failed persistence operations are logged
+- Persistence operations are atomic
+- Read operations are efficient (indexed by UserId)
+
+**User stories:**
+
+- US-PRE-005-001: Persist preference changes
+- US-PRE-005-002: Retrieve preferences on login
+- US-PRE-005-003: Handle concurrent updates
+- US-PRE-005-004: Persist across restarts
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Persist preference changes (happy path)
+
+:::note gherkin
+Given a user changes theme from "Light" to "Dark"  
+When the preference update is saved  
+Then the preference is immediately persisted to database  
+And a ThemeChanged event is published  
+And persistence completes successfully
+:::
+
+##### Scenario 2: Retrieve preferences on login
+
+:::note gherkin
+Given a user has previously set preferences (Dark theme, es-ES locale)  
+When the user logs in  
+Then preferences are retrieved from database by UserId  
+And theme is loaded as "Dark"  
+And locale is loaded as "es-ES"  
+And application applies these preferences
+:::
+
+##### Scenario 3: Handle concurrent updates
+
+:::note gherkin
+Given a user has preferences open in two browser tabs  
+When the user updates theme in tab 1  
+And simultaneously updates locale in tab 2  
+Then optimistic locking detects the conflict  
+And one operation succeeds immediately  
+And the other operation is retried with updated state  
+And both changes are successfully persisted  
+And no data is lost
+:::
+
+##### Scenario 4: Persist across restarts
+
+:::note gherkin
+Given a user has set preferences  
+When the application is restarted  
+And the user logs in  
+Then preferences are loaded from persistent storage  
+And all user settings are restored  
+And the application applies them correctly
+:::
+
+##### Scenario 5: Persistence failure - retry
+
+:::note gherkin
+Given a user changes preferences  
+When persistence fails due to database error  
+Then the error is logged  
+And the operation is queued for retry  
+And the user is notified of the temporary issue  
+And the system retries with exponential backoff  
+And succeeds on retry
+:::
+
+---
+
+**Technical notes:**
+
+- Use relational database with userId as primary/foreign key
+- Implement optimistic locking with version field
+- Use database transactions for atomic updates
+- Index preferences table by userId for efficient retrieval
+- Implement retry logic with exponential backoff
+- Log all persistence operations for debugging
+- Consider caching preferences in Redis for performance (future)
+
+**Open questions:**
+
+- Should there be preference versioning for rollback?
+- Should preferences be backed up separately?
+
+---
+
+## FR-PRE-006: Preference validation
+
+**Priority:** Must Have
+
+**Bounded Context:** PRE - Preferences
+
+**Description:**  
+The system must validate preference values before persisting to ensure data integrity and prevent invalid
+configurations. Validation includes checking against supported value catalogs and format requirements.
+
+**Preconditions:**
+
+- User is updating preferences
+- Preference values are provided
+
+**Postconditions:**
+
+- Valid preferences are accepted and persisted
+- Invalid preferences are rejected with error messages
+- Validation errors are logged
+
+**Business rules:**
+
+- Theme must be one of: Light, Dark, System
+- Locale must be supported (from locale catalog)
+- Timezone must be valid IANA identifier
+- All preference values must pass validation before persistence
+- Validation errors provide helpful error messages
+- Invalid updates do not modify existing preferences
+
+**User roles:**
+
+- System (automatic validation)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: UserPreferences (root)
+- Domain Events: None (validation only)
+
+**Dependencies:**
+
+- Supported value catalogs (themes, locales, timezones)
+
+**Acceptance criteria:**
+
+- Theme values are validated against enum (Light, Dark, System)
+- Locale values are validated against supported locale catalog
+- Timezone values are validated against IANA timezone database
+- Invalid values are rejected with appropriate error messages
+- Validation occurs before persistence
+- Validation errors are logged
+- User receives clear feedback on validation failures
+
+**User stories:**
+
+- US-PRE-006-001: Validate theme value
+- US-PRE-006-002: Validate locale value
+- US-PRE-006-003: Validate timezone value
+- US-PRE-006-004: Reject multiple invalid values
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Validate theme value (happy path)
+
+:::note gherkin
+Given a user is updating preferences  
+When the user sets theme to "Dark"  
+Then theme value is validated against enum (Light, Dark, System)  
+And validation passes  
+And preference is updated
+:::
+
+##### Scenario 2: Reject invalid theme value
+
+:::note gherkin
+Given a user is updating preferences  
+When the user attempts to set theme to "Blue" (invalid)  
+Then validation fails  
+And an error message "Invalid theme. Supported: Light, Dark, System" is displayed  
+And the preference is not updated
+:::
+
+##### Scenario 3: Validate locale value
+
+:::note gherkin
+Given a user is updating preferences  
+When the user sets locale to "fr-FR"  
+And "fr-FR" is in the supported locale catalog  
+Then validation passes  
+And preference is updated
+:::
+
+##### Scenario 4: Reject invalid locale value
+
+:::note gherkin
+Given a user is updating preferences  
+When the user sets locale to "xx-XX" (unsupported)  
+Then validation fails  
+And an error message "Locale not supported" is displayed  
+And available locales are suggested  
+And the preference is not updated
+:::
+
+##### Scenario 5: Validate timezone value
+
+:::note gherkin
+Given a user is updating preferences  
+When the user sets timezone to "America/New_York"  
+And "America/New_York" is valid IANA identifier  
+Then validation passes  
+And preference is updated
+:::
+
+##### Scenario 6: Reject invalid timezone value
+
+:::note gherkin
+Given a user is updating preferences  
+When the user sets timezone to "Invalid/Timezone"  
+Then validation fails  
+And an error message "Invalid timezone identifier" is displayed  
+And the preference is not updated
+:::
+
+##### Scenario 7: Reject multiple invalid values
+
+:::note gherkin
+Given a user is updating multiple preferences  
+When the user sets theme to "Blue" (invalid)  
+And sets locale to "xx-XX" (invalid)  
+And sets timezone to "America/New_York" (valid)  
+Then validation fails for theme and locale  
+And error messages list all validation errors  
+And none of the preferences are updated  
+And the operation is atomic (all or nothing)
+:::
+
+---
+
+**Technical notes:**
+
+- Implement validation at domain model level (before persistence)
+- Use enum for theme validation (compile-time safety)
+- Load supported locales from configuration file
+- Validate timezone using TimeZone.getAvailableIDs() or similar
+- Provide detailed validation error messages
+- Log validation failures with context
+- Consider implementing custom validators for extensibility
+
+**Open questions:**
+
+- Should validation be client-side only, server-side only, or both?
+- Should there be validation warnings in addition to errors?
+
+---
+
+## Cross-feature considerations
+
+### Interactions between features
+
+- **Theme Management ↔ Preference Persistence:** Theme changes are immediately persisted
+- **Locale Management ↔ Preference Persistence:** Locale changes are immediately persisted
+- **Timezone Management ↔ Preference Persistence:** Timezone changes are immediately persisted
+- **Default Preferences ↔ All Features:** Defaults initialize all preference fields on registration
+- **Preference Validation ↔ All Features:** Validation applies to all preference updates
+- **All Features ↔ Event Publishing:** Preference changes publish events to downstream contexts
+
+### Shared business rules
+
+1. **User Scoping:** All preferences belong to exactly one user
+2. **Atomicity:** All preference updates must be atomic (all or nothing)
+3. **Validation:** All preference values must be validated before persistence
+4. **Immediate Effect:** All preference changes apply immediately without page reload
+5. **Persistence:** All preferences must persist across sessions
+6. **Event Publishing:** Preference changes must publish events after successful persistence
+
+### Data consistency requirements
+
+- **Strong Consistency:** Preference updates require strong consistency
+- **Transactional Boundaries:** UserPreferences aggregate is the transactional boundary
+- **Event Publishing:** Events must be published after successful persistence (transactional outbox pattern)
+- **Optimistic Locking:** Concurrent updates must use optimistic locking to prevent conflicts
+- **Default Creation:** Default preference creation must be idempotent
+
+---
+
+## Business constraints impact
+
+### BC-001: Budget
+
+Preferences management must operate within zero-cost infrastructure constraints:
+
+- **Storage:** Use free-tier database (PostgreSQL) for preference storage
+- **Caching:** Use in-memory cache initially (no paid Redis required)
+- **Event Publishing:** Use local event bus initially (no paid message queue)
+- **Validation:** Use local validation (no external validation services)
+
+### BC-002: Timeline
+
+Preferences management is on critical path for MVP (3-6 months):
+
+- **Must Have features** (FR-PRE-001, 004, 005, 006) required for MVP
+- **Should Have features** (FR-PRE-002, 003) enhance UX but can be simplified
+- Prioritize theme management and default preferences
+- Defer advanced locale/timezone features to post-MVP if needed
+
+### BC-003: Resources
+
+Single-developer constraints affect Preferences management:
+
+- **Simplify Locale:** Start with English only, add more languages incrementally
+- **Simplify Timezone:** Autodetect from browser, allow manual change later
+- **Automate Testing:** Heavy investment in validation tests
+- **Incremental Development:** Build theme first, then defaults, then locale/timezone
+
+### BC-004: Technology stack
+
+Preferences management aligns with chosen stack:
+
+- **Backend:** Spring Boot REST APIs for preference CRUD
+- **Database:** PostgreSQL for preference storage
+- **Events:** Spring Events initially; design for future Kafka/RabbitMQ migration
+- **Validation:** Bean Validation (JSR-303) for preference validation
+- **Frontend:** Angular components for preference UI, reactive forms
+- **Caching:** Spring Cache abstraction with Caffeine (in-memory)
+
+---
+
+## Success metrics alignment
+
+Preferences management contributes to the following success metrics from BR-001 through BR-008:
+
+### BR-003: Technical metrics
+
+| Metric                | Target        | Preferences contribution                               |
+|-----------------------|---------------|--------------------------------------------------------|
+| **API Response Time** | < 200ms (p95) | Fast preference retrieval, efficient caching           |
+| **Test Coverage**     | > 80%         | Comprehensive validation tests for all FR-PRE features |
+
+### BR-001: Portfolio quality metrics
+
+| Metric                         | Target             | Preferences contribution                             |
+|--------------------------------|--------------------|------------------------------------------------------|
+| **Architecture Documentation** | All views complete | Preferences aggregate design, cross-cutting concerns |
+| **Code Quality Score**         | No critical issues | Clean preference management, proper validation       |
+
+### BR-002, BR-005: User experience metrics
+
+| Metric                   | Target            | Preferences contribution                             |
+|--------------------------|-------------------|------------------------------------------------------|
+| **Task Completion Rate** | > 95%             | Simple preference UI, clear theme/locale selection   |
+| **Mobile Usability**     | Fully Responsive  | Responsive preference forms, touch-friendly controls |
+| **Accessibility Score**  | WCAG 2.1 Level AA | Accessible preference UI, clear labels and feedback  |
+| **User Satisfaction**    | > 4.0/5.0         | Personalized experience, immediate theme changes     |
+
+---
+
+## Traceability matrix
+
+| Feature    | Business Req           | Domain Events                                 | User Stories               |
+|------------|------------------------|-----------------------------------------------|----------------------------|
+| FR-PRE-001 | BR-001, BR-002, BR-005 | ThemeChanged, UserRegistered                  | US-PRE-001-001/002/003/004 |
+| FR-PRE-002 | BR-001, BR-002, BR-005 | LocaleChanged, UserRegistered                 | US-PRE-002-001/002/003/004 |
+| FR-PRE-003 | BR-001, BR-002, BR-005 | PreferencesUpdated, UserRegistered            | US-PRE-003-001/002/003/004 |
+| FR-PRE-004 | BR-001, BR-002, BR-005 | PreferencesCreated, UserRegistered (consumed) | US-PRE-004-001/002/003     |
+| FR-PRE-005 | BR-001, BR-003, BR-005 | All preference events                         | US-PRE-005-001/002/003/004 |
+| FR-PRE-006 | BR-001, BR-003, BR-005 | None (validation only)                        | US-PRE-006-001/002/003/004 |
