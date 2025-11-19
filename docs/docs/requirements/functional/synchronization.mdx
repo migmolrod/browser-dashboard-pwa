@@ -1,0 +1,1257 @@
+---
+sidebar_position: 9
+title: Synchronization
+status: Draft
+lastUpdated: 2025-11-15
+---
+
+import RequirementMetadata from "../../../src/components/RequirementMetadata";
+import PriorityLabel from "../../../src/components/PriorityLabel";
+import StatusLabel from "../../../src/components/StatusLabel";
+
+<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+
+# Synchronization - Functional requirements
+
+## Overview
+
+The Synchronization bounded context provides local-first persistence with reliable background synchronization to
+optional cloud storage. It enables offline-first functionality where users can work without internet connectivity and
+have their changes synchronized when the connection is restored. The context handles conflict detection and resolution
+using pluggable strategies.
+
+**Bounded context code:** SYN\
+**Related DMD section:** [Synchronization (Generic)](../../domain/bounded-contexts/synchronization)
+
+---
+
+## Features summary
+
+| Feature Code | Feature Name               | Priority                                | Status                        |
+|--------------|----------------------------|-----------------------------------------|-------------------------------|
+| FR-SYN-001   | Local persistence          | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-SYN-002   | Offline operation          | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-SYN-003   | Background synchronization | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-SYN-004   | Conflict detection         | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-SYN-005   | Conflict resolution        | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
+| FR-SYN-006   | Sync status tracking       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+| FR-SYN-007   | Retry and error handling   | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
+
+---
+
+## FR-SYN-001: Local persistence
+
+**Priority:** Must Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system must persist all user data locally using browser storage mechanisms (IndexedDB, LocalStorage) to enable
+offline-first functionality. Local persistence ensures data is available immediately without network dependency and
+survives browser refreshes.
+
+**Preconditions:**
+
+- User must be authenticated
+- Browser must support local storage APIs (IndexedDB)
+
+**Postconditions:**
+
+- Data is persisted locally in browser storage
+- Data is available for offline access
+- Data survives application restarts
+- Sync metadata is stored alongside data
+
+**Business rules:**
+
+- All user data is persisted locally by default (offline-first)
+- Local storage is the primary data source; server is secondary
+- Each entity has associated sync metadata (version, lastSyncedAt, pendingOps)
+- Local data takes precedence until synchronized
+- Storage quota limits are monitored and handled
+- Sensitive data is encrypted in local storage
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: SyncState (root)
+- Domain Events: All domain events (for local persistence)
+
+**Dependencies:**
+
+- All bounded contexts (consumes their domain events)
+- Browser storage APIs (IndexedDB, LocalStorage)
+
+**Acceptance criteria:**
+
+- All domain events are intercepted and persisted locally
+- Data is stored in IndexedDB with structured schema
+- Sync metadata (version, timestamp) is stored with each entity
+- Local data is available immediately without network call
+- Storage quota is monitored and warnings shown if near limit
+- Local storage persists across browser refreshes
+- Encryption is applied to sensitive fields
+- Local data can be queried efficiently
+
+**User stories:**
+
+- US-SYN-001-001: Persist data locally on creation
+- US-SYN-001-002: Retrieve data from local storage
+- US-SYN-001-003: Local data persists across sessions
+- US-SYN-001-004: Handle storage quota limits
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Persist data locally on creation (happy path)
+
+:::note gherkin
+Given a user creates a new task "Buy groceries"  
+When the TaskCreated event is published  
+Then the Synchronization context intercepts the event  
+And stores the task in local IndexedDB  
+And creates sync metadata: { version: 1, lastSyncedAt: null, pendingOps: ["create"] }  
+And the task is immediately available for offline access  
+And local storage write completes successfully
+:::
+
+##### Scenario 2: Retrieve data from local storage
+
+:::note gherkin
+Given a user has tasks stored locally  
+And the device is offline  
+When the user opens the tasks view  
+Then tasks are retrieved from local IndexedDB  
+And displayed without network call  
+And the UI indicates offline mode
+:::
+
+##### Scenario 3: Local data persists across sessions
+
+:::note gherkin
+Given a user has created tasks while offline  
+When the user closes the browser  
+And reopens the application later  
+Then tasks are retrieved from local IndexedDB  
+And all data is intact  
+And sync metadata is preserved
+:::
+
+##### Scenario 4: Handle storage quota limits
+
+:::note gherkin
+Given local storage is approaching quota limit (90% used)  
+When the user creates new data  
+Then the system detects near-quota condition  
+And displays a warning "Local storage is almost full"  
+And suggests clearing old data or syncing to cloud  
+And the operation completes if space is available
+:::
+
+##### Scenario 5: Encrypt sensitive data in local storage
+
+:::note gherkin
+Given a user's data contains sensitive information (e.g., calendar event details)  
+When data is persisted to local storage  
+Then sensitive fields are encrypted using Web Crypto API  
+And encryption key is derived from user session  
+And encrypted data is stored in IndexedDB  
+And can be decrypted when retrieved
+:::
+
+##### Scenario 6: Query local data efficiently
+
+:::note gherkin
+Given a user has 1000 tasks stored locally  
+When the user searches for "groceries"  
+Then IndexedDB index is used for efficient lookup  
+And results are returned in < 100ms  
+And no network call is made
+:::
+
+---
+
+**Technical notes:**
+
+- Use IndexedDB for structured data storage (primary)
+- Use LocalStorage for small metadata and settings
+- Implement structured schema with versioning for IndexedDB
+- Use IndexedDB indexes for efficient queries (userId, entityType, timestamp)
+- Implement encryption using Web Crypto API (AES-GCM)
+- Monitor storage quota using `navigator.storage.estimate()`
+- Implement storage cleanup strategies (delete old synced data)
+- Use Dexie.js or similar wrapper for IndexedDB abstraction
+
+**Open questions:**
+
+- Should there be a maximum local storage age for data (e.g., delete data older than 90 days)?
+- Should users be able to manually clear local storage?
+
+---
+
+## FR-SYN-002: Offline operation
+
+**Priority:** Must Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system must support full offline operation where users can create, read, update, and delete data without internet
+connectivity. Offline operations are queued locally and synchronized when connection is restored. The UI clearly
+indicates offline status.
+
+**Preconditions:**
+
+- User must be authenticated (session cached locally)
+- Local storage must be available
+- Application must be loaded (service worker cached)
+
+**Postconditions:**
+
+- Operations complete successfully offline
+- Changes are queued for synchronization
+- UI indicates offline status
+- Data is available immediately in local state
+
+**Business rules:**
+
+- All CRUD operations work offline
+- Offline changes are queued with operation metadata (create, update, delete)
+- Queued operations are ordered by timestamp
+- Conflicting offline operations are merged locally (last-write-wins within session)
+- Network status is detected automatically
+- UI provides clear offline indicators
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: SyncState (root)
+- Domain Events: All domain events (queued offline)
+
+**Dependencies:**
+
+- FR-SYN-001 (Local persistence)
+- Service Worker for offline app shell
+
+**Acceptance criteria:**
+
+- User can create entities while offline
+- User can update entities while offline
+- User can delete entities while offline
+- User can query entities while offline
+- Offline operations are queued with metadata
+- UI shows "Offline" badge/indicator
+- Operations complete without errors or delays
+- Queued operations persist across sessions
+
+**User stories:**
+
+- US-SYN-002-001: Create data offline
+- US-SYN-002-002: Update data offline
+- US-SYN-002-003: Delete data offline
+- US-SYN-002-004: View offline indicator
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Create data offline (happy path)
+
+:::note gherkin
+Given the user's device is offline  
+And the UI shows "Offline" indicator  
+When the user creates a new task "Call dentist"  
+Then the task is saved to local IndexedDB  
+And sync metadata is created: { pendingOps: ["create"], syncStatus: "pending" }  
+And the task appears in the task list immediately  
+And a toast notification shows "Changes will sync when online"
+:::
+
+##### Scenario 2: Update data offline
+
+:::note gherkin
+Given the user's device is offline  
+And a task "Buy milk" exists locally  
+When the user updates the task to "Buy milk and eggs"  
+Then the update is saved to local IndexedDB  
+And sync metadata is updated: { pendingOps: ["update"], syncStatus: "pending" }  
+And the updated task displays immediately  
+And the change is queued for sync
+:::
+
+##### Scenario 3: Delete data offline
+
+:::note gherkin
+Given the user's device is offline  
+And a task "Old task" exists locally  
+When the user deletes the task  
+Then the task is marked as deleted in local IndexedDB  
+And sync metadata is updated: { pendingOps: ["delete"], syncStatus: "pending" }  
+And the task is removed from the UI  
+And the deletion is queued for sync
+:::
+
+##### Scenario 4: View offline indicator
+
+:::note gherkin
+Given the user's device loses internet connection  
+When the network status changes to offline  
+Then an "Offline" badge appears in the UI header  
+And a toast notification shows "You're offline. Changes will sync automatically"  
+And all UI interactions remain functional
+:::
+
+##### Scenario 5: Multiple offline operations
+
+:::note gherkin
+Given the user's device is offline  
+When the user creates 3 tasks  
+And updates 2 existing tasks  
+And deletes 1 task  
+Then all 6 operations are queued locally  
+And each has sync metadata with operation type and timestamp  
+And all changes are visible in the UI  
+And operations are ordered by timestamp for sync
+:::
+
+##### Scenario 6: Offline operations persist across sessions
+
+:::note gherkin
+Given the user made changes while offline  
+And queued operations exist  
+When the user closes the browser  
+And reopens the application (still offline)  
+Then queued operations are loaded from IndexedDB  
+And the UI shows pending sync count  
+And operations remain queued until online
+:::
+
+---
+
+**Technical notes:**
+
+- Use `navigator.onLine` and online/offline event listeners for network detection
+- Implement operation queue in IndexedDB with FIFO ordering
+- Store operation metadata: { type, entityId, payload, timestamp, userId }
+- Use optimistic UI updates (show changes immediately)
+- Implement UI indicators (badge, banner, icon) for offline status
+- Ensure service worker caches app shell for offline loading
+- Handle authentication expiration during offline periods
+
+**Open questions:**
+
+- Should there be a maximum size for the offline operation queue?
+- Should users be warned if they've been offline for extended periods?
+
+---
+
+## FR-SYN-003: Background synchronization
+
+**Priority:** Must Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system must automatically synchronize local changes to the cloud when internet connectivity is available.
+Synchronization occurs in the background without blocking user interactions. Sync is triggered on network reconnection,
+periodic intervals, and user-initiated refresh.
+
+**Preconditions:**
+
+- User must be authenticated
+- Internet connection must be available
+- Local changes must exist (pending operations)
+
+**Postconditions:**
+
+- Pending operations are sent to server
+- Server responses are processed
+- Local sync state is updated
+- DataSynchronized event is published
+- UI indicates sync completion
+
+**Business rules:**
+
+- Sync occurs automatically when online
+- Sync is triggered by: network reconnection, periodic intervals (e.g., every 5 minutes), user-initiated refresh
+- Operations are synced in order (FIFO)
+- Successful operations are marked as synced
+- Failed operations are retried with exponential backoff
+- Sync does not block UI interactions
+
+**User roles:**
+
+- Authenticated User (indirect; system behavior)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+Excellence)
+- Domain Aggregates: SyncState (root)
+- Domain Events: DataSynchronized, SyncFailed
+
+**Dependencies:**
+
+- FR-SYN-001 (Local persistence)
+- FR-SYN-002 (Offline operation)
+- All bounded contexts (server APIs for sync)
+
+**Acceptance criteria:**
+
+- Sync triggers automatically on network reconnection
+- Sync runs periodically (every 5 minutes) when online
+- User can manually trigger sync via "Refresh" button
+- Operations are sent to server in order
+- Server responses are processed and local state updated
+- Successful operations are marked as synced (lastSyncedAt timestamp)
+- DataSynchronized event is published on success
+- Sync progress is visible in UI (progress bar, count)
+- Sync does not block user interactions
+
+**User stories:**
+
+- US-SYN-003-001: Auto-sync on network reconnection
+- US-SYN-003-002: Periodic background sync
+- US-SYN-003-003: Manual sync trigger
+- US-SYN-003-004: View sync progress
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Auto-sync on network reconnection (happy path)
+
+:::note gherkin
+Given the user made changes while offline  
+And 5 operations are queued  
+When the device reconnects to the internet  
+Then the sync process automatically triggers  
+And operations are sent to server in order  
+And server responds with success for all operations  
+And local sync state is updated: { lastSyncedAt: now, pendingOps: [] }  
+And a DataSynchronized event is published  
+And a toast notification shows "Synced 5 changes"
+:::
+
+##### Scenario 2: Periodic background sync
+
+:::note gherkin
+Given the user is online  
+And has made recent changes  
+When 5 minutes have elapsed since last sync  
+Then the sync process automatically triggers in background  
+And pending operations are sent to server  
+And sync completes without user awareness  
+And DataSynchronized event is published
+:::
+
+##### Scenario 3: Manual sync trigger
+
+:::note gherkin
+Given the user has pending changes  
+When the user clicks "Sync Now" button  
+Then sync process immediately triggers  
+And a progress indicator is displayed  
+And pending operations are sent to server  
+And progress updates as operations complete  
+And "Sync complete" message is shown when done
+:::
+
+##### Scenario 4: View sync progress
+
+:::note gherkin
+Given sync is in progress  
+And 10 operations are being synced  
+When the user views the UI  
+Then a progress indicator shows "Syncing... 3 of 10"  
+And updates in real-time as operations complete  
+And shows "Synced" when all operations complete
+:::
+
+##### Scenario 5: Sync pulls server changes
+
+:::note gherkin
+Given the user has synced local changes  
+And server has changes from another device  
+When sync completes  
+Then server changes are fetched  
+And merged into local IndexedDB  
+And UI updates with new data  
+And DataSynchronized event is published
+:::
+
+##### Scenario 6: Partial sync success
+
+:::note gherkin
+Given 5 operations are queued for sync  
+When sync is triggered  
+And 3 operations succeed  
+And 2 operations fail (network error)  
+Then successful operations are marked as synced  
+And failed operations remain in queue  
+And a partial success message is shown: "Synced 3 of 5 changes"  
+And failed operations are retried later
+:::
+
+---
+
+**Technical notes:**
+
+- Use Background Sync API for reliable offline-to-online sync
+- Implement sync engine with operation queue processor
+- Use HTTP requests to server APIs for each operation
+- Process operations sequentially (FIFO) to maintain order
+- Update sync metadata after each successful operation
+- Implement periodic sync with `setInterval` or Web Worker
+- Use service worker for background sync when app is closed
+- Show sync progress using observables/event emitters
+
+**Open questions:**
+
+- Should sync be throttled during rapid changes (debouncing)?
+- Should there be a "sync pause" feature for users on metered connections?
+
+---
+
+## FR-SYN-004: Conflict detection
+
+**Priority:** Should Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system should detect conflicts when local changes and server changes affect the same entity. Conflicts occur when an
+entity is modified both locally (while offline) and on the server (from another device) since the last sync. Detected
+conflicts are logged and prepared for resolution.
+
+**Preconditions:**
+
+- User has made local changes to an entity
+- Server has changes to the same entity from another source
+- Sync is triggered
+
+**Postconditions:**
+
+- Conflict is detected by comparing versions
+- SyncConflictDetected event is published
+- Conflict is logged with details
+- User is notified (if applicable)
+- Conflict is queued for resolution
+
+**Business rules:**
+
+- Conflicts are detected by comparing entity versions
+- Each entity has a version number or etag
+- Local version and server version are compared during sync
+- If versions differ, a conflict exists
+- Conflicts are logged with: entityId, localVersion, serverVersion, timestamp
+- MVP uses last-write-wins resolution (server timestamp)
+- Future: User-selectable resolution strategies
+
+**User roles:**
+
+- System (automatic detection)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence)
+- Domain Aggregates: SyncState (root)
+- Domain Events: SyncConflictDetected
+
+**Dependencies:**
+
+- FR-SYN-003 (Background synchronization)
+
+**Acceptance criteria:**
+
+- Conflict is detected when local and server versions differ
+- Conflict details are logged (entity, versions, timestamp)
+- SyncConflictDetected event is published
+- User is notified via UI notification
+- Conflict is prepared for resolution
+- Non-conflicting changes continue to sync
+
+**User stories:**
+
+- US-SYN-004-001: Detect conflict during sync
+- US-SYN-004-002: Log conflict details
+- US-SYN-004-003: Notify user of conflict
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Detect conflict during sync (happy path)
+
+:::note gherkin
+Given a user modified task "Buy milk" locally (version 2)  
+And the same task was modified on server from another device (version 3)  
+When sync is triggered  
+Then the system compares local version (2) with server version (3)  
+And detects a conflict (versions differ)  
+And logs conflict: { taskId, localVersion: 2, serverVersion: 3, timestamp }  
+And publishes SyncConflictDetected event  
+And queues the conflict for resolution
+:::
+
+##### Scenario 2: No conflict detected
+
+:::note gherkin
+Given a user modified task "Buy milk" locally (version 2)  
+And the server has the same version (2)  
+When sync is triggered  
+Then the system compares versions  
+And no conflict is detected  
+And local changes are sent to server  
+And sync completes successfully
+:::
+
+##### Scenario 3: Log conflict details
+
+:::note gherkin
+Given a conflict is detected  
+When the conflict is logged  
+Then the log includes:
+
+- Entity ID
+- Entity type
+- Local version
+- Server version
+- Local changes
+- Server changes
+- Timestamp
+- User ID  
+And the log is stored for debugging
+:::
+
+##### Scenario 4: Notify user of conflict
+
+:::note gherkin
+Given a conflict is detected  
+When SyncConflictDetected event is published  
+Then a UI notification is displayed:  
+"Sync conflict detected for task 'Buy milk'"  
+And provides options: "Keep local", "Keep server", "Merge" (if available)  
+And the notification is non-blocking
+:::
+
+##### Scenario 5: Multiple conflicts
+
+:::note gherkin
+Given sync detects conflicts for 3 entities  
+When conflicts are processed  
+Then 3 SyncConflictDetected events are published  
+And all conflicts are logged  
+And a summary notification shows: "3 sync conflicts detected"  
+And each conflict is queued for resolution
+:::
+
+---
+
+**Technical notes:**
+
+- Use version numbers (integer) or etags (hash) for conflict detection
+- Compare versions during sync before applying server changes
+- Store version metadata in SyncState aggregate
+- Implement conflict log storage (database table or file)
+- Use event-driven architecture to publish conflict events
+- Conflicts can be resolved automatically (MVP) or require user input (future)
+
+**Open questions:**
+
+- Should all conflicts be logged persistently or only unresolved ones?
+- Should there be a conflict history/audit trail?
+
+---
+
+## FR-SYN-005: Conflict resolution
+
+**Priority:** Should Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system should resolve detected conflicts using a defined strategy. MVP uses last-write-wins (server timestamp) as
+the default resolution strategy. Future enhancements may support user-driven resolution or field-level merging.
+
+**Preconditions:**
+
+- Conflict must be detected (SyncConflictDetected event)
+- Local and server data must be available
+- Resolution strategy must be defined
+
+**Postconditions:**
+
+- Conflict is resolved using strategy
+- Resolved entity is persisted locally
+- Sync state is updated
+- User is notified of resolution (if applicable)
+
+**Business rules:**
+
+- MVP: Last-write-wins strategy (compare timestamps)
+- Entity with latest timestamp is kept
+- Losing entity is discarded (not permanently; logged)
+- Resolution is automatic (no user input in MVP)
+- Future: Support for manual resolution, field-level merge, CRDT
+- Resolved conflicts are logged for audit
+
+**User roles:**
+
+- System (automatic resolution in MVP)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence)
+- Domain Aggregates: SyncState (root)
+- Domain Events: SyncConflictDetected (consumed), ConflictResolved (published)
+
+**Dependencies:**
+
+- FR-SYN-004 (Conflict detection)
+
+**Acceptance criteria:**
+
+- Conflict is resolved using last-write-wins strategy
+- Entity with latest timestamp is kept
+- Local data is updated with resolved version
+- Sync state is updated: { conflictResolved: true, resolvedAt: timestamp }
+- ConflictResolved event is published (optional)
+- User is notified of resolution outcome
+- Losing entity is logged (not lost)
+
+**User stories:**
+
+- US-SYN-005-001: Resolve conflict with last-write-wins
+- US-SYN-005-002: Notify user of resolution
+- US-SYN-005-003: Log losing entity
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Resolve conflict with last-write-wins (happy path)
+
+:::note gherkin
+Given a conflict exists for task "Buy milk"  
+And local version has timestamp "2025-11-15T10:00:00Z"  
+And server version has timestamp "2025-11-15T10:05:00Z" (later)  
+When conflict resolution is triggered  
+Then timestamps are compared  
+And server version is kept (later timestamp)  
+And local version is replaced with server version  
+And sync state is updated: { conflictResolved: true, resolvedAt: now }  
+And a notification shows "Conflict resolved: server version kept"
+:::
+
+##### Scenario 2: Resolve conflict - local wins
+
+:::note gherkin
+Given a conflict exists for task "Call dentist"  
+And local version has timestamp "2025-11-15T10:10:00Z"  
+And server version has timestamp "2025-11-15T10:05:00Z" (earlier)  
+When conflict resolution is triggered  
+Then local version is kept (later timestamp)  
+And local version is sent to server (overwriting server)  
+And sync state is updated  
+And a notification shows "Conflict resolved: local version kept"
+:::
+
+##### Scenario 3: Notify user of resolution
+
+:::note gherkin
+Given a conflict is resolved  
+When resolution completes  
+Then a toast notification appears:  
+"Conflict resolved for task 'Buy milk': server version was more recent"  
+And the notification is informational (non-blocking)  
+And dismissed after 5 seconds
+:::
+
+##### Scenario 4: Log losing entity
+
+:::note gherkin
+Given a conflict is resolved in favor of server version  
+And local version is discarded  
+When resolution completes  
+Then the losing local version is logged:  
+{ entityId, version, data, discardedAt, reason: "conflict resolution" }  
+And the log is stored for potential recovery  
+And the log is retained for 30 days
+:::
+
+##### Scenario 5: Multiple conflict resolutions
+
+:::note gherkin
+Given 3 conflicts exist  
+When conflict resolution is triggered for all  
+Then each conflict is resolved independently  
+And 2 are resolved in favor of server  
+And 1 is resolved in favor of local  
+And a summary notification shows: "3 conflicts resolved"  
+And all resolutions are logged
+:::
+
+---
+
+**Technical notes:**
+
+- Implement resolution strategies as pluggable components
+- MVP: Last-write-wins using entity timestamps
+- Compare timestamps in ISO 8601 format
+- Future: Implement additional strategies (user-choice, field-merge, CRDT)
+- Log losing entities for potential recovery
+- Publish ConflictResolved events for audit trail
+- Consider implementing conflict resolution UI (future)
+
+**Open questions:**
+
+- Should users be able to view and recover discarded conflict versions?
+- Should there be configurable resolution strategies per entity type?
+
+---
+
+## FR-SYN-006: Sync status tracking
+
+**Priority:** Must Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system must provide visibility into synchronization status, including pending operations, sync progress, last sync
+time, and errors. Status tracking helps users understand the state of their data and trust the synchronization process.
+
+**Preconditions:**
+
+- User must be authenticated
+- Sync process is active or has completed
+
+**Postconditions:**
+
+- Sync status is visible in UI
+- Status updates in real-time
+- Users can query sync status
+
+**Business rules:**
+
+- Sync status includes: pending operations count, last sync timestamp, sync progress, error count
+- Status is updated in real-time during sync
+- Status persists in local storage
+- Users can query sync status via UI or API
+- Status includes per-entity sync state (synced, pending, error)
+
+**User roles:**
+
+- Authenticated User
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)
+- Domain Aggregates: SyncState (root)
+- Domain Events: All sync events
+
+**Dependencies:**
+
+- FR-SYN-003 (Background synchronization)
+
+**Acceptance criteria:**
+
+- UI displays pending operations count
+- UI displays last sync timestamp
+- UI displays sync progress during active sync
+- UI displays error count if sync failed
+- Users can view detailed sync status
+- Status updates in real-time
+- Status is accessible from main navigation
+- GetSyncStatus query returns detailed status
+
+**User stories:**
+
+- US-SYN-006-001: View pending operations count
+- US-SYN-006-002: View last sync time
+- US-SYN-006-003: View sync progress
+- US-SYN-006-004: Query detailed sync status
+
+---
+
+#### Scenarios
+
+##### Scenario 1: View pending operations count (happy path)
+
+:::note gherkin
+Given a user has made 5 changes while offline  
+When the user views the UI  
+Then a badge shows "5 pending" in the sync indicator  
+And hovering shows tooltip: "5 changes waiting to sync"
+:::
+
+##### Scenario 2: View last sync time
+
+:::note gherkin
+Given sync completed 10 minutes ago  
+When the user views the sync status  
+Then the UI shows "Last synced: 10 minutes ago"  
+And the timestamp updates every minute  
+And clicking shows detailed timestamp
+:::
+
+##### Scenario 3: View sync progress
+
+:::note gherkin
+Given sync is in progress  
+And 7 of 10 operations are complete  
+When the user views the UI  
+Then a progress bar shows 70% complete  
+And text shows "Syncing... 7 of 10"  
+And the progress updates in real-time
+:::
+
+##### Scenario 4: View sync errors
+
+:::note gherkin
+Given sync failed for 2 operations  
+When the user views the sync status  
+Then the UI shows a warning badge: "2 errors"  
+And clicking shows error details  
+And provides "Retry" option
+:::
+
+##### Scenario 5: Query detailed sync status
+
+:::note gherkin
+Given a user wants detailed sync information  
+When the user navigates to Settings > Sync Status  
+Then the detailed sync status page shows:
+
+- Pending operations: 3
+- Last sync: 2025-11-15 14:30
+- Errors: 1
+- Synced entities: 247
+- Per-entity status list  
+And the page updates in real-time
+:::
+
+##### Scenario 6: Real-time status updates
+
+:::note gherkin
+Given the sync status page is open  
+When sync is triggered and operations complete  
+Then the status updates in real-time:
+
+- Pending count decreases
+- Progress bar updates
+- Last sync timestamp updates  
+And no page refresh is needed
+:::
+
+---
+
+**Technical notes:**
+
+- Store sync status in SyncState aggregate
+- Use observables/event emitters for real-time status updates
+- Display status in UI header/footer (badge, icon, text)
+- Implement GetSyncStatus query to return detailed status
+- Use WebSockets or polling for real-time updates
+- Cache status in local storage for quick access
+- Implement status page with detailed breakdown
+
+**Open questions:**
+
+- Should there be a sync activity log/history?
+- Should users be able to export sync logs for debugging?
+
+---
+
+## FR-SYN-007: Retry and error handling
+
+**Priority:** Must Have
+
+**Bounded context:** SYN - Synchronization
+
+**Description:**  
+The system must handle synchronization errors gracefully and retry failed operations with exponential backoff. Error
+handling ensures resilience to transient network issues and provides users with clear feedback and recovery options.
+
+**Preconditions:**
+
+- Sync operation has failed
+- Error type is identified (network, server, conflict, etc.)
+
+**Postconditions:**
+
+- Error is logged with details
+- Failed operation is queued for retry
+- Retry occurs with exponential backoff
+- SyncFailed event is published
+- User is notified of error and retry status
+
+**Business rules:**
+
+- Failed operations are retried automatically
+- Retry uses exponential backoff: 1s, 2s, 4s, 8s, 16s, max 60s
+- Maximum retry attempts: 5 (configurable)
+- After max retries, operation is marked as failed
+- Error types: Network, Server (5xx), Client (4xx), Conflict, Timeout
+- Users can manually retry failed operations
+- Persistent failures are escalated to user
+
+**User roles:**
+
+- System (automatic retry)
+- Authenticated User (manual retry)
+
+**Related to:**
+
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Domain Aggregates: SyncState (root)
+- Domain Events: SyncFailed
+
+**Dependencies:**
+
+- FR-SYN-003 (Background synchronization)
+
+**Acceptance criteria:**
+
+- Failed operations are automatically retried
+- Retry uses exponential backoff (1s, 2s, 4s, 8s, 16s, 60s max)
+- Maximum 5 retry attempts
+- Error is logged with type, details, and timestamp
+- SyncFailed event is published
+- User is notified of error and retry status
+- User can manually trigger retry
+- Persistent failures show actionable error message
+
+**User stories:**
+
+- US-SYN-007-001: Auto-retry failed operation
+- US-SYN-007-002: Exponential backoff
+- US-SYN-007-003: Manual retry
+- US-SYN-007-004: Persistent failure notification
+
+---
+
+#### Scenarios
+
+##### Scenario 1: Auto-retry failed operation (happy path)
+
+:::note gherkin
+Given a sync operation fails due to network timeout  
+When the error is detected  
+Then the operation is logged as failed  
+And queued for retry with backoff: 1s  
+And after 1 second, retry is attempted  
+And if it fails again, backoff doubles to 2s  
+And retry continues up to 5 attempts  
+And if it succeeds, operation is marked as synced
+:::
+
+##### Scenario 2: Exponential backoff
+
+:::note gherkin
+Given a sync operation fails  
+When retries are scheduled  
+Then backoff intervals are: 1s, 2s, 4s, 8s, 16s, 60s (capped)  
+And retry attempts stop after 5 failures  
+And backoff timing is logged for debugging
+:::
+
+##### Scenario 3: Manual retry
+
+:::note gherkin
+Given a sync operation has failed 5 times  
+And is marked as permanently failed  
+When the user views the error notification  
+And clicks "Retry Now"  
+Then the operation is immediately retried  
+And retry counter is reset  
+And success/failure is reported to user
+:::
+
+##### Scenario 4: Persistent failure notification
+
+:::note gherkin
+Given a sync operation has failed 5 times  
+And maximum retries are exhausted  
+When the final retry fails  
+Then a SyncFailed event is published  
+And a notification appears: "Unable to sync. Please check your connection and try again."  
+And provides "Retry" and "View Details" options  
+And the operation remains queued
+:::
+
+##### Scenario 5: Different error types
+
+:::note gherkin
+Given sync operations fail with different errors  
+When errors are handled:
+
+- Network error → retry with backoff
+- Server 500 error → retry with backoff
+- Server 400 error → log and notify user (no retry)
+- Conflict → trigger conflict resolution
+- Timeout → retry with longer timeout  
+Then each error type has appropriate handling
+:::
+
+##### Scenario 6: Error logging
+
+:::note gherkin
+Given a sync operation fails  
+When the error is logged  
+Then the log includes:
+
+- Error type
+- Error message
+- Stack trace (if applicable)
+- Entity ID
+- Retry attempt number
+- Timestamp
+- User ID  
+And logs are available for debugging
+:::
+
+---
+
+**Technical notes:**
+
+- Implement retry queue with exponential backoff scheduler
+- Use `setTimeout` or similar for scheduling retries
+- Store retry count and next retry time in sync state
+- Classify errors by type (network, server, client, conflict)
+- Log all errors with structured logging (JSON)
+- Use error monitoring service (e.g., Sentry) for production
+- Implement circuit breaker for repeated server failures (future)
+- Provide clear, actionable error messages to users
+
+**Open questions:**
+
+- Should retry intervals be configurable per error type?
+- Should there be a "sync health" dashboard for administrators?
+
+---
+
+## Cross-feature considerations
+
+### Interactions between features
+
+- **Local Persistence ↔ Offline Operation:** Local persistence enables offline operation
+- **Offline Operation ↔ Background Synchronization:** Offline changes are queued and synced when online
+- **Background Synchronization ↔ Conflict Detection:** Sync triggers conflict detection by comparing versions
+- **Conflict Detection ↔ Conflict Resolution:** Detected conflicts are resolved using defined strategies
+- **Sync Status Tracking ↔ All Features:** Status tracking monitors all sync activities
+- **Retry and Error Handling ↔ Background Synchronization:** Failed sync operations are retried with backoff
+
+### Shared business rules
+
+1. **Offline-First:** All data operations work offline; cloud is secondary
+2. **Eventual Consistency:** System guarantees eventual consistency between local and server
+3. **Operation Ordering:** Operations are synced in order (FIFO) to maintain causality
+4. **Conflict Resolution:** Conflicts are resolved deterministically (last-write-wins in MVP)
+5. **Resilience:** Transient errors are retried; persistent errors are escalated to user
+6. **Transparency:** Sync status and errors are visible to users
+
+### Data consistency requirements
+
+- **Local Consistency:** Strong consistency within local IndexedDB transactions
+- **Eventual Consistency:** Eventual consistency between local and server
+- **Conflict Resolution:** Deterministic resolution ensures consistency across devices
+- **Operation Atomicity:** Each sync operation is atomic (all or nothing)
+- **Idempotency:** Sync operations are idempotent (can be safely retried)
+
+---
+
+## Business constraints impact
+
+### BC-001: Budget
+
+Synchronization must operate within zero-cost infrastructure constraints:
+
+- **Local Storage:** Use browser IndexedDB (free, built-in)
+- **Cloud Storage:** Use free-tier database (PostgreSQL via Railway, Supabase)
+- **Sync Protocol:** Use HTTP REST APIs (no paid sync service)
+- **Error Monitoring:** Use free-tier logging (no paid Sentry initially)
+
+### BC-002: Timeline
+
+Synchronization is important but can be simplified for MVP (3-6 months):
+
+- **Must Have features** (FR-SYN-001, 002, 003, 006, 007) required for MVP
+- **Should Have features** (FR-SYN-004, 005) can use simple strategies (last-write-wins)
+- Prioritize basic offline operation and auto-sync
+- Defer advanced conflict resolution (user-driven, field-merge) to post-MVP
+
+### BC-003: Resources
+
+Single-developer constraints affect Synchronization:
+
+- **Simplify Conflict Resolution:** Use last-write-wins only in MVP (no CRDT)
+- **Leverage Libraries:** Use Dexie.js for IndexedDB, RxJS for observables
+- **Automate Testing:** Mock network conditions (offline/online) in tests
+- **Incremental Development:** Build local persistence first, then offline, then sync
+
+### BC-004: Technology stack
+
+Synchronization aligns with chosen stack:
+
+- **Frontend:** Angular with service workers for offline support, RxJS for reactive sync status
+- **Local Storage:** IndexedDB via Dexie.js wrapper
+- **Backend:** Spring Boot REST APIs for sync endpoints
+- **Database:** PostgreSQL for server-side data storage
+- **Encryption:** Web Crypto API for local encryption
+- **Service Worker:** Workbox for offline app shell caching
+
+---
+
+## Success metrics alignment
+
+Synchronization contributes to the following success metrics from BR-001 through BR-008:
+
+### BR-003: Technical metrics
+
+| Metric                | Target        | Synchronization contribution                         |
+|-----------------------|---------------|------------------------------------------------------|
+| **Offline Support**   | Full function | Complete offline CRUD operations with automatic sync |
+| **Sync Success Rate** | > 99%         | Reliable sync with retry and error handling          |
+| **Test Coverage**     | > 80%         | Comprehensive offline/online scenario testing        |
+
+### BR-001: Portfolio quality metrics
+
+| Metric                         | Target             | Synchronization contribution                                        |
+|--------------------------------|--------------------|---------------------------------------------------------------------|
+| **Architecture Documentation** | All views complete | Offline-first architecture, sync engine design, conflict resolution |
+| **Code Quality Score**         | No critical issues | Clean sync logic, proper error handling, testable offline code      |
+
+### BR-002, BR-005: User experience metrics
+
+| Metric                   | Target         | Synchronization contribution                               |
+|--------------------------|----------------|------------------------------------------------------------|
+| **Offline Capability**   | Must Have      | Full app functionality offline, seamless online/offline    |
+| **Sync Transparency**    | High           | Clear status indicators, error messages, progress tracking |
+| **Data Loss Prevention** | Zero data loss | Reliable sync with conflict detection and resolution       |
+
+---
+
+## Traceability matrix
+
+| Feature    | Business Req                   | Domain Events                                     | User Stories               |
+|------------|--------------------------------|---------------------------------------------------|----------------------------|
+| FR-SYN-001 | BR-001, BR-002, BR-003, BR-005 | All domain events (for persistence)               | US-SYN-001-001/002/003/004 |
+| FR-SYN-002 | BR-001, BR-002, BR-005         | All domain events (queued offline)                | US-SYN-002-001/002/003/004 |
+| FR-SYN-003 | BR-001, BR-002, BR-003         | DataSynchronized, SyncFailed                      | US-SYN-003-001/002/003/004 |
+| FR-SYN-004 | BR-001, BR-003                 | SyncConflictDetected                              | US-SYN-004-001/002/003     |
+| FR-SYN-005 | BR-001, BR-003                 | SyncConflictDetected (consumed), ConflictResolved | US-SYN-005-001/002/003     |
+| FR-SYN-006 | BR-001, BR-002, BR-005         | All sync events                                   | US-SYN-006-001/002/003/004 |
+| FR-SYN-007 | BR-001, BR-003, BR-005         | SyncFailed                                        | US-SYN-007-001/002/003/004 |
