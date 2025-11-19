@@ -45,8 +45,6 @@ interactions. The context handles user registration, login/logout, and basic ses
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** UID—User Identity
-
 **Description:**
 Users must be able to create a new account by registering with a unique username, email address, and password.
 Registration creates a user identity that serves as the foundation for all personalized features across the system.
@@ -234,8 +232,6 @@ And the user is not created
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** UID—User Identity
-
 **Description:**
 Users must be able to authenticate (log in) using their registered credentials (username or email and password).
 Successful authentication establishes a session that grants access to personalized features across the system.
@@ -422,8 +418,6 @@ And the user is logged in normally
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** UID—User Identity
-
 **Description:**
 The system must manage user sessions to maintain authenticated state across requests. Sessions have a lifecycle
 including creation, validation, refresh, and expiration. Users can have multiple concurrent sessions (e.g., different
@@ -603,8 +597,6 @@ And the session remains active
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Bounded context:** UID—User Identity
-
 **Description:**
 Users should be able to view and update basic profile information including display name, email, and username. Profile
 management provides users control over their identity within the system.
@@ -756,8 +748,6 @@ And no UserUpdated event is published
 ### FR-UID-005: Password management
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Bounded context:** UID—User Identity
 
 **Description:**
 Users should be able to change their password by providing current password and new password. Password changes enhance
@@ -919,8 +909,6 @@ And must re-authenticate with new password
 ### FR-UID-006: Account deletion
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Bounded context:** UID—User Identity
 
 **Description:**
 Users should be able to delete their account permanently. Account deletion removes all user data and is irreversible.
@@ -1085,8 +1073,6 @@ And the log is retained for audit purposes
 ### FR-UID-007: Security policies
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Bounded context:** UID—User Identity
 
 **Description:**
 The system must enforce security policies to protect user accounts and prevent unauthorized access. Policies include

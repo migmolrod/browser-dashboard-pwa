@@ -43,8 +43,6 @@ The context provides sensible defaults and notifies other contexts when preferen
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** PRE - Preferences
-
 **Description:**  
 Users must be able to select and switch between visual themes (light, dark, and system default). Theme preference
 affects the visual appearance of the entire application and persists across sessions. System default automatically
@@ -199,8 +197,6 @@ And the application uses OS theme preference initially
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Bounded context:** PRE - Preferences
-
 **Description:**  
 Users should be able to select their preferred locale (language and region) for the application interface. Locale
 affects language, date formats, number formats, and other region-specific settings. The system provides a catalog of
@@ -353,8 +349,6 @@ And the application uses English language
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Bounded context:** PRE - Preferences
-
 **Description:**  
 Users should be able to select their preferred timezone for displaying dates and times. Timezone affects how timestamps
 are displayed throughout the application, ensuring times are shown in the user's local context.
@@ -505,8 +499,6 @@ Then matching timezones are filtered:
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** PRE - Preferences
-
 **Description:**  
 The system must create default preferences for new users when they register. Default preferences provide sensible
 initial values that ensure the application works immediately without requiring user configuration.
@@ -647,8 +639,6 @@ And the user sees timestamps in Pacific Time
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** PRE - Preferences
-
 **Description:**  
 The system must persist user preferences to ensure they survive application restarts and are available across sessions
 and devices. Persistence guarantees that user customizations are not lost.
@@ -787,8 +777,6 @@ And succeeds on retry
 ### FR-PRE-006: Preference validation
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Bounded Context:** PRE - Preferences
 
 **Description:**  
 The system must validate preference values before persisting to ensure data integrity and prevent invalid

@@ -1,12 +1,12 @@
 ---
 sidebar_position: 3
-title: Business Requirements
+title: Business requirements
 status: Draft
 lastUpdated: 2025-11-11
 ---
 
-
 import RequirementMetadata from "../../src/components/RequirementMetadata";
+import PriorityLabel from "../../src/components/PriorityLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
@@ -16,16 +16,16 @@ Business requirements define the high-level goals and benefits that the Browser 
 
 ## Requirements summary
 
-| Code   | Title                           | Priority    | Related Context |
-|--------|---------------------------------|-------------|-----------------|
-| BR-001 | Portfolio enhancement           | Must Have   | All             |
-| BR-002 | User productivity enhancement   | Must Have   | All             |
-| BR-003 | Technical excellence            | Must Have   | All             |
-| BR-004 | Scalability and maintainability | Should Have | All             |
-| BR-005 | User value delivery             | Must Have   | All             |
-| BR-006 | Developer experience            | Should Have | All             |
-| BR-007 | Cost efficiency                 | Must Have   | All             |
-| BR-008 | Time to market                  | Should Have | All             |
+| Code   | Title                           | Priority                                | Related Context |
+|--------|---------------------------------|-----------------------------------------|-----------------|
+| BR-001 | Portfolio enhancement           | <PriorityLabel priority="Must Have"/>   | All             |
+| BR-002 | User productivity enhancement   | <PriorityLabel priority="Must Have"/>   | All             |
+| BR-003 | Technical excellence            | <PriorityLabel priority="Must Have"/>   | All             |
+| BR-004 | Scalability and maintainability | <PriorityLabel priority="Should Have"/> | All             |
+| BR-005 | User value delivery             | <PriorityLabel priority="Must Have"/>   | All             |
+| BR-006 | Developer experience            | <PriorityLabel priority="Should Have"/> | All             |
+| BR-007 | Cost efficiency                 | <PriorityLabel priority="Must Have"/>   | All             |
+| BR-008 | Time to market                  | <PriorityLabel priority="Should Have"/> | All             |
 
 ---
 

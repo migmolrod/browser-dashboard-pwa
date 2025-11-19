@@ -45,8 +45,6 @@ using pluggable strategies.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Bounded context:** SYN - Synchronization
-
 **Description:**  
 The system must persist all user data locally using browser storage mechanisms (IndexedDB, LocalStorage) to enable
 offline-first functionality. Local persistence ensures data is available immediately without network dependency and
@@ -200,8 +198,6 @@ And no network call is made
 ### FR-SYN-002: Offline operation
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Bounded context:** SYN - Synchronization
 
 **Description:**  
 The system must support full offline operation where users can create, read, update, and delete data without internet
@@ -361,8 +357,6 @@ And operations remain queued until online
 ### FR-SYN-003: Background synchronization
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Bounded context:** SYN - Synchronization
 
 **Description:**  
 The system must automatically synchronize local changes to the cloud when internet connectivity is available.
@@ -530,8 +524,6 @@ And failed operations are retried later
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Bounded context:** SYN - Synchronization
-
 **Description:**  
 The system should detect conflicts when local changes and server changes affect the same entity. Conflicts occur when an
 entity is modified both locally (while offline) and on the server (from another device) since the last sync. Detected
@@ -681,8 +673,6 @@ And each conflict is queued for resolution
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Bounded context:** SYN - Synchronization
-
 **Description:**  
 The system should resolve detected conflicts using a defined strategy. MVP uses last-write-wins (server timestamp) as
 the default resolution strategy. Future enhancements may support user-driven resolution or field-level merging.
@@ -826,8 +816,6 @@ And all resolutions are logged
 ### FR-SYN-006: Sync status tracking
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Bounded context:** SYN - Synchronization
 
 **Description:**  
 The system must provide visibility into synchronization status, including pending operations, sync progress, last sync
@@ -979,8 +967,6 @@ And no page refresh is needed
 ### FR-SYN-007: Retry and error handling
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Bounded context:** SYN - Synchronization
 
 **Description:**  
 The system must handle synchronization errors gracefully and retry failed operations with exponential backoff. Error
