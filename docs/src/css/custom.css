@@ -215,6 +215,7 @@ nav {
 /* Titles */
 article {
     h1, h2, h3 {
+        font-weight: 200;
         border-bottom-style: solid;
         color: var(--ifm-color-primary-contrast-foreground);
         background-color: var(--ifm-color-primary-contrast-background);

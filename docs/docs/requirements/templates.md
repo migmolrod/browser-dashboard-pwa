@@ -13,7 +13,7 @@ This is a set of templates for each requirement type.
 ```markdown
 ### BR-XXX: [requirement title]
 
-**Priority:** [Must Have | Should Have | Could Have | Won't Have]
+**Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
 
 **Description:**
 [Brief description of the business need or objective this requirement addresses]
@@ -129,7 +129,7 @@ Functional requirements documents should follow this structure:
 
 ### FR-XXX-000: [feature title]
 
-**Priority:** [Must Have | Should Have | Could Have | Won't Have]
+**Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
 
 **Description:**
 [Detailed description of what the system should do]
@@ -215,7 +215,7 @@ And [additional expected outcomes]
 ```markdown
 ### NFR-XXX: [requirement title]
 
-**Priority:** [Must Have | Should Have | Could Have | Won't Have]
+**Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
 
 **Category:
 ** [Performance | Scalability | Reliability | Security | Usability | Maintainability | Portability | Compliance]

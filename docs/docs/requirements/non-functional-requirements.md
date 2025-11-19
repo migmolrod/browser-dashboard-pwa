@@ -10,7 +10,7 @@ Non-functional requirements define the quality attributes, constraints, and over
 
 ### NFR-001: Page load lime
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The initial page load shall complete in under 2 seconds on a standard broadband connection (5 Mbps).
 
@@ -31,7 +31,7 @@ The initial page load shall complete in under 2 seconds on a standard broadband 
 
 ### NFR-002: API response time
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 API endpoints shall respond in under 200ms at the 95th percentile under normal load.
 
@@ -51,7 +51,7 @@ API endpoints shall respond in under 200ms at the 95th percentile under normal l
 
 ### NFR-003: Database query performance
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 Database queries shall execute in under 50ms at the 95th percentile.
 
@@ -66,7 +66,7 @@ Database queries shall execute in under 50ms at the 95th percentile.
 
 ### NFR-004: Animation frame rate
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 All UI animations shall maintain at least 60 frames per second.
 
@@ -81,7 +81,7 @@ All UI animations shall maintain at least 60 frames per second.
 
 ### NFR-005: Bundle size
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The initial JavaScript bundle shall not exceed 300KB (gzipped).
 
@@ -98,7 +98,7 @@ The initial JavaScript bundle shall not exceed 300KB (gzipped).
 
 ### NFR-101: Concurrent users
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall support at least 100 concurrent users without performance degradation.
 
@@ -113,7 +113,7 @@ The system shall support at least 100 concurrent users without performance degra
 
 ### NFR-102: Data volume
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall handle user accounts with:
 
@@ -132,7 +132,7 @@ The system shall handle user accounts with:
 
 ### NFR-103: Horizontal scaling
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 The backend shall support horizontal scaling by adding more instances.
 
@@ -149,7 +149,7 @@ The backend shall support horizontal scaling by adding more instances.
 
 ### NFR-201: Availability
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall maintain 99% uptime (excluding planned maintenance).
 
@@ -164,7 +164,7 @@ The system shall maintain 99% uptime (excluding planned maintenance).
 
 ### NFR-202: Error rate
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall maintain an error rate below 1% of all requests.
 
@@ -179,7 +179,7 @@ The system shall maintain an error rate below 1% of all requests.
 
 ### NFR-203: Data integrity
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall prevent data loss and corruption.
 
@@ -195,7 +195,7 @@ The system shall prevent data loss and corruption.
 
 ### NFR-204: Fault tolerance
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall gracefully handle third-party service failures.
 
@@ -213,7 +213,7 @@ The system shall gracefully handle third-party service failures.
 
 ### NFR-301: Authentication security
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall implement secure authentication.
 
@@ -229,7 +229,7 @@ The system shall implement secure authentication.
 
 ### NFR-302: Authorization
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 Users shall only access their own data.
 
@@ -244,7 +244,7 @@ Users shall only access their own data.
 
 ### NFR-303: Data encryption
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 Sensitive data shall be encrypted.
 
@@ -259,7 +259,7 @@ Sensitive data shall be encrypted.
 
 ### NFR-304: Input validation
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 All user input shall be validated and sanitized.
 
@@ -275,7 +275,7 @@ All user input shall be validated and sanitized.
 
 ### NFR-305: Security headers
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The application shall implement security headers.
 
@@ -291,7 +291,7 @@ The application shall implement security headers.
 
 ### NFR-306: Dependency security
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 Third-party dependencies shall be kept secure and up-to-date.
 
@@ -308,7 +308,7 @@ Third-party dependencies shall be kept secure and up-to-date.
 
 ### NFR-401: User interface intuitiveness
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 New users shall be able to perform core tasks without a tutorial.
 
@@ -324,7 +324,7 @@ New users shall be able to perform core tasks without a tutorial.
 
 ### NFR-402: Responsive design
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The application shall be fully functional on devices from 320px to 4K resolution.
 
@@ -340,7 +340,7 @@ The application shall be fully functional on devices from 320px to 4K resolution
 
 ### NFR-403: Accessibility
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The application shall meet WCAG 2.1 Level AA standards.
 
@@ -357,7 +357,7 @@ The application shall meet WCAG 2.1 Level AA standards.
 
 ### NFR-404: Browser compatibility
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The application shall support modern browsers:
 
@@ -377,7 +377,7 @@ The application shall support modern browsers:
 
 ### NFR-405: Internationalization ready
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 The application shall be designed for future internationalization.
 
@@ -395,7 +395,7 @@ The application shall be designed for future internationalization.
 
 ### NFR-501: Code quality
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The codebase shall maintain high quality standards.
 
@@ -411,7 +411,7 @@ The codebase shall maintain high quality standards.
 
 ### NFR-502: Test coverage
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The codebase shall maintain at least 80% test coverage.
 
@@ -427,7 +427,7 @@ The codebase shall maintain at least 80% test coverage.
 
 ### NFR-503: Documentation
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The code shall be well-documented.
 
@@ -443,7 +443,7 @@ The code shall be well-documented.
 
 ### NFR-504: Modularity
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The codebase shall be modular and loosely coupled.
 
@@ -459,7 +459,7 @@ The codebase shall be modular and loosely coupled.
 
 ### NFR-505: Version control
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The project shall follow Git best practices.
 
@@ -477,7 +477,7 @@ The project shall follow Git best practices.
 
 ### NFR-601: Containerization
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The application shall be fully containerized.
 
@@ -493,7 +493,7 @@ The application shall be fully containerized.
 
 ### NFR-602: Cloud platform agnostic
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The application shall not be tightly coupled to a specific cloud provider.
 
@@ -508,7 +508,7 @@ The application shall not be tightly coupled to a specific cloud provider.
 
 ### NFR-603: Environment configuration
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The application shall support multiple deployment environments.
 
@@ -525,7 +525,7 @@ The application shall support multiple deployment environments.
 
 ### NFR-701: Application monitoring
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall provide visibility into application health and performance.
 
@@ -541,7 +541,7 @@ The system shall provide visibility into application health and performance.
 
 ### NFR-702: User analytics
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 The system shall track user behavior and feature usage.
 
@@ -559,7 +559,7 @@ The system shall track user behavior and feature usage.
 
 ### NFR-801: Privacy
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall respect user privacy.
 
@@ -575,7 +575,7 @@ The system shall respect user privacy.
 
 ### NFR-802: Cookie consent
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall get consent for non-essential cookies.
 
@@ -590,7 +590,7 @@ The system shall get consent for non-essential cookies.
 
 ### NFR-803: Terms of service
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall have clear terms of service.
 
@@ -607,7 +607,7 @@ The system shall have clear terms of service.
 
 ### NFR-901: Continuous integration
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The project shall have automated CI pipelines.
 
@@ -623,7 +623,7 @@ The project shall have automated CI pipelines.
 
 ### NFR-902: Continuous deployment
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The project shall support automated deployments.
 
@@ -639,7 +639,7 @@ The project shall support automated deployments.
 
 ### NFR-903: Infrastructure as code
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 Infrastructure shall be defined as code.
 
@@ -656,7 +656,7 @@ Infrastructure shall be defined as code.
 
 ### NFR-1001: Database backups
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 User data shall be backed up daily.
 
@@ -672,7 +672,7 @@ User data shall be backed up daily.
 
 ### NFR-1002: Disaster recovery
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 The system shall be recoverable within 4 hours in case of failure.
 
@@ -690,7 +690,7 @@ The system shall be recoverable within 4 hours in case of failure.
 
 ### NFR-1101: Development environment
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 Developers shall be able to set up the project locally with minimal effort.
 
@@ -706,7 +706,7 @@ Developers shall be able to set up the project locally with minimal effort.
 
 ### NFR-1102: Build time
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 Full project build shall complete in under 5 minutes.
 
@@ -723,7 +723,7 @@ Full project build shall complete in under 5 minutes.
 
 ### NFR-1201: Logging
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall maintain comprehensive logs.
 
@@ -739,7 +739,7 @@ The system shall maintain comprehensive logs.
 
 ### NFR-1202: Error reporting
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 Errors shall be automatically reported and tracked.
 
@@ -755,7 +755,7 @@ Errors shall be automatically reported and tracked.
 
 ### NFR-1203: Health checks
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 The system shall provide health check endpoints.
 

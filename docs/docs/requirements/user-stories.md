@@ -22,7 +22,7 @@ that [benefit]."
 - I see password requirements clearly
 - I'm automatically logged in after registration
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -39,7 +39,7 @@ that [benefit]."
 - I see helpful error messages for invalid credentials
 - I'm redirected to my dashboard after login
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -56,7 +56,7 @@ that [benefit]."
 - The link expires after a reasonable time
 - I can set a new password successfully
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -75,7 +75,7 @@ that [benefit]."
 - The transition is smooth and immediate
 - All modules respect the theme choice
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -92,7 +92,7 @@ that [benefit]."
 - My preferences are saved
 - The dashboard rearranges smoothly
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -109,7 +109,7 @@ that [benefit]."
 - Changes are saved automatically
 - I can reset to default layout
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 ---
 
@@ -128,7 +128,7 @@ that [benefit]."
 - I can customize the title
 - The link appears immediately in my bookmarks manager
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -145,7 +145,7 @@ that [benefit]."
 - I can expand folders to see their contents
 - I can choose folder colors or icons
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -162,7 +162,7 @@ that [benefit]."
 - Order is saved automatically
 - I can reorder both links and folders
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -179,7 +179,7 @@ that [benefit]."
 - Search checks both titles and URLs
 - I can clear the search easily
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -196,7 +196,7 @@ that [benefit]."
 - Drag and drop has visual feedback
 - Animations don't slow down the interface
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -215,7 +215,7 @@ that [benefit]."
 - The task appears immediately
 - I can add multiple tasks quickly
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -232,7 +232,7 @@ that [benefit]."
 - I feel satisfied when completing a task (nice animation)
 - Completed tasks move to a separate section
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -249,7 +249,7 @@ that [benefit]."
 - I can sort tasks by priority
 - Default priority is Medium
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -266,7 +266,7 @@ that [benefit]."
 - I see relative due dates (e.g., "Due today", "Due in 3 days")
 - I can sort by due date
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -283,7 +283,7 @@ that [benefit]."
 - Multiple filters can be applied
 - I can clear filters easily
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -300,7 +300,7 @@ that [benefit]."
 - I can assign multiple categories to a task
 - I can filter by category
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 ---
 
@@ -319,7 +319,7 @@ that [benefit]."
 - Information updates automatically
 - I see additional details (humidity, wind, etc.)
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -336,7 +336,7 @@ that [benefit]."
 - Icons are clear and understandable
 - I can expand for more details
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -353,7 +353,7 @@ that [benefit]."
 - My choice is saved
 - I see suggestions as I type
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -370,7 +370,7 @@ that [benefit]."
 - I can read full alert details
 - I can dismiss alerts
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -387,7 +387,7 @@ that [benefit]."
 - I can set a default location
 - I can remove locations
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 ---
 
@@ -406,7 +406,7 @@ that [benefit]."
 - Event appears immediately in the calendar
 - I can create all-day events
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -423,7 +423,7 @@ that [benefit]."
 - I can navigate between dates easily
 - Events are clearly displayed
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -440,7 +440,7 @@ that [benefit]."
 - I can resize to change duration
 - Changes save immediately
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -457,7 +457,7 @@ that [benefit]."
 - I can set an end date for recurrence
 - Recurring events are clearly marked
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -474,7 +474,7 @@ that [benefit]."
 - I can snooze reminders
 - I can configure default reminder times
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -491,7 +491,7 @@ that [benefit]."
 - I can create an event from a task
 - Task completion is reflected in the event
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -508,7 +508,7 @@ that [benefit]."
 - I can filter by category
 - I can assign multiple categories
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -527,7 +527,7 @@ that [benefit]."
 - I'm notified when offline
 - No data is lost
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -544,7 +544,7 @@ that [benefit]."
 - The app icon appears on my device
 - The app feels native
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -561,7 +561,7 @@ that [benefit]."
 - Results are grouped by type
 - I can use a keyboard shortcut
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 ---
 
@@ -578,7 +578,7 @@ that [benefit]."
 - Export includes all modules
 - Export is easy to find in settings
 
-**Priority:** Could Have
+**Priority:** <PriorityLabel priority="Could Have"/>
 
 ---
 
@@ -595,7 +595,7 @@ that [benefit]."
 - I can enable/disable notifications per module
 - Notifications are clear and actionable
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -614,7 +614,7 @@ that [benefit]."
 - Code examples are provided
 - Setup instructions are clear
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -631,7 +631,7 @@ that [benefit]."
 - Demo is responsive and fast
 - Demo showcases all features
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -648,7 +648,7 @@ that [benefit]."
 - Build status is indicated
 - Security scan results are available
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -667,7 +667,7 @@ that [benefit]."
 - Tab order is logical
 - Keyboard shortcuts are available
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -684,7 +684,7 @@ that [benefit]."
 - Semantic HTML is used
 - Screen reader testing passed
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -701,7 +701,7 @@ that [benefit]."
 - All text is readable
 - Interactive elements are distinguishable
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 ---
 
@@ -720,7 +720,7 @@ that [benefit]."
 - No hover-dependent features
 - Mobile layout is optimized
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -737,7 +737,7 @@ that [benefit]."
 - Text is readable without zooming
 - No horizontal scrolling
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 ---
 
@@ -754,4 +754,4 @@ that [benefit]."
 - Offline status is clear
 - Core features available offline
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>

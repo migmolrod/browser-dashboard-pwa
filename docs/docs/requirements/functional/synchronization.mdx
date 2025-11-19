@@ -11,7 +11,7 @@ import StatusLabel from "../../../src/components/StatusLabel";
 
 <RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
 
-# Synchronization - Functional requirements
+# Synchronization
 
 ## Overview
 
@@ -41,7 +41,7 @@ using pluggable strategies.
 
 ## FR-SYN-001: Local persistence
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 **Bounded context:** SYN - Synchronization
 
@@ -116,7 +116,7 @@ Given a user creates a new task "Buy groceries"
 When the TaskCreated event is published  
 Then the Synchronization context intercepts the event  
 And stores the task in local IndexedDB  
-And creates sync metadata: { version: 1, lastSyncedAt: null, pendingOps: ["create"] }  
+And creates sync metadata: \{ version: 1, lastSyncedAt: null, pendingOps: ["create"] }  
 And the task is immediately available for offline access  
 And local storage write completes successfully
 :::
@@ -197,7 +197,7 @@ And no network call is made
 
 ## FR-SYN-002: Offline operation
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 **Bounded context:** SYN - Synchronization
 
@@ -273,7 +273,7 @@ Given the user's device is offline
 And the UI shows "Offline" indicator  
 When the user creates a new task "Call dentist"  
 Then the task is saved to local IndexedDB  
-And sync metadata is created: { pendingOps: ["create"], syncStatus: "pending" }  
+And sync metadata is created: \{ pendingOps: ["create"], syncStatus: "pending" }  
 And the task appears in the task list immediately  
 And a toast notification shows "Changes will sync when online"
 :::
@@ -285,7 +285,7 @@ Given the user's device is offline
 And a task "Buy milk" exists locally  
 When the user updates the task to "Buy milk and eggs"  
 Then the update is saved to local IndexedDB  
-And sync metadata is updated: { pendingOps: ["update"], syncStatus: "pending" }  
+And sync metadata is updated: \{ pendingOps: ["update"], syncStatus: "pending" }  
 And the updated task displays immediately  
 And the change is queued for sync
 :::
@@ -297,7 +297,7 @@ Given the user's device is offline
 And a task "Old task" exists locally  
 When the user deletes the task  
 Then the task is marked as deleted in local IndexedDB  
-And sync metadata is updated: { pendingOps: ["delete"], syncStatus: "pending" }  
+And sync metadata is updated: \{ pendingOps: ["delete"], syncStatus: "pending" }  
 And the task is removed from the UI  
 And the deletion is queued for sync
 :::
@@ -343,7 +343,7 @@ And operations remain queued until online
 
 - Use `navigator.onLine` and online/offline event listeners for network detection
 - Implement operation queue in IndexedDB with FIFO ordering
-- Store operation metadata: { type, entityId, payload, timestamp, userId }
+- Store operation metadata: \{ type, entityId, payload, timestamp, userId }
 - Use optimistic UI updates (show changes immediately)
 - Implement UI indicators (badge, banner, icon) for offline status
 - Ensure service worker caches app shell for offline loading
@@ -358,7 +358,7 @@ And operations remain queued until online
 
 ## FR-SYN-003: Background synchronization
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 **Bounded context:** SYN - Synchronization
 
@@ -439,7 +439,7 @@ When the device reconnects to the internet
 Then the sync process automatically triggers  
 And operations are sent to server in order  
 And server responds with success for all operations  
-And local sync state is updated: { lastSyncedAt: now, pendingOps: [] }  
+And local sync state is updated: \{ lastSyncedAt: now, pendingOps: [] }  
 And a DataSynchronized event is published  
 And a toast notification shows "Synced 5 changes"
 :::
@@ -526,7 +526,7 @@ And failed operations are retried later
 
 ## FR-SYN-004: Conflict detection
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 **Bounded context:** SYN - Synchronization
 
@@ -600,7 +600,7 @@ And the same task was modified on server from another device (version 3)
 When sync is triggered  
 Then the system compares local version (2) with server version (3)  
 And detects a conflict (versions differ)  
-And logs conflict: { taskId, localVersion: 2, serverVersion: 3, timestamp }  
+And logs conflict: \{ taskId, localVersion: 2, serverVersion: 3, timestamp }  
 And publishes SyncConflictDetected event  
 And queues the conflict for resolution
 :::
@@ -677,7 +677,7 @@ And each conflict is queued for resolution
 
 ## FR-SYN-005: Conflict resolution
 
-**Priority:** Should Have
+**Priority:** <PriorityLabel priority="Should Have"/>
 
 **Bounded context:** SYN - Synchronization
 
@@ -726,7 +726,7 @@ the default resolution strategy. Future enhancements may support user-driven res
 - Conflict is resolved using last-write-wins strategy
 - Entity with latest timestamp is kept
 - Local data is updated with resolved version
-- Sync state is updated: { conflictResolved: true, resolvedAt: timestamp }
+- Sync state is updated: \{ conflictResolved: true, resolvedAt: timestamp }
 - ConflictResolved event is published (optional)
 - User is notified of resolution outcome
 - Losing entity is logged (not lost)
@@ -751,7 +751,7 @@ When conflict resolution is triggered
 Then timestamps are compared  
 And server version is kept (later timestamp)  
 And local version is replaced with server version  
-And sync state is updated: { conflictResolved: true, resolvedAt: now }  
+And sync state is updated: \{ conflictResolved: true, resolvedAt: now }  
 And a notification shows "Conflict resolved: server version kept"
 :::
 
@@ -785,8 +785,7 @@ And dismissed after 5 seconds
 Given a conflict is resolved in favor of server version  
 And local version is discarded  
 When resolution completes  
-Then the losing local version is logged:  
-{ entityId, version, data, discardedAt, reason: "conflict resolution" }  
+Then the losing local version is logged: \{ entityId, version, data, discardedAt, reason: "conflict resolution" }
 And the log is stored for potential recovery  
 And the log is retained for 30 days
 :::
@@ -824,7 +823,7 @@ And all resolutions are logged
 
 ## FR-SYN-006: Sync status tracking
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 **Bounded context:** SYN - Synchronization
 
@@ -977,7 +976,7 @@ And no page refresh is needed
 
 ## FR-SYN-007: Retry and error handling
 
-**Priority:** Must Have
+**Priority:** <PriorityLabel priority="Must Have"/>
 
 **Bounded context:** SYN - Synchronization
 
