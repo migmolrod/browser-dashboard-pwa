@@ -59,7 +59,9 @@ Functional requirements documents should follow this structure:
 
 ---
 
-## Features summary
+## Features
+
+### Summary
 
 | Feature Code | Feature Name | Priority    | Status |
 |--------------|--------------|-------------|--------|
@@ -69,13 +71,13 @@ Functional requirements documents should follow this structure:
 
 ---
 
-## FR-XXX-001: [feature name]
+### FR-XXX-001: [feature name]
 
 [Full requirement template as shown below]
 
 ---
 
-## FR-XXX-002: [feature name]
+### FR-XXX-002: [feature name]
 
 [Full requirement template as shown below]
 
@@ -127,7 +129,7 @@ Functional requirements documents should follow this structure:
 ```markdown
 ## [Feature Name]
 
-### FR-XXX-000: [feature title]
+#### FR-XXX-000: [feature title]
 
 **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
 
