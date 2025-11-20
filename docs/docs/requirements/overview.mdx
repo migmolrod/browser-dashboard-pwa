@@ -70,11 +70,23 @@ method to prioritize features.
 
 ### Requirement numbering
 
-Requirements are numbered using the following prefixes:
+Requirements are numbered using the following patterns:
 
-- **BR-:** Business Requirements
-- **FR-:** Functional Requirements
-- **NFR-:** Non-Functional Requirements
+- Business Requirements (BR-000)
+    - **BR:** prefix for business requirements
+    - **000:** requirement number
+- Functional Requirements (FR-XXX-000)
+    - **FR:** prefix for functional requirements
+    - **XXX:** internal code of each bounded context, as defined in the DMD
+    - **000:** requirement (feature) number
+- Non-Functional Requirements (NFR-000)
+    - **NFR:** prefix for non-functional requirements
+    - **000:** requirement number
+- User stories (US-XXX-000-111)
+    - **US:** prefix for user stories
+    - **XXX:** internal code of each bounded context, as defined in the DMD
+    - **000:** matching the FR-000 feature number the user story is related to
+    - **111:** scenario number within that feature
 
 In further documents (SAD, CDDs) we should reference these codes whenever we are addressing a requirement (be it
 business, functional, or non-functional).
@@ -115,3 +127,13 @@ import PriorityLabel from "../../src/components/PriorityLabel";
 | <PriorityLabel priority="Should Have"/> | Important but not critical, can be workarounds |
 | <PriorityLabel priority="Could Have"/>  | Desirable but not necessary, nice to have      |
 | <PriorityLabel priority="Won't Have"/>  | Explicitly out of scope for this release       |
+
+### Gherkin guidelines
+
+For user stories (BDD features and scenarios) we will:
+
+- Use **Given-When-Then** consistently
+- Ensure each scenario is independent
+- Use **And** for multiple conditions of the same type
+- Use **But** for negative conditions
+- Keep scenarios focused on behavior, not implementation

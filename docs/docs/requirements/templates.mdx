@@ -1,0 +1,264 @@
+---
+sidebar_position: 2
+---
+
+# Templates
+
+This is a set of templates for each requirement type.
+
+## For business requirements
+
+<details>
+    <summary>Business requirement template</summary>
+    ```markdown
+        ### BR-XXX: [requirement title]
+
+        **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
+
+        **Description:**
+        [Brief description of the business need or objective this requirement addresses]
+
+        **Rationale:**
+        [Why this requirement is important for the business]
+
+        **Success Criteria:**
+
+        - [Measurable criteria to determine if the requirement is met]
+        - [...]
+
+        **Related to:**
+
+        - Bounded Context: [context name from DMD]
+        - Strategic Goal: [reference to DMD business goals if applicable]
+
+        **Dependencies:**
+
+        - [Other BR, FR, or NFR codes this depends on]
+
+        **Acceptance Criteria:**
+
+        - [Specific, testable criteria]
+        - [...]
+    ```
+</details>
+
+## For functional requirements
+
+<details>
+    <summary>Functional document template</summary>
+    ```markdown
+    # [Bounded Context Name] - Functional requirements
+
+    ## Overview
+
+    [Brief introduction to this bounded context and its purpose]
+
+    **Bounded context code:** XXX
+    **Related DMD section:** [link to DMD bounded context]
+
+    ---
+
+    ## Features
+
+    ### Summary
+
+    | Feature Code | Feature Name | Priority    | Status |
+    |--------------|--------------|-------------|--------|
+    | FR-XXX-001   | [Name]       | Must Have   | Draft  |
+    | FR-XXX-002   | [Name]       | Should Have | Draft  |
+    | ...          | ...          | ...         | ...    |
+
+    ---
+
+    ### FR-XXX-001: [feature name]
+
+    [Full requirement template as shown below]
+
+    ---
+
+    ### FR-XXX-002: [feature name]
+
+    [Full requirement template as shown below]
+
+    ---
+
+    ## Cross-feature considerations
+
+    ### Interactions between features
+
+    [How features in this context interact]
+
+    ### Shared business rules
+
+    [Business rules that apply across multiple features]
+
+    ### Data consistency requirements
+
+    [Any specific consistency needs]
+
+    ---
+
+    ## Business constraints impact
+
+    ### BC-XXX [constraint name]
+
+    [Any specific explanation on how the constraint affects this bounded context]
+
+    ---
+
+    ## Success metrics alignment
+
+    ### BR-XXX: [requirement name(s)] _this can be more than one BR at a time if BRs are related_
+
+    [Metrics from business requirements that affect this bounded context]
+
+    ---
+
+    ## Traceability matrix
+
+    | Feature    | Business Req | Domain Events   | User Stories   |
+    |------------|--------------|-----------------|----------------|
+    | FR-XXX-001 | BR-005       | BookmarkCreated | US-XXX-001-001 |
+    | ...        | ...          | ...             | ...            |
+    ```
+</details>
+
+<details>
+    <summary>Functional requirement template</summary>
+    ```markdown
+    ## [Feature Name]
+
+    #### FR-XXX-000: [feature title]
+
+    **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
+
+    **Description:**
+    [Detailed description of what the system should do]
+
+    **Preconditions:**
+
+    - [Conditions that must be true before this feature can be used]
+    - [...]
+
+    **Postconditions:**
+
+    - [Expected system state after successful execution]
+    - [...]
+
+    **Business rules:**
+
+    - [Domain rules that govern this feature]
+    - [...]
+
+    **User roles:**
+
+    - [Which user roles can use this feature]
+
+    **Related to:**
+
+    - Business Requirements: [BR-XXX, ...]
+    - Domain Aggregates: [from DMD]
+    - Domain Events: [from DMD, if applicable]
+
+    **Dependencies:**
+
+    - [Other FR codes this depends on]
+
+    **Acceptance criteria:**
+
+    - [Specific, testable criteria]
+    - [...]
+
+    **User stories:**
+
+    - [US-XXX-000-001]: [link to user story]
+    - [...]
+
+    ---
+
+    #### Scenarios
+
+    ##### Scenario 1: [scenario name] (happy path)
+
+    :::note gherkin
+    Given [initial context and preconditions]\
+    When [action taken by user or system]\
+    Then [expected outcome]\
+    And [additional expected outcomes]
+    :::
+
+    ##### Scenario 2: [Alternative scenario name]
+
+    [Similar structure to Scenario 1]
+
+    ##### Scenario 3: [error/edge case scenario name]
+
+    [Similar structure to Scenario 1]
+
+    ---
+
+    **Technical notes:**
+
+    - [Any technical considerations, constraints, or implementation hints]
+    - [...]
+
+    **Open questions:**
+
+    - [Any unresolved questions or areas that need clarification]
+    - [...]
+    ```
+</details>
+
+## For non-functional requirements
+
+<details>
+    <summary>Non-functional requirement template</summary>
+    ```markddown
+    ### NFR-XXX: [requirement title]
+
+    **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
+
+    **Category:
+    ** [Performance | Scalability | Reliability | Security | Usability | Maintainability | Portability | Compliance]
+
+    **Description:**
+    [What quality attribute or constraint this requirement defines]
+
+    **Rationale:**
+    [Why this NFR is important]
+
+    **Measurement:**
+
+    - [Specific metrics and their target values]
+    - [How compliance will be measured]
+
+    **Acceptance criteria:**
+
+    - [Specific, testable, measurable criteria]
+    - [Include tools, methods, or conditions for verification]
+    - [...]
+
+    **Affected components:**
+
+    - [Which parts of the system this applies to]
+    - [Bounded contexts, services, or modules]
+
+    **Related to:**
+
+    - Business Requirements: [BR-XXX, ...]
+    - Functional Requirements: [FR-XXX-000, ...]
+
+    **Testing approach:**
+
+    - [How this will be tested/verified]
+    - [Tools or frameworks to be used]
+
+    **Trade-offs:**
+
+    - [Any trade-offs or conflicts with other requirements]
+
+    **Open questions:**
+
+    - [Any unresolved questions]
+    ```
+</details>
