@@ -33,8 +33,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} · documentation`}
+      description="Documentation of the Browser Dashboard PWA project, by Miguel Molinero Rodríguez (migmolrod).">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

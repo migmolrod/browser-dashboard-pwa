@@ -66,7 +66,7 @@ const config: Config = {
 			respectPrefersColorScheme: true,
 		},
 		navbar: {
-			title: "Browser Dashboard PWA",
+			title: "Home",
 			logo: {
 				alt: "Browser Dashboard PWA Logo",
 				src: "img/logo.svg",
