@@ -27,7 +27,7 @@ Fast page load times are critical for user satisfaction and engagement. Research
 
 **Acceptance criteria:**
 
-- Tested on Chrome, Firefox, Safari, Edge (versions specified in NFR-404)
+- Tested on Chrome, Firefox, Safari, Edge (versions specified in "NFR-USA-004: Browser compatibility")
 - Measured using Lighthouse and Web Vitals
 - 95th percentile measurements meet targets
 - Initial bundle size optimized (< 300KB gzipped)

@@ -28,7 +28,7 @@ High availability is critical for user trust and portfolio demonstration. Freque
 
 - Maximum 7.2 hours downtime per month (99% uptime target)
 - Uptime monitoring implemented (UptimeRobot, Pingdom, or equivalent)
-- Automated health checks (see NFR-1203)
+- Automated health checks (see "NFR-SUP-003: Health checks")
 - Incident response process documented
 - Alerts configured for downtime
 - Planned maintenance communicated in advance
@@ -137,7 +137,7 @@ Data integrity is fundamental to user trust and system reliability. Data loss or
 
 - Database transactions used for all write operations
 - Data validation at all layers (frontend, backend, database)
-- Regular backups (daily minimum) (see NFR-1001)
+- Regular backups (daily minimum) (see "NFR-BAC-001: Database backups")
 - Backup restoration tested regularly
 - ACID compliance for critical operations
 - Foreign key constraints enforced
