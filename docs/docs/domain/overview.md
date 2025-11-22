@@ -46,9 +46,9 @@ This domain exploration and modeling are organized into the following sections:
 - **[Core Domain Concepts](core-domain-concepts):** Overview of the core, supporting and generic subdomains.
 - **[Domain Glossary](ubiquitous-language):** Shared vocabulary, acts as the "Rosetta Stone" for developers, PMs,
   documentations, QA, etc. so they all understand the same terms for a given context.
-- **[Bounded Contexts](bounded-contexts):** Definitions of each bounded context, their purpose, and the *context map*
-  (how they interact with each other).
-- **[Business Processes and Workflows](process-workflows.md):** Definitions of domain processes and workflows.
+- **[Bounded Contexts](bounded-contexts/overview):** Definitions of each bounded context, their purpose, and the 
+  *context map* (how they interact with each other).
+- **[Business Processes and Workflows](process-workflows):** Definitions of domain processes and workflows.
 
 ## Document standards
 
