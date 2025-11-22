@@ -31,7 +31,7 @@ jobs:
           version: 10
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm store prune && pnpm install
 
       - name: Build Docusaurus
         run: pnpm run build
