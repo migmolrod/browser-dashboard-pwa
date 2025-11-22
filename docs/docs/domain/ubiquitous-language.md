@@ -23,7 +23,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Region**                  | A designated area within a layout where widgets can be placed                                                        | The header region, main content region, sidebar region                              |
 | **Canvas**                  | See Dashboard                                                                                                        | The user customizes their canvas by adding widgets                                  |
 
-## Bookmarks subdomain
+## Bookmark subdomain
 
 | Term                | Definition                                                               | Example/context                                                       |
 |---------------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -33,7 +33,7 @@ The vocabulary is organized into subdomains and cross-cutting concepts.
 | **Root Folder**     | The top-level folder that contains all other folders and bookmarks       | All bookmarks ultimately belong to the root folder or its descendants |
 | **Pinned Bookmark** | A bookmark marked for special visibility or quick access                 | User pins "Daily Standup Doc" for easy access from dashboard          |
 
-## Tasks subdomain
+## Task subdomain
 
 | Term               | Definition                                                                   | Example/context                                                        |
 |--------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------|

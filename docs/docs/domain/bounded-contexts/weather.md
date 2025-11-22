@@ -34,8 +34,8 @@ sidebar_position: 6
 ## Events
 
 - Published: WeatherDataRefreshed, WeatherFetchFailed
-- Consumed: WidgetConfigurationChanged (update location), DashboardCreated (optional widget init), PreferencesUpdated (
-  units)
+- Consumed: WidgetConfigurationChanged (update location), DashboardCreated (optional widget init), PreferencesUpdated
+  (units)
 
 ## Integration and dependencies
 
@@ -46,7 +46,7 @@ sidebar_position: 6
 
 ## Contract and SLA
 
-- Consistency: eventual; consumers tolerate slightly stale cached data
+- Consistency: eventual consistency; consumers tolerate slightly stale cached data
 - Versioning: internal adapter shields provider API changes; events/queries evolve additively
 
 ## Risks and evolution

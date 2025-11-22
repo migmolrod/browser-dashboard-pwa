@@ -63,7 +63,7 @@ sidebar_position: 9
 **Invariants:**
 
 - Sync state must reference a valid entity
-- Consistency: eventual across local/cloud; strong consistency is not guaranteed
+- Consistency: eventual consistency across local/cloud; strong consistency is not guaranteed
 - Versioning: event schemas evolve additively; remote adapter versioned separately
 
 ## Risks and evolution

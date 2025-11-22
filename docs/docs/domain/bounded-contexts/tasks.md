@@ -55,5 +55,5 @@ sidebar_position: 4
 
 ## Risks and evolution
 
-- Risk: scope creep toward project management—mitigate by keeping lists lightweight and avoiding dependencies graph
+- Risk: scope creeping toward project management—mitigate by keeping lists lightweight and avoiding dependency graph
 - Possible evolution: reminders/notifications policy; templates or recurring tasks if needed later

@@ -57,5 +57,5 @@ sidebar_position: 2
 
 ## Risks and evolution
 
-- Potential split: “Dashboard Composition” vs “Layout Engine” if complexity grows.
+- Potential split: “Dashboard Composition” vs. “Layout Engine” if complexity grows.
 - Risk: tight coupling to widget schemas—mitigate via schema validation and versioned contracts.

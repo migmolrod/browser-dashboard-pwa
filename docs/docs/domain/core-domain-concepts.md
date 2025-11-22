@@ -74,7 +74,7 @@ and cohesive; rely on generic commodity approaches for cross-cutting needs.
 - **Capabilities**
     - **Create/edit/delete tasks**; change status; reorder.
     - **Filter/search** by status, due date, priority.
-    - **Optional linkage to calendar** events (one‑way create event from task).
+    - **Optional linkage to calendar** events (one‑way create event from a task).
 - **Invariants**
     - A task has exactly one status from the defined lifecycle.
     - If a due date is set, it must be in a valid time window.

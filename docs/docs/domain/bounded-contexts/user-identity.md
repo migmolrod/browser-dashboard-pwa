@@ -39,7 +39,7 @@ sidebar_position: 7
 ## Integration and dependencies
 
 - Downstream (Conformist): All contexts accept UserId as provided
-- Lateral (Shared Kernel): Preferences shares minimal identifiers (UserId)
+- Lateral (Shared Kernel): Preferences share minimal identifiers (UserId)
 - Notes: Acts as a system-of-record for identity; downstream contexts must not store credentials
 
 ## Contract and SLA

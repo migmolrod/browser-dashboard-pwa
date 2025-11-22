@@ -203,7 +203,7 @@ sequenceDiagram
 
 Rules:
 
-- Profile must exist for user
+- Profile must exist for the user
 - Restored layout must pass layout policy
 
 ---

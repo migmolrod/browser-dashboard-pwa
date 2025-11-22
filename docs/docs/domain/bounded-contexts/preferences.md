@@ -40,7 +40,7 @@ sidebar_position: 8
 
 - Upstream (Shared Kernel/Conformist): User Identity (UserId association)
 - Downstream (Customer–Supplier): Dashboard Management and widget contexts consume preference updates
-- Notes: Acts as single source of truth for cross‑cutting user settings
+- Notes: Acts as a single source of truth for cross‑cutting user settings
 
 ## Contract and SLA
 

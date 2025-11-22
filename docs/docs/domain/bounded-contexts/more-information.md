@@ -22,8 +22,8 @@ Suppliers prioritize customer needs in their API design.
 
 **Dashboard Management ↔ Preferences**
 
-Dashboard Management consumes preference data to apply themes, locale, and defaults. Preferences context supplies this
-data with a stable API.
+Dashboard Management consumes preference data to apply themes, locale, and defaults. The preference context supplies
+this data with a stable API.
 
 ### Conformist
 

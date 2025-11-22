@@ -36,7 +36,7 @@ sidebar_position: 5
 ## Events
 
 - Published: EventCreated, EventUpdated, EventDeleted, EventRescheduled, ReminderSet
-- Consumed: UserRegistered (initialize default calendar), EventCreationRequestedFromTask (create event from task),
+- Consumed: UserRegistered (initialize default calendar), EventCreationRequestedFromTask (create event from a task),
   DashboardCreated (optional widget init)
 
 ## Integration and dependencies
