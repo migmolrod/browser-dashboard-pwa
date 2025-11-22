@@ -16,9 +16,9 @@ will be next month).
 
 ### The new DMD
 
-Since two of my main purposes for this project was to both learn new skills and show proficiency in skills I already 
-have, I came to the conclusion that using DDD (Domain-Driven Development) could be a good addition. However, to do that,
-I'd need to model the domain and business itself, prior to even think about creating a requirement specification.
+Since my two main purposes for this project were to both learn new skills and show proficiency in skills I already 
+had, I came to the conclusion that using DDD (Domain-Driven Development) could be a good addition. However, to do that,
+I'd need to model the domain and business itself before even thinking about creating a requirement specification.
 
 In that regard, I've spent some time with the generative AI to create a common language (ubiquitous language) for all
 stakeholders as well as defining the core domain and the subdomains.
