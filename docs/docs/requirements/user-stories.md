@@ -2,6 +2,8 @@
 sidebar_position: 7
 ---
 
+import PriorityLabel from "../../src/components/PriorityLabel";
+
 # User Stories
 
 User stories describe features from the end-user perspective, following the format: "As a [user type], I want [goal], so
