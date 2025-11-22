@@ -4,10 +4,42 @@
         <title>Browser Dashboard PWA Blog</title>
         <link>https://migmolrod.github.io/blog</link>
         <description>Browser Dashboard PWA Blog</description>
-        <lastBuildDate>Sat, 18 Oct 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Nov 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Rework for DDD]]></title>
+            <link>https://migmolrod.github.io/blog/rework-for-ddd</link>
+            <guid>https://migmolrod.github.io/blog/rework-for-ddd</guid>
+            <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[In the last several weeks I have been able to make good progress. I could use the generative AI to do the heavy work in]]></description>
+            <content:encoded><![CDATA[<p>In the last several weeks I have been able to make good progress. I could use the generative AI to do the heavy work in
+both the generation of the new DMD (Domain Modeling Document) and the refactor of the SRS (Software Requirement
+Specification). In the process, I've consumed most of the AI credits (tokens) quota I have in the tool I'm using.</p>
+<p>In next steps, I will also refactor the non-functional requirements and user stories when the quota gets renewed (which
+will be next month).</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-new-dmd">The new DMD<a href="https://migmolrod.github.io/blog/rework-for-ddd#the-new-dmd" class="hash-link" aria-label="Direct link to The new DMD" title="Direct link to The new DMD" translate="no">​</a></h3>
+<p>Since two of my main purposes for this project was to both learn new skills and show proficiency in skills I already
+have, I came to the conclusion that using DDD (Domain-Driven Development) could be a good addition. However, to do that,
+I'd need to model the domain and business itself, prior to even think about creating a requirement specification.</p>
+<p>In that regard, I've spent some time with the generative AI to create a common language (ubiquitous language) for all
+stakeholders as well as defining the core domain and the subdomains.</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="refactoring-the-srs">Refactoring the SRS<a href="https://migmolrod.github.io/blog/rework-for-ddd#refactoring-the-srs" class="hash-link" aria-label="Direct link to Refactoring the SRS" title="Direct link to Refactoring the SRS" translate="no">​</a></h3>
+<p>After modeling the domain, I had to completely refactor the SRS.</p>
+<p>Since the business vision and the core business domain was clearly defined in the DMD, the business requirements in the
+SRS could use a refactor to make them perfectly align with the domain model.</p>
+<p>Also, since the boundaries of the different subdomains were now much more clearly defined, the functional requirements
+were greatly refined, categorizing them by bounded context. Each bounded context has features, and each feature has
+several scenarios. This was done to not only align with the DDD pattern but also with BDD (Behavior-Driven Development)
+pattern, given we are going to use such a pattern while developing the system.</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-tasks">Other tasks<a href="https://migmolrod.github.io/blog/rework-for-ddd#other-tasks" class="hash-link" aria-label="Direct link to Other tasks" title="Direct link to Other tasks" translate="no">​</a></h3>
+<p>I've also included a simple workflow that uses GitHub Actions to automatically deploy the documentation as GitHub Pages.</p>
+<p>The idea is that whenever we push changes to the repository, the docusaurus project gets built and deployed into GitHub
+pages. But we ensure to only do so when something changes inside the <code>/docs</code> folder. This way we avoid unnecessary runs.</p>]]></content:encoded>
+            <category>Development</category>
+            <category>Documentation</category>
+        </item>
         <item>
             <title><![CDATA[Continuing the documentation]]></title>
             <link>https://migmolrod.github.io/blog/continuing-the-documentation</link>
