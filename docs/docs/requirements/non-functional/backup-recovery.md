@@ -11,10 +11,12 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-User data shall be backed up daily with a retention policy of at least 30 days, stored in a separate location, and encrypted.
+User data shall be backed up daily with a retention policy of at least 30 days, stored in a separate location, and
+encrypted.
 
 **Rationale:**
-Regular backups protect against data loss due to failures, human error, or security incidents. Backups are critical for data integrity.
+Regular backups protect against data loss due to failures, human error, or security incidents. Backups are critical for
+data integrity.
 
 **Measurement:**
 
@@ -74,7 +76,7 @@ Disaster recovery planning demonstrates operational maturity and ensures busines
 
 **Acceptance criteria:**
 
-- Recovery procedures documented (runbooks)
+- Recovery procedures are documented (runbooks)
 - Regular recovery drills (quarterly)
 - RTO: 4 hours (time to restore service)
 - RPO: 24 hours (maximum data loss)

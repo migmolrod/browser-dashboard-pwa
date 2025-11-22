@@ -11,10 +11,12 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The system shall respect user privacy by not selling data to third parties, minimizing data collection, enabling data deletion, and complying with GDPR principles.
+The system shall respect user privacy by not selling data to third parties, minimizing data collection, enabling data
+deletion, and complying with GDPR principles.
 
 **Rationale:**
-Privacy is both an ethical imperative and a legal requirement (especially GDPR for EU users). Privacy protection builds user trust.
+Privacy is both an ethical imperative and a legal requirement (especially GDPR for EU users). Privacy protection builds
+user trust.
 
 **Measurement:**
 
@@ -62,10 +64,12 @@ Privacy is both an ethical imperative and a legal requirement (especially GDPR f
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The system shall obtain user consent for non-essential cookies, distinguishing between essential and non-essential cookies.
+The system shall get user consent for non-essential cookies, distinguishing between essential and non-essential
+cookies.
 
 **Rationale:**
-Cookie consent is legally required in many jurisdictions (GDPR, ePrivacy Directive) and demonstrates responsible data handling.
+Cookie consent is legally required in many jurisdictions (GDPR, ePrivacy Directive) and demonstrates responsible data
+handling.
 
 **Measurement:**
 
@@ -75,7 +79,7 @@ Cookie consent is legally required in many jurisdictions (GDPR, ePrivacy Directi
 
 **Acceptance criteria:**
 
-- Cookie banner displayed on first visit
+- Cookie banner displayed on the first visit
 - Essential vs. non-essential distinction clear
 - User preferences saved (accept/reject)
 - Opt-out mechanism available
@@ -112,7 +116,8 @@ Cookie consent is legally required in many jurisdictions (GDPR, ePrivacy Directi
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The system shall have clear terms of service that define acceptable use, liability limitations, and user responsibilities.
+The system shall have clear terms of service that define acceptable use, liability limitations, and user
+responsibilities.
 
 **Rationale:**
 Terms of service protect the project owner legally and set clear expectations for users.
@@ -134,7 +139,7 @@ Terms of service protect the project owner legally and set clear expectations fo
 **Affected components:**
 
 - Frontend (TOS display and acceptance)
-- Identity bounded context (track acceptance)
+- User Identity bounded context (track acceptance)
 - TOS document
 
 **Related to:**

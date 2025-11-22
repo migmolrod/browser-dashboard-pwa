@@ -11,10 +11,12 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The system shall maintain comprehensive logs with structured logging, log levels, request tracing, and no sensitive data logged.
+The system shall maintain comprehensive logs with structured logging, log levels, request tracing, and no sensitive data
+logged.
 
 **Rationale:**
-Comprehensive logging enables debugging, monitoring, and incident investigation. Proper logging demonstrates operational maturity.
+Comprehensive logging enables debugging, monitoring, and incident investigation. Proper logging demonstrates operational
+maturity.
 
 **Measurement:**
 
@@ -61,10 +63,12 @@ Comprehensive logging enables debugging, monitoring, and incident investigation.
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-Errors shall be automatically reported and tracked with error tracking service, including stack traces, user context, and error grouping.
+Errors shall be automatically reported and tracked with an error tracking service, including stack traces, user context,
+and error grouping.
 
 **Rationale:**
-Automated error reporting enables proactive issue detection and resolution. Error tracking demonstrates operational maturity.
+Automated error reporting enables proactive issue detection and resolution. Error tracking demonstrates operational
+maturity.
 
 **Measurement:**
 
@@ -111,10 +115,12 @@ Automated error reporting enables proactive issue detection and resolution. Erro
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The system shall provide health check endpoints to verify application health, database connectivity, and dependency status.
+The system shall provide health check endpoints to verify application health, database connectivity, and dependency
+status.
 
 **Rationale:**
-Health checks enable monitoring, orchestration (Kubernetes readiness/liveness), and automated alerting. They demonstrate operational maturity.
+Health checks enable monitoring, orchestration (Kubernetes readiness/liveness), and automated alerting. They demonstrate
+operational maturity.
 
 **Measurement:**
 

@@ -14,7 +14,8 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 The system shall implement secure authentication mechanisms to protect user accounts and ensure only authorized access.
 
 **Rationale:**
-Authentication security is fundamental to protecting user data and preventing unauthorized access. Weak authentication is a critical security vulnerability.
+Authentication security is fundamental to protecting user data and preventing unauthorized access. Weak authentication
+is a critical security vulnerability.
 
 **Measurement:**
 
@@ -33,7 +34,7 @@ Authentication security is fundamental to protecting user data and preventing un
 
 **Affected components:**
 
-- Identity bounded context (UID)
+- User Identity bounded context (UID)
 - Backend authentication/authorization
 - Frontend login/registration
 
@@ -63,15 +64,17 @@ Authentication security is fundamental to protecting user data and preventing un
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-Users shall only access their own data, preventing unauthorized access to other users' information through proper authorization checks.
+Users shall only access their own data, preventing unauthorized access to other users' information through proper
+authorization checks.
 
 **Rationale:**
-Authorization ensures data privacy and prevents horizontal privilege escalation. Users must not be able to access data belonging to other users.
+Authorization ensures data privacy and prevents horizontal privilege escalation. Users must not be able to access data
+belonging to other users.
 
 **Measurement:**
 
 - Zero unauthorized access incidents
-- All API endpoints protected with authorization checks
+- All API endpoints are protected with authorization checks
 - Security testing passes
 
 **Acceptance criteria:**
@@ -116,7 +119,8 @@ Authorization ensures data privacy and prevents horizontal privilege escalation.
 Sensitive data shall be encrypted in transit and at rest to protect user information from unauthorized access.
 
 **Rationale:**
-Encryption protects user data from interception (in transit) and unauthorized access to storage (at rest). This is a fundamental security practice.
+Encryption protects user data from interception (in transit) and unauthorized access to storage (at rest). This is a
+fundamental security practice.
 
 **Measurement:**
 
@@ -129,8 +133,8 @@ Encryption protects user data from interception (in transit) and unauthorized ac
 - HTTPS/TLS 1.2+ for all data in transit
 - Encrypted password storage (bcrypt/argon2)
 - Secure cookie flags (HttpOnly, Secure, SameSite)
-- API keys and secrets not exposed to client
-- Database encryption at rest (if supported by hosting provider)
+- API keys and secrets are not exposed to the client
+- Database encryption at rest (if supported by the hosting provider)
 - No sensitive data in logs or error messages
 
 **Affected components:**
@@ -163,10 +167,12 @@ Encryption protects user data from interception (in transit) and unauthorized ac
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-All user input shall be validated and sanitized to prevent injection attacks (XSS, SQL injection, CSRF) and ensure data integrity.
+All user input shall be validated and sanitized to prevent injection attacks (XSS, SQL injection, CSRF) and ensure data
+integrity.
 
 **Rationale:**
-Input validation is the first line of defense against injection attacks. Unvalidated input is a major security vulnerability (OWASP Top 10).
+Input validation is the first line of defense against injection attacks. Unvalidated input is a major security
+vulnerability (OWASP Top 10).
 
 **Measurement:**
 
@@ -223,15 +229,15 @@ Security headers provide defense-in-depth against various attack vectors (XSS, c
 
 **Measurement:**
 
-- All required headers present
-- Security header scanning passes (securityheaders.com)
+- All required headers are present
+- Security header scanning passes (https://securityheaders.com)
 - CSP violations monitored
 
 **Acceptance criteria:**
 
 - Content-Security-Policy (CSP) header configured
-- X-Content-Type-Options: nosniff
-- X-Frame-Options: DENY or SAMEORIGIN
+- X-Content-Type-Options: `nosniff`
+- X-Frame-Options: `DENY` or `SAMEORIGIN`
 - Strict-Transport-Security (HSTS)
 - Permissions-Policy (formerly Feature-Policy)
 - Referrer-Policy configured
@@ -248,7 +254,7 @@ Security headers provide defense-in-depth against various attack vectors (XSS, c
 
 **Testing approach:**
 
-- Security header scanning (securityheaders.com)
+- Security header scanning (https://securityheaders.com)
 - CSP violation monitoring
 - Browser DevTools security audit
 
@@ -266,10 +272,11 @@ Security headers provide defense-in-depth against various attack vectors (XSS, c
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-Third-party dependencies shall be kept secure and up-to-date, with no known critical vulnerabilities in production.
+Third-party dependencies shall be kept secure and up to date, with no known critical vulnerabilities in production.
 
 **Rationale:**
-Vulnerable dependencies are a common attack vector (OWASP Top 10). Regular updates and scanning are essential for security.
+Vulnerable dependencies are a common attack vector (OWASP Top 10). Regular updates and scanning are essential for
+security.
 
 **Measurement:**
 
@@ -294,7 +301,8 @@ Vulnerable dependencies are a common attack vector (OWASP Top 10). Regular updat
 
 **Related to:**
 
-- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-004 (Scalability and Maintainability)
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-004 (Scalability and
+  Maintainability)
 - Functional Requirements: All features
 
 **Testing approach:**

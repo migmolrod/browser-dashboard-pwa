@@ -11,7 +11,8 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-New users shall be able to perform core tasks (add widget, configure settings, use dashboard) without requiring a tutorial or extensive documentation.
+New users shall be able to perform core tasks (add widget, configure settings, use dashboard) without requiring a
+tutorial or extensive documentation.
 
 **Rationale:**
 Intuitive UI reduces onboarding friction and demonstrates good UX design. Users should not struggle with basic tasks.
@@ -38,7 +39,8 @@ Intuitive UI reduces onboarding friction and demonstrates good UX design. Users 
 
 **Related to:**
 
-- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value Delivery)
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
 - Functional Requirements: All user-facing features
 
 **Testing approach:**
@@ -61,10 +63,12 @@ Intuitive UI reduces onboarding friction and demonstrates good UX design. Users 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The application shall be fully functional and visually optimized on devices ranging from 320px (small mobile) to 4K resolution (large desktop).
+The application shall be fully functional and visually optimized on devices ranging from 320 px (small mobile) to 4K
+resolution (large desktop).
 
 **Rationale:**
-Users access the dashboard from various devices. Responsive design ensures a consistent, functional experience across all screen sizes.
+Users access the dashboard from various devices. Responsive design ensures a consistent, functional experience across
+all screen sizes.
 
 **Measurement:**
 
@@ -88,7 +92,8 @@ Users access the dashboard from various devices. Responsive design ensures a con
 
 **Related to:**
 
-- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value Delivery)
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+  Delivery)
 - Functional Requirements: All user-facing features
 
 **Testing approach:**
@@ -114,7 +119,8 @@ Users access the dashboard from various devices. Responsive design ensures a con
 The application shall meet WCAG 2.1 Level AA standards to ensure accessibility for users with disabilities.
 
 **Rationale:**
-Accessibility is both an ethical imperative and a demonstration of professional web development standards. It broadens the user base and improves overall UX.
+Accessibility is both an ethical imperative and a demonstration of professional web development standards. It broadens
+the user base and improves overall UX.
 
 **Measurement:**
 
@@ -129,7 +135,7 @@ Accessibility is both an ethical imperative and a demonstration of professional 
 - Keyboard navigation support for all interactive elements
 - Screen reader compatibility (NVDA, JAWS, VoiceOver)
 - Color contrast ratios meet WCAG AA (4.5:1 for normal text, 3:1 for large text)
-- Focus indicators visible and clear
+- Focus indicators are visible and clear
 - No keyboard traps
 - Skip links for navigation
 
@@ -167,7 +173,8 @@ Accessibility is both an ethical imperative and a demonstration of professional 
 The application shall support modern browsers with versions: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+.
 
 **Rationale:**
-Supporting modern browsers ensures broad accessibility while avoiding the complexity of supporting legacy browsers. These versions cover 95%+ of users.
+Supporting modern browsers ensures broad accessibility while avoiding the complexity of supporting legacy browsers.
+These versions cover 95%+ of users.
 
 **Measurement:**
 
@@ -213,14 +220,16 @@ Supporting modern browsers ensures broad accessibility while avoiding the comple
 **Priority:** <PriorityLabel priority="Could Have"/>
 
 **Description:**
-The application shall be designed for future internationalization (i18n), with text externalized, Unicode support, and consideration for RTL languages.
+The application shall be designed for future internationalization (i18n), with text externalized, Unicode support, and
+consideration for RTL languages.
 
 **Rationale:**
-While English-only is acceptable for MVP, preparing for i18n demonstrates forward-thinking design and reduces refactoring effort for future localization.
+While English-only is acceptable for MVP, preparing for i18n demonstrates forward-thinking design and reduces
+refactoring effort for future localization.
 
 **Measurement:**
 
-- All user-facing text externalized
+- All user-facing text is externalized
 - No hardcoded strings in components
 - i18n framework integrated (e.g., Angular i18n, ngx-translate)
 
@@ -231,7 +240,7 @@ While English-only is acceptable for MVP, preparing for i18n demonstrates forwar
 - Date/time formatting locale-aware
 - Number formatting locale-aware
 - RTL (right-to-left) support consideration in layout
-- No locale-specific logic in business layer
+- No locale-specific logic in the business layer
 
 **Affected components:**
 

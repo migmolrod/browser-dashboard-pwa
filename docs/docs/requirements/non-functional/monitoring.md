@@ -11,7 +11,8 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The system shall provide visibility into application health and performance through Application Performance Monitoring (APM), error tracking, and custom metrics.
+The system shall provide visibility into application health and performance through Application Performance Monitoring
+(APM), error tracking, and custom metrics.
 
 **Rationale:**
 Monitoring enables proactive issue detection, performance optimization, and demonstrates operational maturity.
@@ -61,10 +62,12 @@ Monitoring enables proactive issue detection, performance optimization, and demo
 **Priority:** <PriorityLabel priority="Could Have"/>
 
 **Description:**
-The system shall track user behavior and feature usage in a privacy-respecting manner, providing insights into how the dashboard is used.
+The system shall track user behavior and feature usage in a privacy-respecting manner, providing insights into how the
+dashboard is used.
 
 **Rationale:**
-Analytics provide insights into feature usage, user behavior, and areas for improvement. Privacy-respecting analytics demonstrates ethical data handling.
+Analytics provide insights into feature usage, user behavior, and areas for improvement. Privacy-respecting analytics
+demonstrates ethical data handling.
 
 **Measurement:**
 
@@ -76,10 +79,10 @@ Analytics provide insights into feature usage, user behavior, and areas for impr
 
 - Privacy-respecting analytics (e.g., Plausible, Umami, or self-hosted)
 - No PII (Personally Identifiable Information) tracked
-- User consent obtained (cookie banner)
-- GDPR compliant (if serving EU users)
+- User consent is given (cookie banner)
+- GDPR-compliant (if serving EU users)
 - Anonymized data (IP anonymization)
-- Feature usage tracking (which widgets used, how often)
+- Feature usage tracking (which widgets are used, how often)
 
 **Affected components:**
 

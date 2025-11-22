@@ -29,7 +29,7 @@ CI automation ensures code quality, prevents regressions, and demonstrates moder
 - Lint and format checks enforced
 - Security scanning (dependency vulnerabilities, secrets)
 - Build artifacts created and stored
-- Failed builds block merge to main branch
+- Failed builds block merge to the `master` branch
 
 **Affected components:**
 
@@ -73,10 +73,10 @@ CD enables rapid iteration, reduces deployment risk, and demonstrates advanced D
 
 **Acceptance criteria:**
 
-- Deploy to staging on merge to develop branch
-- Deploy to production on merge to main branch
+- Deploy to staging on merge to the `develop` branch
+- Deploy to production on merge to the `master` branch
 - Automated smoke tests post-deployment
-- Rollback capability (revert to previous version)
+- Rollback capability (revert to a previous version)
 - Zero-downtime deployments (blue-green or rolling)
 - Deployment notifications (Slack, email)
 
@@ -110,10 +110,12 @@ CD enables rapid iteration, reduces deployment risk, and demonstrates advanced D
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-Infrastructure shall be defined as code using Terraform or equivalent, enabling version control, reproducibility, and documentation.
+Infrastructure shall be defined as code using Terraform or equivalent, enabling version control, reproducibility, and
+documentation.
 
 **Rationale:**
-Infrastructure as Code (IaC) ensures reproducible environments, enables versioning, and demonstrates modern infrastructure practices.
+Infrastructure as Code (IaC) ensures reproducible environments, enables versioning, and demonstrates modern
+infrastructure practices.
 
 **Measurement:**
 

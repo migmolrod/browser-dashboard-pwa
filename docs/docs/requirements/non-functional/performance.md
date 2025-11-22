@@ -88,7 +88,7 @@ latency, degrading user productivity and satisfaction.
 - Measured using APM tools (Application Performance Monitoring)
 - Under load of 100 concurrent users
 - Excludes third-party API calls (weather provider)
-- Database query optimization applied (see NFR-PER-003)
+- Database query optimization applied (see "NFR-PER-003")
 - Connection pooling configured
 - Response times are logged and monitored
 

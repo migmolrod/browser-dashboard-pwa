@@ -11,10 +11,12 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-Developers shall be able to set up the project locally with minimal effort (< 15 minutes) using Docker-based development environment.
+Developers shall be able to set up the project locally with minimal effort (< 15 minutes) using a Docker-based 
+development environment.
 
 **Rationale:**
-Easy local setup reduces onboarding friction, enables rapid development iteration, and demonstrates developer experience focus.
+Easy local setup reduces onboarding friction, enables rapid development iteration, and demonstrates developer experience
+focus.
 
 **Measurement:**
 
@@ -28,7 +30,7 @@ Easy local setup reduces onboarding friction, enables rapid development iteratio
 - One-command setup (e.g., `docker-compose up`)
 - Seed data available for testing
 - Hot reload enabled (frontend and backend)
-- Setup time < 15 minutes on fresh machine
+- Setup time < 15 minutes on a fresh machine
 - Clear documentation (README with setup instructions)
 
 **Affected components:**
@@ -63,7 +65,8 @@ Easy local setup reduces onboarding friction, enables rapid development iteratio
 Full project build shall complete in under 5 minutes to enable rapid iteration and avoid developer frustration.
 
 **Rationale:**
-Fast builds improve developer productivity and enable rapid feedback loops. Slow builds hinder iteration and reduce motivation.
+Fast builds improve developer productivity and enable rapid feedback loops. Slow builds hinder iteration and reduce
+motivation.
 
 **Measurement:**
 
@@ -76,7 +79,7 @@ Fast builds improve developer productivity and enable rapid feedback loops. Slow
 - Optimized build process (parallel builds, incremental builds)
 - Caching used (dependency caching, build caching)
 - Parallel builds where possible
-- Incremental builds supported (only rebuild changed modules)
+- Incremental builds are supported (only rebuild changed modules)
 - Build time monitored and tracked
 - Build time regression alerts
 

@@ -11,16 +11,18 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The system shall support at least 100 concurrent users without performance degradation to demonstrate scalability and handle realistic usage scenarios.
+The system shall support at least 100 concurrent users without performance degradation to demonstrate scalability and
+handle realistic usage scenarios.
 
 **Rationale:**
-While this is primarily a personal portfolio project, demonstrating scalability shows professional-level system design and preparation for potential growth.
+While this is primarily a personal portfolio project, demonstrating scalability shows professional-level system design
+and preparation for potential growth.
 
 **Measurement:**
 
 - System tested with 100 concurrent users
 - No significant increase in response times under load
-- Error rate remains below 1% under load
+- The error rate remains below 1% under load
 
 **Acceptance criteria:**
 
@@ -40,7 +42,8 @@ While this is primarily a personal portfolio project, demonstrating scalability 
 
 **Related to:**
 
-- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-004 (Scalability and Maintainability)
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-004 (Scalability and
+  Maintainability)
 - Functional Requirements: All features under concurrent load
 
 **Testing approach:**
@@ -63,10 +66,12 @@ While this is primarily a personal portfolio project, demonstrating scalability 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The system shall handle user accounts with large data volumes without performance degradation. This includes up to 500 bookmarks, 1,000 tasks, and 2,000 calendar events per user.
+The system shall handle user accounts with large data volumes without performance degradation. This includes up to 500
+bookmarks, 1,000 tasks, and 2,000 calendar events per user.
 
 **Rationale:**
-Users with extensive data should experience the same performance as users with minimal data. Handling large data volumes demonstrates scalability and production-readiness.
+Users with extensive data should experience the same performance as users with minimal data. Handling large data volumes
+demonstrates scalability and production-readiness.
 
 **Measurement:**
 
@@ -91,7 +96,8 @@ Users with extensive data should experience the same performance as users with m
 
 **Related to:**
 
-- Business Requirements: BR-003 (Technical Excellence), BR-004 (Scalability and Maintainability), BR-005 (User Value Delivery)
+- Business Requirements: BR-003 (Technical Excellence), BR-004 (Scalability and Maintainability), BR-005 (User Value
+  Delivery)
 - Functional Requirements: FR-BKM (Bookmarks), FR-TSK (Tasks), FR-CAL (Calendar)
 
 **Testing approach:**
@@ -114,10 +120,12 @@ Users with extensive data should experience the same performance as users with m
 **Priority:** <PriorityLabel priority="Could Have"/>
 
 **Description:**
-The backend shall support horizontal scaling by adding more instances without architectural changes, enabling load distribution and increased capacity.
+The backend shall support horizontal scaling by adding more instances without architectural changes, enabling load
+distribution and increased capacity.
 
 **Rationale:**
-Horizontal scaling demonstrates cloud-native design principles and preparation for growth. While not required for MVP, it's a valuable architectural property for portfolio demonstration.
+Horizontal scaling demonstrates cloud-native design principles and preparation for growth. While not required for MVP,
+it's a valuable architectural property for portfolio demonstration.
 
 **Measurement:**
 
@@ -142,7 +150,8 @@ Horizontal scaling demonstrates cloud-native design principles and preparation f
 
 **Related to:**
 
-- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-004 (Scalability and Maintainability)
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-004 (Scalability and
+  Maintainability)
 - Functional Requirements: All backend features
 
 **Testing approach:**

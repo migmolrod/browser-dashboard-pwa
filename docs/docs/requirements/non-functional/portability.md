@@ -11,7 +11,8 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The application shall be fully containerized using Docker, enabling consistent deployment across environments and simplified local development.
+The application shall be fully containerized using Docker, enabling consistent deployment across environments and
+simplified local development.
 
 **Rationale:**
 Containerization demonstrates modern DevOps practices, ensures environment consistency, and simplifies deployment.
@@ -61,16 +62,18 @@ Containerization demonstrates modern DevOps practices, ensures environment consi
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The application shall not be tightly coupled to a specific cloud provider, enabling portability across providers (AWS, Azure, GCP, Railway, Render).
+The application shall not be tightly coupled to a specific cloud provider, enabling portability across providers (AWS,
+Azure, GCP, Railway, Render).
 
 **Rationale:**
-Cloud-agnostic design avoids vendor lock-in, demonstrates architectural flexibility, and enables cost optimization by switching providers.
+Cloud-agnostic design avoids vendor lock-in, demonstrates architectural flexibility, and enables cost optimization by
+switching providers.
 
 **Measurement:**
 
 - Infrastructure defined in Terraform (cloud-agnostic)
-- No provider-specific APIs used (or abstracted)
-- Deployment tested on multiple providers (if feasible)
+- No provider-specific APIs are used (or abstracted)
+- Deployment tested on multiple providers (if possible)
 
 **Acceptance criteria:**
 
@@ -98,7 +101,7 @@ Cloud-agnostic design avoids vendor lock-in, demonstrates architectural flexibil
 
 **Trade-offs:**
 
-- Cloud-agnostic design may prevent use of managed services
+- Cloud-agnostic design may prevent the use of managed services
 - Abstraction adds complexity
 
 **Open questions:**
@@ -110,10 +113,12 @@ Cloud-agnostic design avoids vendor lock-in, demonstrates architectural flexibil
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The application shall support multiple deployment environments (development, staging, production) with externalized configuration.
+The application shall support multiple deployment environments (development, staging, production) with externalized
+configuration.
 
 **Rationale:**
-Environment-specific configuration enables testing in staging before production, supports local development, and follows 12-factor app principles.
+Environment-specific configuration enables testing in staging before production, supports local development, and follows
+12-factor app principles.
 
 **Measurement:**
 

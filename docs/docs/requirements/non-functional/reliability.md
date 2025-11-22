@@ -11,20 +11,22 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The system shall maintain 99% uptime (excluding planned maintenance) to ensure reliable access for users and demonstrate production-quality deployment.
+The system shall maintain 99% uptime (excluding planned maintenance) to ensure reliable access for users and demonstrate
+production-quality deployment.
 
 **Rationale:**
-High availability is critical for user trust and portfolio demonstration. Frequent downtime reflects poorly on system quality and engineering practices.
+High availability is critical for user trust and portfolio demonstration. Frequent downtime reflects poorly on system
+quality and engineering practices.
 
 **Measurement:**
 
 - Uptime tracking with monitoring tools (e.g., UptimeRobot, Pingdom)
-- Maximum 7.2 hours downtime per month (99% uptime)
+- Maximum 7.2-hour downtime per month (99% uptime)
 - Uptime SLA tracked and reported
 
 **Acceptance criteria:**
 
-- Maximum 7.2 hours downtime per month (99% uptime target)
+- Maximum 7.2-hour downtime per month (99% uptime target)
 - Uptime monitoring implemented (UptimeRobot, Pingdom, or equivalent)
 - Automated health checks (see "NFR-SUP-003: Health checks")
 - Incident response process documented
@@ -61,10 +63,12 @@ High availability is critical for user trust and portfolio demonstration. Freque
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The system shall maintain an error rate below 1% of all requests to ensure reliable operation and positive user experience.
+The system shall maintain an error rate below 1% of all requests to ensure reliable operation and positive user
+experience.
 
 **Rationale:**
-Low error rates indicate stable, well-tested code and proper error handling. High error rates degrade user experience and reflect poorly on code quality.
+Low error rates indicate stable, well-tested code and proper error handling. High error rates degrade user experience
+and reflect poorly on code quality.
 
 **Measurement:**
 
@@ -112,10 +116,12 @@ Low error rates indicate stable, well-tested code and proper error handling. Hig
 **Priority:** <PriorityLabel priority="Must Have"/>
 
 **Description:**
-The system shall prevent data loss and corruption through proper transactional handling, validation, and backup mechanisms.
+The system shall prevent data loss and corruption through proper transactional handling, validation, and backup
+mechanisms.
 
 **Rationale:**
-Data integrity is fundamental to user trust and system reliability. Data loss or corruption is unacceptable and reflects poorly on engineering quality.
+Data integrity is fundamental to user trust and system reliability. Data loss or corruption is unacceptable and reflects
+poorly on engineering quality.
 
 **Measurement:**
 
@@ -165,10 +171,12 @@ Data integrity is fundamental to user trust and system reliability. Data loss or
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-The system shall gracefully handle third-party service failures (especially weather API) without complete system failure, providing degraded functionality when possible.
+The system shall gracefully handle third-party service failures (especially weather API) without complete system
+failure, providing degraded functionality when possible.
 
 **Rationale:**
-External dependencies (weather API) are outside our control. Fault tolerance ensures the system remains partially functional even when third-party services fail.
+External dependencies (weather API) are outside our control. Fault tolerance ensures the system remains partially
+functional even when third-party services fail.
 
 **Measurement:**
 
@@ -183,7 +191,7 @@ External dependencies (weather API) are outside our control. Fault tolerance ens
 - Retry logic with exponential backoff
 - Timeout configurations (e.g., 10 seconds)
 - Degraded mode operation (cached data displayed)
-- Other features (bookmarks, tasks, calendar) unaffected by weather API failure
+- Other features (bookmarks, tasks, calendar) are unaffected by weather API failure
 
 **Affected components:**
 
