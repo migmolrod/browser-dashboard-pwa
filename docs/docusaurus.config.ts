@@ -16,7 +16,7 @@ const config: Config = {
 	url: "https://migmolrod.github.io",
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
-	baseUrl: "/browser-dashboard-pwa/",
+	baseUrl: "/",
 
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
@@ -77,7 +77,7 @@ const config: Config = {
 					type: "docSidebar",
 					sidebarId: "domain",
 					position: "left",
-					label: "BDL",
+					label: "DMD",
 				},
 				{
 					type: "docSidebar",
@@ -110,7 +110,7 @@ const config: Config = {
 							to: "/docs/intro",
 						},
 						{
-							label: "BDL",
+							label: "DMD",
 							to: "/docs/domain/overview",
 						},
 						{

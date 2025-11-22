@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
 		Svg: require("@site/static/img/intro/domain.svg").default,
 		description: (
 			<>
-				In the BDL (Business & Domain Layer) we will describe the business domain of the project, before any
+				In the DMD (Domain Modeling Document) we will describe the business domain of the project, before any
 				requirements or technical details are defined.
 			</>
 		),
