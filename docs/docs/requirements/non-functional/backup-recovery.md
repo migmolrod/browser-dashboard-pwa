@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Reliability
-
 **Description:**
 User data shall be backed up daily with a retention policy of at least 30 days, stored in a separate location, and encrypted.
 
@@ -61,8 +59,6 @@ Regular backups protect against data loss due to failures, human error, or secur
 ## NFR-BAC-002: Disaster recovery
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Reliability
 
 **Description:**
 The system shall be recoverable within 4 hours (RTO) in case of failure, with data loss limited to 24 hours (RPO).

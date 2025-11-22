@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Scalability
-
 **Description:**
 The system shall support at least 100 concurrent users without performance degradation to demonstrate scalability and handle realistic usage scenarios.
 
@@ -64,8 +62,6 @@ While this is primarily a personal portfolio project, demonstrating scalability 
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Scalability
-
 **Description:**
 The system shall handle user accounts with large data volumes without performance degradation. This includes up to 500 bookmarks, 1,000 tasks, and 2,000 calendar events per user.
 
@@ -116,8 +112,6 @@ Users with extensive data should experience the same performance as users with m
 ## NFR-SCA-003: Horizontal scaling
 
 **Priority:** <PriorityLabel priority="Could Have"/>
-
-**Category:** Scalability
 
 **Description:**
 The backend shall support horizontal scaling by adding more instances without architectural changes, enabling load distribution and increased capacity.

@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Portability
-
 **Description:**
 The application shall be fully containerized using Docker, enabling consistent deployment across environments and simplified local development.
 
@@ -62,8 +60,6 @@ Containerization demonstrates modern DevOps practices, ensures environment consi
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Portability
-
 **Description:**
 The application shall not be tightly coupled to a specific cloud provider, enabling portability across providers (AWS, Azure, GCP, Railway, Render).
 
@@ -112,8 +108,6 @@ Cloud-agnostic design avoids vendor lock-in, demonstrates architectural flexibil
 ## NFR-POR-003: Environment configuration
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Portability
 
 **Description:**
 The application shall support multiple deployment environments (development, staging, production) with externalized configuration.

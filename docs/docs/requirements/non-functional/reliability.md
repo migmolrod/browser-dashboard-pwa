@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Reliability
-
 **Description:**
 The system shall maintain 99% uptime (excluding planned maintenance) to ensure reliable access for users and demonstrate production-quality deployment.
 
@@ -61,8 +59,6 @@ High availability is critical for user trust and portfolio demonstration. Freque
 ## NFR-REL-002: Error rate
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Reliability
 
 **Description:**
 The system shall maintain an error rate below 1% of all requests to ensure reliable operation and positive user experience.
@@ -114,8 +110,6 @@ Low error rates indicate stable, well-tested code and proper error handling. Hig
 ## NFR-REL-003: Data integrity
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Reliability
 
 **Description:**
 The system shall prevent data loss and corruption through proper transactional handling, validation, and backup mechanisms.
@@ -169,8 +163,6 @@ Data integrity is fundamental to user trust and system reliability. Data loss or
 ## NFR-REL-004: Fault tolerance
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Reliability
 
 **Description:**
 The system shall gracefully handle third-party service failures (especially weather API) without complete system failure, providing degraded functionality when possible.

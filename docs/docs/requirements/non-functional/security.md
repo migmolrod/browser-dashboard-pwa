@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Security
-
 **Description:**
 The system shall implement secure authentication mechanisms to protect user accounts and ensure only authorized access.
 
@@ -64,8 +62,6 @@ Authentication security is fundamental to protecting user data and preventing un
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Security
-
 **Description:**
 Users shall only access their own data, preventing unauthorized access to other users' information through proper authorization checks.
 
@@ -116,8 +112,6 @@ Authorization ensures data privacy and prevents horizontal privilege escalation.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Security
-
 **Description:**
 Sensitive data shall be encrypted in transit and at rest to protect user information from unauthorized access.
 
@@ -167,8 +161,6 @@ Encryption protects user data from interception (in transit) and unauthorized ac
 ## NFR-SEC-004: Input validation
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Security
 
 **Description:**
 All user input shall be validated and sanitized to prevent injection attacks (XSS, SQL injection, CSRF) and ensure data integrity.
@@ -223,8 +215,6 @@ Input validation is the first line of defense against injection attacks. Unvalid
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Security
-
 **Description:**
 The application shall implement security headers to protect against common web vulnerabilities and attacks.
 
@@ -274,8 +264,6 @@ Security headers provide defense-in-depth against various attack vectors (XSS, c
 ## NFR-SEC-006: Dependency security
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Security
 
 **Description:**
 Third-party dependencies shall be kept secure and up-to-date, with no known critical vulnerabilities in production.

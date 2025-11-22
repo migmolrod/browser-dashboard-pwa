@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Compliance
-
 **Description:**
 The system shall respect user privacy by not selling data to third parties, minimizing data collection, enabling data deletion, and complying with GDPR principles.
 
@@ -63,8 +61,6 @@ Privacy is both an ethical imperative and a legal requirement (especially GDPR f
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Compliance
-
 **Description:**
 The system shall obtain user consent for non-essential cookies, distinguishing between essential and non-essential cookies.
 
@@ -114,8 +110,6 @@ Cookie consent is legally required in many jurisdictions (GDPR, ePrivacy Directi
 ## NFR-COM-003: Terms of service
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Compliance
 
 **Description:**
 The system shall have clear terms of service that define acceptable use, liability limitations, and user responsibilities.

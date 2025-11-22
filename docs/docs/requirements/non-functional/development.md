@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Development
-
 **Description:**
 Developers shall be able to set up the project locally with minimal effort (< 15 minutes) using Docker-based development environment.
 
@@ -60,8 +58,6 @@ Easy local setup reduces onboarding friction, enables rapid development iteratio
 ## NFR-DEV-002: Build time
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Development
 
 **Description:**
 Full project build shall complete in under 5 minutes to enable rapid iteration and avoid developer frustration.

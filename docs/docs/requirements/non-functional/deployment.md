@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Deployment
-
 **Description:**
 The project shall have automated CI pipelines that build, test, lint, and scan code on every commit.
 
@@ -60,8 +58,6 @@ CI automation ensures code quality, prevents regressions, and demonstrates moder
 ## NFR-DEP-002: Continuous deployment
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Deployment
 
 **Description:**
 The project shall support automated deployments to staging and production with smoke tests and rollback capability.
@@ -112,8 +108,6 @@ CD enables rapid iteration, reduces deployment risk, and demonstrates advanced D
 ## NFR-DEP-003: Infrastructure as code
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Deployment
 
 **Description:**
 Infrastructure shall be defined as code using Terraform or equivalent, enabling version control, reproducibility, and documentation.

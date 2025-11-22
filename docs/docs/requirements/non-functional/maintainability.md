@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Maintainability
-
 **Description:**
 The codebase shall maintain high quality standards with linting, formatting, code analysis, and code review processes.
 
@@ -61,8 +59,6 @@ High code quality demonstrates professional development practices, improves main
 ## NFR-MAI-002: Test coverage
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Maintainability
 
 **Description:**
 The codebase shall maintain at least 80% test coverage across unit, integration, and end-to-end tests to ensure reliability and enable confident refactoring.
@@ -116,8 +112,6 @@ High test coverage reduces bugs, enables confident refactoring, and demonstrates
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Maintainability
-
 **Description:**
 The code and system shall be well-documented with README files, API documentation, inline comments, architecture diagrams, and setup instructions.
 
@@ -168,8 +162,6 @@ Comprehensive documentation demonstrates professionalism, aids portfolio reviewe
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Maintainability
-
 **Description:**
 The codebase shall be modular and loosely coupled with clear bounded context separation, enabling independent development and testing.
 
@@ -218,8 +210,6 @@ Modularity improves maintainability, testability, and enables parallel developme
 ## NFR-MAI-005: Version control
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Maintainability
 
 **Description:**
 The project shall follow Git best practices with meaningful commit messages, feature branches, pull requests, and no secrets in the repository.

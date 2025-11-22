@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Performance
-
 **Description:**
 The initial page load shall be completed in under 2 seconds on a standard broadband connection (5 Mbps) to ensure a
 responsive user experience and meet modern web performance standards.
@@ -70,8 +68,6 @@ quality.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Performance
-
 **Description:**
 API endpoints shall respond in under 200 ms at the 95th percentile under a normal load to ensure responsive user
 interactions and maintain system performance.
@@ -129,8 +125,6 @@ latency, degrading user productivity and satisfaction.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Performance
-
 **Description:**
 Database queries shall execute in under 50 ms at the 95th percentile to minimize API response latency and ensure
 efficient data retrieval.
@@ -185,8 +179,6 @@ degrade user experience and system scalability.
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Performance
-
 **Description:**
 All UI animations shall maintain at least 60 frames per second (60 FPS) to provide smooth, responsive user interactions
 and avoid perceived sluggishness.
@@ -239,8 +231,6 @@ quality and can negatively impact user satisfaction.
 ## NFR-PER-005: Bundle size
 
 **Priority:** <PriorityLabel priority="Should Have"/>
-
-**Category:** Performance
 
 **Description:**
 The initial JavaScript bundle shall not exceed 300KB (gzipped) to minimize download time and improve page load

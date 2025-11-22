@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
-**Category:** Monitoring
-
 **Description:**
 The system shall provide visibility into application health and performance through Application Performance Monitoring (APM), error tracking, and custom metrics.
 
@@ -61,8 +59,6 @@ Monitoring enables proactive issue detection, performance optimization, and demo
 ## NFR-MON-002: User analytics
 
 **Priority:** <PriorityLabel priority="Could Have"/>
-
-**Category:** Monitoring
 
 **Description:**
 The system shall track user behavior and feature usage in a privacy-respecting manner, providing insights into how the dashboard is used.

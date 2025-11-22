@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Maintainability
-
 **Description:**
 The system shall maintain comprehensive logs with structured logging, log levels, request tracing, and no sensitive data logged.
 
@@ -62,8 +60,6 @@ Comprehensive logging enables debugging, monitoring, and incident investigation.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Maintainability
-
 **Description:**
 Errors shall be automatically reported and tracked with error tracking service, including stack traces, user context, and error grouping.
 
@@ -113,8 +109,6 @@ Automated error reporting enables proactive issue detection and resolution. Erro
 ## NFR-SUP-003: Health checks
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Maintainability
 
 **Description:**
 The system shall provide health check endpoints to verify application health, database connectivity, and dependency status.

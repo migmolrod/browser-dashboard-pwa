@@ -10,8 +10,6 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Usability
-
 **Description:**
 New users shall be able to perform core tasks (add widget, configure settings, use dashboard) without requiring a tutorial or extensive documentation.
 
@@ -62,8 +60,6 @@ Intuitive UI reduces onboarding friction and demonstrates good UX design. Users 
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Usability
-
 **Description:**
 The application shall be fully functional and visually optimized on devices ranging from 320px (small mobile) to 4K resolution (large desktop).
 
@@ -113,8 +109,6 @@ Users access the dashboard from various devices. Responsive design ensures a con
 ## NFR-USA-003: Accessibility
 
 **Priority:** <PriorityLabel priority="Must Have"/>
-
-**Category:** Usability
 
 **Description:**
 The application shall meet WCAG 2.1 Level AA standards to ensure accessibility for users with disabilities.
@@ -169,8 +163,6 @@ Accessibility is both an ethical imperative and a demonstration of professional 
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
-**Category:** Usability
-
 **Description:**
 The application shall support modern browsers with versions: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+.
 
@@ -219,8 +211,6 @@ Supporting modern browsers ensures broad accessibility while avoiding the comple
 ## NFR-USA-005: Internationalization ready
 
 **Priority:** <PriorityLabel priority="Could Have"/>
-
-**Category:** Usability
 
 **Description:**
 The application shall be designed for future internationalization (i18n), with text externalized, Unicode support, and consideration for RTL languages.
