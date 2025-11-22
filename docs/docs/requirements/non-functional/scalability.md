@@ -91,14 +91,14 @@ Users with extensive data should experience the same performance as users with m
 
 **Affected components:**
 
-- Backend (all bounded contexts: BMK, TSK, CAL)
+- Backend (all bounded contexts: BKM, TSK, CAL)
 - Database (PostgreSQL)
 - Frontend (Angular components with large lists)
 
 **Related to:**
 
 - Business Requirements: BR-003 (Technical Excellence), BR-004 (Scalability and Maintainability), BR-005 (User Value Delivery)
-- Functional Requirements: FR-BMK (Bookmarks), FR-TSK (Tasks), FR-CAL (Calendar)
+- Functional Requirements: FR-BKM (Bookmarks), FR-TSK (Tasks), FR-CAL (Calendar)
 
 **Testing approach:**
 

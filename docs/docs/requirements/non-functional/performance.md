@@ -37,7 +37,7 @@ Fast page load times are critical for user satisfaction and engagement. Research
 **Affected components:**
 
 - Frontend (Angular application)
-- All bounded contexts (BMK, TSK, WTH, CAL, DSH, PRF, IDT)
+- All bounded contexts (BKM, TSK, WEA, CAL, DAS, PRE, UID)
 - PWA service worker
 - CDN/hosting infrastructure
 

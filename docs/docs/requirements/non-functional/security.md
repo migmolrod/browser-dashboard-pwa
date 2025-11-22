@@ -35,14 +35,14 @@ Authentication security is fundamental to protecting user data and preventing un
 
 **Affected components:**
 
-- Identity bounded context (IDT)
+- Identity bounded context (UID)
 - Backend authentication/authorization
 - Frontend login/registration
 
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
-- Functional Requirements: FR-IDT (User Identity and Authentication)
+- Functional Requirements: FR-UID (User Identity and Authentication)
 
 **Testing approach:**
 
@@ -92,7 +92,7 @@ Authorization ensures data privacy and prevents horizontal privilege escalation.
 **Affected components:**
 
 - Backend (all API endpoints)
-- All bounded contexts with user-owned data (BMK, TSK, CAL, WEA, DSH, PRF)
+- All bounded contexts with user-owned data (BKM, TSK, CAL, WEA, DAS, PRE)
 
 **Related to:**
 

@@ -190,7 +190,7 @@ Modularity improves maintainability, testability, and enables parallel developme
 
 **Acceptance criteria:**
 
-- Clear module boundaries (bounded contexts: BMK, TSK, WTH, CAL, DSH, PRF, IDT)
+- Clear module boundaries (bounded contexts: BKM, TSK, WEA, CAL, DAS, PRE, UID)
 - Dependency injection used throughout
 - Feature-based folder structure
 - Minimal circular dependencies (checked with tools)

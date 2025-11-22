@@ -42,7 +42,7 @@ Privacy is both an ethical imperative and a legal requirement (especially GDPR f
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-005 (User Value Delivery)
-- Functional Requirements: FR-IDT (User Identity), all features handling user data
+- Functional Requirements: FR-UID (User Identity), all features handling user data
 
 **Testing approach:**
 
@@ -150,7 +150,7 @@ Terms of service protect the project owner legally and set clear expectations fo
 **Related to:**
 
 - Business Requirements: BR-001 (Portfolio Enhancement), BR-005 (User Value Delivery)
-- Functional Requirements: FR-IDT (User Identity and Authentication)
+- Functional Requirements: FR-UID (User Identity and Authentication)
 
 **Testing approach:**
 
