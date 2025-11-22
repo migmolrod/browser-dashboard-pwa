@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbrowser_dashboard_pwa_docs=globalThis.webpackChunkbrowser_dashboard_pwa_docs||[]).push([[5820],{5820:(a,r,s)=>{s.d(r,{createArchitectureServices:()=>e.S});var e=s(1357);s(9932)}}]);

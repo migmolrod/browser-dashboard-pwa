@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/functional/preferences" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Preferences | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/functional/preferences"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Preferences | Browser Dashboard PWA"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/functional/preferences"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/preferences" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/preferences" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Preferences","item":"https://migmolrod.github.io/docs/requirements/functional/preferences"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/dashboard-management"><span title="Dashboard Management" class="linkLabel_dWUb">Dashboard Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/bookmarks"><span title="Bookmarks" class="linkLabel_dWUb">Bookmarks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/tasks"><span title="Tasks" class="linkLabel_dWUb">Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/calendar"><span title="Calendar" class="linkLabel_dWUb">Calendar</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/weather"><span title="Weather" class="linkLabel_dWUb">Weather</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/user-identity"><span title="User identity" class="linkLabel_dWUb">User identity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/requirements/functional/preferences"><span title="Preferences" class="linkLabel_dWUb">Preferences</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/synchronization"><span title="Synchronization" class="linkLabel_dWUb">Synchronization</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Functional requirements</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Preferences</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><div class="reqMetadata_OnDx"><div><strong>Status: </strong><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></div><span><strong>Last updated</strong>: <!-- -->November 15, 2025</span></div>
+<header><h1>Preferences</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Preferences bounded context manages cross-cutting user preferences such as theme, locale, timezone, and default
+settings. It serves as the single source of truth for user-specific configuration that affects the entire application.
+The context provides sensible defaults and notifies other contexts when preferences change.</p>
+<p><strong>Bounded context code:</strong> PRE<br>
+<strong>Related DMD section:</strong> <a class="" href="/docs/domain/bounded-contexts/preferences">Preferences (Generic)</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Feature Code</th><th>Feature Name</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td>FR-PRE-001</td><td>Theme management</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-PRE-002</td><td>Locale management</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-PRE-003</td><td>Timezone management</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-PRE-004</td><td>Default preferences</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-PRE-005</td><td>Preference persistence</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-PRE-006</td><td>Preference validation</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-pre-001-theme-management">FR-PRE-001: Theme management<a href="#fr-pre-001-theme-management" class="hash-link" aria-label="Direct link to FR-PRE-001: Theme management" title="Direct link to FR-PRE-001: Theme management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users must be able to select and switch between visual themes (light, dark, and system default). Theme preference
+affects the visual appearance of the entire application and persists across sessions. System default automatically
+adapts to the user&#x27;s operating system theme preference.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">UserPreferences aggregate must exist</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Theme preference is updated</li>
+<li class="">ThemeChanged event is published</li>
+<li class="">Application appearance updates in real-time</li>
+<li class="">Theme preference persists across sessions</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Supported themes: Light, Dark, System (follows OS preference)</li>
+<li class="">Default theme is &quot;System&quot; for new users</li>
+<li class="">Theme changes apply immediately without page reload</li>
+<li class="">Theme preference is global (not per-device in MVP)</li>
+<li class="">System theme dynamically updates when OS theme changes</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: UserPreferences (root)</li>
+<li class="">Domain Events: ThemeChanged, UserRegistered (consumed)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">User Identity context (UserId association)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can select theme from: Light, Dark, System</li>
+<li class="">Theme changes apply immediately to entire application</li>
+<li class="">ThemeChanged event is published with new theme value</li>
+<li class="">Theme preference persists across sessions</li>
+<li class="">System theme follows OS preference (detects changes)</li>
+<li class="">Theme selection is accessible from settings menu</li>
+<li class="">Visual feedback confirms theme change</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-PRE-001-001: Select light theme</li>
+<li class="">US-PRE-001-002: Select dark theme</li>
+<li class="">US-PRE-001-003: Select system theme</li>
+<li class="">US-PRE-001-004: System theme adapts to OS changes</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios">Scenarios<a href="#scenarios" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-select-light-theme-happy-path">Scenario 1: Select light theme (happy path)<a href="#scenario-1-select-light-theme-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Select light theme (happy path)" title="Direct link to Scenario 1: Select light theme (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is authenticated<br>
+<!-- -->And viewing the preferences settings<br>
+<!-- -->When the user selects &quot;Light&quot; theme<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then the theme preference is updated to &quot;Light&quot;<br>
+<!-- -->And a ThemeChanged event is published<br>
+<!-- -->And the application switches to light theme immediately<br>
+<!-- -->And all UI components update with light theme colors<br>
+<!-- -->And the preference is persisted</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-select-dark-theme">Scenario 2: Select dark theme<a href="#scenario-2-select-dark-theme" class="hash-link" aria-label="Direct link to Scenario 2: Select dark theme" title="Direct link to Scenario 2: Select dark theme" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has light theme active<br>
+<!-- -->When the user selects &quot;Dark&quot; theme<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then the theme preference is updated to &quot;Dark&quot;<br>
+<!-- -->And a ThemeChanged event is published<br>
+<!-- -->And the application switches to dark theme immediately<br>
+<!-- -->And all UI components update with dark theme colors</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-select-system-theme">Scenario 3: Select system theme<a href="#scenario-3-select-system-theme" class="hash-link" aria-label="Direct link to Scenario 3: Select system theme" title="Direct link to Scenario 3: Select system theme" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has dark theme active<br>
+<!-- -->When the user selects &quot;System&quot; theme<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then the theme preference is updated to &quot;System&quot;<br>
+<!-- -->And a ThemeChanged event is published<br>
+<!-- -->And the application detects OS theme preference<br>
+<!-- -->And applies matching theme (light or dark)<br>
+<!-- -->And updates dynamically if OS theme changes</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-system-theme-adapts-to-os-changes">Scenario 4: System theme adapts to OS changes<a href="#scenario-4-system-theme-adapts-to-os-changes" class="hash-link" aria-label="Direct link to Scenario 4: System theme adapts to OS changes" title="Direct link to Scenario 4: System theme adapts to OS changes" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has &quot;System&quot; theme selected<br>
+<!-- -->And OS is currently in light mode<br>
+<!-- -->When the OS switches to dark mode<br>
+<!-- -->Then the application detects the OS theme change<br>
+<!-- -->And automatically switches to dark theme<br>
+<!-- -->And no ThemeChanged event is published (no user action)<br>
+<!-- -->And the preference remains &quot;System&quot;</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-theme-persists-across-sessions">Scenario 5: Theme persists across sessions<a href="#scenario-5-theme-persists-across-sessions" class="hash-link" aria-label="Direct link to Scenario 5: Theme persists across sessions" title="Direct link to Scenario 5: Theme persists across sessions" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has selected &quot;Dark&quot; theme<br>
+<!-- -->When the user logs out and logs back in<br>
+<!-- -->Then the theme is restored to &quot;Dark&quot;<br>
+<!-- -->And the application loads with dark theme<br>
+<!-- -->And theme preference is retrieved from storage</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-default-theme-for-new-users">Scenario 6: Default theme for new users<a href="#scenario-6-default-theme-for-new-users" class="hash-link" aria-label="Direct link to Scenario 6: Default theme for new users" title="Direct link to Scenario 6: Default theme for new users" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a new user has just registered<br>
+<!-- -->When the UserRegistered event is processed<br>
+<!-- -->Then default preferences are created<br>
+<!-- -->And theme is set to &quot;System&quot;<br>
+<!-- -->And the application uses OS theme preference initially</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use CSS custom properties (variables) for theme colors</li>
+<li class="">Implement theme detection via <code>window.matchMedia(&#x27;(prefers-color-scheme: dark)&#x27;)</code></li>
+<li class="">Store theme preference as enumeration (LIGHT, DARK, SYSTEM)</li>
+<li class="">Listen for OS theme changes with <code>matchMedia.addEventListener(&#x27;change&#x27;, ...)</code></li>
+<li class="">Apply theme immediately via CSS class on root element (e.g., <code>&lt;html class=&quot;dark&quot;&gt;</code>)</li>
+<li class="">Consider implementing theme transition animations for smooth switching</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be additional theme options (e.g., high contrast, custom colors)?</li>
+<li class="">Should theme be device-specific in the future?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-pre-002-locale-management">FR-PRE-002: Locale management<a href="#fr-pre-002-locale-management" class="hash-link" aria-label="Direct link to FR-PRE-002: Locale management" title="Direct link to FR-PRE-002: Locale management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users should be able to select their preferred locale (language and region) for the application interface. Locale
+affects language, date formats, number formats, and other region-specific settings. The system provides a catalog of
+supported locales.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">UserPreferences aggregate must exist</li>
+<li class="">Locale must be supported by the system</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Locale preference is updated</li>
+<li class="">LocaleChanged event is published</li>
+<li class="">Application language updates in real-time</li>
+<li class="">Date and number formats adjust to locale</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Default locale is &quot;en-US&quot; (English - United States)</li>
+<li class="">Supported locales are defined in configuration (e.g., en-US, es-ES, fr-FR, de-DE)</li>
+<li class="">Invalid locales are rejected with validation error</li>
+<li class="">Locale changes apply immediately</li>
+<li class="">Locale affects: UI language, date formats, number formats, currency symbols</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: UserPreferences (root)</li>
+<li class="">Domain Events: LocaleChanged, UserRegistered (consumed)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">User Identity context (UserId association)</li>
+<li class="">Internationalization (i18n) infrastructure</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can select locale from supported list</li>
+<li class="">Locale changes apply immediately to entire application</li>
+<li class="">LocaleChanged event is published with new locale</li>
+<li class="">UI language switches to selected locale</li>
+<li class="">Date formats adapt to locale (e.g., MM/DD/YYYY vs DD/MM/YYYY)</li>
+<li class="">Number formats adapt to locale (e.g., 1,000.50 vs 1.000,50)</li>
+<li class="">Locale preference persists across sessions</li>
+<li class="">Invalid locale selection shows error message</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-PRE-002-001: Select locale</li>
+<li class="">US-PRE-002-002: View date in locale format</li>
+<li class="">US-PRE-002-003: View numbers in locale format</li>
+<li class="">US-PRE-002-004: Reject invalid locale</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-1">Scenarios<a href="#scenarios-1" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-select-locale-happy-path">Scenario 1: Select locale (happy path)<a href="#scenario-1-select-locale-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Select locale (happy path)" title="Direct link to Scenario 1: Select locale (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is viewing preferences settings<br>
+<!-- -->And current locale is &quot;en-US&quot;<br>
+<!-- -->When the user selects locale &quot;es-ES&quot; (Spanish - Spain)<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then the locale preference is updated to &quot;es-ES&quot;<br>
+<!-- -->And a LocaleChanged event is published<br>
+<!-- -->And UI language switches to Spanish<br>
+<!-- -->And date formats change to DD/MM/YYYY<br>
+<!-- -->And number formats use European convention (1.000,50)<br>
+<!-- -->And the preference is persisted</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-view-date-in-locale-format">Scenario 2: View date in locale format<a href="#scenario-2-view-date-in-locale-format" class="hash-link" aria-label="Direct link to Scenario 2: View date in locale format" title="Direct link to Scenario 2: View date in locale format" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has locale set to &quot;es-ES&quot;<br>
+<!-- -->When the user views a date (e.g., event date)<br>
+<!-- -->Then dates are displayed as &quot;15/11/2025&quot; (DD/MM/YYYY)<br>
+<!-- -->And month names are in Spanish (e.g., &quot;noviembre&quot;)</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-view-numbers-in-locale-format">Scenario 3: View numbers in locale format<a href="#scenario-3-view-numbers-in-locale-format" class="hash-link" aria-label="Direct link to Scenario 3: View numbers in locale format" title="Direct link to Scenario 3: View numbers in locale format" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has locale set to &quot;de-DE&quot; (German - Germany)<br>
+<!-- -->When the user views numeric data (e.g., weather temperature)<br>
+<!-- -->Then numbers use German formatting (1.234,56)<br>
+<!-- -->And decimal separator is comma<br>
+<!-- -->And thousands separator is period</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-invalid-locale">Scenario 4: Reject invalid locale<a href="#scenario-4-reject-invalid-locale" class="hash-link" aria-label="Direct link to Scenario 4: Reject invalid locale" title="Direct link to Scenario 4: Reject invalid locale" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is selecting a locale<br>
+<!-- -->When the user attempts to set locale to &quot;xx-XX&quot; (unsupported)<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then validation fails<br>
+<!-- -->And an error message &quot;Locale not supported&quot; is displayed<br>
+<!-- -->And locale is not changed<br>
+<!-- -->And no LocaleChanged event is published</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-locale-persists-across-sessions">Scenario 5: Locale persists across sessions<a href="#scenario-5-locale-persists-across-sessions" class="hash-link" aria-label="Direct link to Scenario 5: Locale persists across sessions" title="Direct link to Scenario 5: Locale persists across sessions" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has selected locale &quot;fr-FR&quot;<br>
+<!-- -->When the user logs out and logs back in<br>
+<!-- -->Then the locale is restored to &quot;fr-FR&quot;<br>
+<!-- -->And the application loads with French language<br>
+<!-- -->And French date/number formats</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-default-locale-for-new-users">Scenario 6: Default locale for new users<a href="#scenario-6-default-locale-for-new-users" class="hash-link" aria-label="Direct link to Scenario 6: Default locale for new users" title="Direct link to Scenario 6: Default locale for new users" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a new user has just registered<br>
+<!-- -->When default preferences are created<br>
+<!-- -->Then locale is set to &quot;en-US&quot;<br>
+<!-- -->And the application uses English language</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use i18n library (e.g., Angular i18n, react-intl, Java ResourceBundle)</li>
+<li class="">Store locale as BCP 47 language tag (e.g., &quot;en-US&quot;, &quot;es-ES&quot;)</li>
+<li class="">Validate locale against supported locale catalog</li>
+<li class="">Load language resource bundles dynamically</li>
+<li class="">Use locale for date formatting (DateTimeFormatter, Intl.DateTimeFormat)</li>
+<li class="">Use locale for number formatting (NumberFormat, Intl.NumberFormat)</li>
+<li class="">Consider implementing locale autodetection from browser settings (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should the system support right-to-left (RTL) languages?</li>
+<li class="">Should locale be autodetected from browser settings by default?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-pre-003-timezone-management">FR-PRE-003: Timezone management<a href="#fr-pre-003-timezone-management" class="hash-link" aria-label="Direct link to FR-PRE-003: Timezone management" title="Direct link to FR-PRE-003: Timezone management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users should be able to select their preferred timezone for displaying dates and times. Timezone affects how timestamps
+are displayed throughout the application, ensuring times are shown in the user&#x27;s local context.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">UserPreferences aggregate must exist</li>
+<li class="">Timezone must be valid IANA timezone identifier</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Timezone preference is updated</li>
+<li class="">TimezoneChanged event is published (optional)</li>
+<li class="">Timestamps displayed in selected timezone</li>
+<li class="">Timezone preference persists across sessions</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Default timezone is browser-detected or UTC</li>
+<li class="">Supported timezones are IANA timezone database identifiers (e.g., &quot;America/New_York&quot;, &quot;Europe/Madrid&quot;)</li>
+<li class="">Invalid timezones are rejected with validation error</li>
+<li class="">Timezone changes apply immediately</li>
+<li class="">All timestamps are stored in UTC and converted for display</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: UserPreferences (root)</li>
+<li class="">Domain Events: PreferencesUpdated, UserRegistered (consumed)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">User Identity context (UserId association)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can select timezone from searchable list</li>
+<li class="">Timezone changes apply immediately</li>
+<li class="">PreferencesUpdated event is published with new timezone</li>
+<li class="">All timestamps display in selected timezone</li>
+<li class="">Timezone preference persists across sessions</li>
+<li class="">Invalid timezone selection shows error message</li>
+<li class="">System displays timezone offset (e.g., UTC-5, UTC+1)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-PRE-003-001: Select timezone</li>
+<li class="">US-PRE-003-002: View timestamps in timezone</li>
+<li class="">US-PRE-003-003: Autodetect timezone from browser</li>
+<li class="">US-PRE-003-004: Reject invalid timezone</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-2">Scenarios<a href="#scenarios-2" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-select-timezone-happy-path">Scenario 1: Select timezone (happy path)<a href="#scenario-1-select-timezone-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Select timezone (happy path)" title="Direct link to Scenario 1: Select timezone (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is viewing preferences settings<br>
+<!-- -->And current timezone is &quot;UTC&quot;<br>
+<!-- -->When the user selects timezone &quot;America/New_York&quot;<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then the timezone preference is updated to &quot;America/New_York&quot;<br>
+<!-- -->And a PreferencesUpdated event is published<br>
+<!-- -->And all timestamps display in Eastern Time<br>
+<!-- -->And timezone offset is shown (e.g., UTC-5 or UTC-4 depending on DST)<br>
+<!-- -->And the preference is persisted</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-view-timestamps-in-timezone">Scenario 2: View timestamps in timezone<a href="#scenario-2-view-timestamps-in-timezone" class="hash-link" aria-label="Direct link to Scenario 2: View timestamps in timezone" title="Direct link to Scenario 2: View timestamps in timezone" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has timezone set to &quot;Europe/Madrid&quot; (UTC+1/UTC+2)<br>
+<!-- -->And an event is scheduled at &quot;2025-11-20T10:00:00Z&quot; (UTC)<br>
+<!-- -->When the user views the event<br>
+<!-- -->Then the time is displayed as &quot;11:00&quot; or &quot;12:00&quot; (depending on DST)<br>
+<!-- -->And timezone is indicated (CET or CEST)</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-autodetect-timezone-from-browser">Scenario 3: Autodetect timezone from browser<a href="#scenario-3-autodetect-timezone-from-browser" class="hash-link" aria-label="Direct link to Scenario 3: Autodetect timezone from browser" title="Direct link to Scenario 3: Autodetect timezone from browser" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a new user is registering<br>
+<!-- -->When default preferences are created<br>
+<!-- -->Then the system detects browser timezone using Intl.DateTimeFormat().resolvedOptions().timeZone<br>
+<!-- -->And sets timezone to detected value (e.g., &quot;America/Los_Angeles&quot;)<br>
+<!-- -->And the user can change it later if needed</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-invalid-timezone">Scenario 4: Reject invalid timezone<a href="#scenario-4-reject-invalid-timezone" class="hash-link" aria-label="Direct link to Scenario 4: Reject invalid timezone" title="Direct link to Scenario 4: Reject invalid timezone" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is selecting a timezone<br>
+<!-- -->When the user attempts to set timezone to &quot;Invalid/Timezone&quot;<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then validation fails<br>
+<!-- -->And an error message &quot;Invalid timezone&quot; is displayed<br>
+<!-- -->And timezone is not changed<br>
+<!-- -->And no PreferencesUpdated event is published</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-timezone-persists-across-sessions">Scenario 5: Timezone persists across sessions<a href="#scenario-5-timezone-persists-across-sessions" class="hash-link" aria-label="Direct link to Scenario 5: Timezone persists across sessions" title="Direct link to Scenario 5: Timezone persists across sessions" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has selected timezone &quot;Asia/Tokyo&quot;<br>
+<!-- -->When the user logs out and logs back in<br>
+<!-- -->Then the timezone is restored to &quot;Asia/Tokyo&quot;<br>
+<!-- -->And all timestamps display in Japan Standard Time</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-search-timezone-by-city-name">Scenario 6: Search timezone by city name<a href="#scenario-6-search-timezone-by-city-name" class="hash-link" aria-label="Direct link to Scenario 6: Search timezone by city name" title="Direct link to Scenario 6: Search timezone by city name" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is selecting timezone<br>
+<!-- -->When the user types &quot;Madrid&quot; in the search box<br>
+<!-- -->Then matching timezones are filtered:</p><ul>
+<li class="">Europe/Madrid<br>
+<!-- -->And the user can select from the filtered list</li>
+</ul></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use IANA timezone database (tzdata)</li>
+<li class="">Store timezone as IANA identifier (e.g., &quot;America/New_York&quot;)</li>
+<li class="">Use timezone-aware date libraries (e.g., Luxon, date-fns-tz, ZonedDateTime in Java)</li>
+<li class="">Store all timestamps in UTC in database</li>
+<li class="">Convert to user&#x27;s timezone for display only</li>
+<li class="">Handle Daylight Saving Time (DST) transitions correctly</li>
+<li class="">Provide timezone search/autocomplete for better UX</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should timezone be autodetected and updated when user travels?</li>
+<li class="">Should there be quick-select common timezones?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-pre-004-default-preferences">FR-PRE-004: Default preferences<a href="#fr-pre-004-default-preferences" class="hash-link" aria-label="Direct link to FR-PRE-004: Default preferences" title="Direct link to FR-PRE-004: Default preferences" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must create default preferences for new users when they register. Default preferences provide sensible
+initial values that ensure the application works immediately without requiring user configuration.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">UserRegistered event is received from User Identity context</li>
+<li class="">UserId is provided in the event</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">UserPreferences aggregate is created with defaults</li>
+<li class="">Preferences are persisted</li>
+<li class="">PreferencesCreated event is published (optional)</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Default preferences are created automatically on user registration</li>
+<li class="">Default theme: &quot;System&quot; (follows OS preference)</li>
+<li class="">Default locale: &quot;en-US&quot; (English - United States)</li>
+<li class="">Default timezone: Browser-detected or UTC</li>
+<li class="">Default widget settings: Reasonable defaults per widget type</li>
+<li class="">User can change defaults at any time after registration</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (automatic on user registration)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: UserPreferences (root)</li>
+<li class="">Domain Events: UserRegistered (consumed), PreferencesCreated (published)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">User Identity context (UserRegistered event)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">UserPreferences aggregate is created on UserRegistered event</li>
+<li class="">Default values are applied for all preference fields</li>
+<li class="">Theme is set to &quot;System&quot;</li>
+<li class="">Locale is set to &quot;en-US&quot;</li>
+<li class="">Timezone is set to browser-detected or UTC</li>
+<li class="">Preferences are persisted to database</li>
+<li class="">PreferencesCreated event is published</li>
+<li class="">Operation is idempotent (no duplicate preferences)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-PRE-004-001: Create default preferences on registration</li>
+<li class="">US-PRE-004-002: Verify default values</li>
+<li class="">US-PRE-004-003: User can change defaults</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-3">Scenarios<a href="#scenarios-3" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-default-preferences-on-registration-happy-path">Scenario 1: Create default preferences on registration (happy path)<a href="#scenario-1-create-default-preferences-on-registration-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create default preferences on registration (happy path)" title="Direct link to Scenario 1: Create default preferences on registration (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a new user &quot;john_doe&quot; has just registered<br>
+<!-- -->When the system processes UserRegistered event<br>
+<!-- -->Then a UserPreferences aggregate is created for &quot;john_doe&quot;<br>
+<!-- -->And theme is set to &quot;System&quot;<br>
+<!-- -->And locale is set to &quot;en-US&quot;<br>
+<!-- -->And timezone is set to browser-detected value (or UTC)<br>
+<!-- -->And widget defaults are set (empty or reasonable values)<br>
+<!-- -->And preferences are persisted to database<br>
+<!-- -->And a PreferencesCreated event is published</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-verify-default-values">Scenario 2: Verify default values<a href="#scenario-2-verify-default-values" class="hash-link" aria-label="Direct link to Scenario 2: Verify default values" title="Direct link to Scenario 2: Verify default values" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a new user has registered<br>
+<!-- -->When the user views preferences settings<br>
+<!-- -->Then theme shows &quot;System&quot; selected<br>
+<!-- -->And locale shows &quot;en-US&quot; selected<br>
+<!-- -->And timezone shows detected or UTC value<br>
+<!-- -->And all defaults are displayed correctly</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-user-can-change-defaults">Scenario 3: User can change defaults<a href="#scenario-3-user-can-change-defaults" class="hash-link" aria-label="Direct link to Scenario 3: User can change defaults" title="Direct link to Scenario 3: User can change defaults" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a new user has default preferences<br>
+<!-- -->When the user changes theme to &quot;Dark&quot;<br>
+<!-- -->And changes locale to &quot;es-ES&quot;<br>
+<!-- -->And saves preferences<br>
+<!-- -->Then the changes are persisted<br>
+<!-- -->And override the defaults<br>
+<!-- -->And the application uses new values</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-idempotent-preference-creation">Scenario 4: Idempotent preference creation<a href="#scenario-4-idempotent-preference-creation" class="hash-link" aria-label="Direct link to Scenario 4: Idempotent preference creation" title="Direct link to Scenario 4: Idempotent preference creation" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given UserRegistered event is processed<br>
+<!-- -->And UserPreferences are created<br>
+<!-- -->When the event is processed again (e.g., retry)<br>
+<!-- -->Then no duplicate preferences are created<br>
+<!-- -->And existing preferences remain unchanged<br>
+<!-- -->And no error occurs</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-browser-timezone-detection">Scenario 5: Browser timezone detection<a href="#scenario-5-browser-timezone-detection" class="hash-link" aria-label="Direct link to Scenario 5: Browser timezone detection" title="Direct link to Scenario 5: Browser timezone detection" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user registers from browser in &quot;America/Los_Angeles&quot; timezone<br>
+<!-- -->When default preferences are created<br>
+<!-- -->Then timezone is detected as &quot;America/Los_Angeles&quot;<br>
+<!-- -->And set as default timezone<br>
+<!-- -->And the user sees timestamps in Pacific Time</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use event handler to consume UserRegistered event</li>
+<li class="">Implement idempotency using userId as unique key</li>
+<li class="">Browser timezone detection: <code>Intl.DateTimeFormat().resolvedOptions().timeZone</code></li>
+<li class="">Ensure default creation is transactional</li>
+<li class="">Log preference creation for audit</li>
+<li class="">Consider making default values configurable (environment variables)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should defaults vary by user region (e.g., locale detected from IP)?</li>
+<li class="">Should there be organization-level default overrides (future)?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-pre-005-preference-persistence">FR-PRE-005: Preference persistence<a href="#fr-pre-005-preference-persistence" class="hash-link" aria-label="Direct link to FR-PRE-005: Preference persistence" title="Direct link to FR-PRE-005: Preference persistence" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must persist user preferences to ensure they survive application restarts and are available across sessions
+and devices. Persistence guarantees that user customizations are not lost.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">UserPreferences aggregate exists</li>
+<li class="">Preferences have been modified</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Preferences are persisted to database</li>
+<li class="">Preferences can be retrieved on subsequent access</li>
+<li class="">Consistency is maintained across concurrent updates</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">All preference changes are persisted immediately</li>
+<li class="">Preferences are retrieved when user logs in</li>
+<li class="">Concurrent updates are handled safely (optimistic locking)</li>
+<li class="">Failed persistence operations are logged and retried</li>
+<li class="">Persistence must be transactional (ACID properties)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (automatic persistence)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: UserPreferences (root)</li>
+<li class="">Domain Events: All preference events</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">Database storage</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Preference changes are persisted immediately after update</li>
+<li class="">Preferences can be retrieved by UserId</li>
+<li class="">Preferences persist across sessions (logout/login)</li>
+<li class="">Preferences persist across application restarts</li>
+<li class="">Concurrent updates are handled safely (optimistic locking)</li>
+<li class="">Failed persistence operations are logged</li>
+<li class="">Persistence operations are atomic</li>
+<li class="">Read operations are efficient (indexed by UserId)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-PRE-005-001: Persist preference changes</li>
+<li class="">US-PRE-005-002: Retrieve preferences on login</li>
+<li class="">US-PRE-005-003: Handle concurrent updates</li>
+<li class="">US-PRE-005-004: Persist across restarts</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-4">Scenarios<a href="#scenarios-4" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-persist-preference-changes-happy-path">Scenario 1: Persist preference changes (happy path)<a href="#scenario-1-persist-preference-changes-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Persist preference changes (happy path)" title="Direct link to Scenario 1: Persist preference changes (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user changes theme from &quot;Light&quot; to &quot;Dark&quot;<br>
+<!-- -->When the preference update is saved<br>
+<!-- -->Then the preference is immediately persisted to database<br>
+<!-- -->And a ThemeChanged event is published<br>
+<!-- -->And persistence completes successfully</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-retrieve-preferences-on-login">Scenario 2: Retrieve preferences on login<a href="#scenario-2-retrieve-preferences-on-login" class="hash-link" aria-label="Direct link to Scenario 2: Retrieve preferences on login" title="Direct link to Scenario 2: Retrieve preferences on login" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has previously set preferences (Dark theme, es-ES locale)<br>
+<!-- -->When the user logs in<br>
+<!-- -->Then preferences are retrieved from database by UserId<br>
+<!-- -->And theme is loaded as &quot;Dark&quot;<br>
+<!-- -->And locale is loaded as &quot;es-ES&quot;<br>
+<!-- -->And application applies these preferences</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-handle-concurrent-updates">Scenario 3: Handle concurrent updates<a href="#scenario-3-handle-concurrent-updates" class="hash-link" aria-label="Direct link to Scenario 3: Handle concurrent updates" title="Direct link to Scenario 3: Handle concurrent updates" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has preferences open in two browser tabs<br>
+<!-- -->When the user updates theme in tab 1<br>
+<!-- -->And simultaneously updates locale in tab 2<br>
+<!-- -->Then optimistic locking detects the conflict<br>
+<!-- -->And one operation succeeds immediately<br>
+<!-- -->And the other operation is retried with updated state<br>
+<!-- -->And both changes are successfully persisted<br>
+<!-- -->And no data is lost</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-persist-across-restarts">Scenario 4: Persist across restarts<a href="#scenario-4-persist-across-restarts" class="hash-link" aria-label="Direct link to Scenario 4: Persist across restarts" title="Direct link to Scenario 4: Persist across restarts" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has set preferences<br>
+<!-- -->When the application is restarted<br>
+<!-- -->And the user logs in<br>
+<!-- -->Then preferences are loaded from persistent storage<br>
+<!-- -->And all user settings are restored<br>
+<!-- -->And the application applies them correctly</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-persistence-failure---retry">Scenario 5: Persistence failure - retry<a href="#scenario-5-persistence-failure---retry" class="hash-link" aria-label="Direct link to Scenario 5: Persistence failure - retry" title="Direct link to Scenario 5: Persistence failure - retry" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user changes preferences<br>
+<!-- -->When persistence fails due to database error<br>
+<!-- -->Then the error is logged<br>
+<!-- -->And the operation is queued for retry<br>
+<!-- -->And the user is notified of the temporary issue<br>
+<!-- -->And the system retries with exponential backoff<br>
+<!-- -->And succeeds on retry</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use relational database with userId as primary/foreign key</li>
+<li class="">Implement optimistic locking with version field</li>
+<li class="">Use database transactions for atomic updates</li>
+<li class="">Index preferences table by userId for efficient retrieval</li>
+<li class="">Implement retry logic with exponential backoff</li>
+<li class="">Log all persistence operations for debugging</li>
+<li class="">Consider caching preferences in Redis for performance (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be preference versioning for rollback?</li>
+<li class="">Should preferences be backed up separately?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-pre-006-preference-validation">FR-PRE-006: Preference validation<a href="#fr-pre-006-preference-validation" class="hash-link" aria-label="Direct link to FR-PRE-006: Preference validation" title="Direct link to FR-PRE-006: Preference validation" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must validate preference values before persisting to ensure data integrity and prevent invalid
+configurations. Validation includes checking against supported value catalogs and format requirements.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User is updating preferences</li>
+<li class="">Preference values are provided</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Valid preferences are accepted and persisted</li>
+<li class="">Invalid preferences are rejected with error messages</li>
+<li class="">Validation errors are logged</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Theme must be one of: Light, Dark, System</li>
+<li class="">Locale must be supported (from locale catalog)</li>
+<li class="">Timezone must be valid IANA identifier</li>
+<li class="">All preference values must pass validation before persistence</li>
+<li class="">Validation errors provide helpful error messages</li>
+<li class="">Invalid updates do not modify existing preferences</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (automatic validation)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: UserPreferences (root)</li>
+<li class="">Domain Events: None (validation only)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">Supported value catalogs (themes, locales, timezones)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Theme values are validated against enum (Light, Dark, System)</li>
+<li class="">Locale values are validated against supported locale catalog</li>
+<li class="">Timezone values are validated against IANA timezone database</li>
+<li class="">Invalid values are rejected with appropriate error messages</li>
+<li class="">Validation occurs before persistence</li>
+<li class="">Validation errors are logged</li>
+<li class="">User receives clear feedback on validation failures</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-PRE-006-001: Validate theme value</li>
+<li class="">US-PRE-006-002: Validate locale value</li>
+<li class="">US-PRE-006-003: Validate timezone value</li>
+<li class="">US-PRE-006-004: Reject multiple invalid values</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-5">Scenarios<a href="#scenarios-5" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-validate-theme-value-happy-path">Scenario 1: Validate theme value (happy path)<a href="#scenario-1-validate-theme-value-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Validate theme value (happy path)" title="Direct link to Scenario 1: Validate theme value (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating preferences<br>
+<!-- -->When the user sets theme to &quot;Dark&quot;<br>
+<!-- -->Then theme value is validated against enum (Light, Dark, System)<br>
+<!-- -->And validation passes<br>
+<!-- -->And preference is updated</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-reject-invalid-theme-value">Scenario 2: Reject invalid theme value<a href="#scenario-2-reject-invalid-theme-value" class="hash-link" aria-label="Direct link to Scenario 2: Reject invalid theme value" title="Direct link to Scenario 2: Reject invalid theme value" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating preferences<br>
+<!-- -->When the user attempts to set theme to &quot;Blue&quot; (invalid)<br>
+<!-- -->Then validation fails<br>
+<!-- -->And an error message &quot;Invalid theme. Supported: Light, Dark, System&quot; is displayed<br>
+<!-- -->And the preference is not updated</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-validate-locale-value">Scenario 3: Validate locale value<a href="#scenario-3-validate-locale-value" class="hash-link" aria-label="Direct link to Scenario 3: Validate locale value" title="Direct link to Scenario 3: Validate locale value" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating preferences<br>
+<!-- -->When the user sets locale to &quot;fr-FR&quot;<br>
+<!-- -->And &quot;fr-FR&quot; is in the supported locale catalog<br>
+<!-- -->Then validation passes<br>
+<!-- -->And preference is updated</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-invalid-locale-value">Scenario 4: Reject invalid locale value<a href="#scenario-4-reject-invalid-locale-value" class="hash-link" aria-label="Direct link to Scenario 4: Reject invalid locale value" title="Direct link to Scenario 4: Reject invalid locale value" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating preferences<br>
+<!-- -->When the user sets locale to &quot;xx-XX&quot; (unsupported)<br>
+<!-- -->Then validation fails<br>
+<!-- -->And an error message &quot;Locale not supported&quot; is displayed<br>
+<!-- -->And available locales are suggested<br>
+<!-- -->And the preference is not updated</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-validate-timezone-value">Scenario 5: Validate timezone value<a href="#scenario-5-validate-timezone-value" class="hash-link" aria-label="Direct link to Scenario 5: Validate timezone value" title="Direct link to Scenario 5: Validate timezone value" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating preferences<br>
+<!-- -->When the user sets timezone to &quot;America/New_York&quot;<br>
+<!-- -->And &quot;America/New_York&quot; is valid IANA identifier<br>
+<!-- -->Then validation passes<br>
+<!-- -->And preference is updated</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-reject-invalid-timezone-value">Scenario 6: Reject invalid timezone value<a href="#scenario-6-reject-invalid-timezone-value" class="hash-link" aria-label="Direct link to Scenario 6: Reject invalid timezone value" title="Direct link to Scenario 6: Reject invalid timezone value" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating preferences<br>
+<!-- -->When the user sets timezone to &quot;Invalid/Timezone&quot;<br>
+<!-- -->Then validation fails<br>
+<!-- -->And an error message &quot;Invalid timezone identifier&quot; is displayed<br>
+<!-- -->And the preference is not updated</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-reject-multiple-invalid-values">Scenario 7: Reject multiple invalid values<a href="#scenario-7-reject-multiple-invalid-values" class="hash-link" aria-label="Direct link to Scenario 7: Reject multiple invalid values" title="Direct link to Scenario 7: Reject multiple invalid values" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user is updating multiple preferences<br>
+<!-- -->When the user sets theme to &quot;Blue&quot; (invalid)<br>
+<!-- -->And sets locale to &quot;xx-XX&quot; (invalid)<br>
+<!-- -->And sets timezone to &quot;America/New_York&quot; (valid)<br>
+<!-- -->Then validation fails for theme and locale<br>
+<!-- -->And error messages list all validation errors<br>
+<!-- -->And none of the preferences are updated<br>
+<!-- -->And the operation is atomic (all or nothing)</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement validation at domain model level (before persistence)</li>
+<li class="">Use enum for theme validation (compile-time safety)</li>
+<li class="">Load supported locales from configuration file</li>
+<li class="">Validate timezone using TimeZone.getAvailableIDs() or similar</li>
+<li class="">Provide detailed validation error messages</li>
+<li class="">Log validation failures with context</li>
+<li class="">Consider implementing custom validators for extensibility</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should validation be client-side only, server-side only, or both?</li>
+<li class="">Should there be validation warnings in addition to errors?</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="cross-feature-considerations">Cross-feature considerations<a href="#cross-feature-considerations" class="hash-link" aria-label="Direct link to Cross-feature considerations" title="Direct link to Cross-feature considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="interactions-between-features">Interactions between features<a href="#interactions-between-features" class="hash-link" aria-label="Direct link to Interactions between features" title="Direct link to Interactions between features" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Theme Management ↔ Preference Persistence:</strong> Theme changes are immediately persisted</li>
+<li class=""><strong>Locale Management ↔ Preference Persistence:</strong> Locale changes are immediately persisted</li>
+<li class=""><strong>Timezone Management ↔ Preference Persistence:</strong> Timezone changes are immediately persisted</li>
+<li class=""><strong>Default Preferences ↔ All Features:</strong> Defaults initialize all preference fields on registration</li>
+<li class=""><strong>Preference Validation ↔ All Features:</strong> Validation applies to all preference updates</li>
+<li class=""><strong>All Features ↔ Event Publishing:</strong> Preference changes publish events to downstream contexts</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="shared-business-rules">Shared business rules<a href="#shared-business-rules" class="hash-link" aria-label="Direct link to Shared business rules" title="Direct link to Shared business rules" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>User Scoping:</strong> All preferences belong to exactly one user</li>
+<li class=""><strong>Atomicity:</strong> All preference updates must be atomic (all or nothing)</li>
+<li class=""><strong>Validation:</strong> All preference values must be validated before persistence</li>
+<li class=""><strong>Immediate Effect:</strong> All preference changes apply immediately without page reload</li>
+<li class=""><strong>Persistence:</strong> All preferences must persist across sessions</li>
+<li class=""><strong>Event Publishing:</strong> Preference changes must publish events after successful persistence</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="data-consistency-requirements">Data consistency requirements<a href="#data-consistency-requirements" class="hash-link" aria-label="Direct link to Data consistency requirements" title="Direct link to Data consistency requirements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Strong Consistency:</strong> Preference updates require strong consistency</li>
+<li class=""><strong>Transactional Boundaries:</strong> UserPreferences aggregate is the transactional boundary</li>
+<li class=""><strong>Event Publishing:</strong> Events must be published after successful persistence (transactional outbox pattern)</li>
+<li class=""><strong>Optimistic Locking:</strong> Concurrent updates must use optimistic locking to prevent conflicts</li>
+<li class=""><strong>Default Creation:</strong> Default preference creation must be idempotent</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="business-constraints-impact">Business constraints impact<a href="#business-constraints-impact" class="hash-link" aria-label="Direct link to Business constraints impact" title="Direct link to Business constraints impact" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-001-budget">BC-001: Budget<a href="#bc-001-budget" class="hash-link" aria-label="Direct link to BC-001: Budget" title="Direct link to BC-001: Budget" translate="no">​</a></h3>
+<p>Preferences management must operate within zero-cost infrastructure constraints:</p>
+<ul>
+<li class=""><strong>Storage:</strong> Use free-tier database (PostgreSQL) for preference storage</li>
+<li class=""><strong>Caching:</strong> Use in-memory cache initially (no paid Redis required)</li>
+<li class=""><strong>Event Publishing:</strong> Use local event bus initially (no paid message queue)</li>
+<li class=""><strong>Validation:</strong> Use local validation (no external validation services)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-002-timeline">BC-002: Timeline<a href="#bc-002-timeline" class="hash-link" aria-label="Direct link to BC-002: Timeline" title="Direct link to BC-002: Timeline" translate="no">​</a></h3>
+<p>Preferences management is on critical path for MVP (3-6 months):</p>
+<ul>
+<li class=""><strong>Must Have features</strong> (FR-PRE-001, 004, 005, 006) required for MVP</li>
+<li class=""><strong>Should Have features</strong> (FR-PRE-002, 003) enhance UX but can be simplified</li>
+<li class="">Prioritize theme management and default preferences</li>
+<li class="">Defer advanced locale/timezone features to post-MVP if needed</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-003-resources">BC-003: Resources<a href="#bc-003-resources" class="hash-link" aria-label="Direct link to BC-003: Resources" title="Direct link to BC-003: Resources" translate="no">​</a></h3>
+<p>Single-developer constraints affect Preferences management:</p>
+<ul>
+<li class=""><strong>Simplify Locale:</strong> Start with English only, add more languages incrementally</li>
+<li class=""><strong>Simplify Timezone:</strong> Autodetect from browser, allow manual change later</li>
+<li class=""><strong>Automate Testing:</strong> Heavy investment in validation tests</li>
+<li class=""><strong>Incremental Development:</strong> Build theme first, then defaults, then locale/timezone</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-004-technology-stack">BC-004: Technology stack<a href="#bc-004-technology-stack" class="hash-link" aria-label="Direct link to BC-004: Technology stack" title="Direct link to BC-004: Technology stack" translate="no">​</a></h3>
+<p>Preferences management aligns with chosen stack:</p>
+<ul>
+<li class=""><strong>Backend:</strong> Spring Boot REST APIs for preference CRUD</li>
+<li class=""><strong>Database:</strong> PostgreSQL for preference storage</li>
+<li class=""><strong>Events:</strong> Spring Events initially; design for future Kafka/RabbitMQ migration</li>
+<li class=""><strong>Validation:</strong> Bean Validation (JSR-303) for preference validation</li>
+<li class=""><strong>Frontend:</strong> Angular components for preference UI, reactive forms</li>
+<li class=""><strong>Caching:</strong> Spring Cache abstraction with Caffeine (in-memory)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="success-metrics-alignment">Success metrics alignment<a href="#success-metrics-alignment" class="hash-link" aria-label="Direct link to Success metrics alignment" title="Direct link to Success metrics alignment" translate="no">​</a></h2>
+<p>Preferences management contributes to the following success metrics from BR-001 through BR-008:</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-003-technical-metrics">BR-003: Technical metrics<a href="#br-003-technical-metrics" class="hash-link" aria-label="Direct link to BR-003: Technical metrics" title="Direct link to BR-003: Technical metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Preferences contribution</th></tr></thead><tbody><tr><td><strong>API Response Time</strong></td><td>&lt; 200ms (p95)</td><td>Fast preference retrieval, efficient caching</td></tr><tr><td><strong>Test Coverage</strong></td><td>&gt; 80%</td><td>Comprehensive validation tests for all FR-PRE features</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-001-portfolio-quality-metrics">BR-001: Portfolio quality metrics<a href="#br-001-portfolio-quality-metrics" class="hash-link" aria-label="Direct link to BR-001: Portfolio quality metrics" title="Direct link to BR-001: Portfolio quality metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Preferences contribution</th></tr></thead><tbody><tr><td><strong>Architecture Documentation</strong></td><td>All views complete</td><td>Preferences aggregate design, cross-cutting concerns</td></tr><tr><td><strong>Code Quality Score</strong></td><td>No critical issues</td><td>Clean preference management, proper validation</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-002-br-005-user-experience-metrics">BR-002, BR-005: User experience metrics<a href="#br-002-br-005-user-experience-metrics" class="hash-link" aria-label="Direct link to BR-002, BR-005: User experience metrics" title="Direct link to BR-002, BR-005: User experience metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Preferences contribution</th></tr></thead><tbody><tr><td><strong>Task Completion Rate</strong></td><td>&gt; 95%</td><td>Simple preference UI, clear theme/locale selection</td></tr><tr><td><strong>Mobile Usability</strong></td><td>Fully Responsive</td><td>Responsive preference forms, touch-friendly controls</td></tr><tr><td><strong>Accessibility Score</strong></td><td>WCAG 2.1 Level AA</td><td>Accessible preference UI, clear labels and feedback</td></tr><tr><td><strong>User Satisfaction</strong></td><td>&gt; 4.0/5.0</td><td>Personalized experience, immediate theme changes</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="traceability-matrix">Traceability matrix<a href="#traceability-matrix" class="hash-link" aria-label="Direct link to Traceability matrix" title="Direct link to Traceability matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Feature</th><th>Business Req</th><th>Domain Events</th><th>User Stories</th></tr></thead><tbody><tr><td>FR-PRE-001</td><td>BR-001, BR-002, BR-005</td><td>ThemeChanged, UserRegistered</td><td>US-PRE-001-001/002/003/004</td></tr><tr><td>FR-PRE-002</td><td>BR-001, BR-002, BR-005</td><td>LocaleChanged, UserRegistered</td><td>US-PRE-002-001/002/003/004</td></tr><tr><td>FR-PRE-003</td><td>BR-001, BR-002, BR-005</td><td>PreferencesUpdated, UserRegistered</td><td>US-PRE-003-001/002/003/004</td></tr><tr><td>FR-PRE-004</td><td>BR-001, BR-002, BR-005</td><td>PreferencesCreated, UserRegistered (consumed)</td><td>US-PRE-004-001/002/003</td></tr><tr><td>FR-PRE-005</td><td>BR-001, BR-003, BR-005</td><td>All preference events</td><td>US-PRE-005-001/002/003/004</td></tr><tr><td>FR-PRE-006</td><td>BR-001, BR-003, BR-005</td><td>None (validation only)</td><td>US-PRE-006-001/002/003/004</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/functional/preferences.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/functional/user-identity"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">User identity</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/functional/synchronization"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Synchronization</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a><ul><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#fr-pre-001-theme-management" class="table-of-contents__link toc-highlight">FR-PRE-001: Theme management</a></li><li><a href="#fr-pre-002-locale-management" class="table-of-contents__link toc-highlight">FR-PRE-002: Locale management</a></li><li><a href="#fr-pre-003-timezone-management" class="table-of-contents__link toc-highlight">FR-PRE-003: Timezone management</a></li><li><a href="#fr-pre-004-default-preferences" class="table-of-contents__link toc-highlight">FR-PRE-004: Default preferences</a></li><li><a href="#fr-pre-005-preference-persistence" class="table-of-contents__link toc-highlight">FR-PRE-005: Preference persistence</a></li><li><a href="#fr-pre-006-preference-validation" class="table-of-contents__link toc-highlight">FR-PRE-006: Preference validation</a></li></ul></li><li><a href="#cross-feature-considerations" class="table-of-contents__link toc-highlight">Cross-feature considerations</a><ul><li><a href="#interactions-between-features" class="table-of-contents__link toc-highlight">Interactions between features</a></li><li><a href="#shared-business-rules" class="table-of-contents__link toc-highlight">Shared business rules</a></li><li><a href="#data-consistency-requirements" class="table-of-contents__link toc-highlight">Data consistency requirements</a></li></ul></li><li><a href="#business-constraints-impact" class="table-of-contents__link toc-highlight">Business constraints impact</a><ul><li><a href="#bc-001-budget" class="table-of-contents__link toc-highlight">BC-001: Budget</a></li><li><a href="#bc-002-timeline" class="table-of-contents__link toc-highlight">BC-002: Timeline</a></li><li><a href="#bc-003-resources" class="table-of-contents__link toc-highlight">BC-003: Resources</a></li><li><a href="#bc-004-technology-stack" class="table-of-contents__link toc-highlight">BC-004: Technology stack</a></li></ul></li><li><a href="#success-metrics-alignment" class="table-of-contents__link toc-highlight">Success metrics alignment</a><ul><li><a href="#br-003-technical-metrics" class="table-of-contents__link toc-highlight">BR-003: Technical metrics</a></li><li><a href="#br-001-portfolio-quality-metrics" class="table-of-contents__link toc-highlight">BR-001: Portfolio quality metrics</a></li><li><a href="#br-002-br-005-user-experience-metrics" class="table-of-contents__link toc-highlight">BR-002, BR-005: User experience metrics</a></li></ul></li><li><a href="#traceability-matrix" class="table-of-contents__link toc-highlight">Traceability matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

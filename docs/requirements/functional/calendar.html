@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/functional/calendar" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Calendar | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/functional/calendar"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Calendar | Browser Dashboard PWA"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/functional/calendar"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/calendar" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/calendar" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Calendar","item":"https://migmolrod.github.io/docs/requirements/functional/calendar"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/dashboard-management"><span title="Dashboard Management" class="linkLabel_dWUb">Dashboard Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/bookmarks"><span title="Bookmarks" class="linkLabel_dWUb">Bookmarks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/tasks"><span title="Tasks" class="linkLabel_dWUb">Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/requirements/functional/calendar"><span title="Calendar" class="linkLabel_dWUb">Calendar</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/weather"><span title="Weather" class="linkLabel_dWUb">Weather</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/user-identity"><span title="User identity" class="linkLabel_dWUb">User identity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/preferences"><span title="Preferences" class="linkLabel_dWUb">Preferences</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/synchronization"><span title="Synchronization" class="linkLabel_dWUb">Synchronization</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Functional requirements</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Calendar</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><div class="reqMetadata_OnDx"><div><strong>Status: </strong><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></div><span><strong>Last updated</strong>: <!-- -->November 17, 2025</span></div>
+<header><h1>Calendar</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Calendar bounded context provides personal event management with basic scheduling, reminders, and multiple view
+modes. It handles the complete event lifecycle from creation to deletion, while supplying event data to dashboard
+widgets and accepting event creation requests from the Tasks context.</p>
+<p><strong>Bounded context code:</strong> CAL<br>
+<strong>Related DMD section:</strong> <a class="" href="/docs/domain/bounded-contexts/calendar">Calendar (Supporting)</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Feature Code</th><th>Feature Name</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td>FR-CAL-001</td><td>Event management</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-002</td><td>Calendar views</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-003</td><td>Recurring events</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-004</td><td>Event reminders</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-005</td><td>Event categories</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-006</td><td>Event time conflict detection</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-007</td><td>Task integration</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-008</td><td>Event import/export</td><td><span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-CAL-009</td><td>All-day events</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-001-event-management">FR-CAL-001: Event management<a href="#fr-cal-001-event-management" class="hash-link" aria-label="Direct link to FR-CAL-001: Event management" title="Direct link to FR-CAL-001: Event management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users must be able to create, edit, and delete calendar events. Each event consists of a title (required), start time,
+end time, optional description, location, and category. Events are scoped to individual users and form the foundation of
+personal calendar management.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have a default calendar (created on user registration)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Event is created/updated/deleted</li>
+<li class="">Event is associated with the user&#x27;s calendar</li>
+<li class="">EventCreated/EventUpdated/EventDeleted event is published</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Each event must have a non-empty title (1-200 characters)</li>
+<li class="">Start time is required</li>
+<li class="">End time is required and must be after start time</li>
+<li class="">Description is optional and length-bounded (max 2000 characters)</li>
+<li class="">Location is optional and length-bounded (max 500 characters)</li>
+<li class="">Each event has a unique EventId</li>
+<li class="">Events belong to exactly one calendar (single calendar in MVP)</li>
+<li class="">Events can be soft-deleted or permanently deleted</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Calendar (root), Event</li>
+<li class="">Domain Events: EventCreated, EventUpdated, EventDeleted, UserRegistered (consumed)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">User Identity context (Conformist relationship)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can create an event with title, start time, and end time</li>
+<li class="">Event is assigned a unique EventId</li>
+<li class="">Event is persisted with validated time range</li>
+<li class="">EventCreated event is published</li>
+<li class="">User can edit event title, times, description, and location</li>
+<li class="">EventUpdated event is published</li>
+<li class="">User can delete an event</li>
+<li class="">Confirmation is required before deletion</li>
+<li class="">EventDeleted event is published</li>
+<li class="">Deleted event is removed from all views</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-001-001: Create a new event</li>
+<li class="">US-CAL-001-002: Edit an event</li>
+<li class="">US-CAL-001-003: Delete an event</li>
+<li class="">US-CAL-001-004: Create event with location</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios">Scenarios<a href="#scenarios" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-a-new-event-happy-path">Scenario 1: Create a new event (happy path)<a href="#scenario-1-create-a-new-event-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create a new event (happy path)" title="Direct link to Scenario 1: Create a new event (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;New Event&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters title &quot;Team Meeting&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets start time to &quot;2025-11-20 10:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end time to &quot;2025-11-20 11:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms creation  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a new event is created with title &quot;Team Meeting&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event spans from 10:00 to 11:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventCreated event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event appears in the calendar view</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-create-event-with-invalid-time-range">Scenario 2: Create event with invalid time range<a href="#scenario-2-create-event-with-invalid-time-range" class="hash-link" aria-label="Direct link to Scenario 2: Create event with invalid time range" title="Direct link to Scenario 2: Create event with invalid time range" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user sets start time to &quot;2025-11-20 10:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end time to &quot;2025-11-20 09:00&quot; (before start time)  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And attempts to save  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates end time must be after start time  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event is not created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no EventCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-edit-event">Scenario 3: Edit event<a href="#scenario-3-edit-event" class="hash-link" aria-label="Direct link to Scenario 3: Edit event" title="Direct link to Scenario 3: Edit event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an event titled &quot;Meeting&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Edit&quot; on the event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And changes the title to &quot;Team Sync&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And changes end time from 11:00 to 11:30  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And adds description &quot;Discuss quarterly goals&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms the changes  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event is updated with new values  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventUpdated event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event displays with updated information</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-delete-event">Scenario 4: Delete event<a href="#scenario-4-delete-event" class="hash-link" aria-label="Direct link to Scenario 4: Delete event" title="Direct link to Scenario 4: Delete event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an event in their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Delete&quot; on the event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a confirmation dialog appears  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And upon confirmation, the event is deleted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventDeleted event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event is removed from all calendar views</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-cancel-event-deletion">Scenario 5: Cancel event deletion<a href="#scenario-5-cancel-event-deletion" class="hash-link" aria-label="Direct link to Scenario 5: Cancel event deletion" title="Direct link to Scenario 5: Cancel event deletion" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user initiates event deletion  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the confirmation dialog is displayed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user clicks &quot;Cancel&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event is not deleted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no EventDeleted event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event remains in the calendar</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-create-event-without-title">Scenario 6: Create event without title<a href="#scenario-6-create-event-without-title" class="hash-link" aria-label="Direct link to Scenario 6: Create event without title" title="Direct link to Scenario 6: Create event without title" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user leaves the title field empty  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And attempts to save  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the title is required  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event is not created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no EventCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-initialize-default-calendar-on-user-registration">Scenario 7: Initialize default calendar on user registration<a href="#scenario-7-initialize-default-calendar-on-user-registration" class="hash-link" aria-label="Direct link to Scenario 7: Initialize default calendar on user registration" title="Direct link to Scenario 7: Initialize default calendar on user registration" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a new user has just registered  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the system processes the UserRegistered event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a default calendar is automatically created for the user  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the calendar is named &quot;My Calendar&quot; or similar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user&#x27;s calendar management is initialized</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Event title and description should be sanitized to prevent XSS</li>
+<li class="">Time validation must handle timezone conversions</li>
+<li class="">Use optimistic locking for concurrent event updates</li>
+<li class="">Event IDs should be generated using strongly-typed identifier pattern</li>
+<li class="">Implement validation for title length and time range</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should deleted events be recoverable (soft delete with trash)?</li>
+<li class="">Should there be a maximum event duration?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-002-calendar-views">FR-CAL-002: Calendar views<a href="#fr-cal-002-calendar-views" class="hash-link" aria-label="Direct link to FR-CAL-002: Calendar views" title="Direct link to FR-CAL-002: Calendar views" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users must be able to view their calendar events in multiple formats: Month View, Week View, Day View, and Agenda/List
+View. Different views provide different levels of detail and help users navigate their schedule effectively.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have a calendar (may be empty)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Calendar is displayed in selected view</li>
+<li class="">View preference is persisted</li>
+<li class="">User can navigate between dates</li>
+<li class="">Events are properly positioned/grouped</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Month View shows events as indicators on date cells</li>
+<li class="">Week View shows events positioned by time slots</li>
+<li class="">Day View shows hourly time slots with events</li>
+<li class="">Agenda View shows events in chronological list</li>
+<li class="">Current date is highlighted in all views</li>
+<li class="">View preference persists across sessions</li>
+<li class="">Navigation controls adapt to view type (month/week/day/custom range)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Calendar, Event</li>
+<li class="">Domain Events: None (read-only views)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Events must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can switch between Month, Week, Day, and Agenda views</li>
+<li class="">View preference is saved and restored</li>
+<li class="">Current date is highlighted</li>
+<li class="">Navigation controls are appropriate for each view</li>
+<li class="">Events are displayed with title and time</li>
+<li class="">Clicking an event opens event details</li>
+<li class="">Empty calendar shows helpful message</li>
+<li class="">Views are responsive (adapt to screen size)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-002-001: View calendar in month view</li>
+<li class="">US-CAL-002-002: View calendar in week view</li>
+<li class="">US-CAL-002-003: Navigate between dates</li>
+<li class="">US-CAL-002-004: Switch calendar views</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-1">Scenarios<a href="#scenarios-1" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-view-calendar-in-month-view-happy-path">Scenario 1: View calendar in month view (happy path)<a href="#scenario-1-view-calendar-in-month-view-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: View calendar in month view (happy path)" title="Direct link to Scenario 1: View calendar in month view (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Month View&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar displays a month grid  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the current date is highlighted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And events appear as indicators on their respective dates  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And navigation controls show &quot;Previous Month&quot; and &quot;Next Month&quot;</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-view-calendar-in-week-view">Scenario 2: View calendar in week view<a href="#scenario-2-view-calendar-in-week-view" class="hash-link" aria-label="Direct link to Scenario 2: View calendar in week view" title="Direct link to Scenario 2: View calendar in week view" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Week View&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar displays 7 days (Monday-Sunday or Sunday-Saturday)  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And hourly time slots are shown for each day  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And events are positioned at their corresponding times  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the current day is highlighted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And navigation controls show &quot;Previous Week&quot; and &quot;Next Week&quot;</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-view-calendar-in-day-view">Scenario 3: View calendar in day view<a href="#scenario-3-view-calendar-in-day-view" class="hash-link" aria-label="Direct link to Scenario 3: View calendar in day view" title="Direct link to Scenario 3: View calendar in day view" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Day View&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar displays a single day  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And hourly time slots (e.g., 00:00-23:59) are shown  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And events are positioned at their exact times  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And current time indicator is shown  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And navigation controls show &quot;Previous Day&quot; and &quot;Next Day&quot;</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-view-calendar-in-agenda-view">Scenario 4: View calendar in agenda view<a href="#scenario-4-view-calendar-in-agenda-view" class="hash-link" aria-label="Direct link to Scenario 4: View calendar in agenda view" title="Direct link to Scenario 4: View calendar in agenda view" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Agenda View&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar displays events in chronological list  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And events are grouped by date  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And each event shows title, time, and location  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the next 30 days of events are shown by default  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And user can scroll to view more future events</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-navigate-to-next-month">Scenario 5: Navigate to next month<a href="#scenario-5-navigate-to-next-month" class="hash-link" aria-label="Direct link to Scenario 5: Navigate to next month" title="Direct link to Scenario 5: Navigate to next month" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing month view for November 2025  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Next Month&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar displays December 2025  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And events for December are shown  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the view remains in month mode</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-jump-to-today">Scenario 6: Jump to today<a href="#scenario-6-jump-to-today" class="hash-link" aria-label="Direct link to Scenario 6: Jump to today" title="Direct link to Scenario 6: Jump to today" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing a date in the past or future  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Today&quot; button  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar navigates to the current date  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the current date is highlighted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the view type remains unchanged</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-click-event-to-view-details">Scenario 7: Click event to view details<a href="#scenario-7-click-event-to-view-details" class="hash-link" aria-label="Direct link to Scenario 7: Click event to view details" title="Direct link to Scenario 7: Click event to view details" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing month view with events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks on an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a popup or side panel displays full event details  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And shows title, time, description, location  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And provides &quot;Edit&quot; and &quot;Delete&quot; options</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-8-view-preference-persists">Scenario 8: View preference persists<a href="#scenario-8-view-preference-persists" class="hash-link" aria-label="Direct link to Scenario 8: View preference persists" title="Direct link to Scenario 8: View preference persists" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has selected &quot;Week View&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user logs out and logs back in  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar opens in &quot;Week View&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the view preference is restored</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use efficient date calculation libraries (e.g., date-fns, Luxon)</li>
+<li class="">Implement virtualization for large event lists in Agenda View</li>
+<li class="">Consider lazy loading events for performance</li>
+<li class="">Month View should handle overflow (many events per day)</li>
+<li class="">Ensure timezone handling is correct across all views</li>
+<li class="">Implement responsive breakpoints for mobile views</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a &quot;Work Week&quot; view (Monday-Friday only)?</li>
+<li class="">Should Month View show mini event previews vs. just indicators?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-003-recurring-events">FR-CAL-003: Recurring events<a href="#fr-cal-003-recurring-events" class="hash-link" aria-label="Direct link to FR-CAL-003: Recurring events" title="Direct link to FR-CAL-003: Recurring events" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users should be able to create recurring events with patterns (daily, weekly, monthly, yearly, custom). Recurring events
+simplify scheduling of repetitive meetings or activities without manually creating individual events.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Base event must be created</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Recurrence pattern is defined and saved</li>
+<li class="">Event instances are generated according to pattern</li>
+<li class="">RecurrencePatternCreated event is published</li>
+<li class="">Future instances appear in calendar views</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Recurrence patterns: Daily, Weekly, Monthly, Yearly, Custom</li>
+<li class="">Recurrence must have end condition: End Date or Occurrence Count</li>
+<li class="">User can edit single instance or entire series</li>
+<li class="">User can delete single instance or entire series</li>
+<li class="">Exceptions to recurrence can be created (skip specific dates)</li>
+<li class="">Editing a single instance breaks it from the series (creates exception)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Event, RecurrencePattern</li>
+<li class="">Domain Events: RecurrencePatternCreated, RecurrencePatternUpdated, EventInstanceDeleted</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Base event must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can set recurrence pattern when creating event</li>
+<li class="">User can choose frequency: Daily, Weekly, Monthly, Yearly</li>
+<li class="">User can set end condition: End Date or Occurrence Count (e.g., &quot;After 10 occurrences&quot;)</li>
+<li class="">Recurring event instances appear in calendar views</li>
+<li class="">User can edit single instance (creates exception)</li>
+<li class="">User can edit entire series (updates pattern)</li>
+<li class="">User can delete single instance (creates exception)</li>
+<li class="">User can delete entire series (removes all instances)</li>
+<li class="">Recurrence pattern is displayed in event details</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-003-001: Create daily recurring event</li>
+<li class="">US-CAL-003-002: Create weekly recurring event</li>
+<li class="">US-CAL-003-003: Edit single instance of recurring event</li>
+<li class="">US-CAL-003-004: Delete entire recurring series</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-2">Scenarios<a href="#scenarios-2" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-weekly-recurring-event-happy-path">Scenario 1: Create weekly recurring event (happy path)<a href="#scenario-1-create-weekly-recurring-event-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create weekly recurring event (happy path)" title="Direct link to Scenario 1: Create weekly recurring event (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters title &quot;Team Standup&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets start time to &quot;2025-11-20 09:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end time to &quot;2025-11-20 09:30&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects &quot;Repeat: Weekly&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end condition to &quot;After 12 occurrences&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms creation  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a recurring event is created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And 12 instances appear in the calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a RecurrencePatternCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-create-monthly-recurring-event">Scenario 2: Create monthly recurring event<a href="#scenario-2-create-monthly-recurring-event" class="hash-link" aria-label="Direct link to Scenario 2: Create monthly recurring event" title="Direct link to Scenario 2: Create monthly recurring event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user sets recurrence to &quot;Monthly&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And chooses &quot;On day 15 of each month&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end date to &quot;2026-11-15&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event recurs on the 15th of each month  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And instances are generated until the end date</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-edit-single-instance-of-recurring-event">Scenario 3: Edit single instance of recurring event<a href="#scenario-3-edit-single-instance-of-recurring-event" class="hash-link" aria-label="Direct link to Scenario 3: Edit single instance of recurring event" title="Direct link to Scenario 3: Edit single instance of recurring event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a weekly recurring event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user edits one specific instance  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And changes the time from 09:00 to 10:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms &quot;Edit this event only&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then only that instance is updated  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an exception is created in the recurrence pattern  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And other instances remain unchanged  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventInstanceUpdated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-edit-entire-recurring-series">Scenario 4: Edit entire recurring series<a href="#scenario-4-edit-entire-recurring-series" class="hash-link" aria-label="Direct link to Scenario 4: Edit entire recurring series" title="Direct link to Scenario 4: Edit entire recurring series" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a weekly recurring event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user edits an instance  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And changes the title from &quot;Meeting&quot; to &quot;Sync&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms &quot;Edit all events in series&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then all instances are updated with new title  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the recurrence pattern is updated  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a RecurrencePatternUpdated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-delete-single-instance">Scenario 5: Delete single instance<a href="#scenario-5-delete-single-instance" class="hash-link" aria-label="Direct link to Scenario 5: Delete single instance" title="Direct link to Scenario 5: Delete single instance" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a daily recurring event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user deletes one specific instance  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms &quot;Delete this event only&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then only that instance is deleted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an exception is added to the recurrence pattern  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And other instances remain  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventInstanceDeleted event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-delete-entire-recurring-series">Scenario 6: Delete entire recurring series<a href="#scenario-6-delete-entire-recurring-series" class="hash-link" aria-label="Direct link to Scenario 6: Delete entire recurring series" title="Direct link to Scenario 6: Delete entire recurring series" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a recurring event with 20 instances  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user deletes one instance  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms &quot;Delete all events in series&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then all instances are deleted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the recurrence pattern is removed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a RecurrencePatternDeleted event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-create-recurring-event-with-custom-pattern">Scenario 7: Create recurring event with custom pattern<a href="#scenario-7-create-recurring-event-with-custom-pattern" class="hash-link" aria-label="Direct link to Scenario 7: Create recurring event with custom pattern" title="Direct link to Scenario 7: Create recurring event with custom pattern" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Custom&quot; recurrence  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets &quot;Every 2 weeks on Monday and Wednesday&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end condition to &quot;Until 2025-12-31&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then instances are generated following the custom pattern  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And appear on Mondays and Wednesdays every 2 weeks until year end</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use a recurrence library (e.g., RRule for iCalendar standard)</li>
+<li class="">Store recurrence pattern separately from event instances</li>
+<li class="">Implement efficient instance generation (don&#x27;t pre-create all instances)</li>
+<li class="">Handle edge cases: leap years, month-end dates, DST transitions</li>
+<li class="">Consider implementing RRULE standard for compatibility</li>
+<li class="">Exceptions should be stored as a collection on the recurrence pattern</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a limit on recurrence end date (e.g., max 2 years)?</li>
+<li class="">Should recurring events sync with external calendars (future)?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-004-event-reminders">FR-CAL-004: Event reminders<a href="#fr-cal-004-event-reminders" class="hash-link" aria-label="Direct link to FR-CAL-004: Event reminders" title="Direct link to FR-CAL-004: Event reminders" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users should be able to set reminders for events to receive notifications before events start. Reminders help users stay
+on schedule and not miss important events.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Event must exist</li>
+<li class="">Browser notifications must be permitted (or user prompted)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Reminder is set for event</li>
+<li class="">Notification is triggered at reminder time</li>
+<li class="">User is notified via browser notification</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Events can have multiple reminders (e.g., 1 day before, 1 hour before)</li>
+<li class="">Reminder times: 5 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, 1 day, 1 week before</li>
+<li class="">Reminders trigger browser notifications</li>
+<li class="">Dismissed reminders are not shown again for that event</li>
+<li class="">Reminders can be snoozed (shown again after a short delay)</li>
+<li class="">All-day events have reminders at specific time of day (e.g., 9 AM on event day)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Event, Reminder</li>
+<li class="">Domain Events: ReminderSet, ReminderTriggered, ReminderDismissed</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Event must exist)</li>
+<li class="">Browser Notifications API</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can add multiple reminders to an event</li>
+<li class="">User can choose reminder time from predefined options</li>
+<li class="">User can remove reminders</li>
+<li class="">Browser notification is triggered at reminder time</li>
+<li class="">Notification shows event title and start time</li>
+<li class="">Clicking notification opens event details</li>
+<li class="">User can dismiss or snooze notification</li>
+<li class="">Reminders work for recurring events (each instance)</li>
+<li class="">Reminder preferences persist across sessions</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-004-001: Set reminder for event</li>
+<li class="">US-CAL-004-002: Receive reminder notification</li>
+<li class="">US-CAL-004-003: Snooze reminder</li>
+<li class="">US-CAL-004-004: Remove reminder</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-3">Scenarios<a href="#scenarios-3" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-set-reminder-for-event-happy-path">Scenario 1: Set reminder for event (happy path)<a href="#scenario-1-set-reminder-for-event-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Set reminder for event (happy path)" title="Direct link to Scenario 1: Set reminder for event (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has created an event for tomorrow at 14:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user opens event settings  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects &quot;Add Reminder&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And chooses &quot;1 hour before&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a reminder is set for tomorrow at 13:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ReminderSet event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the reminder is displayed in event details</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-receive-reminder-notification">Scenario 2: Receive reminder notification<a href="#scenario-2-receive-reminder-notification" class="hash-link" aria-label="Direct link to Scenario 2: Receive reminder notification" title="Direct link to Scenario 2: Receive reminder notification" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an event with a reminder set for 1 hour before  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the reminder time is reached  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a browser notification appears  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays event title &quot;Team Meeting&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays start time &quot;Starting in 1 hour at 14:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ReminderTriggered event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-click-notification-to-view-event">Scenario 3: Click notification to view event<a href="#scenario-3-click-notification-to-view-event" class="hash-link" aria-label="Direct link to Scenario 3: Click notification to view event" title="Direct link to Scenario 3: Click notification to view event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a reminder notification has appeared  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks on the notification  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar application opens  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event details are displayed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the reminder is marked as acknowledged</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-snooze-reminder">Scenario 4: Snooze reminder<a href="#scenario-4-snooze-reminder" class="hash-link" aria-label="Direct link to Scenario 4: Snooze reminder" title="Direct link to Scenario 4: Snooze reminder" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a reminder notification has appeared  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Snooze&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the notification is dismissed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And will reappear in 5 minutes  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ReminderSnoozed event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-dismiss-reminder">Scenario 5: Dismiss reminder<a href="#scenario-5-dismiss-reminder" class="hash-link" aria-label="Direct link to Scenario 5: Dismiss reminder" title="Direct link to Scenario 5: Dismiss reminder" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a reminder notification has appeared  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Dismiss&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the notification is closed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And will not appear again for this event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ReminderDismissed event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-add-multiple-reminders">Scenario 6: Add multiple reminders<a href="#scenario-6-add-multiple-reminders" class="hash-link" aria-label="Direct link to Scenario 6: Add multiple reminders" title="Direct link to Scenario 6: Add multiple reminders" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user adds reminder &quot;1 day before&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And adds reminder &quot;1 hour before&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And adds reminder &quot;15 minutes before&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then all three reminders are set  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And will trigger at their respective times  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all are displayed in event details</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-request-notification-permission">Scenario 7: Request notification permission<a href="#scenario-7-request-notification-permission" class="hash-link" aria-label="Direct link to Scenario 7: Request notification permission" title="Direct link to Scenario 7: Request notification permission" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user attempts to set a reminder  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And browser notifications are not permitted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the reminder is being saved  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a permission request dialog appears  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And if user grants permission, the reminder is set  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And if user denies permission, an error message is shown</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use Browser Notifications API for reminders</li>
+<li class="">Implement service worker for background notification delivery</li>
+<li class="">Store reminder state to avoid duplicate notifications</li>
+<li class="">Handle browser permission states (granted, denied, default)</li>
+<li class="">Implement reminder queue for offline scenarios</li>
+<li class="">Consider implementing push notifications for cross-device support (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should reminders support custom times (e.g., &quot;2 hours 30 minutes before&quot;)?</li>
+<li class="">Should there be a notification center for viewing past reminders?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-005-event-categories">FR-CAL-005: Event categories<a href="#fr-cal-005-event-categories" class="hash-link" aria-label="Direct link to FR-CAL-005: Event categories" title="Direct link to FR-CAL-005: Event categories" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users should be able to create and assign categories to events for organization and color-coding. Categories help users
+visually distinguish between different types of events (e.g., Work, Personal, Family).</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have a calendar</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Category is created/updated/deleted</li>
+<li class="">Event is assigned to category</li>
+<li class="">Events display with category color</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Users can create custom categories</li>
+<li class="">Category names must be unique per user</li>
+<li class="">Category names must be non-empty and length-bounded (1-50 characters)</li>
+<li class="">Each category has a color</li>
+<li class="">Events can have zero or one category (optional)</li>
+<li class="">Default categories: Work, Personal (created on user registration)</li>
+<li class="">Categories can be filtered in calendar views</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Category, Event</li>
+<li class="">Domain Events: CategoryCreated, CategoryUpdated, CategoryDeleted</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Events must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can create a new category with name and color</li>
+<li class="">User can edit category name and color</li>
+<li class="">User can delete unused categories</li>
+<li class="">Deleting a category prompts for action on associated events</li>
+<li class="">User can assign category to event</li>
+<li class="">Events display with category color in calendar views</li>
+<li class="">User can filter events by category</li>
+<li class="">Category preferences persist across sessions</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-005-001: Create a new category</li>
+<li class="">US-CAL-005-002: Assign category to event</li>
+<li class="">US-CAL-005-003: Filter events by category</li>
+<li class="">US-CAL-005-004: Delete category</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-4">Scenarios<a href="#scenarios-4" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-a-new-category-happy-path">Scenario 1: Create a new category (happy path)<a href="#scenario-1-create-a-new-category-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create a new category (happy path)" title="Direct link to Scenario 1: Create a new category (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing category settings  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;New Category&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters name &quot;Family&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects color &quot;Green&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms creation  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a new category &quot;Family&quot; is created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a CategoryCreated event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the category appears in the category list</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-create-category-with-duplicate-name">Scenario 2: Create category with duplicate name<a href="#scenario-2-create-category-with-duplicate-name" class="hash-link" aria-label="Direct link to Scenario 2: Create category with duplicate name" title="Direct link to Scenario 2: Create category with duplicate name" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user already has a category named &quot;Work&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to create another category named &quot;Work&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the name already exists  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the category is not created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no CategoryCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-assign-category-to-event">Scenario 3: Assign category to event<a href="#scenario-3-assign-category-to-event" class="hash-link" aria-label="Direct link to Scenario 3: Assign category to event" title="Direct link to Scenario 3: Assign category to event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has created an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user opens event settings  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects category &quot;Work&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event is assigned to &quot;Work&quot; category  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event displays with &quot;Work&quot; color in calendar views  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventUpdated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-filter-events-by-category">Scenario 4: Filter events by category<a href="#scenario-4-filter-events-by-category" class="hash-link" aria-label="Direct link to Scenario 4: Filter events by category" title="Direct link to Scenario 4: Filter events by category" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has events in multiple categories  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Show only Work events&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then only events in &quot;Work&quot; category are displayed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And other events are hidden  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the filter state is indicated in the UI</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-delete-category-with-associated-events">Scenario 5: Delete category with associated events<a href="#scenario-5-delete-category-with-associated-events" class="hash-link" aria-label="Direct link to Scenario 5: Delete category with associated events" title="Direct link to Scenario 5: Delete category with associated events" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has category &quot;Old&quot; with 3 associated events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to delete the category  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a dialog appears asking what to do with the events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And offers options: &quot;Remove category from events&quot; or &quot;Cancel&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And upon selecting &quot;Remove category&quot; and confirming  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then category is removed from all events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the category is deleted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a CategoryDeleted event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-edit-category-color">Scenario 6: Edit category color<a href="#scenario-6-edit-category-color" class="hash-link" aria-label="Direct link to Scenario 6: Edit category color" title="Direct link to Scenario 6: Edit category color" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has category &quot;Personal&quot; with color &quot;Blue&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user edits the category  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And changes color to &quot;Purple&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the category color is updated  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all events in this category now display with &quot;Purple&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a CategoryUpdated event is published</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Store categories as separate entity with userId reference</li>
+<li class="">Implement color picker component for category colors</li>
+<li class="">Use color palette to ensure good contrast and visibility</li>
+<li class="">Category filtering should be efficient (indexed queries)</li>
+<li class="">Consider implementing default category (if event has no category)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should events support multiple categories (tags)?</li>
+<li class="">Should there be predefined category templates?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-006-event-time-conflict-detection">FR-CAL-006: Event time conflict detection<a href="#fr-cal-006-event-time-conflict-detection" class="hash-link" aria-label="Direct link to FR-CAL-006: Event time conflict detection" title="Direct link to FR-CAL-006: Event time conflict detection" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system should detect and warn users about time conflicts when creating or editing events. Conflict detection helps
+users avoid double-booking and scheduling overlaps.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User is creating or editing an event</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Conflicts are detected and displayed</li>
+<li class="">User is warned before saving conflicting event</li>
+<li class="">User can choose to proceed or adjust times</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Conflict occurs when event time ranges overlap</li>
+<li class="">All-day events conflict with all events on that day</li>
+<li class="">Conflicts are detected within same calendar only</li>
+<li class="">User can override conflict warning and save anyway (soft warning)</li>
+<li class="">Conflict detection is real-time during event creation/editing</li>
+<li class="">Recurring events check conflicts for each instance</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Event</li>
+<li class="">Domain Events: None (validation only)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Events must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">System checks for conflicts when saving event</li>
+<li class="">Conflicts are detected by overlapping time ranges</li>
+<li class="">Warning message displays conflicting events</li>
+<li class="">User can view conflicting event details</li>
+<li class="">User can choose to save anyway or adjust times</li>
+<li class="">Conflict warning appears before event is saved</li>
+<li class="">Visual indicator shows conflicts in calendar views</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-006-001: Detect conflict when creating event</li>
+<li class="">US-CAL-006-002: View conflicting events</li>
+<li class="">US-CAL-006-003: Override conflict warning</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-5">Scenarios<a href="#scenarios-5" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-detect-conflict-when-creating-event-happy-path">Scenario 1: Detect conflict when creating event (happy path)<a href="#scenario-1-detect-conflict-when-creating-event-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Detect conflict when creating event (happy path)" title="Direct link to Scenario 1: Detect conflict when creating event (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an event &quot;Meeting A&quot; from 10:00 to 11:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user creates event &quot;Meeting B&quot; from 10:30 to 11:30  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a conflict warning appears  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays &quot;Conflicts with: Meeting A (10:00-11:00)&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And offers options: &quot;Adjust Time&quot; or &quot;Save Anyway&quot;</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-no-conflict-detected">Scenario 2: No conflict detected<a href="#scenario-2-no-conflict-detected" class="hash-link" aria-label="Direct link to Scenario 2: No conflict detected" title="Direct link to Scenario 2: No conflict detected" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an event from 10:00 to 11:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user creates event from 11:00 to 12:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then no conflict is detected  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event is saved without warning</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-override-conflict-warning">Scenario 3: Override conflict warning<a href="#scenario-3-override-conflict-warning" class="hash-link" aria-label="Direct link to Scenario 3: Override conflict warning" title="Direct link to Scenario 3: Override conflict warning" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a conflict warning is displayed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Save Anyway&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event is saved despite the conflict  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And both events remain in the calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a visual indicator shows the conflict in calendar views</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-adjust-time-to-resolve-conflict">Scenario 4: Adjust time to resolve conflict<a href="#scenario-4-adjust-time-to-resolve-conflict" class="hash-link" aria-label="Direct link to Scenario 4: Adjust time to resolve conflict" title="Direct link to Scenario 4: Adjust time to resolve conflict" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a conflict warning is displayed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Adjust Time&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event editing dialog remains open  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user can modify start/end times  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And conflict detection re-runs on changes  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event is saved when no conflicts remain</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-detect-multiple-conflicts">Scenario 5: Detect multiple conflicts<a href="#scenario-5-detect-multiple-conflicts" class="hash-link" aria-label="Direct link to Scenario 5: Detect multiple conflicts" title="Direct link to Scenario 5: Detect multiple conflicts" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has events at 10:00-11:00 and 10:30-11:30  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user creates event from 09:45 to 11:15  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then conflicts with both events are detected  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And warning displays both conflicting events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And shows time ranges for each conflict</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-visual-conflict-indicator-in-calendar">Scenario 6: Visual conflict indicator in calendar<a href="#scenario-6-visual-conflict-indicator-in-calendar" class="hash-link" aria-label="Direct link to Scenario 6: Visual conflict indicator in calendar" title="Direct link to Scenario 6: Visual conflict indicator in calendar" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has overlapping events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user views the calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then conflicting events are highlighted with warning color  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a conflict icon is displayed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And tooltip shows &quot;Time conflict with X events&quot;</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement efficient overlap detection algorithm</li>
+<li class="">Use interval tree or similar data structure for performance</li>
+<li class="">Conflict detection should be real-time (as user types times)</li>
+<li class="">Consider implementing conflict severity levels (full overlap vs. partial)</li>
+<li class="">Ensure timezone-aware conflict detection</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should conflicts be hard-blocked (prevent saving) or soft-warned?</li>
+<li class="">Should there be a &quot;Find next available time&quot; feature?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-007-task-integration">FR-CAL-007: Task integration<a href="#fr-cal-007-task-integration" class="hash-link" aria-label="Direct link to FR-CAL-007: Task integration" title="Direct link to FR-CAL-007: Task integration" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system should accept event creation requests from the Tasks context, enabling users to schedule tasks as calendar
+events. This integration provides a seamless workflow between task planning and calendar scheduling.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">EventCreationRequestedFromTask event is received from Tasks context</li>
+<li class="">Task data includes title and optional due date</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Calendar event is created from task data</li>
+<li class="">EventCreated event is published</li>
+<li class="">Task is notified of successful event creation (optional)</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Task title maps to event title</li>
+<li class="">Task description maps to event description</li>
+<li class="">Task due date maps to event date/time</li>
+<li class="">If task has no due date, default to today + user-selected time</li>
+<li class="">Created event is independent from source task</li>
+<li class="">Event and task remain separate entities (no bidirectional sync in MVP)</li>
+<li class="">Multiple events can be created from the same task</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Event</li>
+<li class="">Domain Events: EventCreationRequestedFromTask (consumed), EventCreated (published)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Event creation)</li>
+<li class="">Tasks context (lateral partnership)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Calendar context consumes EventCreationRequestedFromTask event</li>
+<li class="">Event is created with task title and due date</li>
+<li class="">If task has no due date, user is prompted to select date/time</li>
+<li class="">EventCreated event is published</li>
+<li class="">Event appears in calendar views</li>
+<li class="">Task remains in task list (not deleted)</li>
+<li class="">User is notified of successful event creation</li>
+<li class="">Event creation failure is handled gracefully</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-007-001: Create event from task with due date</li>
+<li class="">US-CAL-007-002: Create event from task without due date</li>
+<li class="">US-CAL-007-003: Handle event creation failure</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-6">Scenarios<a href="#scenarios-6" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-event-from-task-with-due-date-happy-path">Scenario 1: Create event from task with due date (happy path)<a href="#scenario-1-create-event-from-task-with-due-date-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create event from task with due date (happy path)" title="Direct link to Scenario 1: Create event from task with due date (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given the Tasks context publishes EventCreationRequestedFromTask event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event data includes title &quot;Review Document&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And due date &quot;2025-11-21 14:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the Calendar context processes the event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a calendar event is created with title &quot;Review Document&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And start time is set to &quot;2025-11-21 14:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And end time is set to &quot;2025-11-21 15:00&quot; (default 1 hour duration)  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventCreated event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event appears in calendar views</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-create-event-from-task-without-due-date">Scenario 2: Create event from task without due date<a href="#scenario-2-create-event-from-task-without-due-date" class="hash-link" aria-label="Direct link to Scenario 2: Create event from task without due date" title="Direct link to Scenario 2: Create event from task without due date" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given the Tasks context publishes EventCreationRequestedFromTask event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event data includes title &quot;Plan Vacation&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">But no due date is specified  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the Calendar context processes the event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the user is prompted to select date and time  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And after selection, the event is created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-event-creation-failure">Scenario 3: Event creation failure<a href="#scenario-3-event-creation-failure" class="hash-link" aria-label="Direct link to Scenario 3: Event creation failure" title="Direct link to Scenario 3: Event creation failure" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given the Tasks context publishes EventCreationRequestedFromTask event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the Calendar context encounters an error (e.g., database failure)  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event creation fails  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error is logged  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is notified of the failure  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no EventCreated event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the task remains unaffected</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-create-event-with-task-description">Scenario 4: Create event with task description<a href="#scenario-4-create-event-with-task-description" class="hash-link" aria-label="Direct link to Scenario 4: Create event with task description" title="Direct link to Scenario 4: Create event with task description" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a task includes title and description  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When EventCreationRequestedFromTask event is processed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the calendar event is created with task title  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And event description is populated with task description  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And both title and description are displayed in event details</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-multiple-events-from-same-task">Scenario 5: Multiple events from same task<a href="#scenario-5-multiple-events-from-same-task" class="hash-link" aria-label="Direct link to Scenario 5: Multiple events from same task" title="Direct link to Scenario 5: Multiple events from same task" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user creates an event from task &quot;Weekly Report&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user later creates another event from the same task  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a second, independent event is created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And both events coexist in the calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And both reference the same task (conceptually)</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use asynchronous event processing for integration</li>
+<li class="">Implement idempotency to prevent duplicate event creation</li>
+<li class="">Default event duration should be configurable (e.g., 1 hour)</li>
+<li class="">Consider storing task reference on event for future bidirectional sync</li>
+<li class="">Implement retry logic for failed event creation</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should completing the event also complete the task (future)?</li>
+<li class="">Should deleting a task delete linked events (future)?</li>
+<li class="">Should there be bidirectional sync (event changes update task)?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-008-event-importexport">FR-CAL-008: Event import/export<a href="#fr-cal-008-event-importexport" class="hash-link" aria-label="Direct link to FR-CAL-008: Event import/export" title="Direct link to FR-CAL-008: Event import/export" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users could have the ability to import events from other calendars (iCal format) and export their events for backup or
+sharing. This feature enhances portability and integration with other calendar systems.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">For import: valid iCal file must be provided</li>
+<li class="">For export: at least one event must exist</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Imported events are added to calendar</li>
+<li class="">Exported file contains events in iCal format</li>
+<li class="">Import/export operations are logged</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Supported import format: iCal (.ics)</li>
+<li class="">Supported export format: iCal (.ics)</li>
+<li class="">Import preserves event properties (title, times, description, location)</li>
+<li class="">Recurring events are imported with recurrence pattern</li>
+<li class="">Duplicate events (same time and title) can be skipped or imported based on user preference</li>
+<li class="">Import is transactional (all or nothing)</li>
+<li class="">Export includes all events (or filtered selection)</li>
+<li class="">Exported files are named with timestamp</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-005 (User Value Delivery), BR-006 (Developer Experience)</li>
+<li class="">Domain Aggregates: Event</li>
+<li class="">Domain Events: EventCreated (for imports)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Event management)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can upload iCal file</li>
+<li class="">File format is validated</li>
+<li class="">Import preview shows number of events</li>
+<li class="">User can choose to skip duplicates or import all</li>
+<li class="">Import is transactional (fails entirely if errors occur)</li>
+<li class="">EventCreated events are published for imports</li>
+<li class="">User can export all events to iCal</li>
+<li class="">Export file is downloadable</li>
+<li class="">Export file is valid iCal format</li>
+<li class="">Export file is named with timestamp</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-008-001: Import events from iCal file</li>
+<li class="">US-CAL-008-002: Export events to iCal file</li>
+<li class="">US-CAL-008-003: Handle duplicate events on import</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-7">Scenarios<a href="#scenarios-7" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-import-events-from-ical-file-happy-path">Scenario 1: Import events from iCal file (happy path)<a href="#scenario-1-import-events-from-ical-file-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Import events from iCal file (happy path)" title="Direct link to Scenario 1: Import events from iCal file (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an iCal file from another calendar application  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Import Events&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And uploads the iCal file  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the file is validated  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an import preview shows the number of events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user confirms the import  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then all events are created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And EventCreated events are published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a success message is displayed</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-export-events-to-ical">Scenario 2: Export events to iCal<a href="#scenario-2-export-events-to-ical" class="hash-link" aria-label="Direct link to Scenario 2: Export events to iCal" title="Direct link to Scenario 2: Export events to iCal" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has events in their calendar  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Export Events&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And chooses date range &quot;All Events&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then an iCal file is generated containing all events  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the file is named &quot;calendar_2025-11-15.ics&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the file is downloaded to the user&#x27;s device</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-import-with-duplicate-handling">Scenario 3: Import with duplicate handling<a href="#scenario-3-import-with-duplicate-handling" class="hash-link" aria-label="Direct link to Scenario 3: Import with duplicate handling" title="Direct link to Scenario 3: Import with duplicate handling" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user already has event &quot;Team Meeting&quot; on 2025-11-20 10:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the import file also contains this event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user imports the file  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a dialog asks whether to skip duplicates or import all  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And if &quot;Skip Duplicates&quot; is selected, only new events are imported  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And if &quot;Import All&quot; is selected, the duplicate is imported (possibly with note)</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-import-invalid-file">Scenario 4: Import invalid file<a href="#scenario-4-import-invalid-file" class="hash-link" aria-label="Direct link to Scenario 4: Import invalid file" title="Direct link to Scenario 4: Import invalid file" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user attempts to import a file  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the file is not a valid iCal format  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the file format is invalid  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no events are imported</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-import-fails-mid-operation">Scenario 5: Import fails mid-operation<a href="#scenario-5-import-fails-mid-operation" class="hash-link" aria-label="Direct link to Scenario 5: Import fails mid-operation" title="Direct link to Scenario 5: Import fails mid-operation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is importing a large iCal file  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When an error occurs during import (e.g., database error)  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the entire import is rolled back  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no partial events are created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message is displayed with details</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-export-filtered-events">Scenario 6: Export filtered events<a href="#scenario-6-export-filtered-events" class="hash-link" aria-label="Direct link to Scenario 6: Export filtered events" title="Direct link to Scenario 6: Export filtered events" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has events in multiple categories  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Export Events&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And filters by category &quot;Work&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And chooses date range &quot;This Month&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then only &quot;Work&quot; events from this month are exported  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the file is named &quot;calendar_work_2025-11-15.ics&quot;</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use iCal library for parsing and generating .ics files (e.g., ical.js)</li>
+<li class="">Implement file size limits for uploads (e.g., max 10MB)</li>
+<li class="">Use transactions to ensure atomic imports</li>
+<li class="">Consider implementing progress indicators for large imports</li>
+<li class="">Ensure timezone information is preserved in import/export</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be an option to import into a specific category?</li>
+<li class="">Should export include only visible events or all events?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-cal-009-all-day-events">FR-CAL-009: All-day events<a href="#fr-cal-009-all-day-events" class="hash-link" aria-label="Direct link to FR-CAL-009: All-day events" title="Direct link to FR-CAL-009: All-day events" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users must be able to create all-day events for occasions that span entire days without specific start/end times (e.g.,
+holidays, birthdays, vacations). All-day events are displayed differently in calendar views.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User is creating or editing an event</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Event is marked as all-day</li>
+<li class="">Event displays at top of day in calendar views</li>
+<li class="">Event time validation is adjusted for all-day context</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">All-day events do not have specific start/end times</li>
+<li class="">All-day events can span multiple consecutive days</li>
+<li class="">All-day events display at top of calendar day views</li>
+<li class="">All-day events conflict with all events on that day (if conflict detection is enabled)</li>
+<li class="">Reminders for all-day events trigger at specified time of day (e.g., 9 AM)</li>
+<li class="">All-day events can be converted to timed events and vice versa</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Event</li>
+<li class="">Domain Events: EventCreated, EventUpdated</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-CAL-001 (Event management)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can toggle &quot;All-day&quot; option when creating event</li>
+<li class="">All-day events do not require start/end times</li>
+<li class="">All-day events can span multiple days (start date and end date)</li>
+<li class="">All-day events display in special section at top of day views</li>
+<li class="">All-day events display spanning across dates in week/month views</li>
+<li class="">User can convert timed event to all-day and vice versa</li>
+<li class="">All-day event creation publishes EventCreated event</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-CAL-009-001: Create single-day all-day event</li>
+<li class="">US-CAL-009-002: Create multi-day all-day event</li>
+<li class="">US-CAL-009-003: Convert timed event to all-day</li>
+<li class="">US-CAL-009-004: Convert all-day event to timed</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-8">Scenarios<a href="#scenarios-8" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-single-day-all-day-event-happy-path">Scenario 1: Create single-day all-day event (happy path)<a href="#scenario-1-create-single-day-all-day-event-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create single-day all-day event (happy path)" title="Direct link to Scenario 1: Create single-day all-day event (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters title &quot;Birthday&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And toggles &quot;All-day&quot; option  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects date &quot;2025-11-25&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms creation  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then an all-day event is created  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event spans the entire day (2025-11-25)  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventCreated event is published  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event displays at top of day in calendar views</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-create-multi-day-all-day-event">Scenario 2: Create multi-day all-day event<a href="#scenario-2-create-multi-day-all-day-event" class="hash-link" aria-label="Direct link to Scenario 2: Create multi-day all-day event" title="Direct link to Scenario 2: Create multi-day all-day event" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is creating an event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters title &quot;Vacation&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And toggles &quot;All-day&quot; option  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects start date &quot;2025-12-20&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects end date &quot;2025-12-27&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms creation  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then an all-day event is created spanning 8 days  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event displays across all dates in week/month views  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-all-day-event-displays-at-top-of-day-view">Scenario 3: All-day event displays at top of day view<a href="#scenario-3-all-day-event-displays-at-top-of-day-view" class="hash-link" aria-label="Direct link to Scenario 3: All-day event displays at top of day view" title="Direct link to Scenario 3: All-day event displays at top of day view" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has all-day event &quot;Holiday&quot; on 2025-11-25  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And timed events throughout the day  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user views Day View for 2025-11-25  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then &quot;Holiday&quot; displays in all-day section at top  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And timed events display in hourly time slots below  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all-day section is visually distinct</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-convert-timed-event-to-all-day">Scenario 4: Convert timed event to all-day<a href="#scenario-4-convert-timed-event-to-all-day" class="hash-link" aria-label="Direct link to Scenario 4: Convert timed event to all-day" title="Direct link to Scenario 4: Convert timed event to all-day" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has timed event from 10:00 to 11:00  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user edits the event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And toggles &quot;All-day&quot; option  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event is converted to all-day  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And time fields are removed  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the event displays in all-day section  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventUpdated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-convert-all-day-event-to-timed">Scenario 5: Convert all-day event to timed<a href="#scenario-5-convert-all-day-event-to-timed" class="hash-link" aria-label="Direct link to Scenario 5: Convert all-day event to timed" title="Direct link to Scenario 5: Convert all-day event to timed" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has all-day event &quot;Meeting&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user edits the event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And untoggles &quot;All-day&quot; option  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets start time to &quot;14:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And sets end time to &quot;15:00&quot;  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event is converted to timed event  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays in hourly time slots  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an EventUpdated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-all-day-event-in-month-view">Scenario 6: All-day event in month view<a href="#scenario-6-all-day-event-in-month-view" class="hash-link" aria-label="Direct link to Scenario 6: All-day event in month view" title="Direct link to Scenario 6: All-day event in month view" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has multi-day all-day event from 2025-11-20 to 2025-11-23  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user views Month View  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the event displays as a bar spanning across the 4 dates  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And shows the event title  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And is visually distinct from timed events</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Store all-day events with date-only (no time component)</li>
+<li class="">Use different rendering logic for all-day events in views</li>
+<li class="">Ensure timezone handling for all-day events (use UTC midnight or local date)</li>
+<li class="">All-day section should have limited height (scrollable if many all-day events)</li>
+<li class="">Multi-day events should span visually across dates</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should all-day events have a default duration (24 hours) for compatibility?</li>
+<li class="">Should there be a limit on multi-day event duration (e.g., max 365 days)?</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="cross-feature-considerations">Cross-feature considerations<a href="#cross-feature-considerations" class="hash-link" aria-label="Direct link to Cross-feature considerations" title="Direct link to Cross-feature considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="interactions-between-features">Interactions between features<a href="#interactions-between-features" class="hash-link" aria-label="Direct link to Interactions between features" title="Direct link to Interactions between features" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Event Management ↔ Calendar Views:</strong> Creating/editing events updates all relevant calendar views</li>
+<li class=""><strong>Event Management ↔ Recurring Events:</strong> Base event serves as template for recurring instances</li>
+<li class=""><strong>Event Management ↔ Reminders:</strong> Events can have multiple reminders set</li>
+<li class=""><strong>Event Management ↔ Categories:</strong> Events can be assigned to categories</li>
+<li class=""><strong>Calendar Views ↔ Categories:</strong> Views can be filtered by category</li>
+<li class=""><strong>Recurring Events ↔ Conflict Detection:</strong> Each instance is checked for conflicts</li>
+<li class=""><strong>All-Day Events ↔ Calendar Views:</strong> All-day events display in special sections</li>
+<li class=""><strong>Task Integration ↔ Event Management:</strong> Tasks trigger event creation requests</li>
+<li class=""><strong>Import/Export ↔ All Features:</strong> Import/export must handle all event types and properties</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="shared-business-rules">Shared business rules<a href="#shared-business-rules" class="hash-link" aria-label="Direct link to Shared business rules" title="Direct link to Shared business rules" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>User Scoping:</strong> All events and calendars must be scoped to the authenticated user</li>
+<li class=""><strong>Title Validation:</strong> All event titles must be non-empty and length-bounded (1-200 characters)</li>
+<li class=""><strong>Time Validation:</strong> Start time must be before end time (except all-day events)</li>
+<li class=""><strong>Unique Identifiers:</strong> All events must have unique IDs system-wide</li>
+<li class=""><strong>Atomicity:</strong> All state changes must be atomic—either fully succeed or fully fail</li>
+<li class=""><strong>Event Publishing:</strong> Events must be published after successful persistence</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="data-consistency-requirements">Data consistency requirements<a href="#data-consistency-requirements" class="hash-link" aria-label="Direct link to Data consistency requirements" title="Direct link to Data consistency requirements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Strong Consistency:</strong> Event CRUD operations, recurrence patterns require strong consistency</li>
+<li class=""><strong>Eventual Consistency:</strong> Task integration can be eventually consistent (asynchronous event creation)</li>
+<li class=""><strong>Transactional Boundaries:</strong> Calendar aggregate is the transactional boundary</li>
+<li class=""><strong>Event Publishing:</strong> Events must be published after successful persistence (transactional outbox pattern)</li>
+<li class=""><strong>Real-Time Updates:</strong> Calendar widgets on dashboard should update in real-time via event subscriptions</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="business-constraints-impact">Business constraints impact<a href="#business-constraints-impact" class="hash-link" aria-label="Direct link to Business constraints impact" title="Direct link to Business constraints impact" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-001-budget">BC-001: Budget<a href="#bc-001-budget" class="hash-link" aria-label="Direct link to BC-001: Budget" title="Direct link to BC-001: Budget" translate="no">​</a></h3>
+<p>Calendar management must operate within zero-cost infrastructure constraints:</p>
+<ul>
+<li class=""><strong>Event Storage:</strong> Use free-tier database (PostgreSQL via Railway, Supabase, or local)</li>
+<li class=""><strong>Reminders:</strong> Use browser notifications (no paid push notification service)</li>
+<li class=""><strong>Task Integration:</strong> Use event bus for integration (no paid message queue initially)</li>
+<li class=""><strong>Import/Export:</strong> Server-side processing only (no external conversion services)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-002-timeline">BC-002: Timeline<a href="#bc-002-timeline" class="hash-link" aria-label="Direct link to BC-002: Timeline" title="Direct link to BC-002: Timeline" translate="no">​</a></h3>
+<p>Calendar management is on critical path for MVP (3-6 months):</p>
+<ul>
+<li class=""><strong>Must Have features</strong> (FR-CAL-001, 002, 009) required for MVP</li>
+<li class=""><strong>Should Have features</strong> (FR-CAL-003, 004, 005, 006, 007) enhance UX but can be simplified or deferred</li>
+<li class=""><strong>Could Have feature</strong> (FR-CAL-008) explicitly post-MVP</li>
+<li class="">Prioritize core event CRUD and basic views for initial release</li>
+<li class="">Defer advanced features like recurring events and import/export to post-MVP</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-003-resources">BC-003: Resources<a href="#bc-003-resources" class="hash-link" aria-label="Direct link to BC-003: Resources" title="Direct link to BC-003: Resources" translate="no">​</a></h3>
+<p>Single-developer constraints affect Calendar management:</p>
+<ul>
+<li class=""><strong>Leverage UI Libraries:</strong> Use existing calendar components (FullCalendar, Angular Calendar) if feasible</li>
+<li class=""><strong>Simplify Recurrence:</strong> Consider limiting recurrence patterns initially (daily, weekly, monthly only)</li>
+<li class=""><strong>Automate Testing:</strong> Heavy investment in unit tests for time-related logic</li>
+<li class=""><strong>Incremental Development:</strong> Build core CRUD first, then views, then advanced features</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-004-technology-stack">BC-004: Technology stack<a href="#bc-004-technology-stack" class="hash-link" aria-label="Direct link to BC-004: Technology stack" title="Direct link to BC-004: Technology stack" translate="no">​</a></h3>
+<p>Calendar management aligns with chosen stack:</p>
+<ul>
+<li class=""><strong>Frontend:</strong> Angular components for calendar views (consider FullCalendar library), date pickers (Angular Material)</li>
+<li class=""><strong>Backend:</strong> Spring Boot REST APIs for event/calendar CRUD</li>
+<li class=""><strong>Database:</strong> PostgreSQL with indexes for efficient date-range queries</li>
+<li class=""><strong>Events:</strong> Spring Events initially; design for future Kafka/RabbitMQ migration</li>
+<li class=""><strong>Integration:</strong> Event-driven integration with Tasks context</li>
+<li class=""><strong>Reminders:</strong> Browser Notifications API, service workers for background delivery</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="success-metrics-alignment">Success metrics alignment<a href="#success-metrics-alignment" class="hash-link" aria-label="Direct link to Success metrics alignment" title="Direct link to Success metrics alignment" translate="no">​</a></h2>
+<p>Calendar management contributes to the following success metrics from BR-001 through BR-008:</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-003-technical-metrics">BR-003: Technical metrics<a href="#br-003-technical-metrics" class="hash-link" aria-label="Direct link to BR-003: Technical metrics" title="Direct link to BR-003: Technical metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Calendar contribution</th></tr></thead><tbody><tr><td><strong>Page Load Time</strong></td><td>&lt; 2 seconds</td><td>Efficient calendar rendering, lazy loading of events</td></tr><tr><td><strong>API Response Time</strong></td><td>&lt; 200ms (p95)</td><td>Optimized event queries, indexed date-range searches</td></tr><tr><td><strong>Test Coverage</strong></td><td>&gt; 80%</td><td>Comprehensive unit/integration tests for all FR-CAL features</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-001-portfolio-quality-metrics">BR-001: Portfolio quality metrics<a href="#br-001-portfolio-quality-metrics" class="hash-link" aria-label="Direct link to BR-001: Portfolio quality metrics" title="Direct link to BR-001: Portfolio quality metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Calendar contribution</th></tr></thead><tbody><tr><td><strong>Architecture Documentation</strong></td><td>All views complete</td><td>Calendar aggregate design, event lifecycle, integration flows</td></tr><tr><td><strong>Code Quality Score</strong></td><td>No critical issues</td><td>DDD patterns (aggregates, entities, value objects), time handling</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-002-br-005-user-experience-metrics">BR-002, BR-005: User experience metrics<a href="#br-002-br-005-user-experience-metrics" class="hash-link" aria-label="Direct link to BR-002, BR-005: User experience metrics" title="Direct link to BR-002, BR-005: User experience metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Calendar contribution</th></tr></thead><tbody><tr><td><strong>Task Completion Rate</strong></td><td>&gt; 95%</td><td>Intuitive event creation, multiple views, reminders</td></tr><tr><td><strong>Mobile Usability</strong></td><td>Fully Responsive</td><td>Responsive calendar views, touch-friendly controls</td></tr><tr><td><strong>Accessibility Score</strong></td><td>WCAG 2.1 Level AA</td><td>Keyboard navigation, screen reader support for events</td></tr><tr><td><strong>User Satisfaction</strong></td><td>&gt; 4.0/5.0</td><td>Visual calendar views, reliable reminders, task integration</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="traceability-matrix">Traceability matrix<a href="#traceability-matrix" class="hash-link" aria-label="Direct link to Traceability matrix" title="Direct link to Traceability matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Feature</th><th>Business Req</th><th>Domain Events</th><th>User Stories</th></tr></thead><tbody><tr><td>FR-CAL-001</td><td>BR-001, BR-002, BR-005</td><td>EventCreated, EventUpdated, EventDeleted</td><td>US-CAL-001-001/002/003/004</td></tr><tr><td>FR-CAL-002</td><td>BR-001, BR-002, BR-005</td><td>None (read-only)</td><td>US-CAL-002-001/002/003/004</td></tr><tr><td>FR-CAL-003</td><td>BR-001, BR-002, BR-005</td><td>RecurrencePatternCreated, RecurrencePatternUpdated</td><td>US-CAL-003-001/002/003/004</td></tr><tr><td>FR-CAL-004</td><td>BR-001, BR-002, BR-005</td><td>ReminderSet, ReminderTriggered, ReminderDismissed</td><td>US-CAL-004-001/002/003/004</td></tr><tr><td>FR-CAL-005</td><td>BR-001, BR-002, BR-005</td><td>CategoryCreated, CategoryUpdated, CategoryDeleted</td><td>US-CAL-005-001/002/003/004</td></tr><tr><td>FR-CAL-006</td><td>BR-001, BR-002, BR-005</td><td>None (validation only)</td><td>US-CAL-006-001/002/003</td></tr><tr><td>FR-CAL-007</td><td>BR-001, BR-002, BR-005</td><td>EventCreationRequestedFromTask (consumed), EventCreated</td><td>US-CAL-007-001/002/003</td></tr><tr><td>FR-CAL-008</td><td>BR-001, BR-005, BR-006</td><td>EventCreated (for imports)</td><td>US-CAL-008-001/002/003</td></tr><tr><td>FR-CAL-009</td><td>BR-001, BR-002, BR-005</td><td>EventCreated, EventUpdated</td><td>US-CAL-009-001/002/003/004</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/functional/calendar.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/functional/tasks"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Tasks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/functional/weather"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Weather</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a><ul><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#fr-cal-001-event-management" class="table-of-contents__link toc-highlight">FR-CAL-001: Event management</a></li><li><a href="#fr-cal-002-calendar-views" class="table-of-contents__link toc-highlight">FR-CAL-002: Calendar views</a></li><li><a href="#fr-cal-003-recurring-events" class="table-of-contents__link toc-highlight">FR-CAL-003: Recurring events</a></li><li><a href="#fr-cal-004-event-reminders" class="table-of-contents__link toc-highlight">FR-CAL-004: Event reminders</a></li><li><a href="#fr-cal-005-event-categories" class="table-of-contents__link toc-highlight">FR-CAL-005: Event categories</a></li><li><a href="#fr-cal-006-event-time-conflict-detection" class="table-of-contents__link toc-highlight">FR-CAL-006: Event time conflict detection</a></li><li><a href="#fr-cal-007-task-integration" class="table-of-contents__link toc-highlight">FR-CAL-007: Task integration</a></li><li><a href="#fr-cal-008-event-importexport" class="table-of-contents__link toc-highlight">FR-CAL-008: Event import/export</a></li><li><a href="#fr-cal-009-all-day-events" class="table-of-contents__link toc-highlight">FR-CAL-009: All-day events</a></li></ul></li><li><a href="#cross-feature-considerations" class="table-of-contents__link toc-highlight">Cross-feature considerations</a><ul><li><a href="#interactions-between-features" class="table-of-contents__link toc-highlight">Interactions between features</a></li><li><a href="#shared-business-rules" class="table-of-contents__link toc-highlight">Shared business rules</a></li><li><a href="#data-consistency-requirements" class="table-of-contents__link toc-highlight">Data consistency requirements</a></li></ul></li><li><a href="#business-constraints-impact" class="table-of-contents__link toc-highlight">Business constraints impact</a><ul><li><a href="#bc-001-budget" class="table-of-contents__link toc-highlight">BC-001: Budget</a></li><li><a href="#bc-002-timeline" class="table-of-contents__link toc-highlight">BC-002: Timeline</a></li><li><a href="#bc-003-resources" class="table-of-contents__link toc-highlight">BC-003: Resources</a></li><li><a href="#bc-004-technology-stack" class="table-of-contents__link toc-highlight">BC-004: Technology stack</a></li></ul></li><li><a href="#success-metrics-alignment" class="table-of-contents__link toc-highlight">Success metrics alignment</a><ul><li><a href="#br-003-technical-metrics" class="table-of-contents__link toc-highlight">BR-003: Technical metrics</a></li><li><a href="#br-001-portfolio-quality-metrics" class="table-of-contents__link toc-highlight">BR-001: Portfolio quality metrics</a></li><li><a href="#br-002-br-005-user-experience-metrics" class="table-of-contents__link toc-highlight">BR-002, BR-005: User experience metrics</a></li></ul></li><li><a href="#traceability-matrix" class="table-of-contents__link toc-highlight">Traceability matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

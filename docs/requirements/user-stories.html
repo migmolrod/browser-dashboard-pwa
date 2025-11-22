@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/user-stories" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">User Stories | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/user-stories"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="User Stories | Browser Dashboard PWA"><meta data-rh="true" name="description" content="User stories describe features from the end-user perspective, following the format: &quot;As a [user type], I want [goal], so"><meta data-rh="true" property="og:description" content="User stories describe features from the end-user perspective, following the format: &quot;As a [user type], I want [goal], so"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/user-stories"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/user-stories" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/user-stories" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"User Stories","item":"https://migmolrod.github.io/docs/requirements/user-stories"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">User Stories</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>User Stories</h1></header>
+<p>User stories describe features from the end-user perspective, following the format: &quot;As a [user type], I want [goal], so
+that [benefit].&quot;</p>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="authentication-and-account-management">Authentication and Account Management<a href="#authentication-and-account-management" class="hash-link" aria-label="Direct link to Authentication and Account Management" title="Direct link to Authentication and Account Management" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-001-user-registration">US-001: User Registration<a href="#us-001-user-registration" class="hash-link" aria-label="Direct link to US-001: User Registration" title="Direct link to US-001: User Registration" translate="no">​</a></h3>
+<p><strong>As a</strong> new visitor<br>
+<strong>I want</strong> to create an account<br>
+<strong>So that</strong> I can save my dashboard configuration and access it from any device</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can register with email and password</li>
+<li class="">I receive feedback if email is already registered</li>
+<li class="">I see password requirements clearly</li>
+<li class="">I&#x27;m automatically logged in after registration</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-002-user-login">US-002: User Login<a href="#us-002-user-login" class="hash-link" aria-label="Direct link to US-002: User Login" title="Direct link to US-002: User Login" translate="no">​</a></h3>
+<p><strong>As a</strong> registered user<br>
+<strong>I want</strong> to log in to my account<br>
+<strong>So that</strong> I can access my personalized dashboard</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can log in with my email and password</li>
+<li class="">I can choose to stay logged in</li>
+<li class="">I see helpful error messages for invalid credentials</li>
+<li class="">I&#x27;m redirected to my dashboard after login</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-003-password-recovery">US-003: Password Recovery<a href="#us-003-password-recovery" class="hash-link" aria-label="Direct link to US-003: Password Recovery" title="Direct link to US-003: Password Recovery" translate="no">​</a></h3>
+<p><strong>As a</strong> user who forgot my password<br>
+<strong>I want</strong> to reset my password<br>
+<strong>So that</strong> I can regain access to my account</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can request a password reset via email</li>
+<li class="">I receive a reset link quickly</li>
+<li class="">The link expires after a reasonable time</li>
+<li class="">I can set a new password successfully</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="dashboard-personalization">Dashboard Personalization<a href="#dashboard-personalization" class="hash-link" aria-label="Direct link to Dashboard Personalization" title="Direct link to Dashboard Personalization" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-004-theme-selection">US-004: Theme Selection<a href="#us-004-theme-selection" class="hash-link" aria-label="Direct link to US-004: Theme Selection" title="Direct link to US-004: Theme Selection" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to switch between light and dark themes<br>
+<strong>So that</strong> I can use the dashboard comfortably in different lighting conditions</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can easily toggle between themes</li>
+<li class="">My choice is remembered</li>
+<li class="">The transition is smooth and immediate</li>
+<li class="">All modules respect the theme choice</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-005-module-visibility">US-005: Module Visibility<a href="#us-005-module-visibility" class="hash-link" aria-label="Direct link to US-005: Module Visibility" title="Direct link to US-005: Module Visibility" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to show or hide different modules<br>
+<strong>So that</strong> I can focus on the features I use most</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can toggle each module on/off</li>
+<li class="">Hidden modules don&#x27;t take up space</li>
+<li class="">My preferences are saved</li>
+<li class="">The dashboard rearranges smoothly</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-006-dashboard-layout">US-006: Dashboard Layout<a href="#us-006-dashboard-layout" class="hash-link" aria-label="Direct link to US-006: Dashboard Layout" title="Direct link to US-006: Dashboard Layout" translate="no">​</a></h3>
+<p><strong>As a</strong> power user<br>
+<strong>I want</strong> to customize the layout of my dashboard<br>
+<strong>So that</strong> I can organize modules according to my workflow</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can drag and drop modules to reposition them</li>
+<li class="">I can resize modules</li>
+<li class="">Changes are saved automatically</li>
+<li class="">I can reset to default layout</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="bookmarks-module">Bookmarks Module<a href="#bookmarks-module" class="hash-link" aria-label="Direct link to Bookmarks Module" title="Direct link to Bookmarks Module" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-101-add-quick-links">US-101: Add Quick Links<a href="#us-101-add-quick-links" class="hash-link" aria-label="Direct link to US-101: Add Quick Links" title="Direct link to US-101: Add Quick Links" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to add my frequently visited websites to the bookmarks manager<br>
+<strong>So that</strong> I can access them quickly</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can add a link with just a URL</li>
+<li class="">The favicon is automatically fetched</li>
+<li class="">I can customize the title</li>
+<li class="">The link appears immediately in my bookmarks manager</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-102-organize-links-in-folders">US-102: Organize Links in Folders<a href="#us-102-organize-links-in-folders" class="hash-link" aria-label="Direct link to US-102: Organize Links in Folders" title="Direct link to US-102: Organize Links in Folders" translate="no">​</a></h3>
+<p><strong>As a</strong> user with many bookmarks<br>
+<strong>I want</strong> to organize my links into folders<br>
+<strong>So that</strong> I can keep my bookmarks tidy</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can create folders with custom names</li>
+<li class="">I can drag links into folders</li>
+<li class="">I can expand folders to see their contents</li>
+<li class="">I can choose folder colors or icons</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-103-reorder-links">US-103: Reorder Links<a href="#us-103-reorder-links" class="hash-link" aria-label="Direct link to US-103: Reorder Links" title="Direct link to US-103: Reorder Links" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to reorder my links and folders<br>
+<strong>So that</strong> I can prioritize my most-used sites</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can drag and drop to reorder</li>
+<li class="">Visual feedback shows where the item will be placed</li>
+<li class="">Order is saved automatically</li>
+<li class="">I can reorder both links and folders</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-104-search-links">US-104: Search Links<a href="#us-104-search-links" class="hash-link" aria-label="Direct link to US-104: Search Links" title="Direct link to US-104: Search Links" translate="no">​</a></h3>
+<p><strong>As a</strong> user with many links<br>
+<strong>I want</strong> to search my bookmarks<br>
+<strong>So that</strong> I can quickly find a specific site</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Search works as I type</li>
+<li class="">Matches are highlighted</li>
+<li class="">Search checks both titles and URLs</li>
+<li class="">I can clear the search easily</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-105-smooth-animations">US-105: Smooth Animations<a href="#us-105-smooth-animations" class="hash-link" aria-label="Direct link to US-105: Smooth Animations" title="Direct link to US-105: Smooth Animations" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> smooth animations when interacting with links<br>
+<strong>So that</strong> the dashboard feels polished and professional</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Hover effects are smooth</li>
+<li class="">Opening folders is animated</li>
+<li class="">Drag and drop has visual feedback</li>
+<li class="">Animations don&#x27;t slow down the interface</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="task-list-module">Task List Module<a href="#task-list-module" class="hash-link" aria-label="Direct link to Task List Module" title="Direct link to Task List Module" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-201-create-tasks">US-201: Create Tasks<a href="#us-201-create-tasks" class="hash-link" aria-label="Direct link to US-201: Create Tasks" title="Direct link to US-201: Create Tasks" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to quickly add tasks to my list<br>
+<strong>So that</strong> I can keep track of things I need to do</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can add a task with just a title</li>
+<li class="">I can optionally add details, due date, and priority</li>
+<li class="">The task appears immediately</li>
+<li class="">I can add multiple tasks quickly</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-202-mark-tasks-complete">US-202: Mark Tasks Complete<a href="#us-202-mark-tasks-complete" class="hash-link" aria-label="Direct link to US-202: Mark Tasks Complete" title="Direct link to US-202: Mark Tasks Complete" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to mark tasks as complete<br>
+<strong>So that</strong> I can track my progress</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can click a checkbox to complete a task</li>
+<li class="">Completed tasks are visually distinct</li>
+<li class="">I feel satisfied when completing a task (nice animation)</li>
+<li class="">Completed tasks move to a separate section</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-203-set-task-priority">US-203: Set Task Priority<a href="#us-203-set-task-priority" class="hash-link" aria-label="Direct link to US-203: Set Task Priority" title="Direct link to US-203: Set Task Priority" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to set priorities for my tasks<br>
+<strong>So that</strong> I can focus on what&#x27;s most important</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can choose Low, Medium, or High priority</li>
+<li class="">Tasks are visually color-coded by priority</li>
+<li class="">I can sort tasks by priority</li>
+<li class="">Default priority is Medium</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-204-set-due-dates">US-204: Set Due Dates<a href="#us-204-set-due-dates" class="hash-link" aria-label="Direct link to US-204: Set Due Dates" title="Direct link to US-204: Set Due Dates" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to set due dates for tasks<br>
+<strong>So that</strong> I can meet my deadlines</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can pick a due date from a calendar</li>
+<li class="">Overdue tasks are clearly marked</li>
+<li class="">I see relative due dates (e.g., &quot;Due today&quot;, &quot;Due in 3 days&quot;)</li>
+<li class="">I can sort by due date</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-205-filter-and-sort-tasks">US-205: Filter and Sort Tasks<a href="#us-205-filter-and-sort-tasks" class="hash-link" aria-label="Direct link to US-205: Filter and Sort Tasks" title="Direct link to US-205: Filter and Sort Tasks" translate="no">​</a></h3>
+<p><strong>As a</strong> user with many tasks<br>
+<strong>I want</strong> to filter and sort my task list<br>
+<strong>So that</strong> I can focus on relevant tasks</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can filter by status, priority, or category</li>
+<li class="">I can sort by various criteria</li>
+<li class="">Multiple filters can be applied</li>
+<li class="">I can clear filters easily</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-206-organize-with-categories">US-206: Organize with Categories<a href="#us-206-organize-with-categories" class="hash-link" aria-label="Direct link to US-206: Organize with Categories" title="Direct link to US-206: Organize with Categories" translate="no">​</a></h3>
+<p><strong>As an</strong> organized user<br>
+<strong>I want</strong> to categorize my tasks<br>
+<strong>So that</strong> I can group related tasks</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can create custom categories</li>
+<li class="">I can assign colors to categories</li>
+<li class="">I can assign multiple categories to a task</li>
+<li class="">I can filter by category</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="weather-module">Weather Module<a href="#weather-module" class="hash-link" aria-label="Direct link to Weather Module" title="Direct link to Weather Module" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-301-view-current-weather">US-301: View Current Weather<a href="#us-301-view-current-weather" class="hash-link" aria-label="Direct link to US-301: View Current Weather" title="Direct link to US-301: View Current Weather" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to see current weather for my location<br>
+<strong>So that</strong> I can plan my day</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I see temperature and conditions</li>
+<li class="">Weather icon matches conditions</li>
+<li class="">Information updates automatically</li>
+<li class="">I see additional details (humidity, wind, etc.)</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-302-view-weather-forecast">US-302: View Weather Forecast<a href="#us-302-view-weather-forecast" class="hash-link" aria-label="Direct link to US-302: View Weather Forecast" title="Direct link to US-302: View Weather Forecast" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to see the upcoming weather forecast<br>
+<strong>So that</strong> I can plan ahead</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I see a 5-day forecast</li>
+<li class="">Each day shows high/low and conditions</li>
+<li class="">Icons are clear and understandable</li>
+<li class="">I can expand for more details</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-303-change-location">US-303: Change Location<a href="#us-303-change-location" class="hash-link" aria-label="Direct link to US-303: Change Location" title="Direct link to US-303: Change Location" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to change my weather location<br>
+<strong>So that</strong> I can see weather for places I care about</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can search for a city or enter a ZIP code</li>
+<li class="">Location changes immediately</li>
+<li class="">My choice is saved</li>
+<li class="">I see suggestions as I type</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-304-weather-alerts">US-304: Weather Alerts<a href="#us-304-weather-alerts" class="hash-link" aria-label="Direct link to US-304: Weather Alerts" title="Direct link to US-304: Weather Alerts" translate="no">​</a></h3>
+<p><strong>As a</strong> user in an area with severe weather<br>
+<strong>I want</strong> to be notified of weather alerts<br>
+<strong>So that</strong> I can stay safe</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Alerts are prominently displayed</li>
+<li class="">Severity is indicated</li>
+<li class="">I can read full alert details</li>
+<li class="">I can dismiss alerts</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-305-multiple-locations">US-305: Multiple Locations<a href="#us-305-multiple-locations" class="hash-link" aria-label="Direct link to US-305: Multiple Locations" title="Direct link to US-305: Multiple Locations" translate="no">​</a></h3>
+<p><strong>As a</strong> user who travels or has family elsewhere<br>
+<strong>I want</strong> to track weather for multiple locations<br>
+<strong>So that</strong> I can stay informed about different areas</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can add multiple locations</li>
+<li class="">I can quickly switch between them</li>
+<li class="">I can set a default location</li>
+<li class="">I can remove locations</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="calendar-module">Calendar Module<a href="#calendar-module" class="hash-link" aria-label="Direct link to Calendar Module" title="Direct link to Calendar Module" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-401-create-events">US-401: Create Events<a href="#us-401-create-events" class="hash-link" aria-label="Direct link to US-401: Create Events" title="Direct link to US-401: Create Events" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to create calendar events<br>
+<strong>So that</strong> I can keep track of my schedule</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can quickly create events with title and time</li>
+<li class="">I can add optional details (location, description)</li>
+<li class="">Event appears immediately in the calendar</li>
+<li class="">I can create all-day events</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-402-view-calendar">US-402: View Calendar<a href="#us-402-view-calendar" class="hash-link" aria-label="Direct link to US-402: View Calendar" title="Direct link to US-402: View Calendar" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to view my calendar in different formats<br>
+<strong>So that</strong> I can see my schedule in the way that works best for me</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can switch between month, week, and day views</li>
+<li class="">Current date is highlighted</li>
+<li class="">I can navigate between dates easily</li>
+<li class="">Events are clearly displayed</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-403-edit-events">US-403: Edit Events<a href="#us-403-edit-events" class="hash-link" aria-label="Direct link to US-403: Edit Events" title="Direct link to US-403: Edit Events" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to edit my calendar events<br>
+<strong>So that</strong> I can update my schedule as plans change</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can click an event to edit it</li>
+<li class="">I can drag and drop to reschedule</li>
+<li class="">I can resize to change duration</li>
+<li class="">Changes save immediately</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-404-recurring-events">US-404: Recurring Events<a href="#us-404-recurring-events" class="hash-link" aria-label="Direct link to US-404: Recurring Events" title="Direct link to US-404: Recurring Events" translate="no">​</a></h3>
+<p><strong>As a</strong> user with regular commitments<br>
+<strong>I want</strong> to create recurring events<br>
+<strong>So that</strong> I don&#x27;t have to add the same event repeatedly</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can set various recurrence patterns</li>
+<li class="">I can edit or delete single occurrences or the entire series</li>
+<li class="">I can set an end date for recurrence</li>
+<li class="">Recurring events are clearly marked</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-405-event-reminders">US-405: Event Reminders<a href="#us-405-event-reminders" class="hash-link" aria-label="Direct link to US-405: Event Reminders" title="Direct link to US-405: Event Reminders" translate="no">​</a></h3>
+<p><strong>As a</strong> forgetful user<br>
+<strong>I want</strong> to receive reminders for my events<br>
+<strong>So that</strong> I don&#x27;t miss important appointments</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can set multiple reminders per event</li>
+<li class="">I receive browser notifications</li>
+<li class="">I can snooze reminders</li>
+<li class="">I can configure default reminder times</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-406-link-tasks-and-events">US-406: Link Tasks and Events<a href="#us-406-link-tasks-and-events" class="hash-link" aria-label="Direct link to US-406: Link Tasks and Events" title="Direct link to US-406: Link Tasks and Events" translate="no">​</a></h3>
+<p><strong>As a</strong> user managing both tasks and events<br>
+<strong>I want</strong> to link tasks to calendar events<br>
+<strong>So that</strong> I can see related tasks and events together</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can associate tasks with events</li>
+<li class="">Linked tasks appear in event details</li>
+<li class="">I can create an event from a task</li>
+<li class="">Task completion is reflected in the event</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-407-color-code-events">US-407: Color-Code Events<a href="#us-407-color-code-events" class="hash-link" aria-label="Direct link to US-407: Color-Code Events" title="Direct link to US-407: Color-Code Events" translate="no">​</a></h3>
+<p><strong>As a</strong> user with diverse commitments<br>
+<strong>I want</strong> to color-code my events by category<br>
+<strong>So that</strong> I can quickly identify different types of events</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can create event categories with colors</li>
+<li class="">Events are displayed in their category color</li>
+<li class="">I can filter by category</li>
+<li class="">I can assign multiple categories</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="cross-module-features">Cross-Module Features<a href="#cross-module-features" class="hash-link" aria-label="Direct link to Cross-Module Features" title="Direct link to Cross-Module Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-501-offline-access">US-501: Offline Access<a href="#us-501-offline-access" class="hash-link" aria-label="Direct link to US-501: Offline Access" title="Direct link to US-501: Offline Access" translate="no">​</a></h3>
+<p><strong>As a</strong> user who sometimes loses internet connection<br>
+<strong>I want</strong> the dashboard to work offline<br>
+<strong>So that</strong> I can always access my information</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can view my data offline</li>
+<li class="">Changes are queued and synced when online</li>
+<li class="">I&#x27;m notified when offline</li>
+<li class="">No data is lost</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-502-install-as-app">US-502: Install as App<a href="#us-502-install-as-app" class="hash-link" aria-label="Direct link to US-502: Install as App" title="Direct link to US-502: Install as App" translate="no">​</a></h3>
+<p><strong>As a</strong> user<br>
+<strong>I want</strong> to install the dashboard as a desktop/mobile app<br>
+<strong>So that</strong> I can access it easily without opening a browser</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I see an install prompt</li>
+<li class="">The app launches in standalone mode</li>
+<li class="">The app icon appears on my device</li>
+<li class="">The app feels native</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-503-global-search">US-503: Global Search<a href="#us-503-global-search" class="hash-link" aria-label="Direct link to US-503: Global Search" title="Direct link to US-503: Global Search" translate="no">​</a></h3>
+<p><strong>As a</strong> user with lots of data<br>
+<strong>I want</strong> to search across all modules<br>
+<strong>So that</strong> I can quickly find anything</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can search from anywhere</li>
+<li class="">Results show links, tasks, and events</li>
+<li class="">Results are grouped by type</li>
+<li class="">I can use a keyboard shortcut</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-504-export-data">US-504: Export Data<a href="#us-504-export-data" class="hash-link" aria-label="Direct link to US-504: Export Data" title="Direct link to US-504: Export Data" translate="no">​</a></h3>
+<p><strong>As a</strong> user concerned about data ownership<br>
+<strong>I want</strong> to export my data<br>
+<strong>So that</strong> I have a backup and can move to another service if needed</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I can export all my data</li>
+<li class="">Multiple formats available (JSON, CSV, iCal)</li>
+<li class="">Export includes all modules</li>
+<li class="">Export is easy to find in settings</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelCouldHave_Pzg7">Could Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-505-notifications">US-505: Notifications<a href="#us-505-notifications" class="hash-link" aria-label="Direct link to US-505: Notifications" title="Direct link to US-505: Notifications" translate="no">​</a></h3>
+<p><strong>As a</strong> user who wants to stay informed<br>
+<strong>I want</strong> to receive notifications for important events<br>
+<strong>So that</strong> I don&#x27;t miss deadlines or appointments</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">I receive browser notifications</li>
+<li class="">I can configure notification preferences</li>
+<li class="">I can enable/disable notifications per module</li>
+<li class="">Notifications are clear and actionable</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="adminportfolio-features">Admin/Portfolio Features<a href="#adminportfolio-features" class="hash-link" aria-label="Direct link to Admin/Portfolio Features" title="Direct link to Admin/Portfolio Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-601-project-documentation">US-601: Project Documentation<a href="#us-601-project-documentation" class="hash-link" aria-label="Direct link to US-601: Project Documentation" title="Direct link to US-601: Project Documentation" translate="no">​</a></h3>
+<p><strong>As a</strong> portfolio reviewer<br>
+<strong>I want</strong> to access comprehensive project documentation<br>
+<strong>So that</strong> I can understand the development process and technical decisions</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Documentation is easily accessible</li>
+<li class="">Architecture and design are explained</li>
+<li class="">Code examples are provided</li>
+<li class="">Setup instructions are clear</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-602-live-demo">US-602: Live Demo<a href="#us-602-live-demo" class="hash-link" aria-label="Direct link to US-602: Live Demo" title="Direct link to US-602: Live Demo" translate="no">​</a></h3>
+<p><strong>As a</strong> portfolio reviewer<br>
+<strong>I want</strong> to try a live demo<br>
+<strong>So that</strong> I can experience the application firsthand</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Demo is publicly accessible</li>
+<li class="">Demo data is pre-loaded</li>
+<li class="">Demo is responsive and fast</li>
+<li class="">Demo showcases all features</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-603-code-quality-indicators">US-603: Code Quality Indicators<a href="#us-603-code-quality-indicators" class="hash-link" aria-label="Direct link to US-603: Code Quality Indicators" title="Direct link to US-603: Code Quality Indicators" translate="no">​</a></h3>
+<p><strong>As a</strong> technical reviewer<br>
+<strong>I want</strong> to see code quality metrics<br>
+<strong>So that</strong> I can assess code maintainability</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Test coverage is visible</li>
+<li class="">Code quality scores are shown</li>
+<li class="">Build status is indicated</li>
+<li class="">Security scan results are available</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="accessibility-stories">Accessibility Stories<a href="#accessibility-stories" class="hash-link" aria-label="Direct link to Accessibility Stories" title="Direct link to Accessibility Stories" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-701-keyboard-navigation">US-701: Keyboard Navigation<a href="#us-701-keyboard-navigation" class="hash-link" aria-label="Direct link to US-701: Keyboard Navigation" title="Direct link to US-701: Keyboard Navigation" translate="no">​</a></h3>
+<p><strong>As a</strong> keyboard user<br>
+<strong>I want</strong> to navigate the dashboard without a mouse<br>
+<strong>So that</strong> I can use the application efficiently</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">All features are keyboard accessible</li>
+<li class="">Focus indicators are clear</li>
+<li class="">Tab order is logical</li>
+<li class="">Keyboard shortcuts are available</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-702-screen-reader-support">US-702: Screen Reader Support<a href="#us-702-screen-reader-support" class="hash-link" aria-label="Direct link to US-702: Screen Reader Support" title="Direct link to US-702: Screen Reader Support" translate="no">​</a></h3>
+<p><strong>As a</strong> screen reader user<br>
+<strong>I want</strong> the dashboard to be fully accessible<br>
+<strong>So that</strong> I can use all features independently</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">All images have alt text</li>
+<li class="">ARIA labels are provided</li>
+<li class="">Semantic HTML is used</li>
+<li class="">Screen reader testing passed</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-703-high-contrast-mode">US-703: High Contrast Mode<a href="#us-703-high-contrast-mode" class="hash-link" aria-label="Direct link to US-703: High Contrast Mode" title="Direct link to US-703: High Contrast Mode" translate="no">​</a></h3>
+<p><strong>As a</strong> user with low vision<br>
+<strong>I want</strong> a high contrast theme option<br>
+<strong>So that</strong> I can read the interface more easily</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">High contrast theme available</li>
+<li class="">Color contrast ratios meet WCAG AA</li>
+<li class="">All text is readable</li>
+<li class="">Interactive elements are distinguishable</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="mobile-user-stories">Mobile User Stories<a href="#mobile-user-stories" class="hash-link" aria-label="Direct link to Mobile User Stories" title="Direct link to Mobile User Stories" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-801-touch-friendly-interface">US-801: Touch-Friendly Interface<a href="#us-801-touch-friendly-interface" class="hash-link" aria-label="Direct link to US-801: Touch-Friendly Interface" title="Direct link to US-801: Touch-Friendly Interface" translate="no">​</a></h3>
+<p><strong>As a</strong> mobile user<br>
+<strong>I want</strong> the dashboard to be touch-friendly<br>
+<strong>So that</strong> I can use it comfortably on my phone</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Buttons and links are large enough</li>
+<li class="">Swipe gestures are supported</li>
+<li class="">No hover-dependent features</li>
+<li class="">Mobile layout is optimized</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-802-responsive-design">US-802: Responsive Design<a href="#us-802-responsive-design" class="hash-link" aria-label="Direct link to US-802: Responsive Design" title="Direct link to US-802: Responsive Design" translate="no">​</a></h3>
+<p><strong>As a</strong> user on various devices<br>
+<strong>I want</strong> the dashboard to adapt to my screen size<br>
+<strong>So that</strong> I have a good experience regardless of device</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Layout adapts to screen size</li>
+<li class="">All features work on mobile</li>
+<li class="">Text is readable without zooming</li>
+<li class="">No horizontal scrolling</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="us-803-offline-mobile-use">US-803: Offline Mobile Use<a href="#us-803-offline-mobile-use" class="hash-link" aria-label="Direct link to US-803: Offline Mobile Use" title="Direct link to US-803: Offline Mobile Use" translate="no">​</a></h3>
+<p><strong>As a</strong> mobile user on the go<br>
+<strong>I want</strong> the dashboard to work without internet<br>
+<strong>So that</strong> I can access my information anywhere</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">App works offline on mobile</li>
+<li class="">Data syncs when connection returns</li>
+<li class="">Offline status is clear</li>
+<li class="">Core features available offline</li>
+</ul>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/user-stories.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/non-functional-requirements"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Non-Functional requirements</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/system-requirements"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">System requirements</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#authentication-and-account-management" class="table-of-contents__link toc-highlight">Authentication and Account Management</a><ul><li><a href="#us-001-user-registration" class="table-of-contents__link toc-highlight">US-001: User Registration</a></li><li><a href="#us-002-user-login" class="table-of-contents__link toc-highlight">US-002: User Login</a></li><li><a href="#us-003-password-recovery" class="table-of-contents__link toc-highlight">US-003: Password Recovery</a></li></ul></li><li><a href="#dashboard-personalization" class="table-of-contents__link toc-highlight">Dashboard Personalization</a><ul><li><a href="#us-004-theme-selection" class="table-of-contents__link toc-highlight">US-004: Theme Selection</a></li><li><a href="#us-005-module-visibility" class="table-of-contents__link toc-highlight">US-005: Module Visibility</a></li><li><a href="#us-006-dashboard-layout" class="table-of-contents__link toc-highlight">US-006: Dashboard Layout</a></li></ul></li><li><a href="#bookmarks-module" class="table-of-contents__link toc-highlight">Bookmarks Module</a><ul><li><a href="#us-101-add-quick-links" class="table-of-contents__link toc-highlight">US-101: Add Quick Links</a></li><li><a href="#us-102-organize-links-in-folders" class="table-of-contents__link toc-highlight">US-102: Organize Links in Folders</a></li><li><a href="#us-103-reorder-links" class="table-of-contents__link toc-highlight">US-103: Reorder Links</a></li><li><a href="#us-104-search-links" class="table-of-contents__link toc-highlight">US-104: Search Links</a></li><li><a href="#us-105-smooth-animations" class="table-of-contents__link toc-highlight">US-105: Smooth Animations</a></li></ul></li><li><a href="#task-list-module" class="table-of-contents__link toc-highlight">Task List Module</a><ul><li><a href="#us-201-create-tasks" class="table-of-contents__link toc-highlight">US-201: Create Tasks</a></li><li><a href="#us-202-mark-tasks-complete" class="table-of-contents__link toc-highlight">US-202: Mark Tasks Complete</a></li><li><a href="#us-203-set-task-priority" class="table-of-contents__link toc-highlight">US-203: Set Task Priority</a></li><li><a href="#us-204-set-due-dates" class="table-of-contents__link toc-highlight">US-204: Set Due Dates</a></li><li><a href="#us-205-filter-and-sort-tasks" class="table-of-contents__link toc-highlight">US-205: Filter and Sort Tasks</a></li><li><a href="#us-206-organize-with-categories" class="table-of-contents__link toc-highlight">US-206: Organize with Categories</a></li></ul></li><li><a href="#weather-module" class="table-of-contents__link toc-highlight">Weather Module</a><ul><li><a href="#us-301-view-current-weather" class="table-of-contents__link toc-highlight">US-301: View Current Weather</a></li><li><a href="#us-302-view-weather-forecast" class="table-of-contents__link toc-highlight">US-302: View Weather Forecast</a></li><li><a href="#us-303-change-location" class="table-of-contents__link toc-highlight">US-303: Change Location</a></li><li><a href="#us-304-weather-alerts" class="table-of-contents__link toc-highlight">US-304: Weather Alerts</a></li><li><a href="#us-305-multiple-locations" class="table-of-contents__link toc-highlight">US-305: Multiple Locations</a></li></ul></li><li><a href="#calendar-module" class="table-of-contents__link toc-highlight">Calendar Module</a><ul><li><a href="#us-401-create-events" class="table-of-contents__link toc-highlight">US-401: Create Events</a></li><li><a href="#us-402-view-calendar" class="table-of-contents__link toc-highlight">US-402: View Calendar</a></li><li><a href="#us-403-edit-events" class="table-of-contents__link toc-highlight">US-403: Edit Events</a></li><li><a href="#us-404-recurring-events" class="table-of-contents__link toc-highlight">US-404: Recurring Events</a></li><li><a href="#us-405-event-reminders" class="table-of-contents__link toc-highlight">US-405: Event Reminders</a></li><li><a href="#us-406-link-tasks-and-events" class="table-of-contents__link toc-highlight">US-406: Link Tasks and Events</a></li><li><a href="#us-407-color-code-events" class="table-of-contents__link toc-highlight">US-407: Color-Code Events</a></li></ul></li><li><a href="#cross-module-features" class="table-of-contents__link toc-highlight">Cross-Module Features</a><ul><li><a href="#us-501-offline-access" class="table-of-contents__link toc-highlight">US-501: Offline Access</a></li><li><a href="#us-502-install-as-app" class="table-of-contents__link toc-highlight">US-502: Install as App</a></li><li><a href="#us-503-global-search" class="table-of-contents__link toc-highlight">US-503: Global Search</a></li><li><a href="#us-504-export-data" class="table-of-contents__link toc-highlight">US-504: Export Data</a></li><li><a href="#us-505-notifications" class="table-of-contents__link toc-highlight">US-505: Notifications</a></li></ul></li><li><a href="#adminportfolio-features" class="table-of-contents__link toc-highlight">Admin/Portfolio Features</a><ul><li><a href="#us-601-project-documentation" class="table-of-contents__link toc-highlight">US-601: Project Documentation</a></li><li><a href="#us-602-live-demo" class="table-of-contents__link toc-highlight">US-602: Live Demo</a></li><li><a href="#us-603-code-quality-indicators" class="table-of-contents__link toc-highlight">US-603: Code Quality Indicators</a></li></ul></li><li><a href="#accessibility-stories" class="table-of-contents__link toc-highlight">Accessibility Stories</a><ul><li><a href="#us-701-keyboard-navigation" class="table-of-contents__link toc-highlight">US-701: Keyboard Navigation</a></li><li><a href="#us-702-screen-reader-support" class="table-of-contents__link toc-highlight">US-702: Screen Reader Support</a></li><li><a href="#us-703-high-contrast-mode" class="table-of-contents__link toc-highlight">US-703: High Contrast Mode</a></li></ul></li><li><a href="#mobile-user-stories" class="table-of-contents__link toc-highlight">Mobile User Stories</a><ul><li><a href="#us-801-touch-friendly-interface" class="table-of-contents__link toc-highlight">US-801: Touch-Friendly Interface</a></li><li><a href="#us-802-responsive-design" class="table-of-contents__link toc-highlight">US-802: Responsive Design</a></li><li><a href="#us-803-offline-mobile-use" class="table-of-contents__link toc-highlight">US-803: Offline Mobile Use</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/functional/dashboard-management" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Dashboard Management | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/functional/dashboard-management"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Dashboard Management | Browser Dashboard PWA"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/functional/dashboard-management"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/dashboard-management" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/dashboard-management" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Dashboard Management","item":"https://migmolrod.github.io/docs/requirements/functional/dashboard-management"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/requirements/functional/dashboard-management"><span title="Dashboard Management" class="linkLabel_dWUb">Dashboard Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/bookmarks"><span title="Bookmarks" class="linkLabel_dWUb">Bookmarks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/tasks"><span title="Tasks" class="linkLabel_dWUb">Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/calendar"><span title="Calendar" class="linkLabel_dWUb">Calendar</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/weather"><span title="Weather" class="linkLabel_dWUb">Weather</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/user-identity"><span title="User identity" class="linkLabel_dWUb">User identity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/preferences"><span title="Preferences" class="linkLabel_dWUb">Preferences</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/synchronization"><span title="Synchronization" class="linkLabel_dWUb">Synchronization</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Functional requirements</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Dashboard Management</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><div class="reqMetadata_OnDx"><div><strong>Status: </strong><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></div><span><strong>Last updated</strong>: <!-- -->November 15, 2025</span></div>
+<header><h1>Dashboard management</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Dashboard Management bounded context is the core differentiator of the Browser Dashboard PWA. It orchestrates
+dashboard composition, layout, and personalization—enabling users to create, customize, and manage their personalized
+dashboard experience.</p>
+<p><strong>Bounded context code:</strong> DAS<br>
+<strong>Related DMD section:</strong> <a class="" href="/docs/domain/bounded-contexts/dashboard-management">Dashboard Management (Core)</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Feature Code</th><th>Feature Name</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td>FR-DAS-001</td><td>Dashboard creation</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-002</td><td>Widget instance management</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-003</td><td>Widget configuration</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-004</td><td>Layout management</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-005</td><td>Widget reordering</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-006</td><td>Personalization profiles</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-007</td><td>Dashboard deletion</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-DAS-008</td><td>Dashboard persistence</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-001-dashboard-creation">FR-DAS-001: Dashboard creation<a href="#fr-das-001-dashboard-creation" class="hash-link" aria-label="Direct link to FR-DAS-001: Dashboard creation" title="Direct link to FR-DAS-001: Dashboard creation" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->Users must be able to create a new dashboard. Each user is initially provided with a default dashboard upon
+registration, but the system shall support the creation of additional dashboards for future extensibility (even if the
+MVP limits users to a single dashboard).</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User identity must be available from the Identity &amp; Access context</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">A new Dashboard aggregate is created</li>
+<li class="">Dashboard is associated with the user&#x27;s identity</li>
+<li class="">Dashboard has an empty widget instances collection</li>
+<li class="">Dashboard has a default layout configuration</li>
+<li class="">DashboardCreated event is published</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">A dashboard must belong to exactly one user</li>
+<li class="">Dashboard must have a unique identifier (DashboardId)</li>
+<li class="">Dashboard names (if provided) must be non-empty and length-bounded</li>
+<li class="">Default layout is a single-column grid</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Dashboard (root)</li>
+<li class="">Domain Events: DashboardCreated, UserRegistered (consumed)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">User Identity context (Conformist relationship)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Dashboard is created with valid DashboardId</li>
+<li class="">Dashboard is persisted in the database</li>
+<li class="">Dashboard is associated with the authenticated user</li>
+<li class="">DashboardCreated event is published with userId and dashboardId</li>
+<li class="">Default empty layout is initialized</li>
+<li class="">User can view their newly created dashboard</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-001-001: Create default dashboard on registration</li>
+<li class="">US-DAS-001-002: View empty dashboard after creation</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios">Scenarios<a href="#scenarios" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-the-default-dashboard-on-user-registration-happy-path">Scenario 1: Create the default dashboard on user registration (happy path)<a href="#scenario-1-create-the-default-dashboard-on-user-registration-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create the default dashboard on user registration (happy path)" title="Direct link to Scenario 1: Create the default dashboard on user registration (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a new user has just registered and been authenticated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the system processes the UserRegistered event</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a default dashboard is automatically created for the user</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard has an empty widget instances collection</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard has a default single-column layout</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a DashboardCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-view-a-newly-created-dashboard">Scenario 2: View a newly created dashboard<a href="#scenario-2-view-a-newly-created-dashboard" class="hash-link" aria-label="Direct link to Scenario 2: View a newly created dashboard" title="Direct link to Scenario 2: View a newly created dashboard" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a dashboard has just been created for a user</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user navigates to their dashboard view</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then they see an empty dashboard with placeholder content</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And they see instructions on how to add widgets</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the layout is rendered correctly</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-dashboard-creation-failure--invalid-user">Scenario 3: Dashboard creation failure — invalid User<a href="#scenario-3-dashboard-creation-failure--invalid-user" class="hash-link" aria-label="Direct link to Scenario 3: Dashboard creation failure — invalid User" title="Direct link to Scenario 3: Dashboard creation failure — invalid User" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given an attempt is made to create a dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user identity is invalid or not found</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the dashboard creation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an appropriate error message is returned</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no DashboardCreated event is published</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Dashboard creation is typically triggered by the UserRegistered event</li>
+<li class="">Consider using eventual consistency for the dashboard creation process</li>
+<li class="">Ensure transactional consistency within the Dashboard aggregate</li>
+<li class="">Dashboard IDs should be generated using a strongly-typed identifier pattern</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should users be able to name their dashboards in the MVP, or defer to future iterations?</li>
+<li class="">Should there be a maximum number of dashboards per user?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-002-widget-instance-management">FR-DAS-002: Widget instance management<a href="#fr-das-002-widget-instance-management" class="hash-link" aria-label="Direct link to FR-DAS-002: Widget instance management" title="Direct link to FR-DAS-002: Widget instance management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+Users must be able to add and remove widget instances from their dashboard. Widget instances represent concrete
+placements of widget types (e.g., &quot;Weather widget for Madrid&quot;, &quot;Bookmarks widget showing Work folder&quot;).</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have an existing dashboard</li>
+<li class="">Widget type must be valid and registered in the system</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Widget instance is added to or removed from the dashboard</li>
+<li class="">Layout is updated to accommodate the change</li>
+<li class="">WidgetAddedToDashboard or WidgetRemovedFromDashboard event is published</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">A widget instance must reference a valid widget type</li>
+<li class="">Widget instances must have unique identifiers within a dashboard</li>
+<li class="">A widget type can have multiple instances on the same dashboard (e.g., multiple weather widgets for different cities)</li>
+<li class="">Layout positions cannot overlap</li>
+<li class="">Widget instance configuration must conform to the widget type&#x27;s schema</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Dashboard (root), WidgetInstance</li>
+<li class="">Domain Events: WidgetAddedToDashboard, WidgetRemovedFromDashboard</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">Widget Registry (must validate widget types)</li>
+<li class="">FR-DAS-001 (Dashboard must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can add a widget instance by selecting a widget type</li>
+<li class="">Widget instance is assigned a unique WidgetInstanceId</li>
+<li class="">Widget instance is added to the dashboard&#x27;s widget instances collection</li>
+<li class="">Widget instance is positioned according to layout rules</li>
+<li class="">WidgetAddedToDashboard event is published</li>
+<li class="">User can remove a widget instance</li>
+<li class="">Widget instance is removed from the dashboard</li>
+<li class="">WidgetRemovedFromDashboard event is published</li>
+<li class="">Layout is recalculated to close gaps after removal</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-002-001: Add a widget to dashboard</li>
+<li class="">US-DAS-002-002: Remove a widget from dashboard</li>
+<li class="">US-DAS-002-003: Add multiple instances of the same widget type</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-1">Scenarios<a href="#scenarios-1" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-add-the-first-widget-to-a-dashboard-happy-path">Scenario 1: Add the first widget to a dashboard (happy path)<a href="#scenario-1-add-the-first-widget-to-a-dashboard-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Add the first widget to a dashboard (happy path)" title="Direct link to Scenario 1: Add the first widget to a dashboard (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an empty dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Add Widget&quot; and chooses &quot;Bookmarks&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a new Bookmarks widget instance is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget is added to the dashboard at the first available position</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget has default configuration values</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a WidgetAddedToDashboard event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard view updates to show the new widget</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-add-a-second-instance-of-the-same-widget-type">Scenario 2: Add a second instance of the same widget type<a href="#scenario-2-add-a-second-instance-of-the-same-widget-type" class="hash-link" aria-label="Direct link to Scenario 2: Add a second instance of the same widget type" title="Direct link to Scenario 2: Add a second instance of the same widget type" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user already has a Weather widget for London on their dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user adds another Weather widget for Madrid</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then both widget instances coexist on the dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And each has a unique WidgetInstanceId</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And each has independent configuration (London vs Madrid)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And layout positions do not overlap</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-remove-a-widget-from-a-dashboard">Scenario 3: Remove a widget from a dashboard<a href="#scenario-3-remove-a-widget-from-a-dashboard" class="hash-link" aria-label="Direct link to Scenario 3: Remove a widget from a dashboard" title="Direct link to Scenario 3: Remove a widget from a dashboard" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has multiple widgets on their dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Remove&quot; on a specific widget instance</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a confirmation dialog appears</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And upon confirmation, the widget instance is removed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a WidgetRemovedFromDashboard event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the layout is recalculated to close the gap</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And other widgets shift to fill the space</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-adda-a-widget-with-an-invalid-type">Scenario 4: Adda a widget with an invalid type<a href="#scenario-4-adda-a-widget-with-an-invalid-type" class="hash-link" aria-label="Direct link to Scenario 4: Adda a widget with an invalid type" title="Direct link to Scenario 4: Adda a widget with an invalid type" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user attempts to add a widget</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the widget type is not registered or invalid</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the operation fails with a validation error</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message is displayed to the user</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no WidgetAddedToDashboard event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-remove-widget--cancel-confirmation">Scenario 5: Remove widget — cancel confirmation<a href="#scenario-5-remove-widget--cancel-confirmation" class="hash-link" aria-label="Direct link to Scenario 5: Remove widget — cancel confirmation" title="Direct link to Scenario 5: Remove widget — cancel confirmation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user initiates widget removal</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the confirmation dialog is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user clicks &quot;Cancel&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the widget is not removed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no WidgetRemovedFromDashboard event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard remains unchanged</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Widget types must be validated against a widget registry before creating instances</li>
+<li class="">Widget configurations should be schema-validated to ensure compatibility</li>
+<li class="">Consider implementing undo/redo functionality for widget operations</li>
+<li class="">Layout recalculation should maintain visual stability (minimize jarring rearrangements)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a maximum number of widget instances per dashboard?</li>
+<li class="">Should removed widgets be archived instead of permanently deleted?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-003-widget-configuration">FR-DAS-003: Widget configuration<a href="#fr-das-003-widget-configuration" class="hash-link" aria-label="Direct link to FR-DAS-003: Widget configuration" title="Direct link to FR-DAS-003: Widget configuration" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+Users must be able to configure individual widget instances. Each widget type has its own configuration schema (e.g.,
+Weather widget needs a location, Bookmarks widget needs a folder selection). The Dashboard context is responsible for
+persisting these configurations.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Widget instance must exist on the dashboard</li>
+<li class="">Configuration values must conform to the widget type&#x27;s schema</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Widget instance configuration is updated</li>
+<li class="">Configuration is persisted</li>
+<li class="">WidgetConfigurationChanged event is published</li>
+<li class="">Widget is refreshed with new configuration</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Configuration must validate against the widget type&#x27;s schema</li>
+<li class="">Configuration changes must be atomic (all or nothing)</li>
+<li class="">Invalid configurations are rejected</li>
+<li class="">Default configuration values are provided for new widget instances</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement),  BR-003 (Technical
+Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: WidgetInstance</li>
+<li class="">Domain Events: WidgetConfigurationChanged</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-DAS-002 (Widget instance must exist)</li>
+<li class="">Widget type schema validation</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can open configuration settings for a widget instance</li>
+<li class="">Configuration UI is widget-type-specific</li>
+<li class="">Configuration values are validated before saving</li>
+<li class="">Invalid configurations show appropriate error messages</li>
+<li class="">Valid configuration changes are persisted immediately</li>
+<li class="">WidgetConfigurationChanged event is published</li>
+<li class="">Widget instance updates to reflect new configuration</li>
+<li class="">Configuration changes are reflected in real-time</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-003-001: Configure weather widget location</li>
+<li class="">US-DAS-003-002: Configure bookmarks widget folder</li>
+<li class="">US-DAS-003-003: Validate invalid configuration</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-2">Scenarios<a href="#scenarios-2" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-configure-weather-widget-location-happy-path">Scenario 1: Configure weather widget location (happy path)<a href="#scenario-1-configure-weather-widget-location-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Configure weather widget location (happy path)" title="Direct link to Scenario 1: Configure weather widget location (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a Weather widget on their dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user opens the widget settings</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And changes the location from &quot;London&quot; to &quot;Madrid&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And clicks &quot;Save&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the configuration is validated against the Weather widget schema</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the location is updated to &quot;Madrid&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a WidgetConfigurationChanged event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget refreshes to show Madrid weather data</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-configure-bookmarks-widget-folder-selection">Scenario 2: Configure bookmarks widget folder selection<a href="#scenario-2-configure-bookmarks-widget-folder-selection" class="hash-link" aria-label="Direct link to Scenario 2: Configure bookmarks widget folder selection" title="Direct link to Scenario 2: Configure bookmarks widget folder selection" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a Bookmarks widget on their dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user opens the widget settings</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And selects &quot;Work&quot; folder from available folders</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And clicks &quot;Save&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the configuration is updated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget displays only bookmarks from the &quot;Work&quot; folder</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a WidgetConfigurationChanged event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-invalid-configuration--missing-required-field">Scenario 3: Invalid configuration — missing required field<a href="#scenario-3-invalid-configuration--missing-required-field" class="hash-link" aria-label="Direct link to Scenario 3: Invalid configuration — missing required field" title="Direct link to Scenario 3: Invalid configuration — missing required field" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is configuring a widget</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user leaves a required configuration field empty</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And attempts to save</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message highlights the missing field</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the configuration is not saved</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no WidgetConfigurationChanged event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-invalid-configuration--schema-violation">Scenario 4: Invalid configuration — schema violation<a href="#scenario-4-invalid-configuration--schema-violation" class="hash-link" aria-label="Direct link to Scenario 4: Invalid configuration — schema violation" title="Direct link to Scenario 4: Invalid configuration — schema violation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is configuring a Weather widget</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters an invalid location (e.g., &quot;XYZ123&quot;)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And attempts to save</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then schema validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the location is invalid</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the configuration is not saved</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget retains its previous configuration</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-cancel-configuration-changes">Scenario 5: Cancel configuration changes<a href="#scenario-5-cancel-configuration-changes" class="hash-link" aria-label="Direct link to Scenario 5: Cancel configuration changes" title="Direct link to Scenario 5: Cancel configuration changes" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has opened widget settings</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And made changes to the configuration</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Cancel&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then changes are discarded</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget retains its previous configuration</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no WidgetConfigurationChanged event is published</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use JSON Schema or similar for widget configuration validation</li>
+<li class="">Configuration UI should be dynamically generated based on widget schema</li>
+<li class="">Consider implementing configuration versioning for backward compatibility</li>
+<li class="">Optimize for minimal data transfer (only send changed values)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should configuration changes be undoable?</li>
+<li class="">Should there be validation warnings in addition to errors (e.g., &quot;This location has limited weather data&quot;)?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-004-layout-management">FR-DAS-004: Layout management<a href="#fr-das-004-layout-management" class="hash-link" aria-label="Direct link to FR-DAS-004: Layout management" title="Direct link to FR-DAS-004: Layout management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+The system must manage the layout of widget instances on the dashboard, ensuring proper positioning, sizing, and
+responsive behavior. Layout defines the grid/region structure, ordering rules, and sizing constraints.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">Dashboard must exist</li>
+<li class="">Widget instances must exist on the dashboard</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Layout is calculated and persisted</li>
+<li class="">Widget instances are positioned according to layout rules</li>
+<li class="">Layout is responsive to different screen sizes</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Layout positions cannot overlap</li>
+<li class="">Ordering is total within a region (each widget has a defined position)</li>
+<li class="">Default layout is a single-column grid</li>
+<li class="">Layout must be responsive (adapt to screen sizes)</li>
+<li class="">Minimum widget size constraints must be enforced</li>
+<li class="">Maximum number of widgets per row may be limited</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Layout, Dashboard</li>
+<li class="">Domain Events: LayoutChanged (future)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-DAS-002 (Widget instances must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Layout is automatically calculated when widgets are added/removed</li>
+<li class="">Layout prevents overlapping positions</li>
+<li class="">Layout is responsive to screen size changes</li>
+<li class="">Widget instances maintain stable positions across sessions</li>
+<li class="">Layout is persisted with the dashboard</li>
+<li class="">Empty dashboard shows placeholder layout</li>
+<li class="">Layout adapts gracefully to different screen sizes (desktop, tablet, mobile)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-004-001: View dashboard with automatic layout</li>
+<li class="">US-DAS-004-002: Dashboard layout adapts to mobile screen</li>
+<li class="">US-DAS-004-003: Layout prevents widget overlap</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-3">Scenarios<a href="#scenarios-3" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-automatic-layout-calculation-happy-path">Scenario 1: Automatic layout calculation (happy path)<a href="#scenario-1-automatic-layout-calculation-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Automatic layout calculation (happy path)" title="Direct link to Scenario 1: Automatic layout calculation (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a dashboard with three widgets</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the dashboard is rendered</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the layout engine calculates positions for all widgets</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And widgets are arranged in a single-column grid</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no widgets overlap</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And widgets fill the available width</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And vertical spacing is consistent</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-responsive-layout---mobile-view">Scenario 2: Responsive layout - mobile view<a href="#scenario-2-responsive-layout---mobile-view" class="hash-link" aria-label="Direct link to Scenario 2: Responsive layout - mobile view" title="Direct link to Scenario 2: Responsive layout - mobile view" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a dashboard with multiple widgets</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user views the dashboard on a mobile device</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the layout adapts to a single-column view</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And widgets stack vertically</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And widget widths fill the mobile screen</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And spacing is adjusted for mobile viewing</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-layout-after-widget-removal">Scenario 3: Layout after widget removal<a href="#scenario-3-layout-after-widget-removal" class="hash-link" aria-label="Direct link to Scenario 3: Layout after widget removal" title="Direct link to Scenario 3: Layout after widget removal" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a dashboard with four widgets in a grid layout</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user removes the second widget</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the layout is recalculated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the gap is closed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And remaining widgets shift to maintain a cohesive layout</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no empty spaces remain in the middle of the layout</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-layout-persistence">Scenario 4: Layout persistence<a href="#scenario-4-layout-persistence" class="hash-link" aria-label="Direct link to Scenario 4: Layout persistence" title="Direct link to Scenario 4: Layout persistence" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has arranged widgets on their dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user logs out and logs back in</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the layout is restored exactly as it was</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all widget positions are preserved</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no widgets have shifted or overlapped</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-responsive-layout--window-resize">Scenario 5: Responsive layout — window resize<a href="#scenario-5-responsive-layout--window-resize" class="hash-link" aria-label="Direct link to Scenario 5: Responsive layout — window resize" title="Direct link to Scenario 5: Responsive layout — window resize" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their dashboard on desktop</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user resizes the browser window</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the layout adapts in real-time</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And widgets reflow to fit the new width</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no widgets are cut off or hidden</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the transition is smooth</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Consider using CSS Grid or Flexbox for responsive layout</li>
+<li class="">Layout algorithm should be deterministic and stable</li>
+<li class="">Implement layout caching to minimize recalculations</li>
+<li class="">Consider grid-based layout system (12-column grid or similar)</li>
+<li class="">Ensure layout works well with browser zoom levels</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should the system support multiple layout presets (grid, masonry, custom)?</li>
+<li class="">Should minimum/maximum widget sizes be configurable per widget type?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-005-widget-reordering">FR-DAS-005: Widget reordering<a href="#fr-das-005-widget-reordering" class="hash-link" aria-label="Direct link to FR-DAS-005: Widget reordering" title="Direct link to FR-DAS-005: Widget reordering" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+Users must be able to reorder widget instances on their dashboard by dragging and dropping them. This allows users to
+prioritize and organize their dashboard according to their preferences.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Dashboard must have at least two widget instances</li>
+<li class="">User must have drag capability (desktop or touch device)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Widget instance positions are updated</li>
+<li class="">New order is persisted</li>
+<li class="">WidgetReordered event is published</li>
+<li class="">Visual feedback confirms the change</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Ordering must be total within a layout region</li>
+<li class="">Drag operation must provide visual feedback</li>
+<li class="">Drop zones must be clearly indicated</li>
+<li class="">Order changes must be atomic (complete or rollback)</li>
+<li class="">Layout constraints must be maintained after reordering</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Dashboard, WidgetInstance, Layout</li>
+<li class="">Domain Events: WidgetReordered</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-DAS-002 (Widget instances must exist)</li>
+<li class="">FR-DAS-004 (Layout management)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can drag a widget by clicking and holding</li>
+<li class="">Visual feedback shows the widget being dragged</li>
+<li class="">Drop zones are highlighted during drag</li>
+<li class="">Widget is repositioned when dropped in a valid location</li>
+<li class="">Other widgets shift to accommodate the moved widget</li>
+<li class="">WidgetReordered event is published with old and new positions</li>
+<li class="">New order is persisted immediately</li>
+<li class="">Drag operation can be cancelled (ESC key or drag outside)</li>
+<li class="">Touch devices support drag-and-drop</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-005-001: Reorder widgets by drag-and-drop</li>
+<li class="">US-DAS-005-002: Cancel drag operation</li>
+<li class="">US-DAS-005-003: Reorder widgets on touch device</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-4">Scenarios<a href="#scenarios-4" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-reorder-widgets-by-drag-and-drop-happy-path">Scenario 1: Reorder widgets by drag-and-drop (happy path)<a href="#scenario-1-reorder-widgets-by-drag-and-drop-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Reorder widgets by drag-and-drop (happy path)" title="Direct link to Scenario 1: Reorder widgets by drag-and-drop (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a dashboard with four widgets (A, B, C, D) in that order</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user drags widget D to the position between A and B</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then widget D is visually lifted and follows the cursor</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And drop zones between other widgets are highlighted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And when dropped, the order becomes: A, D, B, C</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a WidgetReordered event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the new order is persisted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And other widgets smoothly animate to their new positions</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-reorder-widgets--first-to-last-position">Scenario 2: Reorder widgets — first to last position<a href="#scenario-2-reorder-widgets--first-to-last-position" class="hash-link" aria-label="Direct link to Scenario 2: Reorder widgets — first to last position" title="Direct link to Scenario 2: Reorder widgets — first to last position" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a dashboard with widgets (A, B, C) in that order</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user drags widget A to the end of the list</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the order becomes: B, C, A</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the layout is recalculated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the change is persisted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a WidgetReordered event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-cancel-drag-operation">Scenario 3: Cancel drag operation<a href="#scenario-3-cancel-drag-operation" class="hash-link" aria-label="Direct link to Scenario 3: Cancel drag operation" title="Direct link to Scenario 3: Cancel drag operation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user starts dragging a widget</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user presses the ESC key before dropping</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the drag operation is cancelled</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget returns to its original position</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no WidgetReordered event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the order remains unchanged</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-drag-widget-outside-valid-drop-zone">Scenario 4: Drag widget outside valid drop zone<a href="#scenario-4-drag-widget-outside-valid-drop-zone" class="hash-link" aria-label="Direct link to Scenario 4: Drag widget outside valid drop zone" title="Direct link to Scenario 4: Drag widget outside valid drop zone" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is dragging a widget</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user releases the widget outside any valid drop zone</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the widget snaps back to its original position</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no reordering occurs</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no WidgetReordered event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-reorder-widgets-on-touch-device">Scenario 5: Reorder widgets on touch device<a href="#scenario-5-reorder-widgets-on-touch-device" class="hash-link" aria-label="Direct link to Scenario 5: Reorder widgets on touch device" title="Direct link to Scenario 5: Reorder widgets on touch device" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their dashboard on a touch device</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user long-presses a widget and then drags it</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the widget enters drag mode</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And follows the touch point</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And can be dropped in a new position</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the same reordering logic applies as desktop</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement smooth animations for drag-and-drop feedback</li>
+<li class="">Use optimistic UI updates for perceived performance</li>
+<li class="">Consider implementing haptic feedback on mobile devices</li>
+<li class="">Ensure accessibility for keyboard-only users (alternative reorder mechanism)</li>
+<li class="">Throttle reorder events to avoid excessive persistence operations</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a &quot;Reorder Mode&quot; toggle to make reordering easier?</li>
+<li class="">Should undo functionality be available for accidental reorders?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-006-personalization-profiles">FR-DAS-006: Personalization profiles<a href="#fr-das-006-personalization-profiles" class="hash-link" aria-label="Direct link to FR-DAS-006: Personalization profiles" title="Direct link to FR-DAS-006: Personalization profiles" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong>
+Users should be able to create and switch between multiple personalization profiles (e.g., &quot;Work&quot;, &quot;Home&quot;, &quot;Travel&quot;).
+Each profile contains a different dashboard configuration including widgets, layout, and settings.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have at least one dashboard (default profile)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">New profile is created with associated dashboard</li>
+<li class="">User can switch between profiles</li>
+<li class="">Active profile is persisted</li>
+<li class="">ProfileSwitched event is published</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Each profile must have a unique name per user</li>
+<li class="">Profile names must be non-empty and length-bounded</li>
+<li class="">Default profile cannot be deleted</li>
+<li class="">Switching profiles loads the associated dashboard</li>
+<li class="">Each profile maintains independent widget configurations</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-004 (Scalability and
+Maintainability), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: Dashboard (each profile has its own dashboard)</li>
+<li class="">Domain Events: ProfileCreated, ProfileSwitched, ProfileDeleted</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-DAS-001 (Dashboard creation)</li>
+<li class="">FR-DAS-002 (Widget management)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can create a new profile with a unique name</li>
+<li class="">User can switch between existing profiles</li>
+<li class="">Active profile is indicated in the UI</li>
+<li class="">Switching profiles loads the associated dashboard configuration</li>
+<li class="">ProfileSwitched event is published</li>
+<li class="">Profile names are validated for uniqueness</li>
+<li class="">User can rename profiles</li>
+<li class="">User can delete non-default profiles</li>
+<li class="">Last active profile is restored on login</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-006-001: Create a new personalization profile</li>
+<li class="">US-DAS-006-002: Switch between profiles</li>
+<li class="">US-DAS-006-003: Rename a profile</li>
+<li class="">US-DAS-006-004: Delete a profile</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-5">Scenarios<a href="#scenarios-5" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-a-new-profile-happy-path">Scenario 1: Create a new profile (happy path)<a href="#scenario-1-create-a-new-profile-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create a new profile (happy path)" title="Direct link to Scenario 1: Create a new profile (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their default dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Create New Profile&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters the name &quot;Work&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms creation</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a new profile named &quot;Work&quot; is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a new empty dashboard is associated with the profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is switched to the new &quot;Work&quot; profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ProfileCreated event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the profile is added to the profile selector</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-switch-between-profiles">Scenario 2: Switch between profiles<a href="#scenario-2-switch-between-profiles" class="hash-link" aria-label="Direct link to Scenario 2: Switch between profiles" title="Direct link to Scenario 2: Switch between profiles" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has two profiles: &quot;Default&quot; and &quot;Work&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the &quot;Default&quot; profile is currently active</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Work&quot; from the profile selector</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the current dashboard is saved</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the &quot;Work&quot; dashboard is loaded</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ProfileSwitched event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And widgets and layout from &quot;Work&quot; profile are displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the profile selector shows &quot;Work&quot; as active</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-create-a-profile-with-duplicate-name">Scenario 3: Create a profile with duplicate name<a href="#scenario-3-create-a-profile-with-duplicate-name" class="hash-link" aria-label="Direct link to Scenario 3: Create a profile with duplicate name" title="Direct link to Scenario 3: Create a profile with duplicate name" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user already has a profile named &quot;Work&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to create another profile named &quot;Work&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the name is already in use</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the profile is not created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no ProfileCreated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-delete-non-default-profile">Scenario 4: Delete non-default profile<a href="#scenario-4-delete-non-default-profile" class="hash-link" aria-label="Direct link to Scenario 4: Delete non-default profile" title="Direct link to Scenario 4: Delete non-default profile" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has three profiles: &quot;Default&quot;, &quot;Work&quot;, and &quot;Home&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And &quot;Home&quot; profile is currently active</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user deletes the &quot;Home&quot; profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a confirmation dialog appears</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And upon confirmation, the &quot;Home&quot; profile is deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is switched to the &quot;Default&quot; profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a ProfileDeleted event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And &quot;Home&quot; is removed from the profile selector</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-attempt-to-delete-default-profile">Scenario 5: Attempt to delete default profile<a href="#scenario-5-attempt-to-delete-default-profile" class="hash-link" aria-label="Direct link to Scenario 5: Attempt to delete default profile" title="Direct link to Scenario 5: Attempt to delete default profile" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their &quot;Default&quot; profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to delete the &quot;Default&quot; profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the operation is prevented</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the default profile cannot be deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no ProfileDeleted event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-restore-last-active-profile-on-login">Scenario 6: Restore last active profile on login<a href="#scenario-6-restore-last-active-profile-on-login" class="hash-link" aria-label="Direct link to Scenario 6: Restore last active profile on login" title="Direct link to Scenario 6: Restore last active profile on login" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user&#x27;s last active profile was &quot;Work&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user logs out and logs back in</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the &quot;Work&quot; profile is automatically loaded</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard associated with &quot;Work&quot; is displayed</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Consider implementing profile templates for quick setup</li>
+<li class="">Each profile should have its own dashboard aggregate</li>
+<li class="">Profile switching should be optimized for performance (lazy loading)</li>
+<li class="">Consider implementing profile export/import functionality</li>
+<li class="">Profile metadata should include creation date, last modified, last accessed</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a maximum number of profiles per user?</li>
+<li class="">Should profile switching support keyboard shortcuts?</li>
+<li class="">Should profiles have their own themes/colors?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-007-dashboard-deletion">FR-DAS-007: Dashboard deletion<a href="#fr-das-007-dashboard-deletion" class="hash-link" aria-label="Direct link to FR-DAS-007: Dashboard deletion" title="Direct link to FR-DAS-007: Dashboard deletion" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+The system must support dashboard deletion as part of the dashboard lifecycle. While users may not directly delete their
+primary dashboard in the MVP, the capability is needed for cleanup operations and future profile management.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">Dashboard must exist</li>
+<li class="">Dashboard must not be the user&#x27;s only/default dashboard (in profile scenario)</li>
+<li class="">User must have appropriate permissions</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Dashboard is deleted</li>
+<li class="">All associated widget instances are removed</li>
+<li class="">Layout configuration is removed</li>
+<li class="">DashboardDeleted event is published</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Default/primary dashboard cannot be deleted if it&#x27;s the user&#x27;s only dashboard</li>
+<li class="">Deletion is permanent (no soft delete in MVP)</li>
+<li class="">All widget instances are cascade deleted</li>
+<li class="">Deletion must be atomic (all or nothing)</li>
+<li class="">User must confirm deletion action</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: Dashboard (root)</li>
+<li class="">Domain Events: DashboardDeleted</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-DAS-001 (Dashboard must exist)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Dashboard can be deleted via explicit command</li>
+<li class="">Confirmation is required before deletion</li>
+<li class="">All widget instances are removed</li>
+<li class="">Layout configuration is removed</li>
+<li class="">DashboardDeleted event is published</li>
+<li class="">User is redirected to another dashboard (if multiple exist)</li>
+<li class="">The default dashboard cannot be deleted if it&#x27;s the only one</li>
+<li class="">Deletion is atomic (transaction boundary)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-007-001: Delete a dashboard (profile scenario)</li>
+<li class="">US-DAS-007-002: Prevent deletion of only dashboard</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-6">Scenarios<a href="#scenarios-6" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-delete-dashboard-happy-path--multiple-profiles">Scenario 1: Delete dashboard (happy path — multiple profiles)<a href="#scenario-1-delete-dashboard-happy-path--multiple-profiles" class="hash-link" aria-label="Direct link to Scenario 1: Delete dashboard (happy path — multiple profiles)" title="Direct link to Scenario 1: Delete dashboard (happy path — multiple profiles)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has two profiles with associated dashboards: &quot;Default&quot; and &quot;Work&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is viewing the &quot;Work&quot; dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user selects &quot;Delete Dashboard&quot; from the profile menu</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a confirmation dialog appears warning of permanent deletion</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And upon confirmation, the &quot;Work&quot; dashboard is deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all widget instances on the &quot;Work&quot; dashboard are removed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a DashboardDeleted event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is switched to the &quot;Default&quot; dashboard</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-attempt-to-delete-only-dashboard">Scenario 2: Attempt to delete only dashboard<a href="#scenario-2-attempt-to-delete-only-dashboard" class="hash-link" aria-label="Direct link to Scenario 2: Attempt to delete only dashboard" title="Direct link to Scenario 2: Attempt to delete only dashboard" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has only one dashboard (the default dashboard)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to delete this dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the operation is prevented</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates the last dashboard cannot be deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no DashboardDeleted event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-cancel-dashboard-deletion">Scenario 3: Cancel dashboard deletion<a href="#scenario-3-cancel-dashboard-deletion" class="hash-link" aria-label="Direct link to Scenario 3: Cancel dashboard deletion" title="Direct link to Scenario 3: Cancel dashboard deletion" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user initiates dashboard deletion</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the confirmation dialog appears</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user clicks &quot;Cancel&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the deletion is aborted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard remains unchanged</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no DashboardDeleted event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-dashboard-deletion-on-account-deletion">Scenario 4: Dashboard deletion on account deletion<a href="#scenario-4-dashboard-deletion-on-account-deletion" class="hash-link" aria-label="Direct link to Scenario 4: Dashboard deletion on account deletion" title="Direct link to Scenario 4: Dashboard deletion on account deletion" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user requests account deletion</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the account deletion process runs</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then all dashboards associated with the user are deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And DashboardDeleted events are published for each dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all widget instances are cascade deleted</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Ensure proper cascade deletion of widget instances</li>
+<li class="">Consider implementing soft delete for audit purposes (future)</li>
+<li class="">Dashboard deletion should be transactional</li>
+<li class="">Consider archiving dashboard configurations before deletion (future)</li>
+<li class="">Ensure foreign key constraints are properly handled</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should deleted dashboards be recoverable (soft delete) instead of permanent deletion?</li>
+<li class="">Should there be a &quot;trash&quot; or &quot;archive&quot; feature for dashboards?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-das-008-dashboard-persistence">FR-DAS-008: Dashboard persistence<a href="#fr-das-008-dashboard-persistence" class="hash-link" aria-label="Direct link to FR-DAS-008: Dashboard persistence" title="Direct link to FR-DAS-008: Dashboard persistence" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+The system must persist all dashboard states, including the dashboard configuration, widget instances, widget
+configurations, and layout. This ensures users can resume their personalized experience across sessions and devices.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">Dashboard must exist</li>
+<li class="">User must be authenticated</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Dashboard state is persisted to storage</li>
+<li class="">State can be retrieved on later access</li>
+<li class="">Consistency is maintained across concurrent updates</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">All dashboard changes must be persisted immediately</li>
+<li class="">Widget configurations must validate before persistence</li>
+<li class="">Concurrent updates must be handled safely</li>
+<li class="">Persistence must be transactional (ACID properties)</li>
+<li class="">Failed persistence must not corrupt dashboard state</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: Dashboard (root), WidgetInstance, Layout</li>
+<li class="">Domain Events: All dashboard events</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">Storage infrastructure (database)</li>
+<li class="">All other FR-DAS features depend on persistence</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Dashboard state is persisted immediately after changes</li>
+<li class="">Widget additions/removals are persisted</li>
+<li class="">Widget configuration changes are persisted</li>
+<li class="">Widget reordering is persisted</li>
+<li class="">Layout changes are persisted</li>
+<li class="">Profile switches are persisted</li>
+<li class="">Dashboard can be retrieved exactly as last saved</li>
+<li class="">Concurrent updates are handled safely (optimistic locking)</li>
+<li class="">Failed persistence operations are logged and reported</li>
+<li class="">Persistence operations are atomic</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-DAS-008-001: Resume dashboard across sessions</li>
+<li class="">US-DAS-008-002: Handle concurrent dashboard updates</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-7">Scenarios<a href="#scenarios-7" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-persist-dashboard-after-widget-addition-happy-path">Scenario 1: Persist dashboard after widget addition (happy path)<a href="#scenario-1-persist-dashboard-after-widget-addition-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Persist dashboard after widget addition (happy path)" title="Direct link to Scenario 1: Persist dashboard after widget addition (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a dashboard loaded  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user adds a new widget  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the widget instance is immediately persisted to storage  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard&#x27;s widget instances collection is updated  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the layout is recalculated and persisted  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And persistence completes successfully</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-resume-dashboard-across-sessions">Scenario 2: Resume dashboard across sessions<a href="#scenario-2-resume-dashboard-across-sessions" class="hash-link" aria-label="Direct link to Scenario 2: Resume dashboard across sessions" title="Direct link to Scenario 2: Resume dashboard across sessions" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has configured their dashboard with multiple widgets  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user logs out  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user logs back in from a different device  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the dashboard is retrieved from storage  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all widget instances are restored  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all widget configurations are restored  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the layout is restored exactly as before  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard appears identical to when the user logged out</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-handle-concurrent-update-conflict">Scenario 3: Handle concurrent update conflict<a href="#scenario-3-handle-concurrent-update-conflict" class="hash-link" aria-label="Direct link to Scenario 3: Handle concurrent update conflict" title="Direct link to Scenario 3: Handle concurrent update conflict" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has their dashboard open in two browser tabs  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user adds a widget in tab 1  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And simultaneously adds a different widget in tab 2  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then optimistic locking detects the conflict  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And one operation succeeds immediately  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the other operation is retried with the updated state  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And both widgets are successfully added  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no data is lost</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-persistence-failure--network-error">Scenario 4: Persistence failure — network error<a href="#scenario-4-persistence-failure--network-error" class="hash-link" aria-label="Direct link to Scenario 4: Persistence failure — network error" title="Direct link to Scenario 4: Persistence failure — network error" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user adds a widget to their dashboard  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the persistence operation fails due to network error  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then an error message is displayed to the user  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the operation is queued for retry  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is notified when the retry succeeds  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard state is eventually consistent</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-retrieve-dashboard-with-invalid-widget-configuration">Scenario 5: Retrieve dashboard with invalid widget configuration<a href="#scenario-5-retrieve-dashboard-with-invalid-widget-configuration" class="hash-link" aria-label="Direct link to Scenario 5: Retrieve dashboard with invalid widget configuration" title="Direct link to Scenario 5: Retrieve dashboard with invalid widget configuration" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a dashboard is stored with a widget configuration  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the widget type schema has been updated  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the dashboard is retrieved  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the widget configuration is validated against the new schema  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And invalid configurations are migrated or reset to defaults  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is notified of any configuration changes  </span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the dashboard loads successfully</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use optimistic locking or versioning to handle concurrent updates</li>
+<li class="">Implement event sourcing pattern for auditability (future consideration)</li>
+<li class="">Consider implementing offline persistence for PWA offline mode</li>
+<li class="">Ensure database transactions maintain ACID properties</li>
+<li class="">Implement retry logic with exponential backoff for transient failures</li>
+<li class="">Use strongly typed entities for persistence mapping</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a maximum history of dashboard changes (undo stack)?</li>
+<li class="">Should the dashboard state be versioned for rollback capability?</li>
+<li class="">Should we implement a conflict resolution UI for concurrent updates?</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="cross-feature-considerations">Cross-feature considerations<a href="#cross-feature-considerations" class="hash-link" aria-label="Direct link to Cross-feature considerations" title="Direct link to Cross-feature considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="interactions-between-features">Interactions between features<a href="#interactions-between-features" class="hash-link" aria-label="Direct link to Interactions between features" title="Direct link to Interactions between features" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Dashboard Creation ↔ Widget Management:</strong> New dashboards start empty; widgets can only be added to existing
+dashboards</li>
+<li class=""><strong>Widget Management ↔ Layout Management:</strong> Adding/removing widgets triggers layout recalculation</li>
+<li class=""><strong>Widget Reordering ↔ Layout Management:</strong> Reordering updates layout positions; layout constraints govern valid drops</li>
+<li class=""><strong>Personalization Profiles ↔ All Features:</strong> Each profile has its own dashboard instance, isolating all widget and
+layout configurations</li>
+<li class=""><strong>Dashboard Persistence ↔ All Features:</strong> All features depend on persistence; persistence is the cross-cutting concern</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="shared-business-rules">Shared business rules<a href="#shared-business-rules" class="hash-link" aria-label="Direct link to Shared business rules" title="Direct link to Shared business rules" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Layout Consistency:</strong> All features that modify widget instances must ensure layout positions never overlap</li>
+<li class=""><strong>Widget Instance Uniqueness:</strong> Widget instances must have unique identifiers across the entire system</li>
+<li class=""><strong>Atomicity:</strong> All state changes must be atomic—either fully succeed or fully fail</li>
+<li class=""><strong>Validation:</strong> All widget configurations must validate against widget type schemas before persistence</li>
+<li class=""><strong>User Ownership:</strong> All dashboard operations must be scoped to the authenticated user</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="data-consistency-requirements">Data consistency requirements<a href="#data-consistency-requirements" class="hash-link" aria-label="Direct link to Data consistency requirements" title="Direct link to Data consistency requirements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Strong Consistency:</strong> Dashboard state changes (widget add/remove, reorder, configuration) require strong consistency</li>
+<li class=""><strong>Eventual Consistency:</strong> Widget data refreshes from downstream contexts can be eventually consistent</li>
+<li class=""><strong>Transactional Boundaries:</strong> Dashboard aggregate is the transactional boundary; all changes within must be atomic</li>
+<li class=""><strong>Event Publishing:</strong> Events must be published after successful persistence</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="business-constraints-impact">Business constraints impact<a href="#business-constraints-impact" class="hash-link" aria-label="Direct link to Business constraints impact" title="Direct link to Business constraints impact" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-001-budget">BC-001: Budget<a href="#bc-001-budget" class="hash-link" aria-label="Direct link to BC-001: Budget" title="Direct link to BC-001: Budget" translate="no">​</a></h3>
+<p>Dashboard Management must operate within zero-cost infrastructure constraints:</p>
+<ul>
+<li class=""><strong>Widget Registry:</strong> Must use in-memory or file-based storage (no external registry service)</li>
+<li class=""><strong>Event Publishing:</strong> Use local event bus initially; design for future migration to message queue</li>
+<li class=""><strong>Persistence:</strong> Use free-tier database (PostgreSQL via Railway, Supabase, or local)</li>
+<li class=""><strong>No paid widget marketplace or CDN</strong> for widget assets</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-002-timeline">BC-002: Timeline<a href="#bc-002-timeline" class="hash-link" aria-label="Direct link to BC-002: Timeline" title="Direct link to BC-002: Timeline" translate="no">​</a></h3>
+<p>Dashboard Management is on the critical path for MVP (3-6 months):</p>
+<ul>
+<li class=""><strong>Must Have features</strong> (FR-DAS-001, 002, 003, 004, 005, 007, 008) are required for MVP</li>
+<li class=""><strong>Should Have feature</strong> (FR-DAS-006 Personalization Profiles) may be deferred post-MVP</li>
+<li class="">Prioritize basic functionality over advanced features</li>
+<li class="">Profile support (FR-DAS-006) adds complexity; consider MVP with single dashboard only</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-003-resources">BC-003: Resources<a href="#bc-003-resources" class="hash-link" aria-label="Direct link to BC-003: Resources" title="Direct link to BC-003: Resources" translate="no">​</a></h3>
+<p>Single-developer constraints affect Dashboard Management:</p>
+<ul>
+<li class=""><strong>Leverage frameworks:</strong> Use existing drag-and-drop libraries (avoid building from scratch)</li>
+<li class=""><strong>Simplify layout engine:</strong> Start with CSS Grid/Flexbox (defer advanced layout algorithms)</li>
+<li class=""><strong>Automate testing:</strong> Heavy investment in automated tests for core features</li>
+<li class=""><strong>Documentation-first:</strong> Complete functional requirements before implementation (TDD/BDD)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-004-technology-stack">BC-004: Technology stack<a href="#bc-004-technology-stack" class="hash-link" aria-label="Direct link to BC-004: Technology stack" title="Direct link to BC-004: Technology stack" translate="no">​</a></h3>
+<p>Dashboard Management aligns with the chosen stack:</p>
+<ul>
+<li class=""><strong>Frontend:</strong> Angular components for widget rendering, drag-and-drop (Angular CDK)</li>
+<li class=""><strong>Backend:</strong> Spring Boot REST APIs for dashboard CRUD operations</li>
+<li class=""><strong>Database:</strong> PostgreSQL for dashboard/widget/layout persistence</li>
+<li class=""><strong>Events:</strong> Spring Events initially; design for future Kafka/RabbitMQ migration</li>
+<li class=""><strong>Validation:</strong> JSON Schema for widget configuration validation</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="success-metrics-alignment">Success metrics alignment<a href="#success-metrics-alignment" class="hash-link" aria-label="Direct link to Success metrics alignment" title="Direct link to Success metrics alignment" translate="no">​</a></h2>
+<p>Dashboard Management contributes to the following success metrics from BR-001 through BR-008:</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-003-technical-metrics">BR-003: Technical metrics<a href="#br-003-technical-metrics" class="hash-link" aria-label="Direct link to BR-003: Technical metrics" title="Direct link to BR-003: Technical metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Dashboard Management Contribution</th></tr></thead><tbody><tr><td><strong>Page Load Time</strong></td><td>&lt; 2 seconds</td><td>Efficient dashboard rendering, lazy loading of widget data</td></tr><tr><td><strong>API Response Time</strong></td><td>&lt; 200ms (p95)</td><td>Optimized dashboard/widget CRUD operations</td></tr><tr><td><strong>Test Coverage</strong></td><td>&gt; 80%</td><td>Comprehensive unit/integration tests for all FR-DAS features</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-001-portfolio-quality-metrics">BR-001: Portfolio quality metrics<a href="#br-001-portfolio-quality-metrics" class="hash-link" aria-label="Direct link to BR-001: Portfolio quality metrics" title="Direct link to BR-001: Portfolio quality metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Dashboard Management Contribution</th></tr></thead><tbody><tr><td><strong>Architecture Documentation</strong></td><td>All views complete</td><td>Dashboard aggregate design, context map, event flows</td></tr><tr><td><strong>Code Quality Score</strong></td><td>No critical issues</td><td>DDD patterns, clean code, proper validation</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-002-br-005-user-experience-metrics">BR-002, BR-005: User experience metrics<a href="#br-002-br-005-user-experience-metrics" class="hash-link" aria-label="Direct link to BR-002, BR-005: User experience metrics" title="Direct link to BR-002, BR-005: User experience metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Dashboard Management Contribution</th></tr></thead><tbody><tr><td><strong>Task Completion Rate</strong></td><td>&gt; 95%</td><td>Intuitive widget add/remove/reorder operations</td></tr><tr><td><strong>Mobile Usability</strong></td><td>Fully Responsive</td><td>Responsive layout adapts to all screen sizes</td></tr><tr><td><strong>Accessibility Score</strong></td><td>WCAG 2.1 Level AA</td><td>Keyboard navigation, screen reader support</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="traceability-matrix">Traceability matrix<a href="#traceability-matrix" class="hash-link" aria-label="Direct link to Traceability matrix" title="Direct link to Traceability matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Feature</th><th>Business Req</th><th>Domain Events</th><th>User Stories</th></tr></thead><tbody><tr><td>FR-DAS-001</td><td>BR-001, BR-002, BR-005</td><td>DashboardCreated, UserRegistered</td><td>US-DAS-001-001/002</td></tr><tr><td>FR-DAS-002</td><td>BR-001, BR-002, BR-005</td><td>WidgetAddedToDashboard, WidgetRemovedFromDashboard</td><td>US-DAS-002-001/002/003</td></tr><tr><td>FR-DAS-003</td><td>BR-001, BR-002, BR-003, BR-005</td><td>WidgetConfigurationChanged</td><td>US-DAS-003-001/002/003</td></tr><tr><td>FR-DAS-004</td><td>BR-001, BR-002, BR-005</td><td>LayoutChanged</td><td>US-DAS-004-001/002/003</td></tr><tr><td>FR-DAS-005</td><td>BR-001, BR-002, BR-005</td><td>WidgetReordered</td><td>US-DAS-005-001/002/003</td></tr><tr><td>FR-DAS-006</td><td>BR-001, BR-002, BR-004, BR-005</td><td>ProfileCreated, ProfileSwitched, ProfileDeleted</td><td>US-DAS-006-001/002/003/004</td></tr><tr><td>FR-DAS-007</td><td>BR-001, BR-002, BR-005</td><td>DashboardDeleted</td><td>US-DAS-007-001/002</td></tr><tr><td>FR-DAS-008</td><td>BR-001, BR-002, BR-003, BR-005</td><td>All dashboard events</td><td>US-DAS-008-001/002</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/functional/dashboard-management.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/business-requirements"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Business requirements</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/functional/bookmarks"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Bookmarks</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a><ul><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#fr-das-001-dashboard-creation" class="table-of-contents__link toc-highlight">FR-DAS-001: Dashboard creation</a></li><li><a href="#fr-das-002-widget-instance-management" class="table-of-contents__link toc-highlight">FR-DAS-002: Widget instance management</a></li><li><a href="#fr-das-003-widget-configuration" class="table-of-contents__link toc-highlight">FR-DAS-003: Widget configuration</a></li><li><a href="#fr-das-004-layout-management" class="table-of-contents__link toc-highlight">FR-DAS-004: Layout management</a></li><li><a href="#fr-das-005-widget-reordering" class="table-of-contents__link toc-highlight">FR-DAS-005: Widget reordering</a></li><li><a href="#fr-das-006-personalization-profiles" class="table-of-contents__link toc-highlight">FR-DAS-006: Personalization profiles</a></li><li><a href="#fr-das-007-dashboard-deletion" class="table-of-contents__link toc-highlight">FR-DAS-007: Dashboard deletion</a></li><li><a href="#fr-das-008-dashboard-persistence" class="table-of-contents__link toc-highlight">FR-DAS-008: Dashboard persistence</a></li></ul></li><li><a href="#cross-feature-considerations" class="table-of-contents__link toc-highlight">Cross-feature considerations</a><ul><li><a href="#interactions-between-features" class="table-of-contents__link toc-highlight">Interactions between features</a></li><li><a href="#shared-business-rules" class="table-of-contents__link toc-highlight">Shared business rules</a></li><li><a href="#data-consistency-requirements" class="table-of-contents__link toc-highlight">Data consistency requirements</a></li></ul></li><li><a href="#business-constraints-impact" class="table-of-contents__link toc-highlight">Business constraints impact</a><ul><li><a href="#bc-001-budget" class="table-of-contents__link toc-highlight">BC-001: Budget</a></li><li><a href="#bc-002-timeline" class="table-of-contents__link toc-highlight">BC-002: Timeline</a></li><li><a href="#bc-003-resources" class="table-of-contents__link toc-highlight">BC-003: Resources</a></li><li><a href="#bc-004-technology-stack" class="table-of-contents__link toc-highlight">BC-004: Technology stack</a></li></ul></li><li><a href="#success-metrics-alignment" class="table-of-contents__link toc-highlight">Success metrics alignment</a><ul><li><a href="#br-003-technical-metrics" class="table-of-contents__link toc-highlight">BR-003: Technical metrics</a></li><li><a href="#br-001-portfolio-quality-metrics" class="table-of-contents__link toc-highlight">BR-001: Portfolio quality metrics</a></li><li><a href="#br-002-br-005-user-experience-metrics" class="table-of-contents__link toc-highlight">BR-002, BR-005: User experience metrics</a></li></ul></li><li><a href="#traceability-matrix" class="table-of-contents__link toc-highlight">Traceability matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

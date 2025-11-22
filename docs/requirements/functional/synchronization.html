@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/functional/synchronization" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Synchronization | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/functional/synchronization"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Synchronization | Browser Dashboard PWA"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/functional/synchronization"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/synchronization" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/synchronization" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Synchronization","item":"https://migmolrod.github.io/docs/requirements/functional/synchronization"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/dashboard-management"><span title="Dashboard Management" class="linkLabel_dWUb">Dashboard Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/bookmarks"><span title="Bookmarks" class="linkLabel_dWUb">Bookmarks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/tasks"><span title="Tasks" class="linkLabel_dWUb">Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/calendar"><span title="Calendar" class="linkLabel_dWUb">Calendar</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/weather"><span title="Weather" class="linkLabel_dWUb">Weather</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/user-identity"><span title="User identity" class="linkLabel_dWUb">User identity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/preferences"><span title="Preferences" class="linkLabel_dWUb">Preferences</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/requirements/functional/synchronization"><span title="Synchronization" class="linkLabel_dWUb">Synchronization</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Functional requirements</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Synchronization</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><div class="reqMetadata_OnDx"><div><strong>Status: </strong><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></div><span><strong>Last updated</strong>: <!-- -->November 15, 2025</span></div>
+<header><h1>Synchronization</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Synchronization bounded context provides local-first persistence with reliable background synchronization to
+optional cloud storage. It enables offline-first functionality where users can work without internet connectivity and
+have their changes synchronized when the connection is restored. The context handles conflict detection and resolution
+using pluggable strategies.</p>
+<p><strong>Bounded context code:</strong> SYN<br>
+<strong>Related DMD section:</strong> <a class="" href="/docs/domain/bounded-contexts/synchronization">Synchronization (Generic)</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Feature Code</th><th>Feature Name</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td>FR-SYN-001</td><td>Local persistence</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-SYN-002</td><td>Offline operation</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-SYN-003</td><td>Background synchronization</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-SYN-004</td><td>Conflict detection</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-SYN-005</td><td>Conflict resolution</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-SYN-006</td><td>Sync status tracking</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-SYN-007</td><td>Retry and error handling</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-001-local-persistence">FR-SYN-001: Local persistence<a href="#fr-syn-001-local-persistence" class="hash-link" aria-label="Direct link to FR-SYN-001: Local persistence" title="Direct link to FR-SYN-001: Local persistence" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must persist all user data locally using browser storage mechanisms (IndexedDB, LocalStorage) to enable
+offline-first functionality. Local persistence ensures data is available immediately without network dependency and
+survives browser refreshes.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Browser must support local storage APIs (IndexedDB)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Data is persisted locally in browser storage</li>
+<li class="">Data is available for offline access</li>
+<li class="">Data survives application restarts</li>
+<li class="">Sync metadata is stored alongside data</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">All user data is persisted locally by default (offline-first)</li>
+<li class="">Local storage is the primary data source; server is secondary</li>
+<li class="">Each entity has associated sync metadata (version, lastSyncedAt, pendingOps)</li>
+<li class="">Local data takes precedence until synchronized</li>
+<li class="">Storage quota limits are monitored and handled</li>
+<li class="">Sensitive data is encrypted in local storage</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: All domain events (for local persistence)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">All bounded contexts (consumes their domain events)</li>
+<li class="">Browser storage APIs (IndexedDB, LocalStorage)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">All domain events are intercepted and persisted locally</li>
+<li class="">Data is stored in IndexedDB with structured schema</li>
+<li class="">Sync metadata (version, timestamp) is stored with each entity</li>
+<li class="">Local data is available immediately without network call</li>
+<li class="">Storage quota is monitored and warnings shown if near limit</li>
+<li class="">Local storage persists across browser refreshes</li>
+<li class="">Encryption is applied to sensitive fields</li>
+<li class="">Local data can be queried efficiently</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-001-001: Persist data locally on creation</li>
+<li class="">US-SYN-001-002: Retrieve data from local storage</li>
+<li class="">US-SYN-001-003: Local data persists across sessions</li>
+<li class="">US-SYN-001-004: Handle storage quota limits</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios">Scenarios<a href="#scenarios" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-persist-data-locally-on-creation-happy-path">Scenario 1: Persist data locally on creation (happy path)<a href="#scenario-1-persist-data-locally-on-creation-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Persist data locally on creation (happy path)" title="Direct link to Scenario 1: Persist data locally on creation (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user creates a new task &quot;Buy groceries&quot;<br>
+<!-- -->When the TaskCreated event is published<br>
+<!-- -->Then the Synchronization context intercepts the event<br>
+<!-- -->And stores the task in local IndexedDB<br>
+<!-- -->And creates sync metadata: { version: 1, lastSyncedAt: null, pendingOps: [&quot;create&quot;] }<br>
+<!-- -->And the task is immediately available for offline access<br>
+<!-- -->And local storage write completes successfully</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-retrieve-data-from-local-storage">Scenario 2: Retrieve data from local storage<a href="#scenario-2-retrieve-data-from-local-storage" class="hash-link" aria-label="Direct link to Scenario 2: Retrieve data from local storage" title="Direct link to Scenario 2: Retrieve data from local storage" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has tasks stored locally<br>
+<!-- -->And the device is offline<br>
+<!-- -->When the user opens the tasks view<br>
+<!-- -->Then tasks are retrieved from local IndexedDB<br>
+<!-- -->And displayed without network call<br>
+<!-- -->And the UI indicates offline mode</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-local-data-persists-across-sessions">Scenario 3: Local data persists across sessions<a href="#scenario-3-local-data-persists-across-sessions" class="hash-link" aria-label="Direct link to Scenario 3: Local data persists across sessions" title="Direct link to Scenario 3: Local data persists across sessions" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has created tasks while offline<br>
+<!-- -->When the user closes the browser<br>
+<!-- -->And reopens the application later<br>
+<!-- -->Then tasks are retrieved from local IndexedDB<br>
+<!-- -->And all data is intact<br>
+<!-- -->And sync metadata is preserved</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-handle-storage-quota-limits">Scenario 4: Handle storage quota limits<a href="#scenario-4-handle-storage-quota-limits" class="hash-link" aria-label="Direct link to Scenario 4: Handle storage quota limits" title="Direct link to Scenario 4: Handle storage quota limits" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given local storage is approaching quota limit (90% used)<br>
+<!-- -->When the user creates new data<br>
+<!-- -->Then the system detects near-quota condition<br>
+<!-- -->And displays a warning &quot;Local storage is almost full&quot;<br>
+<!-- -->And suggests clearing old data or syncing to cloud<br>
+<!-- -->And the operation completes if space is available</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-encrypt-sensitive-data-in-local-storage">Scenario 5: Encrypt sensitive data in local storage<a href="#scenario-5-encrypt-sensitive-data-in-local-storage" class="hash-link" aria-label="Direct link to Scenario 5: Encrypt sensitive data in local storage" title="Direct link to Scenario 5: Encrypt sensitive data in local storage" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user&#x27;s data contains sensitive information (e.g., calendar event details)<br>
+<!-- -->When data is persisted to local storage<br>
+<!-- -->Then sensitive fields are encrypted using Web Crypto API<br>
+<!-- -->And encryption key is derived from user session<br>
+<!-- -->And encrypted data is stored in IndexedDB<br>
+<!-- -->And can be decrypted when retrieved</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-query-local-data-efficiently">Scenario 6: Query local data efficiently<a href="#scenario-6-query-local-data-efficiently" class="hash-link" aria-label="Direct link to Scenario 6: Query local data efficiently" title="Direct link to Scenario 6: Query local data efficiently" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has 1000 tasks stored locally<br>
+<!-- -->When the user searches for &quot;groceries&quot;<br>
+<!-- -->Then IndexedDB index is used for efficient lookup<br>
+<!-- -->And results are returned in &lt; 100ms<br>
+<!-- -->And no network call is made</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use IndexedDB for structured data storage (primary)</li>
+<li class="">Use LocalStorage for small metadata and settings</li>
+<li class="">Implement structured schema with versioning for IndexedDB</li>
+<li class="">Use IndexedDB indexes for efficient queries (userId, entityType, timestamp)</li>
+<li class="">Implement encryption using Web Crypto API (AES-GCM)</li>
+<li class="">Monitor storage quota using <code>navigator.storage.estimate()</code></li>
+<li class="">Implement storage cleanup strategies (delete old synced data)</li>
+<li class="">Use Dexie.js or similar wrapper for IndexedDB abstraction</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a maximum local storage age for data (e.g., delete data older than 90 days)?</li>
+<li class="">Should users be able to manually clear local storage?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-002-offline-operation">FR-SYN-002: Offline operation<a href="#fr-syn-002-offline-operation" class="hash-link" aria-label="Direct link to FR-SYN-002: Offline operation" title="Direct link to FR-SYN-002: Offline operation" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must support full offline operation where users can create, read, update, and delete data without internet
+connectivity. Offline operations are queued locally and synchronized when connection is restored. The UI clearly
+indicates offline status.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated (session cached locally)</li>
+<li class="">Local storage must be available</li>
+<li class="">Application must be loaded (service worker cached)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Operations complete successfully offline</li>
+<li class="">Changes are queued for synchronization</li>
+<li class="">UI indicates offline status</li>
+<li class="">Data is available immediately in local state</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">All CRUD operations work offline</li>
+<li class="">Offline changes are queued with operation metadata (create, update, delete)</li>
+<li class="">Queued operations are ordered by timestamp</li>
+<li class="">Conflicting offline operations are merged locally (last-write-wins within session)</li>
+<li class="">Network status is detected automatically</li>
+<li class="">UI provides clear offline indicators</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: All domain events (queued offline)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-SYN-001 (Local persistence)</li>
+<li class="">Service Worker for offline app shell</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can create entities while offline</li>
+<li class="">User can update entities while offline</li>
+<li class="">User can delete entities while offline</li>
+<li class="">User can query entities while offline</li>
+<li class="">Offline operations are queued with metadata</li>
+<li class="">UI shows &quot;Offline&quot; badge/indicator</li>
+<li class="">Operations complete without errors or delays</li>
+<li class="">Queued operations persist across sessions</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-002-001: Create data offline</li>
+<li class="">US-SYN-002-002: Update data offline</li>
+<li class="">US-SYN-002-003: Delete data offline</li>
+<li class="">US-SYN-002-004: View offline indicator</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-1">Scenarios<a href="#scenarios-1" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-data-offline-happy-path">Scenario 1: Create data offline (happy path)<a href="#scenario-1-create-data-offline-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create data offline (happy path)" title="Direct link to Scenario 1: Create data offline (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user&#x27;s device is offline<br>
+<!-- -->And the UI shows &quot;Offline&quot; indicator<br>
+<!-- -->When the user creates a new task &quot;Call dentist&quot;<br>
+<!-- -->Then the task is saved to local IndexedDB<br>
+<!-- -->And sync metadata is created: { pendingOps: [&quot;create&quot;], syncStatus: &quot;pending&quot; }<br>
+<!-- -->And the task appears in the task list immediately<br>
+<!-- -->And a toast notification shows &quot;Changes will sync when online&quot;</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-update-data-offline">Scenario 2: Update data offline<a href="#scenario-2-update-data-offline" class="hash-link" aria-label="Direct link to Scenario 2: Update data offline" title="Direct link to Scenario 2: Update data offline" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user&#x27;s device is offline<br>
+<!-- -->And a task &quot;Buy milk&quot; exists locally<br>
+<!-- -->When the user updates the task to &quot;Buy milk and eggs&quot;<br>
+<!-- -->Then the update is saved to local IndexedDB<br>
+<!-- -->And sync metadata is updated: { pendingOps: [&quot;update&quot;], syncStatus: &quot;pending&quot; }<br>
+<!-- -->And the updated task displays immediately<br>
+<!-- -->And the change is queued for sync</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-delete-data-offline">Scenario 3: Delete data offline<a href="#scenario-3-delete-data-offline" class="hash-link" aria-label="Direct link to Scenario 3: Delete data offline" title="Direct link to Scenario 3: Delete data offline" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user&#x27;s device is offline<br>
+<!-- -->And a task &quot;Old task&quot; exists locally<br>
+<!-- -->When the user deletes the task<br>
+<!-- -->Then the task is marked as deleted in local IndexedDB<br>
+<!-- -->And sync metadata is updated: { pendingOps: [&quot;delete&quot;], syncStatus: &quot;pending&quot; }<br>
+<!-- -->And the task is removed from the UI<br>
+<!-- -->And the deletion is queued for sync</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-view-offline-indicator">Scenario 4: View offline indicator<a href="#scenario-4-view-offline-indicator" class="hash-link" aria-label="Direct link to Scenario 4: View offline indicator" title="Direct link to Scenario 4: View offline indicator" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user&#x27;s device loses internet connection<br>
+<!-- -->When the network status changes to offline<br>
+<!-- -->Then an &quot;Offline&quot; badge appears in the UI header<br>
+<!-- -->And a toast notification shows &quot;You&#x27;re offline. Changes will sync automatically&quot;<br>
+<!-- -->And all UI interactions remain functional</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-multiple-offline-operations">Scenario 5: Multiple offline operations<a href="#scenario-5-multiple-offline-operations" class="hash-link" aria-label="Direct link to Scenario 5: Multiple offline operations" title="Direct link to Scenario 5: Multiple offline operations" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user&#x27;s device is offline<br>
+<!-- -->When the user creates 3 tasks<br>
+<!-- -->And updates 2 existing tasks<br>
+<!-- -->And deletes 1 task<br>
+<!-- -->Then all 6 operations are queued locally<br>
+<!-- -->And each has sync metadata with operation type and timestamp<br>
+<!-- -->And all changes are visible in the UI<br>
+<!-- -->And operations are ordered by timestamp for sync</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-offline-operations-persist-across-sessions">Scenario 6: Offline operations persist across sessions<a href="#scenario-6-offline-operations-persist-across-sessions" class="hash-link" aria-label="Direct link to Scenario 6: Offline operations persist across sessions" title="Direct link to Scenario 6: Offline operations persist across sessions" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user made changes while offline<br>
+<!-- -->And queued operations exist<br>
+<!-- -->When the user closes the browser<br>
+<!-- -->And reopens the application (still offline)<br>
+<!-- -->Then queued operations are loaded from IndexedDB<br>
+<!-- -->And the UI shows pending sync count<br>
+<!-- -->And operations remain queued until online</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use <code>navigator.onLine</code> and online/offline event listeners for network detection</li>
+<li class="">Implement operation queue in IndexedDB with FIFO ordering</li>
+<li class="">Store operation metadata: { type, entityId, payload, timestamp, userId }</li>
+<li class="">Use optimistic UI updates (show changes immediately)</li>
+<li class="">Implement UI indicators (badge, banner, icon) for offline status</li>
+<li class="">Ensure service worker caches app shell for offline loading</li>
+<li class="">Handle authentication expiration during offline periods</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a maximum size for the offline operation queue?</li>
+<li class="">Should users be warned if they&#x27;ve been offline for extended periods?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-003-background-synchronization">FR-SYN-003: Background synchronization<a href="#fr-syn-003-background-synchronization" class="hash-link" aria-label="Direct link to FR-SYN-003: Background synchronization" title="Direct link to FR-SYN-003: Background synchronization" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must automatically synchronize local changes to the cloud when internet connectivity is available.
+Synchronization occurs in the background without blocking user interactions. Sync is triggered on network reconnection,
+periodic intervals, and user-initiated refresh.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Internet connection must be available</li>
+<li class="">Local changes must exist (pending operations)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Pending operations are sent to server</li>
+<li class="">Server responses are processed</li>
+<li class="">Local sync state is updated</li>
+<li class="">DataSynchronized event is published</li>
+<li class="">UI indicates sync completion</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Sync occurs automatically when online</li>
+<li class="">Sync is triggered by: network reconnection, periodic intervals (e.g., every 5 minutes), user-initiated refresh</li>
+<li class="">Operations are synced in order (FIFO)</li>
+<li class="">Successful operations are marked as synced</li>
+<li class="">Failed operations are retried with exponential backoff</li>
+<li class="">Sync does not block UI interactions</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User (indirect; system behavior)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+Excellence)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: DataSynchronized, SyncFailed</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-SYN-001 (Local persistence)</li>
+<li class="">FR-SYN-002 (Offline operation)</li>
+<li class="">All bounded contexts (server APIs for sync)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Sync triggers automatically on network reconnection</li>
+<li class="">Sync runs periodically (every 5 minutes) when online</li>
+<li class="">User can manually trigger sync via &quot;Refresh&quot; button</li>
+<li class="">Operations are sent to server in order</li>
+<li class="">Server responses are processed and local state updated</li>
+<li class="">Successful operations are marked as synced (lastSyncedAt timestamp)</li>
+<li class="">DataSynchronized event is published on success</li>
+<li class="">Sync progress is visible in UI (progress bar, count)</li>
+<li class="">Sync does not block user interactions</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-003-001: Auto-sync on network reconnection</li>
+<li class="">US-SYN-003-002: Periodic background sync</li>
+<li class="">US-SYN-003-003: Manual sync trigger</li>
+<li class="">US-SYN-003-004: View sync progress</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-2">Scenarios<a href="#scenarios-2" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-auto-sync-on-network-reconnection-happy-path">Scenario 1: Auto-sync on network reconnection (happy path)<a href="#scenario-1-auto-sync-on-network-reconnection-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Auto-sync on network reconnection (happy path)" title="Direct link to Scenario 1: Auto-sync on network reconnection (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user made changes while offline<br>
+<!-- -->And 5 operations are queued<br>
+<!-- -->When the device reconnects to the internet<br>
+<!-- -->Then the sync process automatically triggers<br>
+<!-- -->And operations are sent to server in order<br>
+<!-- -->And server responds with success for all operations<br>
+<!-- -->And local sync state is updated: { lastSyncedAt: now, pendingOps: [] }<br>
+<!-- -->And a DataSynchronized event is published<br>
+<!-- -->And a toast notification shows &quot;Synced 5 changes&quot;</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-periodic-background-sync">Scenario 2: Periodic background sync<a href="#scenario-2-periodic-background-sync" class="hash-link" aria-label="Direct link to Scenario 2: Periodic background sync" title="Direct link to Scenario 2: Periodic background sync" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user is online<br>
+<!-- -->And has made recent changes<br>
+<!-- -->When 5 minutes have elapsed since last sync<br>
+<!-- -->Then the sync process automatically triggers in background<br>
+<!-- -->And pending operations are sent to server<br>
+<!-- -->And sync completes without user awareness<br>
+<!-- -->And DataSynchronized event is published</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-manual-sync-trigger">Scenario 3: Manual sync trigger<a href="#scenario-3-manual-sync-trigger" class="hash-link" aria-label="Direct link to Scenario 3: Manual sync trigger" title="Direct link to Scenario 3: Manual sync trigger" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user has pending changes<br>
+<!-- -->When the user clicks &quot;Sync Now&quot; button<br>
+<!-- -->Then sync process immediately triggers<br>
+<!-- -->And a progress indicator is displayed<br>
+<!-- -->And pending operations are sent to server<br>
+<!-- -->And progress updates as operations complete<br>
+<!-- -->And &quot;Sync complete&quot; message is shown when done</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-view-sync-progress">Scenario 4: View sync progress<a href="#scenario-4-view-sync-progress" class="hash-link" aria-label="Direct link to Scenario 4: View sync progress" title="Direct link to Scenario 4: View sync progress" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given sync is in progress<br>
+<!-- -->And 10 operations are being synced<br>
+<!-- -->When the user views the UI<br>
+<!-- -->Then a progress indicator shows &quot;Syncing... 3 of 10&quot;<br>
+<!-- -->And updates in real-time as operations complete<br>
+<!-- -->And shows &quot;Synced&quot; when all operations complete</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-sync-pulls-server-changes">Scenario 5: Sync pulls server changes<a href="#scenario-5-sync-pulls-server-changes" class="hash-link" aria-label="Direct link to Scenario 5: Sync pulls server changes" title="Direct link to Scenario 5: Sync pulls server changes" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the user has synced local changes<br>
+<!-- -->And server has changes from another device<br>
+<!-- -->When sync completes<br>
+<!-- -->Then server changes are fetched<br>
+<!-- -->And merged into local IndexedDB<br>
+<!-- -->And UI updates with new data<br>
+<!-- -->And DataSynchronized event is published</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-partial-sync-success">Scenario 6: Partial sync success<a href="#scenario-6-partial-sync-success" class="hash-link" aria-label="Direct link to Scenario 6: Partial sync success" title="Direct link to Scenario 6: Partial sync success" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given 5 operations are queued for sync<br>
+<!-- -->When sync is triggered<br>
+<!-- -->And 3 operations succeed<br>
+<!-- -->And 2 operations fail (network error)<br>
+<!-- -->Then successful operations are marked as synced<br>
+<!-- -->And failed operations remain in queue<br>
+<!-- -->And a partial success message is shown: &quot;Synced 3 of 5 changes&quot;<br>
+<!-- -->And failed operations are retried later</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use Background Sync API for reliable offline-to-online sync</li>
+<li class="">Implement sync engine with operation queue processor</li>
+<li class="">Use HTTP requests to server APIs for each operation</li>
+<li class="">Process operations sequentially (FIFO) to maintain order</li>
+<li class="">Update sync metadata after each successful operation</li>
+<li class="">Implement periodic sync with <code>setInterval</code> or Web Worker</li>
+<li class="">Use service worker for background sync when app is closed</li>
+<li class="">Show sync progress using observables/event emitters</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should sync be throttled during rapid changes (debouncing)?</li>
+<li class="">Should there be a &quot;sync pause&quot; feature for users on metered connections?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-004-conflict-detection">FR-SYN-004: Conflict detection<a href="#fr-syn-004-conflict-detection" class="hash-link" aria-label="Direct link to FR-SYN-004: Conflict detection" title="Direct link to FR-SYN-004: Conflict detection" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system should detect conflicts when local changes and server changes affect the same entity. Conflicts occur when an
+entity is modified both locally (while offline) and on the server (from another device) since the last sync. Detected
+conflicts are logged and prepared for resolution.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User has made local changes to an entity</li>
+<li class="">Server has changes to the same entity from another source</li>
+<li class="">Sync is triggered</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Conflict is detected by comparing versions</li>
+<li class="">SyncConflictDetected event is published</li>
+<li class="">Conflict is logged with details</li>
+<li class="">User is notified (if applicable)</li>
+<li class="">Conflict is queued for resolution</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Conflicts are detected by comparing entity versions</li>
+<li class="">Each entity has a version number or etag</li>
+<li class="">Local version and server version are compared during sync</li>
+<li class="">If versions differ, a conflict exists</li>
+<li class="">Conflicts are logged with: entityId, localVersion, serverVersion, timestamp</li>
+<li class="">MVP uses last-write-wins resolution (server timestamp)</li>
+<li class="">Future: User-selectable resolution strategies</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (automatic detection)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: SyncConflictDetected</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-SYN-003 (Background synchronization)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Conflict is detected when local and server versions differ</li>
+<li class="">Conflict details are logged (entity, versions, timestamp)</li>
+<li class="">SyncConflictDetected event is published</li>
+<li class="">User is notified via UI notification</li>
+<li class="">Conflict is prepared for resolution</li>
+<li class="">Non-conflicting changes continue to sync</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-004-001: Detect conflict during sync</li>
+<li class="">US-SYN-004-002: Log conflict details</li>
+<li class="">US-SYN-004-003: Notify user of conflict</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-3">Scenarios<a href="#scenarios-3" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-detect-conflict-during-sync-happy-path">Scenario 1: Detect conflict during sync (happy path)<a href="#scenario-1-detect-conflict-during-sync-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Detect conflict during sync (happy path)" title="Direct link to Scenario 1: Detect conflict during sync (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user modified task &quot;Buy milk&quot; locally (version 2)<br>
+<!-- -->And the same task was modified on server from another device (version 3)<br>
+<!-- -->When sync is triggered<br>
+<!-- -->Then the system compares local version (2) with server version (3)<br>
+<!-- -->And detects a conflict (versions differ)<br>
+<!-- -->And logs conflict: { taskId, localVersion: 2, serverVersion: 3, timestamp }<br>
+<!-- -->And publishes SyncConflictDetected event<br>
+<!-- -->And queues the conflict for resolution</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-no-conflict-detected">Scenario 2: No conflict detected<a href="#scenario-2-no-conflict-detected" class="hash-link" aria-label="Direct link to Scenario 2: No conflict detected" title="Direct link to Scenario 2: No conflict detected" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user modified task &quot;Buy milk&quot; locally (version 2)<br>
+<!-- -->And the server has the same version (2)<br>
+<!-- -->When sync is triggered<br>
+<!-- -->Then the system compares versions<br>
+<!-- -->And no conflict is detected<br>
+<!-- -->And local changes are sent to server<br>
+<!-- -->And sync completes successfully</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-log-conflict-details">Scenario 3: Log conflict details<a href="#scenario-3-log-conflict-details" class="hash-link" aria-label="Direct link to Scenario 3: Log conflict details" title="Direct link to Scenario 3: Log conflict details" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a conflict is detected<br>
+<!-- -->When the conflict is logged<br>
+<!-- -->Then the log includes:</p><ul>
+<li class="">Entity ID</li>
+<li class="">Entity type</li>
+<li class="">Local version</li>
+<li class="">Server version</li>
+<li class="">Local changes</li>
+<li class="">Server changes</li>
+<li class="">Timestamp</li>
+<li class="">User ID<br>
+<!-- -->And the log is stored for debugging</li>
+</ul></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-notify-user-of-conflict">Scenario 4: Notify user of conflict<a href="#scenario-4-notify-user-of-conflict" class="hash-link" aria-label="Direct link to Scenario 4: Notify user of conflict" title="Direct link to Scenario 4: Notify user of conflict" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a conflict is detected<br>
+<!-- -->When SyncConflictDetected event is published<br>
+<!-- -->Then a UI notification is displayed:<br>
+<!-- -->&quot;Sync conflict detected for task &#x27;Buy milk&#x27;&quot;<br>
+<!-- -->And provides options: &quot;Keep local&quot;, &quot;Keep server&quot;, &quot;Merge&quot; (if available)<br>
+<!-- -->And the notification is non-blocking</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-multiple-conflicts">Scenario 5: Multiple conflicts<a href="#scenario-5-multiple-conflicts" class="hash-link" aria-label="Direct link to Scenario 5: Multiple conflicts" title="Direct link to Scenario 5: Multiple conflicts" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given sync detects conflicts for 3 entities<br>
+<!-- -->When conflicts are processed<br>
+<!-- -->Then 3 SyncConflictDetected events are published<br>
+<!-- -->And all conflicts are logged<br>
+<!-- -->And a summary notification shows: &quot;3 sync conflicts detected&quot;<br>
+<!-- -->And each conflict is queued for resolution</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use version numbers (integer) or etags (hash) for conflict detection</li>
+<li class="">Compare versions during sync before applying server changes</li>
+<li class="">Store version metadata in SyncState aggregate</li>
+<li class="">Implement conflict log storage (database table or file)</li>
+<li class="">Use event-driven architecture to publish conflict events</li>
+<li class="">Conflicts can be resolved automatically (MVP) or require user input (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should all conflicts be logged persistently or only unresolved ones?</li>
+<li class="">Should there be a conflict history/audit trail?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-005-conflict-resolution">FR-SYN-005: Conflict resolution<a href="#fr-syn-005-conflict-resolution" class="hash-link" aria-label="Direct link to FR-SYN-005: Conflict resolution" title="Direct link to FR-SYN-005: Conflict resolution" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system should resolve detected conflicts using a defined strategy. MVP uses last-write-wins (server timestamp) as
+the default resolution strategy. Future enhancements may support user-driven resolution or field-level merging.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">Conflict must be detected (SyncConflictDetected event)</li>
+<li class="">Local and server data must be available</li>
+<li class="">Resolution strategy must be defined</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Conflict is resolved using strategy</li>
+<li class="">Resolved entity is persisted locally</li>
+<li class="">Sync state is updated</li>
+<li class="">User is notified of resolution (if applicable)</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">MVP: Last-write-wins strategy (compare timestamps)</li>
+<li class="">Entity with latest timestamp is kept</li>
+<li class="">Losing entity is discarded (not permanently; logged)</li>
+<li class="">Resolution is automatic (no user input in MVP)</li>
+<li class="">Future: Support for manual resolution, field-level merge, CRDT</li>
+<li class="">Resolved conflicts are logged for audit</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (automatic resolution in MVP)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: SyncConflictDetected (consumed), ConflictResolved (published)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-SYN-004 (Conflict detection)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Conflict is resolved using last-write-wins strategy</li>
+<li class="">Entity with latest timestamp is kept</li>
+<li class="">Local data is updated with resolved version</li>
+<li class="">Sync state is updated: { conflictResolved: true, resolvedAt: timestamp }</li>
+<li class="">ConflictResolved event is published (optional)</li>
+<li class="">User is notified of resolution outcome</li>
+<li class="">Losing entity is logged (not lost)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-005-001: Resolve conflict with last-write-wins</li>
+<li class="">US-SYN-005-002: Notify user of resolution</li>
+<li class="">US-SYN-005-003: Log losing entity</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-4">Scenarios<a href="#scenarios-4" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-resolve-conflict-with-last-write-wins-happy-path">Scenario 1: Resolve conflict with last-write-wins (happy path)<a href="#scenario-1-resolve-conflict-with-last-write-wins-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Resolve conflict with last-write-wins (happy path)" title="Direct link to Scenario 1: Resolve conflict with last-write-wins (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a conflict exists for task &quot;Buy milk&quot;<br>
+<!-- -->And local version has timestamp &quot;2025-11-15T10:00:00Z&quot;<br>
+<!-- -->And server version has timestamp &quot;2025-11-15T10:05:00Z&quot; (later)<br>
+<!-- -->When conflict resolution is triggered<br>
+<!-- -->Then timestamps are compared<br>
+<!-- -->And server version is kept (later timestamp)<br>
+<!-- -->And local version is replaced with server version<br>
+<!-- -->And sync state is updated: { conflictResolved: true, resolvedAt: now }<br>
+<!-- -->And a notification shows &quot;Conflict resolved: server version kept&quot;</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-resolve-conflict---local-wins">Scenario 2: Resolve conflict - local wins<a href="#scenario-2-resolve-conflict---local-wins" class="hash-link" aria-label="Direct link to Scenario 2: Resolve conflict - local wins" title="Direct link to Scenario 2: Resolve conflict - local wins" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a conflict exists for task &quot;Call dentist&quot;<br>
+<!-- -->And local version has timestamp &quot;2025-11-15T10:10:00Z&quot;<br>
+<!-- -->And server version has timestamp &quot;2025-11-15T10:05:00Z&quot; (earlier)<br>
+<!-- -->When conflict resolution is triggered<br>
+<!-- -->Then local version is kept (later timestamp)<br>
+<!-- -->And local version is sent to server (overwriting server)<br>
+<!-- -->And sync state is updated<br>
+<!-- -->And a notification shows &quot;Conflict resolved: local version kept&quot;</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-notify-user-of-resolution">Scenario 3: Notify user of resolution<a href="#scenario-3-notify-user-of-resolution" class="hash-link" aria-label="Direct link to Scenario 3: Notify user of resolution" title="Direct link to Scenario 3: Notify user of resolution" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a conflict is resolved<br>
+<!-- -->When resolution completes<br>
+<!-- -->Then a toast notification appears:<br>
+<!-- -->&quot;Conflict resolved for task &#x27;Buy milk&#x27;: server version was more recent&quot;<br>
+<!-- -->And the notification is informational (non-blocking)<br>
+<!-- -->And dismissed after 5 seconds</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-log-losing-entity">Scenario 4: Log losing entity<a href="#scenario-4-log-losing-entity" class="hash-link" aria-label="Direct link to Scenario 4: Log losing entity" title="Direct link to Scenario 4: Log losing entity" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a conflict is resolved in favor of server version<br>
+<!-- -->And local version is discarded<br>
+<!-- -->When resolution completes<br>
+<!-- -->Then the losing local version is logged: { entityId, version, data, discardedAt, reason: &quot;conflict resolution&quot; }
+And the log is stored for potential recovery<br>
+<!-- -->And the log is retained for 30 days</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-multiple-conflict-resolutions">Scenario 5: Multiple conflict resolutions<a href="#scenario-5-multiple-conflict-resolutions" class="hash-link" aria-label="Direct link to Scenario 5: Multiple conflict resolutions" title="Direct link to Scenario 5: Multiple conflict resolutions" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given 3 conflicts exist<br>
+<!-- -->When conflict resolution is triggered for all<br>
+<!-- -->Then each conflict is resolved independently<br>
+<!-- -->And 2 are resolved in favor of server<br>
+<!-- -->And 1 is resolved in favor of local<br>
+<!-- -->And a summary notification shows: &quot;3 conflicts resolved&quot;<br>
+<!-- -->And all resolutions are logged</p></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement resolution strategies as pluggable components</li>
+<li class="">MVP: Last-write-wins using entity timestamps</li>
+<li class="">Compare timestamps in ISO 8601 format</li>
+<li class="">Future: Implement additional strategies (user-choice, field-merge, CRDT)</li>
+<li class="">Log losing entities for potential recovery</li>
+<li class="">Publish ConflictResolved events for audit trail</li>
+<li class="">Consider implementing conflict resolution UI (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should users be able to view and recover discarded conflict versions?</li>
+<li class="">Should there be configurable resolution strategies per entity type?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-006-sync-status-tracking">FR-SYN-006: Sync status tracking<a href="#fr-syn-006-sync-status-tracking" class="hash-link" aria-label="Direct link to FR-SYN-006: Sync status tracking" title="Direct link to FR-SYN-006: Sync status tracking" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must provide visibility into synchronization status, including pending operations, sync progress, last sync
+time, and errors. Status tracking helps users understand the state of their data and trust the synchronization process.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Sync process is active or has completed</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Sync status is visible in UI</li>
+<li class="">Status updates in real-time</li>
+<li class="">Users can query sync status</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Sync status includes: pending operations count, last sync timestamp, sync progress, error count</li>
+<li class="">Status is updated in real-time during sync</li>
+<li class="">Status persists in local storage</li>
+<li class="">Users can query sync status via UI or API</li>
+<li class="">Status includes per-entity sync state (synced, pending, error)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: All sync events</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-SYN-003 (Background synchronization)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">UI displays pending operations count</li>
+<li class="">UI displays last sync timestamp</li>
+<li class="">UI displays sync progress during active sync</li>
+<li class="">UI displays error count if sync failed</li>
+<li class="">Users can view detailed sync status</li>
+<li class="">Status updates in real-time</li>
+<li class="">Status is accessible from main navigation</li>
+<li class="">GetSyncStatus query returns detailed status</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-006-001: View pending operations count</li>
+<li class="">US-SYN-006-002: View last sync time</li>
+<li class="">US-SYN-006-003: View sync progress</li>
+<li class="">US-SYN-006-004: Query detailed sync status</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-5">Scenarios<a href="#scenarios-5" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-view-pending-operations-count-happy-path">Scenario 1: View pending operations count (happy path)<a href="#scenario-1-view-pending-operations-count-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: View pending operations count (happy path)" title="Direct link to Scenario 1: View pending operations count (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user has made 5 changes while offline<br>
+<!-- -->When the user views the UI<br>
+<!-- -->Then a badge shows &quot;5 pending&quot; in the sync indicator<br>
+<!-- -->And hovering shows tooltip: &quot;5 changes waiting to sync&quot;</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-view-last-sync-time">Scenario 2: View last sync time<a href="#scenario-2-view-last-sync-time" class="hash-link" aria-label="Direct link to Scenario 2: View last sync time" title="Direct link to Scenario 2: View last sync time" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given sync completed 10 minutes ago<br>
+<!-- -->When the user views the sync status<br>
+<!-- -->Then the UI shows &quot;Last synced: 10 minutes ago&quot;<br>
+<!-- -->And the timestamp updates every minute<br>
+<!-- -->And clicking shows detailed timestamp</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-view-sync-progress">Scenario 3: View sync progress<a href="#scenario-3-view-sync-progress" class="hash-link" aria-label="Direct link to Scenario 3: View sync progress" title="Direct link to Scenario 3: View sync progress" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given sync is in progress<br>
+<!-- -->And 7 of 10 operations are complete<br>
+<!-- -->When the user views the UI<br>
+<!-- -->Then a progress bar shows 70% complete<br>
+<!-- -->And text shows &quot;Syncing... 7 of 10&quot;<br>
+<!-- -->And the progress updates in real-time</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-view-sync-errors">Scenario 4: View sync errors<a href="#scenario-4-view-sync-errors" class="hash-link" aria-label="Direct link to Scenario 4: View sync errors" title="Direct link to Scenario 4: View sync errors" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given sync failed for 2 operations<br>
+<!-- -->When the user views the sync status<br>
+<!-- -->Then the UI shows a warning badge: &quot;2 errors&quot;<br>
+<!-- -->And clicking shows error details<br>
+<!-- -->And provides &quot;Retry&quot; option</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-query-detailed-sync-status">Scenario 5: Query detailed sync status<a href="#scenario-5-query-detailed-sync-status" class="hash-link" aria-label="Direct link to Scenario 5: Query detailed sync status" title="Direct link to Scenario 5: Query detailed sync status" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a user wants detailed sync information<br>
+<!-- -->When the user navigates to Settings &gt; Sync Status<br>
+<!-- -->Then the detailed sync status page shows:</p><ul>
+<li class="">Pending operations: 3</li>
+<li class="">Last sync: 2025-11-15 14:30</li>
+<li class="">Errors: 1</li>
+<li class="">Synced entities: 247</li>
+<li class="">Per-entity status list<br>
+<!-- -->And the page updates in real-time</li>
+</ul></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-real-time-status-updates">Scenario 6: Real-time status updates<a href="#scenario-6-real-time-status-updates" class="hash-link" aria-label="Direct link to Scenario 6: Real-time status updates" title="Direct link to Scenario 6: Real-time status updates" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given the sync status page is open<br>
+<!-- -->When sync is triggered and operations complete<br>
+<!-- -->Then the status updates in real-time:</p><ul>
+<li class="">Pending count decreases</li>
+<li class="">Progress bar updates</li>
+<li class="">Last sync timestamp updates<br>
+<!-- -->And no page refresh is needed</li>
+</ul></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Store sync status in SyncState aggregate</li>
+<li class="">Use observables/event emitters for real-time status updates</li>
+<li class="">Display status in UI header/footer (badge, icon, text)</li>
+<li class="">Implement GetSyncStatus query to return detailed status</li>
+<li class="">Use WebSockets or polling for real-time updates</li>
+<li class="">Cache status in local storage for quick access</li>
+<li class="">Implement status page with detailed breakdown</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a sync activity log/history?</li>
+<li class="">Should users be able to export sync logs for debugging?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-syn-007-retry-and-error-handling">FR-SYN-007: Retry and error handling<a href="#fr-syn-007-retry-and-error-handling" class="hash-link" aria-label="Direct link to FR-SYN-007: Retry and error handling" title="Direct link to FR-SYN-007: Retry and error handling" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong><br>
+<!-- -->The system must handle synchronization errors gracefully and retry failed operations with exponential backoff. Error
+handling ensures resilience to transient network issues and provides users with clear feedback and recovery options.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">Sync operation has failed</li>
+<li class="">Error type is identified (network, server, conflict, etc.)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Error is logged with details</li>
+<li class="">Failed operation is queued for retry</li>
+<li class="">Retry occurs with exponential backoff</li>
+<li class="">SyncFailed event is published</li>
+<li class="">User is notified of error and retry status</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Failed operations are retried automatically</li>
+<li class="">Retry uses exponential backoff: 1s, 2s, 4s, 8s, 16s, max 60s</li>
+<li class="">Maximum retry attempts: 5 (configurable)</li>
+<li class="">After max retries, operation is marked as failed</li>
+<li class="">Error types: Network, Server (5xx), Client (4xx), Conflict, Timeout</li>
+<li class="">Users can manually retry failed operations</li>
+<li class="">Persistent failures are escalated to user</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (automatic retry)</li>
+<li class="">Authenticated User (manual retry)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: SyncState (root)</li>
+<li class="">Domain Events: SyncFailed</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-SYN-003 (Background synchronization)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Failed operations are automatically retried</li>
+<li class="">Retry uses exponential backoff (1s, 2s, 4s, 8s, 16s, 60s max)</li>
+<li class="">Maximum 5 retry attempts</li>
+<li class="">Error is logged with type, details, and timestamp</li>
+<li class="">SyncFailed event is published</li>
+<li class="">User is notified of error and retry status</li>
+<li class="">User can manually trigger retry</li>
+<li class="">Persistent failures show actionable error message</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-SYN-007-001: Auto-retry failed operation</li>
+<li class="">US-SYN-007-002: Exponential backoff</li>
+<li class="">US-SYN-007-003: Manual retry</li>
+<li class="">US-SYN-007-004: Persistent failure notification</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-6">Scenarios<a href="#scenarios-6" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-auto-retry-failed-operation-happy-path">Scenario 1: Auto-retry failed operation (happy path)<a href="#scenario-1-auto-retry-failed-operation-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Auto-retry failed operation (happy path)" title="Direct link to Scenario 1: Auto-retry failed operation (happy path)" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a sync operation fails due to network timeout<br>
+<!-- -->When the error is detected<br>
+<!-- -->Then the operation is logged as failed<br>
+<!-- -->And queued for retry with backoff: 1s<br>
+<!-- -->And after 1 second, retry is attempted<br>
+<!-- -->And if it fails again, backoff doubles to 2s<br>
+<!-- -->And retry continues up to 5 attempts<br>
+<!-- -->And if it succeeds, operation is marked as synced</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-exponential-backoff">Scenario 2: Exponential backoff<a href="#scenario-2-exponential-backoff" class="hash-link" aria-label="Direct link to Scenario 2: Exponential backoff" title="Direct link to Scenario 2: Exponential backoff" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a sync operation fails<br>
+<!-- -->When retries are scheduled<br>
+<!-- -->Then backoff intervals are: 1s, 2s, 4s, 8s, 16s, 60s (capped)<br>
+<!-- -->And retry attempts stop after 5 failures<br>
+<!-- -->And backoff timing is logged for debugging</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-manual-retry">Scenario 3: Manual retry<a href="#scenario-3-manual-retry" class="hash-link" aria-label="Direct link to Scenario 3: Manual retry" title="Direct link to Scenario 3: Manual retry" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a sync operation has failed 5 times<br>
+<!-- -->And is marked as permanently failed<br>
+<!-- -->When the user views the error notification<br>
+<!-- -->And clicks &quot;Retry Now&quot;<br>
+<!-- -->Then the operation is immediately retried<br>
+<!-- -->And retry counter is reset<br>
+<!-- -->And success/failure is reported to user</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-persistent-failure-notification">Scenario 4: Persistent failure notification<a href="#scenario-4-persistent-failure-notification" class="hash-link" aria-label="Direct link to Scenario 4: Persistent failure notification" title="Direct link to Scenario 4: Persistent failure notification" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a sync operation has failed 5 times<br>
+<!-- -->And maximum retries are exhausted<br>
+<!-- -->When the final retry fails<br>
+<!-- -->Then a SyncFailed event is published<br>
+<!-- -->And a notification appears: &quot;Unable to sync. Please check your connection and try again.&quot;<br>
+<!-- -->And provides &quot;Retry&quot; and &quot;View Details&quot; options<br>
+<!-- -->And the operation remains queued</p></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-different-error-types">Scenario 5: Different error types<a href="#scenario-5-different-error-types" class="hash-link" aria-label="Direct link to Scenario 5: Different error types" title="Direct link to Scenario 5: Different error types" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given sync operations fail with different errors<br>
+<!-- -->When errors are handled:</p><ul>
+<li class="">Network error → retry with backoff</li>
+<li class="">Server 500 error → retry with backoff</li>
+<li class="">Server 400 error → log and notify user (no retry)</li>
+<li class="">Conflict → trigger conflict resolution</li>
+<li class="">Timeout → retry with longer timeout<br>
+<!-- -->Then each error type has appropriate handling</li>
+</ul></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-error-logging">Scenario 6: Error logging<a href="#scenario-6-error-logging" class="hash-link" aria-label="Direct link to Scenario 6: Error logging" title="Direct link to Scenario 6: Error logging" translate="no">​</a></h5>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>gherkin</div><div class="admonitionContent_jSlw"><p>Given a sync operation fails<br>
+<!-- -->When the error is logged<br>
+<!-- -->Then the log includes:</p><ul>
+<li class="">Error type</li>
+<li class="">Error message</li>
+<li class="">Stack trace (if applicable)</li>
+<li class="">Entity ID</li>
+<li class="">Retry attempt number</li>
+<li class="">Timestamp</li>
+<li class="">User ID<br>
+<!-- -->And logs are available for debugging</li>
+</ul></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement retry queue with exponential backoff scheduler</li>
+<li class="">Use <code>setTimeout</code> or similar for scheduling retries</li>
+<li class="">Store retry count and next retry time in sync state</li>
+<li class="">Classify errors by type (network, server, client, conflict)</li>
+<li class="">Log all errors with structured logging (JSON)</li>
+<li class="">Use error monitoring service (e.g., Sentry) for production</li>
+<li class="">Implement circuit breaker for repeated server failures (future)</li>
+<li class="">Provide clear, actionable error messages to users</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should retry intervals be configurable per error type?</li>
+<li class="">Should there be a &quot;sync health&quot; dashboard for administrators?</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="cross-feature-considerations">Cross-feature considerations<a href="#cross-feature-considerations" class="hash-link" aria-label="Direct link to Cross-feature considerations" title="Direct link to Cross-feature considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="interactions-between-features">Interactions between features<a href="#interactions-between-features" class="hash-link" aria-label="Direct link to Interactions between features" title="Direct link to Interactions between features" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Local Persistence ↔ Offline Operation:</strong> Local persistence enables offline operation</li>
+<li class=""><strong>Offline Operation ↔ Background Synchronization:</strong> Offline changes are queued and synced when online</li>
+<li class=""><strong>Background Synchronization ↔ Conflict Detection:</strong> Sync triggers conflict detection by comparing versions</li>
+<li class=""><strong>Conflict Detection ↔ Conflict Resolution:</strong> Detected conflicts are resolved using defined strategies</li>
+<li class=""><strong>Sync Status Tracking ↔ All Features:</strong> Status tracking monitors all sync activities</li>
+<li class=""><strong>Retry and Error Handling ↔ Background Synchronization:</strong> Failed sync operations are retried with backoff</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="shared-business-rules">Shared business rules<a href="#shared-business-rules" class="hash-link" aria-label="Direct link to Shared business rules" title="Direct link to Shared business rules" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Offline-First:</strong> All data operations work offline; cloud is secondary</li>
+<li class=""><strong>Eventual Consistency:</strong> System guarantees eventual consistency between local and server</li>
+<li class=""><strong>Operation Ordering:</strong> Operations are synced in order (FIFO) to maintain causality</li>
+<li class=""><strong>Conflict Resolution:</strong> Conflicts are resolved deterministically (last-write-wins in MVP)</li>
+<li class=""><strong>Resilience:</strong> Transient errors are retried; persistent errors are escalated to user</li>
+<li class=""><strong>Transparency:</strong> Sync status and errors are visible to users</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="data-consistency-requirements">Data consistency requirements<a href="#data-consistency-requirements" class="hash-link" aria-label="Direct link to Data consistency requirements" title="Direct link to Data consistency requirements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Local Consistency:</strong> Strong consistency within local IndexedDB transactions</li>
+<li class=""><strong>Eventual Consistency:</strong> Eventual consistency between local and server</li>
+<li class=""><strong>Conflict Resolution:</strong> Deterministic resolution ensures consistency across devices</li>
+<li class=""><strong>Operation Atomicity:</strong> Each sync operation is atomic (all or nothing)</li>
+<li class=""><strong>Idempotency:</strong> Sync operations are idempotent (can be safely retried)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="business-constraints-impact">Business constraints impact<a href="#business-constraints-impact" class="hash-link" aria-label="Direct link to Business constraints impact" title="Direct link to Business constraints impact" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-001-budget">BC-001: Budget<a href="#bc-001-budget" class="hash-link" aria-label="Direct link to BC-001: Budget" title="Direct link to BC-001: Budget" translate="no">​</a></h3>
+<p>Synchronization must operate within zero-cost infrastructure constraints:</p>
+<ul>
+<li class=""><strong>Local Storage:</strong> Use browser IndexedDB (free, built-in)</li>
+<li class=""><strong>Cloud Storage:</strong> Use free-tier database (PostgreSQL via Railway, Supabase)</li>
+<li class=""><strong>Sync Protocol:</strong> Use HTTP REST APIs (no paid sync service)</li>
+<li class=""><strong>Error Monitoring:</strong> Use free-tier logging (no paid Sentry initially)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-002-timeline">BC-002: Timeline<a href="#bc-002-timeline" class="hash-link" aria-label="Direct link to BC-002: Timeline" title="Direct link to BC-002: Timeline" translate="no">​</a></h3>
+<p>Synchronization is important but can be simplified for MVP (3-6 months):</p>
+<ul>
+<li class=""><strong>Must Have features</strong> (FR-SYN-001, 002, 003, 006, 007) required for MVP</li>
+<li class=""><strong>Should Have features</strong> (FR-SYN-004, 005) can use simple strategies (last-write-wins)</li>
+<li class="">Prioritize basic offline operation and auto-sync</li>
+<li class="">Defer advanced conflict resolution (user-driven, field-merge) to post-MVP</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-003-resources">BC-003: Resources<a href="#bc-003-resources" class="hash-link" aria-label="Direct link to BC-003: Resources" title="Direct link to BC-003: Resources" translate="no">​</a></h3>
+<p>Single-developer constraints affect Synchronization:</p>
+<ul>
+<li class=""><strong>Simplify Conflict Resolution:</strong> Use last-write-wins only in MVP (no CRDT)</li>
+<li class=""><strong>Leverage Libraries:</strong> Use Dexie.js for IndexedDB, RxJS for observables</li>
+<li class=""><strong>Automate Testing:</strong> Mock network conditions (offline/online) in tests</li>
+<li class=""><strong>Incremental Development:</strong> Build local persistence first, then offline, then sync</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-004-technology-stack">BC-004: Technology stack<a href="#bc-004-technology-stack" class="hash-link" aria-label="Direct link to BC-004: Technology stack" title="Direct link to BC-004: Technology stack" translate="no">​</a></h3>
+<p>Synchronization aligns with chosen stack:</p>
+<ul>
+<li class=""><strong>Frontend:</strong> Angular with service workers for offline support, RxJS for reactive sync status</li>
+<li class=""><strong>Local Storage:</strong> IndexedDB via Dexie.js wrapper</li>
+<li class=""><strong>Backend:</strong> Spring Boot REST APIs for sync endpoints</li>
+<li class=""><strong>Database:</strong> PostgreSQL for server-side data storage</li>
+<li class=""><strong>Encryption:</strong> Web Crypto API for local encryption</li>
+<li class=""><strong>Service Worker:</strong> Workbox for offline app shell caching</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="success-metrics-alignment">Success metrics alignment<a href="#success-metrics-alignment" class="hash-link" aria-label="Direct link to Success metrics alignment" title="Direct link to Success metrics alignment" translate="no">​</a></h2>
+<p>Synchronization contributes to the following success metrics from BR-001 through BR-008:</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-003-technical-metrics">BR-003: Technical metrics<a href="#br-003-technical-metrics" class="hash-link" aria-label="Direct link to BR-003: Technical metrics" title="Direct link to BR-003: Technical metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Synchronization contribution</th></tr></thead><tbody><tr><td><strong>Offline Support</strong></td><td>Full function</td><td>Complete offline CRUD operations with automatic sync</td></tr><tr><td><strong>Sync Success Rate</strong></td><td>&gt; 99%</td><td>Reliable sync with retry and error handling</td></tr><tr><td><strong>Test Coverage</strong></td><td>&gt; 80%</td><td>Comprehensive offline/online scenario testing</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-001-portfolio-quality-metrics">BR-001: Portfolio quality metrics<a href="#br-001-portfolio-quality-metrics" class="hash-link" aria-label="Direct link to BR-001: Portfolio quality metrics" title="Direct link to BR-001: Portfolio quality metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Synchronization contribution</th></tr></thead><tbody><tr><td><strong>Architecture Documentation</strong></td><td>All views complete</td><td>Offline-first architecture, sync engine design, conflict resolution</td></tr><tr><td><strong>Code Quality Score</strong></td><td>No critical issues</td><td>Clean sync logic, proper error handling, testable offline code</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-002-br-005-user-experience-metrics">BR-002, BR-005: User experience metrics<a href="#br-002-br-005-user-experience-metrics" class="hash-link" aria-label="Direct link to BR-002, BR-005: User experience metrics" title="Direct link to BR-002, BR-005: User experience metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Synchronization contribution</th></tr></thead><tbody><tr><td><strong>Offline Capability</strong></td><td>Must Have</td><td>Full app functionality offline, seamless online/offline</td></tr><tr><td><strong>Sync Transparency</strong></td><td>High</td><td>Clear status indicators, error messages, progress tracking</td></tr><tr><td><strong>Data Loss Prevention</strong></td><td>Zero data loss</td><td>Reliable sync with conflict detection and resolution</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="traceability-matrix">Traceability matrix<a href="#traceability-matrix" class="hash-link" aria-label="Direct link to Traceability matrix" title="Direct link to Traceability matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Feature</th><th>Business Req</th><th>Domain Events</th><th>User Stories</th></tr></thead><tbody><tr><td>FR-SYN-001</td><td>BR-001, BR-002, BR-003, BR-005</td><td>All domain events (for persistence)</td><td>US-SYN-001-001/002/003/004</td></tr><tr><td>FR-SYN-002</td><td>BR-001, BR-002, BR-005</td><td>All domain events (queued offline)</td><td>US-SYN-002-001/002/003/004</td></tr><tr><td>FR-SYN-003</td><td>BR-001, BR-002, BR-003</td><td>DataSynchronized, SyncFailed</td><td>US-SYN-003-001/002/003/004</td></tr><tr><td>FR-SYN-004</td><td>BR-001, BR-003</td><td>SyncConflictDetected</td><td>US-SYN-004-001/002/003</td></tr><tr><td>FR-SYN-005</td><td>BR-001, BR-003</td><td>SyncConflictDetected (consumed), ConflictResolved</td><td>US-SYN-005-001/002/003</td></tr><tr><td>FR-SYN-006</td><td>BR-001, BR-002, BR-005</td><td>All sync events</td><td>US-SYN-006-001/002/003/004</td></tr><tr><td>FR-SYN-007</td><td>BR-001, BR-003, BR-005</td><td>SyncFailed</td><td>US-SYN-007-001/002/003/004</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/functional/synchronization.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/functional/preferences"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Preferences</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/non-functional-requirements"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Non-Functional requirements</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a><ul><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#fr-syn-001-local-persistence" class="table-of-contents__link toc-highlight">FR-SYN-001: Local persistence</a></li><li><a href="#fr-syn-002-offline-operation" class="table-of-contents__link toc-highlight">FR-SYN-002: Offline operation</a></li><li><a href="#fr-syn-003-background-synchronization" class="table-of-contents__link toc-highlight">FR-SYN-003: Background synchronization</a></li><li><a href="#fr-syn-004-conflict-detection" class="table-of-contents__link toc-highlight">FR-SYN-004: Conflict detection</a></li><li><a href="#fr-syn-005-conflict-resolution" class="table-of-contents__link toc-highlight">FR-SYN-005: Conflict resolution</a></li><li><a href="#fr-syn-006-sync-status-tracking" class="table-of-contents__link toc-highlight">FR-SYN-006: Sync status tracking</a></li><li><a href="#fr-syn-007-retry-and-error-handling" class="table-of-contents__link toc-highlight">FR-SYN-007: Retry and error handling</a></li></ul></li><li><a href="#cross-feature-considerations" class="table-of-contents__link toc-highlight">Cross-feature considerations</a><ul><li><a href="#interactions-between-features" class="table-of-contents__link toc-highlight">Interactions between features</a></li><li><a href="#shared-business-rules" class="table-of-contents__link toc-highlight">Shared business rules</a></li><li><a href="#data-consistency-requirements" class="table-of-contents__link toc-highlight">Data consistency requirements</a></li></ul></li><li><a href="#business-constraints-impact" class="table-of-contents__link toc-highlight">Business constraints impact</a><ul><li><a href="#bc-001-budget" class="table-of-contents__link toc-highlight">BC-001: Budget</a></li><li><a href="#bc-002-timeline" class="table-of-contents__link toc-highlight">BC-002: Timeline</a></li><li><a href="#bc-003-resources" class="table-of-contents__link toc-highlight">BC-003: Resources</a></li><li><a href="#bc-004-technology-stack" class="table-of-contents__link toc-highlight">BC-004: Technology stack</a></li></ul></li><li><a href="#success-metrics-alignment" class="table-of-contents__link toc-highlight">Success metrics alignment</a><ul><li><a href="#br-003-technical-metrics" class="table-of-contents__link toc-highlight">BR-003: Technical metrics</a></li><li><a href="#br-001-portfolio-quality-metrics" class="table-of-contents__link toc-highlight">BR-001: Portfolio quality metrics</a></li><li><a href="#br-002-br-005-user-experience-metrics" class="table-of-contents__link toc-highlight">BR-002, BR-005: User experience metrics</a></li></ul></li><li><a href="#traceability-matrix" class="table-of-contents__link toc-highlight">Traceability matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

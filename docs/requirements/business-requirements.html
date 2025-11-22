@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/business-requirements" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Business requirements | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/business-requirements"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Business requirements | Browser Dashboard PWA"><meta data-rh="true" name="description" content="Business requirements define the high-level goals and benefits that the Browser Dashboard PWA aims to achieve."><meta data-rh="true" property="og:description" content="Business requirements define the high-level goals and benefits that the Browser Dashboard PWA aims to achieve."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/business-requirements"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/business-requirements" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/business-requirements" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Business requirements","item":"https://migmolrod.github.io/docs/requirements/business-requirements"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Business requirements</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><div class="reqMetadata_OnDx"><div><strong>Status: </strong><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></div><span><strong>Last updated</strong>: <!-- -->November 11, 2025</span></div>
+<header><h1>Business requirements</h1></header>
+<p>Business requirements define the high-level goals and benefits that the Browser Dashboard PWA aims to achieve.</p>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="requirements-summary">Requirements summary<a href="#requirements-summary" class="hash-link" aria-label="Direct link to Requirements summary" title="Direct link to Requirements summary" translate="no">​</a></h2>
+<table><thead><tr><th>Code</th><th>Title</th><th>Priority</th><th>Related Context</th></tr></thead><tbody><tr><td>BR-001</td><td>Portfolio enhancement</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td>All</td></tr><tr><td>BR-002</td><td>User productivity enhancement</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td>All</td></tr><tr><td>BR-003</td><td>Technical excellence</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td>All</td></tr><tr><td>BR-004</td><td>Scalability and maintainability</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td>All</td></tr><tr><td>BR-005</td><td>User value delivery</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td>All</td></tr><tr><td>BR-006</td><td>Developer experience</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td>All</td></tr><tr><td>BR-007</td><td>Cost efficiency</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td>All</td></tr><tr><td>BR-008</td><td>Time to market</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td>All</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="strategic-objectives">Strategic objectives<a href="#strategic-objectives" class="hash-link" aria-label="Direct link to Strategic objectives" title="Direct link to Strategic objectives" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-001-portfolio-enhancement">BR-001: Portfolio enhancement<a href="#br-001-portfolio-enhancement" class="hash-link" aria-label="Direct link to BR-001: Portfolio enhancement" title="Direct link to BR-001: Portfolio enhancement" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Develop a comprehensive full-stack project that demonstrates modern software engineering capabilities across the entire
+development lifecycle, from requirements to deployment.</p>
+<p><strong>Rationale:</strong></p>
+<p>This project serves as the primary portfolio piece to showcase technical proficiency to potential employers and
+demonstrate the ability to deliver complete, production-ready solutions.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">Complete monorepo with all four modules (documentation, frontend, backend, infrastructure)</li>
+<li class="">Deployed and accessible live demo with public URL</li>
+<li class="">Comprehensive documentation following industry standards (ISO/IEC/IEEE)</li>
+<li class="">Clean, maintainable, well-tested codebase with &gt; 80% coverage</li>
+<li class="">Professional presentation suitable for portfolio review</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Strategic Goal: <a class="" href="/docs/domain/business-vision#domain-and-business-goals">Learning &amp; Portfolio Enhancement</a></li>
+<li class="">Bounded Context: All (system-wide)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">None (foundational requirement)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">All modules (documentation, frontend, backend, infrastructure) are complete and integrated</li>
+<li class="">Live demo is accessible via public URL with &gt; 99% uptime</li>
+<li class="">Documentation covers DMD, SRS, SAD, and CDDs</li>
+<li class="">Code quality metrics meet industry standards (Lighthouse &gt; 90, test coverage &gt; 80%)</li>
+<li class="">GitHub repository is public and well-organized with clear README</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-002-user-productivity-enhancement">BR-002: User productivity enhancement<a href="#br-002-user-productivity-enhancement" class="hash-link" aria-label="Direct link to BR-002: User productivity enhancement" title="Direct link to BR-002: User productivity enhancement" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Create a functional browser dashboard that consolidates essential productivity tools (bookmarks, tasks, weather,
+calendar) into a single, accessible interface that genuinely improves user workflow efficiency.</p>
+<p><strong>Rationale:</strong></p>
+<p>The system must solve a real problem to demonstrate understanding of user needs and ability to translate business
+requirements into valuable features. A non-functional portfolio piece has limited demonstration value.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">Users can access their most-used websites faster than with native browser bookmarks</li>
+<li class="">Task management is intuitive and requires minimal learning curve</li>
+<li class="">Weather information is current and accurate (via third-party API)</li>
+<li class="">Calendar provides clear visibility into upcoming events and deadlines</li>
+<li class="">Positive user feedback on usability (&gt; 4.0/5.0 if metrics collected)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Strategic Goal: <a class="" href="/docs/domain/business-vision#domain-and-business-goals">Consolidation &amp; Accessibility</a></li>
+<li class="">Bounded Context: BMK (Bookmarks), TSK (Tasks), WTH (Weather), CAL (Calendar)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">BR-001 (requires functional system for portfolio value)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">All four core widgets (bookmarks, tasks, weather, calendar) are fully functional</li>
+<li class="">Average task completion time is measurably faster than using separate tools</li>
+<li class="">Weather data updates in real-time from third-party API</li>
+<li class="">User interface is intuitive (new users can complete basic tasks without tutorial)</li>
+<li class="">Mobile and desktop experiences are equally functional (responsive design)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-003-technical-excellence">BR-003: Technical excellence<a href="#br-003-technical-excellence" class="hash-link" aria-label="Direct link to BR-003: Technical excellence" title="Direct link to BR-003: Technical excellence" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Implement industry best practices and modern development methodologies including Domain-Driven Design, Ports and
+Adapters architecture, CQRS, TDD/BDD, automated testing, CI/CD, security standards, and performance optimization.</p>
+<p><strong>Rationale:</strong></p>
+<p>Technical excellence demonstrates professional-level engineering capabilities and distinguishes this project from basic
+portfolio pieces. It shows understanding of enterprise-grade software development.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">Test coverage exceeds 80% (unit, integration, E2E)</li>
+<li class="">Lighthouse performance score &gt; 90</li>
+<li class="">Zero critical security vulnerabilities (verified by automated scanning)</li>
+<li class="">All architectural decisions documented (ADRs)</li>
+<li class="">Code follows established patterns (DDD, Ports &amp; Adapters, CQRS)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Strategic Goal: <a class="" href="/docs/domain/business-vision#domain-and-business-goals">Technical Excellence</a></li>
+<li class="">Bounded Context: All (system-wide architectural concern)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">BR-001 (part of portfolio demonstration)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Domain-Driven Design principles applied (ubiquitous language, bounded contexts, aggregates)</li>
+<li class="">Ports and Adapters pattern implemented in all bounded contexts</li>
+<li class="">CQRS separation of read/write models where applicable</li>
+<li class="">Automated testing suite with &gt; 80% coverage (unit + integration + E2E)</li>
+<li class="">CI/CD pipeline configured (GitHub Actions or equivalent)</li>
+<li class="">Security best practices followed (OWASP Top 10 addressed)</li>
+<li class="">Performance targets met (page load &lt; 2s, API response &lt; 200ms p95)</li>
+<li class="">Architecture Decision Records (ADRs) document key design choices</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-004-scalability-and-maintainability">BR-004: Scalability and maintainability<a href="#br-004-scalability-and-maintainability" class="hash-link" aria-label="Direct link to BR-004: Scalability and maintainability" title="Direct link to BR-004: Scalability and maintainability" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Build a system architecture that can accommodate future growth in features, users, and data volume while remaining
+maintainable by future contributors or employers reviewing the codebase.</p>
+<p><strong>Rationale:</strong></p>
+<p>Scalability and maintainability demonstrate forward-thinking design and professional software engineering practices.
+These qualities make the project suitable for real-world scenarios beyond a simple demo.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">Modular architecture with clear bounded context separation</li>
+<li class="">Documented extension points for adding new widgets/features</li>
+<li class="">Horizontal scaling capability (stateless services, containerization)</li>
+<li class="">Code is readable, well-documented, and follows consistent conventions</li>
+<li class="">New developers can understand and contribute within reasonable time</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Strategic Goal: <a class="" href="/docs/domain/business-vision#domain-and-business-goals">Scalability &amp; Maintainability</a></li>
+<li class="">Bounded Context: All (architectural concern)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">BR-003 (requires technical excellence foundation)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Microservices architecture with clear module boundaries</li>
+<li class="">Each bounded context can be deployed independently (if needed)</li>
+<li class="">Documentation exists for adding new widgets/features</li>
+<li class="">Code follows consistent naming conventions and structure</li>
+<li class="">Horizontal scaling tested with Docker Compose (multiple instances)</li>
+<li class="">No tight coupling between bounded contexts (communication via events/APIs)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-005-user-value-delivery">BR-005: User value delivery<a href="#br-005-user-value-delivery" class="hash-link" aria-label="Direct link to BR-005: User value delivery" title="Direct link to BR-005: User value delivery" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Deliver tangible value to end users through the core features of the dashboard, ensuring the application is not just
+technically impressive but genuinely useful.</p>
+<p><strong>Rationale:</strong></p>
+<p>A project that solves real problems demonstrates product thinking and user-centric design, not just technical ability.
+This is important for demonstrating well-rounded software engineering skills.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">Users report time savings compared to existing workflows</li>
+<li class="">Core features work reliably without frequent errors</li>
+<li class="">User interface is intuitive and requires minimal onboarding</li>
+<li class="">Offline capabilities work as expected (PWA features)</li>
+<li class="">Cross-platform experience is consistent</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Strategic Goal: <a class="" href="/docs/domain/business-vision#domain-and-business-goals">Personalization &amp; Consolidation</a></li>
+<li class="">Bounded Context: All user-facing contexts</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">BR-002 (productivity enhancement)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">All value propositions for end users are delivered (see table below)</li>
+<li class="">PWA features work correctly (offline mode, installability)</li>
+<li class="">User interface is accessible (WCAG 2.1 Level AA)</li>
+<li class="">Mobile-first responsive design implemented</li>
+<li class="">No critical bugs in core workflows</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="value-propositions-for-end-users">Value propositions for end users<a href="#value-propositions-for-end-users" class="hash-link" aria-label="Direct link to Value propositions for end users" title="Direct link to Value propositions for end users" translate="no">​</a></h4>
+<table><thead><tr><th>Benefit</th><th>Description</th><th>Success Measure</th></tr></thead><tbody><tr><td><strong>Centralized Dashboard</strong></td><td>Single location for bookmarks, tasks, weather, and calendar</td><td>All widgets accessible from one page</td></tr><tr><td><strong>Fast and Lightweight</strong></td><td>Quick loading times, minimal resource usage</td><td>Page load &lt; 2s, Lighthouse score &gt; 90</td></tr><tr><td><strong>Customizable</strong></td><td>Personalize appearance and module configuration</td><td>User preferences persist across sessions</td></tr><tr><td><strong>Cross-Platform</strong></td><td>Works on any device with a modern browser</td><td>Tested on mobile, tablet, desktop</td></tr><tr><td><strong>Offline Capable</strong></td><td>PWA features enable offline functionality</td><td>Service worker caches essential content</td></tr><tr><td><strong>No Installation</strong></td><td>Browser-based, no downloads required</td><td>Accessible via URL, optionally installable</td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-006-developer-experience">BR-006: Developer experience<a href="#br-006-developer-experience" class="hash-link" aria-label="Direct link to BR-006: Developer experience" title="Direct link to BR-006: Developer experience" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Provide clear documentation, setup instructions, and development environment configuration that enables other
+developers (or employers) to run, understand, and extend the project easily.</p>
+<p><strong>Rationale:</strong></p>
+<p>Good developer experience demonstrates professional collaboration skills and increases the likelihood of contributions,
+mentorship, or positive portfolio evaluation.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">New developers can set up local environment in &lt; 15 minutes</li>
+<li class="">Documentation clearly explains architecture and design decisions</li>
+<li class="">Code is self-documenting with meaningful names and comments where needed</li>
+<li class="">Development workflow is documented (branching, testing, deployment)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Strategic Goal: <a class="" href="/docs/domain/business-vision#proposition-of-value">Open Learning Resource</a></li>
+<li class="">Bounded Context: All (documentation concern)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">BR-003 (technical excellence provides foundation)</li>
+<li class="">BR-004 (maintainability supports developer experience)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Docker-based development environment with one-command setup</li>
+<li class="">README includes clear setup instructions and prerequisites</li>
+<li class="">Architecture documentation (SAD) clearly explains design decisions</li>
+<li class="">Code follows consistent style guide (enforced by linters)</li>
+<li class="">Development environment includes hot-reload and debugging tools</li>
+<li class="">Contribution guidelines documented (if accepting contributions)</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="value-propositions-for-portfolio-viewers">Value propositions for portfolio viewers<a href="#value-propositions-for-portfolio-viewers" class="hash-link" aria-label="Direct link to Value propositions for portfolio viewers" title="Direct link to Value propositions for portfolio viewers" translate="no">​</a></h4>
+<table><thead><tr><th>Benefit</th><th>Description</th><th>Success Measure</th></tr></thead><tbody><tr><td><strong>Full-Stack Proficiency</strong></td><td>Complete system from frontend to infrastructure</td><td>All layers implemented and integrated</td></tr><tr><td><strong>Modern Tech Stack</strong></td><td>Current industry-standard technologies</td><td>Angular, Spring Boot, Docker, Terraform, PostgreSQL</td></tr><tr><td><strong>Real-World Application</strong></td><td>Practical, usable product (not just a demo)</td><td>Live deployment with actual users (self + testers)</td></tr><tr><td><strong>Best Practices</strong></td><td>Professional development methodologies</td><td>DDD, TDD/BDD, CI/CD, documentation standards</td></tr><tr><td><strong>Documentation</strong></td><td>Clear, thorough technical documentation</td><td>DMD, SRS, SAD, CDDs all complete</td></tr><tr><td><strong>Live Demo</strong></td><td>Deployed, accessible application</td><td>Public URL with &gt; 99% uptime</td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-007-cost-efficiency">BR-007: Cost efficiency<a href="#br-007-cost-efficiency" class="hash-link" aria-label="Direct link to BR-007: Cost efficiency" title="Direct link to BR-007: Cost efficiency" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Maintain zero to minimal infrastructure and operational costs while delivering a production-quality system,
+demonstrating cost-conscious engineering and resourcefulness.</p>
+<p><strong>Rationale:</strong></p>
+<p>As a personal portfolio project with no revenue, cost efficiency is critical for sustainability. This also demonstrates
+ability to work within budget constraints.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">Total monthly infrastructure costs &lt; $10 USD (ideally $0)</li>
+<li class="">All services use free tiers or open-source alternatives</li>
+<li class="">No vendor lock-in to expensive platforms</li>
+<li class="">Architecture remains cost-effective if scaled moderately</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Constraint: <a class="" href="/docs/requirements/business-requirements#bc-001-budget">BC-001: Budget</a></li>
+<li class="">Bounded Context: All (operational concern)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">None (foundational constraint)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">Infrastructure deployed on free-tier services (or self-hosted)</li>
+<li class="">No paid APIs or services required for core functionality</li>
+<li class="">Weather API uses free tier with sufficient quota</li>
+<li class="">Database uses free tier (e.g., Railway, Supabase, or local PostgreSQL)</li>
+<li class="">Cloud deployment uses free tier (e.g., Railway, Render, or AWS free tier)</li>
+<li class="">Monitoring and logging use free-tier tools</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-008-time-to-market">BR-008: Time to market<a href="#br-008-time-to-market" class="hash-link" aria-label="Direct link to BR-008: Time to market" title="Direct link to BR-008: Time to market" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong></p>
+<p>Deliver a functional MVP within a reasonable timeframe while maintaining quality standards, demonstrating ability to
+prioritize and execute efficiently.</p>
+<p><strong>Rationale:</strong></p>
+<p>While this is a portfolio project without strict deadlines, timely delivery demonstrates project management skills and
+ability to ship. Prolonged development reduces motivation and portfolio relevance.</p>
+<p><strong>Success Criteria:</strong></p>
+<ul>
+<li class="">MVP with core features delivered within 3-6 months</li>
+<li class="">Iterative development approach with regular milestones</li>
+<li class="">Focus on completeness over perfection for initial release</li>
+<li class="">Clear prioritization of Must Have vs. Should/Could Have features</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Constraint: <a class="" href="/docs/requirements/business-requirements#bc-002-timeline">BC-002: Timeline</a></li>
+<li class="">Bounded Context: All (project management concern)</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">BR-007 (cost efficiency ensures sustainability)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li class="">MVP scope clearly defined (Must Have features only)</li>
+<li class="">Development follows iterative approach (weekly/bi-weekly progress)</li>
+<li class="">Each bounded context delivered incrementally</li>
+<li class="">MVP deployed and accessible within target timeframe</li>
+<li class="">Should Have and Could Have features deferred to post-MVP</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="stakeholders">Stakeholders<a href="#stakeholders" class="hash-link" aria-label="Direct link to Stakeholders" title="Direct link to Stakeholders" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="primary-stakeholders">Primary stakeholders<a href="#primary-stakeholders" class="hash-link" aria-label="Direct link to Primary stakeholders" title="Direct link to Primary stakeholders" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="1-project-ownerdeveloper-miguel-molinero-rodríguez">1. Project owner/developer (Miguel Molinero Rodríguez)<a href="#1-project-ownerdeveloper-miguel-molinero-rodríguez" class="hash-link" aria-label="Direct link to 1. Project owner/developer (Miguel Molinero Rodríguez)" title="Direct link to 1. Project owner/developer (Miguel Molinero Rodríguez)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Interest:</strong> Portfolio quality, skill demonstration, career advancement</li>
+<li class=""><strong>Influence:</strong> High (sole decision maker)</li>
+<li class=""><strong>Engagement:</strong> Daily (active development)</li>
+<li class=""><strong>Needs:</strong> Technical growth, portfolio enhancement, job opportunities</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="2-portfolio-reviewers-recruiters-hiring-managers-technical-interviewers">2. Portfolio reviewers (recruiters, hiring managers, technical interviewers)<a href="#2-portfolio-reviewers-recruiters-hiring-managers-technical-interviewers" class="hash-link" aria-label="Direct link to 2. Portfolio reviewers (recruiters, hiring managers, technical interviewers)" title="Direct link to 2. Portfolio reviewers (recruiters, hiring managers, technical interviewers)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Interest:</strong> Code quality, architecture, documentation, technical proficiency</li>
+<li class=""><strong>Influence:</strong> High (hiring decisions)</li>
+<li class=""><strong>Engagement:</strong> One-time review (30-60 minutes typically)</li>
+<li class=""><strong>Needs:</strong> Evidence of skills, clear documentation, live demo, understandable codebase</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="3-end-users-self--potential-test-users">3. End users (self + potential test users)<a href="#3-end-users-self--potential-test-users" class="hash-link" aria-label="Direct link to 3. End users (self + potential test users)" title="Direct link to 3. End users (self + potential test users)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Interest:</strong> Product functionality, user experience, usefulness</li>
+<li class=""><strong>Influence:</strong> Medium (through feedback and usage patterns)</li>
+<li class=""><strong>Engagement:</strong> Regular (daily usage if adopted)</li>
+<li class=""><strong>Needs:</strong> Functional dashboard, ease of use, reliability, value delivery</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="secondary-stakeholders">Secondary stakeholders<a href="#secondary-stakeholders" class="hash-link" aria-label="Direct link to Secondary stakeholders" title="Direct link to Secondary stakeholders" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="4-open-source-community-potential-contributors">4. Open source community (potential contributors)<a href="#4-open-source-community-potential-contributors" class="hash-link" aria-label="Direct link to 4. Open source community (potential contributors)" title="Direct link to 4. Open source community (potential contributors)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Interest:</strong> Code contributions, learning, collaboration</li>
+<li class=""><strong>Influence:</strong> Low (currently not prioritized)</li>
+<li class=""><strong>Engagement:</strong> Occasional (if repository gains visibility)</li>
+<li class=""><strong>Needs:</strong> Clear contribution guidelines, good documentation, welcoming environment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="5-mentors-potential-advisors-from-community">5. Mentors (potential advisors from community)<a href="#5-mentors-potential-advisors-from-community" class="hash-link" aria-label="Direct link to 5. Mentors (potential advisors from community)" title="Direct link to 5. Mentors (potential advisors from community)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Interest:</strong> Providing guidance, teaching, code review</li>
+<li class=""><strong>Influence:</strong> Medium (valuable feedback)</li>
+<li class=""><strong>Engagement:</strong> Occasional (if connections are made)</li>
+<li class=""><strong>Needs:</strong> Access to documentation, clear questions, receptiveness to feedback</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="business-constraints">Business constraints<a href="#business-constraints" class="hash-link" aria-label="Direct link to Business constraints" title="Direct link to Business constraints" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-001-budget">BC-001: Budget<a href="#bc-001-budget" class="hash-link" aria-label="Direct link to BC-001: Budget" title="Direct link to BC-001: Budget" translate="no">​</a></h3>
+<p><strong>Constraint:</strong> Zero to minimal budget for infrastructure and services</p>
+<p><strong>Impact:</strong></p>
+<ul>
+<li class="">Use free-tier cloud services where possible (Railway, Render, Vercel, etc.)</li>
+<li class="">Optimize for cost-effective deployment architecture</li>
+<li class="">Consider open-source solutions as first choice</li>
+<li class="">Avoid paid APIs or services; use free tiers with sufficient quotas</li>
+<li class="">Self-hosting may be necessary for some components</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li class="">Research free-tier offerings thoroughly before selecting services</li>
+<li class="">Design architecture to be cloud-agnostic (avoid vendor lock-in)</li>
+<li class="">Use Docker for local development to minimize cloud costs during development</li>
+<li class="">Monitor usage to stay within free-tier limits</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-002-timeline">BC-002: Timeline<a href="#bc-002-timeline" class="hash-link" aria-label="Direct link to BC-002: Timeline" title="Direct link to BC-002: Timeline" translate="no">​</a></h3>
+<p><strong>Constraint:</strong> Portfolio project with flexible but reasonable timeline (target: 3-6 months for MVP)</p>
+<p><strong>Impact:</strong></p>
+<ul>
+<li class="">Prioritize MVP features rigorously (Must Have only initially)</li>
+<li class="">Iterative development approach with regular milestones</li>
+<li class="">Focus on completeness and quality over extensive feature set</li>
+<li class="">Risk of scope creep must be managed actively</li>
+<li class="">Balance perfectionism with pragmatic delivery</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li class="">Use MoSCoW prioritization consistently</li>
+<li class="">Set clear milestone dates and track progress</li>
+<li class="">Defer Should Have and Could Have features to post-MVP</li>
+<li class="">Maintain development momentum through regular commits</li>
+<li class="">Accept &quot;good enough&quot; for non-critical features initially</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-003-resources">BC-003: Resources<a href="#bc-003-resources" class="hash-link" aria-label="Direct link to BC-003: Resources" title="Direct link to BC-003: Resources" translate="no">​</a></h3>
+<p><strong>Constraint:</strong> Single developer (solo project)</p>
+<p><strong>Impact:</strong></p>
+<ul>
+<li class="">Scope management is critical (cannot parallelize work)</li>
+<li class="">Clear prioritization needed to avoid burnout</li>
+<li class="">Automation essential for repetitive tasks (CI/CD, testing, deployment)</li>
+<li class="">Limited time for extensive research; rely on known technologies</li>
+<li class="">Work-life balance considerations (this is a side project)</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li class="">Leverage automation heavily (CI/CD, testing, linting)</li>
+<li class="">Use generative AI for documentation assistance and boilerplate code</li>
+<li class="">Focus on technologies already known well (Angular, Spring Boot)</li>
+<li class="">Set realistic weekly goals (not daily) to accommodate work schedule</li>
+<li class="">Build in buffer time for unexpected challenges</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-004-technology-stack">BC-004: Technology stack<a href="#bc-004-technology-stack" class="hash-link" aria-label="Direct link to BC-004: Technology stack" title="Direct link to BC-004: Technology stack" translate="no">​</a></h3>
+<p><strong>Constraint:</strong> Use modern, portfolio-relevant technologies that demonstrate current industry demand</p>
+<p><strong>Impact:</strong></p>
+<p>Technologies selected must align with:</p>
+<ul>
+<li class=""><strong>Frontend:</strong> Angular (TypeScript, reactive patterns, component architecture)</li>
+<li class=""><strong>Backend:</strong> Spring Boot (Java, REST APIs, microservices)</li>
+<li class=""><strong>Database:</strong> PostgreSQL (relational data, ACID compliance)</li>
+<li class=""><strong>Containerization:</strong> Docker and Docker Compose</li>
+<li class=""><strong>Infrastructure:</strong> Terraform (Infrastructure as Code, cloud-agnostic)</li>
+<li class=""><strong>Testing:</strong> JUnit, Mockito, Jest, Playwright (comprehensive test strategy)</li>
+<li class=""><strong>CI/CD:</strong> GitHub Actions (automated pipelines)</li>
+<li class=""><strong>Security:</strong> OWASP best practices</li>
+<li class=""><strong>Documentation:</strong> Docusaurus (professional documentation site)</li>
+<li class=""><strong>Performance:</strong> Lighthouse optimization</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li class="">Stick to stable, well-documented versions of each technology</li>
+<li class="">Avoid bleeding-edge versions that may have stability issues</li>
+<li class="">Ensure all technologies have strong community support</li>
+<li class="">Verify free-tier availability for all required services</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="success-metrics">Success metrics<a href="#success-metrics" class="hash-link" aria-label="Direct link to Success metrics" title="Direct link to Success metrics" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="technical-metrics">Technical metrics<a href="#technical-metrics" class="hash-link" aria-label="Direct link to Technical metrics" title="Direct link to Technical metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Measurement Method</th><th>Priority</th></tr></thead><tbody><tr><td><strong>Page Load Time</strong></td><td>&lt; 2 seconds</td><td>Lighthouse, Web Vitals</td><td>Must Have</td></tr><tr><td><strong>Lighthouse Score</strong></td><td>&gt; 90</td><td>Chrome DevTools</td><td>Must Have</td></tr><tr><td><strong>Test Coverage</strong></td><td>&gt; 80%</td><td>Jest, JaCoCo, Coverage Reports</td><td>Must Have</td></tr><tr><td><strong>API Response Time</strong></td><td>&lt; 200ms (p95)</td><td>APM Tools, logging</td><td>Must Have</td></tr><tr><td><strong>Uptime</strong></td><td>&gt; 99%</td><td>Monitoring Tools (UptimeRobot, etc.)</td><td>Should Have</td></tr><tr><td><strong>Security Vulnerabilities</strong></td><td>Zero Critical</td><td>Dependabot, Snyk, OWASP ZAP</td><td>Must Have</td></tr><tr><td><strong>Build Time</strong></td><td>&lt; 5 minutes</td><td>CI/CD pipeline metrics</td><td>Should Have</td></tr><tr><td><strong>Docker Image Size</strong></td><td>&lt; 500MB</td><td>Docker image inspection</td><td>Should Have</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="portfolio-quality-metrics">Portfolio quality metrics<a href="#portfolio-quality-metrics" class="hash-link" aria-label="Direct link to Portfolio quality metrics" title="Direct link to Portfolio quality metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Measurement Method</th><th>Priority</th></tr></thead><tbody><tr><td><strong>Documentation Completeness</strong></td><td>100% of planned docs</td><td>Checklist verification</td><td>Must Have</td></tr><tr><td><strong>Code Quality Score</strong></td><td>No critical issues</td><td>SonarQube/SonarCloud</td><td>Must Have</td></tr><tr><td><strong>Architecture Documentation</strong></td><td>All views documented</td><td>SAD completeness review</td><td>Must Have</td></tr><tr><td><strong>Live Demo Accessibility</strong></td><td>100% uptime during reviews</td><td>Monitoring</td><td>Must Have</td></tr><tr><td><strong>GitHub Stars/Forks</strong></td><td>&gt; 10 (optional)</td><td>GitHub metrics</td><td>Could Have</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="user-experience-metrics">User experience metrics<a href="#user-experience-metrics" class="hash-link" aria-label="Direct link to User experience metrics" title="Direct link to User experience metrics" translate="no">​</a></h3>
+<div class="theme-admonition theme-admonition-note admonition_e7Uk alert alert--secondary"><div class="admonitionHeading_RfNA"><span class="admonitionIcon_sa30"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_jSlw"><p>These metrics are aspirational for a portfolio project. Actual measurement may not be feasible without real user base,
+but the design should target these values.</p></div></div>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Measurement Method</th><th>Priority</th></tr></thead><tbody><tr><td><strong>User Satisfaction</strong></td><td>&gt; 4.0/5.0</td><td>User Surveys (if collected)</td><td>Could Have</td></tr><tr><td><strong>Task Completion Rate</strong></td><td>&gt; 95%</td><td>Analytics (if implemented)</td><td>Should Have</td></tr><tr><td><strong>Error Rate</strong></td><td>&lt; 1%</td><td>Error Tracking (Sentry, etc.)</td><td>Should Have</td></tr><tr><td><strong>Mobile Usability</strong></td><td>Fully Responsive</td><td>Device Testing</td><td>Must Have</td></tr><tr><td><strong>Accessibility Score</strong></td><td>WCAG 2.1 Level AA</td><td>Axe, Lighthouse</td><td>Must Have</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="assumptions">Assumptions<a href="#assumptions" class="hash-link" aria-label="Direct link to Assumptions" title="Direct link to Assumptions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="technical-assumptions">Technical assumptions<a href="#technical-assumptions" class="hash-link" aria-label="Direct link to Technical assumptions" title="Direct link to Technical assumptions" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Browser Compatibility:</strong> Users have modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)</li>
+<li class=""><strong>Internet Connectivity:</strong> Users have stable internet for initial load and API features; offline mode is
+supplementary</li>
+<li class=""><strong>Weather API Availability:</strong> Third-party weather API will remain available and free-tier sufficient (or affordable)</li>
+<li class=""><strong>Cloud Free Tiers:</strong> Free-tier cloud services will provide adequate resources for demo purposes</li>
+<li class=""><strong>Browser APIs:</strong> Service Workers, IndexedDB, Local Storage APIs will remain stable and supported</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="user-assumptions">User assumptions<a href="#user-assumptions" class="hash-link" aria-label="Direct link to User assumptions" title="Direct link to User assumptions" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Technical Comfort:</strong> Users are comfortable with browser-based applications and PWAs</li>
+<li class=""><strong>Device Capabilities:</strong> Users have devices capable of running modern web applications (not legacy hardware)</li>
+<li class=""><strong>Language:</strong> English is acceptable as the primary (and only) language for MVP</li>
+<li class=""><strong>Data Privacy:</strong> Users trust that their data is stored securely and not shared with third parties</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="project-assumptions">Project assumptions<a href="#project-assumptions" class="hash-link" aria-label="Direct link to Project assumptions" title="Direct link to Project assumptions" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Development Environment:</strong> Docker and development tools can run on developer&#x27;s machine</li>
+<li class=""><strong>Open Source Libraries:</strong> Required open-source libraries will remain available and maintained</li>
+<li class=""><strong>Documentation Tools:</strong> Docusaurus will remain suitable and free for documentation hosting</li>
+<li class=""><strong>Contributor Interest:</strong> Basic technical documentation will be sufficient for potential contributors/mentors</li>
+<li class=""><strong>Time Availability:</strong> Developer can dedicate 10-15 hours per week to the project</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="dependencies">Dependencies<a href="#dependencies" class="hash-link" aria-label="Direct link to Dependencies" title="Direct link to Dependencies" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="external-dependencies">External dependencies<a href="#external-dependencies" class="hash-link" aria-label="Direct link to External dependencies" title="Direct link to External dependencies" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Weather API Provider</strong></p>
+<ul>
+<li class="">Type: External service dependency</li>
+<li class="">Impact: High (critical for weather widget)</li>
+<li class="">Mitigation: Use free-tier API with generous limits; have backup API provider identified</li>
+<li class="">Examples: OpenWeatherMap, WeatherAPI.com, Tomorrow.io</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Cloud Infrastructure Provider</strong></p>
+<ul>
+<li class="">Type: Hosting and deployment platform</li>
+<li class="">Impact: High (required for live demo)</li>
+<li class="">Mitigation: Use cloud-agnostic architecture; Terraform for portability</li>
+<li class="">Examples: Railway, Render, Vercel, AWS Free Tier</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Third-Party Libraries</strong></p>
+<ul>
+<li class="">Type: Frameworks, UI component libraries, utilities</li>
+<li class="">Impact: Medium (affects development speed and capabilities)</li>
+<li class="">Mitigation: Choose stable, well-maintained libraries; avoid deprecated packages</li>
+<li class="">Examples: Angular, Spring Boot, Angular Material, etc.</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="browser-api-dependencies">Browser API dependencies<a href="#browser-api-dependencies" class="hash-link" aria-label="Direct link to Browser API dependencies" title="Direct link to Browser API dependencies" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Service Workers</strong></p>
+<ul>
+<li class="">Type: Browser API for PWA features</li>
+<li class="">Impact: High (required for offline capability)</li>
+<li class="">Mitigation: Graceful degradation if not supported; polyfills where possible</li>
+</ul>
+</li>
+<li class="">
+<p><strong>IndexedDB / Local Storage</strong></p>
+<ul>
+<li class="">Type: Browser storage APIs</li>
+<li class="">Impact: Medium (required for offline data)</li>
+<li class="">Mitigation: Fall back to session-only if not available</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="internal-dependencies">Internal dependencies<a href="#internal-dependencies" class="hash-link" aria-label="Direct link to Internal dependencies" title="Direct link to Internal dependencies" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Documentation must be complete before code implementation</strong></p>
+<ul>
+<li class="">Ensures requirements and architecture are clear before development</li>
+<li class="">Supports TDD/BDD approach</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Infrastructure setup required before deployment</strong></p>
+<ul>
+<li class="">Terraform configurations must be ready</li>
+<li class="">CI/CD pipelines must be configured</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="traceability-to-the-domain-model">Traceability to the domain model<a href="#traceability-to-the-domain-model" class="hash-link" aria-label="Direct link to Traceability to the domain model" title="Direct link to Traceability to the domain model" translate="no">​</a></h2>
+<table><thead><tr><th>Business Requirement</th><th>Related Strategic Goal</th><th>Related Bounded Contexts</th></tr></thead><tbody><tr><td>BR-001</td><td>Learning &amp; Portfolio Enhancement</td><td>All</td></tr><tr><td>BR-002</td><td>Consolidation, Personalization</td><td>BMK, TSK, WTH, CAL</td></tr><tr><td>BR-003</td><td>Technical Excellence</td><td>All</td></tr><tr><td>BR-004</td><td>Scalability &amp; Maintainability</td><td>All</td></tr><tr><td>BR-005</td><td>Personalization, Consolidation</td><td>BMK, TSK, WTH, CAL</td></tr><tr><td>BR-006</td><td>Open Learning Resource</td><td>All</td></tr><tr><td>BR-007</td><td>Cost Efficiency (implicit)</td><td>All</td></tr><tr><td>BR-008</td><td>Pragmatic Development</td><td>All</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="future-considerations">Future considerations<a href="#future-considerations" class="hash-link" aria-label="Direct link to Future considerations" title="Direct link to Future considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="post-mvp-enhancements-wont-have-for-mvp">Post-MVP enhancements (Won&#x27;t Have for MVP)<a href="#post-mvp-enhancements-wont-have-for-mvp" class="hash-link" aria-label="Direct link to Post-MVP enhancements (Won&#x27;t Have for MVP)" title="Direct link to Post-MVP enhancements (Won&#x27;t Have for MVP)" translate="no">​</a></h3>
+<p>The following are explicitly <strong>out of scope</strong> for the initial release but may be considered for future iterations:</p>
+<ul>
+<li class=""><strong>Multi-user support:</strong> MVP targets a single-user personal dashboard</li>
+<li class=""><strong>Real-time collaboration:</strong> No shared dashboards or collaborative features</li>
+<li class=""><strong>Mobile native apps:</strong> PWA only; no iOS/Android native apps</li>
+<li class=""><strong>Advanced analytics:</strong> Basic metrics only; no comprehensive analytics dashboard</li>
+<li class=""><strong>Internationalization (i18n):</strong> English only for MVP; infrastructure ready for future i18n</li>
+<li class=""><strong>Integration with third-party services:</strong> No Google Calendar, Outlook, Todoist integrations initially</li>
+<li class=""><strong>Themes beyond light/dark:</strong> Basic theming only; no extensive customization</li>
+<li class=""><strong>Widget marketplace:</strong> No extensibility for third-party widgets</li>
+<li class=""><strong>Social features:</strong> No sharing, following, or social networking capabilities</li>
+<li class=""><strong>Monetization:</strong> No paid features, subscriptions, or advertisements</li>
+</ul>
+<p>These features may be added in future releases based on user feedback and portfolio goals.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/business-requirements.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/templates"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Templates</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/functional/dashboard-management"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Dashboard Management</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#requirements-summary" class="table-of-contents__link toc-highlight">Requirements summary</a></li><li><a href="#strategic-objectives" class="table-of-contents__link toc-highlight">Strategic objectives</a><ul><li><a href="#br-001-portfolio-enhancement" class="table-of-contents__link toc-highlight">BR-001: Portfolio enhancement</a></li><li><a href="#br-002-user-productivity-enhancement" class="table-of-contents__link toc-highlight">BR-002: User productivity enhancement</a></li><li><a href="#br-003-technical-excellence" class="table-of-contents__link toc-highlight">BR-003: Technical excellence</a></li><li><a href="#br-004-scalability-and-maintainability" class="table-of-contents__link toc-highlight">BR-004: Scalability and maintainability</a></li><li><a href="#br-005-user-value-delivery" class="table-of-contents__link toc-highlight">BR-005: User value delivery</a></li><li><a href="#br-006-developer-experience" class="table-of-contents__link toc-highlight">BR-006: Developer experience</a></li><li><a href="#br-007-cost-efficiency" class="table-of-contents__link toc-highlight">BR-007: Cost efficiency</a></li><li><a href="#br-008-time-to-market" class="table-of-contents__link toc-highlight">BR-008: Time to market</a></li></ul></li><li><a href="#stakeholders" class="table-of-contents__link toc-highlight">Stakeholders</a><ul><li><a href="#primary-stakeholders" class="table-of-contents__link toc-highlight">Primary stakeholders</a></li><li><a href="#secondary-stakeholders" class="table-of-contents__link toc-highlight">Secondary stakeholders</a></li></ul></li><li><a href="#business-constraints" class="table-of-contents__link toc-highlight">Business constraints</a><ul><li><a href="#bc-001-budget" class="table-of-contents__link toc-highlight">BC-001: Budget</a></li><li><a href="#bc-002-timeline" class="table-of-contents__link toc-highlight">BC-002: Timeline</a></li><li><a href="#bc-003-resources" class="table-of-contents__link toc-highlight">BC-003: Resources</a></li><li><a href="#bc-004-technology-stack" class="table-of-contents__link toc-highlight">BC-004: Technology stack</a></li></ul></li><li><a href="#success-metrics" class="table-of-contents__link toc-highlight">Success metrics</a><ul><li><a href="#technical-metrics" class="table-of-contents__link toc-highlight">Technical metrics</a></li><li><a href="#portfolio-quality-metrics" class="table-of-contents__link toc-highlight">Portfolio quality metrics</a></li><li><a href="#user-experience-metrics" class="table-of-contents__link toc-highlight">User experience metrics</a></li></ul></li><li><a href="#assumptions" class="table-of-contents__link toc-highlight">Assumptions</a><ul><li><a href="#technical-assumptions" class="table-of-contents__link toc-highlight">Technical assumptions</a></li><li><a href="#user-assumptions" class="table-of-contents__link toc-highlight">User assumptions</a></li><li><a href="#project-assumptions" class="table-of-contents__link toc-highlight">Project assumptions</a></li></ul></li><li><a href="#dependencies" class="table-of-contents__link toc-highlight">Dependencies</a><ul><li><a href="#external-dependencies" class="table-of-contents__link toc-highlight">External dependencies</a></li><li><a href="#browser-api-dependencies" class="table-of-contents__link toc-highlight">Browser API dependencies</a></li><li><a href="#internal-dependencies" class="table-of-contents__link toc-highlight">Internal dependencies</a></li></ul></li><li><a href="#traceability-to-the-domain-model" class="table-of-contents__link toc-highlight">Traceability to the domain model</a></li><li><a href="#future-considerations" class="table-of-contents__link toc-highlight">Future considerations</a><ul><li><a href="#post-mvp-enhancements-wont-have-for-mvp" class="table-of-contents__link toc-highlight">Post-MVP enhancements (Won&#39;t Have for MVP)</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

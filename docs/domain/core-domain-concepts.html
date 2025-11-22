@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-domain/core-domain-concepts" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Core domain concepts | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/domain/core-domain-concepts"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Core domain concepts | Browser Dashboard PWA"><meta data-rh="true" name="description" content="This section identifies the strategic subdomains (core, supporting, generic) and the key concepts driving the Browser"><meta data-rh="true" property="og:description" content="This section identifies the strategic subdomains (core, supporting, generic) and the key concepts driving the Browser"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/domain/core-domain-concepts"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/domain/core-domain-concepts" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/domain/core-domain-concepts" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Core domain concepts","item":"https://migmolrod.github.io/docs/domain/core-domain-concepts"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/domain/overview">DMD</a><a class="navbar__item navbar__link" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/domain/overview"><span title="Business &amp; domain overview" class="linkLabel_dWUb">Business &amp; domain overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/domain/business-vision"><span title="Business vision" class="linkLabel_dWUb">Business vision</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/domain/core-domain-concepts"><span title="Core domain concepts" class="linkLabel_dWUb">Core domain concepts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/domain/ubiquitous-language"><span title="Ubiquitous language" class="linkLabel_dWUb">Ubiquitous language</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/domain/bounded-contexts/overview"><span title="Bounded contexts" class="categoryLinkLabel_gvR2">Bounded contexts</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/domain/process-workflows"><span title="Processes and workflows" class="linkLabel_dWUb">Processes and workflows</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/domain/domain-events"><span title="Domain events" class="linkLabel_dWUb">Domain events</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Core domain concepts</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Core domain concepts</h1></header>
+<p>This section identifies the strategic subdomains (core, supporting, generic) and the key concepts driving the Browser
+Dashboard PWA. The scope is intentionally constrained to four widgets: bookmarks, tasks, weather, and calendar.</p>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="strategic-subdomains">Strategic subdomains<a href="#strategic-subdomains" class="hash-link" aria-label="Direct link to Strategic subdomains" title="Direct link to Strategic subdomains" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="core-subdomain">Core subdomain<a href="#core-subdomain" class="hash-link" aria-label="Direct link to Core subdomain" title="Direct link to Core subdomain" translate="no">​</a></h3>
+<p><strong>Personal Dashboard Orchestration:</strong> Composition, layout, and personalization of the user’s homepage. It governs how
+widgets are configured, arranged, and persisted per user and device profile. This is the differentiator: a cohesive,
+streamlined experience rather than the individual widgets themselves.</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="supporting-subdomains">Supporting subdomains<a href="#supporting-subdomains" class="hash-link" aria-label="Direct link to Supporting subdomains" title="Direct link to Supporting subdomains" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Bookmarks:</strong> Manage hierarchical links (folders and entries), quick access, and visual speed‑dial.</li>
+<li class=""><strong>Tasks:</strong> Lightweight personal task management (title, status, due date, priority).</li>
+<li class=""><strong>Calendar:</strong> Personal events (title, time span, reminders), basic views, optional linkage to tasks.</li>
+<li class=""><strong>Weather:</strong> Read-only consumption of third‑party weather data for a chosen location.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="generic-subdomains">Generic subdomains<a href="#generic-subdomains" class="hash-link" aria-label="Direct link to Generic subdomains" title="Direct link to Generic subdomains" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Identity &amp; Access</strong> (local-first): User identification, session, and basic auth if needed.</li>
+<li class=""><strong>Preferences &amp; Settings:</strong> Theme, locale, time zone, widget defaults.</li>
+<li class=""><strong>Synchronization &amp; Storage:</strong> Local/offline persistence, cloud sync.</li>
+<li class=""><strong>Observability &amp; Telemetry:</strong> Logs/metrics for troubleshooting (non-functional).</li>
+</ul>
+<p><strong>Strategic priority:</strong> invest most design rigor in the Core Dashboard Orchestration; keep supporting subdomains simple
+and cohesive; rely on generic commodity approaches for cross-cutting needs.</p>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="core-dashboard-orchestration-core">Core dashboard orchestration (Core)<a href="#core-dashboard-orchestration-core" class="hash-link" aria-label="Direct link to Core dashboard orchestration (Core)" title="Direct link to Core dashboard orchestration (Core)" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Concepts</strong>
+<ul>
+<li class=""><strong>Dashboard:</strong> A personalized canvas composed of widget instances.</li>
+<li class=""><strong>Widget Instance:</strong> A concrete placement/configuration of a widget type (e.g., “Weather: Madrid”).</li>
+<li class=""><strong>Layout:</strong> Grid/region definition, ordering, and sizing rules.</li>
+<li class=""><strong>Personalization Profile:</strong> User-scoped settings and presets (e.g., “Work,” “Home” profiles).</li>
+</ul>
+</li>
+<li class=""><strong>Capabilities</strong>
+<ul>
+<li class=""><strong>Add/remove/reorder</strong> widgets on the dashboard.</li>
+<li class=""><strong>Configure widget-level</strong> settings and persist them.</li>
+<li class=""><strong>Switch profiles</strong> and restore layouts quickly.</li>
+<li class=""><strong>Enforce consistency</strong> and guard-rails (e.g., layout constraints).</li>
+</ul>
+</li>
+<li class=""><strong>Invariants</strong>
+<ul>
+<li class="">A dashboard belongs to exactly one user profile.</li>
+<li class="">A widget instance must reference a valid widget type and configuration schema.</li>
+<li class="">Layout positions cannot overlap; ordering is total within a region.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="supporting-subdomains-1">Supporting subdomains<a href="#supporting-subdomains-1" class="hash-link" aria-label="Direct link to Supporting subdomains" title="Direct link to Supporting subdomains" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bookmarks">Bookmarks<a href="#bookmarks" class="hash-link" aria-label="Direct link to Bookmarks" title="Direct link to Bookmarks" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Concepts</strong>
+<ul>
+<li class="">Folder: Named container; can be nested.</li>
+<li class="">Bookmark: Link with title, URL, optional icon/thumbnail.</li>
+<li class="">Speed Dial: Visual grid of selected bookmarks/folders for quick access.</li>
+</ul>
+</li>
+<li class=""><strong>Capabilities</strong>
+<ul>
+<li class="">Create/edit/delete folders and bookmarks.</li>
+<li class="">Reorder items within a folder or speed dial.</li>
+<li class="">Mark favorites/pinned for dashboard placement.</li>
+</ul>
+</li>
+<li class=""><strong>Invariants</strong>
+<ul>
+<li class="">Each bookmark belongs to exactly one folder (root is allowed).</li>
+<li class="">URLs must be valid; policy may prevent duplicates per folder.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="tasks">Tasks<a href="#tasks" class="hash-link" aria-label="Direct link to Tasks" title="Direct link to Tasks" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Concepts</strong>
+<ul>
+<li class=""><strong>Task:</strong> Title, description (optional), status (e.g., Todo, In‑Progress, Done), priority, due date.</li>
+<li class=""><strong>List/Section:</strong> Lightweight grouping (e.g., “Personal”, “Work”).</li>
+<li class=""><strong>Reminder:</strong> Optional notification tied to due date/time.</li>
+</ul>
+</li>
+<li class=""><strong>Capabilities</strong>
+<ul>
+<li class=""><strong>Create/edit/delete tasks</strong>; change status; reorder.</li>
+<li class=""><strong>Filter/search</strong> by status, due date, priority.</li>
+<li class=""><strong>Optional linkage to calendar</strong> events (one‑way create event from task).</li>
+</ul>
+</li>
+<li class=""><strong>Invariants</strong>
+<ul>
+<li class="">A task has exactly one status from the defined lifecycle.</li>
+<li class="">If a due date is set, it must be in a valid time window.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="calendar">Calendar<a href="#calendar" class="hash-link" aria-label="Direct link to Calendar" title="Direct link to Calendar" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Concepts</strong>
+<ul>
+<li class=""><strong>Event:</strong> Title, start time, end time, optional location/notes.</li>
+<li class=""><strong>View:</strong> Day/Week/Month simplified views.</li>
+<li class=""><strong>Reminder:</strong> Optional alert prior to start.</li>
+</ul>
+</li>
+<li class=""><strong>Capabilities</strong>
+<ul>
+<li class=""><strong>Create/edit/delete events</strong>; drag‑to‑move in UI (conceptually reorder/retime).</li>
+<li class="">Basic conflict awareness (optional; no hard constraint).</li>
+<li class=""><strong>Create event from a task</strong> (copy title/due date).</li>
+</ul>
+</li>
+<li class=""><strong>Invariants</strong>
+<ul>
+<li class="">The <code>endTime</code> must be after the <code>startTime</code>.</li>
+<li class="">Events belong to exactly one calendar (single local calendar in MVP).</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="weather">Weather<a href="#weather" class="hash-link" aria-label="Direct link to Weather" title="Direct link to Weather" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Concepts</strong>
+<ul>
+<li class=""><strong>Location:</strong> City/coordinates.</li>
+<li class=""><strong>Weather Snapshot:</strong> Temperature, conditions, updatedAt.</li>
+<li class=""><strong>Forecast</strong> (optional later): Next N periods.</li>
+</ul>
+</li>
+<li class=""><strong>Capabilities</strong>
+<ul>
+<li class="">Configure the <strong>default location(s)</strong> per widget instance.</li>
+<li class=""><strong>Fetch and cache</strong> current weather from <strong>third‑party API</strong>.</li>
+</ul>
+</li>
+<li class="">Invariants<!-- -->
+<ul>
+<li class="">A snapshot must include the provider timestamp and units.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="crosswidget-relationships">Cross‑widget relationships<a href="#crosswidget-relationships" class="hash-link" aria-label="Direct link to Cross‑widget relationships" title="Direct link to Cross‑widget relationships" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Tasks ↔ Calendar:</strong> “Create Event from Task” (non-blocking, one‑way copy).</li>
+<li class=""><strong>Bookmarks ↔ Dashboard:</strong> “Pin to Speed Dial” and “Place on Dashboard” shortcuts.</li>
+<li class=""><strong>Weather ↔ Dashboard:</strong> Read-only card shows a configured location; multiple instances allowed.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="value-objects-and-common-types">Value objects and common types<a href="#value-objects-and-common-types" class="hash-link" aria-label="Direct link to Value objects and common types" title="Direct link to Value objects and common types" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Identifier:</strong> Strongly typed IDs for aggregates (UserId, DashboardId, WidgetInstanceId, TaskId, EventId, FolderId,
+BookmarkId).</li>
+<li class=""><strong>Name/Title:</strong> Non-empty, length‑bounded text.</li>
+<li class=""><strong>URL:</strong> Validated absolute URL.</li>
+<li class=""><strong>DateTime/TimeSpan:</strong> Timezone-aware types; respect user preferences.</li>
+<li class=""><strong>Status/Priority:</strong> Enumerations with explicit lifecycle/ordering.</li>
+<li class=""><strong>Location:</strong> City, country code, coordinates.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="aggregate-candidates">Aggregate candidates<a href="#aggregate-candidates" class="hash-link" aria-label="Direct link to Aggregate candidates" title="Direct link to Aggregate candidates" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Dashboard</strong> (aggregate root): owns WidgetInstances and Layout.</li>
+<li class=""><strong>Folder</strong> (aggregate root): owns Bookmarks (tree via parentId).</li>
+<li class=""><strong>TaskList</strong> (aggregate root): owns Tasks; or Task as root if kept flat.</li>
+<li class=""><strong>Calendar</strong> (aggregate root): owns Events.</li>
+<li class=""><strong>Weather</strong> is likely read model only (no aggregate); configuration lives in WidgetInstance.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="domain-policies-selected">Domain policies (selected)<a href="#domain-policies-selected" class="hash-link" aria-label="Direct link to Domain policies (selected)" title="Direct link to Domain policies (selected)" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Layout policy:</strong> prevent overlapping placements; maintain stable ordering.</li>
+<li class=""><strong>Task lifecycle:</strong> Todo → In‑Progress → Done (allow revert by policy).</li>
+<li class=""><strong>Event timing:</strong> enforce start &lt; end; optional soft conflicts only.</li>
+<li class=""><strong>Weather optimization:</strong> Rate limits/caching for weather reads to avoid excessive API calls.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="whats-core-vs-commodity">What’s Core vs. Commodity<a href="#whats-core-vs-commodity" class="hash-link" aria-label="Direct link to What’s Core vs. Commodity" title="Direct link to What’s Core vs. Commodity" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Core:</strong> Orchestration of a coherent, low‑friction personal dashboard with profile‑based personalization and
+consistent UX.</li>
+<li class=""><strong>Commodity:</strong> CRUD for bookmarks/tasks/events and external weather integration kept intentionally simple.</li>
+</ul>
+<p>This foundation will guide bounded contexts, ubiquitous language, and later process modeling.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/domain/core-domain-concepts.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/domain/business-vision"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Business vision</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/domain/ubiquitous-language"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Ubiquitous language</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#strategic-subdomains" class="table-of-contents__link toc-highlight">Strategic subdomains</a><ul><li><a href="#core-subdomain" class="table-of-contents__link toc-highlight">Core subdomain</a></li><li><a href="#supporting-subdomains" class="table-of-contents__link toc-highlight">Supporting subdomains</a></li><li><a href="#generic-subdomains" class="table-of-contents__link toc-highlight">Generic subdomains</a></li></ul></li><li><a href="#core-dashboard-orchestration-core" class="table-of-contents__link toc-highlight">Core dashboard orchestration (Core)</a></li><li><a href="#supporting-subdomains-1" class="table-of-contents__link toc-highlight">Supporting subdomains</a><ul><li><a href="#bookmarks" class="table-of-contents__link toc-highlight">Bookmarks</a></li><li><a href="#tasks" class="table-of-contents__link toc-highlight">Tasks</a></li><li><a href="#calendar" class="table-of-contents__link toc-highlight">Calendar</a></li><li><a href="#weather" class="table-of-contents__link toc-highlight">Weather</a></li></ul></li><li><a href="#crosswidget-relationships" class="table-of-contents__link toc-highlight">Cross‑widget relationships</a></li><li><a href="#value-objects-and-common-types" class="table-of-contents__link toc-highlight">Value objects and common types</a></li><li><a href="#aggregate-candidates" class="table-of-contents__link toc-highlight">Aggregate candidates</a></li><li><a href="#domain-policies-selected" class="table-of-contents__link toc-highlight">Domain policies (selected)</a></li><li><a href="#whats-core-vs-commodity" class="table-of-contents__link toc-highlight">What’s Core vs. Commodity</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

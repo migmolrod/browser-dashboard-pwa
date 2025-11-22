@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbrowser_dashboard_pwa_docs=globalThis.webpackChunkbrowser_dashboard_pwa_docs||[]).push([[3348],{967:(a,s,e)=>{e.d(s,{createPacketServices:()=>r.$});var r=e(2012);e(9932)}}]);

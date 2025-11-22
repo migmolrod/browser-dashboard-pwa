@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/functional/user-identity" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">User identity | Browser Dashboard PWA</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://migmolrod.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://migmolrod.github.io/docs/requirements/functional/user-identity"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="User identity | Browser Dashboard PWA"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://migmolrod.github.io/docs/requirements/functional/user-identity"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/user-identity" hreflang="en"><link data-rh="true" rel="alternate" href="https://migmolrod.github.io/docs/requirements/functional/user-identity" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"User identity","item":"https://migmolrod.github.io/docs/requirements/functional/user-identity"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Browser Dashboard PWA RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Browser Dashboard PWA Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e98d30eb.css">
+<script src="/assets/js/runtime~main.b5f7f95c.js" defer="defer"></script>
+<script src="/assets/js/main.96958804.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_ZENM" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--light_ac4g"><img src="/img/logo.svg" alt="Browser Dashboard PWA Logo" class="themedComponent_ZSly themedComponent--dark_geaY"></div><b class="navbar__title text--truncate">Home</b></a><a class="navbar__item navbar__link" href="/docs/domain/overview">DMD</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/requirements/overview">SRS</a><a class="navbar__item navbar__link" href="/docs/architecture/overview">SAD</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/blog">Blog</a><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_dfOL colorModeToggle_OMHc"><button class="clean-btn toggleButton_sYJK toggleButtonDisabled_uhoL" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv lightToggleIcon_cRsD"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv darkToggleIcon_dhlZ"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_DOsv systemToggleIcon_De7l"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_n3EO"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_Cmuq"><div class="docsWrapper_qr6I"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_PPUa" type="button"></button><div class="docRoot_mfoW"><aside class="theme-doc-sidebar-container docSidebarContainer_ag_q"><div class="sidebarViewport_BDDu"><div class="sidebar_ioLr"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_u_pe"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/overview"><span title="Requirements overview" class="linkLabel_dWUb">Requirements overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/templates"><span title="Templates" class="linkLabel_dWUb">Templates</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/business-requirements"><span title="Business requirements" class="linkLabel_dWUb">Business requirements</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_wRzA menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/requirements/functional/dashboard-management"><span title="Functional requirements" class="categoryLinkLabel_gvR2">Functional requirements</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/dashboard-management"><span title="Dashboard Management" class="linkLabel_dWUb">Dashboard Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/bookmarks"><span title="Bookmarks" class="linkLabel_dWUb">Bookmarks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/tasks"><span title="Tasks" class="linkLabel_dWUb">Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/calendar"><span title="Calendar" class="linkLabel_dWUb">Calendar</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/weather"><span title="Weather" class="linkLabel_dWUb">Weather</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/requirements/functional/user-identity"><span title="User identity" class="linkLabel_dWUb">User identity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/preferences"><span title="Preferences" class="linkLabel_dWUb">Preferences</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/requirements/functional/synchronization"><span title="Synchronization" class="linkLabel_dWUb">Synchronization</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/non-functional-requirements"><span title="Non-Functional requirements" class="linkLabel_dWUb">Non-Functional requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/user-stories"><span title="User Stories" class="linkLabel_dWUb">User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/requirements/system-requirements"><span title="System requirements" class="linkLabel_dWUb">System requirements</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_j2Zb"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_spGC"><div class="docItemContainer_nKy5"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_rpXH" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Y6Bx"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Functional requirements</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">User identity</span></li></ul></nav><div class="tocCollapsible_jwPn theme-doc-toc-mobile tocMobile_A1u9"><button type="button" class="clean-btn tocCollapsibleButton_Dmq1">On this page</button></div><div class="theme-doc-markdown markdown"><div class="reqMetadata_OnDx"><div><strong>Status: </strong><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></div><span><strong>Last updated</strong>: <!-- -->November 15, 2025</span></div>
+<header><h1>User identity</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The User Identity bounded context provides foundational user identification, authentication, and session management for
+the Browser Dashboard PWA. It serves as the system-of-record for user identity and acts as the entry point for all user
+interactions. The context handles user registration, login/logout, and basic session lifecycle management.</p>
+<p><strong>Bounded context code:</strong> UID<br>
+<strong>Related DMD section:</strong> <a class="" href="/docs/domain/bounded-contexts/user-identity">User Identity (Generic)</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Feature Code</th><th>Feature Name</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td>FR-UID-001</td><td>User registration</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-UID-002</td><td>User authentication</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-UID-003</td><td>Session management</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-UID-004</td><td>User profile management</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-UID-005</td><td>Password management</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-UID-006</td><td>Account deletion</td><td><span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr><tr><td>FR-UID-007</td><td>Security policies</td><td><span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></td><td><span class="reqStatus_It10 reqStatusDraft_r86d">Draft</span></td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-001-user-registration">FR-UID-001: User registration<a href="#fr-uid-001-user-registration" class="hash-link" aria-label="Direct link to FR-UID-001: User registration" title="Direct link to FR-UID-001: User registration" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+Users must be able to create a new account by registering with a unique username, email address, and password.
+Registration creates a user identity that serves as the foundation for all personalized features across the system.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must not yet be registered</li>
+<li class="">Registration endpoint must be accessible</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">New User aggregate is created</li>
+<li class="">User credentials are securely stored</li>
+<li class="">UserRegistered event is published</li>
+<li class="">User is authenticated (logged in) automatically</li>
+<li class="">Default resources are initialized (dashboard, task list, calendar, etc.)</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Username must be unique across the system</li>
+<li class="">Username must be 3-30 characters, alphanumeric plus underscore/hyphen</li>
+<li class="">Email must be valid format and unique</li>
+<li class="">Password must meet complexity requirements (min 8 characters, at least one uppercase, one lowercase, one digit)</li>
+<li class="">Registration must be atomic (user creation and credential storage)</li>
+<li class="">User account is active immediately upon registration (no email verification in MVP)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Anonymous User (pre-registration)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: User (root)</li>
+<li class="">Domain Events: UserRegistered</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">None (foundational context)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can register with username, email, and password</li>
+<li class="">Username is validated for uniqueness</li>
+<li class="">Email is validated for format and uniqueness</li>
+<li class="">Password is validated for complexity</li>
+<li class="">User credentials are hashed before storage</li>
+<li class="">UserRegistered event is published with userId</li>
+<li class="">User is automatically logged in after registration</li>
+<li class="">Registration failures show appropriate error messages</li>
+<li class="">Duplicate username/email is rejected</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-001-001: Register with valid credentials</li>
+<li class="">US-UID-001-002: Reject duplicate username</li>
+<li class="">US-UID-001-003: Reject invalid password</li>
+<li class="">US-UID-001-004: Auto-login after registration</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios">Scenarios<a href="#scenarios" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-register-with-valid-credentials-happy-path">Scenario 1: Register with valid credentials (happy path)<a href="#scenario-1-register-with-valid-credentials-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Register with valid credentials (happy path)" title="Direct link to Scenario 1: Register with valid credentials (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is on the registration page</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters username &quot;john_doe&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters email &quot;john@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters password &quot;SecurePass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms password &quot;SecurePass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a new User aggregate is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the password is hashed using bcrypt</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And credentials are stored securely</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserRegistered event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is automatically logged in</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And redirected to the dashboard</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-reject-duplicate-username">Scenario 2: Reject duplicate username<a href="#scenario-2-reject-duplicate-username" class="hash-link" aria-label="Direct link to Scenario 2: Reject duplicate username" title="Direct link to Scenario 2: Reject duplicate username" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;alice_smith&quot; already exists</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When a new user attempts to register with username &quot;alice_smith&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters email &quot;alice2@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters password &quot;SecurePass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Username already taken&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no UserRegistered event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-reject-duplicate-email">Scenario 3: Reject duplicate email<a href="#scenario-3-reject-duplicate-email" class="hash-link" aria-label="Direct link to Scenario 3: Reject duplicate email" title="Direct link to Scenario 3: Reject duplicate email" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user with email &quot;john@example.com&quot; already exists</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When a new user attempts to register with different username</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">But same email &quot;john@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Email already registered&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no UserRegistered event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-invalid-password-too-short">Scenario 4: Reject invalid password (too short)<a href="#scenario-4-reject-invalid-password-too-short" class="hash-link" aria-label="Direct link to Scenario 4: Reject invalid password (too short)" title="Direct link to Scenario 4: Reject invalid password (too short)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registering</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters password &quot;Pass1&quot; (only 5 characters)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Password must be at least 8 characters&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-reject-invalid-password-missing-complexity">Scenario 5: Reject invalid password (missing complexity)<a href="#scenario-5-reject-invalid-password-missing-complexity" class="hash-link" aria-label="Direct link to Scenario 5: Reject invalid password (missing complexity)" title="Direct link to Scenario 5: Reject invalid password (missing complexity)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registering</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters password &quot;password123&quot; (no uppercase)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Password must contain uppercase, lowercase, and digit&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-password-confirmation-mismatch">Scenario 6: Password confirmation mismatch<a href="#scenario-6-password-confirmation-mismatch" class="hash-link" aria-label="Direct link to Scenario 6: Password confirmation mismatch" title="Direct link to Scenario 6: Password confirmation mismatch" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registering</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters password &quot;SecurePass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms with &quot;SecurePass456&quot; (different)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Passwords do not match&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-invalid-email-format">Scenario 7: Invalid email format<a href="#scenario-7-invalid-email-format" class="hash-link" aria-label="Direct link to Scenario 7: Invalid email format" title="Direct link to Scenario 7: Invalid email format" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registering</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters email &quot;invalid-email&quot; (no @ or domain)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Invalid email format&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-8-username-with-invalid-characters">Scenario 8: Username with invalid characters<a href="#scenario-8-username-with-invalid-characters" class="hash-link" aria-label="Direct link to Scenario 8: Username with invalid characters" title="Direct link to Scenario 8: Username with invalid characters" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registering</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters username &quot;john@doe!&quot; (contains @ and !)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message indicates &quot;Username can only contain letters, numbers, underscore, and hyphen&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is not created</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use bcrypt (or Argon2) for password hashing with an appropriate cost factor</li>
+<li class="">Implement rate limiting on registration endpoint to prevent abuse</li>
+<li class="">Username and email uniqueness checks should use database constraints</li>
+<li class="">Store userId as UUID or strongly typed identifier</li>
+<li class="">Ensure HTTPS for registration endpoint</li>
+<li class="">Consider implementing CAPTCHA for bot prevention (future)</li>
+<li class="">Log registration attempts for security monitoring</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should email verification be required before account activation?</li>
+<li class="">Should there be a waiting period before the username can be reused if an account is deleted?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-002-user-authentication">FR-UID-002: User authentication<a href="#fr-uid-002-user-authentication" class="hash-link" aria-label="Direct link to FR-UID-002: User authentication" title="Direct link to FR-UID-002: User authentication" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+Users must be able to authenticate (log in) using their registered credentials (username or email and password).
+Successful authentication establishes a session that grants access to personalized features across the system.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be registered</li>
+<li class="">User account must be active (not deleted or suspended)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">User credentials are validated</li>
+<li class="">Session is created with session token</li>
+<li class="">UserLoggedIn event is published</li>
+<li class="">User is granted access to protected resources</li>
+<li class="">Session token is returned to the client</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Users can log in with username or email (both accepted)</li>
+<li class="">Password must match stored hashed credential</li>
+<li class="">Failed login attempts are logged for security monitoring</li>
+<li class="">Account lockout after N failed attempts (e.g., 5) to prevent brute force</li>
+<li class="">Successful login resets failed attempt counter</li>
+<li class="">Session token is generated using secure random algorithm</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Registered User (unauthenticated)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: User (root), Session</li>
+<li class="">Domain Events: UserLoggedIn</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-UID-001 (User must be registered)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can log in with username and password</li>
+<li class="">User can log in with email and password</li>
+<li class="">Password is verified against hashed credential</li>
+<li class="">Successful login creates session and returns token</li>
+<li class="">UserLoggedIn event is published with userId</li>
+<li class="">Failed login shows generic error (security best practice)</li>
+<li class="">Multiple failed attempts trigger account lockout</li>
+<li class="">Locked account shows appropriate message</li>
+<li class="">Session token is returned in secure HTTP-only cookie or response body</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-002-001: Login with valid credentials</li>
+<li class="">US-UID-002-002: Login with email instead of username</li>
+<li class="">US-UID-002-003: Reject invalid password</li>
+<li class="">US-UID-002-004: Account lockout after failed attempts</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-1">Scenarios<a href="#scenarios-1" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-login-with-valid-credentials-happy-path">Scenario 1: Login with valid credentials (happy path)<a href="#scenario-1-login-with-valid-credentials-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Login with valid credentials (happy path)" title="Direct link to Scenario 1: Login with valid credentials (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;john_doe&quot; is registered</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user navigates to the login page</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters username &quot;john_doe&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters password &quot;SecurePass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the login form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the password is verified against stored hash</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And authentication succeeds</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a session is created with unique session token</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserLoggedIn event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is redirected to the dashboard</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And session token is stored in HTTP-only cookie</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-login-with-email-instead-of-username">Scenario 2: Login with email instead of username<a href="#scenario-2-login-with-email-instead-of-username" class="hash-link" aria-label="Direct link to Scenario 2: Login with email instead of username" title="Direct link to Scenario 2: Login with email instead of username" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registered with email &quot;john@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters email &quot;john@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters correct password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the login form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication succeeds</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is logged in</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserLoggedIn event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-reject-invalid-password">Scenario 3: Reject invalid password<a href="#scenario-3-reject-invalid-password" class="hash-link" aria-label="Direct link to Scenario 3: Reject invalid password" title="Direct link to Scenario 3: Reject invalid password" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;john_doe&quot; is registered</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters username &quot;john_doe&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters incorrect password &quot;WrongPass456&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the login form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Invalid username or password&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And failed attempt is logged</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no session is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no UserLoggedIn event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-generic-error-for-non-existent-user">Scenario 4: Generic error for non-existent user<a href="#scenario-4-generic-error-for-non-existent-user" class="hash-link" aria-label="Direct link to Scenario 4: Generic error for non-existent user" title="Direct link to Scenario 4: Generic error for non-existent user" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given no user exists with username &quot;unknown_user&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to login with &quot;unknown_user&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters any password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the login form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the same error message &quot;Invalid username or password&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no distinction is made between invalid username vs. password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And failed attempt is logged</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-account-lockout-after-failed-attempts">Scenario 5: Account lockout after failed attempts<a href="#scenario-5-account-lockout-after-failed-attempts" class="hash-link" aria-label="Direct link to Scenario 5: Account lockout after failed attempts" title="Direct link to Scenario 5: Account lockout after failed attempts" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;john_doe&quot; is registered</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user has made 4 failed login attempts</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a 5th failed login attempt</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the account is locked for 15 minutes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Account temporarily locked. Please try again in 15 minutes&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the lockout is logged for security monitoring</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-successful-login-resets-failed-attempt-counter">Scenario 6: Successful login resets failed attempt counter<a href="#scenario-6-successful-login-resets-failed-attempt-counter" class="hash-link" aria-label="Direct link to Scenario 6: Successful login resets failed attempt counter" title="Direct link to Scenario 6: Successful login resets failed attempt counter" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;john_doe&quot; has made 3 failed login attempts</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user successfully logs in with correct password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication succeeds</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the failed attempt counter is reset to 0</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user can continue normally</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-login-attempt-during-lockout-period">Scenario 7: Login attempt during lockout period<a href="#scenario-7-login-attempt-during-lockout-period" class="hash-link" aria-label="Direct link to Scenario 7: Login attempt during lockout period" title="Direct link to Scenario 7: Login attempt during lockout period" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;john_doe&quot; is locked out due to failed attempts</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the lockout period has not expired</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to login with correct password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication is denied</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Account temporarily locked&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no session is created</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-8-login-after-lockout-period-expires">Scenario 8: Login after lockout period expires<a href="#scenario-8-login-after-lockout-period-expires" class="hash-link" aria-label="Direct link to Scenario 8: Login after lockout period expires" title="Direct link to Scenario 8: Login after lockout period expires" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user &quot;john_doe&quot; was locked out</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the 15-minute lockout period has expired</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to login with correct password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication succeeds</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the lockout is lifted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is logged in normally</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use constant-time comparison for password verification to prevent timing attacks</li>
+<li class="">Implement rate limiting on login endpoint (e.g., max 10 attempts per minute per IP)</li>
+<li class="">Store session tokens securely (HTTP-only, Secure, SameSite cookies)</li>
+<li class="">Use JWT or opaque tokens for session management</li>
+<li class="">Log all login attempts (success and failure) with IP address and timestamp</li>
+<li class="">Implement account lockout with exponential backoff (future enhancement)</li>
+<li class="">Consider implementing &quot;Remember Me&quot; functionality with long-lived refresh tokens (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be multi-factor authentication (MFA) support?</li>
+<li class="">Should there be device tracking/recognition?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-003-session-management">FR-UID-003: Session management<a href="#fr-uid-003-session-management" class="hash-link" aria-label="Direct link to FR-UID-003: Session management" title="Direct link to FR-UID-003: Session management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+The system must manage user sessions to maintain authenticated state across requests. Sessions have a lifecycle
+including creation, validation, refresh, and expiration. Users can have multiple concurrent sessions (e.g., different
+devices/browsers) and can log out to terminate sessions.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">Session must be created after successful login</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Session is created, validated, or terminated</li>
+<li class="">Session expiration is enforced</li>
+<li class="">UserLoggedOut event is published on logout</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Sessions expire after inactivity (e.g., 30 minutes idle)</li>
+<li class="">Sessions have absolute expiration (e.g., 24 hours from creation)</li>
+<li class="">Users can have multiple concurrent sessions</li>
+<li class="">Logout terminates the current session only</li>
+<li class="">Expired sessions are cleaned up automatically</li>
+<li class="">Session tokens are invalidated on logout</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: Session, User</li>
+<li class="">Domain Events: UserLoggedIn, UserLoggedOut</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-UID-002 (User must be authenticated)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Session is created on successful login</li>
+<li class="">Session token is required for accessing protected resources</li>
+<li class="">Session is validated on each request</li>
+<li class="">Expired sessions are rejected with 401 Unauthorized</li>
+<li class="">User can log out to terminate session</li>
+<li class="">UserLoggedOut event is published on logout</li>
+<li class="">Multiple concurrent sessions are supported</li>
+<li class="">Session cleanup job removes expired sessions</li>
+<li class="">Session inactivity timeout is enforced</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-003-001: Create session on login</li>
+<li class="">US-UID-003-002: Validate session on protected request</li>
+<li class="">US-UID-003-003: Logout and terminate session</li>
+<li class="">US-UID-003-004: Session expires after inactivity</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-2">Scenarios<a href="#scenarios-2" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-create-session-on-login-happy-path">Scenario 1: Create session on login (happy path)<a href="#scenario-1-create-session-on-login-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Create session on login (happy path)" title="Direct link to Scenario 1: Create session on login (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user successfully logs in</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When authentication completes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a new session is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a unique session token is generated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And session includes userId, createdAt, lastAccessedAt</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And session token is returned to client</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And session is stored in session store (database or Redis)</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-validate-session-on-protected-request">Scenario 2: Validate session on protected request<a href="#scenario-2-validate-session-on-protected-request" class="hash-link" aria-label="Direct link to Scenario 2: Validate session on protected request" title="Direct link to Scenario 2: Validate session on protected request" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has an active session</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a request to a protected resource</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And provides session token in Authorization header</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the session is validated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And userId is extracted from session</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And lastAccessedAt is updated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the request is authorized</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the protected resource is returned</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-reject-expired-session-inactivity-timeout">Scenario 3: Reject expired session (inactivity timeout)<a href="#scenario-3-reject-expired-session-inactivity-timeout" class="hash-link" aria-label="Direct link to Scenario 3: Reject expired session (inactivity timeout)" title="Direct link to Scenario 3: Reject expired session (inactivity timeout)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a session</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the session was last accessed 35 minutes ago</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And inactivity timeout is 30 minutes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a request with the session token</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then session validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And 401 Unauthorized is returned</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Session expired. Please log in again&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the session is marked as expired</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-expired-session-absolute-timeout">Scenario 4: Reject expired session (absolute timeout)<a href="#scenario-4-reject-expired-session-absolute-timeout" class="hash-link" aria-label="Direct link to Scenario 4: Reject expired session (absolute timeout)" title="Direct link to Scenario 4: Reject expired session (absolute timeout)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a session created 25 hours ago</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And absolute timeout is 24 hours</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a request with the session token</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then session validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And 401 Unauthorized is returned</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the session is marked as expired</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-logout-and-terminate-session">Scenario 5: Logout and terminate session<a href="#scenario-5-logout-and-terminate-session" class="hash-link" aria-label="Direct link to Scenario 5: Logout and terminate session" title="Direct link to Scenario 5: Logout and terminate session" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is logged in with active session</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Logout&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the current session is terminated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the session token is invalidated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserLoggedOut event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is redirected to login page</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And session is removed from session store</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-multiple-concurrent-sessions">Scenario 6: Multiple concurrent sessions<a href="#scenario-6-multiple-concurrent-sessions" class="hash-link" aria-label="Direct link to Scenario 6: Multiple concurrent sessions" title="Direct link to Scenario 6: Multiple concurrent sessions" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user logs in from desktop browser</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a session &quot;Session-A&quot; is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the same user logs in from mobile browser</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a second session &quot;Session-B&quot; is created</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And both sessions are active concurrently</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And logging out from one device does not affect the other</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And each session is independent</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-session-cleanup-job-removes-expired-sessions">Scenario 7: Session cleanup job removes expired sessions<a href="#scenario-7-session-cleanup-job-removes-expired-sessions" class="hash-link" aria-label="Direct link to Scenario 7: Session cleanup job removes expired sessions" title="Direct link to Scenario 7: Session cleanup job removes expired sessions" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given multiple expired sessions exist in session store</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the session cleanup job runs (e.g., hourly)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then all sessions with lastAccessedAt &gt; 30 minutes ago are deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all sessions with createdAt &gt; 24 hours ago are deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And active sessions remain unaffected</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-8-session-refresh-on-activity">Scenario 8: Session refresh on activity<a href="#scenario-8-session-refresh-on-activity" class="hash-link" aria-label="Direct link to Scenario 8: Session refresh on activity" title="Direct link to Scenario 8: Session refresh on activity" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has a session last accessed 20 minutes ago</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a request (e.g., views dashboard)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the session is validated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And lastAccessedAt is updated to current timestamp</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And inactivity timeout is reset</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the session remains active</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use Redis or in-memory cache for session storage (performance)</li>
+<li class="">Implement session token as JWT (stateless) or opaque token (stateful)</li>
+<li class="">If using JWT, store refresh tokens separately for rotation</li>
+<li class="">Implement session cleanup scheduled job (e.g., cron, Spring @Scheduled)</li>
+<li class="">Use secure random for session token generation</li>
+<li class="">Store session with TTL (time-to-live) in Redis for automatic expiration</li>
+<li class="">Consider implementing session fingerprinting for security (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a maximum number of concurrent sessions per user?</li>
+<li class="">Should users be able to view and revoke active sessions?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-004-user-profile-management">FR-UID-004: User profile management<a href="#fr-uid-004-user-profile-management" class="hash-link" aria-label="Direct link to FR-UID-004: User profile management" title="Direct link to FR-UID-004: User profile management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong>
+Users should be able to view and update basic profile information including display name, email, and username. Profile
+management provides users control over their identity within the system.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have active session</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">User profile is updated</li>
+<li class="">Changes are persisted</li>
+<li class="">UserUpdated event is published (if needed)</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Display name is optional, length-bounded (1-100 characters)</li>
+<li class="">Email must be unique and valid format</li>
+<li class="">Username changes must maintain uniqueness</li>
+<li class="">Password changes require current password verification</li>
+<li class="">Profile changes are atomic (all or nothing)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-005 (User Value
+Delivery)</li>
+<li class="">Domain Aggregates: User (root)</li>
+<li class="">Domain Events: UserUpdated</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-UID-002 (User must be authenticated)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can view current profile information</li>
+<li class="">User can update display name</li>
+<li class="">User can update email (with uniqueness validation)</li>
+<li class="">User can update username (with uniqueness validation)</li>
+<li class="">Changes are validated before saving</li>
+<li class="">Profile updates are persisted</li>
+<li class="">UserUpdated event is published</li>
+<li class="">Invalid updates show appropriate error messages</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-004-001: View user profile</li>
+<li class="">US-UID-004-002: Update display name</li>
+<li class="">US-UID-004-003: Update email</li>
+<li class="">US-UID-004-004: Update username</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-3">Scenarios<a href="#scenarios-3" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-view-user-profile-happy-path">Scenario 1: View user profile (happy path)<a href="#scenario-1-view-user-profile-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: View user profile (happy path)" title="Direct link to Scenario 1: View user profile (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is authenticated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user navigates to profile settings</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the profile page displays current username</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays current email</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays current display name (if set)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays account creation date</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And displays last login date</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-update-display-name">Scenario 2: Update display name<a href="#scenario-2-update-display-name" class="hash-link" aria-label="Direct link to Scenario 2: Update display name" title="Direct link to Scenario 2: Update display name" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user changes display name from &quot;John&quot; to &quot;John Doe&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves changes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the display name is updated to &quot;John Doe&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserUpdated event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a success message &quot;Profile updated successfully&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the new display name appears throughout the application</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-update-email-with-validation">Scenario 3: Update email with validation<a href="#scenario-3-update-email-with-validation" class="hash-link" aria-label="Direct link to Scenario 3: Update email with validation" title="Direct link to Scenario 3: Update email with validation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is viewing their profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user changes email from &quot;john@example.com&quot; to &quot;john.doe@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the new email is unique</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves changes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the email is validated for format</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And checked for uniqueness</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And updated to &quot;john.doe@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserUpdated event is published</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-duplicate-email">Scenario 4: Reject duplicate email<a href="#scenario-4-reject-duplicate-email" class="hash-link" aria-label="Direct link to Scenario 4: Reject duplicate email" title="Direct link to Scenario 4: Reject duplicate email" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given another user already has email &quot;alice@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the current user attempts to change email to &quot;alice@example.com&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves changes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Email already in use&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the email is not updated</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-update-username-with-validation">Scenario 5: Update username with validation<a href="#scenario-5-update-username-with-validation" class="hash-link" aria-label="Direct link to Scenario 5: Update username with validation" title="Direct link to Scenario 5: Update username with validation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user&#x27;s current username is &quot;john_doe&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user changes username to &quot;john_d&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the new username is unique</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And saves changes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the username is validated for format and uniqueness</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And updated to &quot;john_d&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserUpdated event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user remains logged in</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-cancel-profile-changes">Scenario 6: Cancel profile changes<a href="#scenario-6-cancel-profile-changes" class="hash-link" aria-label="Direct link to Scenario 6: Cancel profile changes" title="Direct link to Scenario 6: Cancel profile changes" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has made changes to profile</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Cancel&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then changes are discarded</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And profile reverts to previous values</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no UserUpdated event is published</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement optimistic locking for concurrent profile updates</li>
+<li class="">Email changes may require re-verification (future enhancement)</li>
+<li class="">Username changes should be logged for security audit</li>
+<li class="">Consider implementing username change cooldown (e.g., once per 30 days)</li>
+<li class="">Profile updates should use PATCH semantics (partial updates)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should email changes require verification of new email?</li>
+<li class="">Should username changes be restricted or have cooldown period?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-005-password-management">FR-UID-005: Password management<a href="#fr-uid-005-password-management" class="hash-link" aria-label="Direct link to FR-UID-005: Password management" title="Direct link to FR-UID-005: Password management" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong>
+Users should be able to change their password by providing current password and new password. Password changes enhance
+security and allow users to update compromised credentials.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must have active session</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Password is changed</li>
+<li class="">New password hash is stored</li>
+<li class="">PasswordChanged event is published</li>
+<li class="">All other sessions are optionally invalidated (security best practice)</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Current password must be verified before change</li>
+<li class="">New password must meet complexity requirements</li>
+<li class="">New password must be different from current password</li>
+<li class="">Password change invalidates all other sessions (optional)</li>
+<li class="">Password changes are logged for security audit</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: User (root)</li>
+<li class="">Domain Events: PasswordChanged</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-UID-002 (User must be authenticated)</li>
+<li class="">FR-UID-007 (Security policies)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can access password change form</li>
+<li class="">Current password is required and verified</li>
+<li class="">New password must meet complexity requirements</li>
+<li class="">New password cannot be same as current password</li>
+<li class="">Password change succeeds with valid inputs</li>
+<li class="">Password hash is updated in storage</li>
+<li class="">PasswordChanged event is published</li>
+<li class="">User is notified of successful password change</li>
+<li class="">Other sessions are invalidated (optional)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-005-001: Change password successfully</li>
+<li class="">US-UID-005-002: Reject incorrect current password</li>
+<li class="">US-UID-005-003: Reject weak new password</li>
+<li class="">US-UID-005-004: Other sessions invalidated after password change</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-4">Scenarios<a href="#scenarios-4" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-change-password-successfully-happy-path">Scenario 1: Change password successfully (happy path)<a href="#scenario-1-change-password-successfully-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Change password successfully (happy path)" title="Direct link to Scenario 1: Change password successfully (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is authenticated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user navigates to password change form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters current password &quot;OldPass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters new password &quot;NewSecurePass456&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms new password &quot;NewSecurePass456&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then current password is verified</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And new password is validated for complexity</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And new password hash is generated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And password is updated in storage</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a PasswordChanged event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a success message &quot;Password changed successfully&quot; is displayed</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-reject-incorrect-current-password">Scenario 2: Reject incorrect current password<a href="#scenario-2-reject-incorrect-current-password" class="hash-link" aria-label="Direct link to Scenario 2: Reject incorrect current password" title="Direct link to Scenario 2: Reject incorrect current password" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is changing password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters incorrect current password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters valid new password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then current password verification fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Current password is incorrect&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the password is not changed</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-reject-weak-new-password">Scenario 3: Reject weak new password<a href="#scenario-3-reject-weak-new-password" class="hash-link" aria-label="Direct link to Scenario 3: Reject weak new password" title="Direct link to Scenario 3: Reject weak new password" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is changing password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters correct current password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters weak new password &quot;pass123&quot; (no uppercase)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then password complexity validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Password must contain uppercase, lowercase, and digit&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the password is not changed</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-reject-same-password">Scenario 4: Reject same password<a href="#scenario-4-reject-same-password" class="hash-link" aria-label="Direct link to Scenario 4: Reject same password" title="Direct link to Scenario 4: Reject same password" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is changing password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters current password &quot;SecurePass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters new password &quot;SecurePass123&quot; (same)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;New password must be different from current password&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the password is not changed</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-password-confirmation-mismatch">Scenario 5: Password confirmation mismatch<a href="#scenario-5-password-confirmation-mismatch" class="hash-link" aria-label="Direct link to Scenario 5: Password confirmation mismatch" title="Direct link to Scenario 5: Password confirmation mismatch" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is changing password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters valid current password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And enters new password &quot;NewPass123&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms with &quot;NewPass456&quot; (different)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits the form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Passwords do not match&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the password is not changed</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-invalidate-other-sessions-after-password-change">Scenario 6: Invalidate other sessions after password change<a href="#scenario-6-invalidate-other-sessions-after-password-change" class="hash-link" aria-label="Direct link to Scenario 6: Invalidate other sessions after password change" title="Direct link to Scenario 6: Invalidate other sessions after password change" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has 3 active sessions (desktop, mobile, tablet)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user changes password from desktop session</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the password is changed successfully</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all sessions except current (desktop) are invalidated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And mobile and tablet devices are logged out</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And must re-authenticate with new password</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use same password hashing algorithm as registration (bcrypt/Argon2)</li>
+<li class="">Implement password history to prevent reuse of recent passwords (future)</li>
+<li class="">Log password changes with timestamp and IP address</li>
+<li class="">Consider sending email notification of password change</li>
+<li class="">Implement rate limiting on password change endpoint</li>
+<li class="">Current password verification should use constant-time comparison</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a password change cooldown period?</li>
+<li class="">Should password history be enforced (e.g., cannot reuse last 5 passwords)?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-006-account-deletion">FR-UID-006: Account deletion<a href="#fr-uid-006-account-deletion" class="hash-link" aria-label="Direct link to FR-UID-006: Account deletion" title="Direct link to FR-UID-006: Account deletion" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelShouldHave_iftn">Should Have</span></p>
+<p><strong>Description:</strong>
+Users should be able to delete their account permanently. Account deletion removes all user data and is irreversible.
+This feature provides users control over their data and complies with privacy regulations.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">User must be authenticated</li>
+<li class="">User must confirm deletion intent (confirmation dialog)</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">User account is marked as deleted</li>
+<li class="">UserDeleted event is published</li>
+<li class="">All user data across contexts is deleted (cascade)</li>
+<li class="">User is logged out</li>
+<li class="">All sessions are invalidated</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Account deletion requires password confirmation</li>
+<li class="">Deletion is permanent and irreversible (hard delete in MVP)</li>
+<li class="">UserDeleted event triggers cleanup in all bounded contexts</li>
+<li class="">All user-related data is deleted (cascade)</li>
+<li class="">Deleted usernames can be registered again after grace period (optional)</li>
+<li class="">Account deletion is logged for audit</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">Authenticated User</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-005 (User Value Delivery)</li>
+<li class="">Domain Aggregates: User (root)</li>
+<li class="">Domain Events: UserDeleted</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">FR-UID-002 (User must be authenticated)</li>
+<li class="">All other contexts (must handle UserDeleted event)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">User can access account deletion option</li>
+<li class="">Deletion requires password confirmation</li>
+<li class="">Confirmation dialog warns of permanent deletion</li>
+<li class="">User account is deleted on confirmation</li>
+<li class="">UserDeleted event is published with userId</li>
+<li class="">User is logged out immediately</li>
+<li class="">All sessions are invalidated</li>
+<li class="">User cannot log in with deleted account</li>
+<li class="">Deletion is logged for audit</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-006-001: Delete account successfully</li>
+<li class="">US-UID-006-002: Reject deletion with incorrect password</li>
+<li class="">US-UID-006-003: Cancel account deletion</li>
+<li class="">US-UID-006-004: Cannot log in after deletion</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-5">Scenarios<a href="#scenarios-5" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-delete-account-successfully-happy-path">Scenario 1: Delete account successfully (happy path)<a href="#scenario-1-delete-account-successfully-happy-path" class="hash-link" aria-label="Direct link to Scenario 1: Delete account successfully (happy path)" title="Direct link to Scenario 1: Delete account successfully (happy path)" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is authenticated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user navigates to account settings</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And clicks &quot;Delete Account&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a confirmation dialog appears</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And warns &quot;This action is permanent and cannot be undone&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user enters password for confirmation</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms deletion</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the password is verified</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user account is deleted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And a UserDeleted event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is logged out</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all sessions are invalidated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user is redirected to goodbye page</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-reject-deletion-with-incorrect-password">Scenario 2: Reject deletion with incorrect password<a href="#scenario-2-reject-deletion-with-incorrect-password" class="hash-link" aria-label="Direct link to Scenario 2: Reject deletion with incorrect password" title="Direct link to Scenario 2: Reject deletion with incorrect password" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is attempting to delete account</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters incorrect password in confirmation dialog</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And confirms deletion</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then password verification fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Incorrect password&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And account deletion is aborted</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user remains logged in</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-cancel-account-deletion">Scenario 3: Cancel account deletion<a href="#scenario-3-cancel-account-deletion" class="hash-link" aria-label="Direct link to Scenario 3: Cancel account deletion" title="Direct link to Scenario 3: Cancel account deletion" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has opened account deletion confirmation dialog</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user clicks &quot;Cancel&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the dialog is closed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no account deletion occurs</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no UserDeleted event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user remains logged in</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-cannot-log-in-after-deletion">Scenario 4: Cannot log in after deletion<a href="#scenario-4-cannot-log-in-after-deletion" class="hash-link" aria-label="Direct link to Scenario 4: Cannot log in after deletion" title="Direct link to Scenario 4: Cannot log in after deletion" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has deleted their account</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user attempts to log in with previous credentials</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then authentication fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Invalid username or password&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And no session is created</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-cascading-deletion-across-contexts">Scenario 5: Cascading deletion across contexts<a href="#scenario-5-cascading-deletion-across-contexts" class="hash-link" aria-label="Direct link to Scenario 5: Cascading deletion across contexts" title="Direct link to Scenario 5: Cascading deletion across contexts" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has data in multiple contexts (dashboards, tasks, bookmarks, calendar)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user deletes their account</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a UserDeleted event is published</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And Dashboard Management context deletes all dashboards</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And Tasks context deletes all tasks</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And Bookmarks context deletes all bookmarks</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And Calendar context deletes all events</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And all user-related data is removed from the system</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-account-deletion-is-logged">Scenario 6: Account deletion is logged<a href="#scenario-6-account-deletion-is-logged" class="hash-link" aria-label="Direct link to Scenario 6: Account deletion is logged" title="Direct link to Scenario 6: Account deletion is logged" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user deletes their account</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When deletion completes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the deletion is logged with:</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- Timestamp</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- UserId</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- Username</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- Email</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- IP address</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the log is retained for audit purposes</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Implement soft delete with grace period before hard delete (future enhancement)</li>
+<li class="">Use distributed transactions or saga pattern for cross-context cleanup</li>
+<li class="">Ensure UserDeleted event is published reliably (transactional outbox pattern)</li>
+<li class="">Log account deletions with sufficient detail for audit</li>
+<li class="">Consider implementing account deactivation as alternative to deletion (future)</li>
+<li class="">Ensure GDPR/data privacy compliance for deletion process</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should there be a grace period (e.g., 30 days) before permanent deletion?</li>
+<li class="">Should deleted usernames be reserved to prevent impersonation?</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="fr-uid-007-security-policies">FR-UID-007: Security policies<a href="#fr-uid-007-security-policies" class="hash-link" aria-label="Direct link to FR-UID-007: Security policies" title="Direct link to FR-UID-007: Security policies" translate="no">​</a></h3>
+<p><strong>Priority:</strong> <span class="priorityLabel_hNWY priorityLabelMustHave_fw2O">Must Have</span></p>
+<p><strong>Description:</strong>
+The system must enforce security policies to protect user accounts and prevent unauthorized access. Policies include
+password complexity, account lockout, session security, and audit logging.</p>
+<p><strong>Preconditions:</strong></p>
+<ul>
+<li class="">System is configured with security policies</li>
+<li class="">Policies are enforced on all identity operations</li>
+</ul>
+<p><strong>Postconditions:</strong></p>
+<ul>
+<li class="">Security policies are enforced consistently</li>
+<li class="">Violations are logged and handled appropriately</li>
+<li class="">Audit trail is maintained for security events</li>
+</ul>
+<p><strong>Business rules:</strong></p>
+<ul>
+<li class="">Password complexity: min 8 characters, uppercase, lowercase, digit</li>
+<li class="">Account lockout: 5 failed attempts, 15-minute lockout</li>
+<li class="">Session timeout: 30 minutes inactivity, 24 hours absolute</li>
+<li class="">All security events are logged (login, logout, password change, account deletion)</li>
+<li class="">Passwords are hashed using bcrypt with cost factor 12</li>
+<li class="">Session tokens are securely random (min 32 bytes entropy)</li>
+</ul>
+<p><strong>User roles:</strong></p>
+<ul>
+<li class="">System (policy enforcement)</li>
+<li class="">Authenticated User (subject to policies)</li>
+</ul>
+<p><strong>Related to:</strong></p>
+<ul>
+<li class="">Business Requirements: BR-001 (Portfolio Enhancement), BR-003 (Technical Excellence)</li>
+<li class="">Domain Aggregates: User (root), Session</li>
+<li class="">Domain Events: All user events</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li class="">All other FR-UID features (policies apply system-wide)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul>
+<li class="">Password complexity is enforced on registration and password change</li>
+<li class="">Account lockout is triggered after failed login attempts</li>
+<li class="">Sessions expire according to timeout policies</li>
+<li class="">All passwords are hashed with bcrypt</li>
+<li class="">Session tokens are cryptographically secure</li>
+<li class="">All security events are logged with context</li>
+<li class="">Audit logs are retained for compliance</li>
+<li class="">Security policies are configurable (environment variables)</li>
+</ul>
+<p><strong>User stories:</strong></p>
+<ul>
+<li class="">US-UID-007-001: Enforce password complexity</li>
+<li class="">US-UID-007-002: Enforce account lockout</li>
+<li class="">US-UID-007-003: Enforce session timeout</li>
+<li class="">US-UID-007-004: Audit security events</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenarios-6">Scenarios<a href="#scenarios-6" class="hash-link" aria-label="Direct link to Scenarios" title="Direct link to Scenarios" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-1-enforce-password-complexity-on-registration">Scenario 1: Enforce password complexity on registration<a href="#scenario-1-enforce-password-complexity-on-registration" class="hash-link" aria-label="Direct link to Scenario 1: Enforce password complexity on registration" title="Direct link to Scenario 1: Enforce password complexity on registration" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user is registering</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user enters password &quot;simple&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And submits registration form</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then password complexity validation fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error lists requirements: &quot;min 8 chars, uppercase, lowercase, digit&quot;</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And registration is rejected</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-2-enforce-account-lockout-after-failed-logins">Scenario 2: Enforce account lockout after failed logins<a href="#scenario-2-enforce-account-lockout-after-failed-logins" class="hash-link" aria-label="Direct link to Scenario 2: Enforce account lockout after failed logins" title="Direct link to Scenario 2: Enforce account lockout after failed logins" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user makes 5 consecutive failed login attempts</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the 5th attempt fails</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the account is locked for 15 minutes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And an error message &quot;Account locked. Try again in 15 minutes&quot; is displayed</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the lockout is logged</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-3-enforce-session-inactivity-timeout">Scenario 3: Enforce session inactivity timeout<a href="#scenario-3-enforce-session-inactivity-timeout" class="hash-link" aria-label="Direct link to Scenario 3: Enforce session inactivity timeout" title="Direct link to Scenario 3: Enforce session inactivity timeout" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user has been inactive for 30 minutes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a request</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the session is expired</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And 401 Unauthorized is returned</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user must log in again</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-4-enforce-session-absolute-timeout">Scenario 4: Enforce session absolute timeout<a href="#scenario-4-enforce-session-absolute-timeout" class="hash-link" aria-label="Direct link to Scenario 4: Enforce session absolute timeout" title="Direct link to Scenario 4: Enforce session absolute timeout" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user&#x27;s session was created 24 hours ago</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the user makes a request</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then the session is expired</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And 401 Unauthorized is returned</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the user must log in again</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-5-password-hashing-with-bcrypt">Scenario 5: Password hashing with bcrypt<a href="#scenario-5-password-hashing-with-bcrypt" class="hash-link" aria-label="Direct link to Scenario 5: Password hashing with bcrypt" title="Direct link to Scenario 5: Password hashing with bcrypt" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user registers or changes password</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the password is stored</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then bcrypt is used with cost factor 12</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the password hash is stored (not plaintext)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the hash is verifiable but not reversible</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-6-secure-session-token-generation">Scenario 6: Secure session token generation<a href="#scenario-6-secure-session-token-generation" class="hash-link" aria-label="Direct link to Scenario 6: Secure session token generation" title="Direct link to Scenario 6: Secure session token generation" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a user logs in</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When a session token is generated</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then a cryptographically secure random generator is used</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the token has at least 32 bytes of entropy</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the token is unpredictable</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-7-audit-logging-for-security-events">Scenario 7: Audit logging for security events<a href="#scenario-7-audit-logging-for-security-events" class="hash-link" aria-label="Direct link to Scenario 7: Audit logging for security events" title="Direct link to Scenario 7: Audit logging for security events" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given a security event occurs (login, logout, password change, deletion)</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the event completes</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then an audit log entry is created with:</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- Timestamp</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- Event type</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- UserId</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- IP address</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- User agent</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- Success/failure status</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And the log is persisted for compliance</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorTargetStickyNavbar_eVCZ" id="scenario-8-configurable-security-policies">Scenario 8: Configurable security policies<a href="#scenario-8-configurable-security-policies" class="hash-link" aria-label="Direct link to Scenario 8: Configurable security policies" title="Direct link to Scenario 8: Configurable security policies" translate="no">​</a></h5>
+<div class="language-gherkin codeBlockContainer_kBMm theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_x7jm"><pre tabindex="0" class="prism-code language-gherkin codeBlock_nSXe thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_JhlE"><span class="token-line" style="color:#000000"><span class="token plain">Given security policies are defined in configuration</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">When the system starts</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">Then policies are loaded from environment variables:</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- PASSWORD_MIN_LENGTH=8</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- LOCKOUT_ATTEMPTS=5</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- LOCKOUT_DURATION_MINUTES=15</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- SESSION_INACTIVITY_MINUTES=30</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">- SESSION_ABSOLUTE_HOURS=24</span><br></span><span class="token-line" style="color:#000000"><span class="token plain">And policies are enforced according to configuration</span><br></span></code></pre></div></div>
+<hr>
+<p><strong>Technical notes:</strong></p>
+<ul>
+<li class="">Use Spring Security for policy enforcement</li>
+<li class="">Implement custom password validator with configurable rules</li>
+<li class="">Use bcrypt from Spring Security Crypto (BCryptPasswordEncoder)</li>
+<li class="">Use SecureRandom for token generation</li>
+<li class="">Store audit logs in dedicated table or logging system</li>
+<li class="">Implement policy configuration via application.properties or environment variables</li>
+<li class="">Consider implementing intrusion detection/prevention (future)</li>
+</ul>
+<p><strong>Open questions:</strong></p>
+<ul>
+<li class="">Should security policies be user-configurable (e.g., longer session timeout)?</li>
+<li class="">Should there be notification of suspicious activity (e.g., login from new location)?</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="cross-feature-considerations">Cross-feature considerations<a href="#cross-feature-considerations" class="hash-link" aria-label="Direct link to Cross-feature considerations" title="Direct link to Cross-feature considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="interactions-between-features">Interactions between features<a href="#interactions-between-features" class="hash-link" aria-label="Direct link to Interactions between features" title="Direct link to Interactions between features" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Registration ↔ Security Policies:</strong> Registration enforces password complexity</li>
+<li class=""><strong>Authentication ↔ Security Policies:</strong> Authentication enforces lockout and logging</li>
+<li class=""><strong>Session Management ↔ Security Policies:</strong> Sessions enforce timeout policies</li>
+<li class=""><strong>Password Management ↔ Security Policies:</strong> Password changes enforce complexity</li>
+<li class=""><strong>Account Deletion ↔ All Features:</strong> Deletion publishes event consumed by all contexts</li>
+<li class=""><strong>All Features ↔ Audit Logging:</strong> All operations are logged for security</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="shared-business-rules">Shared business rules<a href="#shared-business-rules" class="hash-link" aria-label="Direct link to Shared business rules" title="Direct link to Shared business rules" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Password Security:</strong> All passwords must meet complexity requirements and be hashed</li>
+<li class=""><strong>Username Uniqueness:</strong> Usernames must be unique system-wide</li>
+<li class=""><strong>Email Uniqueness:</strong> Emails must be unique system-wide</li>
+<li class=""><strong>Session Security:</strong> All sessions must have timeout policies enforced</li>
+<li class=""><strong>Audit Trail:</strong> All security events must be logged</li>
+<li class=""><strong>Atomicity:</strong> All user operations must be atomic (all or nothing)</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="data-consistency-requirements">Data consistency requirements<a href="#data-consistency-requirements" class="hash-link" aria-label="Direct link to Data consistency requirements" title="Direct link to Data consistency requirements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Strong Consistency:</strong> User registration, authentication, and deletion require strong consistency</li>
+<li class=""><strong>Session Consistency:</strong> Session operations require strong consistency (token validity)</li>
+<li class=""><strong>Audit Consistency:</strong> Audit logs must be reliably persisted (transactional)</li>
+<li class=""><strong>Cross-Context Consistency:</strong> UserDeleted event must reliably trigger cleanup in all contexts</li>
+<li class=""><strong>Password Hashing:</strong> Password hashing must be deterministic and consistent</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="business-constraints-impact">Business constraints impact<a href="#business-constraints-impact" class="hash-link" aria-label="Direct link to Business constraints impact" title="Direct link to Business constraints impact" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-001-budget">BC-001: Budget<a href="#bc-001-budget" class="hash-link" aria-label="Direct link to BC-001: Budget" title="Direct link to BC-001: Budget" translate="no">​</a></h3>
+<p>User Identity must operate within zero-cost infrastructure constraints:</p>
+<ul>
+<li class=""><strong>Authentication:</strong> Use local authentication (no paid Auth0, Okta, etc.)</li>
+<li class=""><strong>Session Storage:</strong> Use free-tier Redis or in-memory cache (Spring Session)</li>
+<li class=""><strong>Database:</strong> Use free-tier PostgreSQL for user storage</li>
+<li class=""><strong>Audit Logging:</strong> Use application logs (no paid logging service initially)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-002-timeline">BC-002: Timeline<a href="#bc-002-timeline" class="hash-link" aria-label="Direct link to BC-002: Timeline" title="Direct link to BC-002: Timeline" translate="no">​</a></h3>
+<p>User Identity is on critical path for MVP (3-6 months):</p>
+<ul>
+<li class=""><strong>Must Have features</strong> (FR-UID-001, 002, 003, 007) required for MVP</li>
+<li class=""><strong>Should Have features</strong> (FR-UID-004, 005, 006) can be deferred to post-MVP</li>
+<li class="">Prioritize basic registration/login/session management</li>
+<li class="">Defer advanced features like profile management and account deletion</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-003-resources">BC-003: Resources<a href="#bc-003-resources" class="hash-link" aria-label="Direct link to BC-003: Resources" title="Direct link to BC-003: Resources" translate="no">​</a></h3>
+<p>Single-developer constraints affect User Identity:</p>
+<ul>
+<li class=""><strong>Leverage Frameworks:</strong> Use Spring Security for authentication (avoid custom implementation)</li>
+<li class=""><strong>Simplify Policies:</strong> Start with basic password complexity and lockout</li>
+<li class=""><strong>Automate Testing:</strong> Heavy investment in security testing (password hashing, session management)</li>
+<li class=""><strong>Incremental Development:</strong> Build registration first, then login, then session management</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="bc-004-technology-stack">BC-004: Technology stack<a href="#bc-004-technology-stack" class="hash-link" aria-label="Direct link to BC-004: Technology stack" title="Direct link to BC-004: Technology stack" translate="no">​</a></h3>
+<p>User Identity aligns with chosen stack:</p>
+<ul>
+<li class=""><strong>Backend:</strong> Spring Boot with Spring Security for authentication/authorization</li>
+<li class=""><strong>Password Hashing:</strong> BCryptPasswordEncoder from Spring Security</li>
+<li class=""><strong>Session Management:</strong> Spring Session with Redis or in-memory</li>
+<li class=""><strong>Database:</strong> PostgreSQL for user and audit storage</li>
+<li class=""><strong>Events:</strong> Spring Events initially; design for future Kafka/RabbitMQ migration</li>
+<li class=""><strong>Testing:</strong> JUnit, Mockito for unit tests; TestContainers for integration tests</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="success-metrics-alignment">Success metrics alignment<a href="#success-metrics-alignment" class="hash-link" aria-label="Direct link to Success metrics alignment" title="Direct link to Success metrics alignment" translate="no">​</a></h2>
+<p>User Identity contributes to the following success metrics from BR-001 through BR-008:</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-003-technical-metrics">BR-003: Technical metrics<a href="#br-003-technical-metrics" class="hash-link" aria-label="Direct link to BR-003: Technical metrics" title="Direct link to BR-003: Technical metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>User Identity contribution</th></tr></thead><tbody><tr><td><strong>API Response Time</strong></td><td>&lt; 200ms (p95)</td><td>Fast authentication, session validation</td></tr><tr><td><strong>Security Vulnerabilities</strong></td><td>Zero Critical</td><td>Proper password hashing, secure session management</td></tr><tr><td><strong>Test Coverage</strong></td><td>&gt; 80%</td><td>Comprehensive security testing for all FR-UID features</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-001-portfolio-quality-metrics">BR-001: Portfolio quality metrics<a href="#br-001-portfolio-quality-metrics" class="hash-link" aria-label="Direct link to BR-001: Portfolio quality metrics" title="Direct link to BR-001: Portfolio quality metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>User Identity contribution</th></tr></thead><tbody><tr><td><strong>Architecture Documentation</strong></td><td>All views complete</td><td>User aggregate design, authentication flow, security policies</td></tr><tr><td><strong>Code Quality Score</strong></td><td>No critical issues</td><td>Clean authentication code, proper security practices</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="br-002-br-005-user-experience-metrics">BR-002, BR-005: User experience metrics<a href="#br-002-br-005-user-experience-metrics" class="hash-link" aria-label="Direct link to BR-002, BR-005: User experience metrics" title="Direct link to BR-002, BR-005: User experience metrics" translate="no">​</a></h3>
+<table><thead><tr><th>Metric</th><th>Target</th><th>User Identity contribution</th></tr></thead><tbody><tr><td><strong>Task Completion Rate</strong></td><td>&gt; 95%</td><td>Simple registration, reliable login, clear errors</td></tr><tr><td><strong>Mobile Usability</strong></td><td>Fully Responsive</td><td>Responsive login/registration forms</td></tr><tr><td><strong>Accessibility Score</strong></td><td>WCAG 2.1 Level AA</td><td>Accessible forms, clear error messages</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_eVCZ" id="traceability-matrix">Traceability matrix<a href="#traceability-matrix" class="hash-link" aria-label="Direct link to Traceability matrix" title="Direct link to Traceability matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Feature</th><th>Business Req</th><th>Domain Events</th><th>User Stories</th></tr></thead><tbody><tr><td>FR-UID-001</td><td>BR-001, BR-002, BR-005</td><td>UserRegistered</td><td>US-UID-001-001/002/003/004</td></tr><tr><td>FR-UID-002</td><td>BR-001, BR-002, BR-005</td><td>UserLoggedIn</td><td>US-UID-002-001/002/003/004</td></tr><tr><td>FR-UID-003</td><td>BR-001, BR-003, BR-005</td><td>UserLoggedIn, UserLoggedOut</td><td>US-UID-003-001/002/003/004</td></tr><tr><td>FR-UID-004</td><td>BR-001, BR-002, BR-005</td><td>UserUpdated</td><td>US-UID-004-001/002/003/004</td></tr><tr><td>FR-UID-005</td><td>BR-001, BR-003, BR-005</td><td>PasswordChanged</td><td>US-UID-005-001/002/003/004</td></tr><tr><td>FR-UID-006</td><td>BR-001, BR-005</td><td>UserDeleted</td><td>US-UID-006-001/002/003/004</td></tr><tr><td>FR-UID-007</td><td>BR-001, BR-003</td><td>All user events (policy enforcement)</td><td>US-UID-007-001/002/003/004</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_Etd2"><a href="https://github.com/migmolrod/browser-dashboard-pwa/tree/master/docs/docs/requirements/functional/user-identity.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_HVIS" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_HvnU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/requirements/functional/weather"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Weather</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/requirements/functional/preferences"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Preferences</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_ApK3 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a><ul><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#fr-uid-001-user-registration" class="table-of-contents__link toc-highlight">FR-UID-001: User registration</a></li><li><a href="#fr-uid-002-user-authentication" class="table-of-contents__link toc-highlight">FR-UID-002: User authentication</a></li><li><a href="#fr-uid-003-session-management" class="table-of-contents__link toc-highlight">FR-UID-003: Session management</a></li><li><a href="#fr-uid-004-user-profile-management" class="table-of-contents__link toc-highlight">FR-UID-004: User profile management</a></li><li><a href="#fr-uid-005-password-management" class="table-of-contents__link toc-highlight">FR-UID-005: Password management</a></li><li><a href="#fr-uid-006-account-deletion" class="table-of-contents__link toc-highlight">FR-UID-006: Account deletion</a></li><li><a href="#fr-uid-007-security-policies" class="table-of-contents__link toc-highlight">FR-UID-007: Security policies</a></li></ul></li><li><a href="#cross-feature-considerations" class="table-of-contents__link toc-highlight">Cross-feature considerations</a><ul><li><a href="#interactions-between-features" class="table-of-contents__link toc-highlight">Interactions between features</a></li><li><a href="#shared-business-rules" class="table-of-contents__link toc-highlight">Shared business rules</a></li><li><a href="#data-consistency-requirements" class="table-of-contents__link toc-highlight">Data consistency requirements</a></li></ul></li><li><a href="#business-constraints-impact" class="table-of-contents__link toc-highlight">Business constraints impact</a><ul><li><a href="#bc-001-budget" class="table-of-contents__link toc-highlight">BC-001: Budget</a></li><li><a href="#bc-002-timeline" class="table-of-contents__link toc-highlight">BC-002: Timeline</a></li><li><a href="#bc-003-resources" class="table-of-contents__link toc-highlight">BC-003: Resources</a></li><li><a href="#bc-004-technology-stack" class="table-of-contents__link toc-highlight">BC-004: Technology stack</a></li></ul></li><li><a href="#success-metrics-alignment" class="table-of-contents__link toc-highlight">Success metrics alignment</a><ul><li><a href="#br-003-technical-metrics" class="table-of-contents__link toc-highlight">BR-003: Technical metrics</a></li><li><a href="#br-001-portfolio-quality-metrics" class="table-of-contents__link toc-highlight">BR-001: Portfolio quality metrics</a></li><li><a href="#br-002-br-005-user-experience-metrics" class="table-of-contents__link toc-highlight">BR-002, BR-005: User experience metrics</a></li></ul></li><li><a href="#traceability-matrix" class="table-of-contents__link toc-highlight">Traceability matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/domain/overview">DMD</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/requirements/overview">SRS</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/architecture/overview">SAD</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/migmolrod/browser-dashboard-pwa" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_j3rN"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Miguel Molinero Rodríguez. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
