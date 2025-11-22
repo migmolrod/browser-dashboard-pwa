@@ -1,0 +1,41 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'docs/**'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # needed to push to gh-pages
+
+      # Adjust this step depending on your monorepo setup
+      - name: Install dependencies
+        run: |
+          cd docs
+          pnpm install
+
+      - name: Build Docusaurus
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: docs/build
