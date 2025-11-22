@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://migmolrod.github.io/blog</id>
+    <id>https://migmolrod.github.io/browser-dashboard-pwa/blog</id>
     <title>Browser Dashboard PWA Blog</title>
     <updated>2025-11-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://migmolrod.github.io/blog"/>
+    <link rel="alternate" href="https://migmolrod.github.io/browser-dashboard-pwa/blog"/>
     <subtitle>Browser Dashboard PWA Blog</subtitle>
-    <icon>https://migmolrod.github.io/img/favicon.ico</icon>
+    <icon>https://migmolrod.github.io/browser-dashboard-pwa/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Rework for DDD]]></title>
-        <id>https://migmolrod.github.io/blog/rework-for-ddd</id>
-        <link href="https://migmolrod.github.io/blog/rework-for-ddd"/>
+        <id>https://migmolrod.github.io/browser-dashboard-pwa/blog/rework-for-ddd</id>
+        <link href="https://migmolrod.github.io/browser-dashboard-pwa/blog/rework-for-ddd"/>
         <updated>2025-11-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[In the last several weeks I have been able to make good progress. I could use the generative AI to do the heavy work in]]></summary>
         <content type="html"><![CDATA[<p>In the last several weeks I have been able to make good progress. I could use the generative AI to do the heavy work in
@@ -18,13 +18,13 @@ both the generation of the new DMD (Domain Modeling Document) and the refactor o
 Specification). In the process, I've consumed most of the AI credits (tokens) quota I have in the tool I'm using.</p>
 <p>In next steps, I will also refactor the non-functional requirements and user stories when the quota gets renewed (which
 will be next month).</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-new-dmd">The new DMD<a href="https://migmolrod.github.io/blog/rework-for-ddd#the-new-dmd" class="hash-link" aria-label="Direct link to The new DMD" title="Direct link to The new DMD" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-new-dmd">The new DMD<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/rework-for-ddd#the-new-dmd" class="hash-link" aria-label="Direct link to The new DMD" title="Direct link to The new DMD" translate="no">​</a></h3>
 <p>Since two of my main purposes for this project was to both learn new skills and show proficiency in skills I already
 have, I came to the conclusion that using DDD (Domain-Driven Development) could be a good addition. However, to do that,
 I'd need to model the domain and business itself, prior to even think about creating a requirement specification.</p>
 <p>In that regard, I've spent some time with the generative AI to create a common language (ubiquitous language) for all
 stakeholders as well as defining the core domain and the subdomains.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="refactoring-the-srs">Refactoring the SRS<a href="https://migmolrod.github.io/blog/rework-for-ddd#refactoring-the-srs" class="hash-link" aria-label="Direct link to Refactoring the SRS" title="Direct link to Refactoring the SRS" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="refactoring-the-srs">Refactoring the SRS<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/rework-for-ddd#refactoring-the-srs" class="hash-link" aria-label="Direct link to Refactoring the SRS" title="Direct link to Refactoring the SRS" translate="no">​</a></h3>
 <p>After modeling the domain, I had to completely refactor the SRS.</p>
 <p>Since the business vision and the core business domain was clearly defined in the DMD, the business requirements in the
 SRS could use a refactor to make them perfectly align with the domain model.</p>
@@ -32,7 +32,7 @@ SRS could use a refactor to make them perfectly align with the domain model.</p>
 were greatly refined, categorizing them by bounded context. Each bounded context has features, and each feature has
 several scenarios. This was done to not only align with the DDD pattern but also with BDD (Behavior-Driven Development)
 pattern, given we are going to use such a pattern while developing the system.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-tasks">Other tasks<a href="https://migmolrod.github.io/blog/rework-for-ddd#other-tasks" class="hash-link" aria-label="Direct link to Other tasks" title="Direct link to Other tasks" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-tasks">Other tasks<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/rework-for-ddd#other-tasks" class="hash-link" aria-label="Direct link to Other tasks" title="Direct link to Other tasks" translate="no">​</a></h3>
 <p>I've also included a simple workflow that uses GitHub Actions to automatically deploy the documentation as GitHub Pages.</p>
 <p>The idea is that whenever we push changes to the repository, the docusaurus project gets built and deployed into GitHub
 pages. But we ensure to only do so when something changes inside the <code>/docs</code> folder. This way we avoid unnecessary runs.</p>]]></content>
@@ -45,30 +45,30 @@ pages. But we ensure to only do so when something changes inside the <code>/docs
     </entry>
     <entry>
         <title type="html"><![CDATA[Continuing the documentation]]></title>
-        <id>https://migmolrod.github.io/blog/continuing-the-documentation</id>
-        <link href="https://migmolrod.github.io/blog/continuing-the-documentation"/>
+        <id>https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation</id>
+        <link href="https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation"/>
         <updated>2025-10-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Throughout the last week, I could only work for short periods of time, due to my work. On those short spans, I have been]]></summary>
         <content type="html"><![CDATA[<p>Throughout the last week, I could only work for short periods of time, due to my work. On those short spans, I have been
 refining the requirements. I also wanted to start the next phase — documenting the architecture — but I have not reached
 that point yet, due to some issues with the generative AI tool I'm using.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="format-issues-with-the-generative-ai-tool">Format issues with the generative AI tool<a href="https://migmolrod.github.io/blog/continuing-the-documentation#format-issues-with-the-generative-ai-tool" class="hash-link" aria-label="Direct link to Format issues with the generative AI tool" title="Direct link to Format issues with the generative AI tool" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="format-issues-with-the-generative-ai-tool">Format issues with the generative AI tool<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation#format-issues-with-the-generative-ai-tool" class="hash-link" aria-label="Direct link to Format issues with the generative AI tool" title="Direct link to Format issues with the generative AI tool" translate="no">​</a></h3>
 <p>The tool I'm using to generate the documentation was good for the requirements. However, it was not good for the
 architecture. To start with, since the LLMs usually generate their replies in Markdown format (or at least some variant
 of it), and our <code>docusaurus</code> documentation is written in Markdown, the generated documentation had serious formatting
 problems whenever the AI wanted to embed a code snippet inside the Markdown snippet itself. That caused the
 documentation to be unreadable. The code snippet inside the Markdown snippet caused the latter to be broken and further
 text was outside the Markdown snippet.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="content-issues-with-the-generative-ai-tool">Content issues with the generative AI tool<a href="https://migmolrod.github.io/blog/continuing-the-documentation#content-issues-with-the-generative-ai-tool" class="hash-link" aria-label="Direct link to Content issues with the generative AI tool" title="Direct link to Content issues with the generative AI tool" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="content-issues-with-the-generative-ai-tool">Content issues with the generative AI tool<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation#content-issues-with-the-generative-ai-tool" class="hash-link" aria-label="Direct link to Content issues with the generative AI tool" title="Direct link to Content issues with the generative AI tool" translate="no">​</a></h3>
 <p>With some workarounds, I was finally able to somehow get some parts of the documentation to be readable. However, I
 found the next problem: the actual content of the documentation was not good enough for me.</p>
 <p>I wanted to use some concepts like "C4 diagrams" (Context, Containers, Components, and Code) and the "4+1 Architectural
 View Model" (Logical View, Physical View, Process View, Developer + View, and Scenario View). However, the LLM was not
 able to understand the boundaries of these concepts and how to fit them into the documentation.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-issues">Other issues<a href="https://migmolrod.github.io/blog/continuing-the-documentation#other-issues" class="hash-link" aria-label="Direct link to Other issues" title="Direct link to Other issues" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-issues">Other issues<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation#other-issues" class="hash-link" aria-label="Direct link to Other issues" title="Direct link to Other issues" translate="no">​</a></h3>
 <p>I also wanted to use some concepts like "Domain-Driven Design" and, after several attempts, I found it was better to use
 another approach.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-solution-new-approach">The solution (new approach)<a href="https://migmolrod.github.io/blog/continuing-the-documentation#the-solution-new-approach" class="hash-link" aria-label="Direct link to The solution (new approach)" title="Direct link to The solution (new approach)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-solution-new-approach">The solution (new approach)<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation#the-solution-new-approach" class="hash-link" aria-label="Direct link to The solution (new approach)" title="Direct link to The solution (new approach)" translate="no">​</a></h3>
 <p>I tried a different LLM and asked for a different approach, considering my constraints and preferences. I was able to
 get some good results. It opened up a new approach to the documentation: to fit the DDD concepts into the documentation,
 it recommended adding a new section to the documentation, prior to the "Requirements" section.</p>
@@ -94,7 +94,7 @@ some of these standards that, although withdrawn, are still relevant, I'm pretty
 now on. This includes where to fit the DDD concepts, the C4 diagrams, and the 4+1 Architectural View Model.</p>
 <p>I will start each section of the documentation with that structure and then ask the LLM to fill in the details. After
 that, I will review the documentation and make any necessary changes.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="next-steps">Next steps<a href="https://migmolrod.github.io/blog/continuing-the-documentation#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="next-steps">Next steps<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/continuing-the-documentation#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
 <p>Tomorrow Sunday, hopefully, I'll be able to finish the DMD and start the refactoring of the SRS following the new
 approach.</p>
 <p>I will then try some prompts to see if any of the LLMs can embed diagrams into the Markdown snippets without breaking
@@ -111,14 +111,14 @@ long term.</p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Documenting the requirements]]></title>
-        <id>https://migmolrod.github.io/blog/documenting-the-requirements</id>
-        <link href="https://migmolrod.github.io/blog/documenting-the-requirements"/>
+        <id>https://migmolrod.github.io/browser-dashboard-pwa/blog/documenting-the-requirements</id>
+        <link href="https://migmolrod.github.io/browser-dashboard-pwa/blog/documenting-the-requirements"/>
         <updated>2025-10-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Yesterday I started the project. Essentially, I created the repository locally and the]]></summary>
-        <content type="html"><![CDATA[<p>Yesterday I <a class="" href="https://migmolrod.github.io/blog/starting-the-project">started the project</a>. Essentially, I created the repository locally and the
+        <content type="html"><![CDATA[<p>Yesterday I <a class="" href="https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project">started the project</a>. Essentially, I created the repository locally and the
 bare bones of the project structure.</p>
 <p>And today I started to document the requirements. How? With the help of generative AI.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="generative-ai-as-a-helper">Generative AI as a helper<a href="https://migmolrod.github.io/blog/documenting-the-requirements#generative-ai-as-a-helper" class="hash-link" aria-label="Direct link to Generative AI as a helper" title="Direct link to Generative AI as a helper" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="generative-ai-as-a-helper">Generative AI as a helper<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/documenting-the-requirements#generative-ai-as-a-helper" class="hash-link" aria-label="Direct link to Generative AI as a helper" title="Direct link to Generative AI as a helper" translate="no">​</a></h3>
 <p>I started by creating an initial version of the whole SRS (Software Requirements Specification) with the help of
 generative AI. With that I got a very basic structure of the document very quickly, that I then needed to review and
 refine — adding, removing or editing some details — both manually and also with the help of generative AI.</p>
@@ -138,20 +138,20 @@ that I plan to create include:</p>
 have the full range of documentation: requirements → architecture → detailed designs.</p>
 <p>Can you help me start with the requirements' documentation?</p>
 </blockquote>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-result">The result<a href="https://migmolrod.github.io/blog/documenting-the-requirements#the-result" class="hash-link" aria-label="Direct link to The result" title="Direct link to The result" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="the-result">The result<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/documenting-the-requirements#the-result" class="hash-link" aria-label="Direct link to The result" title="Direct link to The result" translate="no">​</a></h3>
 <p>The first reply was very positive, and I was able to create a great starting point for the requirements with the very
 complete reply I got from the generative AI.</p>
 <p>And the final result is satisfactory, a requirements document with a lot of details and information. I'm sure that it
 will be invaluable for the future development of the project. Business, functional, non-functional and system
 requirements are all covered, which will help me a lot in future iterations of the documentation and development
 processes.</p>
-<p>It can be found <a class="" href="https://migmolrod.github.io/docs/requirements/overview">here</a>.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-tasks">Other tasks<a href="https://migmolrod.github.io/blog/documenting-the-requirements#other-tasks" class="hash-link" aria-label="Direct link to Other tasks" title="Direct link to Other tasks" translate="no">​</a></h3>
+<p>It can be found <a class="" href="https://migmolrod.github.io/browser-dashboard-pwa/docs/requirements/overview">here</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="other-tasks">Other tasks<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/documenting-the-requirements#other-tasks" class="hash-link" aria-label="Direct link to Other tasks" title="Direct link to Other tasks" translate="no">​</a></h3>
 <p>In other matters, I also created the repository remotely on my GitHub account as a public repository. The repository
 will hold every single piece of the project, from documentation to source code and infrastructure.</p>
 <p>And as another minor task, I also created (with the help of generative AI as well) a Nord theme for Docusaurus, covering
 light and dark mode.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="next-steps">Next steps<a href="https://migmolrod.github.io/blog/documenting-the-requirements#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="next-steps">Next steps<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/documenting-the-requirements#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
 <p>In the next days, I will keep using the generative AI for the next document (SAD, Software Architecture Document) pretty
 much as I did for the SRS. First generate, then review, finally refine (manually and with AI).</p>
 <p>When the architecture is ready and the system is divided into modules, I will continue with the documentation of each
@@ -169,15 +169,15 @@ the development.</p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Starting the project]]></title>
-        <id>https://migmolrod.github.io/blog/starting-the-project</id>
-        <link href="https://migmolrod.github.io/blog/starting-the-project"/>
+        <id>https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project</id>
+        <link href="https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project"/>
         <updated>2025-10-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[On the 11th of October 2025, I'm starting the Browser Dashboard PWA Project. It's a full-stack project to add to my]]></summary>
         <content type="html"><![CDATA[<p>On the 11th of October 2025, I'm starting the Browser Dashboard PWA Project. It's a full-stack project to add to my
 portfolio.</p>
 <p>It will consist of a set of different modules and widgets to help users in their daily browsing experience. It is going
 to be open-source, available on GitHub.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="project-goals">Project goals<a href="https://migmolrod.github.io/blog/starting-the-project#project-goals" class="hash-link" aria-label="Direct link to Project goals" title="Direct link to Project goals" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="project-goals">Project goals<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project#project-goals" class="hash-link" aria-label="Direct link to Project goals" title="Direct link to Project goals" translate="no">​</a></h3>
 <p>The main goal of the project is to showcase my skills and experience as a full-stack developer and engineer in several
 areas.</p>
 <ul>
@@ -186,7 +186,7 @@ areas.</p>
 <li class="">The <code>source</code> part (both backend and frontend) will show my skills in the development area, specially, the development
 of REST APIs (backend) and PWAs (frontend).</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="project-modules-and-widgets">Project modules and widgets<a href="https://migmolrod.github.io/blog/starting-the-project#project-modules-and-widgets" class="hash-link" aria-label="Direct link to Project modules and widgets" title="Direct link to Project modules and widgets" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="project-modules-and-widgets">Project modules and widgets<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project#project-modules-and-widgets" class="hash-link" aria-label="Direct link to Project modules and widgets" title="Direct link to Project modules and widgets" translate="no">​</a></h3>
 <p>The different modules I have planned for now are:</p>
 <ul>
 <li class="">Bookmark manager (to save frequently visited sites in a nested way, with 'folders' and 'links')</li>
@@ -196,14 +196,14 @@ of REST APIs (backend) and PWAs (frontend).</li>
 </ul>
 <p>The user must be able to configure the widgets and save their preferences. And, since it's a PWA, it must be able to
 work offline (at least certain parts of the app).</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="first-steps">First steps<a href="https://migmolrod.github.io/blog/starting-the-project#first-steps" class="hash-link" aria-label="Direct link to First steps" title="Direct link to First steps" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="first-steps">First steps<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project#first-steps" class="hash-link" aria-label="Direct link to First steps" title="Direct link to First steps" translate="no">​</a></h3>
 <p>I created the repository locally with the main structure consisting of <code>docs</code> (a docusaurus project, what you're seeing
 now, actually), <code>infra</code> (what will be an IaC and devops project) and <code>source</code> (which will be divided into two parts:
 <code>backend</code> and <code>frontend</code>, with the actual source code of the project).</p>
 <p>I also created a <code>mise.toml</code> file (<a href="https://mise.jdx.dev/" target="_blank" rel="noopener noreferrer" class="">mise-en-place</a>) to manage tool versions and also some tasks.
 In the past, I used Makefiles. However, since I started using mise as a tool version manager — and since I found it had
 a lot more than just 'version management' — I decided to give it a try for task management as well.</p>
-<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="next-steps">Next steps<a href="https://migmolrod.github.io/blog/starting-the-project#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_eVCZ" id="next-steps">Next steps<a href="https://migmolrod.github.io/browser-dashboard-pwa/blog/starting-the-project#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
 <p>This is just the beginning of the project. I will start with the documentation part (requirements, architecture, general
 design and detailed design), using this blog as a way to document my progress.</p>
 <p>Since it's just a personal project, I will be able to spend only a little time on it. It probably will not be deployed

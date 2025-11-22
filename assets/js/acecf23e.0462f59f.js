@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkbrowser_dashboard_pwa_docs=globalThis.webpackChunkbrowser_dashboard_pwa_docs||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Blog","authorsListPath":"/blog/authors"}')}}]);
