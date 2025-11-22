@@ -13,10 +13,13 @@ import PriorityLabel from "../../../src/components/PriorityLabel";
 **Category:** Performance
 
 **Description:**
-The initial page load shall complete in under 2 seconds on a standard broadband connection (5 Mbps) to ensure a responsive user experience and meet modern web performance standards.
+The initial page load shall be completed in under 2 seconds on a standard broadband connection (5 Mbps) to ensure a
+responsive user experience and meet modern web performance standards.
 
 **Rationale:**
-Fast page load times are critical for user satisfaction and engagement. Research shows that users abandon sites that take longer than 3 seconds to load. This requirement directly impacts user productivity and portfolio presentation quality.
+Fast page load times are critical for user satisfaction and engagement. Research shows that users abandon sites that
+take longer than 3 seconds to load. This requirement directly impacts user productivity and portfolio presentation
+quality.
 
 **Measurement:**
 
@@ -48,7 +51,7 @@ Fast page load times are critical for user satisfaction and engagement. Research
 
 **Testing approach:**
 
-- Lighthouse CI in automated pipeline
+- Lighthouse CI in an automated pipeline
 - Real User Monitoring (RUM) with Web Vitals
 - Performance budgets enforced in CI/CD
 - Tested on various network conditions (3G, 4G, broadband)
@@ -56,14 +59,12 @@ Fast page load times are critical for user satisfaction and engagement. Research
 
 **Trade-offs:**
 
-- Code splitting may increase complexity but improves initial load
+- Code splitting increases complexity but improves the initial load
 - Aggressive caching may cause stale data issues (mitigated by cache invalidation strategy)
 
 **Open questions:**
 
 - None
-
----
 
 ## NFR-PER-002: API response time
 
@@ -72,10 +73,12 @@ Fast page load times are critical for user satisfaction and engagement. Research
 **Category:** Performance
 
 **Description:**
-API endpoints shall respond in under 200 ms at the 95th percentile under normal load to ensure responsive user interactions and maintain system performance.
+API endpoints shall respond in under 200 ms at the 95th percentile under a normal load to ensure responsive user
+interactions and maintain system performance.
 
 **Rationale:**
-Fast API response times are essential for a smooth user experience. Delays in API responses translate directly to UI latency, degrading user productivity and satisfaction.
+Fast API response times are essential for a smooth user experience. Delays in API responses translate directly to UI
+latency, degrading user productivity and satisfaction.
 
 **Measurement:**
 
@@ -89,9 +92,9 @@ Fast API response times are essential for a smooth user experience. Delays in AP
 - Measured using APM tools (Application Performance Monitoring)
 - Under load of 100 concurrent users
 - Excludes third-party API calls (weather provider)
-- Database query optimization applied (see NFR-003)
+- Database query optimization applied (see NFR-PER-003)
 - Connection pooling configured
-- Response times logged and monitored
+- Response times are logged and monitored
 
 **Affected components:**
 
@@ -102,7 +105,8 @@ Fast API response times are essential for a smooth user experience. Delays in AP
 
 **Related to:**
 
-- Business Requirements: BR-002 (User Productivity Enhancement), BR-003 (Technical Excellence), BR-005 (User Value Delivery)
+- Business Requirements: BR-002 (User Productivity Enhancement), BR-003 (Technical Excellence), BR-005 (User Value
+  Delivery)
 - Functional Requirements: All features with API interactions
 
 **Testing approach:**
@@ -121,8 +125,6 @@ Fast API response times are essential for a smooth user experience. Delays in AP
 
 - None
 
----
-
 ## NFR-PER-003: Database query performance
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -130,10 +132,12 @@ Fast API response times are essential for a smooth user experience. Delays in AP
 **Category:** Performance
 
 **Description:**
-Database queries shall execute in under 50 ms at the 95th percentile to minimize API response latency and ensure efficient data retrieval.
+Database queries shall execute in under 50 ms at the 95th percentile to minimize API response latency and ensure
+efficient data retrieval.
 
 **Rationale:**
-Database query performance is a critical factor in overall API response time. Slow queries create bottlenecks that degrade user experience and system scalability.
+Database query performance is a critical factor in overall API response time. Slow queries create bottlenecks that
+degrade user experience and system scalability.
 
 **Measurement:**
 
@@ -177,8 +181,6 @@ Database query performance is a critical factor in overall API response time. Sl
 
 - None
 
----
-
 ## NFR-PER-004: Animation frame rate
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -186,10 +188,12 @@ Database query performance is a critical factor in overall API response time. Sl
 **Category:** Performance
 
 **Description:**
-All UI animations shall maintain at least 60 frames per second (60 FPS) to provide smooth, responsive user interactions and avoid perceived sluggishness.
+All UI animations shall maintain at least 60 frames per second (60 FPS) to provide smooth, responsive user interactions
+and avoid perceived sluggishness.
 
 **Rationale:**
-Smooth animations contribute to a polished, professional user experience. Janky animations create a perception of poor quality and can negatively impact user satisfaction.
+Smooth animations contribute to a polished, professional user experience. Janky animations create a perception of poor
+quality and can negatively impact user satisfaction.
 
 **Measurement:**
 
@@ -201,7 +205,7 @@ Smooth animations contribute to a polished, professional user experience. Janky 
 
 - No jank during animations (no dropped frames)
 - Smooth scroll performance
-- GPU acceleration used where appropriate (CSS transforms, opacity)
+- GPU acceleration is used where appropriate (CSS transforms, opacity)
 - Respects `prefers-reduced-motion` media query for accessibility
 - Animations optimized to avoid reflow/repaint
 
@@ -232,8 +236,6 @@ Smooth animations contribute to a polished, professional user experience. Janky 
 
 - None
 
----
-
 ## NFR-PER-005: Bundle size
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -241,15 +243,17 @@ Smooth animations contribute to a polished, professional user experience. Janky 
 **Category:** Performance
 
 **Description:**
-The initial JavaScript bundle shall not exceed 300KB (gzipped) to minimize download time and improve page load performance, especially on slower connections.
+The initial JavaScript bundle shall not exceed 300KB (gzipped) to minimize download time and improve page load
+performance, especially on slower connections.
 
 **Rationale:**
-Large bundle sizes directly impact page load time and user experience, particularly on mobile devices or slower connections. Smaller bundles load faster and reduce bandwidth costs.
+Large bundle sizes directly impact page load time and user experience, particularly on mobile devices or slower
+connections. Smaller bundles load faster and reduce bandwidth costs.
 
 **Measurement:**
 
 - Initial bundle size < 300KB (gzipped)
-- Bundle analysis performed regularly
+- Bundle analysis is performed regularly
 - Bundle size tracked over time
 
 **Acceptance criteria:**
@@ -257,7 +261,7 @@ Large bundle sizes directly impact page load time and user experience, particula
 - Code splitting implemented (lazy loading for routes and modules)
 - Tree shaking applied to remove unused code
 - Lazy loading for non-critical modules
-- Bundle analysis performed with tools like webpack-bundle-analyzer
+- Bundle analysis is performed with tools like webpack-bundle-analyzer
 - Dependencies reviewed for size (prefer smaller alternatives)
 - Production build optimized with minification and compression
 
@@ -273,13 +277,13 @@ Large bundle sizes directly impact page load time and user experience, particula
 
 **Testing approach:**
 
-- Bundle size analysis in CI/CD pipeline
+- Bundle size analysis in a CI/CD pipeline
 - Bundle size budgets enforced
 - Lighthouse performance audits
 
 **Trade-offs:**
 
-- Code splitting increases complexity but improves initial load
+- Code splitting increases complexity but improves the initial load
 - Lazy loading may introduce slight delays for secondary routes
 
 **Open questions:**

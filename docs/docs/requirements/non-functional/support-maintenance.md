@@ -58,8 +58,6 @@ Comprehensive logging enables debugging, monitoring, and incident investigation.
 
 - None
 
----
-
 ## NFR-SUP-002: Error reporting
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -111,8 +109,6 @@ Automated error reporting enables proactive issue detection and resolution. Erro
 **Open questions:**
 
 - None
-
----
 
 ## NFR-SUP-003: Health checks
 

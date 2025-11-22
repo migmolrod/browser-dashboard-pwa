@@ -59,8 +59,6 @@ Privacy is both an ethical imperative and a legal requirement (especially GDPR f
 
 - None
 
----
-
 ## NFR-COM-002: Cookie consent
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -112,8 +110,6 @@ Cookie consent is legally required in many jurisdictions (GDPR, ePrivacy Directi
 **Open questions:**
 
 - None
-
----
 
 ## NFR-COM-003: Terms of service
 

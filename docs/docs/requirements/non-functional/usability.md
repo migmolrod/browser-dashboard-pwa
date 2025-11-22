@@ -58,8 +58,6 @@ Intuitive UI reduces onboarding friction and demonstrates good UX design. Users 
 
 - None
 
----
-
 ## NFR-USA-002: Responsive design
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -111,8 +109,6 @@ Users access the dashboard from various devices. Responsive design ensures a con
 **Open questions:**
 
 - None
-
----
 
 ## NFR-USA-003: Accessibility
 
@@ -169,8 +165,6 @@ Accessibility is both an ethical imperative and a demonstration of professional 
 
 - None
 
----
-
 ## NFR-USA-004: Browser compatibility
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -221,8 +215,6 @@ Supporting modern browsers ensures broad accessibility while avoiding the comple
 **Open questions:**
 
 - None
-
----
 
 ## NFR-USA-005: Internationalization ready
 

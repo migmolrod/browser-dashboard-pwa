@@ -57,8 +57,6 @@ Easy local setup reduces onboarding friction, enables rapid development iteratio
 
 - None
 
----
-
 ## NFR-DEV-002: Build time
 
 **Priority:** <PriorityLabel priority="Should Have"/>

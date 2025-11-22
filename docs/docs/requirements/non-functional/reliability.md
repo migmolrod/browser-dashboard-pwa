@@ -58,8 +58,6 @@ High availability is critical for user trust and portfolio demonstration. Freque
 
 - None
 
----
-
 ## NFR-REL-002: Error rate
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -112,8 +110,6 @@ Low error rates indicate stable, well-tested code and proper error handling. Hig
 **Open questions:**
 
 - None
-
----
 
 ## NFR-REL-003: Data integrity
 
@@ -169,8 +165,6 @@ Data integrity is fundamental to user trust and system reliability. Data loss or
 **Open questions:**
 
 - None
-
----
 
 ## NFR-REL-004: Fault tolerance
 

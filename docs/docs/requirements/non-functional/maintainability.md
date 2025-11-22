@@ -58,8 +58,6 @@ High code quality demonstrates professional development practices, improves main
 
 - None
 
----
-
 ## NFR-MAI-002: Test coverage
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -114,8 +112,6 @@ High test coverage reduces bugs, enables confident refactoring, and demonstrates
 
 - None
 
----
-
 ## NFR-MAI-003: Documentation
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -168,8 +164,6 @@ Comprehensive documentation demonstrates professionalism, aids portfolio reviewe
 
 - None
 
----
-
 ## NFR-MAI-004: Modularity
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -220,8 +214,6 @@ Modularity improves maintainability, testability, and enables parallel developme
 **Open questions:**
 
 - None
-
----
 
 ## NFR-MAI-005: Version control
 

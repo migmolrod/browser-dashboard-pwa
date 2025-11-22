@@ -60,8 +60,6 @@ While this is primarily a personal portfolio project, demonstrating scalability 
 
 - None
 
----
-
 ## NFR-SCA-002: Data volume
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -114,8 +112,6 @@ Users with extensive data should experience the same performance as users with m
 **Open questions:**
 
 - None
-
----
 
 ## NFR-SCA-003: Horizontal scaling
 

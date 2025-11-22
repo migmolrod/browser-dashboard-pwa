@@ -58,8 +58,6 @@ Regular backups protect against data loss due to failures, human error, or secur
 
 - None
 
----
-
 ## NFR-BAC-002: Disaster recovery
 
 **Priority:** <PriorityLabel priority="Should Have"/>

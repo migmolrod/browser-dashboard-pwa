@@ -58,8 +58,6 @@ Containerization demonstrates modern DevOps practices, ensures environment consi
 
 - None
 
----
-
 ## NFR-POR-002: Cloud platform agnostic
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -110,8 +108,6 @@ Cloud-agnostic design avoids vendor lock-in, demonstrates architectural flexibil
 **Open questions:**
 
 - None
-
----
 
 ## NFR-POR-003: Environment configuration
 

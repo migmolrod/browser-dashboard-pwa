@@ -57,8 +57,6 @@ CI automation ensures code quality, prevents regressions, and demonstrates moder
 
 - None
 
----
-
 ## NFR-DEP-002: Continuous deployment
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -110,8 +108,6 @@ CD enables rapid iteration, reduces deployment risk, and demonstrates advanced D
 **Open questions:**
 
 - None
-
----
 
 ## NFR-DEP-003: Infrastructure as code
 

@@ -58,8 +58,6 @@ Monitoring enables proactive issue detection, performance optimization, and demo
 
 - None
 
----
-
 ## NFR-MON-002: User analytics
 
 **Priority:** <PriorityLabel priority="Could Have"/>

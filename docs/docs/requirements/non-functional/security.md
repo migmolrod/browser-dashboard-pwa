@@ -60,8 +60,6 @@ Authentication security is fundamental to protecting user data and preventing un
 
 - None
 
----
-
 ## NFR-SEC-002: Authorization
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -114,8 +112,6 @@ Authorization ensures data privacy and prevents horizontal privilege escalation.
 
 - None
 
----
-
 ## NFR-SEC-003: Data encryption
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -167,8 +163,6 @@ Encryption protects user data from interception (in transit) and unauthorized ac
 **Open questions:**
 
 - None
-
----
 
 ## NFR-SEC-004: Input validation
 
@@ -225,8 +219,6 @@ Input validation is the first line of defense against injection attacks. Unvalid
 
 - None
 
----
-
 ## NFR-SEC-005: Security headers
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -278,8 +270,6 @@ Security headers provide defense-in-depth against various attack vectors (XSS, c
 **Open questions:**
 
 - None
-
----
 
 ## NFR-SEC-006: Dependency security
 
