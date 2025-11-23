@@ -29,8 +29,6 @@ project.
 
 :::
 
----
-
 ### Software requirements
 
 #### Required development tools
@@ -54,8 +52,6 @@ project.
 | **DBeaver** or **pgAdmin**       | Database management                |
 | **Chrome DevTools**              | Browser debugging                  |
 | **Lighthouse**                   | Performance auditing               |
-
----
 
 ## Runtime environment
 
@@ -88,8 +84,6 @@ The following browser features are required for the application to function:
 
 :::
 
----
-
 ### Backend requirements
 
 #### Server specifications (production)
@@ -107,8 +101,6 @@ The following browser features are required for the application to function:
 | **Node.js**           | 24.x LTS     | For frontend and potential Node backend |
 | **Java Runtime**      | 25           | If using Java/Spring Boot backend       |
 | **Container Runtime** | Docker 20.x+ | For containerized deployment            |
-
----
 
 ### Database requirements
 
@@ -141,8 +133,6 @@ The following browser features are required for the application to function:
 | Development | 1 GB               | 10 concurrent  | -                                       |
 | Production  | 10 GB (expandable) | 100 concurrent | Automated backups, optional replication |
 
----
-
 ## Third-Party service dependencies
 
 ### Required services
@@ -172,8 +162,6 @@ The following browser features are required for the application to function:
 - HTTPS endpoints
 - Response caching (30 minutes)
 
----
-
 ### Optional services
 
 #### SR-302: Email service (for password reset, notifications)
@@ -193,8 +181,6 @@ The following browser features are required for the application to function:
 - Delivery tracking
 - Bounce handling
 
----
-
 #### SR-303: Error tracking service
 
 :::note Error Tracking Provider Options
@@ -212,8 +198,6 @@ The following browser features are required for the application to function:
 - Source map support
 - Real-time error reporting
 
----
-
 #### SR-304: Analytics service (optional)
 
 :::note Analytics Provider Options
@@ -229,8 +213,6 @@ The following browser features are required for the application to function:
 - Privacy-compliant
 - No PII tracking
 - GDPR compliant
-
----
 
 ## Deployment environment
 
@@ -262,8 +244,6 @@ The following browser features are required for the application to function:
 - **Volume:** `/var/lib/postgresql/data`
   
 :::
-
----
 
 ### Cloud platform requirements
 
@@ -299,8 +279,6 @@ The following cloud platforms are supported for deployment:
 
 :::
 
----
-
 ### CI/CD requirements
 
 We need a CI/CD platform that is suitable for monorepos, where different sections of the repository trigger different
@@ -326,8 +304,6 @@ Workflows for:
 
 - Gitlab pipelines
 - CircleCI
-
----
 
 ## Network requirements
 
@@ -380,8 +356,6 @@ Workflows for:
 | Database       | 5432/3306 | TCP      | PostgreSQL/MySQL      |
 | Documentation  | 3001      | HTTPS    | Docusaurus dev server |
 
----
-
 ## Security requirements
 
 ### SSL/TLS
@@ -425,8 +399,6 @@ The following environment variables must be configured:
   
 :::
 
----
-
 ## Backup and recovery
 
 ### Backup requirements
@@ -448,8 +420,6 @@ The following environment variables must be configured:
 | **RTO** (Recovery Time Objective)  | 4 hours  | Maximum time to restore service |
 | **RPO** (Recovery Point Objective) | 24 hours | Maximum acceptable data loss    |
 | **Data Loss Tolerance**            | 1 day    | Maximum tolerable data loss     |
-
----
 
 ## Monitoring requirements
 
@@ -477,8 +447,6 @@ The following environment variables must be configured:
 
 :::
 
----
-
 ## Scalability considerations
 
 ### Horizontal scaling support
@@ -493,8 +461,6 @@ The following environment variables must be configured:
 - **Backend:** Application load balancer (when scaling)
 - **Session Management:** Shared session store (Redis if needed)
 
----
-
 ## Compatibility matrix
 
 ### Development environment compatibility
@@ -507,8 +473,6 @@ The following environment variables must be configured:
 | **Windows 10**    | ✅          | ✅       | ✅      | ✅       | ⚠️   |
 
 > **Legend:** ✅ Fully Supported | ⚠️ May require additional configuration | ❌ Not Supported
-
----
 
 ## Testing environment requirements
 
@@ -539,8 +503,6 @@ The following environment variables must be configured:
 
 :::
 
----
-
 ## Documentation requirements
 
 ### Technical documentation
@@ -557,8 +519,6 @@ The following environment variables must be configured:
 - Feature documentation
 - FAQ
 - Troubleshooting guide
-
----
 
 ## Compliance and standards
 
@@ -591,8 +551,6 @@ The following environment variables must be configured:
 
 :::
 
----
-
 ## Support and maintenance
 
 ### Update schedule
@@ -609,8 +567,6 @@ The following environment variables must be configured:
 - **Issues:** GitHub Issues
 - **Documentation:** Docusaurus site
 - **Contact:** Project owner email (for portfolio purposes)
-
----
 
 ## Constraints and limitations
 
@@ -631,8 +587,6 @@ The following environment variables must be configured:
 - No real-time collaboration features
 - No calendar synchronization with external services (initially)
 - Storage per user limited by database plan
-
----
 
 ## Future considerations
 

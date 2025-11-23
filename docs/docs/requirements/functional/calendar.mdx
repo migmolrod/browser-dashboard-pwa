@@ -24,8 +24,6 @@ widgets and accepting event creation requests from the Tasks context.
 **Bounded context code:** CAL\
 **Related DMD section:** [Calendar (Supporting)](../../domain/bounded-contexts/calendar)
 
----
-
 ## Features
 
 ### Summary
@@ -41,8 +39,6 @@ widgets and accepting event creation requests from the Tasks context.
 | FR-CAL-007   | Task integration              | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-CAL-008   | Event import/export           | <PriorityLabel priority="Could Have"/>  | <StatusLabel status="Draft"/> |
 | FR-CAL-009   | All-day events                | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
-
----
 
 ### FR-CAL-001: Event management
 
@@ -198,8 +194,6 @@ And the calendar is named "My Calendar" or similar
 And the user's calendar management is initialized
 ```
 
----
-
 **Technical notes:**
 
 - Event title and description should be sanitized to prevent XSS
@@ -212,8 +206,6 @@ And the user's calendar management is initialized
 
 - Should the deleted events be recoverable (soft delete with trash)?
 - Should there be a maximum event duration?
-
----
 
 ### FR-CAL-002: Calendar views
 
@@ -366,8 +358,6 @@ Then the calendar opens in "Week View"
 And the view preference is restored
 ```
 
----
-
 **Technical notes:**
 
 - Use efficient date calculation libraries (e.g., date-fns, Luxon)
@@ -381,8 +371,6 @@ And the view preference is restored
 
 - Should there be a "Work Week" view (Monday – Friday only)?
 - Should Month View show mini event previews vs. just indicators?
-
----
 
 ### FR-CAL-003: Recurring events
 
@@ -534,8 +522,6 @@ Then instances are generated following the custom pattern
 And appear on Mondays and Wednesdays every 2 weeks until year end
 ```
 
----
-
 **Technical notes:**
 
 - Use a recurrence library (e.g., RRule for iCalendar standard)
@@ -549,8 +535,6 @@ And appear on Mondays and Wednesdays every 2 weeks until year end
 
 - Should there be a limit on recurrence end date (e.g., max 2 years)?
 - Should recurring events sync with external calendars (future)?
-
----
 
 ### FR-CAL-004: Event reminders
 
@@ -695,8 +679,6 @@ And if user grants permission, the reminder is set
 And if user denies permission, an error message is shown
 ```
 
----
-
 **Technical notes:**
 
 - Use Browser Notifications API for reminders
@@ -710,8 +692,6 @@ And if user denies permission, an error message is shown
 
 - Should reminders support custom times (e.g., "2 hours 30 minutes before")?
 - Should there be a notification center for viewing past reminders?
-
----
 
 ### FR-CAL-005: Event categories
 
@@ -848,8 +828,6 @@ And all events in this category now display with "Purple"
 And a CategoryUpdated event is published
 ```
 
----
-
 **Technical notes:**
 
 - Store categories as a separate entity with userId reference
@@ -862,8 +840,6 @@ And a CategoryUpdated event is published
 
 - Should events support multiple categories (tags)?
 - Should there be predefined category templates?
-
----
 
 ### FR-CAL-006: Event time conflict detection
 
@@ -986,8 +962,6 @@ And a conflict icon is displayed
 And tooltip shows "Time conflict with X events"
 ```
 
----
-
 **Technical notes:**
 
 - Implement efficient overlap detection algorithm
@@ -1000,8 +974,6 @@ And tooltip shows "Time conflict with X events"
 
 - Should conflicts be hard-blocked (prevent saving) or soft-warned?
 - Should there be a "Find next available time" feature?
-
----
 
 ### FR-CAL-007: Task integration
 
@@ -1126,8 +1098,6 @@ And both events coexist in the calendar
 And both reference the same task (conceptually)
 ```
 
----
-
 **Technical notes:**
 
 - Use asynchronous event processing for integration
@@ -1141,8 +1111,6 @@ And both reference the same task (conceptually)
 - Should completing the event also complete the task (future)?
 - Should deleting a task delete linked events (future)?
 - Should there be bidirectional sync (event changes update a task)?
-
----
 
 ### FR-CAL-008: Event import/export
 
@@ -1277,8 +1245,6 @@ Then only "Work" events from this month are exported
 And the file is named "calendar_work_2025-11-15.ics"
 ```
 
----
-
 **Technical notes:**
 
 - Use iCal library for parsing and generating .ics files (e.g., ical.js)
@@ -1291,8 +1257,6 @@ And the file is named "calendar_work_2025-11-15.ics"
 
 - Should there be an option to import into a specific category?
 - Should export include only visible events or all events?
-
----
 
 ### FR-CAL-009: All-day events
 
@@ -1432,8 +1396,6 @@ And shows the event title
 And is visually distinct from timed events
 ```
 
----
-
 **Technical notes:**
 
 - Store all-day events with date-only (no time component)
@@ -1446,8 +1408,6 @@ And is visually distinct from timed events
 
 - Should all-day events have a default duration (24 hours) for compatibility?
 - Should there be a limit on multi-day event duration (e.g., max 365 days)?
-
----
 
 ## Cross-feature considerations
 
@@ -1479,8 +1439,6 @@ And is visually distinct from timed events
 - **Transactional Boundaries:** Calendar aggregate is the transactional boundary
 - **Event Publishing:** Events must be published after successful persistence (transactional outbox pattern)
 - **Real-Time Updates:** Calendar widgets on the dashboard should update in real-time via event subscriptions
-
----
 
 ## Business constraints impact
 
@@ -1523,8 +1481,6 @@ Calendar management aligns with the chosen stack:
 - **Integration:** Event-driven integration with Tasks context
 - **Reminders:** Browser Notifications API, service workers for background delivery
 
----
-
 ## Success metrics alignment
 
 Calendar management contributes to the following success metrics from BR-001 through BR-008:
@@ -1552,8 +1508,6 @@ Calendar management contributes to the following success metrics from BR-001 thr
 | **Mobile Usability**     | Fully Responsive  | Responsive calendar views, touch-friendly controls          |
 | **Accessibility Score**  | WCAG 2.1 Level AA | Keyboard navigation, screen reader support for events       |
 | **User Satisfaction**    | > 4.0/5.0         | Visual calendar views, reliable reminders, task integration |
-
----
 
 ## Traceability matrix
 

@@ -24,8 +24,6 @@ widgets. The context is read-model oriented with minimal write operations.
 **Bounded context code:** WEA\
 **Related DMD section:** [Weather (Supporting)](../../domain/bounded-contexts/weather)
 
----
-
 ## Features
 
 ### Summary
@@ -39,8 +37,6 @@ widgets. The context is read-model oriented with minimal write operations.
 | FR-WEA-005   | Unit preferences          | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-WEA-006   | Weather data refresh      | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 | FR-WEA-007   | Error handling            | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
-
----
 
 ### FR-WEA-001: Location configuration
 
@@ -191,8 +187,6 @@ And sets as default location
 And fetches weather data
 ```
 
----
-
 **Technical notes:**
 
 - Use weather provider's geocoding API for location validation
@@ -206,8 +200,6 @@ And fetches weather data
 
 - Should there be location autocomplete/suggestions during input?
 - Should the system store location history for quick switching?
-
----
 
 ### FR-WEA-002: Current weather retrieval
 
@@ -358,8 +350,6 @@ And provider-specific fields are mapped consistently
 And the system is isolated from provider API changes
 ```
 
----
-
 **Technical notes:**
 
 - Implement anti-corruption layer to isolate from provider-specific data structures
@@ -374,8 +364,6 @@ And the system is isolated from provider API changes
 
 - Should there be a fallback provider if the primary fails?
 - Should weather data include "feels like" temperature?
-
----
 
 ### FR-WEA-003: Weather data caching
 
@@ -522,8 +510,6 @@ And "Madrid" cache remains valid
 And each location is tracked independently
 ```
 
----
-
 **Technical notes:**
 
 - Use Redis or in-memory cache (e.g., Caffeine for Java) with TTL (30 minutes)
@@ -538,8 +524,6 @@ And each location is tracked independently
 
 - Should cache TTL be configurable per location (e.g., shorter for volatile weather)?
 - Should there be a maximum cache size limit?
-
----
 
 ### FR-WEA-004: Multiple locations
 
@@ -658,8 +642,6 @@ And indicates the maximum limit is reached
 And the widget is not added
 ```
 
----
-
 **Technical notes:**
 
 - Widget instances are managed by Dashboard Management context
@@ -672,8 +654,6 @@ And the widget is not added
 
 - Should there be a recommended/default set of locations?
 - Should the removed locations' cache be immediately cleared or retained?
-
----
 
 ### FR-WEA-005: Unit preferences
 
@@ -806,8 +786,6 @@ And display data in imperial units
 And no page reload is required
 ```
 
----
-
 **Technical notes:**
 
 - Request units from provider API if supported (e.g., OpenWeatherMap `units` parameter)
@@ -821,8 +799,6 @@ And no page reload is required
 
 - Should unit preference be per-widget or global?
 - Should there be a quick-toggle for units in the widget itself?
-
----
 
 ### FR-WEA-006: Weather data refresh
 
@@ -963,8 +939,6 @@ And the user is notified of the operation
 And the widget updates when refresh completes
 ```
 
----
-
 **Technical notes:**
 
 - Implement refresh scheduler (e.g., scheduled tasks, cron jobs)
@@ -979,8 +953,6 @@ And the widget updates when refresh completes
 
 - Should refresh frequency be configurable per widget?
 - Should there be a "Refresh All" button for multiple widgets?
-
----
 
 ### FR-WEA-007: Error handling
 
@@ -1147,8 +1119,6 @@ Then the error is logged with:
 And logs are available for debugging and monitoring
 ```
 
----
-
 **Technical notes:**
 
 - Implement error classification logic (map HTTP status codes, exceptions to error types)
@@ -1163,8 +1133,6 @@ And logs are available for debugging and monitoring
 
 - Should there be a global error notification system for service-wide issues?
 - Should errors be reported to a monitoring service automatically?
-
----
 
 ## Cross-feature considerations
 
@@ -1193,8 +1161,6 @@ And logs are available for debugging and monitoring
 - **Location Isolation:** Different locations have independent cache and refresh cycles
 - **Unit Transformation:** Unit conversion is consistent and repeatable
 - **Error State:** Errors do not corrupt cached data; previous valid data is retained
-
----
 
 ## Business constraints impact
 
@@ -1236,8 +1202,6 @@ Weather management aligns with the chosen stack:
 - **Database:** PostgreSQL for persistent cache storage
 - **Error Handling:** Spring exception handling with @ControllerAdvice
 
----
-
 ## Success metrics alignment
 
 Weather management contributes to the following success metrics from BR-001 through BR-008:
@@ -1272,8 +1236,6 @@ Weather management contributes to the following success metrics from BR-001 thro
 |--------------------------|----------|--------------------------------------------------------|
 | **API Costs**            | $0/month | Free-tier provider, aggressive caching (60 calls/min)  |
 | **Infrastructure Costs** | $0/month | Free-tier database and cache, efficient resource usage |
-
----
 
 ## Traceability matrix
 

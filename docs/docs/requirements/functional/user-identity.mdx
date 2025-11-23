@@ -24,8 +24,6 @@ interactions. The context handles user registration, login/logout, and basic ses
 **Bounded context code:** UID\
 **Related DMD section:** [User Identity (Generic)](../../domain/bounded-contexts/user-identity)
 
----
-
 ## Features
 
 ### Summary
@@ -39,8 +37,6 @@ interactions. The context handles user registration, login/logout, and basic ses
 | FR-UID-005   | Password management     | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-UID-006   | Account deletion        | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-UID-007   | Security policies       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
-
----
 
 ### FR-UID-001: User registration
 
@@ -209,8 +205,6 @@ And an error message indicates "Username can only contain letters, numbers, unde
 And the user is not created
 ```
 
----
-
 **Technical notes:**
 
 - Use bcrypt (or Argon2) for password hashing with an appropriate cost factor
@@ -225,8 +219,6 @@ And the user is not created
 
 - Should email verification be required before account activation?
 - Should there be a waiting period before the username can be reused if an account is deleted?
-
----
 
 ### FR-UID-002: User authentication
 
@@ -393,8 +385,6 @@ And the lockout is lifted
 And the user is logged in normally
 ```
 
----
-
 **Technical notes:**
 
 - Use constant-time comparison for password verification to prevent timing attacks
@@ -409,8 +399,6 @@ And the user is logged in normally
 
 - Should there be multifactor authentication (MFA) support?
 - Should there be device tracking/recognition?
-
----
 
 ### FR-UID-003: Session management
 
@@ -570,8 +558,6 @@ And inactivity timeout is reset
 And the session remains active
 ```
 
----
-
 **Technical notes:**
 
 - Use Redis or in-memory cache for session storage (performance)
@@ -586,8 +572,6 @@ And the session remains active
 
 - Should there be a maximum number of concurrent sessions per user?
 - Should users be able to view and revoke active sessions?
-
----
 
 ### FR-UID-004: User profile management
 
@@ -722,8 +706,6 @@ And profile reverts to previous values
 And no UserUpdated event is published
 ```
 
----
-
 **Technical notes:**
 
 - Implement optimistic locking for concurrent profile updates
@@ -736,8 +718,6 @@ And no UserUpdated event is published
 
 - Should email changes require verification of a new email?
 - Should username changes be restricted or have a cooldown period?
-
----
 
 ### FR-UID-005: Password management
 
@@ -880,8 +860,6 @@ And mobile and tablet devices are logged out
 And must re-authenticate with new password
 ```
 
----
-
 **Technical notes:**
 
 - Use the same password hashing algorithm as registration (bcrypt/Argon2)
@@ -895,8 +873,6 @@ And must re-authenticate with new password
 
 - Should there be a password change cooldown period?
 - Should password history be enforced (e.g., cannot reuse any of the last five passwords)?
-
----
 
 ### FR-UID-006: Account deletion
 
@@ -1042,8 +1018,6 @@ Then the deletion is logged with:
 And the log is retained for audit purposes
 ```
 
----
-
 **Technical notes:**
 
 - Implement soft delete with a grace period before hard delete (future enhancement)
@@ -1057,8 +1031,6 @@ And the log is retained for audit purposes
 
 - Should there be a grace period (e.g., 30 days) before permanent deletion?
 - Should the deleted usernames be reserved to prevent impersonation?
-
----
 
 ### FR-UID-007: Security policies
 
@@ -1213,8 +1185,6 @@ Then policies are loaded from environment variables:
 And policies are enforced according to configuration
 ```
 
----
-
 **Technical notes:**
 
 - Use Spring Security for policy enforcement
@@ -1229,8 +1199,6 @@ And policies are enforced according to configuration
 
 - Should security policies be user-configurable (e.g., longer session timeout)?
 - Should there be notification of suspicious activity (e.g., login from a new location)?
-
----
 
 ## Cross-feature considerations
 
@@ -1259,8 +1227,6 @@ And policies are enforced according to configuration
 - **Audit Consistency:** Audit logs must be reliably persisted (transactional)
 - **Cross-Context Consistency:** UserDeleted event must reliably trigger cleanup in all contexts
 - **Password Hashing:** Password hashing must be deterministic and consistent
-
----
 
 ## Business constraints impact
 
@@ -1302,8 +1268,6 @@ User Identity aligns with the chosen stack:
 - **Events:** Spring Events initially; design for future Kafka/RabbitMQ migration
 - **Testing:** JUnit, Mockito for unit tests; TestContainers for integration tests
 
----
-
 ## Success metrics alignment
 
 User Identity contributes to the following success metrics from BR-001 through BR-008:
@@ -1330,8 +1294,6 @@ User Identity contributes to the following success metrics from BR-001 through B
 | **Task Completion Rate** | > 95%             | Simple registration, reliable login, clear errors |
 | **Mobile Usability**     | Fully Responsive  | Responsive login/registration forms               |
 | **Accessibility Score**  | WCAG 2.1 Level AA | Accessible forms, clear error messages            |
-
----
 
 ## Traceability matrix
 

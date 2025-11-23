@@ -25,8 +25,6 @@ using pluggable strategies.
 **Bounded context code:** SYN\
 **Related DMD section:** [Synchronization (Generic)](../../domain/bounded-contexts/synchronization)
 
----
-
 ## Features
 
 ### Summary
@@ -40,8 +38,6 @@ using pluggable strategies.
 | FR-SYN-005   | Conflict resolution        | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-SYN-006   | Sync status tracking       | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 | FR-SYN-007   | Retry and error handling   | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
-
----
 
 ### FR-SYN-001: Local persistence
 
@@ -175,8 +171,6 @@ And results are returned in < 100ms
 And no network call is made
 ```
 
----
-
 **Technical notes:**
 
 - Use IndexedDB for structured data storage (primary)
@@ -192,8 +186,6 @@ And no network call is made
 
 - Should there be a maximum local storage age for data (e.g., delete data older than 90 days)?
 - Should users be able to manually clear local storage?
-
----
 
 ### FR-SYN-002: Offline operation
 
@@ -333,8 +325,6 @@ And the UI shows pending sync count
 And operations remain queued until online
 ```
 
----
-
 **Technical notes:**
 
 - Use `navigator.onLine` and online/offline event listeners for network detection
@@ -349,8 +339,6 @@ And operations remain queued until online
 
 - Should there be a maximum size for the offline operation queue?
 - Should users be warned if they've been offline for extended periods?
-
----
 
 ### FR-SYN-003: Background synchronization
 
@@ -496,8 +484,6 @@ And a partial success message is shown: "Synced 3 of 5 changes"
 And failed operations are retried later
 ```
 
----
-
 **Technical notes:**
 
 - Use Background Sync API for reliable offline-to-online sync
@@ -513,8 +499,6 @@ And failed operations are retried later
 
 - Should sync be throttled during rapid changes (debouncing)?
 - Should there be a "sync pause" feature for users on metered connections?
-
----
 
 ### FR-SYN-004: Conflict detection
 
@@ -645,8 +629,6 @@ And a summary notification shows: "3 sync conflicts detected"
 And each conflict is queued for resolution
 ```
 
----
-
 **Technical notes:**
 
 - Use version numbers (integer) or eTags (hash) for conflict detection
@@ -660,8 +642,6 @@ And each conflict is queued for resolution
 
 - Should all conflicts be logged persistently or only unresolved ones?
 - Should there be a conflict history/audit trail?
-
----
 
 ### FR-SYN-005: Conflict resolution
 
@@ -786,8 +766,6 @@ And a summary notification shows: "3 conflicts resolved"
 And all resolutions are logged
 ```
 
----
-
 **Technical notes:**
 
 - Implement resolution strategies as pluggable components
@@ -802,8 +780,6 @@ And all resolutions are logged
 
 - Should users be able to view and recover discarded conflict versions?
 - Should there be configurable resolution strategies per entity type?
-
----
 
 ### FR-SYN-006: Sync status tracking
 
@@ -935,8 +911,6 @@ Then the status updates in real-time:
 And no page refresh is needed
 ```
 
----
-
 **Technical notes:**
 
 - Store sync status in the SyncState aggregate
@@ -951,8 +925,6 @@ And no page refresh is needed
 
 - Should there be a sync activity log/history?
 - Should users be able to export sync logs for debugging?
-
----
 
 ### FR-SYN-007: Retry and error handling
 
@@ -1098,8 +1070,6 @@ Then the log includes:
 And logs are available for debugging
 ```
 
----
-
 **Technical notes:**
 
 - Implement retry queue with exponential backoff scheduler
@@ -1115,8 +1085,6 @@ And logs are available for debugging
 
 - Should retry intervals be configurable per error type?
 - Should there be a "sync health" dashboard for administrators?
-
----
 
 ## Cross-feature considerations
 
@@ -1145,8 +1113,6 @@ And logs are available for debugging
 - **Conflict Resolution:** Deterministic resolution ensures consistency across devices
 - **Operation Atomicity:** Each sync operation is atomic (all or nothing)
 - **Idempotency:** Sync operations are idempotent (can be safely retried)
-
----
 
 ## Business constraints impact
 
@@ -1188,8 +1154,6 @@ Synchronization aligns with the chosen stack:
 - **Encryption:** Web Crypto API for local encryption
 - **Service Worker:** Workbox for offline app shell caching
 
----
-
 ## Success metrics alignment
 
 Synchronization contributes to the following success metrics from BR-001 through BR-008:
@@ -1216,8 +1180,6 @@ Synchronization contributes to the following success metrics from BR-001 through
 | **Offline Capability**   | Must Have      | Full app functionality offline, seamless online/offline    |
 | **Sync Transparency**    | High           | Clear status indicators, error messages, progress tracking |
 | **Data Loss Prevention** | Zero data loss | Reliable sync with conflict detection and resolution       |
-
----
 
 ## Traceability matrix
 

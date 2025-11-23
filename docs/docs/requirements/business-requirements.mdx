@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 3.0
 title: Business requirements
 status: Draft
 lastUpdated: 2025-11-11
@@ -27,8 +27,6 @@ Business requirements define the high-level goals and benefits that the Browser 
 | BR-006 | Developer experience            | <PriorityLabel priority="Should Have"/> | All             |
 | BR-007 | Cost efficiency                 | <PriorityLabel priority="Must Have"/>   | All             |
 | BR-008 | Time to market                  | <PriorityLabel priority="Should Have"/> | All             |
-
----
 
 ## Strategic objectives
 
@@ -71,8 +69,6 @@ demonstrate the ability to deliver complete, production-ready solutions.
 - Code quality metrics meet industry standards (Lighthouse > 90, test coverage > 80%)
 - GitHub repository is public and well-organized with clear README
 
----
-
 ### BR-002: User productivity enhancement
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -111,8 +107,6 @@ requirements into valuable features. A non-functional portfolio piece has limite
 - Weather data updates in real-time from third-party API
 - User interface is intuitive (new users can complete basic tasks without tutorial)
 - Mobile and desktop experiences are equally functional (responsive design)
-
----
 
 ### BR-003: Technical excellence
 
@@ -156,8 +150,6 @@ portfolio pieces. It shows understanding of enterprise-grade software developmen
 - Performance targets met (page load < 2s, API response < 200ms p95)
 - Architecture Decision Records (ADRs) document key design choices
 
----
-
 ### BR-004: Scalability and maintainability
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -197,8 +189,6 @@ These qualities make the project suitable for real-world scenarios beyond a simp
 - Code follows consistent naming conventions and structure
 - Horizontal scaling tested with Docker Compose (multiple instances)
 - No tight coupling between bounded contexts (communication via events/APIs)
-
----
 
 ### BR-005: User value delivery
 
@@ -249,8 +239,6 @@ This is important for demonstrating well-rounded software engineering skills.
 | **Cross-Platform**        | Works on any device with a modern browser                   | Tested on mobile, tablet, desktop            |
 | **Offline Capable**       | PWA features enable offline functionality                   | Service worker caches essential content      |
 | **No Installation**       | Browser-based, no downloads required                        | Accessible via URL, optionally installable   |
-
----
 
 ### BR-006: Developer experience
 
@@ -303,8 +291,6 @@ mentorship, or positive portfolio evaluation.
 | **Documentation**          | Clear, thorough technical documentation         | DMD, SRS, SAD, CDDs all complete                    |
 | **Live Demo**              | Deployed, accessible application                | Public URL with > 99% uptime                        |
 
----
-
 ### BR-007: Cost efficiency
 
 **Priority:** <PriorityLabel priority="Must Have"/>
@@ -344,8 +330,6 @@ ability to work within budget constraints.
 - Cloud deployment uses free tier (e.g., Railway, Render, or AWS free tier)
 - Monitoring and logging use free-tier tools
 
----
-
 ### BR-008: Time to market
 
 **Priority:** <PriorityLabel priority="Should Have"/>
@@ -383,8 +367,6 @@ ability to ship. Prolonged development reduces motivation and portfolio relevanc
 - Each bounded context delivered incrementally
 - MVP deployed and accessible within target timeframe
 - Should Have and Could Have features deferred to post-MVP
-
----
 
 ## Stakeholders
 
@@ -427,8 +409,6 @@ ability to ship. Prolonged development reduces motivation and portfolio relevanc
 - **Engagement:** Occasional (if connections are made)
 - **Needs:** Access to documentation, clear questions, receptiveness to feedback
 
----
-
 ## Business constraints
 
 ### BC-001: Budget
@@ -450,8 +430,6 @@ ability to ship. Prolonged development reduces motivation and portfolio relevanc
 - Use Docker for local development to minimize cloud costs during development
 - Monitor usage to stay within free-tier limits
 
----
-
 ### BC-002: Timeline
 
 **Constraint:** Portfolio project with flexible but reasonable timeline (target: 3-6 months for MVP)
@@ -472,8 +450,6 @@ ability to ship. Prolonged development reduces motivation and portfolio relevanc
 - Maintain development momentum through regular commits
 - Accept "good enough" for non-critical features initially
 
----
-
 ### BC-003: Resources
 
 **Constraint:** Single developer (solo project)
@@ -493,8 +469,6 @@ ability to ship. Prolonged development reduces motivation and portfolio relevanc
 - Focus on technologies already known well (Angular, Spring Boot)
 - Set realistic weekly goals (not daily) to accommodate work schedule
 - Build in buffer time for unexpected challenges
-
----
 
 ### BC-004: Technology stack
 
@@ -521,8 +495,6 @@ Technologies selected must align with:
 - Avoid bleeding-edge versions that may have stability issues
 - Ensure all technologies have strong community support
 - Verify free-tier availability for all required services
-
----
 
 ## Success metrics
 
@@ -564,8 +536,6 @@ but the design should target these values.
 | **Mobile Usability**     | Fully Responsive  | Device Testing                | Must Have   |
 | **Accessibility Score**  | WCAG 2.1 Level AA | Axe, Lighthouse               | Must Have   |
 
----
-
 ## Assumptions
 
 ### Technical assumptions
@@ -591,8 +561,6 @@ supplementary
 3. **Documentation Tools:** Docusaurus will remain suitable and free for documentation hosting
 4. **Contributor Interest:** Basic technical documentation will be sufficient for potential contributors/mentors
 5. **Time Availability:** Developer can dedicate 10-15 hours per week to the project
-
----
 
 ## Dependencies
 
@@ -638,8 +606,6 @@ supplementary
     - Terraform configurations must be ready
     - CI/CD pipelines must be configured
 
----
-
 ## Traceability to the domain model
 
 | Business Requirement | Related Strategic Goal           | Related Bounded Contexts |
@@ -652,8 +618,6 @@ supplementary
 | BR-006               | Open Learning Resource           | All                      |
 | BR-007               | Cost Efficiency (implicit)       | All                      |
 | BR-008               | Pragmatic Development            | All                      |
-
----
 
 ## Future considerations
 

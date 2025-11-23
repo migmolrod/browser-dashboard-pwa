@@ -24,8 +24,6 @@ The context provides sensible defaults and notifies other contexts when preferen
 **Bounded context code:** PRE  
 **Related DMD section:** [Preferences (Generic)](../../domain/bounded-contexts/preferences)
 
----
-
 ## Features
 
 ### Summary
@@ -38,8 +36,6 @@ The context provides sensible defaults and notifies other contexts when preferen
 | FR-PRE-004   | Default preferences    | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
 | FR-PRE-005   | Preference persistence | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
 | FR-PRE-006   | Preference validation  | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/>   |
-
----
 
 ### FR-PRE-001: Theme management
 
@@ -175,8 +171,6 @@ And theme is set to "System"
 And the application uses OS theme preference initially
 ```
 
----
-
 **Technical notes:**
 
 - Use CSS custom properties (variables) for theme colors
@@ -190,8 +184,6 @@ And the application uses OS theme preference initially
 
 - Should there be additional theme options (e.g., high contrast, custom colors)?
 - Should the theme be device-specific in the future?
-
----
 
 ### FR-PRE-002: Locale management
 
@@ -324,8 +316,6 @@ Then locale is set to "en-US"
 And the application uses English language
 ```
 
----
-
 **Technical notes:**
 
 - Use i18n library (e.g., Angular i18n, react-intl, Java ResourceBundle)
@@ -340,8 +330,6 @@ And the application uses English language
 
 - Should the system support right-to-left (RTL) languages?
 - Should locale be autodetected from browser settings by default?
-
----
 
 ### FR-PRE-003: Timezone management
 
@@ -472,8 +460,6 @@ Then matching timezones are filtered:
   And the user can select from the filtered list
   ```
 
----
-
 **Technical notes:**
 
 - Use IANA timezone database (`tzdata`)
@@ -488,8 +474,6 @@ Then matching timezones are filtered:
 
 - Should timezone be autodetected and updated when the user travels?
 - Should there be quick-select common timezones?
-
----
 
 ### FR-PRE-004: Default preferences
 
@@ -611,8 +595,6 @@ And set as default timezone
 And the user sees timestamps in Pacific Time
 ```
 
----
-
 **Technical notes:**
 
 - Use event handler to consume UserRegistered event
@@ -626,8 +608,6 @@ And the user sees timestamps in Pacific Time
 
 - Should defaults vary by user region (e.g., locale detected from IP)?
 - Should there be organization-level default overrides (future)?
-
----
 
 ### FR-PRE-005: Preference persistence
 
@@ -747,8 +727,6 @@ And the system retries with exponential backoff
 And succeeds on retry
 ```
 
----
-
 **Technical notes:**
 
 - Use relational database with userId as a primary/foreign key
@@ -763,8 +741,6 @@ And succeeds on retry
 
 - Should there be preference versioning for rollback?
 - Should preferences be backed up separately?
-
----
 
 ### FR-PRE-006: Preference validation
 
@@ -901,8 +877,6 @@ And none of the preferences are updated
 And the operation is atomic (all or nothing)
 ```
 
----
-
 **Technical notes:**
 
 - Implement validation at the domain model level (before persistence)
@@ -917,8 +891,6 @@ And the operation is atomic (all or nothing)
 
 - Should validation be client-side only, server-side only, or both?
 - Should there be validation warnings in addition to errors?
-
----
 
 ## Cross-feature considerations
 
@@ -947,8 +919,6 @@ And the operation is atomic (all or nothing)
 - **Event Publishing:** Events must be published after successful persistence (transactional outbox pattern)
 - **Optimistic Locking:** Concurrent updates must use optimistic locking to prevent conflicts
 - **Default Creation:** Default preference creation must be idempotent
-
----
 
 ## Business constraints impact
 
@@ -990,8 +960,6 @@ Preference management aligns with the chosen stack:
 - **Frontend:** Angular components for preference UI, reactive forms
 - **Caching:** Spring Cache abstraction with Caffeine (in-memory)
 
----
-
 ## Success metrics alignment
 
 Preference management contributes to the following success metrics from BR-001 through BR-008:
@@ -1018,8 +986,6 @@ Preference management contributes to the following success metrics from BR-001 t
 | **Mobile Usability**     | Fully Responsive  | Responsive preference forms, touch-friendly controls |
 | **Accessibility Score**  | WCAG 2.1 Level AA | Accessible preference UI, clear labels and feedback  |
 | **User Satisfaction**    | > 4.0/5.0         | Personalized experience, immediate theme changes     |
-
----
 
 ## Traceability matrix
 

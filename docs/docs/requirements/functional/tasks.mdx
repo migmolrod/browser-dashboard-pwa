@@ -24,8 +24,6 @@ enabling integration with the Calendar context for event creation.
 **Bounded context code:** TSK\
 **Related DMD section:** [Tasks (Supporting)](../../domain/bounded-contexts/tasks)
 
----
-
 ## Features
 
 ### Summary
@@ -41,8 +39,6 @@ enabling integration with the Calendar context for event creation.
 | FR-TSK-007   | Task search and filtering | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-TSK-008   | Calendar integration      | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-TSK-009   | Task completion tracking  | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
-
----
 
 ### FR-TSK-001: Task management
 
@@ -194,8 +190,6 @@ And the list is named "My Tasks" or similar
 And the user's task management is initialized
 ```
 
----
-
 **Technical notes:**
 
 - Task title and description should be sanitized to prevent XSS
@@ -208,8 +202,6 @@ And the user's task management is initialized
 
 - Should the deleted tasks be recoverable (soft delete with trash/recycle bin)?
 - Should there be a character counter for title and description fields?
-
----
 
 ### FR-TSK-002: Task status lifecycle
 
@@ -327,8 +319,6 @@ Then the task still shows status "In Progress"
 And the status change is persisted
 ```
 
----
-
 **Technical notes:**
 
 - Store completion timestamp when status changes to "Done"
@@ -341,8 +331,6 @@ And the status change is persisted
 
 - Should there be additional statuses (e.g., "Blocked," "Canceled")?
 - Should status transitions be logged for audit purposes?
-
----
 
 ### FR-TSK-003: Task priority management
 
@@ -453,8 +441,6 @@ Then the task still shows priority "High"
 And the priority change is persisted
 ```
 
----
-
 **Technical notes:**
 
 - Implement priority as enumeration (Low=1, Medium=2, High=3)
@@ -466,8 +452,6 @@ And the priority change is persisted
 
 - Should there be more granular priority levels (e.g., 1–5 scale)?
 - Should priority be combined with a due date for smart sorting?
-
----
 
 ### FR-TSK-004: Due date management
 
@@ -597,8 +581,6 @@ Then only tasks with due dates in the past are displayed
 And the count of overdue tasks is shown
 ```
 
----
-
 **Technical notes:**
 
 - Store due date as ISO 8601 timestamp
@@ -611,8 +593,6 @@ And the count of overdue tasks is shown
 
 - Should there be smart date input (e.g., "tomorrow", "next week")?
 - Should reminders/notifications be triggered by due dates?
-
----
 
 ### FR-TSK-005: Task lists/sections
 
@@ -747,8 +727,6 @@ And the list name is highlighted as active
 And task count for "Work" is shown
 ```
 
----
-
 **Technical notes:**
 
 - Consider implementing list colors or icons for visual distinction
@@ -761,8 +739,6 @@ And task count for "Work" is shown
 
 - Should lists support nesting (sub-lists)?
 - Should there be a "smart list" feature (e.g., "All Overdue")?
-
----
 
 ### FR-TSK-006: Task reordering
 
@@ -868,8 +844,6 @@ Then the manual order is restored
 And tasks appear in the user-defined order
 ```
 
----
-
 **Technical notes:**
 
 - Store task order as an explicit position field (integer)
@@ -883,8 +857,6 @@ And tasks appear in the user-defined order
 
 - Should there be alternative reordering mechanisms (move up/down buttons)?
 - Should auto-sort disable manual ordering or coexist with it?
-
----
 
 ### FR-TSK-007: Task search and filtering
 
@@ -1013,8 +985,6 @@ And the overdue count is shown
 And tasks are sorted by how many days overdue
 ```
 
----
-
 **Technical notes:**
 
 - Implement debouncing for search input (e.g., 300ms)
@@ -1028,8 +998,6 @@ And tasks are sorted by how many days overdue
 
 - Should search history be saved?
 - Should there be "smart filters" (e.g., "My Focus" = High priority + Due Soon)?
-
----
 
 ### FR-TSK-008: Calendar integration
 
@@ -1144,8 +1112,6 @@ Then the task description is mapped to event description
 And both title and description appear in the created event
 ```
 
----
-
 **Technical notes:**
 
 - Use asynchronous event publishing for Calendar integration
@@ -1159,8 +1125,6 @@ And both title and description appear in the created event
 - Should completing the task also update the linked event (future)?
 - Should deleting a task delete the linked event (future)?
 - Should there be bidirectional sync between tasks and events?
-
----
 
 ### FR-TSK-009: Task completion tracking
 
@@ -1288,8 +1252,6 @@ Then the completion timestamp is displayed
 And shows when the task was completed
 ```
 
----
-
 **Technical notes:**
 
 - Store completion timestamp as ISO 8601 format
@@ -1302,8 +1264,6 @@ And shows when the task was completed
 
 - Should the completed tasks be automatically archived after a certain time?
 - Should there be a "completed tasks" archive separate from active tasks?
-
----
 
 ## Cross-feature considerations
 
@@ -1336,8 +1296,6 @@ And shows when the task was completed
 - **Transactional Boundaries:** Task (or TaskList) aggregate is the transactional boundary
 - **Event Publishing:** Events must be published after successful persistence (transactional outbox pattern)
 - **Real-Time Updates:** Task widgets on a dashboard should update in real-time via event subscriptions
-
----
 
 ## Business constraints impact
 
@@ -1378,8 +1336,6 @@ Tasks management aligns with the chosen stack:
 - **Events:** Spring Events initially; design for future Kafka/RabbitMQ migration
 - **Integration:** Event-driven integration with Calendar context
 
----
-
 ## Success metrics alignment
 
 Tasks management contributes to the following success metrics from BR-001 through BR-008:
@@ -1407,8 +1363,6 @@ Tasks management contributes to the following success metrics from BR-001 throug
 | **Mobile Usability**     | Fully Responsive  | Responsive task list, touch-friendly controls        |
 | **Accessibility Score**  | WCAG 2.1 Level AA | Keyboard navigation, screen reader support for tasks |
 | **User Satisfaction**    | > 4.0/5.0         | Simple, visual task management, progress tracking    |
-
----
 
 ## Traceability matrix
 

@@ -210,6 +210,10 @@
 /* Custom CSS */
 aside {
     position: sticky;
+
+    nav {
+        position: fixed;
+    }
 }
 
 /* Titles */

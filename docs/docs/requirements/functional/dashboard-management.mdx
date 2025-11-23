@@ -24,8 +24,6 @@ dashboard experience.
 **Bounded context code:** DAS\
 **Related DMD section:** [Dashboard Management (Core)](../../domain/bounded-contexts/dashboard-management)
 
----
-
 ## Features
 
 ### Summary
@@ -40,8 +38,6 @@ dashboard experience.
 | FR-DAS-006   | Personalization profiles   | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Draft"/> |
 | FR-DAS-007   | Dashboard deletion         | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
 | FR-DAS-008   | Dashboard persistence      | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Draft"/> |
-
----
 
 ### FR-DAS-001: Dashboard creation
 
@@ -134,8 +130,6 @@ And an appropriate error message is returned
 And no DashboardCreated event is published
 ```
 
----
-
 **Technical notes:**
 
 - Dashboard creation is typically triggered by the UserRegistered event
@@ -147,8 +141,6 @@ And no DashboardCreated event is published
 
 - Should users be able to name their dashboards in the MVP or defer to future iterations?
 - Should there be a maximum number of dashboards per user?
-
----
 
 ### FR-DAS-002: Widget instance management
 
@@ -270,8 +262,6 @@ And no WidgetRemovedFromDashboard event is published
 And the dashboard remains unchanged
 ```
 
----
-
 **Technical notes:**
 
 - Widget types must be validated against a widget registry before creating instances
@@ -283,8 +273,6 @@ And the dashboard remains unchanged
 
 - Should there be a maximum number of widget instances per dashboard?
 - Should removed widgets be archived instead of permanently deleted?
-
----
 
 ### FR-DAS-003: Widget configuration
 
@@ -410,8 +398,6 @@ And the widget retains its previous configuration
 And no WidgetConfigurationChanged event is published
 ```
 
----
-
 **Technical notes:**
 
 - Use JSON Schema or similar for widget configuration validation
@@ -423,8 +409,6 @@ And no WidgetConfigurationChanged event is published
 
 - Should configuration changes be undoable?
 - Should there be validation warnings in addition to errors (e.g., "This location has limited weather data")?
-
----
 
 ### FR-DAS-004: Layout management
 
@@ -542,8 +526,6 @@ And no widgets are cut off or hidden
 And the transition is smooth
 ```
 
----
-
 **Technical notes:**
 
 - Consider using CSS Grid or Flexbox for responsive layout
@@ -556,8 +538,6 @@ And the transition is smooth
 
 - Should the system support multiple layout presets (grid, masonry, custom)?
 - Should minimum/maximum widget sizes be configurable per widget type?
-
----
 
 ### FR-DAS-005: Widget reordering
 
@@ -680,8 +660,6 @@ And can be dropped in a new position
 And the same reordering logic applies as desktop
 ```
 
----
-
 **Technical notes:**
 
 - Implement smooth animations for drag-and-drop feedback
@@ -694,8 +672,6 @@ And the same reordering logic applies as desktop
 
 - Should there be a "Reorder Mode" toggle to make reordering easier?
 - Should undo functionality be available for accidental reorders?
-
----
 
 ### FR-DAS-006: Personalization profiles
 
@@ -832,8 +808,6 @@ Then the "Work" profile is automatically loaded
 And the dashboard associated with "Work" is displayed
 ```
 
----
-
 **Technical notes:**
 
 - Consider implementing profile templates for quick setup
@@ -847,8 +821,6 @@ And the dashboard associated with "Work" is displayed
 - Should there be a maximum number of profiles per user?
 - Should profile switching support keyboard shortcuts?
 - Should profiles have their own themes/colors?
-
----
 
 ### FR-DAS-007: Dashboard deletion
 
@@ -956,8 +928,6 @@ And DashboardDeleted events are published for each dashboard
 And all widget instances are cascade deleted
 ```
 
----
-
 **Technical notes:**
 
 - Ensure proper cascade deletion of widget instances
@@ -970,8 +940,6 @@ And all widget instances are cascade deleted
 
 - Should the deleted dashboards be recoverable (soft delete) instead of permanent deletion?
 - Should there be a "trash" or "archive" feature for dashboards?
-
----
 
 ### FR-DAS-008: Dashboard persistence
 
@@ -1096,8 +1064,6 @@ And the user is notified of any configuration changes
 And the dashboard loads successfully
 ```
 
----
-
 **Technical notes:**
 
 - Use optimistic locking or versioning to handle concurrent updates
@@ -1112,8 +1078,6 @@ And the dashboard loads successfully
 - Should there be a maximum history of dashboard changes (undo stack)?
 - Should the dashboard state be versioned for rollback capability?
 - Should we implement a conflict resolution UI for concurrent updates?
-
----
 
 ## Cross-feature considerations
 
@@ -1141,8 +1105,6 @@ layout configurations
 - **Eventual Consistency:** Widget data refreshes from downstream contexts can be eventually consistent
 - **Transactional Boundaries:** Dashboard aggregate is the transactional boundary; all changes within must be atomic
 - **Event Publishing:** Events must be published after successful persistence
-
----
 
 ## Business constraints impact
 
@@ -1183,8 +1145,6 @@ Dashboard Management aligns with the chosen stack:
 - **Events:** Spring Events initially; design for future Kafka/RabbitMQ migration
 - **Validation:** JSON Schema for widget configuration validation
 
----
-
 ## Success metrics alignment
 
 Dashboard Management contributes to the following success metrics from BR-001 through BR-008:
@@ -1211,8 +1171,6 @@ Dashboard Management contributes to the following success metrics from BR-001 th
 | **Task Completion Rate** | > 95%             | Intuitive widget add/remove/reorder operations |
 | **Mobile Usability**     | Fully Responsive  | Responsive layout adapts to all screen sizes   |
 | **Accessibility Score**  | WCAG 2.1 Level AA | Keyboard navigation, screen reader support     |
-
----
 
 ## Traceability matrix
 

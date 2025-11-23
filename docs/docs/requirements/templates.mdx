@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+import PriorityLabel from "../../src/components/PriorityLabel";
+
 # Templates
 
 This is a set of templates for each requirement type.
@@ -56,8 +58,6 @@ This is a set of templates for each requirement type.
     **Bounded context code:** XXX
     **Related DMD section:** [link to DMD bounded context]
 
-    ---
-
     ## Features
 
     ### Summary
@@ -68,19 +68,13 @@ This is a set of templates for each requirement type.
     | FR-XXX-002   | [Name]       | Should Have | Draft  |
     | ...          | ...          | ...         | ...    |
 
-    ---
-
     ### FR-XXX-001: [feature name]
 
     [Full requirement template as shown below]
 
-    ---
-
     ### FR-XXX-002: [feature name]
 
     [Full requirement template as shown below]
-
-    ---
 
     ## Cross-feature considerations
 
@@ -96,23 +90,17 @@ This is a set of templates for each requirement type.
 
     [Any specific consistency needs]
 
-    ---
-
     ## Business constraints impact
 
     ### BC-XXX [constraint name]
 
     [Any specific explanation on how the constraint affects this bounded context]
 
-    ---
-
     ## Success metrics alignment
 
     ### BR-XXX: [requirement name(s)] _this can be more than one BR at a time if BRs are related_
 
     [Metrics from business requirements that affect this bounded context]
-
-    ---
 
     ## Traceability matrix
 
@@ -174,18 +162,16 @@ This is a set of templates for each requirement type.
     - [US-XXX-000-001]: [link to user story]
     - [...]
 
-    ---
-
     #### Scenarios
 
     ##### Scenario 1: [scenario name] ("happy path")
 
-    :::note gherkin
+    \`\`\`gherkin
     Given [initial context and preconditions]\
     When [action taken by user or system]\
     Then [expected outcome]\
     And [additional expected outcomes]
-    :::
+    \`\`\`
 
     ##### Scenario 2: [Alternative scenario name]
 
@@ -194,8 +180,6 @@ This is a set of templates for each requirement type.
     ##### Scenario 3: [error/edge case scenario name]
 
     [Similar structure to Scenario 1]
-
-    ---
 
     **Technical notes:**
 
@@ -213,7 +197,7 @@ This is a set of templates for each requirement type.
 
 <details>
     <summary>Non-functional requirement template</summary>
-    ```markddown
+    ```markdown
     ### NFR-XXX: [requirement title]
 
     **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
