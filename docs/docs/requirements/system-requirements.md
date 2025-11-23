@@ -128,7 +128,7 @@ The following browser features are required for the application to function:
 
 #### Database specifications
 
-| Enviroment  | Storage            | Connections    | Additional                              |
+| Environment | Storage            | Connections    | Additional                              |
 |-------------|--------------------|----------------|-----------------------------------------|
 | Development | 1 GB               | 10 concurrent  | -                                       |
 | Production  | 10 GB (expandable) | 100 concurrent | Automated backups, optional replication |
@@ -266,7 +266,7 @@ The following cloud platforms are supported for deployment:
 :::tip Free Tier Options
 
 - **Vercel/Netlify:** Frontend hosting (free)
-- **Railway/Render:** Backend + Database (free tier available)
+- **Railway/Render:** Backend and Database (free tier available)
 - **Supabase:** PostgreSQL database (free tier)
   
 :::
@@ -452,7 +452,7 @@ The following environment variables must be configured:
 ### Horizontal scaling support
 
 - **Frontend:** Stateless, scales infinitely via CDN
-- **Backend:** Stateless design, can add instances
+- **Backend:** Stateless design, instances can be added
 - **Database:** Connection pooling, read replicas (optional)
 
 ### Load balancing

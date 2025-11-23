@@ -80,7 +80,7 @@ all screen sizes.
 
 - Mobile-first design approach
 - Breakpoints: mobile (320px-767px), tablet (768px-1023px), desktop (1024px+)
-- Touch-friendly on mobile (44px minimum touch targets)
+- Touch-friendly on mobile (44 px minimum touch targets)
 - Readable text sizes on all devices (minimum 16px base)
 - No horizontal scrolling on any viewport
 - Images and media scale appropriately
