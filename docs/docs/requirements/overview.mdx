@@ -99,8 +99,6 @@ Additionally, we may expand the naming for certain types of requirements.
 
 Each piece of the functional requirements documentation and each feature will be in one of these statuses:
 
-
-
 import StatusLabel from "../../src/components/StatusLabel";
 
 | Name                             | Description                                                                   |
@@ -121,10 +119,12 @@ and another feature in the <StatusLabel status="Released"/> status, the "Dashboa
 
 ### Priority levels
 
-Each feature will have one of these priorities, according to the MoSCoW Prioritization Method.
-
-// noinspection ES6UnusedImports
 import PriorityLabel from "../../src/components/PriorityLabel";
+
+Each feature will have one of these priorities, according to the MoSCoW Prioritization Method, from
+<PriorityLabel priority="Must Have"/> to <PriorityLabel priority="Won't Have"/>.
+
+Here is a description of each priority.
 
 | Name                                    | Description                                    |
 |-----------------------------------------|------------------------------------------------|
