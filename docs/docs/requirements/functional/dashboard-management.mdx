@@ -1,15 +1,17 @@
 ---
-sidebar_position: 2
+sidebar_position: 2.0
 title: Dashboard Management
 status: Draft
 lastUpdated: 2025-11-15
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+// noinspection ES6UnusedImports
 import PriorityLabel from "../../../src/components/PriorityLabel";
+// noinspection ES6UnusedImports
 import StatusLabel from "../../../src/components/StatusLabel";
 
-<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+<RequirementMetadata/>
 
 # Dashboard management
 
@@ -68,7 +70,7 @@ MVP limits users to a single dashboard).
 - A dashboard must belong to exactly one user
 - Dashboard must have a unique identifier (DashboardId)
 - Dashboard names (if provided) must be non-empty and length-bounded
-- Default layout is a single-column grid
+- The default layout is a single-column grid
 
 **User roles:**
 
@@ -92,18 +94,16 @@ Delivery)
 - Dashboard is associated with the authenticated user
 - DashboardCreated event is published with userId and dashboardId
 - Default empty layout is initialized
-- User can view their newly created dashboard
+- Users can view their newly created dashboard
 
 **User stories:**
 
-- US-DAS-001-001: Create default dashboard on registration
+- US-DAS-001-001: Create the default dashboard on registration
 - US-DAS-001-002: View empty dashboard after creation
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create the default dashboard on user registration (happy path)
+##### Scenario 1: Create the default dashboard on user registration ("happy path")
 
 ```gherkin
 Given a new user has just registered and been authenticated
@@ -141,11 +141,11 @@ And no DashboardCreated event is published
 - Dashboard creation is typically triggered by the UserRegistered event
 - Consider using eventual consistency for the dashboard creation process
 - Ensure transactional consistency within the Dashboard aggregate
-- Dashboard IDs should be generated using a strongly-typed identifier pattern
+- Dashboard IDs should be generated using a strongly typed identifier pattern
 
 **Open questions:**
 
-- Should users be able to name their dashboards in the MVP, or defer to future iterations?
+- Should users be able to name their dashboards in the MVP or defer to future iterations?
 - Should there be a maximum number of dashboards per user?
 
 ---
@@ -156,7 +156,7 @@ And no DashboardCreated event is published
 
 **Description:**
 Users must be able to add and remove widget instances from their dashboard. Widget instances represent concrete
-placements of widget types (e.g., "Weather widget for Madrid", "Bookmarks widget showing Work folder").
+placements of widget types (e.g., "Weather widget for Madrid," "Bookmarks widget showing Work folder").
 
 **Preconditions:**
 
@@ -208,15 +208,13 @@ Delivery)
 
 **User stories:**
 
-- US-DAS-002-001: Add a widget to dashboard
-- US-DAS-002-002: Remove a widget from dashboard
+- US-DAS-002-001: Add a widget to the dashboard
+- US-DAS-002-002: Remove a widget from the dashboard
 - US-DAS-002-003: Add multiple instances of the same widget type
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Add the first widget to a dashboard (happy path)
+##### Scenario 1: Add the first widget to a dashboard ("happy path")
 
 ```gherkin
 Given a user has an empty dashboard
@@ -308,7 +306,7 @@ persisting these configurations.
 - Widget instance configuration is updated
 - Configuration is persisted
 - WidgetConfigurationChanged event is published
-- Widget is refreshed with new configuration
+- Widget is refreshed with a new configuration
 
 **Business rules:**
 
@@ -323,8 +321,8 @@ persisting these configurations.
 
 **Related to:**
 
-- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement),  BR-003 (Technical
-Excellence), BR-005 (User Value Delivery)
+- Business Requirements: BR-001 (Portfolio Enhancement), BR-002 (User Productivity Enhancement), BR-003 (Technical
+  Excellence), BR-005 (User Value Delivery)
 - Domain Aggregates: WidgetInstance
 - Domain Events: WidgetConfigurationChanged
 
@@ -341,7 +339,7 @@ Excellence), BR-005 (User Value Delivery)
 - Invalid configurations show appropriate error messages
 - Valid configuration changes are persisted immediately
 - WidgetConfigurationChanged event is published
-- Widget instance updates to reflect new configuration
+- Widget instance updates to reflect a new configuration
 - Configuration changes are reflected in real-time
 
 **User stories:**
@@ -350,11 +348,9 @@ Excellence), BR-005 (User Value Delivery)
 - US-DAS-003-002: Configure bookmarks widget folder
 - US-DAS-003-003: Validate invalid configuration
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Configure weather widget location (happy path)
+##### Scenario 1: Configure weather widget location ("happy path")
 
 ```gherkin
 Given a user has a Weather widget on their dashboard
@@ -453,10 +449,10 @@ responsive behavior. Layout defines the grid/region structure, ordering rules, a
 
 - Layout positions cannot overlap
 - Ordering is total within a region (each widget has a defined position)
-- Default layout is a single-column grid
+- The default layout is a single-column grid
 - Layout must be responsive (adapt to screen sizes)
 - Minimum widget size constraints must be enforced
-- Maximum number of widgets per row may be limited
+- The maximum number of widgets per row may be limited
 
 **User roles:**
 
@@ -489,11 +485,9 @@ Delivery)
 - US-DAS-004-002: Dashboard layout adapts to mobile screen
 - US-DAS-004-003: Layout prevents widget overlap
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Automatic layout calculation (happy path)
+##### Scenario 1: Automatic layout calculation ("happy path")
 
 ```gherkin
 Given a user has a dashboard with three widgets
@@ -555,8 +549,8 @@ And the transition is smooth
 - Consider using CSS Grid or Flexbox for responsive layout
 - Layout algorithm should be deterministic and stable
 - Implement layout caching to minimize recalculations
-- Consider grid-based layout system (12-column grid or similar)
-- Ensure layout works well with browser zoom levels
+- Consider a grid-based layout system (12-column grid or similar)
+- Ensure the layout works well with browser zoom levels
 
 **Open questions:**
 
@@ -618,8 +612,8 @@ Delivery)
 - Widget is repositioned when dropped in a valid location
 - Other widgets shift to accommodate the moved widget
 - WidgetReordered event is published with old and new positions
-- New order is persisted immediately
-- Drag operation can be cancelled (ESC key or drag outside)
+- The new order persisted immediately
+- Drag operation can be canceled (ESC key or drag outside)
 - Touch devices support drag-and-drop
 
 **User stories:**
@@ -628,11 +622,9 @@ Delivery)
 - US-DAS-005-002: Cancel drag operation
 - US-DAS-005-003: Reorder widgets on touch device
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Reorder widgets by drag-and-drop (happy path)
+##### Scenario 1: Reorder widgets by drag-and-drop ("happy path")
 
 ```gherkin
 Given a user has a dashboard with four widgets (A, B, C, D) in that order
@@ -677,7 +669,7 @@ And no reordering occurs
 And no WidgetReordered event is published
 ```
 
-##### Scenario 5: Reorder widgets on touch device
+##### Scenario 5: Reorder widgets on a touch device
 
 ```gherkin
 Given a user is viewing their dashboard on a touch device
@@ -710,8 +702,8 @@ And the same reordering logic applies as desktop
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-Users should be able to create and switch between multiple personalization profiles (e.g., "Work", "Home", "Travel").
-Each profile contains a different dashboard configuration including widgets, layout, and settings.
+Users should be able to create and switch between multiple personalization profiles (e.g., "Work," "Home," "Travel").
+Each profile contains a different dashboard configuration, including widgets, layout, and settings.
 
 **Preconditions:**
 
@@ -720,8 +712,8 @@ Each profile contains a different dashboard configuration including widgets, lay
 
 **Postconditions:**
 
-- New profile is created with associated dashboard
-- User can switch between profiles
+- A new profile is created with the associated dashboard
+- Users can switch between profiles
 - Active profile is persisted
 - ProfileSwitched event is published
 
@@ -752,14 +744,14 @@ Maintainability), BR-005 (User Value Delivery)
 **Acceptance criteria:**
 
 - User can create a new profile with a unique name
-- User can switch between existing profiles
+- Users can switch between existing profiles
 - Active profile is indicated in the UI
 - Switching profiles loads the associated dashboard configuration
 - ProfileSwitched event is published
 - Profile names are validated for uniqueness
 - User can rename profiles
 - User can delete non-default profiles
-- Last active profile is restored on login
+- The last active profile is restored on login
 
 **User stories:**
 
@@ -768,11 +760,9 @@ Maintainability), BR-005 (User Value Delivery)
 - US-DAS-006-003: Rename a profile
 - US-DAS-006-004: Delete a profile
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create a new profile (happy path)
+##### Scenario 1: Create a new profile ("happy path")
 
 ```gherkin
 Given a user is viewing their default dashboard
@@ -799,7 +789,7 @@ And widgets and layout from "Work" profile are displayed
 And the profile selector shows "Work" as active
 ```
 
-##### Scenario 3: Create a profile with duplicate name
+##### Scenario 3: Create a profile with a duplicate name
 
 ```gherkin
 Given a user already has a profile named "Work"
@@ -871,7 +861,7 @@ primary dashboard in the MVP, the capability is needed for cleanup operations an
 **Preconditions:**
 
 - Dashboard must exist
-- Dashboard must not be the user's only/default dashboard (in profile scenario)
+- Dashboard must not be the user's only/default dashboard (in a profile scenario)
 - User must have appropriate permissions
 
 **Postconditions:**
@@ -911,7 +901,7 @@ Delivery)
 - All widget instances are removed
 - Layout configuration is removed
 - DashboardDeleted event is published
-- User is redirected to another dashboard (if multiple exist)
+- User is redirected to another dashboard (if multiple dashboards exist)
 - The default dashboard cannot be deleted if it's the only one
 - Deletion is atomic (transaction boundary)
 
@@ -920,9 +910,7 @@ Delivery)
 - US-DAS-007-001: Delete a dashboard (profile scenario)
 - US-DAS-007-002: Prevent deletion of only dashboard
 
----
-
-#### Scenarios
+### Scenarios
 
 ##### Scenario 1: Delete dashboard (happy path — multiple profiles)
 
@@ -980,7 +968,7 @@ And all widget instances are cascade deleted
 
 **Open questions:**
 
-- Should deleted dashboards be recoverable (soft delete) instead of permanent deletion?
+- Should the deleted dashboards be recoverable (soft delete) instead of permanent deletion?
 - Should there be a "trash" or "archive" feature for dashboards?
 
 ---
@@ -1010,7 +998,7 @@ configurations, and layout. This ensures users can resume their personalized exp
 - Widget configurations must validate before persistence
 - Concurrent updates must be handled safely
 - Persistence must be transactional (ACID properties)
-- Failed persistence must not corrupt dashboard state
+- Failed persistence must not corrupt the dashboard state
 
 **User roles:**
 
@@ -1046,11 +1034,9 @@ Excellence), BR-005 (User Value Delivery)
 - US-DAS-008-001: Resume dashboard across sessions
 - US-DAS-008-002: Handle concurrent dashboard updates
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Persist dashboard after widget addition (happy path)
+##### Scenario 1: Persist dashboard after widget addition ("happy path")
 
 ```gherkin
 Given a user has a dashboard loaded  
@@ -1166,17 +1152,17 @@ Dashboard Management must operate within zero-cost infrastructure constraints:
 
 - **Widget Registry:** Must use in-memory or file-based storage (no external registry service)
 - **Event Publishing:** Use local event bus initially; design for future migration to message queue
-- **Persistence:** Use free-tier database (PostgreSQL via Railway, Supabase, or local)
+- **Persistence:** Use a free-tier database (PostgreSQL via Railway, Supabase, or local)
 - **No paid widget marketplace or CDN** for widget assets
 
 ### BC-002: Timeline
 
-Dashboard Management is on the critical path for MVP (3-6 months):
+Dashboard Management is on the critical path for MVP (3–6 months):
 
 - **Must Have features** (FR-DAS-001, 002, 003, 004, 005, 007, 008) are required for MVP
 - **Should Have feature** (FR-DAS-006 Personalization Profiles) may be deferred post-MVP
 - Prioritize basic functionality over advanced features
-- Profile support (FR-DAS-006) adds complexity; consider MVP with single dashboard only
+- Profile support (FR-DAS-006) adds complexity; consider MVP with a single dashboard only
 
 ### BC-003: Resources
 

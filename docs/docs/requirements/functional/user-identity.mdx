@@ -1,16 +1,17 @@
 ---
-sidebar_position: 7
+sidebar_position: 7.0
 title: User identity
 status: Draft
 lastUpdated: 2025-11-15
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
-
+// noinspection ES6UnusedImports
 import PriorityLabel from "../../../src/components/PriorityLabel";
+// noinspection ES6UnusedImports
 import StatusLabel from "../../../src/components/StatusLabel";
 
-<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+<RequirementMetadata/>
 
 # User identity
 
@@ -65,9 +66,10 @@ Registration creates a user identity that serves as the foundation for all perso
 **Business rules:**
 
 - Username must be unique across the system
-- Username must be 3-30 characters, alphanumeric plus underscore/hyphen
+- Username must be 3–30 characters, alphanumeric plus underscore/hyphen
 - Email must be valid format and unique
-- Password must meet complexity requirements (min 8 characters, at least one uppercase, one lowercase, one digit)
+- Password must meet complexity requirements (min eight characters, at least one uppercase, one lowercase, one
+  digit)
 - Registration must be atomic (user creation and credential storage)
 - User account is active immediately upon registration (no email verification in MVP)
 
@@ -105,11 +107,9 @@ Registration creates a user identity that serves as the foundation for all perso
 - US-UID-001-003: Reject invalid password
 - US-UID-001-004: Auto-login after registration
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Register with valid credentials (happy path)
+##### Scenario 1: Register with valid credentials ("happy path")
 
 ```gherkin
 Given a user is on the registration page
@@ -251,12 +251,12 @@ Successful authentication establishes a session that grants access to personaliz
 
 **Business rules:**
 
-- Users can log in with username or email (both accepted)
+- Users can log in with a username or an email (both accepted)
 - Password must match stored hashed credential
 - Failed login attempts are logged for security monitoring
 - Account lockout after N failed attempts (e.g., 5) to prevent brute force
-- Successful login resets failed attempt counter
-- Session token is generated using secure random algorithm
+- Successful login resets the failed attempt counter
+- Session token is generated using a secure random algorithm
 
 **User roles:**
 
@@ -278,12 +278,12 @@ Successful authentication establishes a session that grants access to personaliz
 - User can log in with username and password
 - User can log in with email and password
 - Password is verified against hashed credential
-- Successful login creates session and returns token
+- Successful login creates a session and returns a token
 - UserLoggedIn event is published with userId
-- Failed login shows generic error (security best practice)
+- Failed login shows a generic error (security best practice)
 - Multiple failed attempts trigger account lockout
-- Locked account shows appropriate message
-- Session token is returned in secure HTTP-only cookie or response body
+- Locked account shows an appropriate message
+- Session token is returned in a secure HTTP-only cookie or response body
 
 **User stories:**
 
@@ -292,11 +292,9 @@ Successful authentication establishes a session that grants access to personaliz
 - US-UID-002-003: Reject invalid password
 - US-UID-002-004: Account lockout after failed attempts
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Login with valid credentials (happy path)
+##### Scenario 1: Login with valid credentials ("happy path")
 
 ```gherkin
 Given a user "john_doe" is registered
@@ -373,7 +371,7 @@ And the failed attempt counter is reset to 0
 And the user can continue normally
 ```
 
-##### Scenario 7: Login attempt during lockout period
+##### Scenario 7: Login attempt during the lockout period
 
 ```gherkin
 Given a user "john_doe" is locked out due to failed attempts
@@ -384,7 +382,7 @@ And an error message "Account temporarily locked" is displayed
 And no session is created
 ```
 
-##### Scenario 8: Login after lockout period expires
+##### Scenario 8: Login after the lockout period expires
 
 ```gherkin
 Given a user "john_doe" was locked out
@@ -403,13 +401,13 @@ And the user is logged in normally
 - Implement rate limiting on login endpoint (e.g., max 10 attempts per minute per IP)
 - Store session tokens securely (HTTP-only, Secure, SameSite cookies)
 - Use JWT or opaque tokens for session management
-- Log all login attempts (success and failure) with IP address and timestamp
+- Log all login attempts (success and failure) with an IP address and timestamp
 - Implement account lockout with exponential backoff (future enhancement)
 - Consider implementing "Remember Me" functionality with long-lived refresh tokens (future)
 
 **Open questions:**
 
-- Should there be multi-factor authentication (MFA) support?
+- Should there be multifactor authentication (MFA) support?
 - Should there be device tracking/recognition?
 
 ---
@@ -463,7 +461,7 @@ devices/browsers) and can log out to terminate sessions.
 - Session token is required for accessing protected resources
 - Session is validated on each request
 - Expired sessions are rejected with 401 Unauthorized
-- User can log out to terminate session
+- User can log out to terminate the session
 - UserLoggedOut event is published on logout
 - Multiple concurrent sessions are supported
 - Session cleanup job removes expired sessions
@@ -473,14 +471,12 @@ devices/browsers) and can log out to terminate sessions.
 
 - US-UID-003-001: Create session on login
 - US-UID-003-002: Validate session on protected request
-- US-UID-003-003: Logout and terminate session
+- US-UID-003-003: Logout and terminate the session
 - US-UID-003-004: Session expires after inactivity
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create session on login (happy path)
+##### Scenario 1: Create a session on login ("happy path")
 
 ```gherkin
 Given a user successfully logs in
@@ -529,7 +525,7 @@ And 401 Unauthorized is returned
 And the session is marked as expired
 ```
 
-##### Scenario 5: Logout and terminate session
+##### Scenario 5: Logout and terminate the session
 
 ```gherkin
 Given a user is logged in with active session
@@ -599,12 +595,12 @@ And the session remains active
 
 **Description:**
 Users should be able to view and update basic profile information including display name, email, and username. Profile
-management provides users control over their identity within the system.
+management provides users with control over their identity within the system.
 
 **Preconditions:**
 
 - User must be authenticated
-- User must have active session
+- User must have an active session
 
 **Postconditions:**
 
@@ -614,7 +610,7 @@ management provides users control over their identity within the system.
 
 **Business rules:**
 
-- Display name is optional, length-bounded (1-100 characters)
+- The display name is optional, length-bounded (1–100 characters)
 - Email must be unique and valid format
 - Username changes must maintain uniqueness
 - Password changes require current password verification
@@ -637,10 +633,10 @@ management provides users control over their identity within the system.
 
 **Acceptance criteria:**
 
-- User can view current profile information
-- User can update display name
-- User can update email (with uniqueness validation)
-- User can update username (with uniqueness validation)
+- Users can view current profile information
+- Users can update a display name
+- Users can update email (with uniqueness validation)
+- Users can update username (with uniqueness validation)
 - Changes are validated before saving
 - Profile updates are persisted
 - UserUpdated event is published
@@ -653,11 +649,9 @@ management provides users control over their identity within the system.
 - US-UID-004-003: Update email
 - US-UID-004-004: Update username
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: View user profile (happy path)
+##### Scenario 1: View user profile ("happy path")
 
 ```gherkin
 Given a user is authenticated
@@ -740,8 +734,8 @@ And no UserUpdated event is published
 
 **Open questions:**
 
-- Should email changes require verification of new email?
-- Should username changes be restricted or have cooldown period?
+- Should email changes require verification of a new email?
+- Should username changes be restricted or have a cooldown period?
 
 ---
 
@@ -750,13 +744,13 @@ And no UserUpdated event is published
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**
-Users should be able to change their password by providing current password and new password. Password changes enhance
-security and allow users to update compromised credentials.
+Users should be able to change their password by providing the current password and a new password. Password changes
+enhance security and allow users to update compromised credentials.
 
 **Preconditions:**
 
 - User must be authenticated
-- User must have active session
+- User must have an active session
 
 **Postconditions:**
 
@@ -768,8 +762,8 @@ security and allow users to update compromised credentials.
 **Business rules:**
 
 - Current password must be verified before change
-- New password must meet complexity requirements
-- New password must be different from current password
+- The new password must meet complexity requirements
+- The new password must be different from the current password
 - Password change invalidates all other sessions (optional)
 - Password changes are logged for security audit
 
@@ -790,14 +784,14 @@ security and allow users to update compromised credentials.
 
 **Acceptance criteria:**
 
-- User can access password change form
+- User can access a password change form
 - Current password is required and verified
-- New password must meet complexity requirements
-- New password cannot be same as current password
+- The new password must meet complexity requirements
+- The new password must be different from the current password
 - Password change succeeds with valid inputs
 - Password hash is updated in storage
 - PasswordChanged event is published
-- User is notified of successful password change
+- User is notified of a successful password change
 - Other sessions are invalidated (optional)
 
 **User stories:**
@@ -807,11 +801,9 @@ security and allow users to update compromised credentials.
 - US-UID-005-003: Reject weak new password
 - US-UID-005-004: Other sessions invalidated after password change
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Change password successfully (happy path)
+##### Scenario 1: Change password successfully ("happy path")
 
 ```gherkin
 Given a user is authenticated
@@ -892,17 +884,17 @@ And must re-authenticate with new password
 
 **Technical notes:**
 
-- Use same password hashing algorithm as registration (bcrypt/Argon2)
+- Use the same password hashing algorithm as registration (bcrypt/Argon2)
 - Implement password history to prevent reuse of recent passwords (future)
 - Log password changes with timestamp and IP address
-- Consider sending email notification of password change
+- Consider sending email notification of a password change
 - Implement rate limiting on password change endpoint
 - Current password verification should use constant-time comparison
 
 **Open questions:**
 
 - Should there be a password change cooldown period?
-- Should password history be enforced (e.g., cannot reuse last 5 passwords)?
+- Should password history be enforced (e.g., cannot reuse any of the last five passwords)?
 
 ---
 
@@ -912,7 +904,7 @@ And must re-authenticate with new password
 
 **Description:**
 Users should be able to delete their account permanently. Account deletion removes all user data and is irreversible.
-This feature provides users control over their data and complies with privacy regulations.
+This feature provides users with control over their data and complies with privacy regulations.
 
 **Preconditions:**
 
@@ -933,7 +925,7 @@ This feature provides users control over their data and complies with privacy re
 - Deletion is permanent and irreversible (hard delete in MVP)
 - UserDeleted event triggers cleanup in all bounded contexts
 - All user-related data is deleted (cascade)
-- Deleted usernames can be registered again after grace period (optional)
+- Deleted usernames can be registered again after a grace period (optional)
 - Account deletion is logged for audit
 
 **User roles:**
@@ -953,28 +945,26 @@ This feature provides users control over their data and complies with privacy re
 
 **Acceptance criteria:**
 
-- User can access account deletion option
+- User can access the account deletion option
 - Deletion requires password confirmation
 - Confirmation dialog warns of permanent deletion
 - User account is deleted on confirmation
 - UserDeleted event is published with userId
 - User is logged out immediately
 - All sessions are invalidated
-- User cannot log in with deleted account
+- User cannot log in with a deleted account
 - Deletion is logged for audit
 
 **User stories:**
 
-- US-UID-006-001: Delete account successfully
-- US-UID-006-002: Reject deletion with incorrect password
+- US-UID-006-001: Delete an account successfully
+- US-UID-006-002: Reject deletion with an incorrect password
 - US-UID-006-003: Cancel account deletion
 - US-UID-006-004: Cannot log in after deletion
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Delete account successfully (happy path)
+##### Scenario 1: Delete an account successfully ("happy path")
 
 ```gherkin
 Given a user is authenticated
@@ -992,7 +982,7 @@ And all sessions are invalidated
 And the user is redirected to goodbye page
 ```
 
-##### Scenario 2: Reject deletion with incorrect password
+##### Scenario 2: Reject deletion with an incorrect password
 
 ```gherkin
 Given a user is attempting to delete account
@@ -1056,17 +1046,17 @@ And the log is retained for audit purposes
 
 **Technical notes:**
 
-- Implement soft delete with grace period before hard delete (future enhancement)
+- Implement soft delete with a grace period before hard delete (future enhancement)
 - Use distributed transactions or saga pattern for cross-context cleanup
-- Ensure UserDeleted event is published reliably (transactional outbox pattern)
+- Ensure the UserDeleted event is published reliably (transactional outbox pattern)
 - Log account deletions with sufficient detail for audit
-- Consider implementing account deactivation as alternative to deletion (future)
+- Consider implementing account deactivation as an alternative to deletion (future)
 - Ensure GDPR/data privacy compliance for deletion process
 
 **Open questions:**
 
 - Should there be a grace period (e.g., 30 days) before permanent deletion?
-- Should deleted usernames be reserved to prevent impersonation?
+- Should the deleted usernames be reserved to prevent impersonation?
 
 ---
 
@@ -1091,9 +1081,9 @@ password complexity, account lockout, session security, and audit logging.
 
 **Business rules:**
 
-- Password complexity: min 8 characters, uppercase, lowercase, digit
-- Account lockout: 5 failed attempts, 15-minute lockout
-- Session timeout: 30 minutes inactivity, 24 hours absolute
+- Password complexity: min eight characters, uppercase, lowercase, digit
+- Account lockout: five failed attempts, 15-minute lockout
+- Session timeout: 30-minute inactivity, 24 hours absolute
 - All security events are logged (login, logout, password change, account deletion)
 - Passwords are hashed using bcrypt with cost factor 12
 - Session tokens are securely random (min 32 bytes entropy)
@@ -1117,7 +1107,7 @@ password complexity, account lockout, session security, and audit logging.
 
 - Password complexity is enforced on registration and password change
 - Account lockout is triggered after failed login attempts
-- Sessions expire according to timeout policies
+- Sessions expire, according to timeout policies
 - All passwords are hashed with bcrypt
 - Session tokens are cryptographically secure
 - All security events are logged with context
@@ -1131,9 +1121,7 @@ password complexity, account lockout, session security, and audit logging.
 - US-UID-007-003: Enforce session timeout
 - US-UID-007-004: Audit security events
 
----
-
-#### Scenarios
+### Scenarios
 
 ##### Scenario 1: Enforce password complexity on registration
 
@@ -1230,17 +1218,17 @@ And policies are enforced according to configuration
 **Technical notes:**
 
 - Use Spring Security for policy enforcement
-- Implement custom password validator with configurable rules
+- Implement a custom password validator with configurable rules
 - Use bcrypt from Spring Security Crypto (BCryptPasswordEncoder)
 - Use SecureRandom for token generation
-- Store audit logs in dedicated table or logging system
+- Store audit logs in a dedicated table or logging system
 - Implement policy configuration via application.properties or environment variables
 - Consider implementing intrusion detection/prevention (future)
 
 **Open questions:**
 
 - Should security policies be user-configurable (e.g., longer session timeout)?
-- Should there be notification of suspicious activity (e.g., login from new location)?
+- Should there be notification of suspicious activity (e.g., login from a new location)?
 
 ---
 
@@ -1287,7 +1275,7 @@ User Identity must operate within zero-cost infrastructure constraints:
 
 ### BC-002: Timeline
 
-User Identity is on critical path for MVP (3-6 months):
+User Identity is on a critical path for MVP (3-6 months):
 
 - **Must Have features** (FR-UID-001, 002, 003, 007) required for MVP
 - **Should Have features** (FR-UID-004, 005, 006) can be deferred to post-MVP
@@ -1305,7 +1293,7 @@ Single-developer constraints affect User Identity:
 
 ### BC-004: Technology stack
 
-User Identity aligns with chosen stack:
+User Identity aligns with the chosen stack:
 
 - **Backend:** Spring Boot with Spring Security for authentication/authorization
 - **Password Hashing:** BCryptPasswordEncoder from Spring Security

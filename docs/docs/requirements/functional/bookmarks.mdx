@@ -1,15 +1,17 @@
 ---
-sidebar_position: 3
+sidebar_position: 3.0
 title: Bookmarks
 status: Draft
 lastUpdated: 2025-11-16
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+// noinspection ES6UnusedImports
 import PriorityLabel from "../../../src/components/PriorityLabel";
+// noinspection ES6UnusedImports
 import StatusLabel from "../../../src/components/StatusLabel";
 
-<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+<RequirementMetadata/>
 
 # Bookmarks
 
@@ -65,7 +67,7 @@ containers for both bookmarks and other folders (nested hierarchy), enabling fle
 
 - Each user has a root folder (automatically created on registration)
 - Folder names must be unique within the same parent folder
-- Folder names must be non-empty and length-bounded (1-100 characters)
+- Folder names must be non-empty and length-bounded (1–100 characters)
 - Folders can be nested (support for hierarchical structure)
 - Empty folders can be deleted directly
 - Non-empty folders require confirmation and cascade deletion of contents
@@ -90,7 +92,7 @@ containers for both bookmarks and other folders (nested hierarchy), enabling fle
 
 - User can create a new folder within any existing folder
 - Folder is assigned a unique FolderId
-- Folder name is validated for uniqueness within parent
+- Folder name is validated for uniqueness within its parent
 - FolderCreated event is published with folderId, name, and parentId
 - User can rename folders (except root)
 - Renamed folder maintains its position and child elements
@@ -107,11 +109,9 @@ containers for both bookmarks and other folders (nested hierarchy), enabling fle
 - US-BKM-001-003: Delete an empty folder
 - US-BKM-001-004: Delete a folder with contents (cascade)
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create a new folder (happy path)
+##### Scenario 1: Create a new folder ("happy path")
 
 ```gherkin
 Given a user is viewing their bookmarks
@@ -208,7 +208,7 @@ And the user's bookmark tree is initialized
 **Open questions:**
 
 - Should there be a maximum nesting depth?
-- Should deleted folders be recoverable (trash/recycle bin)?
+- Should the deleted folders be recoverable (trash/recycle bin)?
 - Should folder sharing between users be supported (future)?
 
 ---
@@ -238,7 +238,7 @@ and belongs to exactly one folder.
 - Each bookmark must belong to exactly one folder
 - URLs must be valid and non-empty
 - URL format must be validated (http/https protocol)
-- Bookmark titles must be non-empty and length-bounded (1-200 characters)
+- Bookmark titles must be non-empty and length-bounded (1–200 characters)
 - Each bookmark has a unique BookmarkId
 - Favicon/icon is optional and can be auto-fetched or manually uploaded
 - Bookmarks can be moved between folders
@@ -261,11 +261,11 @@ and belongs to exactly one folder.
 **Acceptance criteria:**
 
 - User can create a bookmark with URL and title
-- URL is validated for proper format
+- URL is validated for a proper format
 - Bookmark is assigned a unique BookmarkId
 - Bookmark is placed in the specified folder
 - BookmarkCreated event is published
-- User can edit bookmark title and URL
+- User can edit the bookmark title and URL
 - URL validation is applied on edit
 - BookmarkUpdated event is published
 - User can delete bookmarks
@@ -280,11 +280,9 @@ and belongs to exactly one folder.
 - US-BKM-002-003: Delete a bookmark
 - US-BKM-002-004: Move a bookmark to another folder
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create new bookmark (happy path)
+##### Scenario 1: Create a new bookmark ("happy path")
 
 ```gherkin
 Given a user is viewing the "Work" folder
@@ -299,7 +297,7 @@ And a BookmarkCreated event is published
 And the bookmark appears in the folder
 ```
 
-##### Scenario 2: Create bookmark with invalid URL
+##### Scenario 2: Create a bookmark with invalid URL
 
 ```gherkin
 Given a user is creating a bookmark
@@ -347,7 +345,7 @@ And the bookmark appears in the "Work" folder
 And the bookmark is removed from the "Personal" folder
 ```
 
-##### Scenario 6: Create bookmark without title
+##### Scenario 6: Create a bookmark without a title
 
 ```gherkin
 Given a user is creating a bookmark
@@ -402,12 +400,12 @@ feature complements folder and bookmark management by enabling flexible reorgani
 **Preconditions:**
 
 - User must be authenticated
-- Bookmark must exist
+- The bookmark must exist
 - Target folder must exist
 
 **Postconditions:**
 
-- Bookmark is moved to target folder
+- The bookmark is moved to a target folder
 - Folder tree structure is maintained
 - BookmarkUpdated event is published
 
@@ -438,13 +436,13 @@ feature complements folder and bookmark management by enabling flexible reorgani
 **Acceptance criteria:**
 
 - User can move a bookmark to a different folder via drag-and-drop
-- User can move a bookmark via context menu "Move to..."
-- Target folder is validated before move
+- User can move a bookmark via a context menu "Move to..."
+- Target folder is validated before the move
 - Bookmark is removed from source folder
-- Bookmark is added to target folder
+- Bookmark is added to the target folder
 - BookmarkUpdated event is published with folder change
 - Bookmark order is preserved in source folder (remaining bookmarks shift)
-- Bookmark is appended to end of target folder
+- Bookmark is appended to the end of the target folder
 
 **User stories:**
 
@@ -452,11 +450,9 @@ feature complements folder and bookmark management by enabling flexible reorgani
 - US-BKM-003-002: Move bookmark via context menu
 - US-BKM-003-003: Move multiple bookmarks at once (future)
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Move bookmark via drag-and-drop (happy path)
+##### Scenario 1: Move bookmark via drag-and-drop ("happy path")
 
 ```gherkin
 Given a user has a bookmark in the "Personal" folder
@@ -489,7 +485,7 @@ And the bookmark remains in its original folder
 And no BookmarkUpdated event is published
 ```
 
-##### Scenario 4: Drop bookmark on invalid target
+##### Scenario 4: Drop bookmark on an invalid target
 
 ```gherkin
 Given a user is dragging a bookmark
@@ -522,7 +518,7 @@ And no BookmarkUpdated event is published
 
 **Description:**
 Users should be able to reorder bookmarks within a folder to prioritize frequently used links or organize by preference.
-Reordering provides stable, user-defined ordering independent of creation date or alphabetical sorting.
+Reordering provides stable, user-defined ordering independent of the creation date or alphabetical sorting.
 
 **Preconditions:**
 
@@ -565,20 +561,18 @@ Reordering provides stable, user-defined ordering independent of creation date o
 - Drop zones between bookmarks are indicated
 - Bookmark order is updated when dropped
 - Other bookmarks shift to accommodate the moved bookmark
-- BookmarkUpdated event is published with new position
+- BookmarkUpdated event is published with the new position
 - Order is persisted immediately
-- Reordering can be cancelled (ESC key or drop outside)
+- Reordering can be canceled (ESC key or drop outside)
 
 **User stories:**
 
 - US-BKM-004-001: Reorder bookmarks via drag-and-drop
 - US-BKM-004-002: Cancel reorder operation
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Reorder bookmarks via drag-and-drop (happy path)
+##### Scenario 1: Reorder bookmarks via drag-and-drop ("happy path")
 
 ```gherkin
 Given a folder contains bookmarks in order: A, B, C, D
@@ -638,7 +632,7 @@ bookmarks are highlighted and easily accessible regardless of their folder locat
 **Preconditions:**
 
 - User must be authenticated
-- Bookmark must exist
+- The bookmark must exist
 
 **Postconditions:**
 
@@ -651,7 +645,7 @@ bookmarks are highlighted and easily accessible regardless of their folder locat
 - Bookmarks can be pinned or unpinned independently of their folder location
 - Pinned bookmarks remain in their original folder
 - There may be a maximum number of pinned bookmarks (e.g., 12 for speed dial grid)
-- Pinning does not affect bookmark order within folder
+- Pinning does not affect bookmark order within the folder
 - Pinned bookmarks have a separate display area or visual indicator
 
 **User roles:**
@@ -671,14 +665,14 @@ bookmarks are highlighted and easily accessible regardless of their folder locat
 
 **Acceptance criteria:**
 
-- User can pin a bookmark via context menu or button
-- Pinned bookmark is marked with visual indicator
+- User can pin a bookmark via a context menu or button
+- Pinned bookmark is marked with a visual indicator
 - BookmarkPinned event is published
 - Pinned bookmark appears in speed dial
 - User can unpin a bookmark
 - BookmarkUnpinned event is published
 - Unpinned bookmark is removed from speed dial
-- Attempting to pin beyond maximum shows error message
+- Attempting to pin beyond a maximum shows an error message
 - Pinned status persists across sessions
 
 **User stories:**
@@ -687,11 +681,9 @@ bookmarks are highlighted and easily accessible regardless of their folder locat
 - US-BKM-005-002: Unpin a bookmark
 - US-BKM-005-003: View pinned bookmarks in speed dial
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Pin a bookmark (happy path)
+##### Scenario 1: Pin a bookmark ("happy path")
 
 ```gherkin
 Given a user has a bookmark in the "Work" folder
@@ -740,15 +732,15 @@ And the pin indicators are displayed
 
 **Technical notes:**
 
-- Store pin status as a boolean field on Bookmark entity
-- Consider storing pin order for consistent speed dial layout
+- Store pin status as a boolean field on the Bookmark entity
+- Consider storing pin order for a consistent speed dial layout
 - Implement maximum pin limit validation
 - Speed dial should update in real-time when bookmarks are pinned/unpinned
 - Consider implementing pin priority or custom ordering
 
 **Open questions:**
 
-- Should pinned bookmarks have a custom order in speed dial?
+- Should the pinned bookmarks have a custom order in speed dial?
 - Should the maximum number of pins be configurable?
 
 ---
@@ -759,7 +751,7 @@ And the pin indicators are displayed
 
 **Description:**
 Users should be able to search their bookmarks by title, URL, or folder name to quickly locate specific links. Search
-provides fast access without manual navigation through folder hierarchy.
+provides fast access without manual navigation through the folder hierarchy.
 
 **Preconditions:**
 
@@ -769,8 +761,8 @@ provides fast access without manual navigation through folder hierarchy.
 **Postconditions:**
 
 - Search results are displayed
-- Results are ranked by relevance
-- Search can be cleared to return to folder view
+- Relevance ranks results
+- Search can be cleared to return to the folder view
 
 **Business rules:**
 
@@ -798,11 +790,11 @@ provides fast access without manual navigation through folder hierarchy.
 
 **Acceptance criteria:**
 
-- User can enter search query in search field
+- User can enter a search query in a search field
 - Search results update in real-time as user types
 - Results show matching bookmarks with title and URL
 - Matching text is highlighted in results
-- Results show folder path for context
+- Results show the folder path for context
 - Clicking a result opens the bookmark
 - Search can be cleared to return to normal view
 - Empty search shows no results or all bookmarks
@@ -813,11 +805,9 @@ provides fast access without manual navigation through folder hierarchy.
 - US-BKM-006-002: Search bookmarks by URL
 - US-BKM-006-003: Clear search
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Search bookmarks by title (happy path)
+##### Scenario 1: Search bookmarks by title ("happy path")
 
 ```gherkin
 Given a user has bookmarks with various titles
@@ -872,7 +862,7 @@ And no errors occur
 
 **Technical notes:**
 
-- Implement debouncing for search input (e.g., 300ms) to reduce query load
+- Implement debouncing for search input (e.g., 300 ms) to reduce the query load
 - Use full-text search or indexed search for performance
 - Consider implementing search result ranking (exact match > starts with > contains)
 - Highlight matching text using markup or CSS
@@ -897,7 +887,7 @@ custom icons. Icons enhance visual recognition and improve user experience.
 
 **Preconditions:**
 
-- Bookmark must exist
+- The bookmark must exist
 - For auto-fetch: URL must be valid and accessible
 
 **Postconditions:**
@@ -933,15 +923,15 @@ custom icons. Icons enhance visual recognition and improve user experience.
 
 **Acceptance criteria:**
 
-- Favicon is automatically fetched when bookmark is created
-- Fetching occurs in background (non-blocking)
-- Default icon is displayed during fetch
+- Favicon is automatically fetched when the bookmark is created
+- Fetching occurs in the background (non-blocking)
+- The default icon is displayed during fetch
 - Fetched favicon replaces default when available
 - Failed fetches retain default icon
-- User can upload custom icon via bookmark settings
+- Users can upload custom icon via bookmark settings
 - Uploaded icon replaces auto-fetched icon
 - Icon file size and format are validated
-- Icons are cached and reused for same domain
+- Icons are cached and reused for the same domain
 
 **User stories:**
 
@@ -949,11 +939,9 @@ custom icons. Icons enhance visual recognition and improve user experience.
 - US-BKM-007-002: Upload custom icon
 - US-BKM-007-003: Revert to auto-fetched icon
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Auto-fetch favicon on bookmark creation (happy path)
+##### Scenario 1: Auto-fetch favicon on bookmark creation ("happy path")
 
 ```gherkin
 Given a user creates a bookmark with URL "https://github.com"
@@ -1043,7 +1031,7 @@ Chrome-like new tab experience with favorite bookmarks prominently displayed.
 
 **Postconditions:**
 
-- Speed dial displays pinned bookmarks in grid layout
+- Speed dial displays pinned bookmarks in a grid layout
 - Grid is responsive and adapts to screen size
 - Clicking a bookmark opens the URL
 
@@ -1051,10 +1039,10 @@ Chrome-like new tab experience with favorite bookmarks prominently displayed.
 
 - Speed dial shows only pinned bookmarks
 - Grid layout adapts to screen size (e.g., 4x3 on desktop, 3x4 on tablet, 2xN on mobile)
-- Maximum number of pinned bookmarks determines grid size
+- The maximum number of pinned bookmarks determines grid size
 - Empty speed dial shows instructions to pin bookmarks
-- Speed dial can be embedded in dashboard widget or standalone page
-- Bookmarks in speed dial show icon and title
+- Speed dial can be embedded in the dashboard widget or standalone page
+- Bookmarks in a speed dial show icon and title
 
 **User roles:**
 
@@ -1073,11 +1061,11 @@ Chrome-like new tab experience with favorite bookmarks prominently displayed.
 
 **Acceptance criteria:**
 
-- Speed dial displays pinned bookmarks in grid layout
+- Speed dial displays pinned bookmarks in a grid layout
 - Grid is responsive (adapts to screen size)
-- Each bookmark tile shows icon and title
-- Clicking a bookmark opens URL in new tab
-- Empty speed dial shows placeholder with instructions
+- Each bookmark tile shows an icon and the title
+- Clicking a bookmark opens the URL in a new tab
+- Empty speed dial shows a placeholder with instructions
 - Speed dial updates in real-time when bookmarks are pinned/unpinned
 - Grid layout is visually appealing and consistent
 - Hover effects provide visual feedback
@@ -1088,11 +1076,9 @@ Chrome-like new tab experience with favorite bookmarks prominently displayed.
 - US-BKM-008-002: Open bookmark from speed dial
 - US-BKM-008-003: View empty speed dial
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: View speed dial with pinned bookmarks (happy path)
+##### Scenario 1: View speed dial with pinned bookmarks ("happy path")
 
 ```gherkin
 Given a user has pinned 8 bookmarks
@@ -1146,7 +1132,7 @@ And the transition is smooth
 
 **Technical notes:**
 
-- Use CSS Grid or Flexbox for responsive layout
+- Use CSS Grid or Flexbox for a responsive layout
 - Implement lazy loading for bookmark icons
 - Use animations for hover effects and tile interactions
 - Consider implementing drag-and-drop for reordering speed dial items
@@ -1165,18 +1151,18 @@ And the transition is smooth
 **Priority:** <PriorityLabel priority="Could Have"/>
 
 **Description:**
-Users could have the ability to import bookmarks from other browsers or files and export their bookmarks for backup or
-migration. This feature enhances portability and reduces migration friction.
+Users could be able to import bookmarks from other browsers or files and export their bookmarks for backup or migration.
+This feature enhances portability and reduces migration friction.
 
 **Preconditions:**
 
 - User must be authenticated
-- For import: valid bookmark file must be provided
+- For import: a valid bookmark file must be provided
 - For export: at least one bookmark must exist
 
 **Postconditions:**
 
-- Imported bookmarks are added to folder hierarchy
+- Imported bookmarks are added to the folder hierarchy
 - Exported file contains all bookmarks in standard format
 - Import/export operations are logged
 
@@ -1207,13 +1193,13 @@ migration. This feature enhances portability and reduces migration friction.
 
 **Acceptance criteria:**
 
-- User can upload bookmark file (HTML or JSON)
+- Users can upload a bookmark file (HTML or JSON)
 - File format is validated
-- Import preview shows number of bookmarks and folders
-- User can choose to skip duplicates or import all
+- Import preview shows the number of bookmarks and folders
+- Users can choose to skip duplicates or import all
 - Import is transactional (fails entirely if errors occur)
 - BookmarkCreated and FolderCreated events are published for imports
-- User can export all bookmarks to HTML or JSON
+- Users can export all bookmarks to HTML or JSON
 - Export file is downloadable
 - Export includes folder hierarchy
 - Export file is named with timestamp
@@ -1224,11 +1210,9 @@ migration. This feature enhances portability and reduces migration friction.
 - US-BKM-009-002: Export bookmarks to file
 - US-BKM-009-003: Handle duplicate bookmarks on import
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Import bookmarks from HTML file (happy path)
+##### Scenario 1: Import bookmarks from an HTML file ("happy path")
 
 ```gherkin
 Given a user has a bookmark HTML file from another browser
@@ -1310,11 +1294,11 @@ And an error message is displayed with details
 - **Pin Management ↔ Speed Dial:** Pinning bookmarks updates speed dial; unpinning removes from speed dial
 - **Bookmark Organization ↔ Folder Management:** Moving bookmarks between folders updates folder tree structure
 - **Search ↔ All Features:** Search queries across all bookmarks and folders regardless of organization
-- **Import/Export ↔ All Features:** Import creates folders and bookmarks; export includes all organizational structure
+- **Import/Export ↔ All Features:** Import creates folders and bookmarks; export includes all organizational structures
 
 ### Shared business rules
 
-1. **Folder Tree Integrity:** All operations must maintain valid parent-child relationships in folder hierarchy
+1. **Folder Tree Integrity:** All operations must maintain valid parent-child relationships in a folder hierarchy
 2. **Bookmark Ownership:** Every bookmark must belong to exactly one folder at all times
 3. **URL Validation:** All bookmark URLs must be validated for proper format (http/https protocol)
 4. **Unique Identifiers:** All folders and bookmarks must have unique IDs system-wide
@@ -1340,12 +1324,12 @@ Bookmarks management must operate within zero-cost infrastructure constraints:
 
 - **Favicon Fetching:** Use free favicon services or direct domain fetching (no paid CDN required)
 - **Icon Storage:** Use free-tier object storage (e.g., S3 free tier, Cloudflare R2) or local file system
-- **Search:** Use database full-text search capabilities (no Elasticsearch or paid search service)
+- **Search:** Use the database full-text search capabilities (no Elasticsearch or paid search service)
 - **Import/Export:** Server-side processing only (no external conversion services)
 
 ### BC-002: Timeline
 
-Bookmarks management is on critical path for MVP (3-6 months):
+Bookmarks management is on a critical path for MVP (3–6 months):
 
 - **Must Have features** (FR-BKM-001, 002, 003, 005, 008) required for MVP
 - **Should Have features** (FR-BKM-004, 006, 007) enhance UX but can be simplified or deferred
@@ -1364,7 +1348,7 @@ Single-developer constraints affect Bookmarks management:
 
 ### BC-004: Technology stack
 
-Bookmarks management aligns with chosen stack:
+Bookmarks management aligns with the chosen stack:
 
 - **Frontend:** Angular components for folder tree, bookmark grid, speed dial (Angular Material UI)
 - **Backend:** Spring Boot REST APIs for bookmark/folder CRUD

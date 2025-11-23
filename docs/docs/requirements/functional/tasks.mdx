@@ -1,15 +1,17 @@
 ---
-sidebar_position: 4
+sidebar_position: 4.0
 title: Tasks
 status: Draft
 lastUpdated: 2025-11-17
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+// noinspection ES6UnusedImports
 import PriorityLabel from "../../../src/components/PriorityLabel";
+// noinspection ES6UnusedImports
 import StatusLabel from "../../../src/components/StatusLabel";
 
-<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+<RequirementMetadata/>
 
 # Tasks
 
@@ -64,12 +66,12 @@ management.
 
 **Business rules:**
 
-- Each task must have a non-empty title (1-200 characters)
+- Each task must have a non-empty title (1–200 characters)
 - Description is optional and length-bounded (max 2000 characters)
 - Each task has a unique TaskId
 - Tasks belong to exactly one user (scoped by identity)
-- Default status is "Todo" for new tasks
-- Default priority is "Medium" for new tasks
+- The default status is "Todo" for new tasks
+- The default priority is "Medium" for new tasks
 - Tasks can be soft-deleted (moved to "Deleted" status) or permanently deleted
 
 **User roles:**
@@ -89,11 +91,11 @@ management.
 
 **Acceptance criteria:**
 
-- User can create a task with title
+- User can create a task with a title
 - Task is assigned a unique TaskId
 - Task is persisted with default status (Todo) and priority (Medium)
 - TaskCreated event is published
-- User can edit task title and description
+- User can edit the task title and description
 - TaskUpdated event is published
 - User can delete a task
 - Confirmation is required before permanent deletion
@@ -105,13 +107,11 @@ management.
 - US-TSK-001-001: Create a new task
 - US-TSK-001-002: Edit a task
 - US-TSK-001-003: Delete a task
-- US-TSK-001-004: Create task with description
+- US-TSK-001-004: Create a task with a description
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create a new task (happy path)
+##### Scenario 1: Create a new task ("happy path")
 
 ```gherkin
 Given a user is viewing their task list  
@@ -125,7 +125,7 @@ And a TaskCreated event is published
 And the task appears in the task list
 ```
 
-##### Scenario 2: Create task with title exceeding maximum length
+##### Scenario 2: Create a task with the title exceeding maximum length
 
 ```gherkin
 Given a user is creating a task  
@@ -172,7 +172,7 @@ And no TaskDeleted event is published
 And the task remains in the list
 ```
 
-##### Scenario 6: Create task without title
+##### Scenario 6: Create a task without a title
 
 ```gherkin
 Given a user is creating a task  
@@ -201,12 +201,12 @@ And the user's task management is initialized
 - Task title and description should be sanitized to prevent XSS
 - Consider implementing soft delete with "Deleted" status for recovery (future)
 - Use optimistic locking for concurrent task updates
-- Task IDs should be generated using strongly-typed identifier pattern
+- Task IDs should be generated using a strongly typed identifier pattern
 - Implement validation for title length and description length
 
 **Open questions:**
 
-- Should deleted tasks be recoverable (soft delete with trash/recycle bin)?
+- Should the deleted tasks be recoverable (soft delete with trash/recycle bin)?
 - Should there be a character counter for title and description fields?
 
 ---
@@ -260,7 +260,7 @@ and follows a typical workflow: Todo → In Progress → Done. Users can also re
 - Valid status transitions are: Todo ↔ In Progress ↔ Done
 - Status change is immediately persisted
 - TaskStatusChanged event is published
-- When status changes to "Done", TaskCompleted event is also published
+- When status changes to "Done," TaskCompleted event is also published
 - Completion timestamp is recorded for "Done" status
 - Visual indicators show current status (color coding, icons)
 - Completed tasks can be reverted to other statuses
@@ -268,14 +268,12 @@ and follows a typical workflow: Todo → In Progress → Done. Users can also re
 **User stories:**
 
 - US-TSK-002-001: Change task status to "In Progress"
-- US-TSK-002-002: Mark task as "Done"
-- US-TSK-002-003: Revert completed task to "Todo"
+- US-TSK-002-002: Mark a task as "Done"
+- US-TSK-002-003: Revert a completed task to "Todo"
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Change task status to "In Progress" (happy path)
+##### Scenario 1: Change task status to "In Progress" ("happy path")
 
 ```gherkin
 Given a user has a task with status "Todo"  
@@ -286,7 +284,7 @@ And a TaskStatusChanged event is published
 And the task displays with "In Progress" indicator
 ```
 
-##### Scenario 2: Mark task as "Done"
+##### Scenario 2: Mark a task as "Done"
 
 ```gherkin
 Given a user has a task with status "In Progress"  
@@ -341,7 +339,7 @@ And the status change is persisted
 
 **Open questions:**
 
-- Should there be additional statuses (e.g., "Blocked", "Canceled")?
+- Should there be additional statuses (e.g., "Blocked," "Canceled")?
 - Should status transitions be logged for audit purposes?
 
 ---
@@ -369,7 +367,7 @@ provides visual cues for task urgency.
 
 - Valid priorities: Low, Medium, High
 - Each task has exactly one priority at any time
-- Default priority for new tasks is "Medium"
+- The default priority for new tasks is "Medium"
 - Priority can be changed at any time regardless of status
 - Priority is independent of status and due date
 
@@ -404,11 +402,9 @@ provides visual cues for task urgency.
 - US-TSK-003-002: Filter tasks by priority
 - US-TSK-003-003: Sort tasks by priority
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Change task priority (happy path)
+##### Scenario 1: Change task priority ("happy path")
 
 ```gherkin
 Given a user has a task with priority "Medium"  
@@ -419,7 +415,7 @@ And a TaskPriorityChanged event is published
 And the task displays with high-priority indicator
 ```
 
-##### Scenario 2: Create task with default priority
+##### Scenario 2: Create a task with the default priority
 
 ```gherkin
 Given a user is creating a new task  
@@ -468,8 +464,8 @@ And the priority change is persisted
 
 **Open questions:**
 
-- Should there be more granular priority levels (e.g., 1-5 scale)?
-- Should priority be combined with due date for smart sorting?
+- Should there be more granular priority levels (e.g., 1–5 scale)?
+- Should priority be combined with a due date for smart sorting?
 
 ---
 
@@ -495,7 +491,7 @@ organization. The system should provide visual indicators for overdue, due today
 **Business rules:**
 
 - Due date is optional
-- If set, due date must be a valid timestamp
+- If set, a due date must be a valid timestamp
 - Due date can be in the past, present, or future
 - Due date includes date only (no specific time) or date+time
 - Tasks with due dates in the past are considered "overdue"
@@ -518,31 +514,29 @@ organization. The system should provide visual indicators for overdue, due today
 
 **Acceptance criteria:**
 
-- User can set due date via date picker
+- User can set a due date via a date picker
 - User can choose date-only or date+time
 - Due date is validated for valid format
-- TaskUpdated event is published when due date changes
+- TaskUpdated event is published when a due date changes
 - Visual indicators show due date status:
 - Overdue (red)
-- Due today (orange)
-- Due soon (yellow, within 3 days)
+- The due date is today (orange)
+- The due date is soon (yellow, within 3 days)
 - Future (default)
-- User can clear due date
+- User can clear the due date
 - Tasks can be sorted/filtered by due date
 - Overdue tasks are prominently highlighted
 
 **User stories:**
 
-- US-TSK-004-001: Set due date for task
+- US-TSK-004-001: Set due date for a task
 - US-TSK-004-002: View overdue tasks
 - US-TSK-004-003: Clear due date
 - US-TSK-004-004: Sort tasks by due date
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Set due date for task (happy path)
+##### Scenario 1: Set a due date for a task ("happy path")
 
 ```gherkin
 Given a user has a task without a due date  
@@ -609,8 +603,8 @@ And the count of overdue tasks is shown
 
 - Store due date as ISO 8601 timestamp
 - Handle timezone conversions for "due today" calculations
-- Implement relative time display (e.g., "in 2 days", "3 days ago")
-- Use date picker library for consistent UX
+- Implement relative time display (e.g., "in 2 days," "3 days ago")
+- Use a date picker library for a consistent UX
 - Consider implementing recurring due dates (future)
 
 **Open questions:**
@@ -625,7 +619,7 @@ And the count of overdue tasks is shown
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**  
-Users should be able to organize tasks into lightweight lists or sections (e.g., "Personal", "Work", "Shopping"). Lists
+Users should be able to organize tasks into lightweight lists or sections (e.g., "Personal," "Work," "Shopping"). Lists
 provide a simple grouping mechanism without the complexity of project management.
 
 **Preconditions:**
@@ -644,7 +638,7 @@ provide a simple grouping mechanism without the complexity of project management
 - Each user has a default list (created on registration)
 - Users can create additional lists
 - List names must be unique per user
-- List names must be non-empty and length-bounded (1-100 characters)
+- List names must be non-empty and length-bounded (1–100 characters)
 - Tasks belong to exactly one list
 - Deleting a list requires handling of contained tasks (move to default or delete)
 - Empty lists can be deleted directly
@@ -666,27 +660,25 @@ provide a simple grouping mechanism without the complexity of project management
 
 **Acceptance criteria:**
 
-- User can create a new list with unique name
+- User can create a new list with a unique name
 - User can rename lists (except default)
 - User can delete empty lists
-- Deleting non-empty list prompts for action (move tasks or delete)
+- Deleting a non-empty list prompts for action (move tasks or delete)
 - User can move tasks between lists
-- Task list view shows lists in sidebar or tabs
+- Task list view shows lists in the sidebar or tabs
 - Selecting a list filters tasks to that list only
 - Task count per list is displayed
 
 **User stories:**
 
 - US-TSK-005-001: Create a new task list
-- US-TSK-005-002: Move task to different list
+- US-TSK-005-002: Move a task to a different list
 - US-TSK-005-003: Delete a list
 - US-TSK-005-004: Rename a list
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create a new task list (happy path)
+##### Scenario 1: Create a new task list ("happy path")
 
 ```gherkin
 Given a user is viewing their tasks  
@@ -698,7 +690,7 @@ And a TaskListCreated event is published
 And the list appears in the list selector
 ```
 
-##### Scenario 2: Create list with duplicate name
+##### Scenario 2: Create a list with a duplicate name
 
 ```gherkin
 Given a user already has a list named "Personal"  
@@ -709,7 +701,7 @@ And the list is not created
 And no TaskListCreated event is published
 ```
 
-##### Scenario 3: Move task to different list
+##### Scenario 3: Move a task to a different list
 
 ```gherkin
 Given a user has a task in "Personal" list  
@@ -721,7 +713,7 @@ And the task appears in "Work" list
 And is removed from "Personal" list
 ```
 
-##### Scenario 4: Delete empty list
+##### Scenario 4: Delete an empty list
 
 ```gherkin
 Given a user has an empty list named "Old"  
@@ -732,7 +724,7 @@ And a TaskListDeleted event is published
 And the list is removed from the list selector
 ```
 
-##### Scenario 5: Delete list with tasks
+##### Scenario 5: Delete a list with tasks
 
 ```gherkin
 Given a user has a list "Archive" with 5 tasks  
@@ -763,7 +755,7 @@ And task count for "Work" is shown
 - List ordering should be stable (alphabetical or user-defined)
 - Default list cannot be deleted or renamed
 - Implement efficient filtering when switching between lists
-- Consider limiting number of lists per user (e.g., max 20)
+- Consider limiting the number of lists per user (e.g., max 20)
 
 **Open questions:**
 
@@ -777,7 +769,7 @@ And task count for "Work" is shown
 **Priority:** <PriorityLabel priority="Should Have"/>
 
 **Description:**  
-Users should be able to manually reorder tasks within a list to prioritize according to their preference. Reordering
+Users should be able to manually reorder tasks within a list to prioritize, according to their preference. Reordering
 provides user-defined ordering independent of status, priority, or due date.
 
 **Preconditions:**
@@ -798,7 +790,7 @@ provides user-defined ordering independent of status, priority, or due date.
 - Order is user-defined (not automatic)
 - Reordering must be atomic
 - Order positions are total (no gaps)
-- Manual order persists until user changes it
+- Manual order persists until the user changes it
 
 **User roles:**
 
@@ -817,14 +809,14 @@ provides user-defined ordering independent of status, priority, or due date.
 
 **Acceptance criteria:**
 
-- User can drag-and-drop tasks to reorder them
-- Visual feedback shows task being dragged
+- Users can drag-and-drop tasks to reorder them
+- Visual feedback shows the task being dragged
 - Drop zones between tasks are indicated
 - Task order is updated when dropped
-- Other tasks shift to accommodate moved task
-- TaskUpdated event is published with new position
+- Other tasks shift to accommodate the moved task
+- TaskUpdated event is published with the new position
 - Order is persisted immediately
-- Reordering can be cancelled (ESC key or drop outside)
+- Reordering can be canceled (ESC key or drop outside)
 - Manual order is preserved when applying sort/filter
 
 **User stories:**
@@ -832,11 +824,9 @@ provides user-defined ordering independent of status, priority, or due date.
 - US-TSK-006-001: Reorder tasks via drag-and-drop
 - US-TSK-006-002: Cancel reorder operation
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Reorder tasks via drag-and-drop (happy path)
+##### Scenario 1: Reorder tasks via drag-and-drop ("happy path")
 
 ```gherkin
 Given a list contains tasks in order: A, B, C, D  
@@ -848,7 +838,7 @@ And a TaskUpdated event is published
 And the new order is persisted
 ```
 
-##### Scenario 2: Move task to first position
+##### Scenario 2: Move a task to the first position
 
 ```gherkin
 Given a list contains tasks in order: A, B, C  
@@ -882,7 +872,7 @@ And tasks appear in the user-defined order
 
 **Technical notes:**
 
-- Store task order as explicit position field (integer)
+- Store task order as an explicit position field (integer)
 - Implement efficient reordering algorithm (update only affected positions)
 - Use smooth animations for drag-and-drop feedback
 - Support touch devices for reordering
@@ -922,7 +912,7 @@ Search and filtering enable quick access to specific tasks in large task collect
 - Multiple filters can be applied simultaneously
 - Filters are AND-ed (all filters must match)
 - Empty search/filter shows all tasks
-- Search/filter is scoped to current list (or all lists)
+- Search/filter is scoped to the current list (or all lists)
 
 **User roles:**
 
@@ -941,13 +931,13 @@ Search and filtering enable quick access to specific tasks in large task collect
 
 **Acceptance criteria:**
 
-- User can enter search query in search field
+- User can enter a search query in a search field
 - Search results update in real-time
 - Matching text is highlighted in results
-- User can filter by status (Todo, In Progress, Done)
-- User can filter by priority (Low, Medium, High)
-- User can filter by due date range
-- User can filter by list
+- Users can filter by status (Todo, In Progress, Done)
+- Users can filter by priority (Low, Medium, High)
+- Users can filter by due date range
+- Users can filter by list
 - Multiple filters can be applied together
 - Search and filter can be cleared
 - Result count is displayed
@@ -959,11 +949,9 @@ Search and filtering enable quick access to specific tasks in large task collect
 - US-TSK-007-003: Combine multiple filters
 - US-TSK-007-004: Clear search/filter
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Search tasks by title (happy path)
+##### Scenario 1: Search tasks by title ("happy path")
 
 ```gherkin
 Given a user has tasks with various titles  
@@ -1034,7 +1022,7 @@ And tasks are sorted by how many days overdue
 - Consider implementing saved filters/views (future)
 - Highlight matching text using markup or CSS
 - Implement efficient filtering algorithm
-- Store filter state in URL for bookmarkability (future)
+- Store filter state in URL for the ability to be bookmarked (future)
 
 **Open questions:**
 
@@ -1062,13 +1050,13 @@ completion and maintain both a task list and calendar view of their work.
 
 - EventCreationRequestedFromTask event is published
 - Calendar context creates the event
-- Task is optionally linked to created event (future)
+- Task is optionally linked to the created event (future)
 
 **Business rules:**
 
 - Task title maps to event title
 - Task description maps to event description
-- Task due date maps to event date/time
+- Task due date maps to the event date/time
 - Creating an event does not delete or complete the task
 - Task and event remain separate entities
 - One task can generate multiple events (if needed)
@@ -1097,22 +1085,20 @@ completion and maintain both a task list and calendar view of their work.
 - Task data is mapped to event fields
 - EventCreationRequestedFromTask event is published with task data
 - Calendar context receives event and creates calendar event
-- User is notified when event is created
+- User is notified when the event is created
 - Task remains in task list (not deleted)
-- If task has no due date, user is prompted to set date/time for event
+- If the task has no due date, the user is prompted to set a date/time for the event
 - Task can optionally be marked as "Scheduled" (future)
 
 **User stories:**
 
-- US-TSK-008-001: Create event from task with due date
-- US-TSK-008-002: Create event from task without due date
-- US-TSK-008-003: View linked event from task (future)
+- US-TSK-008-001: Create an event from a task with a due date
+- US-TSK-008-002: Create an event from a task without a due date
+- US-TSK-008-003: View linked event from a task (future)
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Create event from task with due date (happy path)
+##### Scenario 1: Create an event from a task with a due date ("happy path")
 
 ```gherkin
 Given a user has a task titled "Meeting Preparation"  
@@ -1126,7 +1112,7 @@ And a notification confirms "Event created"
 And the task remains in the task list
 ```
 
-##### Scenario 2: Create event from task without due date
+##### Scenario 2: Create an event from a task without a due date
 
 ```gherkin
 Given a user has a task titled "Review Documents"  
@@ -1149,7 +1135,7 @@ And the user is notified to try again later
 And no EventCreationRequestedFromTask event is published successfully
 ```
 
-##### Scenario 4: Create event with description
+##### Scenario 4: Create an event with a description
 
 ```gherkin
 Given a user has a task with title and description  
@@ -1164,7 +1150,7 @@ And both title and description appear in the created event
 
 - Use asynchronous event publishing for Calendar integration
 - Implement retry logic for failed event creation requests
-- Consider storing event ID on task for bidirectional linking (future)
+- Consider storing event ID on the task for bidirectional linking (future)
 - Calendar context is responsible for event creation; Tasks context only requests
 - Implement idempotency to prevent duplicate events
 
@@ -1199,7 +1185,7 @@ enables users to see progress and maintain a sense of accomplishment.
 **Business rules:**
 
 - A task is considered "completed" when status is "Done"
-- Completion timestamp is recorded when task is marked as done
+- Completion timestamp is recorded when the task is marked as done
 - Completed tasks remain visible (not automatically archived in MVP)
 - Completed tasks can be reverted to incomplete
 - Completion count/percentage can be calculated per list
@@ -1225,23 +1211,21 @@ enables users to see progress and maintain a sense of accomplishment.
 - Completion timestamp is recorded
 - TaskCompleted event is published
 - Completed tasks display with strike-through or checkmark
-- User can view completed tasks separately or inline
+- Users can view completed tasks separately or inline
 - Completion statistics are available (e.g., "5 of 10 completed")
 - Completed tasks can be hidden/shown via toggle
-- Reverting to incomplete clears completion timestamp
+- Reverting to incomplete clears the completion timestamp
 
 **User stories:**
 
 - US-TSK-009-001: Mark task as completed
 - US-TSK-009-002: View completion statistics
 - US-TSK-009-003: Toggle completed tasks visibility
-- US-TSK-009-004: Revert completed task
+- US-TSK-009-004: Revert a completed task
 
----
+### Scenarios
 
-#### Scenarios
-
-##### Scenario 1: Mark task as completed (happy path)
+##### Scenario 1: Mark a task as completed ("happy path")
 
 ```gherkin
 Given a user has a task with status "In Progress"  
@@ -1283,7 +1267,7 @@ And are visually distinct with strike-through
 And appear after incomplete tasks (or in order)
 ```
 
-##### Scenario 5: Revert completed task to incomplete
+##### Scenario 5: Revert a completed task to incomplete
 
 ```gherkin
 Given a user has a completed task  
@@ -1316,7 +1300,7 @@ And shows when the task was completed
 
 **Open questions:**
 
-- Should completed tasks be automatically archived after a certain time?
+- Should the completed tasks be automatically archived after a certain time?
 - Should there be a "completed tasks" archive separate from active tasks?
 
 ---
@@ -1327,7 +1311,7 @@ And shows when the task was completed
 
 - **Task Management ↔ Status Lifecycle:** Creating tasks initializes with default status; status changes update task
   state
-- **Task Management ↔ Priority Management:** Creating tasks initializes with default priority; priority changes are
+- **Task Management ↔ Priority Management:** Creating tasks initializes with a default priority; priority changes are
   independent
 - **Status Lifecycle ↔ Completion Tracking:** Changing status to "Done" triggers completion tracking
 - **Due Date Management ↔ Calendar Integration:** Tasks with due dates can be converted to calendar events
@@ -1339,7 +1323,7 @@ And shows when the task was completed
 ### Shared business rules
 
 1. **User Scoping:** All tasks and task lists must be scoped to the authenticated user
-2. **Title Validation:** All task titles must be non-empty and length-bounded (1-200 characters)
+2. **Title Validation:** All task titles must be non-empty and length-bounded (1–200 characters)
 3. **Unique Identifiers:** All tasks and lists must have unique IDs system-wide
 4. **Atomicity:** All state changes must be atomic—either fully succeed or fully fail
 5. **Event Publishing:** Events must be published after successful persistence
@@ -1351,7 +1335,7 @@ And shows when the task was completed
 - **Eventual Consistency:** Calendar integration can be eventually consistent (asynchronous event creation)
 - **Transactional Boundaries:** Task (or TaskList) aggregate is the transactional boundary
 - **Event Publishing:** Events must be published after successful persistence (transactional outbox pattern)
-- **Real-Time Updates:** Task widgets on dashboard should update in real-time via event subscriptions
+- **Real-Time Updates:** Task widgets on a dashboard should update in real-time via event subscriptions
 
 ---
 
@@ -1361,14 +1345,14 @@ And shows when the task was completed
 
 Tasks management must operate within zero-cost infrastructure constraints:
 
-- **Task Storage:** Use free-tier database (PostgreSQL via Railway, Supabase, or local)
-- **Search:** Use database full-text search capabilities (no Elasticsearch or paid search service)
+- **Task Storage:** Use a free-tier database (PostgreSQL via Railway, Supabase, or local)
+- **Search:** Use the database full-text search capabilities (no Elasticsearch or paid search service)
 - **Calendar Integration:** Use event bus for integration (no paid message queue initially)
 - **Notifications:** Use browser notifications (no paid push notification service)
 
 ### BC-002: Timeline
 
-Tasks management is on critical path for MVP (3-6 months):
+Tasks management is on a critical path for MVP (3–6 months):
 
 - **Must Have features** (FR-TSK-001, 002, 003, 004, 009) required for MVP
 - **Should Have features** (FR-TSK-005, 006, 007, 008) enhance UX but can be simplified or deferred
@@ -1380,13 +1364,13 @@ Tasks management is on critical path for MVP (3-6 months):
 Single-developer constraints affect Tasks management:
 
 - **Leverage UI Libraries:** Use existing components (Angular Material) for date pickers, checkboxes
-- **Simplify Lists:** Start with flat list structure (defer hierarchical lists)
+- **Simplify Lists:** Start with a flat list structure (defer hierarchical lists)
 - **Automate Testing:** Heavy investment in unit tests for status lifecycle and completion tracking
 - **Incremental Development:** Build core CRUD first, then status/priority, then advanced features
 
 ### BC-004: Technology stack
 
-Tasks management aligns with chosen stack:
+Tasks management aligns with the chosen stack:
 
 - **Frontend:** Angular components for task list, filters, date pickers (Angular Material UI)
 - **Backend:** Spring Boot REST APIs for task/list CRUD

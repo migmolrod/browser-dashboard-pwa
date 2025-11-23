@@ -164,7 +164,7 @@ const config: Config = {
 			theme: {light: "neutral", dark: "forest"},
 		},
 	} satisfies Preset.ThemeConfig,
-	themes: ["@docusaurus/theme-mermaid"],
+	themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-frontmatter"],
 	markdown: {
 		mermaid: true,
 	},

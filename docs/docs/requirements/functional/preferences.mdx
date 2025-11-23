@@ -1,15 +1,17 @@
 ---
-sidebar_position: 8
+sidebar_position: 8.0
 title: Preferences
 status: Draft
 lastUpdated: 2025-11-15
 ---
 
 import RequirementMetadata from "../../../src/components/RequirementMetadata";
+// noinspection ES6UnusedImports
 import PriorityLabel from "../../../src/components/PriorityLabel";
+// noinspection ES6UnusedImports
 import StatusLabel from "../../../src/components/StatusLabel";
 
-<RequirementMetadata status={frontMatter.status} lastUpdated={frontMatter.lastUpdated}/>
+<RequirementMetadata/>
 
 # Preferences
 
@@ -63,10 +65,10 @@ adapts to the user's operating system theme preference.
 **Business rules:**
 
 - Supported themes: Light, Dark, System (follows OS preference)
-- Default theme is "System" for new users
-- Theme changes apply immediately without page reload
+- The default theme is "System" for new users
+- Theme changes apply immediately without a page reload
 - Theme preference is global (not per-device in MVP)
-- System theme dynamically updates when OS theme changes
+- System theme dynamically updates when the OS theme changes
 
 **User roles:**
 
@@ -85,30 +87,28 @@ adapts to the user's operating system theme preference.
 
 **Acceptance criteria:**
 
-- User can select theme from: Light, Dark, System
-- Theme changes apply immediately to entire application
-- ThemeChanged event is published with new theme value
+- User can select a theme from: Light, Dark, System
+- Theme changes apply immediately to the entire application
+- ThemeChanged event is published with a new theme value
 - Theme preference persists across sessions
 - System theme follows OS preference (detects changes)
-- Theme selection is accessible from settings menu
+- Theme selection is accessible from the settings menu
 - Visual feedback confirms theme change
 
 **User stories:**
 
-- US-PRE-001-001: Select light theme
-- US-PRE-001-002: Select dark theme
-- US-PRE-001-003: Select system theme
+- US-PRE-001-001: Select the light theme
+- US-PRE-001-002: Select the dark theme
+- US-PRE-001-003: Select the system theme
 - US-PRE-001-004: System theme adapts to OS changes
 
----
+### Scenarios
 
-#### Scenarios
+##### Scenario 1: Select the light theme ("happy path")
 
-##### Scenario 1: Select light theme (happy path)
-
-:::note gherkin
+```gherkin
 Given a user is authenticated  
-And viewing the preferences settings  
+And viewing the preference settings  
 When the user selects "Light" theme  
 And saves preferences  
 Then the theme preference is updated to "Light"  
@@ -116,11 +116,11 @@ And a ThemeChanged event is published
 And the application switches to light theme immediately  
 And all UI components update with light theme colors  
 And the preference is persisted
-:::
+```
 
-##### Scenario 2: Select dark theme
+##### Scenario 2: Select the dark theme
 
-:::note gherkin
+```gherkin
 Given a user has light theme active  
 When the user selects "Dark" theme  
 And saves preferences  
@@ -128,11 +128,11 @@ Then the theme preference is updated to "Dark"
 And a ThemeChanged event is published  
 And the application switches to dark theme immediately  
 And all UI components update with dark theme colors
-:::
+```
 
-##### Scenario 3: Select system theme
+##### Scenario 3: Select the system theme
 
-:::note gherkin
+```gherkin
 Given a user has dark theme active  
 When the user selects "System" theme  
 And saves preferences  
@@ -141,11 +141,11 @@ And a ThemeChanged event is published
 And the application detects OS theme preference  
 And applies matching theme (light or dark)  
 And updates dynamically if OS theme changes
-:::
+```
 
 ##### Scenario 4: System theme adapts to OS changes
 
-:::note gherkin
+```gherkin
 Given a user has "System" theme selected  
 And OS is currently in light mode  
 When the OS switches to dark mode  
@@ -153,27 +153,27 @@ Then the application detects the OS theme change
 And automatically switches to dark theme  
 And no ThemeChanged event is published (no user action)  
 And the preference remains "System"
-:::
+```
 
 ##### Scenario 5: Theme persists across sessions
 
-:::note gherkin
+```gherkin
 Given a user has selected "Dark" theme  
 When the user logs out and logs back in  
 Then the theme is restored to "Dark"  
 And the application loads with dark theme  
 And theme preference is retrieved from storage
-:::
+```
 
 ##### Scenario 6: Default theme for new users
 
-:::note gherkin
+```gherkin
 Given a new user has just registered  
 When the UserRegistered event is processed  
 Then default preferences are created  
 And theme is set to "System"  
 And the application uses OS theme preference initially
-:::
+```
 
 ---
 
@@ -183,13 +183,13 @@ And the application uses OS theme preference initially
 - Implement theme detection via `window.matchMedia('(prefers-color-scheme: dark)')`
 - Store theme preference as enumeration (LIGHT, DARK, SYSTEM)
 - Listen for OS theme changes with `matchMedia.addEventListener('change', ...)`
-- Apply theme immediately via CSS class on root element (e.g., `<html class="dark">`)
+- Apply theme immediately via CSS class on the root element (e.g., `<html class="dark">`)
 - Consider implementing theme transition animations for smooth switching
 
 **Open questions:**
 
 - Should there be additional theme options (e.g., high contrast, custom colors)?
-- Should theme be device-specific in the future?
+- Should the theme be device-specific in the future?
 
 ---
 
@@ -206,7 +206,7 @@ supported locales.
 
 - User must be authenticated
 - UserPreferences aggregate must exist
-- Locale must be supported by the system
+- The system must support locale
 
 **Postconditions:**
 
@@ -217,9 +217,9 @@ supported locales.
 
 **Business rules:**
 
-- Default locale is "en-US" (English - United States)
+- The default locale is "en-US" (English—United States)
 - Supported locales are defined in configuration (e.g., en-US, es-ES, fr-FR, de-DE)
-- Invalid locales are rejected with validation error
+- Invalid locales are rejected with a validation error
 - Locale changes apply immediately
 - Locale affects: UI language, date formats, number formats, currency symbols
 
@@ -241,14 +241,14 @@ supported locales.
 
 **Acceptance criteria:**
 
-- User can select locale from supported list
-- Locale changes apply immediately to entire application
-- LocaleChanged event is published with new locale
-- UI language switches to selected locale
-- Date formats adapt to locale (e.g., MM/DD/YYYY vs DD/MM/YYYY)
-- Number formats adapt to locale (e.g., 1,000.50 vs 1.000,50)
+- User can select a locale from a supported list
+- Locale changes apply immediately to the entire application
+- LocaleChanged event is published with a new locale
+- UI language switches to the selected locale
+- Date formats adapt to locale (e.g., MM/DD/YYYY vs. DD/MM/YYYY)
+- Number formats adapt to locale (e.g., 1,000.50 vs. 1.000,50)
 - Locale preference persists across sessions
-- Invalid locale selection shows error message
+- Invalid locale selection shows an error message
 
 **User stories:**
 
@@ -257,13 +257,11 @@ supported locales.
 - US-PRE-002-003: View numbers in locale format
 - US-PRE-002-004: Reject invalid locale
 
----
+### Scenarios
 
-#### Scenarios
+##### Scenario 1: Select locale ("happy path")
 
-##### Scenario 1: Select locale (happy path)
-
-:::note gherkin
+```gherkin
 Given a user is viewing preferences settings  
 And current locale is "en-US"  
 When the user selects locale "es-ES" (Spanish - Spain)  
@@ -274,30 +272,30 @@ And UI language switches to Spanish
 And date formats change to DD/MM/YYYY  
 And number formats use European convention (1.000,50)  
 And the preference is persisted
-:::
+```
 
 ##### Scenario 2: View date in locale format
 
-:::note gherkin
+```gherkin
 Given a user has locale set to "es-ES"  
 When the user views a date (e.g., event date)  
 Then dates are displayed as "15/11/2025" (DD/MM/YYYY)  
 And month names are in Spanish (e.g., "noviembre")
-:::
+```
 
 ##### Scenario 3: View numbers in locale format
 
-:::note gherkin
+```gherkin
 Given a user has locale set to "de-DE" (German - Germany)  
 When the user views numeric data (e.g., weather temperature)  
 Then numbers use German formatting (1.234,56)  
 And decimal separator is comma  
 And thousands separator is period
-:::
+```
 
 ##### Scenario 4: Reject invalid locale
 
-:::note gherkin
+```gherkin
 Given a user is selecting a locale  
 When the user attempts to set locale to "xx-XX" (unsupported)  
 And saves preferences  
@@ -305,26 +303,26 @@ Then validation fails
 And an error message "Locale not supported" is displayed  
 And locale is not changed  
 And no LocaleChanged event is published
-:::
+```
 
 ##### Scenario 5: Locale persists across sessions
 
-:::note gherkin
+```gherkin
 Given a user has selected locale "fr-FR"  
 When the user logs out and logs back in  
 Then the locale is restored to "fr-FR"  
 And the application loads with French language  
 And French date/number formats
-:::
+```
 
 ##### Scenario 6: Default locale for new users
 
-:::note gherkin
+```gherkin
 Given a new user has just registered  
 When default preferences are created  
 Then locale is set to "en-US"  
 And the application uses English language
-:::
+```
 
 ---
 
@@ -363,12 +361,12 @@ are displayed throughout the application, ensuring times are shown in the user's
 
 - Timezone preference is updated
 - TimezoneChanged event is published (optional)
-- Timestamps displayed in selected timezone
+- Timestamps are displayed in the selected timezone
 - Timezone preference persists across sessions
 
 **Business rules:**
 
-- Default timezone is browser-detected or UTC
+- The default timezone is browser-detected or UTC
 - Supported timezones are IANA timezone database identifiers (e.g., "America/New_York", "Europe/Madrid")
 - Invalid timezones are rejected with validation error
 - Timezone changes apply immediately
@@ -391,12 +389,12 @@ are displayed throughout the application, ensuring times are shown in the user's
 
 **Acceptance criteria:**
 
-- User can select timezone from searchable list
+- User can select timezone from a searchable list
 - Timezone changes apply immediately
-- PreferencesUpdated event is published with new timezone
+- PreferencesUpdated event is published with a new timezone
 - All timestamps display in selected timezone
 - Timezone preference persists across sessions
-- Invalid timezone selection shows error message
+- Invalid timezone selection shows an error message
 - System displays timezone offset (e.g., UTC-5, UTC+1)
 
 **User stories:**
@@ -406,13 +404,11 @@ are displayed throughout the application, ensuring times are shown in the user's
 - US-PRE-003-003: Autodetect timezone from browser
 - US-PRE-003-004: Reject invalid timezone
 
----
+### Scenarios
 
-#### Scenarios
+##### Scenario 1: Select timezone ("happy path")
 
-##### Scenario 1: Select timezone (happy path)
-
-:::note gherkin
+```gherkin
 Given a user is viewing preferences settings  
 And current timezone is "UTC"  
 When the user selects timezone "America/New_York"  
@@ -422,31 +418,31 @@ And a PreferencesUpdated event is published
 And all timestamps display in Eastern Time  
 And timezone offset is shown (e.g., UTC-5 or UTC-4 depending on DST)  
 And the preference is persisted
-:::
+```
 
 ##### Scenario 2: View timestamps in timezone
 
-:::note gherkin
+```gherkin
 Given a user has timezone set to "Europe/Madrid" (UTC+1/UTC+2)  
 And an event is scheduled at "2025-11-20T10:00:00Z" (UTC)  
 When the user views the event  
 Then the time is displayed as "11:00" or "12:00" (depending on DST)  
 And timezone is indicated (CET or CEST)
-:::
+```
 
-##### Scenario 3: Autodetect timezone from browser
+##### Scenario 3: Autodetect timezone from a browser
 
-:::note gherkin
+```gherkin
 Given a new user is registering  
 When default preferences are created  
 Then the system detects browser timezone using Intl.DateTimeFormat().resolvedOptions().timeZone  
 And sets timezone to detected value (e.g., "America/Los_Angeles")  
 And the user can change it later if needed
-:::
+```
 
 ##### Scenario 4: Reject invalid timezone
 
-:::note gherkin
+```gherkin
 Given a user is selecting a timezone  
 When the user attempts to set timezone to "Invalid/Timezone"  
 And saves preferences  
@@ -454,43 +450,43 @@ Then validation fails
 And an error message "Invalid timezone" is displayed  
 And timezone is not changed  
 And no PreferencesUpdated event is published
-:::
+```
 
 ##### Scenario 5: Timezone persists across sessions
 
-:::note gherkin
+```gherkin
 Given a user has selected timezone "Asia/Tokyo"  
 When the user logs out and logs back in  
 Then the timezone is restored to "Asia/Tokyo"  
 And all timestamps display in Japan Standard Time
-:::
+```
 
 ##### Scenario 6: Search timezone by city name
 
-:::note gherkin
+```gherkin
 Given a user is selecting timezone  
 When the user types "Madrid" in the search box  
 Then matching timezones are filtered:
 
 - Europe/Madrid  
   And the user can select from the filtered list
-  :::
+  ```
 
 ---
 
 **Technical notes:**
 
-- Use IANA timezone database (tzdata)
+- Use IANA timezone database (`tzdata`)
 - Store timezone as IANA identifier (e.g., "America/New_York")
 - Use timezone-aware date libraries (e.g., Luxon, date-fns-tz, ZonedDateTime in Java)
-- Store all timestamps in UTC in database
-- Convert to user's timezone for display only
+- Store all timestamps in UTC in a database
+- Convert to the user's timezone for display only
 - Handle Daylight Saving Time (DST) transitions correctly
 - Provide timezone search/autocomplete for better UX
 
 **Open questions:**
 
-- Should timezone be autodetected and updated when user travels?
+- Should timezone be autodetected and updated when the user travels?
 - Should there be quick-select common timezones?
 
 ---
@@ -505,12 +501,12 @@ initial values that ensure the application works immediately without requiring u
 
 **Preconditions:**
 
-- UserRegistered event is received from User Identity context
+- UserRegistered event is received from the User Identity context
 - UserId is provided in the event
 
 **Postconditions:**
 
-- UserPreferences aggregate is created with defaults
+- UserPreferences aggregate is created with default settings
 - Preferences are persisted
 - PreferencesCreated event is published (optional)
 
@@ -518,7 +514,7 @@ initial values that ensure the application works immediately without requiring u
 
 - Default preferences are created automatically on user registration
 - Default theme: "System" (follows OS preference)
-- Default locale: "en-US" (English - United States)
+- Default locale: "en-US" (English—United States)
 - Default timezone: Browser-detected or UTC
 - Default widget settings: Reasonable defaults per widget type
 - User can change defaults at any time after registration
@@ -545,7 +541,7 @@ initial values that ensure the application works immediately without requiring u
 - Theme is set to "System"
 - Locale is set to "en-US"
 - Timezone is set to browser-detected or UTC
-- Preferences are persisted to database
+- Preferences are persisted to the database
 - PreferencesCreated event is published
 - Operation is idempotent (no duplicate preferences)
 
@@ -555,13 +551,11 @@ initial values that ensure the application works immediately without requiring u
 - US-PRE-004-002: Verify default values
 - US-PRE-004-003: User can change defaults
 
----
+### Scenarios
 
-#### Scenarios
+##### Scenario 1: Create default preferences on registration ("happy path")
 
-##### Scenario 1: Create default preferences on registration (happy path)
-
-:::note gherkin
+```gherkin
 Given a new user "john_doe" has just registered  
 When the system processes UserRegistered event  
 Then a UserPreferences aggregate is created for "john_doe"  
@@ -571,22 +565,22 @@ And timezone is set to browser-detected value (or UTC)
 And widget defaults are set (empty or reasonable values)  
 And preferences are persisted to database  
 And a PreferencesCreated event is published
-:::
+```
 
 ##### Scenario 2: Verify default values
 
-:::note gherkin
+```gherkin
 Given a new user has registered  
 When the user views preferences settings  
 Then theme shows "System" selected  
 And locale shows "en-US" selected  
 And timezone shows detected or UTC value  
 And all defaults are displayed correctly
-:::
+```
 
 ##### Scenario 3: User can change defaults
 
-:::note gherkin
+```gherkin
 Given a new user has default preferences  
 When the user changes theme to "Dark"  
 And changes locale to "es-ES"  
@@ -594,28 +588,28 @@ And saves preferences
 Then the changes are persisted  
 And override the defaults  
 And the application uses new values
-:::
+```
 
 ##### Scenario 4: Idempotent preference creation
 
-:::note gherkin
+```gherkin
 Given UserRegistered event is processed  
 And UserPreferences are created  
 When the event is processed again (e.g., retry)  
 Then no duplicate preferences are created  
 And existing preferences remain unchanged  
 And no error occurs
-:::
+```
 
 ##### Scenario 5: Browser timezone detection
 
-:::note gherkin
+```gherkin
 Given a user registers from browser in "America/Los_Angeles" timezone  
 When default preferences are created  
 Then timezone is detected as "America/Los_Angeles"  
 And set as default timezone  
 And the user sees timestamps in Pacific Time
-:::
+```
 
 ---
 
@@ -650,14 +644,14 @@ and devices. Persistence guarantees that user customizations are not lost.
 
 **Postconditions:**
 
-- Preferences are persisted to database
-- Preferences can be retrieved on subsequent access
+- Preferences are persisted to the database
+- Preferences can be retrieved on later access
 - Consistency is maintained across concurrent updates
 
 **Business rules:**
 
 - All preference changes are persisted immediately
-- Preferences are retrieved when user logs in
+- Preferences are retrieved when a user logs in
 - Concurrent updates are handled safely (optimistic locking)
 - Failed persistence operations are logged and retried
 - Persistence must be transactional (ACID properties)
@@ -678,8 +672,8 @@ and devices. Persistence guarantees that user customizations are not lost.
 
 **Acceptance criteria:**
 
-- Preference changes are persisted immediately after update
-- Preferences can be retrieved by UserId
+- Preference changes are persisted immediately after an update
+- Preferences can be retrieved from the UserId
 - Preferences persist across sessions (logout/login)
 - Preferences persist across application restarts
 - Concurrent updates are handled safely (optimistic locking)
@@ -694,34 +688,32 @@ and devices. Persistence guarantees that user customizations are not lost.
 - US-PRE-005-003: Handle concurrent updates
 - US-PRE-005-004: Persist across restarts
 
----
+### Scenarios
 
-#### Scenarios
+##### Scenario 1: Persist preference changes ("happy path")
 
-##### Scenario 1: Persist preference changes (happy path)
-
-:::note gherkin
+```gherkin
 Given a user changes theme from "Light" to "Dark"  
 When the preference update is saved  
 Then the preference is immediately persisted to database  
 And a ThemeChanged event is published  
 And persistence completes successfully
-:::
+```
 
 ##### Scenario 2: Retrieve preferences on login
 
-:::note gherkin
+```gherkin
 Given a user has previously set preferences (Dark theme, es-ES locale)  
 When the user logs in  
 Then preferences are retrieved from database by UserId  
 And theme is loaded as "Dark"  
 And locale is loaded as "es-ES"  
 And application applies these preferences
-:::
+```
 
 ##### Scenario 3: Handle concurrent updates
 
-:::note gherkin
+```gherkin
 Given a user has preferences open in two browser tabs  
 When the user updates theme in tab 1  
 And simultaneously updates locale in tab 2  
@@ -730,22 +722,22 @@ And one operation succeeds immediately
 And the other operation is retried with updated state  
 And both changes are successfully persisted  
 And no data is lost
-:::
+```
 
 ##### Scenario 4: Persist across restarts
 
-:::note gherkin
+```gherkin
 Given a user has set preferences  
 When the application is restarted  
 And the user logs in  
 Then preferences are loaded from persistent storage  
 And all user settings are restored  
 And the application applies them correctly
-:::
+```
 
-##### Scenario 5: Persistence failure - retry
+##### Scenario 5: Persistence failure—retry
 
-:::note gherkin
+```gherkin
 Given a user changes preferences  
 When persistence fails due to database error  
 Then the error is logged  
@@ -753,14 +745,14 @@ And the operation is queued for retry
 And the user is notified of the temporary issue  
 And the system retries with exponential backoff  
 And succeeds on retry
-:::
+```
 
 ---
 
 **Technical notes:**
 
-- Use relational database with userId as primary/foreign key
-- Implement optimistic locking with version field
+- Use relational database with userId as a primary/foreign key
+- Implement optimistic locking with the version field
 - Use database transactions for atomic updates
 - Index preferences table by userId for efficient retrieval
 - Implement retry logic with exponential backoff
@@ -833,74 +825,72 @@ configurations. Validation includes checking against supported value catalogs an
 - US-PRE-006-003: Validate timezone value
 - US-PRE-006-004: Reject multiple invalid values
 
----
+### Scenarios
 
-#### Scenarios
+##### Scenario 1: Validate theme value ("happy path")
 
-##### Scenario 1: Validate theme value (happy path)
-
-:::note gherkin
+```gherkin
 Given a user is updating preferences  
 When the user sets theme to "Dark"  
 Then theme value is validated against enum (Light, Dark, System)  
 And validation passes  
 And preference is updated
-:::
+```
 
 ##### Scenario 2: Reject invalid theme value
 
-:::note gherkin
+```gherkin
 Given a user is updating preferences  
 When the user attempts to set theme to "Blue" (invalid)  
 Then validation fails  
 And an error message "Invalid theme. Supported: Light, Dark, System" is displayed  
 And the preference is not updated
-:::
+```
 
 ##### Scenario 3: Validate locale value
 
-:::note gherkin
+```gherkin
 Given a user is updating preferences  
 When the user sets locale to "fr-FR"  
 And "fr-FR" is in the supported locale catalog  
 Then validation passes  
 And preference is updated
-:::
+```
 
 ##### Scenario 4: Reject invalid locale value
 
-:::note gherkin
+```gherkin
 Given a user is updating preferences  
 When the user sets locale to "xx-XX" (unsupported)  
 Then validation fails  
 And an error message "Locale not supported" is displayed  
 And available locales are suggested  
 And the preference is not updated
-:::
+```
 
 ##### Scenario 5: Validate timezone value
 
-:::note gherkin
+```gherkin
 Given a user is updating preferences  
 When the user sets timezone to "America/New_York"  
 And "America/New_York" is valid IANA identifier  
 Then validation passes  
 And preference is updated
-:::
+```
 
 ##### Scenario 6: Reject invalid timezone value
 
-:::note gherkin
+```gherkin
 Given a user is updating preferences  
 When the user sets timezone to "Invalid/Timezone"  
 Then validation fails  
 And an error message "Invalid timezone identifier" is displayed  
 And the preference is not updated
-:::
+```
 
 ##### Scenario 7: Reject multiple invalid values
 
-:::note gherkin
+```gherkin
 Given a user is updating multiple preferences  
 When the user sets theme to "Blue" (invalid)  
 And sets locale to "xx-XX" (invalid)  
@@ -909,15 +899,15 @@ Then validation fails for theme and locale
 And error messages list all validation errors  
 And none of the preferences are updated  
 And the operation is atomic (all or nothing)
-:::
+```
 
 ---
 
 **Technical notes:**
 
-- Implement validation at domain model level (before persistence)
+- Implement validation at the domain model level (before persistence)
 - Use enum for theme validation (compile-time safety)
-- Load supported locales from configuration file
+- Load supported locales from a configuration file
 - Validate timezone using TimeZone.getAvailableIDs() or similar
 - Provide detailed validation error messages
 - Log validation failures with context
@@ -964,7 +954,7 @@ And the operation is atomic (all or nothing)
 
 ### BC-001: Budget
 
-Preferences management must operate within zero-cost infrastructure constraints:
+Preference management must operate within zero-cost infrastructure constraints:
 
 - **Storage:** Use free-tier database (PostgreSQL) for preference storage
 - **Caching:** Use in-memory cache initially (no paid Redis required)
@@ -973,7 +963,7 @@ Preferences management must operate within zero-cost infrastructure constraints:
 
 ### BC-002: Timeline
 
-Preferences management is on critical path for MVP (3-6 months):
+Preference management is on a critical path for MVP (3–6 months):
 
 - **Must Have features** (FR-PRE-001, 004, 005, 006) required for MVP
 - **Should Have features** (FR-PRE-002, 003) enhance UX but can be simplified
@@ -982,7 +972,7 @@ Preferences management is on critical path for MVP (3-6 months):
 
 ### BC-003: Resources
 
-Single-developer constraints affect Preferences management:
+Single-developer constraints affect Preference management:
 
 - **Simplify Locale:** Start with English only, add more languages incrementally
 - **Simplify Timezone:** Autodetect from browser, allow manual change later
@@ -991,7 +981,7 @@ Single-developer constraints affect Preferences management:
 
 ### BC-004: Technology stack
 
-Preferences management aligns with chosen stack:
+Preference management aligns with the chosen stack:
 
 - **Backend:** Spring Boot REST APIs for preference CRUD
 - **Database:** PostgreSQL for preference storage
@@ -1004,7 +994,7 @@ Preferences management aligns with chosen stack:
 
 ## Success metrics alignment
 
-Preferences management contributes to the following success metrics from BR-001 through BR-008:
+Preference management contributes to the following success metrics from BR-001 through BR-008:
 
 ### BR-003: Technical metrics
 
