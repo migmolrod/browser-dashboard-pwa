@@ -409,7 +409,7 @@ User stories FR-TSK-008-001/002/003/004
 @tasks @calendar
 #noinspection CucumberUndefinedStep
 Feature: Calendar integration
-  In order to have tasks in my calendar
+  In order to have a clean workflow between task planning and calendar scheduling
   As a User
   I want to create calendar events from my tasks
 

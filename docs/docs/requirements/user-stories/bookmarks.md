@@ -447,9 +447,9 @@ User stories US-BKM-009-001/002/003/004/005
 @bookmarks
 #noinspection CucumberUndefinedStep
 Feature: Bookmark import/export
-  In order to backup or reuse bookmarks
+  In order to backup or share my bookmarks
   As a User
-  I want to export my bookmarks to a file that can be later imported
+  I want to export my bookmarks to a file that can be shared and later imported
 
   Scenario: Import bookmarks from an HTML file ("happy path")
     Given a user has a bookmark HTML file from another browser
