@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # Dashboard management
 
+These user stores (Features and Scenarios) directly map with Dashboard Management functional requirements. For more
+information, check [this documentation](../functional/dashboard-management).
+
 ## US-DAS-001: Dashboard creation
 
 User stories US-DAS-001-001/002/003
@@ -47,7 +50,7 @@ User stories US-DAS-002-001/002/003/004/005
 @dashboard
 #noinspection CucumberUndefinedStep
 Feature: Widget instance management
-  In order to manage my widgets
+  In order to manage my dashboard
   As a user
   I want to add and remove widget instances to my dashboard
 
@@ -100,8 +103,8 @@ User stories US-DAS-003-001/002/003/004/005
 ```gherkin
 @dashboard
 #noinspection CucumberUndefinedStep
-Feature: Widget instance management
-  In order to configure my widgets
+Feature: Widget configuration
+  In order to customize my widgets
   As a user
   I want to configure different types of widgets with valid settings
 
@@ -266,7 +269,7 @@ User stories US-DAS-006-001/002/003/004/005/006
 @dashboard
 #noinspection CucumberUndefinedStep
 Feature: Personalization profiles
-  In order to have more than one dashboard
+  In order to manage more than one dashboard
   As a user
   I want to create profiles and switch between them
 
@@ -331,9 +334,9 @@ User stories US-DAS-007-001/002/003/004
 @dashboard
 #noinspection CucumberUndefinedStep
 Feature: Dashboard deletion
-  In order to better manage my profiles
+  In order to keep a clean workspace
   As a user
-  I want to remove my dashboards
+  I want to remove dashboards I no longer use
 
   Scenario: Delete dashboard (happy path — multiple profiles)
     Given a user has two profiles with associated dashboards: "Default" and "Work"
