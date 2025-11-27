@@ -302,7 +302,7 @@ Feature: User profile management
 
 ## FR-UID-005: Password management
 
-User stories FR-UID-005-001/002/003/004/005/006/007/008
+User stories FR-UID-005-001/002/003/004/005/006
 
 ```gherkin
 @userid
@@ -374,7 +374,7 @@ Feature: Password management
 
 ## FR-UID-006: Account deletion
 
-User stories FR-UID-006-001/002/003/004/005/006/007/008
+User stories FR-UID-006-001/002/003/004/005/006
 
 ```gherkin
 @userid
