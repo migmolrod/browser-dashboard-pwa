@@ -2,6 +2,7 @@
 sidebar_position: 2
 ---
 
+
 import PriorityLabel from "../../src/components/PriorityLabel";
 
 # Templates
@@ -13,34 +14,34 @@ This is a set of templates for each requirement type.
 <details>
     <summary>Business requirement template</summary>
     ```markdown
-        ### BR-XXX: [requirement title]
+    ### BR-XXX: [requirement title]
 
-        **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
+    **Priority:** <PriorityLabel priority="[Must Have | Should Have | Could Have | Won't Have]"/>
 
-        **Description:**
-        [Brief description of the business need or objective this requirement addresses]
+    **Description:**
+    [Brief description of the business need or objective this requirement addresses]
 
-        **Rationale:**
-        [Why this requirement is important for the business]
+    **Rationale:**
+    [Why this requirement is important for the business]
 
-        **Success Criteria:**
+    **Success Criteria:**
 
-        - [Measurable criteria to determine if the requirement is met]
-        - [...]
+    - [Measurable criteria to determine if the requirement is met]
+    - [...]
 
-        **Related to:**
+    **Related to:**
 
-        - Bounded Context: [context name from DMD]
-        - Strategic Goal: [reference to DMD business goals if applicable]
+    - Bounded Context: [context name from DMD]
+    - Strategic Goal: [reference to DMD business goals if applicable]
 
-        **Dependencies:**
+    **Dependencies:**
 
-        - [Other BR, FR, or NFR codes this depends on]
+    - [Other BR, FR, or NFR codes this depends on]
 
-        **Acceptance Criteria:**
+    **Acceptance Criteria:**
 
-        - [Specific, testable criteria]
-        - [...]
+    - [Specific, testable criteria]
+    - [...]
     ```
 </details>
 
@@ -62,11 +63,11 @@ This is a set of templates for each requirement type.
 
     ### Summary
 
-    | Feature Code | Feature Name | Priority    | Status |
+    | Feature Code | Feature Name | Priority | Status |
     |--------------|--------------|-------------|--------|
-    | FR-XXX-001   | [Name]       | Must Have   | Draft  |
-    | FR-XXX-002   | [Name]       | Should Have | Draft  |
-    | ...          | ...          | ...         | ...    |
+    | FR-XXX-001 | [Name] | Must Have | Draft |
+    | FR-XXX-002 | [Name] | Should Have | Draft |
+    | ... | ... | ... | ... |
 
     ### FR-XXX-001: [feature name]
 
@@ -104,10 +105,10 @@ This is a set of templates for each requirement type.
 
     ## Traceability matrix
 
-    | Feature    | Business Req | Domain Events   | User Stories   |
+    | Feature | Business Req | Domain Events | User Stories |
     |------------|--------------|-----------------|----------------|
-    | FR-XXX-001 | BR-005       | BookmarkCreated | US-XXX-001-001 |
-    | ...        | ...          | ...             | ...            |
+    | FR-XXX-001 | BR-005 | BookmarkCreated | US-XXX-001-001 |
+    | ... | ... | ... | ... |
     ```
 </details>
 
@@ -156,30 +157,6 @@ This is a set of templates for each requirement type.
 
     - [Specific, testable criteria]
     - [...]
-
-    **User stories:**
-
-    - [US-XXX-000-001]: [link to user story]
-    - [...]
-
-    #### Scenarios
-
-    ##### Scenario 1: [scenario name] ("happy path")
-
-    \`\`\`gherkin
-    Given [initial context and preconditions]\
-    When [action taken by user or system]\
-    Then [expected outcome]\
-    And [additional expected outcomes]
-    \`\`\`
-
-    ##### Scenario 2: [Alternative scenario name]
-
-    [Similar structure to Scenario 1]
-
-    ##### Scenario 3: [error/edge case scenario name]
-
-    [Similar structure to Scenario 1]
 
     **Technical notes:**
 
@@ -246,3 +223,7 @@ This is a set of templates for each requirement type.
     - [Any unresolved questions]
     ```
 </details>
+
+## For user stories
+
+User stories will follow the regular Gherkin syntax and structure. Each feature will be like it's own `.feature` file.
