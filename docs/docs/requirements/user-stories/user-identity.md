@@ -191,7 +191,7 @@ User stories FR-UID-003-001/002/003/004/005/006/007
 Feature: Session management
   In order to maintain user identity state across requests
   As a Developer
-  I want the system to handle user sessions
+  I want to handle user sessions
 
   Scenario: Create a session on login
     Given the user successfully logs in
@@ -455,7 +455,7 @@ User stories FR-UID-007-001/002/003/004/005/006/007/008
 Feature: Security policies
   In order to prevent unauthorized access and protect user accounts
   As a Developer
-  I want the system to enforce security policies
+  I want to enforce security policies
 
   Scenario: Enforce password complexity on registration
     Given a user is registering

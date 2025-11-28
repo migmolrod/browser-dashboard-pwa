@@ -200,7 +200,7 @@ User stories FR-PRE-004-001/002/003/004/005
 Feature: Default preferences
   In order to ensure the application works immediately without requiring user configuration
   As a Developer
-  I want the system to provide default preferences for new users when they register
+  I want to provide default preferences for new users when they register
 
   Scenario: Create default preferences on registration ("happy path")
     Given a new user "john_doe" has just registered
@@ -256,7 +256,7 @@ User stories FR-PRE-005-001/002/003/004/005
 Feature: Preference persistence
   In order to ensure that user customizations are not lost
   As a Developer
-  I want the system to persist user preferences
+  I want to persist user preferences
 
   Scenario: Persist preference changes ("happy path")
     Given a user changes theme from "Light" to "Dark"

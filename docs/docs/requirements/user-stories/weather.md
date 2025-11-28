@@ -89,7 +89,7 @@ User stories FR-WEA-002-001/002/003/004/005/006/007
 Feature: Current weather retrieval
   In order to see the current weather data
   As a Developer
-  I want the system to retrieve the current weather data from a weather provider API
+  I want to retrieve the current weather data from a weather provider API
 
   Scenario: Retrieve weather for the configured location ("happy path")
     Given a user has a weather widget configured for "Madrid"
@@ -161,7 +161,7 @@ User stories FR-WEA-003-001/002/003/004/005/006/007
 Feature: Weather data caching
   In order to have better efficiency and minimize API calls
   As a Developer
-  I want the system to cache weather data
+  I want to cache weather data
 
   Scenario: Serve cached weather data ("happy path")
     Given weather data was fetched for "Madrid" 10 minutes ago
@@ -481,7 +481,7 @@ Feature: Error handling
     And user can manually retry at any time
 ```
 
-For devs:
+For developers:
 
 ```gherkin
 @weather
