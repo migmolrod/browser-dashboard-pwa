@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Synchronization
 
-# FR-SYN-001: Local persistence
+## FR-SYN-001: Local persistence
 
 User stories FR-SYN-001-001/002/003/004/005/006
 
@@ -65,7 +65,7 @@ Feature: Local persistence
     And no network call is made
 ```
 
-# FR-SYN-002: Offline operation
+## FR-SYN-002: Offline operation
 
 User stories FR-SYN-002-001/002/003/004/005/006
 
@@ -131,7 +131,7 @@ Feature: Offline operation
     And operations remain queued until online
 ```
 
-# FR-SYN-003: Background synchronization
+## FR-SYN-003: Background synchronization
 
 User stories FR-SYN-003-001/002/003/004/005/006
 
@@ -200,7 +200,7 @@ Feature: Background synchronization
     And failed operations are retried later
 ```
 
-# FR-SYN-004: Conflict detection
+## FR-SYN-004: Conflict detection
 
 User stories FR-SYN-004-001/002/003/004/005
 
@@ -261,7 +261,7 @@ Feature: Conflict detection
     And each conflict is queued for resolution
 ```
 
-# FR-SYN-005: Conflict resolution
+## FR-SYN-005: Conflict resolution
 
 User stories FR-SYN-005-001/002/003/004/005
 
@@ -319,7 +319,7 @@ Feature: Conflict resolution
     And all resolutions are logged
 ```
 
-# FR-SYN-006: Sync status tracking
+## FR-SYN-006: Sync status tracking
 
 User stories FR-SYN-006-001/002/003/004/005/006
 
@@ -380,7 +380,7 @@ Feature: Sync status tracking
     And no page refresh is needed
 ```
 
-# FR-SYN-007: Retry and error handling
+## FR-SYN-007: Retry and error handling
 
 User stories FR-SYN-007-001/002/003/004/005/006
 
