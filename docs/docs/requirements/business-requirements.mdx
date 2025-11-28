@@ -1,13 +1,15 @@
 ---
 sidebar_position: 3.0
 title: Business requirements
-status: Draft
-lastUpdated: 2025-11-11
+status: Ready
+lastUpdated: 2025-11-28
 ---
 
 import RequirementMetadata from "../../src/components/RequirementMetadata";
 // noinspection ES6UnusedImports
 import PriorityLabel from "../../src/components/PriorityLabel";
+// noinspection ES6UnusedImports
+import StatusLabel from "../../src/components/StatusLabel";
 
 <RequirementMetadata/>
 
@@ -17,22 +19,24 @@ Business requirements define the high-level goals and benefits that the Browser 
 
 ## Requirements summary
 
-| Code   | Title                           | Priority                                | Related Context |
-|--------|---------------------------------|-----------------------------------------|-----------------|
-| BR-001 | Portfolio enhancement           | <PriorityLabel priority="Must Have"/>   | All             |
-| BR-002 | User productivity enhancement   | <PriorityLabel priority="Must Have"/>   | All             |
-| BR-003 | Technical excellence            | <PriorityLabel priority="Must Have"/>   | All             |
-| BR-004 | Scalability and maintainability | <PriorityLabel priority="Should Have"/> | All             |
-| BR-005 | User value delivery             | <PriorityLabel priority="Must Have"/>   | All             |
-| BR-006 | Developer experience            | <PriorityLabel priority="Should Have"/> | All             |
-| BR-007 | Cost efficiency                 | <PriorityLabel priority="Must Have"/>   | All             |
-| BR-008 | Time to market                  | <PriorityLabel priority="Should Have"/> | All             |
+| Code   | Title                           | Priority                                | Status                        | Related Context |
+|--------|---------------------------------|-----------------------------------------|-------------------------------|-----------------|
+| BR-001 | Portfolio enhancement           | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Ready"/> | All             |
+| BR-002 | User productivity enhancement   | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Ready"/> | All             |
+| BR-003 | Technical excellence            | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Ready"/> | All             |
+| BR-004 | Scalability and maintainability | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Ready"/> | All             |
+| BR-005 | User value delivery             | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Ready"/> | All             |
+| BR-006 | Developer experience            | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Ready"/> | All             |
+| BR-007 | Cost efficiency                 | <PriorityLabel priority="Must Have"/>   | <StatusLabel status="Ready"/> | All             |
+| BR-008 | Time to market                  | <PriorityLabel priority="Should Have"/> | <StatusLabel status="Ready"/> | All             |
 
 ## Strategic objectives
 
 ### BR-001: Portfolio enhancement
 
 **Priority:** <PriorityLabel priority="Must Have"/>
+
+**Status:** <StatusLabel status="Ready"/>
 
 **Description:**
 
@@ -73,6 +77,8 @@ demonstrate the ability to deliver complete, production-ready solutions.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
+**Status:** <StatusLabel status="Ready"/>
+
 **Description:**
 
 Create a functional browser dashboard that consolidates essential productivity tools (bookmarks, tasks, weather,
@@ -102,8 +108,8 @@ requirements into valuable features. A non-functional portfolio piece has limite
 
 **Acceptance Criteria:**
 
+- Dashboard composition orchestrator is fully functional
 - All four core widgets (bookmarks, tasks, weather, calendar) are fully functional
-- Average task completion time is measurably faster than using separate tools
 - Weather data updates in real-time from a third-party API
 - The User Interface is intuitive (new users can complete basic tasks without a tutorial)
 - Mobile and desktop experiences are equally functional (responsive design)
@@ -111,6 +117,8 @@ requirements into valuable features. A non-functional portfolio piece has limite
 ### BR-003: Technical excellence
 
 **Priority:** <PriorityLabel priority="Must Have"/>
+
+**Status:** <StatusLabel status="Ready"/>
 
 **Description:**
 
@@ -154,6 +162,8 @@ portfolio pieces. It shows understanding of enterprise-grade software developmen
 
 **Priority:** <PriorityLabel priority="Should Have"/>
 
+**Status:** <StatusLabel status="Ready"/>
+
 **Description:**
 
 Build a system architecture that can accommodate future growth in features, users, and data volume while remaining
@@ -194,6 +204,8 @@ These qualities make the project suitable for real-world scenarios beyond a simp
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
+**Status:** <StatusLabel status="Ready"/>
+
 **Description:**
 
 Deliver tangible value to end users through the core features of the dashboard, ensuring the application is not just
@@ -231,18 +243,20 @@ This is important for demonstrating well-rounded software engineering skills.
 
 #### Value propositions for end users
 
-| Benefit                   | Description                                                 | Success Measure                              |
-|---------------------------|-------------------------------------------------------------|----------------------------------------------|
-| **Centralized Dashboard** | Single location for bookmarks, tasks, weather, and calendar | All widgets accessible from one page         |
-| **Fast and Lightweight**  | Quick loading times, minimal resource usage                 | Page load < 2s, Lighthouse score > 90        |
-| **Customizable**          | Personalize appearance and module configuration             | User preferences persist across sessions     |
-| **Cross-Platform**        | Works on any device with a modern browser                   | Tested on mobile, tablet, desktop            |
-| **Offline Capable**       | PWA features enable offline functionality                   | Service worker caches essential content      |
-| **No Installation**       | Browser-based, no downloads required                        | Accessible via URL, optionally installable   |
+| Benefit                   | Description                                                 | Success Measure                            |
+|---------------------------|-------------------------------------------------------------|--------------------------------------------|
+| **Centralized Dashboard** | Single location for bookmarks, tasks, weather, and calendar | All widgets accessible from one page       |
+| **Fast and Lightweight**  | Quick loading times, minimal resource usage                 | Page load < 2s, Lighthouse score > 90      |
+| **Customizable**          | Personalize appearance and module configuration             | User preferences persist across sessions   |
+| **Cross-Platform**        | Works on any device with a modern browser                   | Tested on mobile, tablet, desktop          |
+| **Offline Capable**       | PWA features enable offline functionality                   | Service worker caches essential content    |
+| **No Installation**       | Browser-based, no downloads required                        | Accessible via URL, optionally installable |
 
 ### BR-006: Developer experience
 
 **Priority:** <PriorityLabel priority="Should Have"/>
+
+**Status:** <StatusLabel status="Ready"/>
 
 **Description:**
 
@@ -295,6 +309,8 @@ mentorship, or positive portfolio evaluation.
 
 **Priority:** <PriorityLabel priority="Must Have"/>
 
+**Status:** <StatusLabel status="Ready"/>
+
 **Description:**
 
 Maintain zero to minimal infrastructure and operational costs while delivering a production-quality system,
@@ -333,6 +349,8 @@ the ability to work within budget constraints.
 ### BR-008: Time to market
 
 **Priority:** <PriorityLabel priority="Should Have"/>
+
+**Status:** <StatusLabel status="Ready"/>
 
 **Description:**
 
